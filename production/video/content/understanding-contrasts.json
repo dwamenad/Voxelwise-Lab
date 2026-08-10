@@ -4,8 +4,8 @@
   "lesson": "Understanding contrasts",
   "title": "Understanding contrasts in FSL FEAT",
   "subtitle": "Turn parameter estimates into focused hypothesis tests",
-  "voice": "Samantha",
-  "speechRate": 164,
+  "voice": "Daniel",
+  "speechRate": 148,
   "fps": 30,
   "source": {
     "repository": "tubric/2026s-fmri-class",

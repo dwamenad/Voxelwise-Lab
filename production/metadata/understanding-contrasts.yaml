@@ -10,13 +10,14 @@ video:
   concept:
     status: recorded
     target_minutes: 5
-    actual_seconds: 297.088
+    actual_seconds: 345.450667
     resolution: 1920x1080
     frame_rate: 30
     codec: h264
     audio: aac-48000hz-stereo
     drive_folder: https://drive.google.com/drive/folders/1bHM9qJtv0Rd8T2LfBkPjTA26F7nvoFF2
-    drive_master: https://drive.google.com/file/d/1Ud2EhQ8Lp10PKRebSnppS1GgeClCTq3x/view?usp=drivesdk
+    drive_master: https://drive.google.com/file/d/1esecg0EMF2N1zCtoZy2af0Mtm7fkGXLd/view?usp=drivesdk
+    previous_drive_master: https://drive.google.com/file/d/1Ud2EhQ8Lp10PKRebSnppS1GgeClCTq3x/view?usp=drivesdk
   walkthrough:
     status: planned
     target_minutes: 12
@@ -24,8 +25,10 @@ video:
 
 narration:
   status: generated
-  voice: Samantha
-  words_per_minute: 164
+  voice: Daniel
+  accent: UK English
+  cadence: deliberate
+  words_per_minute: 148
 
 captions:
   status: generated
