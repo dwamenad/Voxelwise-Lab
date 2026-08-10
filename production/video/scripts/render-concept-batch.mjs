@@ -43,7 +43,7 @@ const render = (video, outputPath) =>
     });
   });
 
-const outputDirectory = path.join(projectRoot, "production", "video", "output", "concepts", "masters");
+const outputDirectory = path.join(projectRoot, "production", "video", "output", "concepts", "masters-v2");
 await mkdir(outputDirectory, { recursive: true });
 
 const results = [];

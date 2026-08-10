@@ -1,0 +1,106 @@
+1
+00:00:00,000 --> 00:00:05,252
+Neural events are fast, but the BOLD
+response is delayed and smooth.
+
+2
+00:00:05,252 --> 00:00:09,628
+The hemodynamic response function, or HRF,
+approximates that response shape.
+
+3
+00:00:09,628 --> 00:00:16,192
+Convolution combines event timing with the
+HRF to create a predictor that the GLM can
+
+4
+00:00:16,192 --> 00:00:18,380
+compare with measured BOLD signal.
+
+5
+00:00:19,230 --> 00:00:23,976
+Imagine placing a copy of the HRF at every
+event onset.
+
+6
+00:00:23,976 --> 00:00:30,016
+Each copy is scaled by the event
+amplitude, shifted in time, and added to
+
+7
+00:00:30,016 --> 00:00:30,879
+the others.
+
+8
+00:00:30,879 --> 00:00:33,467
+The result is a continuous predictor.
+
+9
+00:00:33,467 --> 00:00:38,213
+Closely spaced events produce overlapping
+responses, which is why timing affects
+
+10
+00:00:38,213 --> 00:00:38,645
+estimation.
+
+11
+00:00:39,495 --> 00:00:45,360
+A canonical response begins rising after
+roughly two seconds, peaks near five
+
+12
+00:00:45,360 --> 00:00:48,781
+seconds, and may show a later undershoot.
+
+13
+00:00:48,781 --> 00:00:52,691
+Those numbers are useful approximations,
+not universal constants.
+
+14
+00:00:52,691 --> 00:00:58,556
+The HRF models vascular dynamics
+associated with neural activity; it is not
+
+15
+00:00:58,556 --> 00:01:00,511
+the neural event itself.
+
+16
+00:01:01,361 --> 00:01:07,298
+The canonical HRF is a practical model,
+but real responses vary across
+
+17
+00:01:07,298 --> 00:01:08,783
+participants and regions.
+
+18
+00:01:08,783 --> 00:01:14,226
+Basis functions or finite impulse response
+models can represent some variation.
+
+19
+00:01:14,226 --> 00:01:19,668
+The appropriate choice depends on the
+hypothesis, design, and available data.
+
+20
+00:01:20,518 --> 00:01:25,546
+Convolution translates event timing into
+an expected BOLD pattern by applying the
+
+21
+00:01:25,546 --> 00:01:27,222
+HRF at each event.
+
+22
+00:01:27,222 --> 00:01:32,668
+Read the predictor as a model of delayed
+vascular response, and keep biological
+
+23
+00:01:32,668 --> 00:01:36,858
+variability and design overlap in mind
+when interpreting the fit.

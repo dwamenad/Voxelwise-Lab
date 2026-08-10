@@ -1,0 +1,118 @@
+1
+00:00:00,000 --> 00:00:04,553
+A completed FEAT report is not
+automatically a valid analysis.
+
+2
+00:00:04,553 --> 00:00:07,285
+It is a chain of evidence.
+
+3
+00:00:07,285 --> 00:00:11,839
+Review motion and preprocessing first,
+registration second, the design and
+
+4
+00:00:11,839 --> 00:00:14,571
+contrasts third, and statistical inference
+last.
+
+5
+00:00:14,571 --> 00:00:19,124
+A failure early in the chain limits every
+later conclusion.
+
+6
+00:00:19,974 --> 00:00:25,977
+Begin with pre-stats and ask whether
+motion, masking, and preprocessing outputs
+
+7
+00:00:25,977 --> 00:00:27,068
+are plausible.
+
+8
+00:00:27,068 --> 00:00:30,888
+Continue to registration and inspect
+anatomical correspondence.
+
+9
+00:00:30,888 --> 00:00:35,254
+Then examine the design matrix, EVs, and
+contrasts.
+
+10
+00:00:35,254 --> 00:00:40,711
+Only after those dependencies pass should
+you interpret thresholded results.
+
+11
+00:00:41,561 --> 00:00:46,002
+For motion, describe the pattern and any
+abrupt displacement.
+
+12
+00:00:46,002 --> 00:00:50,937
+For registration, name boundaries and
+locations that agree or fail.
+
+13
+00:00:50,937 --> 00:00:57,353
+For design, match columns to timing files
+and contrast weights to the hypothesis.
+
+14
+00:00:57,353 --> 00:01:01,301
+Specific observations can be reviewed;
+vague reassurance cannot.
+
+15
+00:01:02,151 --> 00:01:05,378
+A cope is the estimated contrast effect.
+
+16
+00:01:05,378 --> 00:01:08,605
+A varcope describes uncertainty in that
+estimate.
+
+17
+00:01:08,605 --> 00:01:13,215
+A t or z statistic standardizes evidence
+relative to uncertainty.
+
+18
+00:01:13,215 --> 00:01:17,365
+A thresholded map shows locations
+surviving the chosen inferential
+
+19
+00:01:17,365 --> 00:01:17,826
+procedure.
+
+20
+00:01:17,826 --> 00:01:22,436
+Do not describe a z-statistic map as an
+effect-size map.
+
+21
+00:01:23,286 --> 00:01:28,138
+Finish with an explicit quality-control
+judgment: pass, concern, or fail, followed
+
+22
+00:01:28,138 --> 00:01:30,784
+by the observations that support it.
+
+23
+00:01:30,784 --> 00:01:34,313
+Record limitations and their likely effect
+on interpretation.
+
+24
+00:01:34,313 --> 00:01:41,371
+The goal is not to prove that FEAT
+finished; it is to decide what this run
+
+25
+00:01:41,371 --> 00:01:42,694
+can defensibly support.

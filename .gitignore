@@ -23,7 +23,10 @@
 /build
 /production/video/output/**/*.mp4
 /production/video/output/**/preview-*.png
+/production/video/output/review-v2/
+/production/video/output/concepts/review-v2/
 /public/video-production/**/audio/
+/public/video-production/**/audio-v2/
 
 # misc
 .DS_Store

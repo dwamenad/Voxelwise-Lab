@@ -1,523 +1,510 @@
 {
+  "version": 2,
+  "slug": "understanding-contrasts",
+  "compositionId": "UnderstandingContrasts",
   "fps": 30,
-  "totalFrames": 10362,
-  "totalSeconds": 345.292517,
+  "totalFrames": 6150,
+  "totalSeconds": 204.86984,
   "voice": "Daniel",
   "speechRate": 148,
   "scenes": [
     {
       "id": "opening",
-      "audioPath": "video-production/understanding-contrasts/audio/opening.m4a",
-      "audioSeconds": 39.603855,
-      "durationSeconds": 40.453855000000004,
-      "durationInFrames": 1214,
+      "audioPath": "video-production/understanding-contrasts/audio-v2/opening.m4a",
+      "audioSeconds": 24.000045,
+      "durationSeconds": 24.850045,
+      "durationInFrames": 746,
       "startSeconds": 0,
       "startFrame": 0
     },
     {
       "id": "model-to-question",
-      "audioPath": "video-production/understanding-contrasts/audio/model-to-question.m4a",
-      "audioSeconds": 40.346893,
-      "durationSeconds": 41.196893,
-      "durationInFrames": 1236,
-      "startSeconds": 40.453855000000004,
-      "startFrame": 1214
+      "audioPath": "video-production/understanding-contrasts/audio-v2/model-to-question.m4a",
+      "audioSeconds": 22.513968,
+      "durationSeconds": 23.363968,
+      "durationInFrames": 701,
+      "startSeconds": 24.850045,
+      "startFrame": 746
     },
     {
       "id": "baseline",
-      "audioPath": "video-production/understanding-contrasts/audio/baseline.m4a",
-      "audioSeconds": 47.240363,
-      "durationSeconds": 48.090363,
-      "durationInFrames": 1443,
-      "startSeconds": 81.65074800000001,
-      "startFrame": 2450
+      "audioPath": "video-production/understanding-contrasts/audio-v2/baseline.m4a",
+      "audioSeconds": 28.861769,
+      "durationSeconds": 29.711769,
+      "durationInFrames": 892,
+      "startSeconds": 48.214013,
+      "startFrame": 1447
     },
     {
       "id": "differences",
-      "audioPath": "video-production/understanding-contrasts/audio/differences.m4a",
-      "audioSeconds": 39.484898,
-      "durationSeconds": 40.334898,
-      "durationInFrames": 1211,
-      "startSeconds": 129.74111100000002,
-      "startFrame": 3893
+      "audioPath": "video-production/understanding-contrasts/audio-v2/differences.m4a",
+      "audioSeconds": 23.416689,
+      "durationSeconds": 24.266689000000003,
+      "durationInFrames": 729,
+      "startSeconds": 77.925782,
+      "startFrame": 2339
     },
     {
       "id": "ordering",
-      "audioPath": "video-production/understanding-contrasts/audio/ordering.m4a",
-      "audioSeconds": 41.034558,
-      "durationSeconds": 41.884558,
-      "durationInFrames": 1257,
-      "startSeconds": 170.07600900000003,
-      "startFrame": 5104
+      "audioPath": "video-production/understanding-contrasts/audio-v2/ordering.m4a",
+      "audioSeconds": 23.549932,
+      "durationSeconds": 24.399932,
+      "durationInFrames": 732,
+      "startSeconds": 102.192471,
+      "startFrame": 3068
     },
     {
       "id": "feat-interface",
-      "audioPath": "video-production/understanding-contrasts/audio/feat-interface.m4a",
-      "audioSeconds": 38.814331,
-      "durationSeconds": 39.664331000000004,
-      "durationInFrames": 1190,
-      "startSeconds": 211.96056700000003,
-      "startFrame": 6361
+      "audioPath": "video-production/understanding-contrasts/audio-v2/feat-interface.m4a",
+      "audioSeconds": 22.409433,
+      "durationSeconds": 23.259433,
+      "durationInFrames": 698,
+      "startSeconds": 126.59240299999999,
+      "startFrame": 3800
     },
     {
       "id": "outputs",
-      "audioPath": "video-production/understanding-contrasts/audio/outputs.m4a",
-      "audioSeconds": 46.977415,
-      "durationSeconds": 47.827415,
-      "durationInFrames": 1435,
-      "startSeconds": 251.62489800000003,
-      "startFrame": 7551
+      "audioPath": "video-production/understanding-contrasts/audio-v2/outputs.m4a",
+      "audioSeconds": 24.256689,
+      "durationSeconds": 25.106689000000003,
+      "durationInFrames": 754,
+      "startSeconds": 149.851836,
+      "startFrame": 4498
     },
     {
       "id": "checklist",
-      "audioPath": "video-production/understanding-contrasts/audio/checklist.m4a",
-      "audioSeconds": 44.990204,
-      "durationSeconds": 45.840204,
-      "durationInFrames": 1376,
-      "startSeconds": 299.452313,
-      "startFrame": 8986
+      "audioPath": "video-production/understanding-contrasts/audio-v2/checklist.m4a",
+      "audioSeconds": 29.061315,
+      "durationSeconds": 29.911315000000002,
+      "durationInFrames": 898,
+      "startSeconds": 174.958525,
+      "startFrame": 5252
     }
   ],
   "cues": [
     {
       "index": 1,
-      "text": "A first-level model can contain several explanatory variables, but a scientific result usually begins with a narrower question.",
+      "text": "A first-level model may contain several\nexplanatory variables, but a scientific",
       "startSeconds": 0,
-      "endSeconds": 7.8337295604395605,
+      "endSeconds": 4.800009,
       "startFrame": 0,
-      "endFrame": 236
+      "endFrame": 145
     },
     {
       "index": 2,
-      "text": "Was the response during left-button trials greater than the response during right-button trials?",
-      "startSeconds": 7.8337295604395605,
-      "endSeconds": 13.491423131868132,
-      "startFrame": 235,
-      "endFrame": 405
+      "text": "result begins with a focused question.",
+      "startSeconds": 4.800009,
+      "endSeconds": 7.418195727272727,
+      "startFrame": 144,
+      "endFrame": 223
     },
     {
       "index": 3,
-      "text": "Was one condition positively related to the measured BOLD signal?",
-      "startSeconds": 13.491423131868132,
-      "endSeconds": 17.84349510989011,
-      "startFrame": 404,
-      "endFrame": 536
+      "text": "Was the response during left-button trials\ngreater than the response during",
+      "startSeconds": 7.418195727272727,
+      "endSeconds": 12.218204727272727,
+      "startFrame": 222,
+      "endFrame": 367
     },
     {
       "index": 4,
-      "text": "A contrast turns a question like that into a precise set of weights.",
-      "startSeconds": 17.84349510989011,
-      "endSeconds": 23.50118868131868,
-      "startFrame": 535,
-      "endFrame": 706
+      "text": "right-button trials?",
+      "startSeconds": 12.218204727272727,
+      "endSeconds": 13.090933636363637,
+      "startFrame": 366,
+      "endFrame": 393
     },
     {
       "index": 5,
-      "text": "In this lesson, we will connect those weights to the parameter estimates in the general linear model, interpret baseline and difference contrasts, and identify the quality-control checks that prevent a correct calculation from answering the wrong question.",
-      "startSeconds": 23.50118868131868,
-      "endSeconds": 39.603854999999996,
-      "startFrame": 705,
-      "endFrame": 1189
+      "text": "A contrast turns that comparison into\nprecise weights.",
+      "startSeconds": 13.090933636363637,
+      "endSeconds": 16.581849272727272,
+      "startFrame": 392,
+      "endFrame": 498
     },
     {
       "index": 6,
-      "text": "At each voxel, FEAT fits the general linear model.",
-      "startSeconds": 40.453855000000004,
-      "endSeconds": 44.4885443,
-      "startFrame": 1213,
-      "endFrame": 1335
+      "text": "Those weights must agree with the model\ncolumns and with the words used to",
+      "startSeconds": 16.581849272727272,
+      "endSeconds": 22.690951636363636,
+      "startFrame": 497,
+      "endFrame": 681
     },
     {
       "index": 7,
-      "text": "The design matrix contains the explanatory variables, or EVs, and beta contains one estimated coefficient for each model column.",
-      "startSeconds": 44.4885443,
-      "endSeconds": 53.00622171111111,
-      "startFrame": 1334,
-      "endFrame": 1591
+      "text": "describe the hypothesis.",
+      "startSeconds": 22.690951636363636,
+      "endSeconds": 24.000045,
+      "startFrame": 680,
+      "endFrame": 721
     },
     {
       "index": 8,
-      "text": "Those coefficients describe how strongly each predictor contributes to the observed signal after accounting for the other predictors.",
-      "startSeconds": 53.00622171111112,
-      "endSeconds": 61.07560031111112,
-      "startFrame": 1590,
-      "endFrame": 1833
+      "text": "At each voxel, FEAT fits the general\nlinear model.",
+      "startSeconds": 24.850045,
+      "endSeconds": 28.902559240000002,
+      "startFrame": 745,
+      "endFrame": 868
     },
     {
       "index": 9,
-      "text": "A contrast does not refit the model and does not change the original beta estimates.",
-      "startSeconds": 61.07560031111112,
-      "endSeconds": 67.80008247777778,
-      "startFrame": 1832,
-      "endFrame": 2035
+      "text": "The design matrix contains explanatory\nvariables, and beta contains one fitted",
+      "startSeconds": 28.902559240000002,
+      "endSeconds": 33.8556322,
+      "startFrame": 867,
+      "endFrame": 1016
     },
     {
       "index": 10,
-      "text": "Instead, it defines a linear combination of selected estimates.",
-      "startSeconds": 67.80008247777778,
-      "endSeconds": 71.83477177777777,
-      "startFrame": 2034,
-      "endFrame": 2156
+      "text": "coefficient for each model column.",
+      "startSeconds": 33.8556322,
+      "endSeconds": 36.107029000000004,
+      "startFrame": 1015,
+      "endFrame": 1084
     },
     {
       "index": 11,
-      "text": "In compact notation, the contrast estimate is c transpose beta.",
-      "startSeconds": 71.83477177777779,
-      "endSeconds": 76.3177598888889,
-      "startFrame": 2155,
-      "endFrame": 2290
+      "text": "A contrast does not change those\nestimates.",
+      "startSeconds": 36.107029000000004,
+      "endSeconds": 39.258984520000006,
+      "startFrame": 1083,
+      "endFrame": 1178
     },
     {
       "index": 12,
-      "text": "The vector c contains the weights that encode the hypothesis.",
-      "startSeconds": 76.3177598888889,
-      "endSeconds": 80.80074800000001,
-      "startFrame": 2289,
-      "endFrame": 2425
+      "text": "It defines a linear combination, written\nas c transpose beta, where c is the vector",
+      "startSeconds": 39.25898452,
+      "endSeconds": 46.01317492,
+      "startFrame": 1177,
+      "endFrame": 1381
     },
     {
       "index": 13,
-      "text": "Suppose the original EV order is Left followed by Right.",
-      "startSeconds": 81.65074800000001,
-      "endSeconds": 85.75860565217393,
-      "startFrame": 2449,
-      "endFrame": 2573
+      "text": "of hypothesis weights.",
+      "startSeconds": 46.01317492,
+      "endSeconds": 47.364013,
+      "startFrame": 1380,
+      "endFrame": 1421
     },
     {
       "index": 14,
-      "text": "The contrast one, zero selects the Left coefficient.",
-      "startSeconds": 85.75860565217393,
-      "endSeconds": 89.04489177391305,
-      "startFrame": 2572,
-      "endFrame": 2672
+      "text": "Suppose the explanatory-variable order is\nLeft followed by Right.",
+      "startSeconds": 48.214013,
+      "endSeconds": 52.272699265625,
+      "startFrame": 1446,
+      "endFrame": 1569
     },
     {
       "index": 15,
-      "text": "In the usual FEAT task model, it tests a positive Left effect relative to the implicit baseline represented by the rest of the model.",
-      "startSeconds": 89.04489177391305,
-      "endSeconds": 98.90375013913044,
-      "startFrame": 2671,
-      "endFrame": 2968
+      "text": "The weights one, zero select the Left\ncoefficient.",
+      "startSeconds": 52.272699265625,
+      "endSeconds": 55.880420390625,
+      "startFrame": 1568,
+      "endFrame": 1677
     },
     {
       "index": 16,
-      "text": "Zero, one selects the Right coefficient.",
-      "startSeconds": 98.90375013913044,
-      "endSeconds": 101.36846473043478,
-      "startFrame": 2967,
-      "endFrame": 3042
+      "text": "Zero, one select the Right coefficient.",
+      "startSeconds": 55.880420390625005,
+      "endSeconds": 58.58621123437501,
+      "startFrame": 1676,
+      "endFrame": 1758
     },
     {
       "index": 17,
-      "text": "These are not direct comparisons between Left and Right.",
-      "startSeconds": 101.3684647304348,
-      "endSeconds": 105.06553661739132,
-      "startFrame": 3041,
-      "endFrame": 3152
+      "text": "In a usual task model, each is tested\nrelative to the implicit baseline",
+      "startSeconds": 58.586211234375,
+      "endSeconds": 64.4487580625,
+      "startFrame": 1757,
+      "endFrame": 1934
     },
     {
       "index": 18,
-      "text": "They ask whether each selected estimate is positive in its modeled context.",
-      "startSeconds": 105.06553661739132,
-      "endSeconds": 109.99496580000002,
-      "startFrame": 3151,
-      "endFrame": 3300
+      "text": "represented by the rest of the model.",
+      "startSeconds": 64.4487580625,
+      "endSeconds": 67.605514046875,
+      "startFrame": 1933,
+      "endFrame": 2029
     },
     {
       "index": 19,
-      "text": "A contrast using one, one tests the positive sum of the two coefficients.",
-      "startSeconds": 109.99496580000002,
-      "endSeconds": 115.3351807478261,
-      "startFrame": 3299,
-      "endFrame": 3461
+      "text": "Neither is a direct Left-versus-Right\ncomparison.",
+      "startSeconds": 67.605514046875,
+      "endSeconds": 70.311304890625,
+      "startFrame": 2028,
+      "endFrame": 2110
     },
     {
       "index": 20,
-      "text": "Using one half, one half gives their numerical average.",
-      "startSeconds": 115.3351807478261,
-      "endSeconds": 119.03225263478262,
-      "startFrame": 3460,
-      "endFrame": 3571
+      "text": "One, one tests their positive sum, while\none half, one half tests the numerical",
+      "startSeconds": 70.311304890625,
+      "endSeconds": 76.62481685937499,
+      "startFrame": 2109,
+      "endFrame": 2299
     },
     {
       "index": 21,
-      "text": "Those scaled contrasts have the same t or z statistic, but their cope values are on different scales, so name and report them carefully.",
-      "startSeconds": 119.03225263478262,
-      "endSeconds": 128.89111100000002,
-      "startFrame": 3570,
-      "endFrame": 3867
+      "text": "average.",
+      "startSeconds": 76.624816859375,
+      "endSeconds": 77.075782,
+      "startFrame": 2298,
+      "endFrame": 2313
     },
     {
       "index": 22,
-      "text": "To compare Left directly with Right, use one, negative one.",
-      "startSeconds": 129.74111100000002,
-      "endSeconds": 134.03294773913046,
-      "startFrame": 3892,
-      "endFrame": 4021
+      "text": "To compare Left directly with Right, use\none, negative one.",
+      "startSeconds": 77.925782,
+      "endSeconds": 82.34402520754716,
+      "startFrame": 2337,
+      "endFrame": 2471
     },
     {
       "index": 23,
-      "text": "This computes beta Left minus beta Right.",
-      "startSeconds": 134.03294773913046,
-      "endSeconds": 137.03723345652176,
-      "startFrame": 4020,
-      "endFrame": 4112
+      "text": "This computes beta Left minus beta Right\nand tests the positive direction, Left",
+      "startSeconds": 82.34402520754716,
+      "endSeconds": 88.08774137735848,
+      "startFrame": 2470,
+      "endFrame": 2643
     },
     {
       "index": 24,
-      "text": "The null hypothesis is that the weighted difference equals zero, and the positive direction tests whether Left is greater than Right.",
-      "startSeconds": 137.03723345652176,
-      "endSeconds": 146.05009060869568,
-      "startFrame": 4111,
-      "endFrame": 4382
+      "text": "greater than Right.",
+      "startSeconds": 88.0877413773585,
+      "endSeconds": 89.41321433962266,
+      "startFrame": 2642,
+      "endFrame": 2683
     },
     {
       "index": 25,
-      "text": "Reversing the signs gives negative one, one, which tests Right greater than Left.",
-      "startSeconds": 146.05009060869565,
-      "endSeconds": 151.62947836956522,
-      "startFrame": 4381,
-      "endFrame": 4549
+      "text": "Reversing the signs tests Right greater\nthan Left.",
+      "startSeconds": 89.41321433962264,
+      "endSeconds": 92.94780890566038,
+      "startFrame": 2682,
+      "endFrame": 2789
     },
     {
       "index": 26,
-      "text": "A negative weight does not mean deactivation.",
-      "startSeconds": 151.62947836956522,
-      "endSeconds": 154.63376408695652,
-      "startFrame": 4548,
-      "endFrame": 4640
+      "text": "A negative weight means that a coefficient\nis subtracted in this hypothesis.",
+      "startSeconds": 92.94780890566038,
+      "endSeconds": 98.24970075471698,
+      "startFrame": 2788,
+      "endFrame": 2948
     },
     {
       "index": 27,
-      "text": "It means that the corresponding coefficient is subtracted in this particular hypothesis.",
-      "startSeconds": 154.63376408695655,
-      "endSeconds": 159.78396817391308,
-      "startFrame": 4639,
-      "endFrame": 4794
+      "text": "It does not, by itself, mean deactivation.",
+      "startSeconds": 98.24970075471698,
+      "endSeconds": 101.342471,
+      "startFrame": 2947,
+      "endFrame": 3041
     },
     {
       "index": 28,
-      "text": "Direction matters: Left greater than Right and Right greater than Left are related, but they are not interchangeable labels for one contrast.",
-      "startSeconds": 159.78396817391305,
-      "endSeconds": 169.226009,
-      "startFrame": 4793,
-      "endFrame": 5077
+      "text": "Contrast numbers only have meaning when\naligned with the correct design-matrix",
+      "startSeconds": 102.192471,
+      "endSeconds": 106.50995853333333,
+      "startFrame": 3065,
+      "endFrame": 3196
     },
     {
       "index": 29,
-      "text": "Contrast numbers only have meaning when they are aligned with the correct design-matrix columns.",
-      "startSeconds": 170.07600900000003,
-      "endSeconds": 176.18753891489365,
-      "startFrame": 5102,
-      "endFrame": 5286
+      "text": "columns.",
+      "startSeconds": 106.50995853333333,
+      "endSeconds": 106.9024574,
+      "startFrame": 3195,
+      "endFrame": 3208
     },
     {
       "index": 30,
-      "text": "If the actual order is Right then Left, the weights one, negative one test Right greater than Left, even if the contrast is named Left greater than Right.",
-      "startSeconds": 176.18753891489365,
-      "endSeconds": 188.4105987446809,
-      "startFrame": 5285,
-      "endFrame": 5653
+      "text": "If the actual order is Right then Left,\none, negative one tests Right greater than",
+      "startSeconds": 106.9024574,
+      "endSeconds": 112.7899404,
+      "startFrame": 3207,
+      "endFrame": 3384
     },
     {
       "index": 31,
-      "text": "Before running FEAT, write the EV order, read each contrast as a sentence, and point from every weight to its displayed column name.",
-      "startSeconds": 188.41059874468087,
-      "endSeconds": 198.45096931914895,
-      "startFrame": 5652,
-      "endFrame": 5954
+      "text": "Left, even if the contrast is named Left\ngreater than Right.",
+      "startSeconds": 112.78994039999999,
+      "endSeconds": 117.10742793333333,
+      "startFrame": 3383,
+      "endFrame": 3514
     },
     {
       "index": 32,
-      "text": "Then inspect the design preview.",
-      "startSeconds": 198.45096931914895,
-      "endSeconds": 200.63365857446811,
-      "startFrame": 5953,
-      "endFrame": 6020
+      "text": "Write the EV order, read each contrast as\na sentence, and point from every weight to",
+      "startSeconds": 117.10742793333333,
+      "endSeconds": 123.38740979999999,
+      "startFrame": 3513,
+      "endFrame": 3702
     },
     {
       "index": 33,
-      "text": "Empty columns, swapped timing files, duplicated predictors, or unexpected derivatives can all change the interpretation.",
-      "startSeconds": 200.63365857446811,
-      "endSeconds": 207.18172634042557,
-      "startFrame": 6019,
-      "endFrame": 6216
+      "text": "its displayed column before running FEAT.",
+      "startSeconds": 123.3874098,
+      "endSeconds": 125.742403,
+      "startFrame": 3701,
+      "endFrame": 3773
     },
     {
       "index": 34,
-      "text": "A plausible activation map cannot repair a mislabeled hypothesis.",
-      "startSeconds": 207.18172634042554,
-      "endSeconds": 211.110567,
-      "startFrame": 6215,
-      "endFrame": 6334
+      "text": "In FEAT, open Full model setup, then\nContrasts and F-tests.",
+      "startSeconds": 126.59240299999999,
+      "endSeconds": 130.90190934615384,
+      "startFrame": 3797,
+      "endFrame": 3928
     },
     {
       "index": 35,
-      "text": "In FEAT, open Full model setup and then Contrasts and F-tests.",
-      "startSeconds": 211.96056700000003,
-      "endSeconds": 216.65240920879123,
-      "startFrame": 6358,
-      "endFrame": 6500
+      "text": "Give each contrast a scientific name,\nenter weights in the displayed EV order,",
+      "startSeconds": 130.90190934615384,
+      "endSeconds": 136.50426759615385,
+      "startFrame": 3927,
+      "endFrame": 4096
     },
     {
       "index": 36,
-      "text": "Give each contrast a scientific name rather than a generic number.",
-      "startSeconds": 216.65240920879123,
-      "endSeconds": 221.34425141758243,
-      "startFrame": 6499,
-      "endFrame": 6641
+      "text": "and inspect the arrows in the design\npreview.",
+      "startSeconds": 136.50426759615385,
+      "endSeconds": 139.95187267307693,
+      "startFrame": 4095,
+      "endFrame": 4199
     },
     {
       "index": 37,
-      "text": "Enter the weights in the displayed EV order.",
-      "startSeconds": 221.34425141758246,
-      "endSeconds": 224.75650029670334,
-      "startFrame": 6640,
-      "endFrame": 6743
+      "text": "Before selecting Done, compare every row\nwith the analysis plan and save the design",
+      "startSeconds": 139.9518726730769,
+      "endSeconds": 145.9851815576923,
+      "startFrame": 4198,
+      "endFrame": 4380
     },
     {
       "index": 38,
-      "text": "For the source lab, the model contains Left and Right EVs, followed by contrasts for each condition, both directional differences, and a combined positive effect.",
-      "startSeconds": 224.75650029670334,
-      "endSeconds": 235.4197780439561,
-      "startFrame": 6742,
-      "endFrame": 7063
+      "text": "file so the model specification remains\nreproducible.",
+      "startSeconds": 145.9851815576923,
+      "endSeconds": 149.001836,
+      "startFrame": 4379,
+      "endFrame": 4471
     },
     {
       "index": 39,
-      "text": "The screenshot here is evidence from the real teaching workflow, not a generated interface.",
-      "startSeconds": 235.41977804395606,
-      "endSeconds": 241.3912135824176,
-      "startFrame": 7062,
-      "endFrame": 7242
+      "text": "For each contrast, FEAT writes several\nrelated outputs.",
+      "startSeconds": 149.851836,
+      "endSeconds": 153.38008167272727,
+      "startFrame": 4495,
+      "endFrame": 4602
     },
     {
       "index": 40,
-      "text": "Before selecting Done, compare every row with the approved analysis plan and save the design file so the model specification remains reproducible.",
-      "startSeconds": 241.3912135824176,
-      "endSeconds": 250.77489800000004,
-      "startFrame": 7241,
-      "endFrame": 7524
+      "text": "The cope is the weighted contrast estimate\nin model units.",
+      "startSeconds": 153.38008167272727,
+      "endSeconds": 157.79038876363637,
+      "startFrame": 4601,
+      "endFrame": 4734
     },
     {
       "index": 41,
-      "text": "For each contrast, FEAT writes several related outputs.",
-      "startSeconds": 251.62489800000003,
-      "endSeconds": 255.45978902040818,
-      "startFrame": 7548,
-      "endFrame": 7664
+      "text": "The varcope quantifies uncertainty in that\nestimate.",
+      "startSeconds": 157.79038876363634,
+      "endSeconds": 160.8776037272727,
+      "startFrame": 4733,
+      "endFrame": 4827
     },
     {
       "index": 42,
-      "text": "The cope is the contrast of parameter estimates: the weighted effect in the units of the model.",
-      "startSeconds": 255.45978902040818,
-      "endSeconds": 263.6089324387755,
-      "startFrame": 7663,
-      "endFrame": 7909
+      "text": "A t statistic compares the cope with its\nstandard error, and FEAT converts it to a",
+      "startSeconds": 160.8776037272727,
+      "endSeconds": 167.93409507272725,
+      "startFrame": 4826,
+      "endFrame": 5039
     },
     {
       "index": 43,
-      "text": "The varcope describes uncertainty in that contrast estimate.",
-      "startSeconds": 263.6089324387755,
-      "endSeconds": 267.4438234591837,
-      "startFrame": 7908,
-      "endFrame": 8024
+      "text": "z statistic for inference.",
+      "startSeconds": 167.93409507272727,
+      "endSeconds": 169.6982179090909,
+      "startFrame": 5038,
+      "endFrame": 5091
     },
     {
       "index": 44,
-      "text": "Dividing the cope by its standard error produces a t statistic, which FEAT converts to a z statistic for inference and reporting.",
-      "startSeconds": 267.4438234591837,
-      "endSeconds": 277.98977376530615,
-      "startFrame": 8023,
-      "endFrame": 8340
+      "text": "A z-statistic map is standardized\nevidence, not an effect-size map.",
+      "startSeconds": 169.69821790909089,
+      "endSeconds": 174.108525,
+      "startFrame": 5090,
+      "endFrame": 5224
     },
     {
       "index": 45,
-      "text": "A z-statistic map is therefore standardized evidence, not an effect-size map.",
-      "startSeconds": 277.98977376530615,
-      "endSeconds": 283.2627489183674,
-      "startFrame": 8339,
-      "endFrame": 8498
+      "text": "Before running FEAT, list the EVs in\nmatrix order and state the scientific",
+      "startSeconds": 174.958525,
+      "endSeconds": 180.9553042857143,
+      "startFrame": 5248,
+      "endFrame": 5429
     },
     {
       "index": 46,
-      "text": "Higher-level analyses use the cope together with its varcope.",
-      "startSeconds": 283.2627489183674,
-      "endSeconds": 287.5770013163266,
-      "startFrame": 8497,
-      "endFrame": 8628
+      "text": "question for every contrast.",
+      "startSeconds": 180.9553042857143,
+      "endSeconds": 182.80046714285717,
+      "startFrame": 5428,
+      "endFrame": 5485
     },
     {
       "index": 47,
-      "text": "Thresholded z-statistic images help visualize inferential results, but interpretation should begin only after checking preprocessing, registration, the design matrix, and the contrast definition.",
-      "startSeconds": 287.5770013163266,
-      "endSeconds": 298.60231300000004,
-      "startFrame": 8627,
-      "endFrame": 8959
+      "text": "Translate the sentence into weights, then\ntranslate the weights back into a",
+      "startSeconds": 182.80046714285714,
+      "endSeconds": 188.33595571428572,
+      "startFrame": 5484,
+      "endFrame": 5651
     },
     {
       "index": 48,
-      "text": "Before you run FEAT, complete five checks.",
-      "startSeconds": 299.452313,
-      "endSeconds": 302.73284870833334,
-      "startFrame": 8983,
-      "endFrame": 9082
+      "text": "sentence.",
+      "startSeconds": 188.33595571428572,
+      "endSeconds": 188.79724642857144,
+      "startFrame": 5650,
+      "endFrame": 5664
     },
     {
       "index": 49,
-      "text": "First, list EVs in matrix order.",
-      "startSeconds": 302.73284870833334,
-      "endSeconds": 305.5447364583333,
-      "startFrame": 9081,
-      "endFrame": 9167
+      "text": "Inspect the design matrix and contrast\narrows.",
+      "startSeconds": 188.79724642857144,
+      "endSeconds": 192.02628142857145,
+      "startFrame": 5663,
+      "endFrame": 5761
     },
     {
       "index": 50,
-      "text": "Second, state the scientific question for every contrast.",
-      "startSeconds": 305.5447364583333,
-      "endSeconds": 309.293920125,
-      "startFrame": 9166,
-      "endFrame": 9279
+      "text": "Finally, distinguish the effect estimate,\nits uncertainty, and the standardized",
+      "startSeconds": 192.02628142857145,
+      "endSeconds": 196.6391885714286,
+      "startFrame": 5760,
+      "endFrame": 5900
     },
     {
       "index": 51,
-      "text": "Third, translate the sentence into weights and then translate the weights back into a sentence.",
-      "startSeconds": 309.293920125,
-      "endSeconds": 316.3236395,
-      "startFrame": 9278,
-      "endFrame": 9490
+      "text": "statistic.",
+      "startSeconds": 196.63918857142858,
+      "endSeconds": 197.1004792857143,
+      "startFrame": 5899,
+      "endFrame": 5914
     },
     {
       "index": 52,
-      "text": "Fourth, inspect the design matrix and contrast arrows visually.",
-      "startSeconds": 316.3236395,
-      "endSeconds": 320.541471125,
-      "startFrame": 9489,
-      "endFrame": 9617
+      "text": "The model is ready when the design,\nweights, and scientific language tell the",
+      "startSeconds": 197.1004792857143,
+      "endSeconds": 203.0972585714286,
+      "startFrame": 5913,
+      "endFrame": 6093
     },
     {
       "index": 53,
-      "text": "Fifth, distinguish the effect estimate, its uncertainty, and the standardized statistic you will later report.",
-      "startSeconds": 320.541471125,
-      "endSeconds": 327.5711905,
-      "startFrame": 9616,
-      "endFrame": 9828
-    },
-    {
-      "index": 54,
-      "text": "If the design, weights, and scientific language tell the same story, the contrast is ready to run.",
-      "startSeconds": 327.5711905,
-      "endSeconds": 335.53820579166666,
-      "startFrame": 9827,
-      "endFrame": 10067
-    },
-    {
-      "index": 55,
-      "text": "Next, the hands-on walkthrough will configure these contrasts in a live Neurodesk session and inspect the corresponding FEAT outputs.",
-      "startSeconds": 335.53820579166666,
-      "endSeconds": 344.442517,
-      "startFrame": 10066,
-      "endFrame": 10334
+      "text": "same story.",
+      "startSeconds": 203.09725857142857,
+      "endSeconds": 204.01984,
+      "startFrame": 6092,
+      "endFrame": 6121
     }
   ]
 }

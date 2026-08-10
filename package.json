@@ -12,11 +12,19 @@
     "test:watch": "vitest",
     "video:studio": "remotion studio production/video/src/index.ts",
     "video:voices": "node production/video/scripts/generate-voice-auditions.mjs",
-    "video:prepare:concepts": "node production/video/scripts/generate-concept-library.mjs && node production/video/scripts/generate-concept-narration.mjs",
+    "video:validate": "node production/video/scripts/validate-video-library.mjs",
+    "video:validate:generated": "node production/video/scripts/validate-video-library.mjs --require-concept-generated --require-contrast-generated",
+    "video:validate:masters": "node production/video/scripts/validate-video-library.mjs --require-concept-generated --require-contrast-generated --require-masters",
+    "video:prepare:concepts": "node production/video/scripts/generate-concept-library.mjs && npm run video:validate && node production/video/scripts/generate-concept-narration.mjs && node production/video/scripts/validate-video-library.mjs --require-concept-generated",
     "video:render:concepts": "npm run video:prepare:concepts && node production/video/scripts/render-concept-batch.mjs",
     "video:render:concepts:prepared": "node production/video/scripts/render-concept-batch.mjs",
-    "video:narrate:contrasts": "node production/video/scripts/generate-narration.mjs production/video/content/understanding-contrasts.json",
-    "video:render:contrasts": "npm run video:narrate:contrasts && remotion render production/video/src/index.ts UnderstandingContrasts production/video/output/understanding-contrasts.mp4 --codec=h264 --crf=18 --concurrency=4"
+    "video:narrate:contrasts": "node production/video/scripts/generate-narration.mjs production/video/content/understanding-contrasts.json && node production/video/scripts/validate-video-library.mjs --require-contrast-generated",
+    "video:prepare:v2": "npm run video:prepare:concepts && npm run video:narrate:contrasts && npm run video:validate:generated",
+    "video:review:pilots": "node production/video/scripts/render-review-frames.mjs what-is-a-nifti-image what-is-a-glm introduction-to-fsleyes reviewing-complete-feat-report",
+    "video:review:v2": "node production/video/scripts/render-review-frames.mjs",
+    "video:render:pilots": "npm run video:prepare:v2 && node production/video/scripts/render-concept-batch.mjs what-is-a-nifti-image what-is-a-glm introduction-to-fsleyes reviewing-complete-feat-report",
+    "video:render:contrasts": "npm run video:narrate:contrasts && remotion render production/video/src/index.ts UnderstandingContrasts production/video/output/understanding-contrasts-v2.mp4 --codec=h264 --crf=18 --concurrency=4 --overwrite",
+    "video:render:v2": "npm run video:prepare:v2 && node production/video/scripts/render-concept-batch.mjs && remotion render production/video/src/index.ts UnderstandingContrasts production/video/output/understanding-contrasts-v2.mp4 --codec=h264 --crf=18 --concurrency=4 --overwrite && npm run video:validate:masters"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.4",

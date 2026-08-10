@@ -1,0 +1,116 @@
+1
+00:00:00,000 --> 00:00:06,302
+The Brain Imaging Data Structure, or BIDS,
+uses predictable folders and filename
+
+2
+00:00:06,302 --> 00:00:06,827
+entities.
+
+3
+00:00:06,827 --> 00:00:13,129
+Those labels tell people and software
+which participant, session, task, run, and
+
+4
+00:00:13,129 --> 00:00:15,230
+modality a file represents.
+
+5
+00:00:15,230 --> 00:00:19,956
+The structure reduces ambiguity and makes
+automated workflows safer.
+
+6
+00:00:20,806 --> 00:00:25,458
+Read a BIDS filename as a sequence of
+questions.
+
+7
+00:00:25,458 --> 00:00:28,042
+Sub identifies the participant label.
+
+8
+00:00:28,042 --> 00:00:30,109
+Task identifies the paradigm.
+
+9
+00:00:30,109 --> 00:00:32,176
+Run distinguishes repeated acquisitions.
+
+10
+00:00:32,176 --> 00:00:38,895
+The suffix, such as bold or T one w,
+identifies the data type.
+
+11
+00:00:38,895 --> 00:00:43,030
+Underscores separate entities; hyphens
+separate keys from values.
+
+12
+00:00:43,880 --> 00:00:46,812
+A functional NIfTI does not stand alone.
+
+13
+00:00:46,812 --> 00:00:52,258
+Its matching events table describes what
+happened during the run, and the JSON
+
+14
+00:00:52,258 --> 00:00:53,934
+sidecar records acquisition metadata.
+
+15
+00:00:53,934 --> 00:00:59,380
+Shared entities in the filenames let you
+connect those files without relying on
+
+16
+00:00:59,380 --> 00:00:59,799
+memory.
+
+17
+00:01:00,649 --> 00:01:05,758
+BIDS structure supports responsible
+sharing only when participant labels are
+
+18
+00:01:05,758 --> 00:01:06,269
+de-identified.
+
+19
+00:01:06,269 --> 00:01:11,888
+Do not place names, medical-record
+numbers, or other direct identifiers in
+
+20
+00:01:11,888 --> 00:01:12,399
+filenames.
+
+21
+00:01:12,399 --> 00:01:18,530
+Brain images may also require defacing and
+institutional review before they are
+
+22
+00:01:18,530 --> 00:01:19,041
+shared.
+
+23
+00:01:19,891 --> 00:01:22,598
+BIDS makes file identity explicit.
+
+24
+00:01:22,598 --> 00:01:29,096
+Decode the entities, follow shared labels
+across images, events, and metadata, and
+
+25
+00:01:29,096 --> 00:01:30,720
+protect participant identity.
+
+26
+00:01:30,720 --> 00:01:37,760
+Good structure is not cosmetic; it is part
+of reproducible and responsible analysis.

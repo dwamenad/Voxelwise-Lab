@@ -1,72 +1,111 @@
 # Lesson video production
 
-This directory contains the reproducible source for Voxelwise Lab lesson videos.
-Rendered video masters and generated narration audio are intentionally excluded
-from Git; final masters belong in Google Drive during review and in the streaming
-provider after publication.
+This directory contains the reproducible v2 production system for the 19
+Voxelwise Lab concept and quality-control videos. Rendered masters and generated
+narration audio are intentionally excluded from Git; approved masters belong in
+review storage and, later, the streaming provider.
 
-## Understanding contrasts
+## Editorial and attribution policy
 
-The pilot is a 1920x1080, 30 fps concept video for the lesson
-`first-level-fmri-analysis-feat/understanding-contrasts`. Its scientific content
-is grounded in `tubric/2026s-fmri-class`, especially `Lab-3_FSL_Level1.md` and
-`Lab-X_Contrast.md`.
+Learner-facing frames use concise teaching copy, native scientific diagrams,
+and authentic interface evidence. Detailed lecture, slide, course-lab, and
+asset references remain in each scene's `sourceRefs` as internal production
+metadata. They are not rendered into frames, captions, or transcripts.
 
-Generate narration, timing data, captions, and a local render:
+Learner credits and the acknowledgement slide are disabled. A future
+acknowledgement can be designed and enabled after the credit language is
+approved.
 
-```sh
-npm run video:render:contrasts
-```
+## Production format
 
-Open the Remotion composition for visual iteration:
+- 1920×1080 at 30 fps
+- H.264 video with AAC audio
+- Daniel voice at 148 words per minute
+- readable sentence captions, limited to two 42-character lines per cue
+- normal acronyms in captions and transcripts; pronunciation expansion only in
+  the hidden TTS input
 
-```sh
-npm run video:studio
-```
+The original v1 concept masters remain under
+`production/video/output/concepts/masters/`. V2 renders are written separately
+to `production/video/output/concepts/masters-v2/`, with the contrasts master at
+`production/video/output/understanding-contrasts-v2.mp4`.
 
-The render command uses the macOS `say` and `afconvert` utilities for the pilot
-voice track. The generated timing manifest is committed so the composition is
-inspectable without guessing scene boundaries. The final transcript and SRT are
-kept under `production/video/output`; MP4 and preview PNG files are ignored.
+## Prepare and validate
 
-Before publication, complete an external scientific review, replace or approve
-the pilot narration, upload the approved master to the streaming provider, and
-set the lesson's video ID.
-
-## Concept video library
-
-The shared concept-video system produces the lessons that do not depend on a
-live Neurodesk walkthrough. It currently covers the eleven production-ready
-Foundations lessons, six First-Level FEAT concept lessons, and the completed
-FEAT-report quality-control lesson. Every video uses the selected Daniel voice
-at 148 words per minute and ships with a transcript and SRT captions.
-
-Prepare or refresh the library content, narration, timings, captions, and
-transcripts:
+Generate the 18-video concept library, all narration clips, timing manifests,
+captions, and transcripts, then prepare the contrasts lesson:
 
 ```sh
-npm run video:prepare:concepts
+npm run video:prepare:v2
 ```
 
-Render every prepared 1920x1080 master:
+Validate source copy and internal-reference policy:
 
 ```sh
-npm run video:render:concepts:prepared
+npm run video:validate
 ```
 
-Render one or more named lessons without regenerating narration:
+Validate all generated narration, captions, and transcripts:
+
+```sh
+npm run video:validate:generated
+```
+
+## Visual review
+
+Create one representative frame per scene plus a contact sheet for every video:
+
+```sh
+npm run video:review:v2
+```
+
+Create contact sheets for the four visual pilots only:
+
+```sh
+npm run video:review:pilots
+```
+
+Review artifacts are generated under `production/video/output/review-v2/` and
+are ignored by Git.
+
+## Render
+
+Render every v2 master and run the encoded-media validation:
+
+```sh
+npm run video:render:v2
+```
+
+Render one or more prepared concept lessons without regenerating narration:
 
 ```sh
 npm run video:render:concepts:prepared -- what-is-fsl what-is-a-glm
 ```
 
-The source catalog is `production/video/content/concept-library.json`, and the
-generated timing manifest is `production/video/generated/concept-library.json`.
-Per-lesson transcripts and captions are committed under
-`production/video/output/concepts/<slug>/`; rendered masters remain ignored and
-are delivered through Google Drive for review.
+Render only the contrasts lesson:
 
-Live FEAT walkthroughs remain separate from this library because their visual
-evidence must be recorded in an approved Neurodesk session. Outline-only
-lessons are also held back until their scientific teaching content is expanded
-and reviewed; the renderer is ready for them once that source material exists.
+```sh
+npm run video:render:contrasts
+```
+
+The master validator checks all 19 files for dimensions, frame rate, codecs,
+browser playback, seeking support, and duration agreement with the generated
+timelines:
+
+```sh
+npm run video:validate:masters
+```
+
+## Source locations
+
+- durable editorial source: `production/video/content/editorial-v2.mjs`
+- generated concept catalog: `production/video/content/concept-library.json`
+- contrasts source: `production/video/content/understanding-contrasts.json`
+- shared renderer: `production/video/src/concept-lesson.tsx`
+- scientific visuals: `production/video/src/components/visuals.tsx`
+- narration utilities: `production/video/scripts/narration-utils.mjs`
+- implementation prompt: `production/video/prompts/implement-smith-grounded-video-v2.md`
+
+Live Neurodesk and FEAT walkthroughs remain separate because their visual
+evidence must be recorded in an approved environment. This v2 set contains only
+the videos that can be produced without that live approval.

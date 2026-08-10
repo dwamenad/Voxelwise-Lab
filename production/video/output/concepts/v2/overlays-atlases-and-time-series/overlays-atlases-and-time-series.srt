@@ -1,0 +1,112 @@
+1
+00:00:00,000 --> 00:00:03,471
+A single coordinate can support several
+observations.
+
+2
+00:00:03,471 --> 00:00:05,455
+Overlays compare spatial relationships.
+
+3
+00:00:05,455 --> 00:00:09,918
+A time-series plot shows how signal
+changes across volumes.
+
+4
+00:00:09,918 --> 00:00:13,389
+An atlas lookup supplies a reference
+label.
+
+5
+00:00:13,389 --> 00:00:19,340
+These sources complement one another, but
+none should be treated as unquestionable
+
+6
+00:00:19,340 --> 00:00:20,331
+ground truth.
+
+7
+00:00:21,181 --> 00:00:24,854
+The upper overlay can hide the image
+beneath it.
+
+8
+00:00:24,854 --> 00:00:29,751
+Use opacity, color maps, and display
+ranges to expose boundaries in both
+
+9
+00:00:29,751 --> 00:00:30,159
+images.
+
+10
+00:00:30,159 --> 00:00:35,464
+A good display does not make alignment
+true; it makes agreement and disagreement
+
+11
+00:00:35,464 --> 00:00:36,689
+easier to inspect.
+
+12
+00:00:37,539 --> 00:00:42,991
+In a four-dimensional BOLD image, each
+voxel contains a sequence of values.
+
+13
+00:00:42,991 --> 00:00:46,626
+The plot shows that sequence across the
+run.
+
+14
+00:00:46,626 --> 00:00:51,624
+Spikes, slow drift, and task-related
+structure are different patterns; seeing a
+
+15
+00:00:51,624 --> 00:00:54,805
+change does not yet identify its cause.
+
+16
+00:00:55,655 --> 00:01:01,166
+An atlas label is a reference derived from
+a template or population.
+
+17
+00:01:01,166 --> 00:01:04,839
+It may be probabilistic, and individual
+anatomy varies.
+
+18
+00:01:04,839 --> 00:01:09,432
+Confirm the coordinate space, inspect the
+participant's anatomy, and report
+
+19
+00:01:09,432 --> 00:01:14,024
+uncertainty rather than presenting an
+atlas boundary as exact truth.
+
+20
+00:01:14,874 --> 00:01:19,161
+Use overlays, time series, and atlas
+labels together.
+
+21
+00:01:19,161 --> 00:01:23,984
+Confirm spatial alignment, inspect
+temporal behavior, and keep atlas
+
+22
+00:01:23,984 --> 00:01:25,056
+uncertainty visible.
+
+23
+00:01:25,056 --> 00:01:31,486
+A defensible interpretation states what
+each view contributes and what it cannot
+
+24
+00:01:31,486 --> 00:01:32,022
+establish.

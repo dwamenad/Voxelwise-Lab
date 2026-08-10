@@ -1,0 +1,116 @@
+1
+00:00:00,000 --> 00:00:03,955
+Experimental timing files translate the
+task into model input.
+
+2
+00:00:03,955 --> 00:00:10,107
+Each row states an onset in seconds, a
+duration in seconds, and an amplitude.
+
+3
+00:00:10,107 --> 00:00:16,260
+Each condition usually receives its own
+file so the design can form a separate
+
+4
+00:00:16,260 --> 00:00:17,139
+explanatory variable.
+
+5
+00:00:17,989 --> 00:00:23,039
+The first column is onset measured from
+the start of the run.
+
+6
+00:00:23,039 --> 00:00:24,723
+The second is duration.
+
+7
+00:00:24,723 --> 00:00:30,194
+The third is amplitude, often one for a
+simple condition but variable for
+
+8
+00:00:30,194 --> 00:00:31,036
+parametric designs.
+
+9
+00:00:31,036 --> 00:00:35,245
+These values describe the neural-event
+model before convolution with the
+
+10
+00:00:35,245 --> 00:00:36,087
+hemodynamic response.
+
+11
+00:00:36,937 --> 00:00:39,842
+Read each row against the event table.
+
+12
+00:00:39,842 --> 00:00:42,747
+Confirm the units are seconds, not
+volumes.
+
+13
+00:00:42,747 --> 00:00:47,313
+Check that onsets are nonnegative,
+durations are plausible, and no event
+
+14
+00:00:47,313 --> 00:00:48,973
+extends beyond the run.
+
+15
+00:00:48,973 --> 00:00:54,783
+Then plot or preview the resulting model
+rather than trusting the text file alone.
+
+16
+00:00:55,633 --> 00:01:00,162
+Timing is part of experimental design, not
+file formatting.
+
+17
+00:01:00,162 --> 00:01:03,684
+Blocked designs often provide strong
+detection power.
+
+18
+00:01:03,684 --> 00:01:08,212
+Jittered event-related designs improve
+separation and estimation of individual
+
+19
+00:01:08,212 --> 00:01:08,716
+events.
+
+20
+00:01:08,716 --> 00:01:12,741
+Mixed designs can model sustained and
+transient effects.
+
+21
+00:01:12,741 --> 00:01:17,270
+The best choice depends on the hypothesis
+and constraints.
+
+22
+00:01:18,120 --> 00:01:22,446
+A three-column file is a compact model of
+the experiment.
+
+23
+00:01:22,446 --> 00:01:27,204
+Encode onset, duration, and amplitude
+accurately; validate the rows against the
+
+24
+00:01:27,204 --> 00:01:32,829
+run; and remember that timing determines
+which effects the design can detect and
+
+25
+00:01:32,829 --> 00:01:33,261
+estimate.

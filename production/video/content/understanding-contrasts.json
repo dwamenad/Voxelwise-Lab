@@ -1,65 +1,216 @@
 {
+  "version": 2,
   "slug": "understanding-contrasts",
-  "course": "First-level fMRI analysis with FEAT",
-  "lesson": "Understanding contrasts",
+  "compositionId": "UnderstandingContrasts",
+  "courseSlug": "first-level-fmri-analysis-feat",
+  "courseTitle": "First-Level fMRI Analysis in FEAT",
+  "courseLabel": "First-Level FEAT",
+  "catalogNumber": "FSL 301",
+  "moduleTitle": "Understanding contrasts",
+  "lessonNumber": "7.1",
   "title": "Understanding contrasts in FSL FEAT",
-  "subtitle": "Turn parameter estimates into focused hypothesis tests",
+  "description": "Translate a scientific comparison into contrast weights, then distinguish effect, uncertainty, and standardized evidence.",
+  "videoType": "concept",
+  "accent": "#ffbf69",
   "voice": "Daniel",
   "speechRate": 148,
   "fps": 30,
   "source": {
     "repository": "tubric/2026s-fmri-class",
-    "files": ["Lab-3_FSL_Level1.md", "Lab-X_Contrast.md"],
-    "license": "MIT"
+    "file": "Lab-3_FSL_Level1.md",
+    "section": "Contrasts",
+    "license": "MIT",
+    "visibility": "internal"
+  },
+  "editorialPolicy": {
+    "learnerCreditsEnabled": false,
+    "acknowledgementSlideEnabled": false,
+    "sourceReferences": "internal-only"
   },
   "scenes": [
     {
       "id": "opening",
-      "eyebrow": "FSL Academy · Concept video",
-      "title": "A contrast is a question",
-      "narration": "A first-level model can contain several explanatory variables, but a scientific result usually begins with a narrower question. Was the response during left-button trials greater than the response during right-button trials? Was one condition positively related to the measured BOLD signal? A contrast turns a question like that into a precise set of weights. In this lesson, we will connect those weights to the parameter estimates in the general linear model, interpret baseline and difference contrasts, and identify the quality-control checks that prevent a correct calculation from answering the wrong question."
+      "kind": "opening",
+      "layout": "opening",
+      "display": {
+        "eyebrow": "Contrasts",
+        "title": "A contrast is a question",
+        "body": "Weights convert a scientific comparison into a testable model statement."
+      },
+      "visual": {
+        "type": "contrast-weights",
+        "items": [
+          { "label": "Left", "value": "1", "tone": "accent" },
+          { "label": "Right", "value": "−1", "tone": "coral" }
+        ]
+      },
+      "narrationText": "A first-level model may contain several explanatory variables, but a scientific result begins with a focused question. Was the response during left-button trials greater than the response during right-button trials? A contrast turns that comparison into precise weights. Those weights must agree with the model columns and with the words used to describe the hypothesis.",
+      "sourceRefs": [
+        { "type": "lecture", "deck": "L10_StatisticalAnalysis", "slides": [17], "note": "Contrast definition", "visibility": "internal" },
+        { "type": "course-lab", "file": "Lab-3_FSL_Level1.md", "section": "Contrasts", "visibility": "internal" }
+      ]
     },
     {
       "id": "model-to-question",
-      "eyebrow": "From model to hypothesis",
-      "title": "FEAT estimates the model first",
-      "narration": "At each voxel, FEAT fits the general linear model. The design matrix contains the explanatory variables, or EVs, and beta contains one estimated coefficient for each model column. Those coefficients describe how strongly each predictor contributes to the observed signal after accounting for the other predictors. A contrast does not refit the model and does not change the original beta estimates. Instead, it defines a linear combination of selected estimates. In compact notation, the contrast estimate is c transpose beta. The vector c contains the weights that encode the hypothesis."
+      "kind": "explanation",
+      "layout": "diagram",
+      "display": {
+        "eyebrow": "From model to hypothesis",
+        "title": "Estimate first, combine second",
+        "body": "A contrast combines fitted coefficients; it does not refit the model."
+      },
+      "visual": {
+        "type": "glm",
+        "items": [
+          { "label": "Y", "detail": "observed BOLD", "tone": "blue" },
+          { "label": "X", "detail": "design matrix", "tone": "accent" },
+          { "label": "β", "detail": "fitted coefficients", "tone": "coral" },
+          { "label": "ε", "detail": "residual error", "tone": "muted" }
+        ]
+      },
+      "narrationText": "At each voxel, FEAT fits the general linear model. The design matrix contains explanatory variables, and beta contains one fitted coefficient for each model column. A contrast does not change those estimates. It defines a linear combination, written as c transpose beta, where c is the vector of hypothesis weights.",
+      "sourceRefs": [
+        { "type": "lecture", "deck": "L10_StatisticalAnalysis", "slides": [17], "note": "Contrast as a linear combination", "visibility": "internal" },
+        { "type": "lecture", "deck": "L11_GLM", "slides": [4], "note": "GLM components", "visibility": "internal" },
+        { "type": "course-lab", "file": "Lab-X_Contrast.md", "section": "General linear contrasts", "visibility": "internal" }
+      ]
     },
     {
       "id": "baseline",
-      "eyebrow": "Two-condition example",
-      "title": "Single-condition contrasts",
-      "narration": "Suppose the original EV order is Left followed by Right. The contrast one, zero selects the Left coefficient. In the usual FEAT task model, it tests a positive Left effect relative to the implicit baseline represented by the rest of the model. Zero, one selects the Right coefficient. These are not direct comparisons between Left and Right. They ask whether each selected estimate is positive in its modeled context. A contrast using one, one tests the positive sum of the two coefficients. Using one half, one half gives their numerical average. Those scaled contrasts have the same t or z statistic, but their cope values are on different scales, so name and report them carefully."
+      "kind": "explanation",
+      "layout": "editorial",
+      "display": {
+        "eyebrow": "Single-condition tests",
+        "title": "Selection is not comparison",
+        "body": "With EVs ordered Left, Right, each vector answers a different question."
+      },
+      "visual": {
+        "type": "comparison",
+        "items": [
+          { "label": "[1, 0]", "value": "Left vs baseline", "tone": "accent" },
+          { "label": "[0, 1]", "value": "Right vs baseline", "tone": "blue" },
+          { "label": "[1, 1]", "value": "Combined positive", "tone": "coral" }
+        ]
+      },
+      "narrationText": "Suppose the explanatory-variable order is Left followed by Right. The weights one, zero select the Left coefficient. Zero, one select the Right coefficient. In a usual task model, each is tested relative to the implicit baseline represented by the rest of the model. Neither is a direct Left-versus-Right comparison. One, one tests their positive sum, while one half, one half tests the numerical average.",
+      "sourceRefs": [
+        { "type": "lecture", "deck": "L01_IntroMRIsafety", "slides": [56, 57, 58, 59], "note": "Baseline and condition contrasts", "visibility": "internal" },
+        { "type": "course-lab", "file": "Lab-X_Contrast.md", "section": "Single-condition contrasts", "visibility": "internal" }
+      ]
     },
     {
       "id": "differences",
-      "eyebrow": "Directional comparisons",
-      "title": "Difference contrasts",
-      "narration": "To compare Left directly with Right, use one, negative one. This computes beta Left minus beta Right. The null hypothesis is that the weighted difference equals zero, and the positive direction tests whether Left is greater than Right. Reversing the signs gives negative one, one, which tests Right greater than Left. A negative weight does not mean deactivation. It means that the corresponding coefficient is subtracted in this particular hypothesis. Direction matters: Left greater than Right and Right greater than Left are related, but they are not interchangeable labels for one contrast."
+      "kind": "explanation",
+      "layout": "diagram",
+      "display": {
+        "eyebrow": "Directional comparison",
+        "title": "Signs define direction",
+        "body": "A negative weight means subtraction within the hypothesis—not deactivation."
+      },
+      "visual": {
+        "type": "contrast-weights",
+        "items": [
+          { "label": "Left > Right", "value": "[1, −1]", "tone": "accent" },
+          { "label": "Right > Left", "value": "[−1, 1]", "tone": "coral" }
+        ]
+      },
+      "narrationText": "To compare Left directly with Right, use one, negative one. This computes beta Left minus beta Right and tests the positive direction, Left greater than Right. Reversing the signs tests Right greater than Left. A negative weight means that a coefficient is subtracted in this hypothesis. It does not, by itself, mean deactivation.",
+      "sourceRefs": [
+        { "type": "lecture", "deck": "L01_IntroMRIsafety", "slides": [60, 61, 62, 63, 64, 65], "note": "Directional contrasts", "visibility": "internal" },
+        { "type": "course-lab", "file": "Lab-X_Contrast.md", "section": "Difference contrasts", "visibility": "internal" }
+      ]
     },
     {
       "id": "ordering",
-      "eyebrow": "The most common preventable error",
-      "title": "Weights follow EV order",
-      "narration": "Contrast numbers only have meaning when they are aligned with the correct design-matrix columns. If the actual order is Right then Left, the weights one, negative one test Right greater than Left, even if the contrast is named Left greater than Right. Before running FEAT, write the EV order, read each contrast as a sentence, and point from every weight to its displayed column name. Then inspect the design preview. Empty columns, swapped timing files, duplicated predictors, or unexpected derivatives can all change the interpretation. A plausible activation map cannot repair a mislabeled hypothesis."
+      "kind": "quality-control",
+      "layout": "dashboard",
+      "display": {
+        "eyebrow": "Preventable error",
+        "title": "Weights follow EV order",
+        "body": "Correct numbers in the wrong columns test a different hypothesis."
+      },
+      "visual": {
+        "type": "ev-columns",
+        "items": [
+          { "label": "EV 1", "detail": "Left", "value": "1", "tone": "accent" },
+          { "label": "EV 2", "detail": "Right", "value": "−1", "tone": "coral" }
+        ]
+      },
+      "narrationText": "Contrast numbers only have meaning when aligned with the correct design-matrix columns. If the actual order is Right then Left, one, negative one tests Right greater than Left, even if the contrast is named Left greater than Right. Write the EV order, read each contrast as a sentence, and point from every weight to its displayed column before running FEAT.",
+      "sourceRefs": [
+        { "type": "lecture", "deck": "L10_StatisticalAnalysis", "slides": [17], "note": "Weights depend on column order", "visibility": "internal" },
+        { "type": "course-lab", "file": "Lab-3_FSL_Level1.md", "section": "Design and contrast review", "visibility": "internal" }
+      ]
     },
     {
       "id": "feat-interface",
-      "eyebrow": "Inside FEAT",
-      "title": "Name, enter, and verify",
-      "narration": "In FEAT, open Full model setup and then Contrasts and F-tests. Give each contrast a scientific name rather than a generic number. Enter the weights in the displayed EV order. For the source lab, the model contains Left and Right EVs, followed by contrasts for each condition, both directional differences, and a combined positive effect. The screenshot here is evidence from the real teaching workflow, not a generated interface. Before selecting Done, compare every row with the approved analysis plan and save the design file so the model specification remains reproducible."
+      "kind": "evidence",
+      "layout": "evidence",
+      "display": {
+        "eyebrow": "Inside FEAT",
+        "title": "Name, enter, verify",
+        "body": "Compare every contrast row with the approved model plan."
+      },
+      "visual": {
+        "type": "image-evidence",
+        "asset": "/curriculum/feat-contrasts.png",
+        "caption": "FEAT displays contrast weights in explanatory-variable order."
+      },
+      "narrationText": "In FEAT, open Full model setup, then Contrasts and F-tests. Give each contrast a scientific name, enter weights in the displayed EV order, and inspect the arrows in the design preview. Before selecting Done, compare every row with the analysis plan and save the design file so the model specification remains reproducible.",
+      "sourceRefs": [
+        { "type": "repository-asset", "asset": "/curriculum/feat-contrasts.png", "note": "Authentic FEAT contrast interface", "visibility": "internal" },
+        { "type": "course-lab", "file": "Lab-3_FSL_Level1.md", "section": "Contrasts", "visibility": "internal" }
+      ]
     },
     {
       "id": "outputs",
-      "eyebrow": "What FEAT writes",
-      "title": "Effect, uncertainty, and evidence",
-      "narration": "For each contrast, FEAT writes several related outputs. The cope is the contrast of parameter estimates: the weighted effect in the units of the model. The varcope describes uncertainty in that contrast estimate. Dividing the cope by its standard error produces a t statistic, which FEAT converts to a z statistic for inference and reporting. A z-statistic map is therefore standardized evidence, not an effect-size map. Higher-level analyses use the cope together with its varcope. Thresholded z-statistic images help visualize inferential results, but interpretation should begin only after checking preprocessing, registration, the design matrix, and the contrast definition."
+      "kind": "explanation",
+      "layout": "editorial",
+      "display": {
+        "eyebrow": "What FEAT writes",
+        "title": "Separate effect from evidence",
+        "body": "Related outputs answer different statistical questions."
+      },
+      "visual": {
+        "type": "comparison",
+        "items": [
+          { "label": "cope", "value": "estimated contrast", "tone": "accent" },
+          { "label": "varcope", "value": "uncertainty", "tone": "blue" },
+          { "label": "z statistic", "value": "standardized evidence", "tone": "coral" }
+        ]
+      },
+      "narrationText": "For each contrast, FEAT writes several related outputs. The cope is the weighted contrast estimate in model units. The varcope quantifies uncertainty in that estimate. A t statistic compares the cope with its standard error, and FEAT converts it to a z statistic for inference. A z-statistic map is standardized evidence, not an effect-size map.",
+      "sourceRefs": [
+        { "type": "lecture", "deck": "L10_StatisticalAnalysis", "slides": [17], "note": "Contrast inference", "visibility": "internal" },
+        { "type": "course-lab", "file": "Lab-3_FSL_Level1.md", "section": "FEAT statistical outputs", "visibility": "internal" }
+      ]
     },
     {
       "id": "checklist",
-      "eyebrow": "Pre-run quality control",
-      "title": "Make the model tell the same story",
-      "narration": "Before you run FEAT, complete five checks. First, list EVs in matrix order. Second, state the scientific question for every contrast. Third, translate the sentence into weights and then translate the weights back into a sentence. Fourth, inspect the design matrix and contrast arrows visually. Fifth, distinguish the effect estimate, its uncertainty, and the standardized statistic you will later report. If the design, weights, and scientific language tell the same story, the contrast is ready to run. Next, the hands-on walkthrough will configure these contrasts in a live Neurodesk session and inspect the corresponding FEAT outputs."
+      "kind": "summary",
+      "layout": "summary",
+      "display": {
+        "eyebrow": "Pre-run check",
+        "title": "Make every layer agree",
+        "bullets": [
+          "List EVs in matrix order",
+          "Translate words into weights",
+          "Verify the design preview"
+        ]
+      },
+      "visual": {
+        "type": "checklist",
+        "items": [
+          { "label": "Question", "detail": "State the comparison in words." },
+          { "label": "Weights", "detail": "Translate it using displayed EV order." },
+          { "label": "Evidence", "detail": "Distinguish cope, varcope, and z statistic." }
+        ]
+      },
+      "narrationText": "Before running FEAT, list the EVs in matrix order and state the scientific question for every contrast. Translate the sentence into weights, then translate the weights back into a sentence. Inspect the design matrix and contrast arrows. Finally, distinguish the effect estimate, its uncertainty, and the standardized statistic. The model is ready when the design, weights, and scientific language tell the same story.",
+      "sourceRefs": [
+        { "type": "lecture", "deck": "L01_IntroMRIsafety", "slides": [56, 57, 58, 59, 60, 61, 62, 63, 64, 65], "note": "Contrast interpretation summary", "visibility": "internal" },
+        { "type": "course-lab", "file": "Lab-3_FSL_Level1.md", "section": "Contrast quality control", "visibility": "internal" }
+      ]
     }
   ]
 }

@@ -4,17 +4,19 @@ import content from "../content/understanding-contrasts.json";
 import conceptTimingJson from "../generated/concept-library.json";
 import timing from "../generated/understanding-contrasts.json";
 import { ConceptLesson, type ConceptTiming, type ConceptVideo } from "./concept-lesson";
-import { UnderstandingContrasts } from "./understanding-contrasts";
 
 const conceptLibrary = conceptLibraryJson as { videos: ConceptVideo[] };
 const conceptTiming = conceptTimingJson as { videos: ConceptTiming[] };
+const contrastVideo = content as ConceptVideo;
+const contrastTiming = timing as unknown as ConceptTiming;
 
 export const VideoRoot = () => (
   <>
     <Composition
       id="UnderstandingContrasts"
-      component={UnderstandingContrasts}
-      durationInFrames={Math.max(1, timing.totalFrames)}
+      component={ConceptLesson}
+      defaultProps={{ video: contrastVideo, timing: contrastTiming }}
+      durationInFrames={Math.max(1, contrastTiming.totalFrames)}
       fps={content.fps}
       width={1920}
       height={1080}

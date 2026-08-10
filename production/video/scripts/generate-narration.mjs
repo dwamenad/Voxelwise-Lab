@@ -2,37 +2,43 @@ import { execFile } from "node:child_process";
 import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { promisify } from "node:util";
+import {
+  formatTimestamp,
+  parseDuration,
+  splitCaptionCues,
+  toTtsText,
+  wordCount,
+} from "./narration-utils.mjs";
 
 const run = promisify(execFile);
 const projectRoot = process.cwd();
-const contentPath = path.resolve(projectRoot, process.argv[2] ?? "production/video/content/understanding-contrasts.json");
+const contentPath = path.resolve(
+  projectRoot,
+  process.argv[2] ?? "production/video/content/understanding-contrasts.json",
+);
 const content = JSON.parse(await readFile(contentPath, "utf8"));
-const audioDirectory = path.join(projectRoot, "public", "video-production", content.slug, "audio");
+const audioDirectory = path.join(
+  projectRoot,
+  "public",
+  "video-production",
+  content.slug,
+  "audio-v2",
+);
 const generatedDirectory = path.join(projectRoot, "production", "video", "generated");
-const outputDirectory = path.join(projectRoot, "production", "video", "output");
+const outputDirectory = path.join(
+  projectRoot,
+  "production",
+  "video",
+  "output",
+  "v2",
+  content.slug,
+);
 
 await Promise.all([
   mkdir(audioDirectory, { recursive: true }),
   mkdir(generatedDirectory, { recursive: true }),
   mkdir(outputDirectory, { recursive: true }),
 ]);
-
-const parseDuration = (afinfoOutput) => {
-  const match = afinfoOutput.match(/estimated duration:\s*([\d.]+)\s*sec/i);
-  if (!match) throw new Error(`Unable to read audio duration from afinfo output:\n${afinfoOutput}`);
-  return Number(match[1]);
-};
-
-const formatTimestamp = (seconds) => {
-  const milliseconds = Math.max(0, Math.round(seconds * 1000));
-  const hours = Math.floor(milliseconds / 3_600_000);
-  const minutes = Math.floor((milliseconds % 3_600_000) / 60_000);
-  const secs = Math.floor((milliseconds % 60_000) / 1000);
-  const millis = milliseconds % 1000;
-  return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(secs).padStart(2, "0")},${String(millis).padStart(3, "0")}`;
-};
-
-const splitSentences = (text) => text.match(/[^.!?]+[.!?]+|[^.!?]+$/g)?.map((sentence) => sentence.trim()).filter(Boolean) ?? [text];
 
 let timelineSeconds = 0;
 let timelineFrames = 0;
@@ -42,43 +48,55 @@ const cues = [];
 const srtBlocks = [];
 
 for (const scene of content.scenes) {
+  const narrationText = scene.narrationText;
+  if (!narrationText) throw new Error(`Missing narrationText: ${content.slug}/${scene.id}`);
+
   const aiffPath = path.join(audioDirectory, `${scene.id}.aiff`);
   const m4aPath = path.join(audioDirectory, `${scene.id}.m4a`);
 
-  await rm(m4aPath, { force: true });
-  await run("say", ["-v", content.voice, "-r", String(content.speechRate), "-o", aiffPath, scene.narration]);
+  await Promise.all([rm(aiffPath, { force: true }), rm(m4aPath, { force: true })]);
+  await run("say", [
+    "-v",
+    content.voice,
+    "-r",
+    String(content.speechRate),
+    "-o",
+    aiffPath,
+    toTtsText(narrationText),
+  ]);
   await run("afconvert", [aiffPath, m4aPath, "-f", "m4af", "-d", "aac "]);
   const { stdout } = await run("afinfo", [m4aPath]);
   const audioSeconds = parseDuration(stdout);
   const padSeconds = 0.85;
   const durationSeconds = audioSeconds + padSeconds;
   const durationInFrames = Math.ceil(durationSeconds * content.fps);
-  const sentences = splitSentences(scene.narration);
-  const totalWords = sentences.reduce((sum, sentence) => sum + sentence.split(/\s+/).length, 0);
-  let sentenceOffset = 0;
+  const captionTexts = splitCaptionCues(narrationText);
+  const totalWords = captionTexts.reduce((sum, cue) => sum + wordCount(cue), 0);
+  let cueOffset = 0;
 
-  for (const sentence of sentences) {
-    const sentenceWords = sentence.split(/\s+/).length;
-    const sentenceDuration = audioSeconds * (sentenceWords / totalWords);
-    const startSeconds = timelineSeconds + sentenceOffset;
-    const endSeconds = startSeconds + sentenceDuration;
+  for (const captionText of captionTexts) {
+    const cueDuration = audioSeconds * (wordCount(captionText) / totalWords);
+    const startSeconds = timelineSeconds + cueOffset;
+    const endSeconds = startSeconds + cueDuration;
     const cue = {
       index: cueIndex,
-      text: sentence,
+      text: captionText,
       startSeconds,
       endSeconds,
       startFrame: Math.floor(startSeconds * content.fps),
       endFrame: Math.ceil(endSeconds * content.fps),
     };
     cues.push(cue);
-    srtBlocks.push(`${cueIndex}\n${formatTimestamp(startSeconds)} --> ${formatTimestamp(endSeconds)}\n${sentence}`);
+    srtBlocks.push(
+      `${cueIndex}\n${formatTimestamp(startSeconds)} --> ${formatTimestamp(endSeconds)}\n${captionText}`,
+    );
     cueIndex += 1;
-    sentenceOffset += sentenceDuration;
+    cueOffset += cueDuration;
   }
 
   sceneTiming.push({
     id: scene.id,
-    audioPath: `video-production/${content.slug}/audio/${scene.id}.m4a`,
+    audioPath: `video-production/${content.slug}/audio-v2/${scene.id}.m4a`,
     audioSeconds,
     durationSeconds,
     durationInFrames,
@@ -92,6 +110,9 @@ for (const scene of content.scenes) {
 }
 
 const manifest = {
+  version: content.version,
+  slug: content.slug,
+  compositionId: content.compositionId,
   fps: content.fps,
   totalFrames: timelineFrames,
   totalSeconds: timelineSeconds,
@@ -101,11 +122,32 @@ const manifest = {
   cues,
 };
 
-await writeFile(path.join(generatedDirectory, `${content.slug}.json`), `${JSON.stringify(manifest, null, 2)}\n`);
-await writeFile(path.join(outputDirectory, `${content.slug}.srt`), `${srtBlocks.join("\n\n")}\n`);
-await writeFile(
-  path.join(outputDirectory, `${content.slug}-transcript.md`),
-  `# ${content.title}\n\n${content.scenes.map((scene) => `## ${scene.title}\n\n${scene.narration}`).join("\n\n")}\n\n---\n\nSource: ${content.source.repository} (${content.source.files.join(", ")}); ${content.source.license} License.\n`,
-);
+const transcript = [
+  `# ${content.title}`,
+  "",
+  ...content.scenes.flatMap((scene) => [
+    `## ${scene.display.title}`,
+    "",
+    scene.narrationText,
+    "",
+  ]),
+].join("\n");
 
-console.log(`Generated ${sceneTiming.length} narration clips (${timelineSeconds.toFixed(1)} seconds).`);
+await Promise.all([
+  writeFile(
+    path.join(generatedDirectory, `${content.slug}.json`),
+    `${JSON.stringify(manifest, null, 2)}\n`,
+  ),
+  writeFile(
+    path.join(outputDirectory, `${content.slug}.srt`),
+    `${srtBlocks.join("\n\n")}\n`,
+  ),
+  writeFile(
+    path.join(outputDirectory, `${content.slug}-transcript.md`),
+    `${transcript.trim()}\n`,
+  ),
+]);
+
+console.log(
+  `Generated ${sceneTiming.length} v2 narration clips (${timelineSeconds.toFixed(1)} seconds).`,
+);

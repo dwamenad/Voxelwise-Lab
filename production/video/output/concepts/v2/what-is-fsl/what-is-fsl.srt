@@ -1,0 +1,108 @@
+1
+00:00:00,000 --> 00:00:03,679
+FSL is a collection of focused
+neuroimaging tools.
+
+2
+00:00:03,679 --> 00:00:10,118
+Instead of forcing every task into one
+program, it gives you different tools for
+
+3
+00:00:10,118 --> 00:00:14,257
+viewing images, checking metadata,
+transforming data, fitting models, and
+
+4
+00:00:14,257 --> 00:00:15,177
+reviewing results.
+
+5
+00:00:15,177 --> 00:00:21,156
+Learning FSL means knowing which tool
+answers the question in front of you.
+
+6
+00:00:22,006 --> 00:00:24,828
+Start with the scientific job.
+
+7
+00:00:24,828 --> 00:00:27,650
+FSLEyes is for visual inspection.
+
+8
+00:00:27,650 --> 00:00:31,037
+FEAT configures and evaluates fMRI models.
+
+9
+00:00:31,037 --> 00:00:35,553
+Command-line utilities expose precise
+metadata, statistics, and image
+
+10
+00:00:35,553 --> 00:00:36,117
+operations.
+
+11
+00:00:36,117 --> 00:00:42,891
+These tools share a workflow, but they do
+not provide interchangeable evidence.
+
+12
+00:00:43,741 --> 00:00:48,085
+This FEAT report is one example of FSL's
+division of labor.
+
+13
+00:00:48,085 --> 00:00:53,614
+FEAT organizes the model and its outputs,
+while visual checks often continue in the
+
+14
+00:00:53,614 --> 00:00:55,193
+report and in FSLEyes.
+
+15
+00:00:55,193 --> 00:01:01,117
+A completed report proves that software
+ran; it does not by itself prove that the
+
+16
+00:01:01,117 --> 00:01:02,696
+analysis is scientifically valid.
+
+17
+00:01:03,546 --> 00:01:06,565
+A command can succeed on the wrong file.
+
+18
+00:01:06,565 --> 00:01:09,584
+A model can finish with a poor design.
+
+19
+00:01:09,584 --> 00:01:13,736
+An overlay can look plausible in one slice
+and fail elsewhere.
+
+20
+00:01:13,736 --> 00:01:18,641
+Treat every FSL output as evidence to
+inspect, not as an automatic conclusion.
+
+21
+00:01:19,491 --> 00:01:22,781
+FSL is a suite of related tools.
+
+22
+00:01:22,781 --> 00:01:29,360
+Choose the tool by the job, preserve the
+connection between steps, and inspect what
+
+23
+00:01:29,360 --> 00:01:31,240
+each output actually demonstrates.
+
+24
+00:01:31,240 --> 00:01:35,469
+Successful computation never replaces
+visual and scientific quality control.

@@ -1,0 +1,111 @@
+1
+00:00:00,000 --> 00:00:05,542
+The general linear model represents a
+measured BOLD time series as a weighted
+
+2
+00:00:05,542 --> 00:00:08,100
+combination of predictors plus residual
+error.
+
+3
+00:00:08,100 --> 00:00:11,936
+In compact form, Y equals X beta plus
+epsilon.
+
+4
+00:00:11,936 --> 00:00:15,347
+FEAT fits this relationship separately at
+every voxel.
+
+5
+00:00:16,197 --> 00:00:19,323
+Y is the observed BOLD time series.
+
+6
+00:00:19,323 --> 00:00:23,789
+X is the design matrix containing task and
+nuisance predictors.
+
+7
+00:00:23,789 --> 00:00:27,362
+Beta contains the fitted contribution of
+each column.
+
+8
+00:00:27,362 --> 00:00:29,595
+Epsilon contains the remaining structure.
+
+9
+00:00:29,595 --> 00:00:34,954
+Residuals are unexplained by the model;
+they are not automatically random or
+
+10
+00:00:34,954 --> 00:00:35,401
+harmless.
+
+11
+00:00:36,251 --> 00:00:39,720
+The design matrix is not a decorative
+preview.
+
+12
+00:00:39,720 --> 00:00:41,889
+Its columns encode the model.
+
+13
+00:00:41,889 --> 00:00:47,093
+Confirm the timing, identify task and
+nuisance regressors, and look for strong
+
+14
+00:00:47,093 --> 00:00:48,394
+dependence between columns.
+
+15
+00:00:48,394 --> 00:00:53,165
+Beta estimates are conditional on all the
+other predictors in X.
+
+16
+00:00:54,015 --> 00:00:59,326
+A GLM can fit successfully and still
+answer the wrong scientific question.
+
+17
+00:00:59,326 --> 00:01:04,195
+The model should follow the hypothesis
+about underlying processes, not merely
+
+18
+00:01:04,195 --> 00:01:05,523
+every stimulus label.
+
+19
+00:01:05,523 --> 00:01:10,392
+Nuisance structure must be addressed, and
+residual patterns should be inspected
+
+20
+00:01:10,392 --> 00:01:12,605
+rather than dismissed as noise.
+
+21
+00:01:13,455 --> 00:01:19,190
+The fMRI GLM separates measured data,
+modeled predictors, fitted estimates, and
+
+22
+00:01:19,190 --> 00:01:19,712
+residuals.
+
+23
+00:01:19,712 --> 00:01:25,969
+Read those parts distinctly, inspect the
+design before the results, and remember
+
+24
+00:01:25,969 --> 00:01:31,704
+that a successful fit only supports claims
+represented by the model.

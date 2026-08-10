@@ -1,0 +1,247 @@
+1
+00:00:00,000 --> 00:00:04,800
+A first-level model may contain several
+explanatory variables, but a scientific
+
+2
+00:00:04,800 --> 00:00:07,418
+result begins with a focused question.
+
+3
+00:00:07,418 --> 00:00:12,218
+Was the response during left-button trials
+greater than the response during
+
+4
+00:00:12,218 --> 00:00:13,091
+right-button trials?
+
+5
+00:00:13,091 --> 00:00:16,582
+A contrast turns that comparison into
+precise weights.
+
+6
+00:00:16,582 --> 00:00:22,691
+Those weights must agree with the model
+columns and with the words used to
+
+7
+00:00:22,691 --> 00:00:24,000
+describe the hypothesis.
+
+8
+00:00:24,850 --> 00:00:28,903
+At each voxel, FEAT fits the general
+linear model.
+
+9
+00:00:28,903 --> 00:00:33,856
+The design matrix contains explanatory
+variables, and beta contains one fitted
+
+10
+00:00:33,856 --> 00:00:36,107
+coefficient for each model column.
+
+11
+00:00:36,107 --> 00:00:39,259
+A contrast does not change those
+estimates.
+
+12
+00:00:39,259 --> 00:00:46,013
+It defines a linear combination, written
+as c transpose beta, where c is the vector
+
+13
+00:00:46,013 --> 00:00:47,364
+of hypothesis weights.
+
+14
+00:00:48,214 --> 00:00:52,273
+Suppose the explanatory-variable order is
+Left followed by Right.
+
+15
+00:00:52,273 --> 00:00:55,880
+The weights one, zero select the Left
+coefficient.
+
+16
+00:00:55,880 --> 00:00:58,586
+Zero, one select the Right coefficient.
+
+17
+00:00:58,586 --> 00:01:04,449
+In a usual task model, each is tested
+relative to the implicit baseline
+
+18
+00:01:04,449 --> 00:01:07,606
+represented by the rest of the model.
+
+19
+00:01:07,606 --> 00:01:10,311
+Neither is a direct Left-versus-Right
+comparison.
+
+20
+00:01:10,311 --> 00:01:16,625
+One, one tests their positive sum, while
+one half, one half tests the numerical
+
+21
+00:01:16,625 --> 00:01:17,076
+average.
+
+22
+00:01:17,926 --> 00:01:22,344
+To compare Left directly with Right, use
+one, negative one.
+
+23
+00:01:22,344 --> 00:01:28,088
+This computes beta Left minus beta Right
+and tests the positive direction, Left
+
+24
+00:01:28,088 --> 00:01:29,413
+greater than Right.
+
+25
+00:01:29,413 --> 00:01:32,948
+Reversing the signs tests Right greater
+than Left.
+
+26
+00:01:32,948 --> 00:01:38,250
+A negative weight means that a coefficient
+is subtracted in this hypothesis.
+
+27
+00:01:38,250 --> 00:01:41,342
+It does not, by itself, mean deactivation.
+
+28
+00:01:42,192 --> 00:01:46,510
+Contrast numbers only have meaning when
+aligned with the correct design-matrix
+
+29
+00:01:46,510 --> 00:01:46,902
+columns.
+
+30
+00:01:46,902 --> 00:01:52,790
+If the actual order is Right then Left,
+one, negative one tests Right greater than
+
+31
+00:01:52,790 --> 00:01:57,107
+Left, even if the contrast is named Left
+greater than Right.
+
+32
+00:01:57,107 --> 00:02:03,387
+Write the EV order, read each contrast as
+a sentence, and point from every weight to
+
+33
+00:02:03,387 --> 00:02:05,742
+its displayed column before running FEAT.
+
+34
+00:02:06,592 --> 00:02:10,902
+In FEAT, open Full model setup, then
+Contrasts and F-tests.
+
+35
+00:02:10,902 --> 00:02:16,504
+Give each contrast a scientific name,
+enter weights in the displayed EV order,
+
+36
+00:02:16,504 --> 00:02:19,952
+and inspect the arrows in the design
+preview.
+
+37
+00:02:19,952 --> 00:02:25,985
+Before selecting Done, compare every row
+with the analysis plan and save the design
+
+38
+00:02:25,985 --> 00:02:29,002
+file so the model specification remains
+reproducible.
+
+39
+00:02:29,852 --> 00:02:33,380
+For each contrast, FEAT writes several
+related outputs.
+
+40
+00:02:33,380 --> 00:02:37,790
+The cope is the weighted contrast estimate
+in model units.
+
+41
+00:02:37,790 --> 00:02:40,878
+The varcope quantifies uncertainty in that
+estimate.
+
+42
+00:02:40,878 --> 00:02:47,934
+A t statistic compares the cope with its
+standard error, and FEAT converts it to a
+
+43
+00:02:47,934 --> 00:02:49,698
+z statistic for inference.
+
+44
+00:02:49,698 --> 00:02:54,109
+A z-statistic map is standardized
+evidence, not an effect-size map.
+
+45
+00:02:54,959 --> 00:03:00,955
+Before running FEAT, list the EVs in
+matrix order and state the scientific
+
+46
+00:03:00,955 --> 00:03:02,800
+question for every contrast.
+
+47
+00:03:02,800 --> 00:03:08,336
+Translate the sentence into weights, then
+translate the weights back into a
+
+48
+00:03:08,336 --> 00:03:08,797
+sentence.
+
+49
+00:03:08,797 --> 00:03:12,026
+Inspect the design matrix and contrast
+arrows.
+
+50
+00:03:12,026 --> 00:03:16,639
+Finally, distinguish the effect estimate,
+its uncertainty, and the standardized
+
+51
+00:03:16,639 --> 00:03:17,100
+statistic.
+
+52
+00:03:17,100 --> 00:03:23,097
+The model is ready when the design,
+weights, and scientific language tell the
+
+53
+00:03:23,097 --> 00:03:24,020
+same story.
