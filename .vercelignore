@@ -1,0 +1,8 @@
+# Local build and dependency caches
+.next/
+node_modules/
+
+# Video-production artifacts are delivered through Google Drive, not Vercel.
+production/video/output/**/*.mp4
+production/video/output/**/preview-*.png
+public/video-production/**/audio/
