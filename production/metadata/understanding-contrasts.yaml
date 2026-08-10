@@ -1,0 +1,25 @@
+course: first-level-fmri-analysis-feat
+lesson: understanding-contrasts
+
+source:
+  repository: tubric/2026s-fmri-class
+  file: Lab-3_FSL_Level1.md
+  supporting_file: Lab-X_Contrast.md
+
+video:
+  concept:
+    status: planned
+    target_minutes: 7
+  walkthrough:
+    status: planned
+    target_minutes: 12
+
+narration:
+  status: pending
+
+captions:
+  status: pending
+
+scientific_review:
+  status: pending
+
