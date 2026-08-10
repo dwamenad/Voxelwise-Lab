@@ -1,0 +1,219 @@
+1
+00:00:00,000 --> 00:00:06,767
+A first-level model can contain several explanatory variables, but a scientific result usually begins with a narrower question.
+
+2
+00:00:06,767 --> 00:00:11,654
+Was the response during left-button trials greater than the response during right-button trials?
+
+3
+00:00:11,654 --> 00:00:15,414
+Was one condition positively related to the measured BOLD signal?
+
+4
+00:00:15,414 --> 00:00:20,301
+A contrast turns a question like that into a precise set of weights.
+
+5
+00:00:20,301 --> 00:00:34,211
+In this lesson, we will connect those weights to the parameter estimates in the general linear model, interpret baseline and difference contrasts, and identify the quality-control checks that prevent a correct calculation from answering the wrong question.
+
+6
+00:00:35,061 --> 00:00:38,537
+At each voxel, FEAT fits the general linear model.
+
+7
+00:00:38,537 --> 00:00:45,875
+The design matrix contains the explanatory variables, or EVs, and beta contains one estimated coefficient for each model column.
+
+8
+00:00:45,875 --> 00:00:52,826
+Those coefficients describe how strongly each predictor contributes to the observed signal after accounting for the other predictors.
+
+9
+00:00:52,826 --> 00:00:58,619
+A contrast does not refit the model and does not change the original beta estimates.
+
+10
+00:00:58,619 --> 00:01:02,094
+Instead, it defines a linear combination of selected estimates.
+
+11
+00:01:02,094 --> 00:01:05,956
+In compact notation, the contrast estimate is c transpose beta.
+
+12
+00:01:05,956 --> 00:01:09,818
+The vector c contains the weights that encode the hypothesis.
+
+13
+00:01:10,668 --> 00:01:14,170
+Suppose the original EV order is Left followed by Right.
+
+14
+00:01:14,170 --> 00:01:16,971
+The contrast one, zero selects the Left coefficient.
+
+15
+00:01:16,971 --> 00:01:25,374
+In the usual FEAT task model, it tests a positive Left effect relative to the implicit baseline represented by the rest of the model.
+
+16
+00:01:25,374 --> 00:01:27,475
+Zero, one selects the Right coefficient.
+
+17
+00:01:27,475 --> 00:01:30,626
+These are not direct comparisons between Left and Right.
+
+18
+00:01:30,626 --> 00:01:34,828
+They ask whether each selected estimate is positive in its modeled context.
+
+19
+00:01:34,828 --> 00:01:39,380
+A contrast using one, one tests the positive sum of the two coefficients.
+
+20
+00:01:39,380 --> 00:01:42,531
+Using one half, one half gives their numerical average.
+
+21
+00:01:42,531 --> 00:01:50,934
+Those scaled contrasts have the same t or z statistic, but their cope values are on different scales, so name and report them carefully.
+
+22
+00:01:51,784 --> 00:01:55,401
+To compare Left directly with Right, use one, negative one.
+
+23
+00:01:55,401 --> 00:01:57,933
+This computes beta Left minus beta Right.
+
+24
+00:01:57,933 --> 00:02:05,528
+The null hypothesis is that the weighted difference equals zero, and the positive direction tests whether Left is greater than Right.
+
+25
+00:02:05,528 --> 00:02:10,230
+Reversing the signs gives negative one, one, which tests Right greater than Left.
+
+26
+00:02:10,230 --> 00:02:12,762
+A negative weight does not mean deactivation.
+
+27
+00:02:12,762 --> 00:02:17,102
+It means that the corresponding coefficient is subtracted in this particular hypothesis.
+
+28
+00:02:17,102 --> 00:02:25,059
+Direction matters: Left greater than Right and Right greater than Left are related, but they are not interchangeable labels for one contrast.
+
+29
+00:02:25,909 --> 00:02:31,136
+Contrast numbers only have meaning when they are aligned with the correct design-matrix columns.
+
+30
+00:02:31,136 --> 00:02:41,590
+If the actual order is Right then Left, the weights one, negative one test Right greater than Left, even if the contrast is named Left greater than Right.
+
+31
+00:02:41,590 --> 00:02:50,178
+Before running FEAT, write the EV order, read each contrast as a sentence, and point from every weight to its displayed column name.
+
+32
+00:02:50,178 --> 00:02:52,045
+Then inspect the design preview.
+
+33
+00:02:52,045 --> 00:02:57,645
+Empty columns, swapped timing files, duplicated predictors, or unexpected derivatives can all change the interpretation.
+
+34
+00:02:57,645 --> 00:03:01,005
+A plausible activation map cannot repair a mislabeled hypothesis.
+
+35
+00:03:01,855 --> 00:03:05,883
+In FEAT, open Full model setup and then Contrasts and F-tests.
+
+36
+00:03:05,883 --> 00:03:09,910
+Give each contrast a scientific name rather than a generic number.
+
+37
+00:03:09,910 --> 00:03:12,839
+Enter the weights in the displayed EV order.
+
+38
+00:03:12,839 --> 00:03:21,992
+For the source lab, the model contains Left and Right EVs, followed by contrasts for each condition, both directional differences, and a combined positive effect.
+
+39
+00:03:21,992 --> 00:03:27,118
+The screenshot here is evidence from the real teaching workflow, not a generated interface.
+
+40
+00:03:27,118 --> 00:03:35,173
+Before selecting Done, compare every row with the approved analysis plan and save the design file so the model specification remains reproducible.
+
+41
+00:03:36,023 --> 00:03:39,319
+For each contrast, FEAT writes several related outputs.
+
+42
+00:03:39,319 --> 00:03:46,324
+The cope is the contrast of parameter estimates: the weighted effect in the units of the model.
+
+43
+00:03:46,324 --> 00:03:49,620
+The varcope describes uncertainty in that contrast estimate.
+
+44
+00:03:49,620 --> 00:03:58,685
+Dividing the cope by its standard error produces a t statistic, which FEAT converts to a z statistic for inference and reporting.
+
+45
+00:03:58,685 --> 00:04:03,218
+A z-statistic map is therefore standardized evidence, not an effect-size map.
+
+46
+00:04:03,218 --> 00:04:06,926
+Higher-level analyses use the cope together with its varcope.
+
+47
+00:04:06,926 --> 00:04:16,404
+Thresholded z-statistic images help visualize inferential results, but interpretation should begin only after checking preprocessing, registration, the design matrix, and the contrast definition.
+
+48
+00:04:17,254 --> 00:04:20,083
+Before you run FEAT, complete five checks.
+
+49
+00:04:20,083 --> 00:04:22,508
+First, list EVs in matrix order.
+
+50
+00:04:22,508 --> 00:04:25,742
+Second, state the scientific question for every contrast.
+
+51
+00:04:25,742 --> 00:04:31,805
+Third, translate the sentence into weights and then translate the weights back into a sentence.
+
+52
+00:04:31,805 --> 00:04:35,443
+Fourth, inspect the design matrix and contrast arrows visually.
+
+53
+00:04:35,443 --> 00:04:41,507
+Fifth, distinguish the effect estimate, its uncertainty, and the standardized statistic you will later report.
+
+54
+00:04:41,507 --> 00:04:48,378
+If the design, weights, and scientific language tell the same story, the contrast is ready to run.
+
+55
+00:04:48,378 --> 00:04:56,058
+Next, the hands-on walkthrough will configure these contrasts in a live Neurodesk session and inspect the corresponding FEAT outputs.

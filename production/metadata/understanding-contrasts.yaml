@@ -8,18 +8,31 @@ source:
 
 video:
   concept:
-    status: planned
-    target_minutes: 7
+    status: recorded
+    target_minutes: 5
+    actual_seconds: 297.088
+    resolution: 1920x1080
+    frame_rate: 30
+    codec: h264
+    audio: aac-48000hz-stereo
+    drive_folder: https://drive.google.com/drive/folders/1bHM9qJtv0Rd8T2LfBkPjTA26F7nvoFF2
+    drive_master: https://drive.google.com/file/d/1Ud2EhQ8Lp10PKRebSnppS1GgeClCTq3x/view?usp=drivesdk
   walkthrough:
     status: planned
     target_minutes: 12
+    blocked_by: Neurodesk Play access pending review
 
 narration:
-  status: pending
+  status: generated
+  voice: Samantha
+  words_per_minute: 164
 
 captions:
-  status: pending
+  status: generated
+  burned_in: true
+  sidecar: production/video/output/understanding-contrasts.srt
 
 scientific_review:
-  status: pending
-
+  status: source-checked
+  basis: FSL course Lab-3_FSL_Level1.md and Lab-X_Contrast.md
+  external_reviewer: pending

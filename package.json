@@ -9,7 +9,10 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "video:studio": "remotion studio production/video/src/index.ts",
+    "video:narrate:contrasts": "node production/video/scripts/generate-narration.mjs production/video/content/understanding-contrasts.json",
+    "video:render:contrasts": "npm run video:narrate:contrasts && remotion render production/video/src/index.ts UnderstandingContrasts production/video/output/understanding-contrasts.mp4 --codec=h264 --crf=18 --concurrency=4"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.4",
@@ -21,6 +24,8 @@
     "react-dom": "19.2.8"
   },
   "devDependencies": {
+    "@remotion/cli": "^4.0.507",
+    "@remotion/media-utils": "^4.0.507",
     "@tailwindcss/postcss": "^4",
     "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.2",
@@ -30,6 +35,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.3.0",
     "jsdom": "^29.1.1",
+    "remotion": "^4.0.507",
     "tailwindcss": "^4",
     "typescript": "^5",
     "vitest": "^4.1.10"
