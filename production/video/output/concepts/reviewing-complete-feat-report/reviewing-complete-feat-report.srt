@@ -1,0 +1,99 @@
+1
+00:00:00,000 --> 00:00:04,400
+A completed FEAT report is not automatically a valid analysis.
+
+2
+00:00:04,400 --> 00:00:13,199
+It is a structured record that lets you review preprocessing, registration, model design, and statistical output in an evidence-based order.
+
+3
+00:00:13,199 --> 00:00:20,238
+This video shows how to read that record before interpreting bright clusters or reporting a result.
+
+4
+00:00:21,088 --> 00:00:23,940
+Review the report in dependency order.
+
+5
+00:00:23,940 --> 00:00:30,119
+Begin with Pre-stats and ask whether motion, masking, and preprocessing outputs are plausible.
+
+6
+00:00:30,119 --> 00:00:34,397
+Continue to Registration and inspect alignment across the brain.
+
+7
+00:00:34,397 --> 00:00:39,625
+Then examine the design matrix, explanatory variables, and contrasts under Stats.
+
+8
+00:00:39,625 --> 00:00:44,853
+Only after those checks should you interpret thresholded results under Post-stats.
+
+9
+00:00:44,853 --> 00:00:50,556
+A failure early in this chain limits what later pages can support.
+
+10
+00:00:51,406 --> 00:00:55,148
+Write one defensible statement for each major dependency.
+
+11
+00:00:55,148 --> 00:01:02,164
+For motion, describe the plot and any abrupt displacement rather than saying it looks fine.
+
+12
+00:01:02,164 --> 00:01:08,712
+For registration, name anatomical boundaries and multiple slices that support a pass or concern.
+
+13
+00:01:08,712 --> 00:01:15,728
+For the design, match columns to timing files and contrast arrows to the planned hypothesis.
+
+14
+00:01:15,728 --> 00:01:19,470
+Specific observations are auditable; vague reassurance is not.
+
+15
+00:01:20,320 --> 00:01:25,154
+When you reach the results, keep the output types separate.
+
+16
+00:01:25,154 --> 00:01:28,539
+A cope is the estimated contrast effect.
+
+17
+00:01:28,539 --> 00:01:31,923
+A varcope describes uncertainty in that estimate.
+
+18
+00:01:31,923 --> 00:01:36,274
+A t-statistic or z-statistic standardizes evidence relative to uncertainty.
+
+19
+00:01:36,274 --> 00:01:41,109
+A thresholded map displays locations surviving the chosen inferential procedure.
+
+20
+00:01:41,109 --> 00:01:52,712
+Do not describe a z-statistic map as an effect-size map, and do not let an attractive cluster override failed motion, registration, or design checks.
+
+21
+00:01:53,562 --> 00:02:00,929
+Finish with an explicit quality-control decision: pass, concern, or fail, followed by the evidence that supports it.
+
+22
+00:02:00,929 --> 00:02:04,829
+Record any limitation and explain how it affects interpretation.
+
+23
+00:02:04,829 --> 00:02:08,295
+Preserve the report, design files, and notes together.
+
+24
+00:02:08,295 --> 00:02:13,061
+The purpose of review is not to prove that FEAT completed.
+
+25
+00:02:13,061 --> 00:02:19,994
+It is to decide whether this run can support the scientific claim you intend to make.

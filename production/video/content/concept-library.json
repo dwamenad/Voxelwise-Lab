@@ -1,0 +1,1739 @@
+{
+  "version": 1,
+  "productionVoice": {
+    "voice": "Daniel",
+    "accent": "UK English",
+    "cadence": "deliberate",
+    "speechRate": 148
+  },
+  "selection": {
+    "courses": [
+      "fsl-neuroimaging-foundations",
+      "first-level-fmri-analysis-feat"
+    ],
+    "includedTypes": [
+      "concept",
+      "quality-control"
+    ],
+    "excludedSlug": "understanding-contrasts",
+    "reason": "Builds source-grounded videos that do not require a live Neurodesk session."
+  },
+  "videos": [
+    {
+      "slug": "what-is-fsl",
+      "compositionId": "LessonWhatIsFsl",
+      "courseSlug": "fsl-neuroimaging-foundations",
+      "courseTitle": "FSL & Neuroimaging Foundations",
+      "courseLabel": "FSL Foundations",
+      "catalogNumber": "FSL 101",
+      "moduleTitle": "Welcome to FSL",
+      "lessonNumber": "1.1",
+      "title": "What is FSL?",
+      "description": "Meet the collection of tools used to inspect, preprocess, model, and report MRI data.",
+      "videoType": "concept",
+      "accent": "#79e6bf",
+      "voice": "Daniel",
+      "speechRate": 148,
+      "fps": 30,
+      "source": {
+        "repository": "tubric/2026s-fmri-class",
+        "file": "Lab-0_Glossary.md",
+        "section": "FSL, FSLEyes, and fslstats",
+        "license": "MIT"
+      },
+      "scenes": [
+        {
+          "id": "opening",
+          "kind": "opening",
+          "display": {
+            "eyebrow": "FSL 101 · Concept video",
+            "title": "What is FSL?",
+            "body": "Meet the collection of tools used to inspect, preprocess, model, and report MRI data.",
+            "bullets": [
+              "Describe FSL as a suite rather than one application",
+              "Match common FSL tools to their purpose"
+            ]
+          },
+          "narration": "What is F S L? Meet the collection of tools used to inspect, preprocess, model, and report M R I data. The goal is clear: Describe F S L as a suite rather than one application."
+        },
+        {
+          "id": "core-idea",
+          "kind": "explanation",
+          "display": {
+            "eyebrow": "Core idea",
+            "title": "FSL is a toolkit, not a single program",
+            "body": "FSL—the FMRIB Software Library—is a collection of command-line tools and graphical interfaces for MRI analysis. FEAT handles fMRI modeling, FSLEyes displays images, and utilities such as fslinfo, fslstats, and fslmaths inspect or transform data."
+          },
+          "narration": "F S L is a toolkit, not a single program. F S L—the F M R I B Software Library—is a collection of command-line tools and graphical interfaces for M R I analysis. FEAT handles functional M R I modeling, F S L Eyes displays images, and utilities such as F S L info, F S L stats, and F S L maths inspect or transform data. A typical workflow moves between tools. You might inspect a raw bold image in F S L Eyes, configure a model in FEAT, run it, then return to F S L Eyes to check registration and statistical maps. Learning F S L therefore means learning both the scientific purpose of each step and the output it produces."
+        },
+        {
+          "id": "observable-check",
+          "kind": "practice",
+          "display": {
+            "eyebrow": "Connect concept to evidence",
+            "title": "Try this in Neurodesk",
+            "body": "Use a small, explicit check before drawing a scientific conclusion.",
+            "bullets": [
+              "Open Neurodesk in a second window.",
+              "Locate the FSL application tile.",
+              "Open an FSL terminal and identify the version shown in the prompt."
+            ],
+            "code": "which fslinfo\nfslinfo --version 2>/dev/null || echo \"FSL is available\""
+          },
+          "narration": "Now connect the idea to an observable check. First, open Neurodesk in a second window. Next, locate the F S L application tile. Then, open an F S L terminal and identify the version shown in the prompt. The command shown on screen is an example. Adapt its path to your own working directory and verify the target before running it."
+        },
+        {
+          "id": "quality-control",
+          "kind": "quality-control",
+          "display": {
+            "eyebrow": "Educational scope",
+            "title": "What would make this interpretation trustworthy?",
+            "body": "These lessons teach transferable workflows. Always follow the preprocessing and statistical protocol approved for your project or institution.",
+            "output": "/usr/local/fsl/bin/fslinfo",
+            "bullets": [
+              "Why do we move between FEAT, FSLEyes, and FSL utilities?",
+              "They serve different roles: model configuration, visual inspection, and command-line measurement or transformation."
+            ]
+          },
+          "narration": "Educational scope. These lessons teach transferable workflows. Always follow the preprocessing and statistical protocol approved for your project or institution. A useful self-check is this: Why do we move between FEAT, F S L Eyes, and F S L utilities? They serve different roles: model configuration, visual inspection, and command-line measurement or transformation."
+        },
+        {
+          "id": "summary",
+          "kind": "summary",
+          "display": {
+            "eyebrow": "Take-away",
+            "title": "Carry the reasoning into the next step",
+            "body": "Describe FSL as a suite rather than one application",
+            "bullets": [
+              "FSL is a suite of related neuroimaging tools.",
+              "Successful computation never replaces visual quality control."
+            ]
+          },
+          "narration": "To recap: First, F S L is a suite of related neuroimaging tools. Next, successful computation never replaces visual quality control. Before continuing, make sure you can explain this objective: Describe F S L as a suite rather than one application."
+        }
+      ]
+    },
+    {
+      "slug": "how-this-course-works",
+      "compositionId": "LessonHowThisCourseWorks",
+      "courseSlug": "fsl-neuroimaging-foundations",
+      "courseTitle": "FSL & Neuroimaging Foundations",
+      "courseLabel": "FSL Foundations",
+      "catalogNumber": "FSL 101",
+      "moduleTitle": "Welcome to FSL",
+      "lessonNumber": "1.2",
+      "title": "How this course works",
+      "description": "Use each lesson as a two-window study session: explanation here, analysis in Neurodesk.",
+      "videoType": "concept",
+      "accent": "#79e6bf",
+      "voice": "Daniel",
+      "speechRate": 148,
+      "fps": 30,
+      "source": {
+        "repository": "tubric/2026s-fmri-class",
+        "file": "Lab-0_Neurodesk.md",
+        "section": "Recommended options and setup",
+        "license": "MIT"
+      },
+      "scenes": [
+        {
+          "id": "opening",
+          "kind": "opening",
+          "display": {
+            "eyebrow": "FSL 101 · Concept video",
+            "title": "How this course works",
+            "body": "Use each lesson as a two-window study session: explanation here, analysis in Neurodesk.",
+            "bullets": [
+              "Set up an effective two-window workspace",
+              "Use expected output as a check rather than an answer key"
+            ]
+          },
+          "narration": "How this course works. Use each lesson as a two-window study session: explanation here, analysis in Neurodesk. The goal is clear: Set up an effective two-window workspace."
+        },
+        {
+          "id": "core-idea",
+          "kind": "explanation",
+          "display": {
+            "eyebrow": "Core idea",
+            "title": "Understand, observe, reproduce",
+            "body": "Each workflow is split into a concept, a real interface walkthrough, an independent Neurodesk task, and an output check. The point is not to memorize button positions; it is to understand what information enters and leaves each step."
+          },
+          "narration": "Understand, observe, reproduce. Each workflow is split into a concept, a real interface walkthrough, an independent Neurodesk task, and an output check. The point is not to memorize button positions; it is to understand what information enters and leaves each step. Pause often. Predict what a command or FEAT setting will do before you run it. Then compare the result with the expected output and explain discrepancies in your own words."
+        },
+        {
+          "id": "observable-check",
+          "kind": "practice",
+          "display": {
+            "eyebrow": "Connect concept to evidence",
+            "title": "Try this in Neurodesk",
+            "body": "Use a small, explicit check before drawing a scientific conclusion.",
+            "bullets": [
+              "Place this lesson on one side of your screen.",
+              "Place Neurodesk on the other side.",
+              "Create a notes file for observations and unresolved questions."
+            ]
+          },
+          "narration": "Now connect the idea to an observable check. First, place this lesson on one side of your screen. Next, place Neurodesk on the other side. Then, create a notes file for observations and unresolved questions. Record what you observe so the decision remains reviewable."
+        },
+        {
+          "id": "quality-control",
+          "kind": "quality-control",
+          "display": {
+            "eyebrow": "Practical labs work best on a computer",
+            "title": "What would make this interpretation trustworthy?",
+            "body": "Videos and reading work on mobile, but use a desktop or laptop for Neurodesk exercises and side-by-side quality control.",
+            "bullets": [
+              "When should you look at expected output?",
+              "After making a prediction and running the step yourself, so the comparison tests understanding rather than copying."
+            ]
+          },
+          "narration": "Practical labs work best on a computer. Videos and reading work on mobile, but use a desktop or laptop for Neurodesk exercises and side-by-side quality control. A useful self-check is this: When should you look at expected output? After making a prediction and running the step yourself, so the comparison tests understanding rather than copying."
+        },
+        {
+          "id": "summary",
+          "kind": "summary",
+          "display": {
+            "eyebrow": "Take-away",
+            "title": "Carry the reasoning into the next step",
+            "body": "Set up an effective two-window workspace",
+            "bullets": [
+              "Predict before running a step.",
+              "Record what you observe, especially when it differs from the example."
+            ]
+          },
+          "narration": "To recap: First, predict before running a step. Next, record what you observe, especially when it differs from the example. Before continuing, make sure you can explain this objective: Set up an effective two-window workspace."
+        }
+      ]
+    },
+    {
+      "slug": "getting-started-with-neurodesk",
+      "compositionId": "LessonGettingStartedWithNeurodesk",
+      "courseSlug": "fsl-neuroimaging-foundations",
+      "courseTitle": "FSL & Neuroimaging Foundations",
+      "courseLabel": "FSL Foundations",
+      "catalogNumber": "FSL 101",
+      "moduleTitle": "Welcome to FSL",
+      "lessonNumber": "1.3",
+      "title": "Getting started with Neurodesk",
+      "description": "Choose Play, EDU, or an institutional environment and verify that FSL is available.",
+      "videoType": "concept",
+      "accent": "#79e6bf",
+      "voice": "Daniel",
+      "speechRate": 148,
+      "fps": 30,
+      "source": {
+        "repository": "tubric/2026s-fmri-class",
+        "file": "Lab-0_Neurodesk.md",
+        "section": "Browser setup and FSL terminal",
+        "license": "MIT"
+      },
+      "scenes": [
+        {
+          "id": "opening",
+          "kind": "opening",
+          "display": {
+            "eyebrow": "FSL 101 · Concept video",
+            "title": "Getting started with Neurodesk",
+            "body": "Choose Play, EDU, or an institutional environment and verify that FSL is available.",
+            "bullets": [
+              "Choose an appropriate Neurodesk access route",
+              "Distinguish a base terminal from an FSL terminal",
+              "Choose persistent storage"
+            ]
+          },
+          "narration": "Getting started with Neurodesk. Choose Play, EDU, or an institutional environment and verify that F S L is available. The goal is clear: Choose an appropriate Neurodesk access route."
+        },
+        {
+          "id": "core-idea",
+          "kind": "explanation",
+          "display": {
+            "eyebrow": "Core idea",
+            "title": "A reproducible software environment",
+            "body": "Neurodesk packages neuroimaging applications in consistent environments. Neurodesk Play is broadly accessible; Neurodesk EDU may be provided by a course or institution; a local installation is optional and has higher hardware requirements.",
+            "image": "/curriculum/neurodesk-launch.png",
+            "imageCaption": "The local launcher shown in the source lab. Browser-based Play and EDU sessions have a similar app workspace."
+          },
+          "narration": "A reproducible software environment. Neurodesk packages neuroimaging applications in consistent environments. Neurodesk Play is broadly accessible; Neurodesk EDU may be provided by a course or institution; a local installation is optional and has higher hardware requirements. Files saved only inside temporary browser sessions may disappear. Use the persistent storage location provided by your environment. The base terminal is useful for general Linux work; an F S L terminal starts with the F S L software environment already loaded."
+        },
+        {
+          "id": "observable-check",
+          "kind": "evidence",
+          "display": {
+            "eyebrow": "Connect concept to evidence",
+            "title": "Try this in Neurodesk",
+            "body": "Use a small, explicit check before drawing a scientific conclusion.",
+            "bullets": [
+              "Launch Neurodesk Play, EDU, or your institution's environment.",
+              "Open the FSL application.",
+              "Open its terminal and verify FSL with which fslinfo.",
+              "Identify the location where your files persist between sessions."
+            ],
+            "code": "which fslinfo\npwd\necho $SHELL",
+            "image": "/curriculum/neurodesk-launch.png",
+            "imageCaption": "The local launcher shown in the source lab. Browser-based Play and EDU sessions have a similar app workspace."
+          },
+          "narration": "Now connect the idea to an observable check. First, launch Neurodesk Play, EDU, or your institution's environment. Next, open the F S L application. Then, open its terminal and verify F S L with which F S L info. After that, identify the location where your files persist between sessions. The command shown on screen is an example. Adapt its path to your own working directory and verify the target before running it."
+        },
+        {
+          "id": "quality-control",
+          "kind": "quality-control",
+          "display": {
+            "eyebrow": "FSL command not found?",
+            "title": "What would make this interpretation trustworthy?",
+            "body": "You may be in the base terminal rather than the FSL application terminal. Open the FSL tile, or load the FSL module if your environment supports modules.",
+            "output": "/usr/local/fsl/bin/fslinfo\n/home/jovyan\n/bin/bash",
+            "bullets": [
+              "What is the operational difference between the base terminal and an FSL terminal?",
+              "The FSL terminal has the FSL environment loaded; the base terminal is a general shell and may not find FSL commands until a module is loaded."
+            ]
+          },
+          "narration": "F S L command not found? You may be in the base terminal rather than the F S L application terminal. Open the F S L tile, or load the F S L module if your environment supports modules. A useful self-check is this: What is the operational difference between the base terminal and an F S L terminal? The F S L terminal has the F S L environment loaded; the base terminal is a general shell and may not find F S L commands until a module is loaded."
+        },
+        {
+          "id": "summary",
+          "kind": "summary",
+          "display": {
+            "eyebrow": "Take-away",
+            "title": "Carry the reasoning into the next step",
+            "body": "Choose an appropriate Neurodesk access route",
+            "bullets": [
+              "Know which terminal you are using.",
+              "Save work in persistent storage.",
+              "Verify tools before starting a long analysis."
+            ]
+          },
+          "narration": "To recap: First, know which terminal you are using. Next, save work in persistent storage. Then, verify tools before starting a long analysis. Before continuing, make sure you can explain this objective: Choose an appropriate Neurodesk access route."
+        }
+      ]
+    },
+    {
+      "slug": "the-terminal",
+      "compositionId": "LessonTheTerminal",
+      "courseSlug": "fsl-neuroimaging-foundations",
+      "courseTitle": "FSL & Neuroimaging Foundations",
+      "courseLabel": "FSL Foundations",
+      "catalogNumber": "FSL 101",
+      "moduleTitle": "Linux essentials",
+      "lessonNumber": "2.1",
+      "title": "The terminal",
+      "description": "Read a shell prompt and understand commands, options, and arguments.",
+      "videoType": "concept",
+      "accent": "#79e6bf",
+      "voice": "Daniel",
+      "speechRate": 148,
+      "fps": 30,
+      "source": {
+        "repository": "tubric/2026s-fmri-class",
+        "file": "Lab-0_Glossary.md",
+        "section": "Command + arguments + options",
+        "license": "MIT"
+      },
+      "scenes": [
+        {
+          "id": "opening",
+          "kind": "opening",
+          "display": {
+            "eyebrow": "FSL 101 · Concept video",
+            "title": "The terminal",
+            "body": "Read a shell prompt and understand commands, options, and arguments.",
+            "bullets": [
+              "Identify a command and its arguments",
+              "Use built-in help safely"
+            ]
+          },
+          "narration": "The terminal. Read a shell prompt and understand commands, options, and arguments. The goal is clear: Identify a command and its arguments."
+        },
+        {
+          "id": "core-idea",
+          "kind": "explanation",
+          "display": {
+            "eyebrow": "Core idea",
+            "title": "Commands are precise instructions",
+            "body": "A shell command usually begins with a program name, followed by options and arguments. Spaces separate tokens; capitalization matters; the shell does not guess which file you intended."
+          },
+          "narration": "Commands are precise instructions. A shell command usually begins with a program name, followed by options and arguments. Spaces separate tokens; capitalization matters; the shell does not guess which file you intended. In ls -lh data, ls is the command, -lh changes the display, and data is the target directory. Reading commands this way makes unfamiliar examples easier to adapt."
+        },
+        {
+          "id": "observable-check",
+          "kind": "practice",
+          "display": {
+            "eyebrow": "Connect concept to evidence",
+            "title": "Try this in Neurodesk",
+            "body": "Use a small, explicit check before drawing a scientific conclusion.",
+            "bullets": [
+              "Open a base terminal.",
+              "Run the command below.",
+              "Use man ls or ls --help and find the meaning of -h."
+            ],
+            "code": "ls -lh"
+          },
+          "narration": "Now connect the idea to an observable check. First, open a base terminal. Next, run the command below. Then, use man ls or ls --help and find the meaning of -h. The command shown on screen is an example. Adapt its path to your own working directory and verify the target before running it."
+        },
+        {
+          "id": "quality-control",
+          "kind": "quality-control",
+          "display": {
+            "eyebrow": "Quality-control question",
+            "title": "What would make this interpretation trustworthy?",
+            "body": "The exact listing differs. `-l` adds details and `-h` makes sizes human-readable.",
+            "output": "total 12K\ndrwxr-xr-x 2 jovyan users 4.0K data",
+            "bullets": [
+              "What role does `data` play in `ls -lh data`?",
+              "It is the argument—the directory that `ls` should list."
+            ]
+          },
+          "narration": "Quality control comes before interpretation. The exact listing differs. -l adds details and -h makes sizes human-readable. A useful self-check is this: What role does data play in ls -lh data? It is the argument—the directory that ls should list."
+        },
+        {
+          "id": "summary",
+          "kind": "summary",
+          "display": {
+            "eyebrow": "Take-away",
+            "title": "Carry the reasoning into the next step",
+            "body": "Identify a command and its arguments",
+            "bullets": [
+              "Commands, options, and arguments are separate tokens.",
+              "Paths and capitalization must be exact."
+            ]
+          },
+          "narration": "To recap: First, commands, options, and arguments are separate tokens. Next, paths and capitalization must be exact. Before continuing, make sure you can explain this objective: Identify a command and its arguments."
+        }
+      ]
+    },
+    {
+      "slug": "linux-navigation",
+      "compositionId": "LessonLinuxNavigation",
+      "courseSlug": "fsl-neuroimaging-foundations",
+      "courseTitle": "FSL & Neuroimaging Foundations",
+      "courseLabel": "FSL Foundations",
+      "catalogNumber": "FSL 101",
+      "moduleTitle": "Linux essentials",
+      "lessonNumber": "2.2",
+      "title": "Linux navigation",
+      "description": "Use pwd, ls, and cd to move through a project without losing track of your location.",
+      "videoType": "concept",
+      "accent": "#79e6bf",
+      "voice": "Daniel",
+      "speechRate": 148,
+      "fps": 30,
+      "source": {
+        "repository": "tubric/2026s-fmri-class",
+        "file": "Lab-0_GeneralTroubleshootingGuide.md",
+        "section": "Linux navigation basics",
+        "license": "MIT"
+      },
+      "scenes": [
+        {
+          "id": "opening",
+          "kind": "opening",
+          "display": {
+            "eyebrow": "FSL 101 · Concept video",
+            "title": "Linux navigation",
+            "body": "Use pwd, ls, and cd to move through a project without losing track of your location.",
+            "bullets": [
+              "Report the current working directory",
+              "Move between parent and child folders",
+              "Distinguish absolute from relative paths"
+            ]
+          },
+          "narration": "Linux navigation. Use pwd, ls, and cd to move through a project without losing track of your location. The goal is clear: Report the current working directory."
+        },
+        {
+          "id": "core-idea",
+          "kind": "explanation",
+          "display": {
+            "eyebrow": "Core idea",
+            "title": "Your working directory is context",
+            "body": "Relative paths are interpreted from the current working directory. Absolute paths begin at the filesystem root `/`. Many “missing file” errors are really context errors: the file exists, but not where the current command is looking."
+          },
+          "narration": "Your working directory is context. Relative paths are interpreted from the current working directory. Absolute paths begin at the filesystem root /. Many “missing file” errors are really context errors: the file exists, but not where the current command is looking. Use pwd before any command that writes output. Use ls to verify the next directory name before cd. The shortcuts dot and dot dot mean the current and parent directories, while tilde means your home directory."
+        },
+        {
+          "id": "observable-check",
+          "kind": "practice",
+          "display": {
+            "eyebrow": "Connect concept to evidence",
+            "title": "Try this in Neurodesk",
+            "body": "Use a small, explicit check before drawing a scientific conclusion.",
+            "bullets": [
+              "Print your current location.",
+              "Create a course practice directory.",
+              "Enter it and create data and output subfolders.",
+              "Return to the parent directory using .."
+            ],
+            "code": "pwd\nmkdir -p fsl-academy-practice/{data,output}\ncd fsl-academy-practice\nls\ncd .."
+          },
+          "narration": "Now connect the idea to an observable check. First, print your current location. Next, create a course practice directory. Then, enter it and create data and output subfolders. After that, return to the parent directory using dot dot. The command shown on screen is an example. Adapt its path to your own working directory and verify the target before running it."
+        },
+        {
+          "id": "quality-control",
+          "kind": "quality-control",
+          "display": {
+            "eyebrow": "Cannot find a file?",
+            "title": "What would make this interpretation trustworthy?",
+            "body": "Stop and verify context instead of repeatedly changing the command. Print the directory, list its contents, then search narrowly.",
+            "output": "data  output",
+            "bullets": [
+              "When is `data/sub-001` a valid path?",
+              "When a data directory exists inside the current working directory; otherwise use the correct relative or absolute path."
+            ]
+          },
+          "narration": "Cannot find a file? Stop and verify context instead of repeatedly changing the command. Print the directory, list its contents, then search narrowly. A useful self-check is this: When is data/sub-001 a valid path? When a data directory exists inside the current working directory; otherwise use the correct relative or absolute path."
+        },
+        {
+          "id": "summary",
+          "kind": "summary",
+          "display": {
+            "eyebrow": "Take-away",
+            "title": "Carry the reasoning into the next step",
+            "body": "Report the current working directory",
+            "bullets": [
+              "Use pwd → ls → cd as a deliberate loop.",
+              "Create output directories before analysis.",
+              "Most path errors are diagnosable with small checks."
+            ]
+          },
+          "narration": "To recap: First, use pwd then ls then cd as a deliberate loop. Next, create output directories before analysis. Then, most path errors are diagnosable with small checks. Before continuing, make sure you can explain this objective: Report the current working directory."
+        }
+      ]
+    },
+    {
+      "slug": "what-is-a-nifti-image",
+      "compositionId": "LessonWhatIsANiftiImage",
+      "courseSlug": "fsl-neuroimaging-foundations",
+      "courseTitle": "FSL & Neuroimaging Foundations",
+      "courseLabel": "FSL Foundations",
+      "catalogNumber": "FSL 101",
+      "moduleTitle": "Neuroimaging data",
+      "lessonNumber": "3.1",
+      "title": "What is a NIfTI image?",
+      "description": "Interpret the dimensions and spatial metadata stored in .nii and .nii.gz files.",
+      "videoType": "concept",
+      "accent": "#79e6bf",
+      "voice": "Daniel",
+      "speechRate": 148,
+      "fps": 30,
+      "source": {
+        "repository": "tubric/2026s-fmri-class",
+        "file": "Lab-0_Glossary.md",
+        "section": "NIfTI, voxel, and 3D vs 4D data",
+        "license": "MIT"
+      },
+      "scenes": [
+        {
+          "id": "opening",
+          "kind": "opening",
+          "display": {
+            "eyebrow": "FSL 101 · Concept video",
+            "title": "What is a NIfTI image?",
+            "body": "Interpret the dimensions and spatial metadata stored in .nii and .nii.gz files.",
+            "bullets": [
+              "Differentiate voxels and volumes",
+              "Interpret dim1–dim4",
+              "Relate pixdim4 to repetition time"
+            ]
+          },
+          "narration": "What is a NIfTI image? Interpret the dimensions and spatial metadata stored in .nii and .nii.gz files. The goal is clear: Differentiate voxels and volumes."
+        },
+        {
+          "id": "core-idea",
+          "kind": "explanation",
+          "display": {
+            "eyebrow": "Core idea",
+            "title": "A 4D image is a time-ordered stack of 3D volumes",
+            "body": "A voxel is a three-dimensional sample. An anatomical NIfTI is usually one 3D volume; a BOLD NIfTI usually contains many volumes along a fourth, temporal dimension. Header metadata records dimensions, voxel sizes, orientation, and timing."
+          },
+          "narration": "A four-D image is a time-ordered stack of three-D volumes. A voxel is a three-dimensional sample. An anatomical NIfTI is usually one three-D volume; a bold NIfTI usually contains many volumes along a fourth, temporal dimension. Header metadata records dimensions, voxel sizes, orientation, and timing. If dim4 is 240, the bold series contains 240 volumes. Spatial resolution comes from pixdim1 through pixdim3; pixdim4 often records the T R in seconds. Always verify the units in the header and JSON sidecar."
+        },
+        {
+          "id": "observable-check",
+          "kind": "practice",
+          "display": {
+            "eyebrow": "Connect concept to evidence",
+            "title": "Try this in Neurodesk",
+            "body": "Use a small, explicit check before drawing a scientific conclusion.",
+            "bullets": [
+              "Navigate to a NIfTI file.",
+              "Run fslinfo on it.",
+              "Record dim1–dim4 and pixdim1–pixdim4.",
+              "Decide whether the file is anatomical or functional."
+            ],
+            "code": "fslinfo sub-001_task-choice_bold.nii.gz"
+          },
+          "narration": "Now connect the idea to an observable check. First, navigate to a NIfTI file. Next, run F S L info on it. Then, record dim1–dim4 and pixdim1–pixdim4. After that, decide whether the file is anatomical or functional. The command shown on screen is an example. Adapt its path to your own working directory and verify the target before running it."
+        },
+        {
+          "id": "quality-control",
+          "kind": "quality-control",
+          "display": {
+            "eyebrow": "Quality-control question",
+            "title": "What would make this interpretation trustworthy?",
+            "body": "This example is a 64 × 64 × 40 image sampled over 240 time points with a 2-second TR.",
+            "output": "dim1 64\ndim2 64\ndim3 40\ndim4 240\npixdim4 2.000000",
+            "bullets": [
+              "What does `dim4 = 240` mean for a BOLD image?",
+              "The file contains 240 three-dimensional volumes in its time series."
+            ]
+          },
+          "narration": "Quality control comes before interpretation. This example is a 64 by 64 by 40 image sampled over 240 time points with a 2-second T R. A useful self-check is this: What does dim4 = 240 mean for a bold image? The file contains 240 three-dimensional volumes in its time series."
+        },
+        {
+          "id": "summary",
+          "kind": "summary",
+          "display": {
+            "eyebrow": "Take-away",
+            "title": "Carry the reasoning into the next step",
+            "body": "Differentiate voxels and volumes",
+            "bullets": [
+              "Voxels make up volumes; volumes make up a 4D time series.",
+              "Inspect headers rather than inferring dimensions from filenames."
+            ]
+          },
+          "narration": "To recap: First, voxels make up volumes; volumes make up a four-D time series. Next, inspect headers rather than inferring dimensions from filenames. Before continuing, make sure you can explain this objective: Differentiate voxels and volumes."
+        }
+      ]
+    },
+    {
+      "slug": "understanding-bids",
+      "compositionId": "LessonUnderstandingBids",
+      "courseSlug": "fsl-neuroimaging-foundations",
+      "courseTitle": "FSL & Neuroimaging Foundations",
+      "courseLabel": "FSL Foundations",
+      "catalogNumber": "FSL 101",
+      "moduleTitle": "Neuroimaging data",
+      "lessonNumber": "3.2",
+      "title": "Understanding BIDS",
+      "description": "Read standardized neuroimaging filenames and find anatomy, function, events, and metadata.",
+      "videoType": "concept",
+      "accent": "#79e6bf",
+      "voice": "Daniel",
+      "speechRate": 148,
+      "fps": 30,
+      "source": {
+        "repository": "tubric/2026s-fmri-class",
+        "file": "Lab-0_Glossary.md",
+        "section": "BIDS and file types",
+        "license": "MIT"
+      },
+      "scenes": [
+        {
+          "id": "opening",
+          "kind": "opening",
+          "display": {
+            "eyebrow": "FSL 101 · Concept video",
+            "title": "Understanding BIDS",
+            "body": "Read standardized neuroimaging filenames and find anatomy, function, events, and metadata.",
+            "bullets": [
+              "Identify BIDS entities in a filename",
+              "Locate anatomical and functional inputs",
+              "Explain the role of JSON and events.tsv files"
+            ]
+          },
+          "narration": "Understanding BIDS. Read standardized neuroimaging filenames and find anatomy, function, events, and metadata. The goal is clear: Identify BIDS entities in a filename."
+        },
+        {
+          "id": "core-idea",
+          "kind": "explanation",
+          "display": {
+            "eyebrow": "Core idea",
+            "title": "Structure is part of the data",
+            "body": "The Brain Imaging Data Structure (BIDS) uses predictable folders and filenames so people and software can identify participants, sessions, tasks, runs, and modalities without relying on local naming conventions."
+          },
+          "narration": "Structure is part of the data. The Brain Imaging Data Structure (BIDS) uses predictable folders and filenames so people and software can identify participants, sessions, tasks, runs, and modalities without relying on local naming conventions. A functional run lives under sub-*/func/ and pairs a _bold.nii.gz image with a _bold.json sidecar. Its _events.tsv file describes event onsets and durations. Anatomical T1-weighted data typically live under sub-*/anat/."
+        },
+        {
+          "id": "observable-check",
+          "kind": "practice",
+          "display": {
+            "eyebrow": "Connect concept to evidence",
+            "title": "Try this in Neurodesk",
+            "body": "Use a small, explicit check before drawing a scientific conclusion.",
+            "bullets": [
+              "List one participant folder.",
+              "Find one BOLD image and its JSON sidecar.",
+              "Find the matching events.tsv file.",
+              "Translate each filename entity into plain language."
+            ],
+            "code": "find sub-001 -maxdepth 2 -type f | sort"
+          },
+          "narration": "Now connect the idea to an observable check. First, list one participant folder. Next, find one bold image and its JSON sidecar. Then, find the matching events.tsv file. After that, translate each filename entity into plain language. The command shown on screen is an example. Adapt its path to your own working directory and verify the target before running it."
+        },
+        {
+          "id": "quality-control",
+          "kind": "quality-control",
+          "display": {
+            "eyebrow": "Quality-control question",
+            "title": "What would make this interpretation trustworthy?",
+            "body": "Before interpreting the result, confirm that the input, operation, and output support the same scientific question.",
+            "bullets": [
+              "Why does a BOLD run need both NIfTI and JSON files?",
+              "The NIfTI stores image data; the JSON sidecar stores acquisition metadata that may not be represented reliably in the image filename or header."
+            ]
+          },
+          "narration": "Quality control comes before interpretation. Before interpreting the result, confirm that the input, operation, and output support the same scientific question. A useful self-check is this: Why does a bold run need both NIfTI and JSON files? The NIfTI stores image data; the JSON sidecar stores acquisition metadata that may not be represented reliably in the image filename or header."
+        },
+        {
+          "id": "summary",
+          "kind": "summary",
+          "display": {
+            "eyebrow": "Take-away",
+            "title": "Carry the reasoning into the next step",
+            "body": "Identify BIDS entities in a filename",
+            "bullets": [
+              "BIDS makes inputs discoverable and machine-readable.",
+              "Match images, sidecars, and events by their shared entities."
+            ]
+          },
+          "narration": "To recap: First, BIDS makes inputs discoverable and machine-readable. Next, match images, sidecars, and events by their shared entities. Before continuing, make sure you can explain this objective: Identify BIDS entities in a filename."
+        }
+      ]
+    },
+    {
+      "slug": "introduction-to-fsleyes",
+      "compositionId": "LessonIntroductionToFsleyes",
+      "courseSlug": "fsl-neuroimaging-foundations",
+      "courseTitle": "FSL & Neuroimaging Foundations",
+      "courseLabel": "FSL Foundations",
+      "catalogNumber": "FSL 101",
+      "moduleTitle": "Inspecting data in FSLEyes",
+      "lessonNumber": "4.1",
+      "title": "Introduction to FSLEyes",
+      "description": "Load anatomical and functional NIfTI files and orient yourself in three planes.",
+      "videoType": "concept",
+      "accent": "#79e6bf",
+      "voice": "Daniel",
+      "speechRate": 148,
+      "fps": 30,
+      "source": {
+        "repository": "tubric/2026s-fmri-class",
+        "file": "Lab-1_FSLeyes.md",
+        "section": "Viewing MRI data and functional time series",
+        "license": "MIT"
+      },
+      "scenes": [
+        {
+          "id": "opening",
+          "kind": "opening",
+          "display": {
+            "eyebrow": "FSL 101 · Concept video",
+            "title": "Introduction to FSLEyes",
+            "body": "Load anatomical and functional NIfTI files and orient yourself in three planes.",
+            "bullets": [
+              "Open files from the terminal",
+              "Navigate sagittal, coronal, and axial views",
+              "Read voxel and world coordinates"
+            ]
+          },
+          "narration": "Introduction to F S L Eyes. Load anatomical and functional NIfTI files and orient yourself in three planes. The goal is clear: Open files from the terminal."
+        },
+        {
+          "id": "core-idea",
+          "kind": "explanation",
+          "display": {
+            "eyebrow": "Core idea",
+            "title": "Visual inspection is an analysis step",
+            "body": "FSLEyes lets you examine image geometry and intensity directly. The orthographic view shows the same location in three anatomical planes. The overlay list controls which images are visible and how they are colored.",
+            "image": "/curriculum/fsleyes-timeseries.png",
+            "imageCaption": "A real FSLEyes time-series view from the adapted TUBRIC lab."
+          },
+          "narration": "Visual inspection is an analysis step. F S L Eyes lets you examine image geometry and intensity directly. The orthographic view shows the same location in three anatomical planes. The overlay list controls which images are visible and how they are colored. Start by checking that the brain is oriented sensibly, the field of view is complete, and signal is present. For four-D images, move through volumes or open the time-series view. A file loading without an error does not prove that the data are usable."
+        },
+        {
+          "id": "observable-check",
+          "kind": "evidence",
+          "display": {
+            "eyebrow": "Connect concept to evidence",
+            "title": "Try this in Neurodesk",
+            "body": "Use a small, explicit check before drawing a scientific conclusion.",
+            "bullets": [
+              "Launch FSLEyes with a NIfTI path.",
+              "Move the crosshair through the brain.",
+              "Record one scanner coordinate and voxel coordinate.",
+              "For a BOLD file, open View → Time series."
+            ],
+            "code": "fsleyes sub-001/anat/sub-001_T1w.nii.gz &",
+            "image": "/curriculum/fsleyes-timeseries.png",
+            "imageCaption": "A real FSLEyes time-series view from the adapted TUBRIC lab."
+          },
+          "narration": "Now connect the idea to an observable check. First, launch F S L Eyes with a NIfTI path. Next, move the crosshair through the brain. Then, record one scanner coordinate and voxel coordinate. After that, for a bold file, open View then Time series. The command shown on screen is an example. Adapt its path to your own working directory and verify the target before running it."
+        },
+        {
+          "id": "quality-control",
+          "kind": "quality-control",
+          "display": {
+            "eyebrow": "Quality Control Check",
+            "title": "What would make this interpretation trustworthy?",
+            "body": "Confirm orientation, brain coverage, and visible signal before beginning preprocessing. A later pipeline cannot recover anatomy that was never acquired.",
+            "bullets": [
+              "Why can the same point have both voxel and scanner coordinates?",
+              "Voxel coordinates index the image grid; scanner/world coordinates locate that point in physical space using the image affine."
+            ]
+          },
+          "narration": "Quality Control Check. Confirm orientation, brain coverage, and visible signal before beginning preprocessing. A later pipeline cannot recover anatomy that was never acquired. A useful self-check is this: Why can the same point have both voxel and scanner coordinates? Voxel coordinates index the image grid; scanner/world coordinates locate that point in physical space using the image affine."
+        },
+        {
+          "id": "summary",
+          "kind": "summary",
+          "display": {
+            "eyebrow": "Take-away",
+            "title": "Carry the reasoning into the next step",
+            "body": "Open files from the terminal",
+            "bullets": [
+              "Inspect every key input and output visually.",
+              "Use the overlay list and coordinate panel deliberately."
+            ]
+          },
+          "narration": "To recap: First, inspect every key input and output visually. Next, use the overlay list and coordinate panel deliberately. Before continuing, make sure you can explain this objective: Open files from the terminal."
+        }
+      ]
+    },
+    {
+      "slug": "overlays-atlases-and-time-series",
+      "compositionId": "LessonOverlaysAtlasesAndTimeSeries",
+      "courseSlug": "fsl-neuroimaging-foundations",
+      "courseTitle": "FSL & Neuroimaging Foundations",
+      "courseLabel": "FSL Foundations",
+      "catalogNumber": "FSL 101",
+      "moduleTitle": "Inspecting data in FSLEyes",
+      "lessonNumber": "4.2",
+      "title": "Overlays, atlases, and time series",
+      "description": "Compare aligned images, inspect a BOLD signal over time, and use atlas labels as references.",
+      "videoType": "concept",
+      "accent": "#79e6bf",
+      "voice": "Daniel",
+      "speechRate": 148,
+      "fps": 30,
+      "source": {
+        "repository": "tubric/2026s-fmri-class",
+        "file": "Lab-1_FSLeyes.md",
+        "section": "Navigating anatomy, functional data, and atlas tools",
+        "license": "MIT"
+      },
+      "scenes": [
+        {
+          "id": "opening",
+          "kind": "opening",
+          "display": {
+            "eyebrow": "FSL 101 · Concept video",
+            "title": "Overlays, atlases, and time series",
+            "body": "Compare aligned images, inspect a BOLD signal over time, and use atlas labels as references.",
+            "bullets": [
+              "Configure overlay opacity and color maps",
+              "Interpret a voxel time series",
+              "Use atlas labels cautiously"
+            ]
+          },
+          "narration": "Overlays, atlases, and time series. Compare aligned images, inspect a bold signal over time, and use atlas labels as references. The goal is clear: Configure overlay opacity and color maps."
+        },
+        {
+          "id": "core-idea",
+          "kind": "explanation",
+          "display": {
+            "eyebrow": "Core idea",
+            "title": "One coordinate, several sources of evidence",
+            "body": "Overlays let you compare images in the same coordinate space. Time-series plots show how a voxel changes across volumes. Atlas lookup adds an anatomical label, but atlas boundaries are probabilistic and should not be treated as ground truth for every participant."
+          },
+          "narration": "One coordinate, several sources of evidence. Overlays let you compare images in the same coordinate space. Time-series plots show how a voxel changes across volumes. Atlas lookup adds an anatomical label, but atlas boundaries are probabilistic and should not be treated as ground truth for every participant. Registration quality control is easiest when boundaries from two images can be seen together. Alternate visibility, adjust opacity, or use an edge overlay. For functional data, look for sudden spikes, drifts, or dropout and relate them to later motion and preprocessing reports."
+        },
+        {
+          "id": "observable-check",
+          "kind": "practice",
+          "display": {
+            "eyebrow": "Connect concept to evidence",
+            "title": "Try this in Neurodesk",
+            "body": "Use a small, explicit check before drawing a scientific conclusion.",
+            "bullets": [
+              "Load an anatomical background and a functional or standard-space overlay.",
+              "Reduce overlay opacity.",
+              "Check alignment in at least three distant locations.",
+              "Open atlas tools and note the probability for one label."
+            ]
+          },
+          "narration": "Now connect the idea to an observable check. First, load an anatomical background and a functional or standard-space overlay. Next, reduce overlay opacity. Then, check alignment in at least three distant locations. After that, open atlas tools and note the probability for one label. Record what you observe so the decision remains reviewable."
+        },
+        {
+          "id": "quality-control",
+          "kind": "quality-control",
+          "display": {
+            "eyebrow": "Quality Control Check",
+            "title": "What would make this interpretation trustworthy?",
+            "body": "Inspect multiple slices and brain boundaries. Do not accept registration because the images overlap near the center.",
+            "bullets": [
+              "Why is a single central slice insufficient for registration QC?",
+              "Misalignment can be local or more visible near boundaries; several planes and regions must be inspected."
+            ]
+          },
+          "narration": "Quality Control Check. Inspect multiple slices and brain boundaries. Do not accept registration because the images overlap near the center. A useful self-check is this: Why is a single central slice insufficient for registration quality control? Misalignment can be local or more visible near boundaries; several planes and regions must be inspected."
+        },
+        {
+          "id": "summary",
+          "kind": "summary",
+          "display": {
+            "eyebrow": "Take-away",
+            "title": "Carry the reasoning into the next step",
+            "body": "Configure overlay opacity and color maps",
+            "bullets": [
+              "Use overlays to test spatial correspondence.",
+              "Atlas labels are references, not perfect individual anatomy."
+            ]
+          },
+          "narration": "To recap: First, use overlays to test spatial correspondence. Next, atlas labels are references, not perfect individual anatomy. Before continuing, make sure you can explain this objective: Configure overlay opacity and color maps."
+        }
+      ]
+    },
+    {
+      "slug": "fslinfo-and-fslstats",
+      "compositionId": "LessonFslinfoAndFslstats",
+      "courseSlug": "fsl-neuroimaging-foundations",
+      "courseTitle": "FSL & Neuroimaging Foundations",
+      "courseLabel": "FSL Foundations",
+      "catalogNumber": "FSL 101",
+      "moduleTitle": "FSL command-line basics",
+      "lessonNumber": "5.1",
+      "title": "fslinfo and fslstats",
+      "description": "Inspect image metadata and compute targeted summary statistics.",
+      "videoType": "concept",
+      "accent": "#79e6bf",
+      "voice": "Daniel",
+      "speechRate": 148,
+      "fps": 30,
+      "source": {
+        "repository": "tubric/2026s-fmri-class",
+        "file": "Lab-0_Glossary.md",
+        "section": "fslstats and estimating volume",
+        "license": "MIT"
+      },
+      "scenes": [
+        {
+          "id": "opening",
+          "kind": "opening",
+          "display": {
+            "eyebrow": "FSL 101 · Concept video",
+            "title": "fslinfo and fslstats",
+            "body": "Inspect image metadata and compute targeted summary statistics.",
+            "bullets": [
+              "Choose fslinfo for metadata",
+              "Use fslstats flags intentionally",
+              "Recognize the importance of masks and thresholds"
+            ]
+          },
+          "narration": "F S L info and F S L stats. Inspect image metadata and compute targeted summary statistics. The goal is clear: Choose F S L info for metadata."
+        },
+        {
+          "id": "core-idea",
+          "kind": "explanation",
+          "display": {
+            "eyebrow": "Core idea",
+            "title": "Metadata describes the container; statistics describe its values",
+            "body": "`fslinfo` reports header fields such as dimensions and voxel sizes. `fslstats` computes statistics over image intensities, optionally after applying thresholds or masks. A number is only interpretable when you know which voxels contributed to it."
+          },
+          "narration": "Metadata describes the container; statistics describe its values. F S L info reports header fields such as dimensions and voxel sizes. F S L stats computes statistics over image intensities, optionally after applying thresholds or masks. A number is only interpretable when you know which voxels contributed to it. For example, F S L stats image -R reports the robust intensity range. -V reports the number and physical volume of nonzero voxels. Nonzero voxels are not automatically the brain; background noise, skull, or artifacts may also be nonzero."
+        },
+        {
+          "id": "observable-check",
+          "kind": "practice",
+          "display": {
+            "eyebrow": "Connect concept to evidence",
+            "title": "Try this in Neurodesk",
+            "body": "Use a small, explicit check before drawing a scientific conclusion.",
+            "bullets": [
+              "Run fslinfo and record image dimensions.",
+              "Use fslstats -R for the intensity range.",
+              "Use -V and explain both returned numbers.",
+              "Open the image to verify what was counted."
+            ],
+            "code": "fslinfo example_bold.nii.gz\nfslstats example_bold.nii.gz -R\nfslstats example_mask.nii.gz -V"
+          },
+          "narration": "Now connect the idea to an observable check. First, run F S L info and record image dimensions. Next, use F S L stats -R for the intensity range. Then, use -V and explain both returned numbers. After that, open the image to verify what was counted. The command shown on screen is an example. Adapt its path to your own working directory and verify the target before running it."
+        },
+        {
+          "id": "quality-control",
+          "kind": "quality-control",
+          "display": {
+            "eyebrow": "Quality-control question",
+            "title": "What would make this interpretation trustworthy?",
+            "body": "For `-V`, the first value is the count of nonzero voxels and the second is their volume in mm³.",
+            "output": "0.000000 14322.000000\n81234 649872.000000",
+            "bullets": [
+              "Why is `fslstats image -V` not automatically a brain-volume measurement?",
+              "It counts all nonzero voxels, which may include non-brain signal unless the image is a validated brain mask."
+            ]
+          },
+          "narration": "Quality control comes before interpretation. For -V, the first value is the count of nonzero voxels and the second is their volume in cubic millimetres. A useful self-check is this: Why is F S L stats image -V not automatically a brain-volume measurement? It counts all nonzero voxels, which may include non-brain signal unless the image is a validated brain mask."
+        },
+        {
+          "id": "summary",
+          "kind": "summary",
+          "display": {
+            "eyebrow": "Take-away",
+            "title": "Carry the reasoning into the next step",
+            "body": "Choose fslinfo for metadata",
+            "bullets": [
+              "Match the utility to the question.",
+              "Define which voxels a statistic summarizes.",
+              "Check numerical results against the image."
+            ]
+          },
+          "narration": "To recap: First, match the utility to the question. Next, define which voxels a statistic summarizes. Then, check numerical results against the image. Before continuing, make sure you can explain this objective: Choose F S L info for metadata."
+        }
+      ]
+    },
+    {
+      "slug": "fslmaths-and-fslmeants",
+      "compositionId": "LessonFslmathsAndFslmeants",
+      "courseSlug": "fsl-neuroimaging-foundations",
+      "courseTitle": "FSL & Neuroimaging Foundations",
+      "courseLabel": "FSL Foundations",
+      "catalogNumber": "FSL 101",
+      "moduleTitle": "FSL command-line basics",
+      "lessonNumber": "5.2",
+      "title": "fslmaths and fslmeants",
+      "description": "Create masks and extract a mean time series without losing track of image space.",
+      "videoType": "concept",
+      "accent": "#79e6bf",
+      "voice": "Daniel",
+      "speechRate": 148,
+      "fps": 30,
+      "source": {
+        "repository": "tubric/2026s-fmri-class",
+        "file": "Lab-1_FSLeyes.md",
+        "section": "Measuring the brain and atlas masks",
+        "license": "MIT"
+      },
+      "scenes": [
+        {
+          "id": "opening",
+          "kind": "opening",
+          "display": {
+            "eyebrow": "FSL 101 · Concept video",
+            "title": "fslmaths and fslmeants",
+            "body": "Create masks and extract a mean time series without losing track of image space.",
+            "bullets": [
+              "Build a simple thresholded mask",
+              "Extract a masked mean time series",
+              "Verify that mask and data spaces match"
+            ]
+          },
+          "narration": "F S L maths and F S L means. Create masks and extract a mean time series without losing track of image space. The goal is clear: Build a simple thresholded mask."
+        },
+        {
+          "id": "core-idea",
+          "kind": "explanation",
+          "display": {
+            "eyebrow": "Core idea",
+            "title": "Transform first, measure second",
+            "body": "`fslmaths` applies image operations in sequence and writes a new image. `fslmeants` summarizes a 4D time series within a mask. The mask and source data must have compatible dimensions and spatial alignment."
+          },
+          "narration": "Transform first, measure second. F S L maths applies image operations in sequence and writes a new image. F S L means summarizes a four-D time series within a mask. The mask and source data must have compatible dimensions and spatial alignment. A binary mask contains 1 for included voxels and 0 elsewhere. Thresholding alone may not create a scientifically valid ROI; it is simply an operation. View every derived mask before using it to extract values."
+        },
+        {
+          "id": "observable-check",
+          "kind": "practice",
+          "display": {
+            "eyebrow": "Connect concept to evidence",
+            "title": "Try this in Neurodesk",
+            "body": "Use a small, explicit check before drawing a scientific conclusion.",
+            "bullets": [
+              "Create a binary mask from an example image.",
+              "Open the mask over the source image.",
+              "Confirm dimensions with fslinfo.",
+              "Extract a mean time series and inspect its first values."
+            ],
+            "code": "fslmaths zstat1.nii.gz -thr 3.1 -bin zstat1_mask.nii.gz\nfslmeants -i filtered_func_data.nii.gz -m zstat1_mask.nii.gz -o mean_signal.txt\nhead mean_signal.txt"
+          },
+          "narration": "Now connect the idea to an observable check. First, create a binary mask from an example image. Next, open the mask over the source image. Then, confirm dimensions with F S L info. After that, extract a mean time series and inspect its first values. The command shown on screen is an example. Adapt its path to your own working directory and verify the target before running it."
+        },
+        {
+          "id": "quality-control",
+          "kind": "quality-control",
+          "display": {
+            "eyebrow": "Quality Control Check",
+            "title": "What would make this interpretation trustworthy?",
+            "body": "Overlay the mask on the exact image used for extraction. Matching dimensions do not guarantee meaningful anatomical alignment.",
+            "output": "98.4213\n99.7731\n101.204",
+            "bullets": [
+              "What must you verify before using a mask with fslmeants?",
+              "That it is scientifically appropriate and aligned to the same dimensions and space as the 4D input."
+            ]
+          },
+          "narration": "Quality Control Check. Overlay the mask on the exact image used for extraction. Matching dimensions do not guarantee meaningful anatomical alignment. A useful self-check is this: What must you verify before using a mask with F S L means? That it is scientifically appropriate and aligned to the same dimensions and space as the four-D input."
+        },
+        {
+          "id": "summary",
+          "kind": "summary",
+          "display": {
+            "eyebrow": "Take-away",
+            "title": "Carry the reasoning into the next step",
+            "body": "Build a simple thresholded mask",
+            "bullets": [
+              "fslmaths writes derived images; preserve meaningful names.",
+              "Never extract a signal from an uninspected mask."
+            ]
+          },
+          "narration": "To recap: First, F S L maths writes derived images; preserve meaningful names. Next, never extract a signal from an uninspected mask. Before continuing, make sure you can explain this objective: Build a simple thresholded mask."
+        }
+      ]
+    },
+    {
+      "slug": "what-first-level-means",
+      "compositionId": "LessonWhatFirstLevelMeans",
+      "courseSlug": "first-level-fmri-analysis-feat",
+      "courseTitle": "First-Level fMRI Analysis in FEAT",
+      "courseLabel": "First-Level FEAT",
+      "catalogNumber": "FSL 301",
+      "moduleTitle": "What first-level analysis means",
+      "lessonNumber": "1.1",
+      "title": "What first-level analysis means",
+      "description": "Connect one participant's BOLD time series to a model of one run.",
+      "videoType": "concept",
+      "accent": "#ffbf69",
+      "voice": "Daniel",
+      "speechRate": 148,
+      "fps": 30,
+      "source": {
+        "repository": "tubric/2026s-fmri-class",
+        "file": "Lab-3_FSL_Level1.md",
+        "section": "Learning objectives and folder structure",
+        "license": "MIT"
+      },
+      "scenes": [
+        {
+          "id": "opening",
+          "kind": "opening",
+          "display": {
+            "eyebrow": "FSL 301 · Concept video",
+            "title": "What first-level analysis means",
+            "body": "Connect one participant's BOLD time series to a model of one run.",
+            "bullets": [
+              "Distinguish first-level analysis from within-subject and group analysis",
+              "Connect the concept to a concrete FEAT or Neurodesk check"
+            ]
+          },
+          "narration": "What first-level analysis means. Connect one participant's bold time series to a model of one run. The goal is clear: Distinguish first-level analysis from within-subject and group analysis."
+        },
+        {
+          "id": "core-idea",
+          "kind": "explanation",
+          "display": {
+            "eyebrow": "Core idea",
+            "title": "What first-level analysis means",
+            "body": "First-level analysis models a single run from a single participant. It estimates how well the predicted response for each explanatory variable accounts for the observed BOLD signal at every voxel."
+          },
+          "narration": "What first-level analysis means. First-level analysis models a single run from a single participant. It estimates how well the predicted response for each explanatory variable accounts for the observed bold signal at every voxel. The output is not a group conclusion. It is a set of participant/run-specific parameter estimates and contrasts that can later feed Level 2 or Level 3 models. Keep the unit of analysis explicit when naming outputs."
+        },
+        {
+          "id": "observable-check",
+          "kind": "practice",
+          "display": {
+            "eyebrow": "Connect concept to evidence",
+            "title": "Try this in Neurodesk",
+            "body": "Use a small, explicit check before drawing a scientific conclusion.",
+            "bullets": [
+              "Choose one BOLD run in a BIDS dataset.",
+              "Identify its participant, task, and run entities.",
+              "Sketch where its first-level .feat output should live."
+            ]
+          },
+          "narration": "Now connect the idea to an observable check. First, choose one bold run in a BIDS dataset. Next, identify its participant, task, and run entities. Then, sketch where its first-level dot feat output should live. Record what you observe so the decision remains reviewable."
+        },
+        {
+          "id": "quality-control",
+          "kind": "quality-control",
+          "display": {
+            "eyebrow": "Quality-control question",
+            "title": "What would make this interpretation trustworthy?",
+            "body": "Before interpreting the result, confirm that the input, operation, and output support the same scientific question.",
+            "bullets": [
+              "In one or two sentences, what decision does “What first-level analysis means” support?",
+              "Distinguish first-level analysis from within-subject and group analysis"
+            ]
+          },
+          "narration": "Quality control comes before interpretation. Before interpreting the result, confirm that the input, operation, and output support the same scientific question. A useful self-check is this: In one or two sentences, what decision does “What first-level analysis means” support? Distinguish first-level analysis from within-subject and group analysis."
+        },
+        {
+          "id": "summary",
+          "kind": "summary",
+          "display": {
+            "eyebrow": "Take-away",
+            "title": "Carry the reasoning into the next step",
+            "body": "Distinguish first-level analysis from within-subject and group analysis",
+            "bullets": [
+              "Connect one participant's BOLD time series to a model of one run.",
+              "Document the decision and inspect the corresponding input or output."
+            ]
+          },
+          "narration": "To recap: First, connect one participant's bold time series to a model of one run. Next, document the decision and inspect the corresponding input or output. Before continuing, make sure you can explain this objective: Distinguish first-level analysis from within-subject and group analysis."
+        }
+      ]
+    },
+    {
+      "slug": "what-is-a-glm",
+      "compositionId": "LessonWhatIsAGlm",
+      "courseSlug": "first-level-fmri-analysis-feat",
+      "courseTitle": "First-Level fMRI Analysis in FEAT",
+      "courseLabel": "First-Level FEAT",
+      "catalogNumber": "FSL 301",
+      "moduleTitle": "What is a GLM?",
+      "lessonNumber": "2.1",
+      "title": "What is a GLM?",
+      "description": "Understand the model that relates expected task responses and confounds to the BOLD signal.",
+      "videoType": "concept",
+      "accent": "#ffbf69",
+      "voice": "Daniel",
+      "speechRate": 148,
+      "fps": 30,
+      "source": {
+        "repository": "tubric/2026s-fmri-class",
+        "file": "Lab-3_FSL_Level1.md",
+        "section": "Stats tab — EVs and contrasts",
+        "license": "MIT"
+      },
+      "scenes": [
+        {
+          "id": "opening",
+          "kind": "opening",
+          "display": {
+            "eyebrow": "FSL 301 · Concept video",
+            "title": "What is a GLM?",
+            "body": "Understand the model that relates expected task responses and confounds to the BOLD signal.",
+            "bullets": [
+              "Explain the response, predictors, parameter estimates, and residuals in an fMRI GLM",
+              "Connect the concept to a concrete FEAT or Neurodesk check"
+            ]
+          },
+          "narration": "What is a G L M? Understand the model that relates expected task responses and confounds to the bold signal. The goal is clear: Explain the response, predictors, parameter estimates, and residuals in an functional M R I G L M."
+        },
+        {
+          "id": "core-idea",
+          "kind": "explanation",
+          "display": {
+            "eyebrow": "Core idea",
+            "title": "What is a GLM?",
+            "body": "The general linear model represents the measured BOLD time series as a weighted combination of explanatory variables plus unexplained residual error. FEAT fits this model separately at each voxel while accounting for temporal structure."
+          },
+          "narration": "What is a G L M? The general linear model represents the measured bold time series as a weighted combination of explanatory variables plus unexplained residual error. FEAT fits this model separately at each voxel while accounting for temporal structure. The design matrix contains one row per time point and columns for task predictors and nuisance regressors. Parameter estimates describe each column's contribution. A good-looking activation map cannot rescue a design matrix that does not represent the experiment."
+        },
+        {
+          "id": "observable-check",
+          "kind": "practice",
+          "display": {
+            "eyebrow": "Connect concept to evidence",
+            "title": "Try this in Neurodesk",
+            "body": "Use a small, explicit check before drawing a scientific conclusion.",
+            "bullets": [
+              "Write the model as Y = Xβ + ε.",
+              "Label Y, X, β, and ε in plain language.",
+              "Name one task predictor and one nuisance predictor for your study."
+            ]
+          },
+          "narration": "Now connect the idea to an observable check. First, write the model as Y = Xβ + ε. Next, label Y, X, β, and ε in plain language. Then, name one task predictor and one nuisance predictor for your study. Record what you observe so the decision remains reviewable."
+        },
+        {
+          "id": "quality-control",
+          "kind": "quality-control",
+          "display": {
+            "eyebrow": "Quality-control question",
+            "title": "What would make this interpretation trustworthy?",
+            "body": "Y is observed BOLD signal, X is the design matrix, β contains parameter estimates, and ε contains residual error.",
+            "output": "Y = Xβ + ε",
+            "bullets": [
+              "In one or two sentences, what decision does “What is a GLM?” support?",
+              "Explain the response, predictors, parameter estimates, and residuals in an fMRI GLM"
+            ]
+          },
+          "narration": "Quality control comes before interpretation. Y is observed bold signal, X is the design matrix, β contains parameter estimates, and ε contains residual error. A useful self-check is this: In one or two sentences, what decision does “What is a G L M?” support? Explain the response, predictors, parameter estimates, and residuals in an functional M R I G L M."
+        },
+        {
+          "id": "summary",
+          "kind": "summary",
+          "display": {
+            "eyebrow": "Take-away",
+            "title": "Carry the reasoning into the next step",
+            "body": "Explain the response, predictors, parameter estimates, and residuals in an fMRI GLM",
+            "bullets": [
+              "Understand the model that relates expected task responses and confounds to the BOLD signal.",
+              "Document the decision and inspect the corresponding input or output."
+            ]
+          },
+          "narration": "To recap: First, understand the model that relates expected task responses and confounds to the bold signal. Next, document the decision and inspect the corresponding input or output. Before continuing, make sure you can explain this objective: Explain the response, predictors, parameter estimates, and residuals in an functional M R I G L M."
+        }
+      ]
+    },
+    {
+      "slug": "experimental-timing-files",
+      "compositionId": "LessonExperimentalTimingFiles",
+      "courseSlug": "first-level-fmri-analysis-feat",
+      "courseTitle": "First-Level fMRI Analysis in FEAT",
+      "courseLabel": "First-Level FEAT",
+      "catalogNumber": "FSL 301",
+      "moduleTitle": "Experimental timing files",
+      "lessonNumber": "3.1",
+      "title": "Experimental timing files",
+      "description": "Translate BIDS events into FSL's onset, duration, and amplitude format.",
+      "videoType": "concept",
+      "accent": "#ffbf69",
+      "voice": "Daniel",
+      "speechRate": 148,
+      "fps": 30,
+      "source": {
+        "repository": "tubric/2026s-fmri-class",
+        "file": "Lab-3_FSL_Level1.md",
+        "section": "Create 3-column timing files",
+        "license": "MIT"
+      },
+      "scenes": [
+        {
+          "id": "opening",
+          "kind": "opening",
+          "display": {
+            "eyebrow": "FSL 301 · Concept video",
+            "title": "Experimental timing files",
+            "body": "Translate BIDS events into FSL's onset, duration, and amplitude format.",
+            "bullets": [
+              "Create and validate a three-column FSL timing file",
+              "Connect the concept to a concrete FEAT or Neurodesk check"
+            ]
+          },
+          "narration": "Experimental timing files. Translate BIDS events into F S L's onset, duration, and amplitude format. The goal is clear: Create and validate a three-column F S L timing file."
+        },
+        {
+          "id": "core-idea",
+          "kind": "explanation",
+          "display": {
+            "eyebrow": "Core idea",
+            "title": "Experimental timing files",
+            "body": "An FSL three-column timing file has one event per row: onset in seconds, duration in seconds, and amplitude. Each condition normally has its own file."
+          },
+          "narration": "Experimental timing files. An F S L three-column timing file has one event per row: onset in seconds, duration in seconds, and amplitude. Each condition normally has its own file. Timing is relative to the start of the modeled run. Units, missing events, and condition labels must be checked against the BIDS events.tsv file. A syntactically valid file can still encode the wrong experiment."
+        },
+        {
+          "id": "observable-check",
+          "kind": "practice",
+          "display": {
+            "eyebrow": "Connect concept to evidence",
+            "title": "Try this in Neurodesk",
+            "body": "Use a small, explicit check before drawing a scientific conclusion.",
+            "bullets": [
+              "Open a matching events.tsv file.",
+              "Choose one condition.",
+              "Create a three-column text file.",
+              "Check that onsets are within the run duration."
+            ],
+            "code": "awk 'NR==1 || $3==\"choice\" {print}' sub-001_task-choice_events.tsv\nhead choice.txt"
+          },
+          "narration": "Now connect the idea to an observable check. First, open a matching events.tsv file. Next, choose one condition. Then, create a three-column text file. After that, check that onsets are within the run duration. The command shown on screen is an example. Adapt its path to your own working directory and verify the target before running it."
+        },
+        {
+          "id": "quality-control",
+          "kind": "quality-control",
+          "display": {
+            "eyebrow": "Quality-control question",
+            "title": "What would make this interpretation trustworthy?",
+            "body": "Each row describes when an event began, how long it lasted, and its amplitude.",
+            "output": "12.000  1.500  1\n28.250  1.500  1",
+            "bullets": [
+              "In one or two sentences, what decision does “Experimental timing files” support?",
+              "Create and validate a three-column FSL timing file"
+            ]
+          },
+          "narration": "Quality control comes before interpretation. Each row describes when an event began, how long it lasted, and its amplitude. A useful self-check is this: In one or two sentences, what decision does “Experimental timing files” support? Create and validate a three-column F S L timing file."
+        },
+        {
+          "id": "summary",
+          "kind": "summary",
+          "display": {
+            "eyebrow": "Take-away",
+            "title": "Carry the reasoning into the next step",
+            "body": "Create and validate a three-column FSL timing file",
+            "bullets": [
+              "Translate BIDS events into FSL's onset, duration, and amplitude format.",
+              "Document the decision and inspect the corresponding input or output."
+            ]
+          },
+          "narration": "To recap: First, translate BIDS events into F S L's onset, duration, and amplitude format. Next, document the decision and inspect the corresponding input or output. Before continuing, make sure you can explain this objective: Create and validate a three-column F S L timing file."
+        }
+      ]
+    },
+    {
+      "slug": "what-is-an-ev",
+      "compositionId": "LessonWhatIsAnEv",
+      "courseSlug": "first-level-fmri-analysis-feat",
+      "courseTitle": "First-Level fMRI Analysis in FEAT",
+      "courseLabel": "First-Level FEAT",
+      "catalogNumber": "FSL 301",
+      "moduleTitle": "What is an explanatory variable?",
+      "lessonNumber": "4.1",
+      "title": "What is an explanatory variable?",
+      "description": "Represent one hypothesized source of signal as a column in the design matrix.",
+      "videoType": "concept",
+      "accent": "#ffbf69",
+      "voice": "Daniel",
+      "speechRate": 148,
+      "fps": 30,
+      "source": {
+        "repository": "tubric/2026s-fmri-class",
+        "file": "Lab-3_FSL_Level1.md",
+        "section": "Stats tab — EV setup",
+        "license": "MIT"
+      },
+      "scenes": [
+        {
+          "id": "opening",
+          "kind": "opening",
+          "display": {
+            "eyebrow": "FSL 301 · Concept video",
+            "title": "What is an explanatory variable?",
+            "body": "Represent one hypothesized source of signal as a column in the design matrix.",
+            "bullets": [
+              "Distinguish original EVs from convolved predictors and nuisance regressors",
+              "Connect the concept to a concrete FEAT or Neurodesk check"
+            ]
+          },
+          "narration": "What is an explanatory variable? Represent one hypothesized source of signal as a column in the design matrix. The goal is clear: Distinguish original E V's from convolved predictors and nuisance regressors."
+        },
+        {
+          "id": "core-idea",
+          "kind": "explanation",
+          "display": {
+            "eyebrow": "Core idea",
+            "title": "What is an explanatory variable?",
+            "body": "An explanatory variable (EV) represents a pattern expected to explain some variation in the data. Task events, parametric values, motion estimates, and other confounds can all become EVs, but their interpretations differ."
+          },
+          "narration": "What is an explanatory variable? An explanatory variable (E V) represents a pattern expected to explain some variation in the data. Task events, parametric values, motion estimates, and other confounds can all become E V's, but their interpretations differ. FEAT begins with the event timing you specify, convolves task E V's with a hemodynamic response, and may add temporal derivatives. Each resulting column consumes model degrees of freedom, so include predictors for a reason—not simply because they are available."
+        },
+        {
+          "id": "observable-check",
+          "kind": "practice",
+          "display": {
+            "eyebrow": "Connect concept to evidence",
+            "title": "Try this in Neurodesk",
+            "body": "Use a small, explicit check before drawing a scientific conclusion.",
+            "bullets": [
+              "List the experimental conditions in one run.",
+              "Decide which need separate EVs.",
+              "List motion or confound regressors separately.",
+              "State what a positive parameter estimate would mean for one EV."
+            ]
+          },
+          "narration": "Now connect the idea to an observable check. First, list the experimental conditions in one run. Next, decide which need separate E V's. Then, list motion or confound regressors separately. After that, state what a positive parameter estimate would mean for one E V. Record what you observe so the decision remains reviewable."
+        },
+        {
+          "id": "quality-control",
+          "kind": "quality-control",
+          "display": {
+            "eyebrow": "Quality-control question",
+            "title": "What would make this interpretation trustworthy?",
+            "body": "Before interpreting the result, confirm that the input, operation, and output support the same scientific question.",
+            "bullets": [
+              "In one or two sentences, what decision does “What is an explanatory variable?” support?",
+              "Distinguish original EVs from convolved predictors and nuisance regressors"
+            ]
+          },
+          "narration": "Quality control comes before interpretation. Before interpreting the result, confirm that the input, operation, and output support the same scientific question. A useful self-check is this: In one or two sentences, what decision does “What is an explanatory variable?” support? Distinguish original E V's from convolved predictors and nuisance regressors."
+        },
+        {
+          "id": "summary",
+          "kind": "summary",
+          "display": {
+            "eyebrow": "Take-away",
+            "title": "Carry the reasoning into the next step",
+            "body": "Distinguish original EVs from convolved predictors and nuisance regressors",
+            "bullets": [
+              "Represent one hypothesized source of signal as a column in the design matrix.",
+              "Document the decision and inspect the corresponding input or output."
+            ]
+          },
+          "narration": "To recap: First, represent one hypothesized source of signal as a column in the design matrix. Next, document the decision and inspect the corresponding input or output. Before continuing, make sure you can explain this objective: Distinguish original E V's from convolved predictors and nuisance regressors."
+        }
+      ]
+    },
+    {
+      "slug": "hrf-and-convolution",
+      "compositionId": "LessonHrfAndConvolution",
+      "courseSlug": "first-level-fmri-analysis-feat",
+      "courseTitle": "First-Level fMRI Analysis in FEAT",
+      "courseLabel": "First-Level FEAT",
+      "catalogNumber": "FSL 301",
+      "moduleTitle": "The HRF and convolution",
+      "lessonNumber": "5.1",
+      "title": "The HRF and convolution",
+      "description": "Turn event timing into a prediction of the delayed BOLD response.",
+      "videoType": "concept",
+      "accent": "#ffbf69",
+      "voice": "Daniel",
+      "speechRate": 148,
+      "fps": 30,
+      "source": {
+        "repository": "tubric/2026s-fmri-class",
+        "file": "Lab-3_FSL_Level1.md",
+        "section": "Stats tab — convolution settings",
+        "license": "MIT"
+      },
+      "scenes": [
+        {
+          "id": "opening",
+          "kind": "opening",
+          "display": {
+            "eyebrow": "FSL 301 · Concept video",
+            "title": "The HRF and convolution",
+            "body": "Turn event timing into a prediction of the delayed BOLD response.",
+            "bullets": [
+              "Explain why neural event timing is convolved with a hemodynamic response function",
+              "Connect the concept to a concrete FEAT or Neurodesk check"
+            ]
+          },
+          "narration": "The H R F and convolution. Turn event timing into a prediction of the delayed bold response. The goal is clear: Explain why neural event timing is convolved with a hemodynamic response function."
+        },
+        {
+          "id": "core-idea",
+          "kind": "explanation",
+          "display": {
+            "eyebrow": "Core idea",
+            "title": "The HRF and convolution",
+            "body": "The hemodynamic response function (HRF) approximates the delayed, smooth BOLD response that follows brief neural activity. Convolution combines event timing with this response shape to create a model predictor."
+          },
+          "narration": "The H R F and convolution. The hemodynamic response function (H R F) approximates the delayed, smooth bold response that follows brief neural activity. Convolution combines event timing with this response shape to create a model predictor. The predictor should resemble the signal you expect to measure, not an instantaneous event list. FEAT offers basis choices and temporal derivatives, but extra flexibility changes the model and interpretation. Use the course or study protocol rather than defaulting blindly."
+        },
+        {
+          "id": "observable-check",
+          "kind": "practice",
+          "display": {
+            "eyebrow": "Connect concept to evidence",
+            "title": "Try this in Neurodesk",
+            "body": "Use a small, explicit check before drawing a scientific conclusion.",
+            "bullets": [
+              "Draw a brief event at 10 seconds.",
+              "Sketch a delayed response peaking several seconds later.",
+              "Compare your sketch with FEAT's plotted EV shape."
+            ]
+          },
+          "narration": "Now connect the idea to an observable check. First, draw a brief event at 10 seconds. Next, sketch a delayed response peaking several seconds later. Then, compare your sketch with FEAT's plotted E V shape. Record what you observe so the decision remains reviewable."
+        },
+        {
+          "id": "quality-control",
+          "kind": "quality-control",
+          "display": {
+            "eyebrow": "Quality-control question",
+            "title": "What would make this interpretation trustworthy?",
+            "body": "Before interpreting the result, confirm that the input, operation, and output support the same scientific question.",
+            "bullets": [
+              "In one or two sentences, what decision does “The HRF and convolution” support?",
+              "Explain why neural event timing is convolved with a hemodynamic response function"
+            ]
+          },
+          "narration": "Quality control comes before interpretation. Before interpreting the result, confirm that the input, operation, and output support the same scientific question. A useful self-check is this: In one or two sentences, what decision does “The H R F and convolution” support? Explain why neural event timing is convolved with a hemodynamic response function."
+        },
+        {
+          "id": "summary",
+          "kind": "summary",
+          "display": {
+            "eyebrow": "Take-away",
+            "title": "Carry the reasoning into the next step",
+            "body": "Explain why neural event timing is convolved with a hemodynamic response function",
+            "bullets": [
+              "Turn event timing into a prediction of the delayed BOLD response.",
+              "Document the decision and inspect the corresponding input or output."
+            ]
+          },
+          "narration": "To recap: First, turn event timing into a prediction of the delayed bold response. Next, document the decision and inspect the corresponding input or output. Before continuing, make sure you can explain this objective: Explain why neural event timing is convolved with a hemodynamic response function."
+        }
+      ]
+    },
+    {
+      "slug": "confound-regressors",
+      "compositionId": "LessonConfoundRegressors",
+      "courseSlug": "first-level-fmri-analysis-feat",
+      "courseTitle": "First-Level fMRI Analysis in FEAT",
+      "courseLabel": "First-Level FEAT",
+      "catalogNumber": "FSL 301",
+      "moduleTitle": "Confound regressors",
+      "lessonNumber": "6.1",
+      "title": "Confound regressors",
+      "description": "Model nuisance variation without treating it as the effect of interest.",
+      "videoType": "concept",
+      "accent": "#ffbf69",
+      "voice": "Daniel",
+      "speechRate": 148,
+      "fps": 30,
+      "source": {
+        "repository": "tubric/2026s-fmri-class",
+        "file": "Lab-3_Supplement.md",
+        "section": "Supplement — extract basic confounds",
+        "license": "MIT"
+      },
+      "scenes": [
+        {
+          "id": "opening",
+          "kind": "opening",
+          "display": {
+            "eyebrow": "FSL 301 · Concept video",
+            "title": "Confound regressors",
+            "body": "Model nuisance variation without treating it as the effect of interest.",
+            "bullets": [
+              "Explain why and how nuisance regressors enter a first-level design",
+              "Connect the concept to a concrete FEAT or Neurodesk check"
+            ]
+          },
+          "narration": "Confound regressors. Model nuisance variation without treating it as the effect of interest. The goal is clear: Explain why and how nuisance regressors enter a first-level design."
+        },
+        {
+          "id": "core-idea",
+          "kind": "explanation",
+          "display": {
+            "eyebrow": "Core idea",
+            "title": "Confound regressors",
+            "body": "Confound regressors capture structured variation—such as motion—that is not the experimental effect of interest. They reduce bias when specified appropriately, but they do not automatically repair poor data."
+          },
+          "narration": "Confound regressors. Confound regressors capture structured variation—such as motion—that is not the experimental effect of interest. They reduce bias when specified appropriately, but they do not automatically repair poor data. Motion estimates, non-steady-state volumes, physiological terms, or fMRIPrep confounds may be used according to a documented strategy. Check column count, missing values, and time points. A confound file must have one row per modeled volume."
+        },
+        {
+          "id": "observable-check",
+          "kind": "practice",
+          "display": {
+            "eyebrow": "Connect concept to evidence",
+            "title": "Try this in Neurodesk",
+            "body": "Use a small, explicit check before drawing a scientific conclusion.",
+            "bullets": [
+              "Find the number of BOLD volumes.",
+              "Count rows and columns in the confound file.",
+              "Confirm there are no text headers if FEAT expects numeric input.",
+              "Document why each column is included."
+            ],
+            "code": "fslval filtered_func_data.nii.gz dim4\nwc -l confounds.txt\nhead confounds.txt"
+          },
+          "narration": "Now connect the idea to an observable check. First, find the number of bold volumes. Next, count rows and columns in the confound file. Then, confirm there are no text headers if FEAT expects numeric input. After that, document why each column is included. The command shown on screen is an example. Adapt its path to your own working directory and verify the target before running it."
+        },
+        {
+          "id": "quality-control",
+          "kind": "quality-control",
+          "display": {
+            "eyebrow": "Quality-control question",
+            "title": "What would make this interpretation trustworthy?",
+            "body": "The BOLD series and confound file have the same number of time points.",
+            "output": "240\n240 confounds.txt",
+            "bullets": [
+              "In one or two sentences, what decision does “Confound regressors” support?",
+              "Explain why and how nuisance regressors enter a first-level design"
+            ]
+          },
+          "narration": "Quality control comes before interpretation. The bold series and confound file have the same number of time points. A useful self-check is this: In one or two sentences, what decision does “Confound regressors” support? Explain why and how nuisance regressors enter a first-level design."
+        },
+        {
+          "id": "summary",
+          "kind": "summary",
+          "display": {
+            "eyebrow": "Take-away",
+            "title": "Carry the reasoning into the next step",
+            "body": "Explain why and how nuisance regressors enter a first-level design",
+            "bullets": [
+              "Model nuisance variation without treating it as the effect of interest.",
+              "Document the decision and inspect the corresponding input or output."
+            ]
+          },
+          "narration": "To recap: First, model nuisance variation without treating it as the effect of interest. Next, document the decision and inspect the corresponding input or output. Before continuing, make sure you can explain this objective: Explain why and how nuisance regressors enter a first-level design."
+        }
+      ]
+    },
+    {
+      "slug": "reviewing-complete-feat-report",
+      "compositionId": "LessonReviewingCompleteFeatReport",
+      "courseSlug": "first-level-fmri-analysis-feat",
+      "courseTitle": "First-Level fMRI Analysis in FEAT",
+      "courseLabel": "First-Level FEAT",
+      "catalogNumber": "FSL 301",
+      "moduleTitle": "Complete guided analysis",
+      "lessonNumber": "20.1",
+      "title": "Reviewing a complete FEAT report",
+      "description": "Review a completed FEAT report as an ordered chain of quality-control evidence.",
+      "videoType": "quality-control",
+      "accent": "#ffbf69",
+      "voice": "Daniel",
+      "speechRate": 148,
+      "fps": 30,
+      "source": {
+        "repository": "tubric/2026s-fmri-class",
+        "file": "Lab-3_FSL_Level1.md",
+        "section": "Viewing and QC'ing FEAT output",
+        "license": "MIT"
+      },
+      "scenes": [
+        {
+          "id": "opening",
+          "kind": "opening",
+          "display": {
+            "eyebrow": "FSL 301 · Quality-control video",
+            "title": "Reviewing a complete FEAT report",
+            "body": "Treat the report as a chain of evidence, not a gallery of activation maps."
+          },
+          "narration": "A completed FEAT report is not automatically a valid analysis. It is a structured record that lets you review preprocessing, registration, model design, and statistical output in an evidence-based order. This video shows how to read that record before interpreting bright clusters or reporting a result."
+        },
+        {
+          "id": "review-order",
+          "kind": "explanation",
+          "display": {
+            "eyebrow": "Review in order",
+            "title": "Inputs before inference",
+            "body": "Later results depend on every earlier stage.",
+            "bullets": [
+              "Pre-stats: motion and preprocessing",
+              "Registration: anatomical correspondence",
+              "Stats: design matrix and contrasts",
+              "Post-stats: thresholded inference"
+            ],
+            "image": "/curriculum/feat-report.png",
+            "imageCaption": "Real FEAT report captured in the adapted source curriculum."
+          },
+          "narration": "Review the report in dependency order. Begin with Pre-stats and ask whether motion, masking, and preprocessing outputs are plausible. Continue to Registration and inspect alignment across the brain. Then examine the design matrix, explanatory variables, and contrasts under Stats. Only after those checks should you interpret thresholded results under Post-stats. A failure early in this chain limits what later pages can support."
+        },
+        {
+          "id": "three-questions",
+          "kind": "evidence",
+          "display": {
+            "eyebrow": "Three defensible statements",
+            "title": "What did you actually check?",
+            "bullets": [
+              "Motion: acceptable, concerning, or unusable—and why?",
+              "Registration: where do boundaries agree or fail?",
+              "Design: do timing, columns, and contrasts match the protocol?"
+            ],
+            "image": "/curriculum/feat-registration.png",
+            "imageCaption": "Registration evidence from the source workflow."
+          },
+          "narration": "Write one defensible statement for each major dependency. For motion, describe the plot and any abrupt displacement rather than saying it looks fine. For registration, name anatomical boundaries and multiple slices that support a pass or concern. For the design, match columns to timing files and contrast arrows to the planned hypothesis. Specific observations are auditable; vague reassurance is not."
+        },
+        {
+          "id": "results-last",
+          "kind": "quality-control",
+          "display": {
+            "eyebrow": "Results come last",
+            "title": "A z-statistic is not an effect size",
+            "body": "Interpret cope, uncertainty, standardized evidence, and thresholded display as related but different outputs.",
+            "bullets": [
+              "cope: estimated contrast effect",
+              "varcope: uncertainty",
+              "t or z: standardized evidence",
+              "thresholded map: inferential display"
+            ]
+          },
+          "narration": "When you reach the results, keep the output types separate. A cope is the estimated contrast effect. A varcope describes uncertainty in that estimate. A t-statistic or z-statistic standardizes evidence relative to uncertainty. A thresholded map displays locations surviving the chosen inferential procedure. Do not describe a z-statistic map as an effect-size map, and do not let an attractive cluster override failed motion, registration, or design checks."
+        },
+        {
+          "id": "summary",
+          "kind": "summary",
+          "display": {
+            "eyebrow": "Document the decision",
+            "title": "Pass, concern, or fail—with evidence",
+            "body": "A complete analysis includes a written QC judgment, not only a dot feat directory.",
+            "bullets": [
+              "Name the evidence reviewed",
+              "Record concerns and their likely impact",
+              "Link conclusions to the approved analysis plan",
+              "Preserve the report and design"
+            ]
+          },
+          "narration": "Finish with an explicit quality-control decision: pass, concern, or fail, followed by the evidence that supports it. Record any limitation and explain how it affects interpretation. Preserve the report, design files, and notes together. The purpose of review is not to prove that FEAT completed. It is to decide whether this run can support the scientific claim you intend to make."
+        }
+      ]
+    }
+  ]
+}

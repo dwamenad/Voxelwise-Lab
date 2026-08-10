@@ -1,0 +1,87 @@
+1
+00:00:00,000 --> 00:00:00,921
+The terminal.
+
+2
+00:00:00,921 --> 00:00:05,528
+Read a shell prompt and understand commands, options, and arguments.
+
+3
+00:00:05,528 --> 00:00:10,134
+The goal is clear: Identify a command and its arguments.
+
+4
+00:00:10,984 --> 00:00:12,835
+Commands are precise instructions.
+
+5
+00:00:12,835 --> 00:00:19,314
+A shell command usually begins with a program name, followed by options and arguments.
+
+6
+00:00:19,314 --> 00:00:25,792
+Spaces separate tokens; capitalization matters; the shell does not guess which file you intended.
+
+7
+00:00:25,792 --> 00:00:34,122
+In ls -lh data, ls is the command, -lh changes the display, and data is the target directory.
+
+8
+00:00:34,122 --> 00:00:38,749
+Reading commands this way makes unfamiliar examples easier to adapt.
+
+9
+00:00:39,599 --> 00:00:42,668
+Now connect the idea to an observable check.
+
+10
+00:00:42,668 --> 00:00:44,586
+First, open a base terminal.
+
+11
+00:00:44,586 --> 00:00:46,504
+Next, run the command below.
+
+12
+00:00:46,504 --> 00:00:51,491
+Then, use man ls or ls --help and find the meaning of -h.
+
+13
+00:00:51,491 --> 00:00:54,559
+The command shown on screen is an example.
+
+14
+00:00:54,559 --> 00:01:00,313
+Adapt its path to your own working directory and verify the target before running it.
+
+15
+00:01:01,163 --> 00:01:03,322
+Quality control comes before interpretation.
+
+16
+00:01:03,322 --> 00:01:05,049
+The exact listing differs.
+
+17
+00:01:05,049 --> 00:01:08,503
+-l adds details and -h makes sizes human-readable.
+
+18
+00:01:08,503 --> 00:01:14,547
+A useful self-check is this: What role does data play in ls -lh data?
+
+19
+00:01:14,547 --> 00:01:18,433
+It is the argument—the directory that ls should list.
+
+20
+00:01:19,283 --> 00:01:24,703
+To recap: First, commands, options, and arguments are separate tokens.
+
+21
+00:01:24,703 --> 00:01:28,497
+Next, paths and capitalization must be exact.
+
+22
+00:01:28,497 --> 00:01:36,628
+Before continuing, make sure you can explain this objective: Identify a command and its arguments.

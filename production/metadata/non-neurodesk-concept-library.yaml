@@ -1,0 +1,99 @@
+batch: non-neurodesk-concept-library
+created: 2026-08-10
+
+video:
+  status: recorded
+  count: 18
+  timeline_seconds: 2180.003
+  encoded_seconds: 2182.421
+  encoded_size_megabytes: 222.4
+  resolution: 1920x1080
+  frame_rate: 30
+  codec: h264
+  audio: aac-48000hz-stereo
+  captions:
+    burned_in: true
+    sidecar_format: srt
+  transcript_format: markdown
+
+narration:
+  status: generated
+  voice: Daniel
+  accent: UK English
+  cadence: deliberate
+  words_per_minute: 148
+
+delivery:
+  storage: Google Drive
+  sharing: private
+  foundations_folder: https://drive.google.com/drive/folders/1LiqGOXUNF2j88Om17_1luh6epamtunXY
+  first_level_folder: https://drive.google.com/drive/folders/1uT_MDor_fU1KLq7dEZyVH23SPHL7tZ3V
+
+lessons:
+  - slug: what-is-fsl
+    course: foundations
+    seconds: 133.488
+  - slug: how-this-course-works
+    course: foundations
+    seconds: 105.450
+  - slug: getting-started-with-neurodesk
+    course: foundations
+    seconds: 132.548
+  - slug: the-terminal
+    course: foundations
+    seconds: 97.478
+  - slug: linux-navigation
+    course: foundations
+    seconds: 119.164
+  - slug: what-is-a-nifti-image
+    course: foundations
+    seconds: 125.352
+  - slug: understanding-bids
+    course: foundations
+    seconds: 122.854
+  - slug: introduction-to-fsleyes
+    course: foundations
+    seconds: 117.353
+  - slug: overlays-atlases-and-time-series
+    course: foundations
+    seconds: 125.811
+  - slug: fslinfo-and-fslstats
+    course: foundations
+    seconds: 126.537
+  - slug: fslmaths-and-fslmeants
+    course: foundations
+    seconds: 116.192
+  - slug: what-first-level-means
+    course: first-level-feat
+    seconds: 112.279
+  - slug: what-is-a-glm
+    course: first-level-feat
+    seconds: 132.306
+  - slug: experimental-timing-files
+    course: first-level-feat
+    seconds: 112.838
+  - slug: what-is-an-ev
+    course: first-level-feat
+    seconds: 124.039
+  - slug: hrf-and-convolution
+    course: first-level-feat
+    seconds: 116.843
+  - slug: confound-regressors
+    course: first-level-feat
+    seconds: 118.626
+  - slug: reviewing-complete-feat-report
+    course: first-level-feat
+    seconds: 140.844
+
+scientific_review:
+  status: source-checked
+  basis: tubric/2026s-fmri-class and the production-ready Voxelwise Lab lesson content
+  external_reviewer: pending
+
+deferred:
+  live_walkthroughs:
+    count: 13
+    blocked_by: Neurodesk Play access pending review
+  outline_only_concepts:
+    count: 33
+    blocked_by: lesson content expansion and scientific review

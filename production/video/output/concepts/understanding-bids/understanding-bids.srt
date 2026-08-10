@@ -1,0 +1,107 @@
+1
+00:00:00,000 --> 00:00:01,123
+Understanding BIDS.
+
+2
+00:00:01,123 --> 00:00:07,298
+Read standardized neuroimaging filenames and find anatomy, function, events, and metadata.
+
+3
+00:00:07,298 --> 00:00:12,912
+The goal is clear: Identify BIDS entities in a filename.
+
+4
+00:00:13,762 --> 00:00:16,660
+Structure is part of the data.
+
+5
+00:00:16,660 --> 00:00:30,664
+The Brain Imaging Data Structure (BIDS) uses predictable folders and filenames so people and software can identify participants, sessions, tasks, runs, and modalities without relying on local naming conventions.
+
+6
+00:00:30,664 --> 00:00:35,493
+A functional run lives under sub-*/func/ and pairs a _bold.
+
+7
+00:00:35,493 --> 00:00:35,976
+nii.
+
+8
+00:00:35,976 --> 00:00:38,390
+gz image with a _bold.
+
+9
+00:00:38,390 --> 00:00:39,356
+json sidecar.
+
+10
+00:00:39,356 --> 00:00:40,322
+Its _events.
+
+11
+00:00:40,322 --> 00:00:43,702
+tsv file describes event onsets and durations.
+
+12
+00:00:43,702 --> 00:00:47,082
+Anatomical T1-weighted data typically live under sub-*/anat/.
+
+13
+00:00:47,932 --> 00:00:51,433
+Now connect the idea to an observable check.
+
+14
+00:00:51,433 --> 00:00:53,621
+First, list one participant folder.
+
+15
+00:00:53,621 --> 00:00:57,559
+Next, find one bold image and its JSON sidecar.
+
+16
+00:00:57,559 --> 00:00:59,747
+Then, find the matching events.
+
+17
+00:00:59,747 --> 00:01:00,623
+tsv file.
+
+18
+00:01:00,623 --> 00:01:04,561
+After that, translate each filename entity into plain language.
+
+19
+00:01:04,561 --> 00:01:08,062
+The command shown on screen is an example.
+
+20
+00:01:08,062 --> 00:01:14,626
+Adapt its path to your own working directory and verify the target before running it.
+
+21
+00:01:15,476 --> 00:01:17,788
+Quality control comes before interpretation.
+
+22
+00:01:17,788 --> 00:01:25,189
+Before interpreting the result, confirm that the input, operation, and output support the same scientific question.
+
+23
+00:01:25,189 --> 00:01:32,590
+A useful self-check is this: Why does a bold run need both NIfTI and JSON files?
+
+24
+00:01:32,590 --> 00:01:43,229
+The NIfTI stores image data; the JSON sidecar stores acquisition metadata that may not be represented reliably in the image filename or header.
+
+25
+00:01:44,079 --> 00:01:48,824
+To recap: First, BIDS makes inputs discoverable and machine-readable.
+
+26
+00:01:48,824 --> 00:01:54,096
+Next, match images, sidecars, and events by their shared entities.
+
+27
+00:01:54,096 --> 00:02:02,004
+Before continuing, make sure you can explain this objective: Identify BIDS entities in a filename.

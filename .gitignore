@@ -21,8 +21,8 @@
 
 # production
 /build
-/production/video/output/*.mp4
-/production/video/output/preview-*.png
+/production/video/output/**/*.mp4
+/production/video/output/**/preview-*.png
 /public/video-production/**/audio/
 
 # misc

@@ -1,0 +1,95 @@
+1
+00:00:00,000 --> 00:00:02,525
+Overlays, atlases, and time series.
+
+2
+00:00:02,525 --> 00:00:10,099
+Compare aligned images, inspect a bold signal over time, and use atlas labels as references.
+
+3
+00:00:10,099 --> 00:00:15,148
+The goal is clear: Configure overlay opacity and color maps.
+
+4
+00:00:15,998 --> 00:00:18,762
+One coordinate, several sources of evidence.
+
+5
+00:00:18,762 --> 00:00:23,368
+Overlays let you compare images in the same coordinate space.
+
+6
+00:00:23,368 --> 00:00:27,514
+Time-series plots show how a voxel changes across volumes.
+
+7
+00:00:27,514 --> 00:00:37,648
+Atlas lookup adds an anatomical label, but atlas boundaries are probabilistic and should not be treated as ground truth for every participant.
+
+8
+00:00:37,648 --> 00:00:44,096
+Registration quality control is easiest when boundaries from two images can be seen together.
+
+9
+00:00:44,096 --> 00:00:48,242
+Alternate visibility, adjust opacity, or use an edge overlay.
+
+10
+00:00:48,242 --> 00:00:56,994
+For functional data, look for sudden spikes, drifts, or dropout and relate them to later motion and preprocessing reports.
+
+11
+00:00:57,844 --> 00:01:01,425
+Now connect the idea to an observable check.
+
+12
+00:01:01,425 --> 00:01:06,348
+First, load an anatomical background and a functional or standard-space overlay.
+
+13
+00:01:06,348 --> 00:01:08,138
+Next, reduce overlay opacity.
+
+14
+00:01:08,138 --> 00:01:12,166
+Then, check alignment in at least three distant locations.
+
+15
+00:01:12,166 --> 00:01:17,537
+After that, open atlas tools and note the probability for one label.
+
+16
+00:01:17,537 --> 00:01:21,565
+Record what you observe so the decision remains reviewable.
+
+17
+00:01:22,415 --> 00:01:23,808
+Quality Control Check.
+
+18
+00:01:23,808 --> 00:01:26,593
+Inspect multiple slices and brain boundaries.
+
+19
+00:01:26,593 --> 00:01:31,700
+Do not accept registration because the images overlap near the center.
+
+20
+00:01:31,700 --> 00:01:39,129
+A useful self-check is this: Why is a single central slice insufficient for registration quality control?
+
+21
+00:01:39,129 --> 00:01:46,557
+Misalignment can be local or more visible near boundaries; several planes and regions must be inspected.
+
+22
+00:01:47,407 --> 00:01:52,195
+To recap: First, use overlays to test spatial correspondence.
+
+23
+00:01:52,195 --> 00:01:56,982
+Next, atlas labels are references, not perfect individual anatomy.
+
+24
+00:01:56,982 --> 00:02:04,961
+Before continuing, make sure you can explain this objective: Configure overlay opacity and color maps.

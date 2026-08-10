@@ -1,0 +1,99 @@
+1
+00:00:00,000 --> 00:00:02,413
+Introduction to F S L Eyes.
+
+2
+00:00:02,413 --> 00:00:07,238
+Load anatomical and functional NIfTI files and orient yourself in three planes.
+
+3
+00:00:07,238 --> 00:00:10,858
+The goal is clear: Open files from the terminal.
+
+4
+00:00:11,708 --> 00:00:14,026
+Visual inspection is an analysis step.
+
+5
+00:00:14,026 --> 00:00:18,663
+F S L Eyes lets you examine image geometry and intensity directly.
+
+6
+00:00:18,663 --> 00:00:22,913
+The orthographic view shows the same location in three anatomical planes.
+
+7
+00:00:22,913 --> 00:00:27,936
+The overlay list controls which images are visible and how they are colored.
+
+8
+00:00:27,936 --> 00:00:35,277
+Start by checking that the brain is oriented sensibly, the field of view is complete, and signal is present.
+
+9
+00:00:35,277 --> 00:00:39,527
+For four-D images, move through volumes or open the time-series view.
+
+10
+00:00:39,527 --> 00:00:44,937
+A file loading without an error does not prove that the data are usable.
+
+11
+00:00:45,787 --> 00:00:48,958
+Now connect the idea to an observable check.
+
+12
+00:00:48,958 --> 00:00:52,921
+First, launch F S L Eyes with a NIfTI path.
+
+13
+00:00:52,921 --> 00:00:55,695
+Next, move the crosshair through the brain.
+
+14
+00:00:55,695 --> 00:00:58,866
+Then, record one scanner coordinate and voxel coordinate.
+
+15
+00:00:58,866 --> 00:01:03,225
+After that, for a bold file, open View then Time series.
+
+16
+00:01:03,225 --> 00:01:06,396
+The command shown on screen is an example.
+
+17
+00:01:06,396 --> 00:01:12,341
+Adapt its path to your own working directory and verify the target before running it.
+
+18
+00:01:13,191 --> 00:01:14,630
+Quality Control Check.
+
+19
+00:01:14,630 --> 00:01:19,428
+Confirm orientation, brain coverage, and visible signal before beginning preprocessing.
+
+20
+00:01:19,428 --> 00:01:24,225
+A later pipeline cannot recover anatomy that was never acquired.
+
+21
+00:01:24,225 --> 00:01:31,902
+A useful self-check is this: Why can the same point have both voxel and scanner coordinates?
+
+22
+00:01:31,902 --> 00:01:40,537
+Voxel coordinates index the image grid; scanner/world coordinates locate that point in physical space using the image affine.
+
+23
+00:01:41,387 --> 00:01:45,968
+To recap: First, inspect every key input and output visually.
+
+24
+00:01:45,968 --> 00:01:50,090
+Next, use the overlay list and coordinate panel deliberately.
+
+25
+00:01:50,090 --> 00:01:56,503
+Before continuing, make sure you can explain this objective: Open files from the terminal.

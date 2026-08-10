@@ -1,0 +1,83 @@
+1
+00:00:00,000 --> 00:00:01,879
+What first-level analysis means.
+
+2
+00:00:01,879 --> 00:00:07,517
+Connect one participant's bold time series to a model of one run.
+
+3
+00:00:07,517 --> 00:00:13,155
+The goal is clear: Distinguish first-level analysis from within-subject and group analysis.
+
+4
+00:00:14,005 --> 00:00:15,732
+What first-level analysis means.
+
+5
+00:00:15,732 --> 00:00:20,050
+First-level analysis models a single run from a single participant.
+
+6
+00:00:20,050 --> 00:00:28,685
+It estimates how well the predicted response for each explanatory variable accounts for the observed bold signal at every voxel.
+
+7
+00:00:28,685 --> 00:00:31,707
+The output is not a group conclusion.
+
+8
+00:00:31,707 --> 00:00:40,342
+It is a set of participant/run-specific parameter estimates and contrasts that can later feed Level 2 or Level 3 models.
+
+9
+00:00:40,342 --> 00:00:44,227
+Keep the unit of analysis explicit when naming outputs.
+
+10
+00:00:45,077 --> 00:00:48,643
+Now connect the idea to an observable check.
+
+11
+00:00:48,643 --> 00:00:52,654
+First, choose one bold run in a BIDS dataset.
+
+12
+00:00:52,654 --> 00:00:56,220
+Next, identify its participant, task, and run entities.
+
+13
+00:00:56,220 --> 00:01:00,677
+Then, sketch where its first-level dot feat output should live.
+
+14
+00:01:00,677 --> 00:01:04,688
+Record what you observe so the decision remains reviewable.
+
+15
+00:01:05,538 --> 00:01:08,160
+Quality control comes before interpretation.
+
+16
+00:01:08,160 --> 00:01:16,549
+Before interpreting the result, confirm that the input, operation, and output support the same scientific question.
+
+17
+00:01:16,549 --> 00:01:25,986
+A useful self-check is this: In one or two sentences, what decision does “What first-level analysis means” support?
+
+18
+00:01:25,986 --> 00:01:30,180
+Distinguish first-level analysis from within-subject and group analysis.
+
+19
+00:01:31,030 --> 00:01:38,146
+To recap: First, connect one participant's bold time series to a model of one run.
+
+20
+00:01:38,146 --> 00:01:43,364
+Next, document the decision and inspect the corresponding input or output.
+
+21
+00:01:43,364 --> 00:01:51,429
+Before continuing, make sure you can explain this objective: Distinguish first-level analysis from within-subject and group analysis.

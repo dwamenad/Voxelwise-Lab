@@ -1,0 +1,83 @@
+1
+00:00:00,000 --> 00:00:01,834
+How this course works.
+
+2
+00:00:01,834 --> 00:00:07,794
+Use each lesson as a two-window study session: explanation here, analysis in Neurodesk.
+
+3
+00:00:07,794 --> 00:00:12,379
+The goal is clear: Set up an effective two-window workspace.
+
+4
+00:00:13,229 --> 00:00:14,501
+Understand, observe, reproduce.
+
+5
+00:00:14,501 --> 00:00:22,551
+Each workflow is split into a concept, a real interface walkthrough, an independent Neurodesk task, and an output check.
+
+6
+00:00:22,551 --> 00:00:30,602
+The point is not to memorize button positions; it is to understand what information enters and leaves each step.
+
+7
+00:00:30,602 --> 00:00:31,449
+Pause often.
+
+8
+00:00:31,449 --> 00:00:36,957
+Predict what a command or FEAT setting will do before you run it.
+
+9
+00:00:36,957 --> 00:00:43,313
+Then compare the result with the expected output and explain discrepancies in your own words.
+
+10
+00:00:44,163 --> 00:00:47,575
+Now connect the idea to an observable check.
+
+11
+00:00:47,575 --> 00:00:51,839
+First, place this lesson on one side of your screen.
+
+12
+00:00:51,839 --> 00:00:54,824
+Next, place Neurodesk on the other side.
+
+13
+00:00:54,824 --> 00:00:59,089
+Then, create a notes file for observations and unresolved questions.
+
+14
+00:00:59,089 --> 00:01:02,927
+Record what you observe so the decision remains reviewable.
+
+15
+00:01:03,777 --> 00:01:06,801
+Practical labs work best on a computer.
+
+16
+00:01:06,801 --> 00:01:15,011
+Videos and reading work on mobile, but use a desktop or laptop for Neurodesk exercises and side-by-side quality control.
+
+17
+00:01:15,011 --> 00:01:20,197
+A useful self-check is this: When should you look at expected output?
+
+18
+00:01:20,197 --> 00:01:27,542
+After making a prediction and running the step yourself, so the comparison tests understanding rather than copying.
+
+19
+00:01:28,392 --> 00:01:32,097
+To recap: First, predict before running a step.
+
+20
+00:01:32,097 --> 00:01:37,654
+Next, record what you observe, especially when it differs from the example.
+
+21
+00:01:37,654 --> 00:01:44,600
+Before continuing, make sure you can explain this objective: Set up an effective two-window workspace.

@@ -1,0 +1,107 @@
+1
+00:00:00,000 --> 00:00:02,107
+What is a NIfTI image?
+
+2
+00:00:02,107 --> 00:00:05,898
+Interpret the dimensions and spatial metadata stored in .
+
+3
+00:00:05,898 --> 00:00:07,162
+nii and .
+
+4
+00:00:07,162 --> 00:00:07,584
+nii.
+
+5
+00:00:07,584 --> 00:00:08,426
+gz files.
+
+6
+00:00:08,426 --> 00:00:11,797
+The goal is clear: Differentiate voxels and volumes.
+
+7
+00:00:12,647 --> 00:00:17,798
+A four-D image is a time-ordered stack of three-D volumes.
+
+8
+00:00:17,798 --> 00:00:20,888
+A voxel is a three-dimensional sample.
+
+9
+00:00:20,888 --> 00:00:31,190
+An anatomical NIfTI is usually one three-D volume; a bold NIfTI usually contains many volumes along a fourth, temporal dimension.
+
+10
+00:00:31,190 --> 00:00:35,825
+Header metadata records dimensions, voxel sizes, orientation, and timing.
+
+11
+00:00:35,825 --> 00:00:40,976
+If dim4 is 240, the bold series contains 240 volumes.
+
+12
+00:00:40,976 --> 00:00:48,702
+Spatial resolution comes from pixdim1 through pixdim3; pixdim4 often records the T R in seconds.
+
+13
+00:00:48,702 --> 00:00:53,853
+Always verify the units in the header and JSON sidecar.
+
+14
+00:00:54,703 --> 00:00:58,086
+Now connect the idea to an observable check.
+
+15
+00:00:58,086 --> 00:01:00,622
+First, navigate to a NIfTI file.
+
+16
+00:01:00,622 --> 00:01:04,005
+Next, run F S L info on it.
+
+17
+00:01:04,005 --> 00:01:06,119
+Then, record dim1–dim4 and pixdim1–pixdim4.
+
+18
+00:01:06,119 --> 00:01:10,348
+After that, decide whether the file is anatomical or functional.
+
+19
+00:01:10,348 --> 00:01:13,730
+The command shown on screen is an example.
+
+20
+00:01:13,730 --> 00:01:20,073
+Adapt its path to your own working directory and verify the target before running it.
+
+21
+00:01:20,923 --> 00:01:23,276
+Quality control comes before interpretation.
+
+22
+00:01:23,276 --> 00:01:32,692
+This example is a 64 by 64 by 40 image sampled over 240 time points with a 2-second T R.
+
+23
+00:01:32,692 --> 00:01:39,754
+A useful self-check is this: What does dim4 = 240 mean for a bold image?
+
+24
+00:01:39,754 --> 00:01:44,461
+The file contains 240 three-dimensional volumes in its time series.
+
+25
+00:01:45,311 --> 00:01:52,775
+To recap: First, voxels make up volumes; volumes make up a four-D time series.
+
+26
+00:01:52,775 --> 00:01:57,572
+Next, inspect headers rather than inferring dimensions from filenames.
+
+27
+00:01:57,572 --> 00:02:04,502
+Before continuing, make sure you can explain this objective: Differentiate voxels and volumes.

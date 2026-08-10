@@ -1,0 +1,99 @@
+1
+00:00:00,000 --> 00:00:03,308
+F S L maths and F S L means.
+
+2
+00:00:03,308 --> 00:00:08,455
+Create masks and extract a mean time series without losing track of image space.
+
+3
+00:00:08,455 --> 00:00:11,763
+The goal is clear: Build a simple thresholded mask.
+
+4
+00:00:12,613 --> 00:00:14,320
+Transform first, measure second.
+
+5
+00:00:14,320 --> 00:00:20,294
+F S L maths applies image operations in sequence and writes a new image.
+
+6
+00:00:20,294 --> 00:00:25,415
+F S L means summarizes a four-D time series within a mask.
+
+7
+00:00:25,415 --> 00:00:30,536
+The mask and source data must have compatible dimensions and spatial alignment.
+
+8
+00:00:30,536 --> 00:00:35,229
+A binary mask contains 1 for included voxels and 0 elsewhere.
+
+9
+00:00:35,229 --> 00:00:41,204
+Thresholding alone may not create a scientifically valid ROI; it is simply an operation.
+
+10
+00:00:41,204 --> 00:00:45,471
+View every derived mask before using it to extract values.
+
+11
+00:00:46,321 --> 00:00:49,504
+Now connect the idea to an observable check.
+
+12
+00:00:49,504 --> 00:00:53,084
+First, create a binary mask from an example image.
+
+13
+00:00:53,084 --> 00:00:56,267
+Next, open the mask over the source image.
+
+14
+00:00:56,267 --> 00:00:59,450
+Then, confirm dimensions with F S L info.
+
+15
+00:00:59,450 --> 00:01:04,224
+After that, extract a mean time series and inspect its first values.
+
+16
+00:01:04,224 --> 00:01:07,406
+The command shown on screen is an example.
+
+17
+00:01:07,406 --> 00:01:13,374
+Adapt its path to your own working directory and verify the target before running it.
+
+18
+00:01:14,224 --> 00:01:15,440
+Quality Control Check.
+
+19
+00:01:15,440 --> 00:01:19,491
+Overlay the mask on the exact image used for extraction.
+
+20
+00:01:19,491 --> 00:01:22,733
+Matching dimensions do not guarantee meaningful anatomical alignment.
+
+21
+00:01:22,733 --> 00:01:30,026
+A useful self-check is this: What must you verify before using a mask with F S L means?
+
+22
+00:01:30,026 --> 00:01:36,915
+That it is scientifically appropriate and aligned to the same dimensions and space as the four-D input.
+
+23
+00:01:37,765 --> 00:01:44,112
+To recap: First, F S L maths writes derived images; preserve meaningful names.
+
+24
+00:01:44,112 --> 00:01:48,506
+Next, never extract a signal from an uninspected mask.
+
+25
+00:01:48,506 --> 00:01:55,342
+Before continuing, make sure you can explain this objective: Build a simple thresholded mask.

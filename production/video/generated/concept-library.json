@@ -1,0 +1,4481 @@
+{
+  "version": 1,
+  "videos": [
+    {
+      "slug": "what-is-fsl",
+      "compositionId": "LessonWhatIsFsl",
+      "fps": 30,
+      "totalFrames": 4006,
+      "totalSeconds": 133.488004,
+      "voice": "Daniel",
+      "speechRate": 148,
+      "scenes": [
+        {
+          "id": "opening",
+          "audioPath": "video-production/what-is-fsl/audio/opening.m4a",
+          "audioSeconds": 13.608163,
+          "durationSeconds": 14.458162999999999,
+          "durationInFrames": 434,
+          "startSeconds": 0,
+          "startFrame": 0
+        },
+        {
+          "id": "core-idea",
+          "audioPath": "video-production/what-is-fsl/audio/core-idea.m4a",
+          "audioSeconds": 46.372517,
+          "durationSeconds": 47.222517,
+          "durationInFrames": 1417,
+          "startSeconds": 14.458162999999999,
+          "startFrame": 434
+        },
+        {
+          "id": "observable-check",
+          "audioPath": "video-production/what-is-fsl/audio/observable-check.m4a",
+          "audioSeconds": 23.105714,
+          "durationSeconds": 23.955714,
+          "durationInFrames": 719,
+          "startSeconds": 61.68068,
+          "startFrame": 1851
+        },
+        {
+          "id": "quality-control",
+          "audioPath": "video-production/what-is-fsl/audio/quality-control.m4a",
+          "audioSeconds": 27.239229,
+          "durationSeconds": 28.089229000000003,
+          "durationInFrames": 843,
+          "startSeconds": 85.636394,
+          "startFrame": 2570
+        },
+        {
+          "id": "summary",
+          "audioPath": "video-production/what-is-fsl/audio/summary.m4a",
+          "audioSeconds": 18.912381,
+          "durationSeconds": 19.762381,
+          "durationInFrames": 593,
+          "startSeconds": 113.725623,
+          "startFrame": 3413
+        }
+      ],
+      "cues": [
+        {
+          "index": 1,
+          "text": "What is F S L?",
+          "startSeconds": 0,
+          "endSeconds": 1.8900226388888888,
+          "startFrame": 0,
+          "endFrame": 57
+        },
+        {
+          "index": 2,
+          "text": "Meet the collection of tools used to inspect, preprocess, model, and report M R I data.",
+          "startSeconds": 1.8900226388888888,
+          "endSeconds": 7.938095083333333,
+          "startFrame": 56,
+          "endFrame": 239
+        },
+        {
+          "index": 3,
+          "text": "The goal is clear: Describe F S L as a suite rather than one application.",
+          "startSeconds": 7.938095083333333,
+          "endSeconds": 13.608163,
+          "startFrame": 238,
+          "endFrame": 409
+        },
+        {
+          "index": 4,
+          "text": "F S L is a toolkit, not a single program.",
+          "startSeconds": 14.458162999999999,
+          "endSeconds": 18.197882112903226,
+          "startFrame": 433,
+          "endFrame": 546
+        },
+        {
+          "index": 5,
+          "text": "F S L—the F M R I B Software Library—is a collection of command-line tools and graphical interfaces for M R I analysis.",
+          "startSeconds": 18.197882112903226,
+          "endSeconds": 26.799236072580648,
+          "startFrame": 545,
+          "endFrame": 804
+        },
+        {
+          "index": 6,
+          "text": "FEAT handles functional M R I modeling, F S L Eyes displays images, and utilities such as F S L info, F S L stats, and F S L maths inspect or transform data.",
+          "startSeconds": 26.799236072580644,
+          "endSeconds": 39.51428105645161,
+          "startFrame": 803,
+          "endFrame": 1186
+        },
+        {
+          "index": 7,
+          "text": "A typical workflow moves between tools.",
+          "startSeconds": 39.51428105645161,
+          "endSeconds": 41.75811252419354,
+          "startFrame": 1185,
+          "endFrame": 1253
+        },
+        {
+          "index": 8,
+          "text": "You might inspect a raw bold image in F S L Eyes, configure a model in FEAT, run it, then return to F S L Eyes to check registration and statistical maps.",
+          "startSeconds": 41.75811252419355,
+          "endSeconds": 53.72521368548387,
+          "startFrame": 1252,
+          "endFrame": 1612
+        },
+        {
+          "index": 9,
+          "text": "Learning F S L therefore means learning both the scientific purpose of each step and the output it produces.",
+          "startSeconds": 53.725213685483865,
+          "endSeconds": 60.830679999999994,
+          "startFrame": 1611,
+          "endFrame": 1825
+        },
+        {
+          "index": 10,
+          "text": "Now connect the idea to an observable check.",
+          "startSeconds": 61.68068,
+          "endSeconds": 64.7109375737705,
+          "startFrame": 1850,
+          "endFrame": 1942
+        },
+        {
+          "index": 11,
+          "text": "First, open Neurodesk in a second window.",
+          "startSeconds": 64.7109375737705,
+          "endSeconds": 67.36241295081967,
+          "startFrame": 1941,
+          "endFrame": 2021
+        },
+        {
+          "index": 12,
+          "text": "Next, locate the F S L application tile.",
+          "startSeconds": 67.36241295081967,
+          "endSeconds": 70.39267052459017,
+          "startFrame": 2020,
+          "endFrame": 2112
+        },
+        {
+          "index": 13,
+          "text": "Then, open an F S L terminal and identify the version shown in the prompt.",
+          "startSeconds": 70.39267052459016,
+          "endSeconds": 76.07440347540984,
+          "startFrame": 2111,
+          "endFrame": 2283
+        },
+        {
+          "index": 14,
+          "text": "The command shown on screen is an example.",
+          "startSeconds": 76.07440347540984,
+          "endSeconds": 79.10466104918034,
+          "startFrame": 2282,
+          "endFrame": 2374
+        },
+        {
+          "index": 15,
+          "text": "Adapt its path to your own working directory and verify the target before running it.",
+          "startSeconds": 79.10466104918032,
+          "endSeconds": 84.786394,
+          "startFrame": 2373,
+          "endFrame": 2544
+        },
+        {
+          "index": 16,
+          "text": "Educational scope.",
+          "startSeconds": 85.636394,
+          "endSeconds": 86.66428943396225,
+          "startFrame": 2569,
+          "endFrame": 2600
+        },
+        {
+          "index": 17,
+          "text": "These lessons teach transferable workflows.",
+          "startSeconds": 86.66428943396225,
+          "endSeconds": 89.23402801886792,
+          "startFrame": 2599,
+          "endFrame": 2678
+        },
+        {
+          "index": 18,
+          "text": "Always follow the preprocessing and statistical protocol approved for your project or institution.",
+          "startSeconds": 89.23402801886792,
+          "endSeconds": 95.91534833962264,
+          "startFrame": 2677,
+          "endFrame": 2878
+        },
+        {
+          "index": 19,
+          "text": "A useful self-check is this: Why do we move between FEAT, F S L Eyes, and F S L utilities?",
+          "startSeconds": 95.91534833962264,
+          "endSeconds": 106.19430267924528,
+          "startFrame": 2877,
+          "endFrame": 3186
+        },
+        {
+          "index": 20,
+          "text": "They serve different roles: model configuration, visual inspection, and command-line measurement or transformation.",
+          "startSeconds": 106.19430267924528,
+          "endSeconds": 112.875623,
+          "startFrame": 3185,
+          "endFrame": 3387
+        },
+        {
+          "index": 21,
+          "text": "To recap: First, F S L is a suite of related neuroimaging tools.",
+          "startSeconds": 113.725623,
+          "endSeconds": 119.7222316097561,
+          "startFrame": 3411,
+          "endFrame": 3592
+        },
+        {
+          "index": 22,
+          "text": "Next, successful computation never replaces visual quality control.",
+          "startSeconds": 119.7222316097561,
+          "endSeconds": 123.41245229268293,
+          "startFrame": 3591,
+          "endFrame": 3703
+        },
+        {
+          "index": 23,
+          "text": "Before continuing, make sure you can explain this objective: Describe F S L as a suite rather than one application.",
+          "startSeconds": 123.41245229268293,
+          "endSeconds": 132.638004,
+          "startFrame": 3702,
+          "endFrame": 3980
+        }
+      ]
+    },
+    {
+      "slug": "how-this-course-works",
+      "compositionId": "LessonHowThisCourseWorks",
+      "fps": 30,
+      "totalFrames": 3166,
+      "totalSeconds": 105.449546,
+      "voice": "Daniel",
+      "speechRate": 148,
+      "scenes": [
+        {
+          "id": "opening",
+          "audioPath": "video-production/how-this-course-works/audio/opening.m4a",
+          "audioSeconds": 12.37941,
+          "durationSeconds": 13.22941,
+          "durationInFrames": 397,
+          "startSeconds": 0,
+          "startFrame": 0
+        },
+        {
+          "id": "core-idea",
+          "audioPath": "video-production/how-this-course-works/audio/core-idea.m4a",
+          "audioSeconds": 30.083673,
+          "durationSeconds": 30.933673000000002,
+          "durationInFrames": 929,
+          "startSeconds": 13.22941,
+          "startFrame": 397
+        },
+        {
+          "id": "observable-check",
+          "audioPath": "video-production/how-this-course-works/audio/observable-check.m4a",
+          "audioSeconds": 18.763583,
+          "durationSeconds": 19.613583000000002,
+          "durationInFrames": 589,
+          "startSeconds": 44.163083,
+          "startFrame": 1326
+        },
+        {
+          "id": "quality-control",
+          "audioPath": "video-production/how-this-course-works/audio/quality-control.m4a",
+          "audioSeconds": 23.765624,
+          "durationSeconds": 24.615624,
+          "durationInFrames": 739,
+          "startSeconds": 63.776666000000006,
+          "startFrame": 1915
+        },
+        {
+          "id": "summary",
+          "audioPath": "video-production/how-this-course-works/audio/summary.m4a",
+          "audioSeconds": 16.207256,
+          "durationSeconds": 17.057256000000002,
+          "durationInFrames": 512,
+          "startSeconds": 88.39229,
+          "startFrame": 2654
+        }
+      ],
+      "cues": [
+        {
+          "index": 1,
+          "text": "How this course works.",
+          "startSeconds": 0,
+          "endSeconds": 1.8339866666666667,
+          "startFrame": 0,
+          "endFrame": 56
+        },
+        {
+          "index": 2,
+          "text": "Use each lesson as a two-window study session: explanation here, analysis in Neurodesk.",
+          "startSeconds": 1.8339866666666667,
+          "endSeconds": 7.794443333333334,
+          "startFrame": 55,
+          "endFrame": 234
+        },
+        {
+          "index": 3,
+          "text": "The goal is clear: Set up an effective two-window workspace.",
+          "startSeconds": 7.794443333333334,
+          "endSeconds": 12.37941,
+          "startFrame": 233,
+          "endFrame": 372
+        },
+        {
+          "index": 4,
+          "text": "Understand, observe, reproduce.",
+          "startSeconds": 13.22941,
+          "endSeconds": 14.500551112676057,
+          "startFrame": 396,
+          "endFrame": 436
+        },
+        {
+          "index": 5,
+          "text": "Each workflow is split into a concept, a real interface walkthrough, an independent Neurodesk task, and an output check.",
+          "startSeconds": 14.500551112676057,
+          "endSeconds": 22.551111492957745,
+          "startFrame": 435,
+          "endFrame": 677
+        },
+        {
+          "index": 6,
+          "text": "The point is not to memorize button positions; it is to understand what information enters and leaves each step.",
+          "startSeconds": 22.551111492957745,
+          "endSeconds": 30.601671873239432,
+          "startFrame": 676,
+          "endFrame": 919
+        },
+        {
+          "index": 7,
+          "text": "Pause often.",
+          "startSeconds": 30.60167187323944,
+          "endSeconds": 31.449099281690145,
+          "startFrame": 918,
+          "endFrame": 944
+        },
+        {
+          "index": 8,
+          "text": "Predict what a command or FEAT setting will do before you run it.",
+          "startSeconds": 31.449099281690145,
+          "endSeconds": 36.95737743661972,
+          "startFrame": 943,
+          "endFrame": 1109
+        },
+        {
+          "index": 9,
+          "text": "Then compare the result with the expected output and explain discrepancies in your own words.",
+          "startSeconds": 36.95737743661972,
+          "endSeconds": 43.313083000000006,
+          "startFrame": 1108,
+          "endFrame": 1300
+        },
+        {
+          "index": 10,
+          "text": "Now connect the idea to an observable check.",
+          "startSeconds": 44.163083,
+          "endSeconds": 47.57464354545455,
+          "startFrame": 1324,
+          "endFrame": 1428
+        },
+        {
+          "index": 11,
+          "text": "First, place this lesson on one side of your screen.",
+          "startSeconds": 47.57464354545455,
+          "endSeconds": 51.83909422727273,
+          "startFrame": 1427,
+          "endFrame": 1556
+        },
+        {
+          "index": 12,
+          "text": "Next, place Neurodesk on the other side.",
+          "startSeconds": 51.839094227272724,
+          "endSeconds": 54.82420970454545,
+          "startFrame": 1555,
+          "endFrame": 1645
+        },
+        {
+          "index": 13,
+          "text": "Then, create a notes file for observations and unresolved questions.",
+          "startSeconds": 54.82420970454545,
+          "endSeconds": 59.088660386363635,
+          "startFrame": 1644,
+          "endFrame": 1773
+        },
+        {
+          "index": 14,
+          "text": "Record what you observe so the decision remains reviewable.",
+          "startSeconds": 59.08866038636364,
+          "endSeconds": 62.926666000000004,
+          "startFrame": 1772,
+          "endFrame": 1888
+        },
+        {
+          "index": 15,
+          "text": "Practical labs work best on a computer.",
+          "startSeconds": 63.776666000000006,
+          "endSeconds": 66.8013817818182,
+          "startFrame": 1913,
+          "endFrame": 2005
+        },
+        {
+          "index": 16,
+          "text": "Videos and reading work on mobile, but use a desktop or laptop for Neurodesk exercises and side-by-side quality control.",
+          "startSeconds": 66.8013817818182,
+          "endSeconds": 75.01132461818183,
+          "startFrame": 2004,
+          "endFrame": 2251
+        },
+        {
+          "index": 17,
+          "text": "A useful self-check is this: When should you look at expected output?",
+          "startSeconds": 75.01132461818182,
+          "endSeconds": 80.19655167272727,
+          "startFrame": 2250,
+          "endFrame": 2406
+        },
+        {
+          "index": 18,
+          "text": "After making a prediction and running the step yourself, so the comparison tests understanding rather than copying.",
+          "startSeconds": 80.19655167272728,
+          "endSeconds": 87.54229000000001,
+          "startFrame": 2405,
+          "endFrame": 2627
+        },
+        {
+          "index": 19,
+          "text": "To recap: First, predict before running a step.",
+          "startSeconds": 88.39229,
+          "endSeconds": 92.09680565714287,
+          "startFrame": 2651,
+          "endFrame": 2763
+        },
+        {
+          "index": 20,
+          "text": "Next, record what you observe, especially when it differs from the example.",
+          "startSeconds": 92.09680565714287,
+          "endSeconds": 97.65357914285715,
+          "startFrame": 2762,
+          "endFrame": 2930
+        },
+        {
+          "index": 21,
+          "text": "Before continuing, make sure you can explain this objective: Set up an effective two-window workspace.",
+          "startSeconds": 97.65357914285715,
+          "endSeconds": 104.59954600000002,
+          "startFrame": 2929,
+          "endFrame": 3138
+        }
+      ]
+    },
+    {
+      "slug": "getting-started-with-neurodesk",
+      "compositionId": "LessonGettingStartedWithNeurodesk",
+      "fps": 30,
+      "totalFrames": 3979,
+      "totalSeconds": 132.547596,
+      "voice": "Daniel",
+      "speechRate": 148,
+      "scenes": [
+        {
+          "id": "opening",
+          "audioPath": "video-production/getting-started-with-neurodesk/audio/opening.m4a",
+          "audioSeconds": 12.505215,
+          "durationSeconds": 13.355215,
+          "durationInFrames": 401,
+          "startSeconds": 0,
+          "startFrame": 0
+        },
+        {
+          "id": "core-idea",
+          "audioPath": "video-production/getting-started-with-neurodesk/audio/core-idea.m4a",
+          "audioSeconds": 36.631701,
+          "durationSeconds": 37.481701,
+          "durationInFrames": 1125,
+          "startSeconds": 13.355215,
+          "startFrame": 401
+        },
+        {
+          "id": "observable-check",
+          "audioPath": "video-production/getting-started-with-neurodesk/audio/observable-check.m4a",
+          "audioSeconds": 30.38517,
+          "durationSeconds": 31.23517,
+          "durationInFrames": 938,
+          "startSeconds": 50.836916,
+          "startFrame": 1526
+        },
+        {
+          "id": "quality-control",
+          "audioPath": "video-production/getting-started-with-neurodesk/audio/quality-control.m4a",
+          "audioSeconds": 30.339138,
+          "durationSeconds": 31.189138,
+          "durationInFrames": 936,
+          "startSeconds": 82.072086,
+          "startFrame": 2464
+        },
+        {
+          "id": "summary",
+          "audioPath": "video-production/getting-started-with-neurodesk/audio/summary.m4a",
+          "audioSeconds": 18.436372,
+          "durationSeconds": 19.286372,
+          "durationInFrames": 579,
+          "startSeconds": 113.261224,
+          "startFrame": 3400
+        }
+      ],
+      "cues": [
+        {
+          "index": 1,
+          "text": "Getting started with Neurodesk.",
+          "startSeconds": 0,
+          "endSeconds": 1.7248572413793102,
+          "startFrame": 0,
+          "endFrame": 52
+        },
+        {
+          "index": 2,
+          "text": "Choose Play, EDU, or an institutional environment and verify that F S L is available.",
+          "startSeconds": 1.7248572413793102,
+          "endSeconds": 8.193071896551723,
+          "startFrame": 51,
+          "endFrame": 246
+        },
+        {
+          "index": 3,
+          "text": "The goal is clear: Choose an appropriate Neurodesk access route.",
+          "startSeconds": 8.193071896551723,
+          "endSeconds": 12.505215,
+          "startFrame": 245,
+          "endFrame": 376
+        },
+        {
+          "index": 4,
+          "text": "A reproducible software environment.",
+          "startSeconds": 13.355215,
+          "endSeconds": 15.23376376923077,
+          "startFrame": 400,
+          "endFrame": 458
+        },
+        {
+          "index": 5,
+          "text": "Neurodesk packages neuroimaging applications in consistent environments.",
+          "startSeconds": 15.23376376923077,
+          "endSeconds": 18.521224115384616,
+          "startFrame": 457,
+          "endFrame": 556
+        },
+        {
+          "index": 6,
+          "text": "Neurodesk Play is broadly accessible; Neurodesk EDU may be provided by a course or institution; a local installation is optional and has higher hardware requirements.",
+          "startSeconds": 18.521224115384616,
+          "endSeconds": 30.262153923076923,
+          "startFrame": 555,
+          "endFrame": 908
+        },
+        {
+          "index": 7,
+          "text": "Files saved only inside temporary browser sessions may disappear.",
+          "startSeconds": 30.262153923076923,
+          "endSeconds": 34.48888865384615,
+          "startFrame": 907,
+          "endFrame": 1035
+        },
+        {
+          "index": 8,
+          "text": "Use the persistent storage location provided by your environment.",
+          "startSeconds": 34.48888865384615,
+          "endSeconds": 38.715623384615384,
+          "startFrame": 1034,
+          "endFrame": 1162
+        },
+        {
+          "index": 9,
+          "text": "The base terminal is useful for general Linux work; an F S L terminal starts with the F S L software environment already loaded.",
+          "startSeconds": 38.715623384615384,
+          "endSeconds": 49.986916,
+          "startFrame": 1161,
+          "endFrame": 1500
+        },
+        {
+          "index": 10,
+          "text": "Now connect the idea to an observable check.",
+          "startSeconds": 50.836916,
+          "endSeconds": 54.16679764383562,
+          "startFrame": 1525,
+          "endFrame": 1626
+        },
+        {
+          "index": 11,
+          "text": "First, launch Neurodesk Play, EDU, or your institution's environment.",
+          "startSeconds": 54.16679764383562,
+          "endSeconds": 57.91291449315069,
+          "startFrame": 1625,
+          "endFrame": 1738
+        },
+        {
+          "index": 12,
+          "text": "Next, open the F S L application.",
+          "startSeconds": 57.91291449315069,
+          "endSeconds": 60.826560931506855,
+          "startFrame": 1737,
+          "endFrame": 1825
+        },
+        {
+          "index": 13,
+          "text": "Then, open its terminal and verify F S L with which F S L info.",
+          "startSeconds": 60.82656093150685,
+          "endSeconds": 67.07008901369863,
+          "startFrame": 1824,
+          "endFrame": 2013
+        },
+        {
+          "index": 14,
+          "text": "After that, identify the location where your files persist between sessions.",
+          "startSeconds": 67.07008901369863,
+          "endSeconds": 71.64867627397261,
+          "startFrame": 2012,
+          "endFrame": 2150
+        },
+        {
+          "index": 15,
+          "text": "The command shown on screen is an example.",
+          "startSeconds": 71.6486762739726,
+          "endSeconds": 74.97855791780822,
+          "startFrame": 2149,
+          "endFrame": 2250
+        },
+        {
+          "index": 16,
+          "text": "Adapt its path to your own working directory and verify the target before running it.",
+          "startSeconds": 74.97855791780822,
+          "endSeconds": 81.22208599999999,
+          "startFrame": 2249,
+          "endFrame": 2437
+        },
+        {
+          "index": 17,
+          "text": "F S L command not found?",
+          "startSeconds": 82.072086,
+          "endSeconds": 84.07246872527472,
+          "startFrame": 2462,
+          "endFrame": 2523
+        },
+        {
+          "index": 18,
+          "text": "You may be in the base terminal rather than the F S L application terminal.",
+          "startSeconds": 84.07246872527472,
+          "endSeconds": 89.07342553846154,
+          "startFrame": 2522,
+          "endFrame": 2673
+        },
+        {
+          "index": 19,
+          "text": "Open the F S L tile, or load the F S L module if your environment supports modules.",
+          "startSeconds": 89.07342553846154,
+          "endSeconds": 95.0745737142857,
+          "startFrame": 2672,
+          "endFrame": 2853
+        },
+        {
+          "index": 20,
+          "text": "A useful self-check is this: What is the operational difference between the base terminal and an F S L terminal?",
+          "startSeconds": 95.07457371428572,
+          "endSeconds": 101.74251613186814,
+          "startFrame": 2852,
+          "endFrame": 3053
+        },
+        {
+          "index": 21,
+          "text": "The F S L terminal has the F S L environment loaded; the base terminal is a general shell and may not find F S L commands until a module is loaded.",
+          "startSeconds": 101.74251613186813,
+          "endSeconds": 112.411224,
+          "startFrame": 3052,
+          "endFrame": 3373
+        },
+        {
+          "index": 22,
+          "text": "To recap: First, know which terminal you are using.",
+          "startSeconds": 113.261224,
+          "endSeconds": 117.62773315789474,
+          "startFrame": 3397,
+          "endFrame": 3529
+        },
+        {
+          "index": 23,
+          "text": "Next, save work in persistent storage.",
+          "startSeconds": 117.62773315789474,
+          "endSeconds": 120.5387392631579,
+          "startFrame": 3528,
+          "endFrame": 3617
+        },
+        {
+          "index": 24,
+          "text": "Then, verify tools before starting a long analysis.",
+          "startSeconds": 120.5387392631579,
+          "endSeconds": 124.42008073684211,
+          "startFrame": 3616,
+          "endFrame": 3733
+        },
+        {
+          "index": 25,
+          "text": "Before continuing, make sure you can explain this objective: Choose an appropriate Neurodesk access route.",
+          "startSeconds": 124.4200807368421,
+          "endSeconds": 131.69759599999998,
+          "startFrame": 3732,
+          "endFrame": 3951
+        }
+      ]
+    },
+    {
+      "slug": "the-terminal",
+      "compositionId": "LessonTheTerminal",
+      "fps": 30,
+      "totalFrames": 2926,
+      "totalSeconds": 97.477846,
+      "voice": "Daniel",
+      "speechRate": 148,
+      "scenes": [
+        {
+          "id": "opening",
+          "audioPath": "video-production/the-terminal/audio/opening.m4a",
+          "audioSeconds": 10.134422,
+          "durationSeconds": 10.984422,
+          "durationInFrames": 330,
+          "startSeconds": 0,
+          "startFrame": 0
+        },
+        {
+          "id": "core-idea",
+          "audioPath": "video-production/the-terminal/audio/core-idea.m4a",
+          "audioSeconds": 27.764853,
+          "durationSeconds": 28.614853,
+          "durationInFrames": 859,
+          "startSeconds": 10.984422,
+          "startFrame": 330
+        },
+        {
+          "id": "observable-check",
+          "audioPath": "video-production/the-terminal/audio/observable-check.m4a",
+          "audioSeconds": 20.714059,
+          "durationSeconds": 21.564059,
+          "durationInFrames": 647,
+          "startSeconds": 39.599275,
+          "startFrame": 1189
+        },
+        {
+          "id": "quality-control",
+          "audioPath": "video-production/the-terminal/audio/quality-control.m4a",
+          "audioSeconds": 17.269478,
+          "durationSeconds": 18.119478,
+          "durationInFrames": 544,
+          "startSeconds": 61.163334,
+          "startFrame": 1836
+        },
+        {
+          "id": "summary",
+          "audioPath": "video-production/the-terminal/audio/summary.m4a",
+          "audioSeconds": 17.345034,
+          "durationSeconds": 18.195034,
+          "durationInFrames": 546,
+          "startSeconds": 79.282812,
+          "startFrame": 2380
+        }
+      ],
+      "cues": [
+        {
+          "index": 1,
+          "text": "The terminal.",
+          "startSeconds": 0,
+          "endSeconds": 0.921311090909091,
+          "startFrame": 0,
+          "endFrame": 28
+        },
+        {
+          "index": 2,
+          "text": "Read a shell prompt and understand commands, options, and arguments.",
+          "startSeconds": 0.921311090909091,
+          "endSeconds": 5.527866545454546,
+          "startFrame": 27,
+          "endFrame": 166
+        },
+        {
+          "index": 3,
+          "text": "The goal is clear: Identify a command and its arguments.",
+          "startSeconds": 5.527866545454546,
+          "endSeconds": 10.134422,
+          "startFrame": 165,
+          "endFrame": 305
+        },
+        {
+          "index": 4,
+          "text": "Commands are precise instructions.",
+          "startSeconds": 10.984422,
+          "endSeconds": 12.8354122,
+          "startFrame": 329,
+          "endFrame": 386
+        },
+        {
+          "index": 5,
+          "text": "A shell command usually begins with a program name, followed by options and arguments.",
+          "startSeconds": 12.8354122,
+          "endSeconds": 19.3138779,
+          "startFrame": 385,
+          "endFrame": 580
+        },
+        {
+          "index": 6,
+          "text": "Spaces separate tokens; capitalization matters; the shell does not guess which file you intended.",
+          "startSeconds": 19.3138779,
+          "endSeconds": 25.792343600000002,
+          "startFrame": 579,
+          "endFrame": 774
+        },
+        {
+          "index": 7,
+          "text": "In ls -lh data, ls is the command, -lh changes the display, and data is the target directory.",
+          "startSeconds": 25.792343600000002,
+          "endSeconds": 34.1217995,
+          "startFrame": 773,
+          "endFrame": 1024
+        },
+        {
+          "index": 8,
+          "text": "Reading commands this way makes unfamiliar examples easier to adapt.",
+          "startSeconds": 34.1217995,
+          "endSeconds": 38.749275,
+          "startFrame": 1023,
+          "endFrame": 1163
+        },
+        {
+          "index": 9,
+          "text": "Now connect the idea to an observable check.",
+          "startSeconds": 39.599275,
+          "endSeconds": 42.66802448148148,
+          "startFrame": 1187,
+          "endFrame": 1281
+        },
+        {
+          "index": 10,
+          "text": "First, open a base terminal.",
+          "startSeconds": 42.66802448148148,
+          "endSeconds": 44.58599290740741,
+          "startFrame": 1280,
+          "endFrame": 1338
+        },
+        {
+          "index": 11,
+          "text": "Next, run the command below.",
+          "startSeconds": 44.5859929074074,
+          "endSeconds": 46.50396133333333,
+          "startFrame": 1337,
+          "endFrame": 1396
+        },
+        {
+          "index": 12,
+          "text": "Then, use man ls or ls --help and find the meaning of -h.",
+          "startSeconds": 46.50396133333333,
+          "endSeconds": 51.49067924074073,
+          "startFrame": 1395,
+          "endFrame": 1545
+        },
+        {
+          "index": 13,
+          "text": "The command shown on screen is an example.",
+          "startSeconds": 51.49067924074074,
+          "endSeconds": 54.55942872222222,
+          "startFrame": 1544,
+          "endFrame": 1637
+        },
+        {
+          "index": 14,
+          "text": "Adapt its path to your own working directory and verify the target before running it.",
+          "startSeconds": 54.55942872222222,
+          "endSeconds": 60.313334,
+          "startFrame": 1636,
+          "endFrame": 1810
+        },
+        {
+          "index": 15,
+          "text": "Quality control comes before interpretation.",
+          "startSeconds": 61.163334,
+          "endSeconds": 63.32201875,
+          "startFrame": 1834,
+          "endFrame": 1900
+        },
+        {
+          "index": 16,
+          "text": "The exact listing differs.",
+          "startSeconds": 63.32201875,
+          "endSeconds": 65.04896655,
+          "startFrame": 1899,
+          "endFrame": 1952
+        },
+        {
+          "index": 17,
+          "text": "-l adds details and -h makes sizes human-readable.",
+          "startSeconds": 65.04896655,
+          "endSeconds": 68.50286215,
+          "startFrame": 1951,
+          "endFrame": 2056
+        },
+        {
+          "index": 18,
+          "text": "A useful self-check is this: What role does data play in ls -lh data?",
+          "startSeconds": 68.50286215,
+          "endSeconds": 74.54717945,
+          "startFrame": 2055,
+          "endFrame": 2237
+        },
+        {
+          "index": 19,
+          "text": "It is the argument—the directory that ls should list.",
+          "startSeconds": 74.54717945,
+          "endSeconds": 78.432812,
+          "startFrame": 2236,
+          "endFrame": 2353
+        },
+        {
+          "index": 20,
+          "text": "To recap: First, commands, options, and arguments are separate tokens.",
+          "startSeconds": 79.282812,
+          "endSeconds": 84.703135125,
+          "startFrame": 2378,
+          "endFrame": 2542
+        },
+        {
+          "index": 21,
+          "text": "Next, paths and capitalization must be exact.",
+          "startSeconds": 84.703135125,
+          "endSeconds": 88.4973613125,
+          "startFrame": 2541,
+          "endFrame": 2655
+        },
+        {
+          "index": 22,
+          "text": "Before continuing, make sure you can explain this objective: Identify a command and its arguments.",
+          "startSeconds": 88.4973613125,
+          "endSeconds": 96.627846,
+          "startFrame": 2654,
+          "endFrame": 2899
+        }
+      ]
+    },
+    {
+      "slug": "linux-navigation",
+      "compositionId": "LessonLinuxNavigation",
+      "fps": 30,
+      "totalFrames": 3578,
+      "totalSeconds": 119.163832,
+      "voice": "Daniel",
+      "speechRate": 148,
+      "scenes": [
+        {
+          "id": "opening",
+          "audioPath": "video-production/linux-navigation/audio/opening.m4a",
+          "audioSeconds": 12.122494,
+          "durationSeconds": 12.972494,
+          "durationInFrames": 390,
+          "startSeconds": 0,
+          "startFrame": 0
+        },
+        {
+          "id": "core-idea",
+          "audioPath": "video-production/linux-navigation/audio/core-idea.m4a",
+          "audioSeconds": 32.637052,
+          "durationSeconds": 33.487052,
+          "durationInFrames": 1005,
+          "startSeconds": 12.972494,
+          "startFrame": 390
+        },
+        {
+          "id": "observable-check",
+          "audioPath": "video-production/linux-navigation/audio/observable-check.m4a",
+          "audioSeconds": 25.23034,
+          "durationSeconds": 26.080340000000003,
+          "durationInFrames": 783,
+          "startSeconds": 46.459545999999996,
+          "startFrame": 1395
+        },
+        {
+          "id": "quality-control",
+          "audioPath": "video-production/linux-navigation/audio/quality-control.m4a",
+          "audioSeconds": 24.420998,
+          "durationSeconds": 25.270998000000002,
+          "durationInFrames": 759,
+          "startSeconds": 72.539886,
+          "startFrame": 2178
+        },
+        {
+          "id": "summary",
+          "audioPath": "video-production/linux-navigation/audio/summary.m4a",
+          "audioSeconds": 20.502948,
+          "durationSeconds": 21.352948,
+          "durationInFrames": 641,
+          "startSeconds": 97.810884,
+          "startFrame": 2937
+        }
+      ],
+      "cues": [
+        {
+          "index": 1,
+          "text": "Linux navigation.",
+          "startSeconds": 0,
+          "endSeconds": 0.8979625185185185,
+          "startFrame": 0,
+          "endFrame": 27
+        },
+        {
+          "index": 2,
+          "text": "Use pwd, ls, and cd to move through a project without losing track of your location.",
+          "startSeconds": 0.8979625185185185,
+          "endSeconds": 8.081662666666666,
+          "startFrame": 26,
+          "endFrame": 243
+        },
+        {
+          "index": 3,
+          "text": "The goal is clear: Report the current working directory.",
+          "startSeconds": 8.081662666666666,
+          "endSeconds": 12.122494,
+          "startFrame": 242,
+          "endFrame": 364
+        },
+        {
+          "index": 4,
+          "text": "Your working directory is context.",
+          "startSeconds": 12.972494,
+          "endSeconds": 15.09178309090909,
+          "startFrame": 389,
+          "endFrame": 453
+        },
+        {
+          "index": 5,
+          "text": "Relative paths are interpreted from the current working directory.",
+          "startSeconds": 15.09178309090909,
+          "endSeconds": 18.90650345454545,
+          "startFrame": 452,
+          "endFrame": 568
+        },
+        {
+          "index": 6,
+          "text": "Absolute paths begin at the filesystem root /.",
+          "startSeconds": 18.90650345454545,
+          "endSeconds": 22.297365999999997,
+          "startFrame": 567,
+          "endFrame": 669
+        },
+        {
+          "index": 7,
+          "text": "Many “missing file” errors are really context errors: the file exists, but not where the current command is looking.",
+          "startSeconds": 22.297365999999997,
+          "endSeconds": 30.350664545454542,
+          "startFrame": 668,
+          "endFrame": 911
+        },
+        {
+          "index": 8,
+          "text": "Use pwd before any command that writes output.",
+          "startSeconds": 30.350664545454542,
+          "endSeconds": 33.74152709090909,
+          "startFrame": 910,
+          "endFrame": 1013
+        },
+        {
+          "index": 9,
+          "text": "Use ls to verify the next directory name before cd.",
+          "startSeconds": 33.74152709090909,
+          "endSeconds": 37.98010527272727,
+          "startFrame": 1012,
+          "endFrame": 1140
+        },
+        {
+          "index": 10,
+          "text": "The shortcuts dot and dot dot mean the current and parent directories, while tilde means your home directory.",
+          "startSeconds": 37.98010527272727,
+          "endSeconds": 45.609545999999995,
+          "startFrame": 1139,
+          "endFrame": 1369
+        },
+        {
+          "index": 11,
+          "text": "Now connect the idea to an observable check.",
+          "startSeconds": 46.459545999999996,
+          "endSeconds": 49.76844304918033,
+          "startFrame": 1393,
+          "endFrame": 1494
+        },
+        {
+          "index": 12,
+          "text": "First, print your current location.",
+          "startSeconds": 49.76844304918033,
+          "endSeconds": 51.83650370491803,
+          "startFrame": 1493,
+          "endFrame": 1556
+        },
+        {
+          "index": 13,
+          "text": "Next, create a course practice directory.",
+          "startSeconds": 51.83650370491803,
+          "endSeconds": 54.31817649180328,
+          "startFrame": 1555,
+          "endFrame": 1630
+        },
+        {
+          "index": 14,
+          "text": "Then, enter it and create data and output subfolders.",
+          "startSeconds": 54.31817649180327,
+          "endSeconds": 58.04068567213114,
+          "startFrame": 1629,
+          "endFrame": 1742
+        },
+        {
+          "index": 15,
+          "text": "After that, return to the parent directory using dot dot.",
+          "startSeconds": 58.04068567213115,
+          "endSeconds": 62.176806983606554,
+          "startFrame": 1741,
+          "endFrame": 1866
+        },
+        {
+          "index": 16,
+          "text": "The command shown on screen is an example.",
+          "startSeconds": 62.176806983606554,
+          "endSeconds": 65.48570403278688,
+          "startFrame": 1865,
+          "endFrame": 1965
+        },
+        {
+          "index": 17,
+          "text": "Adapt its path to your own working directory and verify the target before running it.",
+          "startSeconds": 65.48570403278688,
+          "endSeconds": 71.689886,
+          "startFrame": 1964,
+          "endFrame": 2151
+        },
+        {
+          "index": 18,
+          "text": "Cannot find a file?",
+          "startSeconds": 72.539886,
+          "endSeconds": 74.4184243076923,
+          "startFrame": 2176,
+          "endFrame": 2233
+        },
+        {
+          "index": 19,
+          "text": "Stop and verify context instead of repeatedly changing the command.",
+          "startSeconds": 74.4184243076923,
+          "endSeconds": 79.11477007692308,
+          "startFrame": 2232,
+          "endFrame": 2374
+        },
+        {
+          "index": 20,
+          "text": "Print the directory, list its contents, then search narrowly.",
+          "startSeconds": 79.11477007692308,
+          "endSeconds": 83.34148126923077,
+          "startFrame": 2373,
+          "endFrame": 2501
+        },
+        {
+          "index": 21,
+          "text": "A useful self-check is this: When is data/sub-001 a valid path?",
+          "startSeconds": 83.34148126923077,
+          "endSeconds": 88.50746161538461,
+          "startFrame": 2500,
+          "endFrame": 2656
+        },
+        {
+          "index": 22,
+          "text": "When a data directory exists inside the current working directory; otherwise use the correct relative or absolute path.",
+          "startSeconds": 88.50746161538461,
+          "endSeconds": 96.960884,
+          "startFrame": 2655,
+          "endFrame": 2909
+        },
+        {
+          "index": 23,
+          "text": "To recap: First, use pwd then ls then cd as a deliberate loop.",
+          "startSeconds": 97.810884,
+          "endSeconds": 104.15703457142857,
+          "startFrame": 2934,
+          "endFrame": 3125
+        },
+        {
+          "index": 24,
+          "text": "Next, create output directories before analysis.",
+          "startSeconds": 104.15703457142857,
+          "endSeconds": 107.08602714285713,
+          "startFrame": 3124,
+          "endFrame": 3213
+        },
+        {
+          "index": 25,
+          "text": "Then, most path errors are diagnosable with small checks.",
+          "startSeconds": 107.08602714285715,
+          "endSeconds": 111.479516,
+          "startFrame": 3212,
+          "endFrame": 3345
+        },
+        {
+          "index": 26,
+          "text": "Before continuing, make sure you can explain this objective: Report the current working directory.",
+          "startSeconds": 111.479516,
+          "endSeconds": 118.313832,
+          "startFrame": 3344,
+          "endFrame": 3550
+        }
+      ]
+    },
+    {
+      "slug": "what-is-a-nifti-image",
+      "compositionId": "LessonWhatIsANiftiImage",
+      "fps": 30,
+      "totalFrames": 3763,
+      "totalSeconds": 125.35244900000001,
+      "voice": "Daniel",
+      "speechRate": 148,
+      "scenes": [
+        {
+          "id": "opening",
+          "audioPath": "video-production/what-is-a-nifti-image/audio/opening.m4a",
+          "audioSeconds": 11.796871,
+          "durationSeconds": 12.646870999999999,
+          "durationInFrames": 380,
+          "startSeconds": 0,
+          "startFrame": 0
+        },
+        {
+          "id": "core-idea",
+          "audioPath": "video-production/what-is-a-nifti-image/audio/core-idea.m4a",
+          "audioSeconds": 41.206032,
+          "durationSeconds": 42.056032,
+          "durationInFrames": 1262,
+          "startSeconds": 12.646870999999999,
+          "startFrame": 380
+        },
+        {
+          "id": "observable-check",
+          "audioPath": "video-production/what-is-a-nifti-image/audio/observable-check.m4a",
+          "audioSeconds": 25.36966,
+          "durationSeconds": 26.21966,
+          "durationInFrames": 787,
+          "startSeconds": 54.702903,
+          "startFrame": 1642
+        },
+        {
+          "id": "quality-control",
+          "audioPath": "video-production/what-is-a-nifti-image/audio/quality-control.m4a",
+          "audioSeconds": 23.538866,
+          "durationSeconds": 24.388866,
+          "durationInFrames": 732,
+          "startSeconds": 80.922563,
+          "startFrame": 2429
+        },
+        {
+          "id": "summary",
+          "audioPath": "video-production/what-is-a-nifti-image/audio/summary.m4a",
+          "audioSeconds": 19.19102,
+          "durationSeconds": 20.041020000000003,
+          "durationInFrames": 602,
+          "startSeconds": 105.311429,
+          "startFrame": 3161
+        }
+      ],
+      "cues": [
+        {
+          "index": 1,
+          "text": "What is a NIfTI image?",
+          "startSeconds": 0,
+          "endSeconds": 2.106584107142857,
+          "startFrame": 0,
+          "endFrame": 64
+        },
+        {
+          "index": 2,
+          "text": "Interpret the dimensions and spatial metadata stored in .",
+          "startSeconds": 2.106584107142857,
+          "endSeconds": 5.8984355,
+          "startFrame": 63,
+          "endFrame": 177
+        },
+        {
+          "index": 3,
+          "text": "nii and .",
+          "startSeconds": 5.8984355,
+          "endSeconds": 7.162385964285714,
+          "startFrame": 176,
+          "endFrame": 215
+        },
+        {
+          "index": 4,
+          "text": "nii.",
+          "startSeconds": 7.162385964285714,
+          "endSeconds": 7.583702785714285,
+          "startFrame": 214,
+          "endFrame": 228
+        },
+        {
+          "index": 5,
+          "text": "gz files.",
+          "startSeconds": 7.583702785714285,
+          "endSeconds": 8.426336428571428,
+          "startFrame": 227,
+          "endFrame": 253
+        },
+        {
+          "index": 6,
+          "text": "The goal is clear: Differentiate voxels and volumes.",
+          "startSeconds": 8.426336428571428,
+          "endSeconds": 11.796871,
+          "startFrame": 252,
+          "endFrame": 354
+        },
+        {
+          "index": 7,
+          "text": "A four-D image is a time-ordered stack of three-D volumes.",
+          "startSeconds": 12.646870999999999,
+          "endSeconds": 17.797625,
+          "startFrame": 379,
+          "endFrame": 534
+        },
+        {
+          "index": 8,
+          "text": "A voxel is a three-dimensional sample.",
+          "startSeconds": 17.797625,
+          "endSeconds": 20.8880774,
+          "startFrame": 533,
+          "endFrame": 627
+        },
+        {
+          "index": 9,
+          "text": "An anatomical NIfTI is usually one three-D volume; a bold NIfTI usually contains many volumes along a fourth, temporal dimension.",
+          "startSeconds": 20.8880774,
+          "endSeconds": 31.1895854,
+          "startFrame": 626,
+          "endFrame": 936
+        },
+        {
+          "index": 10,
+          "text": "Header metadata records dimensions, voxel sizes, orientation, and timing.",
+          "startSeconds": 31.1895854,
+          "endSeconds": 35.825264,
+          "startFrame": 935,
+          "endFrame": 1075
+        },
+        {
+          "index": 11,
+          "text": "If dim4 is 240, the bold series contains 240 volumes.",
+          "startSeconds": 35.825264,
+          "endSeconds": 40.976017999999996,
+          "startFrame": 1074,
+          "endFrame": 1230
+        },
+        {
+          "index": 12,
+          "text": "Spatial resolution comes from pixdim1 through pixdim3; pixdim4 often records the T R in seconds.",
+          "startSeconds": 40.976017999999996,
+          "endSeconds": 48.702149,
+          "startFrame": 1229,
+          "endFrame": 1462
+        },
+        {
+          "index": 13,
+          "text": "Always verify the units in the header and JSON sidecar.",
+          "startSeconds": 48.702149,
+          "endSeconds": 53.852903,
+          "startFrame": 1461,
+          "endFrame": 1616
+        },
+        {
+          "index": 14,
+          "text": "Now connect the idea to an observable check.",
+          "startSeconds": 54.702903,
+          "endSeconds": 58.08552433333333,
+          "startFrame": 1641,
+          "endFrame": 1743
+        },
+        {
+          "index": 15,
+          "text": "First, navigate to a NIfTI file.",
+          "startSeconds": 58.08552433333333,
+          "endSeconds": 60.62249033333333,
+          "startFrame": 1742,
+          "endFrame": 1819
+        },
+        {
+          "index": 16,
+          "text": "Next, run F S L info on it.",
+          "startSeconds": 60.62249033333333,
+          "endSeconds": 64.00511166666666,
+          "startFrame": 1818,
+          "endFrame": 1921
+        },
+        {
+          "index": 17,
+          "text": "Then, record dim1–dim4 and pixdim1–pixdim4.",
+          "startSeconds": 64.00511166666666,
+          "endSeconds": 66.11925,
+          "startFrame": 1920,
+          "endFrame": 1984
+        },
+        {
+          "index": 18,
+          "text": "After that, decide whether the file is anatomical or functional.",
+          "startSeconds": 66.11925,
+          "endSeconds": 70.34752666666665,
+          "startFrame": 1983,
+          "endFrame": 2111
+        },
+        {
+          "index": 19,
+          "text": "The command shown on screen is an example.",
+          "startSeconds": 70.34752666666667,
+          "endSeconds": 73.730148,
+          "startFrame": 2110,
+          "endFrame": 2212
+        },
+        {
+          "index": 20,
+          "text": "Adapt its path to your own working directory and verify the target before running it.",
+          "startSeconds": 73.730148,
+          "endSeconds": 80.072563,
+          "startFrame": 2211,
+          "endFrame": 2403
+        },
+        {
+          "index": 21,
+          "text": "Quality control comes before interpretation.",
+          "startSeconds": 80.922563,
+          "endSeconds": 83.27644959999999,
+          "startFrame": 2427,
+          "endFrame": 2499
+        },
+        {
+          "index": 22,
+          "text": "This example is a 64 by 64 by 40 image sampled over 240 time points with a 2-second T R.",
+          "startSeconds": 83.27644959999999,
+          "endSeconds": 92.69199599999999,
+          "startFrame": 2498,
+          "endFrame": 2781
+        },
+        {
+          "index": 23,
+          "text": "A useful self-check is this: What does dim4 = 240 mean for a bold image?",
+          "startSeconds": 92.69199599999999,
+          "endSeconds": 99.75365579999999,
+          "startFrame": 2780,
+          "endFrame": 2993
+        },
+        {
+          "index": 24,
+          "text": "The file contains 240 three-dimensional volumes in its time series.",
+          "startSeconds": 99.75365579999999,
+          "endSeconds": 104.461429,
+          "startFrame": 2992,
+          "endFrame": 3134
+        },
+        {
+          "index": 25,
+          "text": "To recap: First, voxels make up volumes; volumes make up a four-D time series.",
+          "startSeconds": 105.311429,
+          "endSeconds": 112.77460344444445,
+          "startFrame": 3159,
+          "endFrame": 3384
+        },
+        {
+          "index": 26,
+          "text": "Next, inspect headers rather than inferring dimensions from filenames.",
+          "startSeconds": 112.77460344444445,
+          "endSeconds": 117.57235844444445,
+          "startFrame": 3383,
+          "endFrame": 3528
+        },
+        {
+          "index": 27,
+          "text": "Before continuing, make sure you can explain this objective: Differentiate voxels and volumes.",
+          "startSeconds": 117.57235844444445,
+          "endSeconds": 124.502449,
+          "startFrame": 3527,
+          "endFrame": 3736
+        }
+      ]
+    },
+    {
+      "slug": "understanding-bids",
+      "compositionId": "LessonUnderstandingBids",
+      "fps": 30,
+      "totalFrames": 3689,
+      "totalSeconds": 122.85435400000003,
+      "voice": "Daniel",
+      "speechRate": 148,
+      "scenes": [
+        {
+          "id": "opening",
+          "audioPath": "video-production/understanding-bids/audio/opening.m4a",
+          "audioSeconds": 12.912472,
+          "durationSeconds": 13.762471999999999,
+          "durationInFrames": 413,
+          "startSeconds": 0,
+          "startFrame": 0
+        },
+        {
+          "id": "core-idea",
+          "audioPath": "video-production/understanding-bids/audio/core-idea.m4a",
+          "audioSeconds": 33.319864,
+          "durationSeconds": 34.169864000000004,
+          "durationInFrames": 1026,
+          "startSeconds": 13.762471999999999,
+          "startFrame": 413
+        },
+        {
+          "id": "observable-check",
+          "audioPath": "video-production/understanding-bids/audio/observable-check.m4a",
+          "audioSeconds": 26.693197,
+          "durationSeconds": 27.543197000000003,
+          "durationInFrames": 827,
+          "startSeconds": 47.93233600000001,
+          "startFrame": 1439
+        },
+        {
+          "id": "quality-control",
+          "audioPath": "video-production/understanding-bids/audio/quality-control.m4a",
+          "audioSeconds": 27.753288,
+          "durationSeconds": 28.603288000000003,
+          "durationInFrames": 859,
+          "startSeconds": 75.47553300000001,
+          "startFrame": 2266
+        },
+        {
+          "id": "summary",
+          "audioPath": "video-production/understanding-bids/audio/summary.m4a",
+          "audioSeconds": 17.925533,
+          "durationSeconds": 18.775533000000003,
+          "durationInFrames": 564,
+          "startSeconds": 104.07882100000002,
+          "startFrame": 3125
+        }
+      ],
+      "cues": [
+        {
+          "index": 1,
+          "text": "Understanding BIDS.",
+          "startSeconds": 0,
+          "endSeconds": 1.122823652173913,
+          "startFrame": 0,
+          "endFrame": 34
+        },
+        {
+          "index": 2,
+          "text": "Read standardized neuroimaging filenames and find anatomy, function, events, and metadata.",
+          "startSeconds": 1.122823652173913,
+          "endSeconds": 7.298353739130434,
+          "startFrame": 33,
+          "endFrame": 219
+        },
+        {
+          "index": 3,
+          "text": "The goal is clear: Identify BIDS entities in a filename.",
+          "startSeconds": 7.298353739130434,
+          "endSeconds": 12.912471999999998,
+          "startFrame": 218,
+          "endFrame": 388
+        },
+        {
+          "index": 4,
+          "text": "Structure is part of the data.",
+          "startSeconds": 13.762471999999999,
+          "endSeconds": 16.65985147826087,
+          "startFrame": 412,
+          "endFrame": 500
+        },
+        {
+          "index": 5,
+          "text": "The Brain Imaging Data Structure (BIDS) uses predictable folders and filenames so people and software can identify participants, sessions, tasks, runs, and modalities without relying on local naming conventions.",
+          "startSeconds": 16.65985147826087,
+          "endSeconds": 30.663852289855072,
+          "startFrame": 499,
+          "endFrame": 920
+        },
+        {
+          "index": 6,
+          "text": "A functional run lives under sub-*/func/ and pairs a _bold.",
+          "startSeconds": 30.663852289855072,
+          "endSeconds": 35.49281808695652,
+          "startFrame": 919,
+          "endFrame": 1065
+        },
+        {
+          "index": 7,
+          "text": "nii.",
+          "startSeconds": 35.49281808695652,
+          "endSeconds": 35.97571466666666,
+          "startFrame": 1064,
+          "endFrame": 1080
+        },
+        {
+          "index": 8,
+          "text": "gz image with a _bold.",
+          "startSeconds": 35.97571466666666,
+          "endSeconds": 38.390197565217385,
+          "startFrame": 1079,
+          "endFrame": 1152
+        },
+        {
+          "index": 9,
+          "text": "json sidecar.",
+          "startSeconds": 38.39019756521739,
+          "endSeconds": 39.35599072463768,
+          "startFrame": 1151,
+          "endFrame": 1181
+        },
+        {
+          "index": 10,
+          "text": "Its _events.",
+          "startSeconds": 39.35599072463768,
+          "endSeconds": 40.321783884057965,
+          "startFrame": 1180,
+          "endFrame": 1210
+        },
+        {
+          "index": 11,
+          "text": "tsv file describes event onsets and durations.",
+          "startSeconds": 40.321783884057965,
+          "endSeconds": 43.70205994202898,
+          "startFrame": 1209,
+          "endFrame": 1312
+        },
+        {
+          "index": 12,
+          "text": "Anatomical T1-weighted data typically live under sub-*/anat/.",
+          "startSeconds": 43.70205994202898,
+          "endSeconds": 47.082336,
+          "startFrame": 1311,
+          "endFrame": 1413
+        },
+        {
+          "index": 13,
+          "text": "Now connect the idea to an observable check.",
+          "startSeconds": 47.93233600000001,
+          "endSeconds": 51.43308314754099,
+          "startFrame": 1437,
+          "endFrame": 1543
+        },
+        {
+          "index": 14,
+          "text": "First, list one participant folder.",
+          "startSeconds": 51.43308314754099,
+          "endSeconds": 53.621050114754105,
+          "startFrame": 1542,
+          "endFrame": 1609
+        },
+        {
+          "index": 15,
+          "text": "Next, find one bold image and its JSON sidecar.",
+          "startSeconds": 53.621050114754105,
+          "endSeconds": 57.559390655737715,
+          "startFrame": 1608,
+          "endFrame": 1727
+        },
+        {
+          "index": 16,
+          "text": "Then, find the matching events.",
+          "startSeconds": 57.559390655737715,
+          "endSeconds": 59.74735762295083,
+          "startFrame": 1726,
+          "endFrame": 1793
+        },
+        {
+          "index": 17,
+          "text": "tsv file.",
+          "startSeconds": 59.74735762295083,
+          "endSeconds": 60.622544409836074,
+          "startFrame": 1792,
+          "endFrame": 1819
+        },
+        {
+          "index": 18,
+          "text": "After that, translate each filename entity into plain language.",
+          "startSeconds": 60.622544409836074,
+          "endSeconds": 64.56088495081968,
+          "startFrame": 1818,
+          "endFrame": 1937
+        },
+        {
+          "index": 19,
+          "text": "The command shown on screen is an example.",
+          "startSeconds": 64.56088495081968,
+          "endSeconds": 68.06163209836066,
+          "startFrame": 1936,
+          "endFrame": 2042
+        },
+        {
+          "index": 20,
+          "text": "Adapt its path to your own working directory and verify the target before running it.",
+          "startSeconds": 68.06163209836066,
+          "endSeconds": 74.625533,
+          "startFrame": 2041,
+          "endFrame": 2239
+        },
+        {
+          "index": 21,
+          "text": "Quality control comes before interpretation.",
+          "startSeconds": 75.47553300000001,
+          "endSeconds": 77.78830700000002,
+          "startFrame": 2264,
+          "endFrame": 2334
+        },
+        {
+          "index": 22,
+          "text": "Before interpreting the result, confirm that the input, operation, and output support the same scientific question.",
+          "startSeconds": 77.78830700000002,
+          "endSeconds": 85.18918380000002,
+          "startFrame": 2333,
+          "endFrame": 2556
+        },
+        {
+          "index": 23,
+          "text": "A useful self-check is this: Why does a bold run need both NIfTI and JSON files?",
+          "startSeconds": 85.18918380000001,
+          "endSeconds": 92.59006060000002,
+          "startFrame": 2555,
+          "endFrame": 2778
+        },
+        {
+          "index": 24,
+          "text": "The NIfTI stores image data; the JSON sidecar stores acquisition metadata that may not be represented reliably in the image filename or header.",
+          "startSeconds": 92.59006060000002,
+          "endSeconds": 103.22882100000001,
+          "startFrame": 2777,
+          "endFrame": 3097
+        },
+        {
+          "index": 25,
+          "text": "To recap: First, BIDS makes inputs discoverable and machine-readable.",
+          "startSeconds": 104.07882100000002,
+          "endSeconds": 108.82381502941179,
+          "startFrame": 3122,
+          "endFrame": 3265
+        },
+        {
+          "index": 26,
+          "text": "Next, match images, sidecars, and events by their shared entities.",
+          "startSeconds": 108.82381502941179,
+          "endSeconds": 114.09603061764709,
+          "startFrame": 3264,
+          "endFrame": 3423
+        },
+        {
+          "index": 27,
+          "text": "Before continuing, make sure you can explain this objective: Identify BIDS entities in a filename.",
+          "startSeconds": 114.09603061764707,
+          "endSeconds": 122.00435400000002,
+          "startFrame": 3422,
+          "endFrame": 3661
+        }
+      ]
+    },
+    {
+      "slug": "introduction-to-fsleyes",
+      "compositionId": "LessonIntroductionToFsleyes",
+      "fps": 30,
+      "totalFrames": 3523,
+      "totalSeconds": 117.35313000000001,
+      "voice": "Daniel",
+      "speechRate": 148,
+      "scenes": [
+        {
+          "id": "opening",
+          "audioPath": "video-production/introduction-to-fsleyes/audio/opening.m4a",
+          "audioSeconds": 10.857506,
+          "durationSeconds": 11.707506,
+          "durationInFrames": 352,
+          "startSeconds": 0,
+          "startFrame": 0
+        },
+        {
+          "id": "core-idea",
+          "audioPath": "video-production/introduction-to-fsleyes/audio/core-idea.m4a",
+          "audioSeconds": 33.229433,
+          "durationSeconds": 34.079433,
+          "durationInFrames": 1023,
+          "startSeconds": 11.707506,
+          "startFrame": 352
+        },
+        {
+          "id": "observable-check",
+          "audioPath": "video-production/introduction-to-fsleyes/audio/observable-check.m4a",
+          "audioSeconds": 26.553878,
+          "durationSeconds": 27.403878000000002,
+          "durationInFrames": 823,
+          "startSeconds": 45.786939000000004,
+          "startFrame": 1375
+        },
+        {
+          "id": "quality-control",
+          "audioPath": "video-production/introduction-to-fsleyes/audio/quality-control.m4a",
+          "audioSeconds": 27.346395,
+          "durationSeconds": 28.196395000000003,
+          "durationInFrames": 846,
+          "startSeconds": 73.19081700000001,
+          "startFrame": 2198
+        },
+        {
+          "id": "summary",
+          "audioPath": "video-production/introduction-to-fsleyes/audio/summary.m4a",
+          "audioSeconds": 15.115918,
+          "durationSeconds": 15.965918,
+          "durationInFrames": 479,
+          "startSeconds": 101.387212,
+          "startFrame": 3044
+        }
+      ],
+      "cues": [
+        {
+          "index": 1,
+          "text": "Introduction to F S L Eyes.",
+          "startSeconds": 0,
+          "endSeconds": 2.412779111111111,
+          "startFrame": 0,
+          "endFrame": 73
+        },
+        {
+          "index": 2,
+          "text": "Load anatomical and functional NIfTI files and orient yourself in three planes.",
+          "startSeconds": 2.412779111111111,
+          "endSeconds": 7.238337333333333,
+          "startFrame": 72,
+          "endFrame": 218
+        },
+        {
+          "index": 3,
+          "text": "The goal is clear: Open files from the terminal.",
+          "startSeconds": 7.238337333333333,
+          "endSeconds": 10.857506,
+          "startFrame": 217,
+          "endFrame": 326
+        },
+        {
+          "index": 4,
+          "text": "Visual inspection is an analysis step.",
+          "startSeconds": 11.707506,
+          "endSeconds": 14.025838534883722,
+          "startFrame": 351,
+          "endFrame": 421
+        },
+        {
+          "index": 5,
+          "text": "F S L Eyes lets you examine image geometry and intensity directly.",
+          "startSeconds": 14.025838534883722,
+          "endSeconds": 18.662503604651164,
+          "startFrame": 420,
+          "endFrame": 560
+        },
+        {
+          "index": 6,
+          "text": "The orthographic view shows the same location in three anatomical planes.",
+          "startSeconds": 18.662503604651164,
+          "endSeconds": 22.912779918604652,
+          "startFrame": 559,
+          "endFrame": 688
+        },
+        {
+          "index": 7,
+          "text": "The overlay list controls which images are visible and how they are colored.",
+          "startSeconds": 22.91277991860465,
+          "endSeconds": 27.935833744186045,
+          "startFrame": 687,
+          "endFrame": 839
+        },
+        {
+          "index": 8,
+          "text": "Start by checking that the brain is oriented sensibly, the field of view is complete, and signal is present.",
+          "startSeconds": 27.93583374418605,
+          "endSeconds": 35.277220104651164,
+          "startFrame": 838,
+          "endFrame": 1059
+        },
+        {
+          "index": 9,
+          "text": "For four-D images, move through volumes or open the time-series view.",
+          "startSeconds": 35.277220104651164,
+          "endSeconds": 39.527496418604656,
+          "startFrame": 1058,
+          "endFrame": 1186
+        },
+        {
+          "index": 10,
+          "text": "A file loading without an error does not prove that the data are usable.",
+          "startSeconds": 39.52749641860465,
+          "endSeconds": 44.936938999999995,
+          "startFrame": 1185,
+          "endFrame": 1349
+        },
+        {
+          "index": 11,
+          "text": "Now connect the idea to an observable check.",
+          "startSeconds": 45.786939000000004,
+          "endSeconds": 48.95755129850747,
+          "startFrame": 1373,
+          "endFrame": 1469
+        },
+        {
+          "index": 12,
+          "text": "First, launch F S L Eyes with a NIfTI path.",
+          "startSeconds": 48.95755129850747,
+          "endSeconds": 52.920816671641795,
+          "startFrame": 1468,
+          "endFrame": 1588
+        },
+        {
+          "index": 13,
+          "text": "Next, move the crosshair through the brain.",
+          "startSeconds": 52.920816671641795,
+          "endSeconds": 55.695102432835824,
+          "startFrame": 1587,
+          "endFrame": 1671
+        },
+        {
+          "index": 14,
+          "text": "Then, record one scanner coordinate and voxel coordinate.",
+          "startSeconds": 55.695102432835824,
+          "endSeconds": 58.86571473134329,
+          "startFrame": 1670,
+          "endFrame": 1766
+        },
+        {
+          "index": 15,
+          "text": "After that, for a bold file, open View then Time series.",
+          "startSeconds": 58.86571473134329,
+          "endSeconds": 63.22530664179105,
+          "startFrame": 1765,
+          "endFrame": 1897
+        },
+        {
+          "index": 16,
+          "text": "The command shown on screen is an example.",
+          "startSeconds": 63.22530664179105,
+          "endSeconds": 66.39591894029851,
+          "startFrame": 1896,
+          "endFrame": 1992
+        },
+        {
+          "index": 17,
+          "text": "Adapt its path to your own working directory and verify the target before running it.",
+          "startSeconds": 66.39591894029851,
+          "endSeconds": 72.340817,
+          "startFrame": 1991,
+          "endFrame": 2171
+        },
+        {
+          "index": 18,
+          "text": "Quality Control Check.",
+          "startSeconds": 73.19081700000001,
+          "endSeconds": 74.63010094736843,
+          "startFrame": 2195,
+          "endFrame": 2239
+        },
+        {
+          "index": 19,
+          "text": "Confirm orientation, brain coverage, and visible signal before beginning preprocessing.",
+          "startSeconds": 74.63010094736843,
+          "endSeconds": 79.42771410526316,
+          "startFrame": 2238,
+          "endFrame": 2383
+        },
+        {
+          "index": 20,
+          "text": "A later pipeline cannot recover anatomy that was never acquired.",
+          "startSeconds": 79.42771410526316,
+          "endSeconds": 84.2253272631579,
+          "startFrame": 2382,
+          "endFrame": 2527
+        },
+        {
+          "index": 21,
+          "text": "A useful self-check is this: Why can the same point have both voxel and scanner coordinates?",
+          "startSeconds": 84.22532726315791,
+          "endSeconds": 91.90150831578948,
+          "startFrame": 2526,
+          "endFrame": 2758
+        },
+        {
+          "index": 22,
+          "text": "Voxel coordinates index the image grid; scanner/world coordinates locate that point in physical space using the image affine.",
+          "startSeconds": 91.90150831578948,
+          "endSeconds": 100.53721200000001,
+          "startFrame": 2757,
+          "endFrame": 3017
+        },
+        {
+          "index": 23,
+          "text": "To recap: First, inspect every key input and output visually.",
+          "startSeconds": 101.387212,
+          "endSeconds": 105.96779321212122,
+          "startFrame": 3041,
+          "endFrame": 3180
+        },
+        {
+          "index": 24,
+          "text": "Next, use the overlay list and coordinate panel deliberately.",
+          "startSeconds": 105.96779321212122,
+          "endSeconds": 110.0903163030303,
+          "startFrame": 3179,
+          "endFrame": 3303
+        },
+        {
+          "index": 25,
+          "text": "Before continuing, make sure you can explain this objective: Open files from the terminal.",
+          "startSeconds": 110.0903163030303,
+          "endSeconds": 116.50313,
+          "startFrame": 3302,
+          "endFrame": 3496
+        }
+      ]
+    },
+    {
+      "slug": "overlays-atlases-and-time-series",
+      "compositionId": "LessonOverlaysAtlasesAndTimeSeries",
+      "fps": 30,
+      "totalFrames": 3777,
+      "totalSeconds": 125.81108900000001,
+      "voice": "Daniel",
+      "speechRate": 148,
+      "scenes": [
+        {
+          "id": "opening",
+          "audioPath": "video-production/overlays-atlases-and-time-series/audio/opening.m4a",
+          "audioSeconds": 15.147937,
+          "durationSeconds": 15.997937,
+          "durationInFrames": 480,
+          "startSeconds": 0,
+          "startFrame": 0
+        },
+        {
+          "id": "core-idea",
+          "audioPath": "video-production/overlays-atlases-and-time-series/audio/core-idea.m4a",
+          "audioSeconds": 40.996054,
+          "durationSeconds": 41.846054,
+          "durationInFrames": 1256,
+          "startSeconds": 15.997937,
+          "startFrame": 480
+        },
+        {
+          "id": "observable-check",
+          "audioPath": "video-production/overlays-atlases-and-time-series/audio/observable-check.m4a",
+          "audioSeconds": 23.721043,
+          "durationSeconds": 24.571043000000003,
+          "durationInFrames": 738,
+          "startSeconds": 57.843991,
+          "startFrame": 1736
+        },
+        {
+          "id": "quality-control",
+          "audioPath": "video-production/overlays-atlases-and-time-series/audio/quality-control.m4a",
+          "audioSeconds": 24.142041,
+          "durationSeconds": 24.992041,
+          "durationInFrames": 750,
+          "startSeconds": 82.415034,
+          "startFrame": 2474
+        },
+        {
+          "id": "summary",
+          "audioPath": "video-production/overlays-atlases-and-time-series/audio/summary.m4a",
+          "audioSeconds": 17.554014,
+          "durationSeconds": 18.404014,
+          "durationInFrames": 553,
+          "startSeconds": 107.407075,
+          "startFrame": 3224
+        }
+      ],
+      "cues": [
+        {
+          "index": 1,
+          "text": "Overlays, atlases, and time series.",
+          "startSeconds": 0,
+          "endSeconds": 2.5246561666666665,
+          "startFrame": 0,
+          "endFrame": 76
+        },
+        {
+          "index": 2,
+          "text": "Compare aligned images, inspect a bold signal over time, and use atlas labels as references.",
+          "startSeconds": 2.5246561666666665,
+          "endSeconds": 10.098624666666666,
+          "startFrame": 75,
+          "endFrame": 303
+        },
+        {
+          "index": 3,
+          "text": "The goal is clear: Configure overlay opacity and color maps.",
+          "startSeconds": 10.098624666666666,
+          "endSeconds": 15.147936999999999,
+          "startFrame": 302,
+          "endFrame": 455
+        },
+        {
+          "index": 4,
+          "text": "One coordinate, several sources of evidence.",
+          "startSeconds": 15.997937,
+          "endSeconds": 18.761715921348316,
+          "startFrame": 479,
+          "endFrame": 563
+        },
+        {
+          "index": 5,
+          "text": "Overlays let you compare images in the same coordinate space.",
+          "startSeconds": 18.761715921348316,
+          "endSeconds": 23.368014123595508,
+          "startFrame": 562,
+          "endFrame": 702
+        },
+        {
+          "index": 6,
+          "text": "Time-series plots show how a voxel changes across volumes.",
+          "startSeconds": 23.368014123595508,
+          "endSeconds": 27.51368250561798,
+          "startFrame": 701,
+          "endFrame": 826
+        },
+        {
+          "index": 7,
+          "text": "Atlas lookup adds an anatomical label, but atlas boundaries are probabilistic and should not be treated as ground truth for every participant.",
+          "startSeconds": 27.51368250561798,
+          "endSeconds": 37.6475385505618,
+          "startFrame": 825,
+          "endFrame": 1130
+        },
+        {
+          "index": 8,
+          "text": "Registration quality control is easiest when boundaries from two images can be seen together.",
+          "startSeconds": 37.6475385505618,
+          "endSeconds": 44.09635603370786,
+          "startFrame": 1129,
+          "endFrame": 1323
+        },
+        {
+          "index": 9,
+          "text": "Alternate visibility, adjust opacity, or use an edge overlay.",
+          "startSeconds": 44.09635603370786,
+          "endSeconds": 48.242024415730334,
+          "startFrame": 1322,
+          "endFrame": 1448
+        },
+        {
+          "index": 10,
+          "text": "For functional data, look for sudden spikes, drifts, or dropout and relate them to later motion and preprocessing reports.",
+          "startSeconds": 48.242024415730334,
+          "endSeconds": 56.993990999999994,
+          "startFrame": 1447,
+          "endFrame": 1710
+        },
+        {
+          "index": 11,
+          "text": "Now connect the idea to an observable check.",
+          "startSeconds": 57.843991,
+          "endSeconds": 61.42452579245283,
+          "startFrame": 1735,
+          "endFrame": 1843
+        },
+        {
+          "index": 12,
+          "text": "First, load an anatomical background and a functional or standard-space overlay.",
+          "startSeconds": 61.42452579245283,
+          "endSeconds": 66.34776113207548,
+          "startFrame": 1842,
+          "endFrame": 1991
+        },
+        {
+          "index": 13,
+          "text": "Next, reduce overlay opacity.",
+          "startSeconds": 66.34776113207548,
+          "endSeconds": 68.13802852830189,
+          "startFrame": 1990,
+          "endFrame": 2045
+        },
+        {
+          "index": 14,
+          "text": "Then, check alignment in at least three distant locations.",
+          "startSeconds": 68.13802852830189,
+          "endSeconds": 72.16613016981132,
+          "startFrame": 2044,
+          "endFrame": 2165
+        },
+        {
+          "index": 15,
+          "text": "After that, open atlas tools and note the probability for one label.",
+          "startSeconds": 72.16613016981132,
+          "endSeconds": 77.53693235849057,
+          "startFrame": 2164,
+          "endFrame": 2327
+        },
+        {
+          "index": 16,
+          "text": "Record what you observe so the decision remains reviewable.",
+          "startSeconds": 77.53693235849057,
+          "endSeconds": 81.56503400000001,
+          "startFrame": 2326,
+          "endFrame": 2447
+        },
+        {
+          "index": 17,
+          "text": "Quality Control Check.",
+          "startSeconds": 82.415034,
+          "endSeconds": 83.80784405769231,
+          "startFrame": 2472,
+          "endFrame": 2515
+        },
+        {
+          "index": 18,
+          "text": "Inspect multiple slices and brain boundaries.",
+          "startSeconds": 83.80784405769231,
+          "endSeconds": 86.59346417307692,
+          "startFrame": 2514,
+          "endFrame": 2598
+        },
+        {
+          "index": 19,
+          "text": "Do not accept registration because the images overlap near the center.",
+          "startSeconds": 86.59346417307692,
+          "endSeconds": 91.70043438461539,
+          "startFrame": 2597,
+          "endFrame": 2752
+        },
+        {
+          "index": 20,
+          "text": "A useful self-check is this: Why is a single central slice insufficient for registration quality control?",
+          "startSeconds": 91.70043438461539,
+          "endSeconds": 99.1287546923077,
+          "startFrame": 2751,
+          "endFrame": 2974
+        },
+        {
+          "index": 21,
+          "text": "Misalignment can be local or more visible near boundaries; several planes and regions must be inspected.",
+          "startSeconds": 99.1287546923077,
+          "endSeconds": 106.557075,
+          "startFrame": 2973,
+          "endFrame": 3197
+        },
+        {
+          "index": 22,
+          "text": "To recap: First, use overlays to test spatial correspondence.",
+          "startSeconds": 107.407075,
+          "endSeconds": 112.19453336363637,
+          "startFrame": 3222,
+          "endFrame": 3366
+        },
+        {
+          "index": 23,
+          "text": "Next, atlas labels are references, not perfect individual anatomy.",
+          "startSeconds": 112.19453336363637,
+          "endSeconds": 116.98199172727273,
+          "startFrame": 3365,
+          "endFrame": 3510
+        },
+        {
+          "index": 24,
+          "text": "Before continuing, make sure you can explain this objective: Configure overlay opacity and color maps.",
+          "startSeconds": 116.98199172727273,
+          "endSeconds": 124.961089,
+          "startFrame": 3509,
+          "endFrame": 3749
+        }
+      ]
+    },
+    {
+      "slug": "fslinfo-and-fslstats",
+      "compositionId": "LessonFslinfoAndFslstats",
+      "fps": 30,
+      "totalFrames": 3799,
+      "totalSeconds": 126.537211,
+      "voice": "Daniel",
+      "speechRate": 148,
+      "scenes": [
+        {
+          "id": "opening",
+          "audioPath": "video-production/fslinfo-and-fslstats/audio/opening.m4a",
+          "audioSeconds": 11.066576,
+          "durationSeconds": 11.916576,
+          "durationInFrames": 358,
+          "startSeconds": 0,
+          "startFrame": 0
+        },
+        {
+          "id": "core-idea",
+          "audioPath": "video-production/fslinfo-and-fslstats/audio/core-idea.m4a",
+          "audioSeconds": 40.276644,
+          "durationSeconds": 41.126644,
+          "durationInFrames": 1234,
+          "startSeconds": 11.916576,
+          "startFrame": 358
+        },
+        {
+          "id": "observable-check",
+          "audioPath": "video-production/fslinfo-and-fslstats/audio/observable-check.m4a",
+          "audioSeconds": 27.331746,
+          "durationSeconds": 28.181746,
+          "durationInFrames": 846,
+          "startSeconds": 53.04322,
+          "startFrame": 1592
+        },
+        {
+          "id": "quality-control",
+          "audioPath": "video-production/fslinfo-and-fslstats/audio/quality-control.m4a",
+          "audioSeconds": 25.024943,
+          "durationSeconds": 25.874943000000002,
+          "durationInFrames": 777,
+          "startSeconds": 81.224966,
+          "startFrame": 2438
+        },
+        {
+          "id": "summary",
+          "audioPath": "video-production/fslinfo-and-fslstats/audio/summary.m4a",
+          "audioSeconds": 18.587302,
+          "durationSeconds": 19.437302000000003,
+          "durationInFrames": 584,
+          "startSeconds": 107.099909,
+          "startFrame": 3215
+        }
+      ],
+      "cues": [
+        {
+          "index": 1,
+          "text": "F S L info and F S L stats.",
+          "startSeconds": 0,
+          "endSeconds": 3.5571137142857143,
+          "startFrame": 0,
+          "endFrame": 107
+        },
+        {
+          "index": 2,
+          "text": "Inspect image metadata and compute targeted summary statistics.",
+          "startSeconds": 3.5571137142857143,
+          "endSeconds": 6.718992571428571,
+          "startFrame": 106,
+          "endFrame": 202
+        },
+        {
+          "index": 3,
+          "text": "The goal is clear: Choose F S L info for metadata.",
+          "startSeconds": 6.718992571428571,
+          "endSeconds": 11.066576,
+          "startFrame": 201,
+          "endFrame": 332
+        },
+        {
+          "index": 4,
+          "text": "Metadata describes the container; statistics describe its values.",
+          "startSeconds": 11.916576,
+          "endSeconds": 15.57808909090909,
+          "startFrame": 357,
+          "endFrame": 468
+        },
+        {
+          "index": 5,
+          "text": "F S L info reports header fields such as dimensions and voxel sizes.",
+          "startSeconds": 15.57808909090909,
+          "endSeconds": 21.528047863636363,
+          "startFrame": 467,
+          "endFrame": 646
+        },
+        {
+          "index": 6,
+          "text": "F S L stats computes statistics over image intensities, optionally after applying thresholds or masks.",
+          "startSeconds": 21.528047863636363,
+          "endSeconds": 28.39338490909091,
+          "startFrame": 645,
+          "endFrame": 852
+        },
+        {
+          "index": 7,
+          "text": "A number is only interpretable when you know which voxels contributed to it.",
+          "startSeconds": 28.39338490909091,
+          "endSeconds": 34.34334368181818,
+          "startFrame": 851,
+          "endFrame": 1031
+        },
+        {
+          "index": 8,
+          "text": "For example, F S L stats image -R reports the robust intensity range.",
+          "startSeconds": 34.34334368181818,
+          "endSeconds": 40.293302454545454,
+          "startFrame": 1030,
+          "endFrame": 1209
+        },
+        {
+          "index": 9,
+          "text": "-V reports the number and physical volume of nonzero voxels.",
+          "startSeconds": 40.293302454545454,
+          "endSeconds": 44.87019381818182,
+          "startFrame": 1208,
+          "endFrame": 1347
+        },
+        {
+          "index": 10,
+          "text": "Nonzero voxels are not automatically the brain; background noise, skull, or artifacts may also be nonzero.",
+          "startSeconds": 44.87019381818182,
+          "endSeconds": 52.19322,
+          "startFrame": 1346,
+          "endFrame": 1566
+        },
+        {
+          "index": 11,
+          "text": "Now connect the idea to an observable check.",
+          "startSeconds": 53.04322,
+          "endSeconds": 56.16684811428571,
+          "startFrame": 1591,
+          "endFrame": 1686
+        },
+        {
+          "index": 12,
+          "text": "First, run F S L info and record image dimensions.",
+          "startSeconds": 56.16684811428571,
+          "endSeconds": 60.071383257142855,
+          "startFrame": 1685,
+          "endFrame": 1803
+        },
+        {
+          "index": 13,
+          "text": "Next, use F S L stats -R for the intensity range.",
+          "startSeconds": 60.071383257142855,
+          "endSeconds": 64.36637191428571,
+          "startFrame": 1802,
+          "endFrame": 1931
+        },
+        {
+          "index": 14,
+          "text": "Then, use -V and explain both returned numbers.",
+          "startSeconds": 64.36637191428571,
+          "endSeconds": 67.49000002857142,
+          "startFrame": 1930,
+          "endFrame": 2025
+        },
+        {
+          "index": 15,
+          "text": "After that, open the image to verify what was counted.",
+          "startSeconds": 67.49000002857143,
+          "endSeconds": 71.39453517142857,
+          "startFrame": 2024,
+          "endFrame": 2142
+        },
+        {
+          "index": 16,
+          "text": "The command shown on screen is an example.",
+          "startSeconds": 71.39453517142857,
+          "endSeconds": 74.51816328571428,
+          "startFrame": 2141,
+          "endFrame": 2236
+        },
+        {
+          "index": 17,
+          "text": "Adapt its path to your own working directory and verify the target before running it.",
+          "startSeconds": 74.51816328571428,
+          "endSeconds": 80.374966,
+          "startFrame": 2235,
+          "endFrame": 2412
+        },
+        {
+          "index": 18,
+          "text": "Quality control comes before interpretation.",
+          "startSeconds": 81.224966,
+          "endSeconds": 83.27619083606557,
+          "startFrame": 2436,
+          "endFrame": 2499
+        },
+        {
+          "index": 19,
+          "text": "For -V, the first value is the count of nonzero voxels and the second is their volume in cubic millimetres.",
+          "startSeconds": 83.27619083606557,
+          "endSeconds": 91.48109018032787,
+          "startFrame": 2498,
+          "endFrame": 2745
+        },
+        {
+          "index": 20,
+          "text": "A useful self-check is this: Why is F S L stats image -V not automatically a brain-volume measurement?",
+          "startSeconds": 91.48109018032787,
+          "endSeconds": 98.86549959016394,
+          "startFrame": 2744,
+          "endFrame": 2966
+        },
+        {
+          "index": 21,
+          "text": "It counts all nonzero voxels, which may include non-brain signal unless the image is a validated brain mask.",
+          "startSeconds": 98.86549959016392,
+          "endSeconds": 106.24990899999999,
+          "startFrame": 2965,
+          "endFrame": 3188
+        },
+        {
+          "index": 22,
+          "text": "To recap: First, match the utility to the question.",
+          "startSeconds": 107.099909,
+          "endSeconds": 111.38928638461539,
+          "startFrame": 3212,
+          "endFrame": 3342
+        },
+        {
+          "index": 23,
+          "text": "Next, define which voxels a statistic summarizes.",
+          "startSeconds": 111.38928638461539,
+          "endSeconds": 114.7254687948718,
+          "startFrame": 3341,
+          "endFrame": 3442
+        },
+        {
+          "index": 24,
+          "text": "Then, check numerical results against the image.",
+          "startSeconds": 114.72546879487179,
+          "endSeconds": 118.0616512051282,
+          "startFrame": 3441,
+          "endFrame": 3542
+        },
+        {
+          "index": 25,
+          "text": "Before continuing, make sure you can explain this objective: Choose F S L info for metadata.",
+          "startSeconds": 118.0616512051282,
+          "endSeconds": 125.68721099999999,
+          "startFrame": 3541,
+          "endFrame": 3771
+        }
+      ]
+    },
+    {
+      "slug": "fslmaths-and-fslmeants",
+      "compositionId": "LessonFslmathsAndFslmeants",
+      "fps": 30,
+      "totalFrames": 3489,
+      "totalSeconds": 116.191952,
+      "voice": "Daniel",
+      "speechRate": 148,
+      "scenes": [
+        {
+          "id": "opening",
+          "audioPath": "video-production/fslmaths-and-fslmeants/audio/opening.m4a",
+          "audioSeconds": 11.763175,
+          "durationSeconds": 12.613175,
+          "durationInFrames": 379,
+          "startSeconds": 0,
+          "startFrame": 0
+        },
+        {
+          "id": "core-idea",
+          "audioPath": "video-production/fslmaths-and-fslmeants/audio/core-idea.m4a",
+          "audioSeconds": 32.857642,
+          "durationSeconds": 33.707642,
+          "durationInFrames": 1012,
+          "startSeconds": 12.613175,
+          "startFrame": 379
+        },
+        {
+          "id": "observable-check",
+          "audioPath": "video-production/fslmaths-and-fslmeants/audio/observable-check.m4a",
+          "audioSeconds": 27.053107,
+          "durationSeconds": 27.903107000000002,
+          "durationInFrames": 838,
+          "startSeconds": 46.320817,
+          "startFrame": 1391
+        },
+        {
+          "id": "quality-control",
+          "audioPath": "video-production/fslmaths-and-fslmeants/audio/quality-control.m4a",
+          "audioSeconds": 22.690794,
+          "durationSeconds": 23.540794,
+          "durationInFrames": 707,
+          "startSeconds": 74.223924,
+          "startFrame": 2229
+        },
+        {
+          "id": "summary",
+          "audioPath": "video-production/fslmaths-and-fslmeants/audio/summary.m4a",
+          "audioSeconds": 17.577234,
+          "durationSeconds": 18.427234000000002,
+          "durationInFrames": 553,
+          "startSeconds": 97.764718,
+          "startFrame": 2936
+        }
+      ],
+      "cues": [
+        {
+          "index": 1,
+          "text": "F S L maths and F S L means.",
+          "startSeconds": 0,
+          "endSeconds": 3.30839296875,
+          "startFrame": 0,
+          "endFrame": 100
+        },
+        {
+          "index": 2,
+          "text": "Create masks and extract a mean time series without losing track of image space.",
+          "startSeconds": 3.30839296875,
+          "endSeconds": 8.45478203125,
+          "startFrame": 99,
+          "endFrame": 254
+        },
+        {
+          "index": 3,
+          "text": "The goal is clear: Build a simple thresholded mask.",
+          "startSeconds": 8.45478203125,
+          "endSeconds": 11.763175,
+          "startFrame": 253,
+          "endFrame": 353
+        },
+        {
+          "index": 4,
+          "text": "Transform first, measure second.",
+          "startSeconds": 12.613175,
+          "endSeconds": 14.320065493506494,
+          "startFrame": 378,
+          "endFrame": 430
+        },
+        {
+          "index": 5,
+          "text": "F S L maths applies image operations in sequence and writes a new image.",
+          "startSeconds": 14.320065493506494,
+          "endSeconds": 20.29418222077922,
+          "startFrame": 429,
+          "endFrame": 609
+        },
+        {
+          "index": 6,
+          "text": "F S L means summarizes a four-D time series within a mask.",
+          "startSeconds": 20.29418222077922,
+          "endSeconds": 25.4148537012987,
+          "startFrame": 608,
+          "endFrame": 763
+        },
+        {
+          "index": 7,
+          "text": "The mask and source data must have compatible dimensions and spatial alignment.",
+          "startSeconds": 25.4148537012987,
+          "endSeconds": 30.53552518181818,
+          "startFrame": 762,
+          "endFrame": 917
+        },
+        {
+          "index": 8,
+          "text": "A binary mask contains 1 for included voxels and 0 elsewhere.",
+          "startSeconds": 30.53552518181818,
+          "endSeconds": 35.22947403896104,
+          "startFrame": 916,
+          "endFrame": 1057
+        },
+        {
+          "index": 9,
+          "text": "Thresholding alone may not create a scientifically valid ROI; it is simply an operation.",
+          "startSeconds": 35.22947403896104,
+          "endSeconds": 41.203590766233766,
+          "startFrame": 1056,
+          "endFrame": 1237
+        },
+        {
+          "index": 10,
+          "text": "View every derived mask before using it to extract values.",
+          "startSeconds": 41.203590766233766,
+          "endSeconds": 45.470817,
+          "startFrame": 1236,
+          "endFrame": 1365
+        },
+        {
+          "index": 11,
+          "text": "Now connect the idea to an observable check.",
+          "startSeconds": 46.320817,
+          "endSeconds": 49.50353547058823,
+          "startFrame": 1389,
+          "endFrame": 1486
+        },
+        {
+          "index": 12,
+          "text": "First, create a binary mask from an example image.",
+          "startSeconds": 49.50353547058823,
+          "endSeconds": 53.084093749999994,
+          "startFrame": 1485,
+          "endFrame": 1593
+        },
+        {
+          "index": 13,
+          "text": "Next, open the mask over the source image.",
+          "startSeconds": 53.08409375,
+          "endSeconds": 56.266812220588236,
+          "startFrame": 1592,
+          "endFrame": 1689
+        },
+        {
+          "index": 14,
+          "text": "Then, confirm dimensions with F S L info.",
+          "startSeconds": 56.266812220588236,
+          "endSeconds": 59.44953069117647,
+          "startFrame": 1688,
+          "endFrame": 1784
+        },
+        {
+          "index": 15,
+          "text": "After that, extract a mean time series and inspect its first values.",
+          "startSeconds": 59.44953069117647,
+          "endSeconds": 64.22360839705883,
+          "startFrame": 1783,
+          "endFrame": 1927
+        },
+        {
+          "index": 16,
+          "text": "The command shown on screen is an example.",
+          "startSeconds": 64.22360839705883,
+          "endSeconds": 67.40632686764707,
+          "startFrame": 1926,
+          "endFrame": 2023
+        },
+        {
+          "index": 17,
+          "text": "Adapt its path to your own working directory and verify the target before running it.",
+          "startSeconds": 67.40632686764707,
+          "endSeconds": 73.373924,
+          "startFrame": 2022,
+          "endFrame": 2202
+        },
+        {
+          "index": 18,
+          "text": "Quality Control Check.",
+          "startSeconds": 74.223924,
+          "endSeconds": 75.43950224999999,
+          "startFrame": 2226,
+          "endFrame": 2264
+        },
+        {
+          "index": 19,
+          "text": "Overlay the mask on the exact image used for extraction.",
+          "startSeconds": 75.43950224999999,
+          "endSeconds": 79.49142975,
+          "startFrame": 2263,
+          "endFrame": 2385
+        },
+        {
+          "index": 20,
+          "text": "Matching dimensions do not guarantee meaningful anatomical alignment.",
+          "startSeconds": 79.49142975,
+          "endSeconds": 82.73297174999999,
+          "startFrame": 2384,
+          "endFrame": 2482
+        },
+        {
+          "index": 21,
+          "text": "A useful self-check is this: What must you verify before using a mask with F S L means?",
+          "startSeconds": 82.73297174999999,
+          "endSeconds": 90.02644124999999,
+          "startFrame": 2481,
+          "endFrame": 2701
+        },
+        {
+          "index": 22,
+          "text": "That it is scientifically appropriate and aligned to the same dimensions and space as the four-D input.",
+          "startSeconds": 90.02644125,
+          "endSeconds": 96.91471800000001,
+          "startFrame": 2700,
+          "endFrame": 2908
+        },
+        {
+          "index": 23,
+          "text": "To recap: First, F S L maths writes derived images; preserve meaningful names.",
+          "startSeconds": 97.764718,
+          "endSeconds": 104.1120525,
+          "startFrame": 2932,
+          "endFrame": 3124
+        },
+        {
+          "index": 24,
+          "text": "Next, never extract a signal from an uninspected mask.",
+          "startSeconds": 104.1120525,
+          "endSeconds": 108.506361,
+          "startFrame": 3123,
+          "endFrame": 3256
+        },
+        {
+          "index": 25,
+          "text": "Before continuing, make sure you can explain this objective: Build a simple thresholded mask.",
+          "startSeconds": 108.506361,
+          "endSeconds": 115.34195199999999,
+          "startFrame": 3255,
+          "endFrame": 3461
+        }
+      ]
+    },
+    {
+      "slug": "what-first-level-means",
+      "compositionId": "LessonWhatFirstLevelMeans",
+      "fps": 30,
+      "totalFrames": 3371,
+      "totalSeconds": 112.27870700000001,
+      "voice": "Daniel",
+      "speechRate": 148,
+      "scenes": [
+        {
+          "id": "opening",
+          "audioPath": "video-production/what-first-level-means/audio/opening.m4a",
+          "audioSeconds": 13.155329,
+          "durationSeconds": 14.005329,
+          "durationInFrames": 421,
+          "startSeconds": 0,
+          "startFrame": 0
+        },
+        {
+          "id": "core-idea",
+          "audioPath": "video-production/what-first-level-means/audio/core-idea.m4a",
+          "audioSeconds": 30.221995,
+          "durationSeconds": 31.071995,
+          "durationInFrames": 933,
+          "startSeconds": 14.005329,
+          "startFrame": 421
+        },
+        {
+          "id": "observable-check",
+          "audioPath": "video-production/what-first-level-means/audio/observable-check.m4a",
+          "audioSeconds": 19.611111,
+          "durationSeconds": 20.461111000000002,
+          "durationInFrames": 614,
+          "startSeconds": 45.077324000000004,
+          "startFrame": 1354
+        },
+        {
+          "id": "quality-control",
+          "audioPath": "video-production/what-first-level-means/audio/quality-control.m4a",
+          "audioSeconds": 24.641814,
+          "durationSeconds": 25.491814,
+          "durationInFrames": 765,
+          "startSeconds": 65.538435,
+          "startFrame": 1968
+        },
+        {
+          "id": "summary",
+          "audioPath": "video-production/what-first-level-means/audio/summary.m4a",
+          "audioSeconds": 20.398458,
+          "durationSeconds": 21.248458000000003,
+          "durationInFrames": 638,
+          "startSeconds": 91.03024900000001,
+          "startFrame": 2733
+        }
+      ],
+      "cues": [
+        {
+          "index": 1,
+          "text": "What first-level analysis means.",
+          "startSeconds": 0,
+          "endSeconds": 1.8793327142857141,
+          "startFrame": 0,
+          "endFrame": 57
+        },
+        {
+          "index": 2,
+          "text": "Connect one participant's bold time series to a model of one run.",
+          "startSeconds": 1.8793327142857141,
+          "endSeconds": 7.5173308571428565,
+          "startFrame": 56,
+          "endFrame": 226
+        },
+        {
+          "index": 3,
+          "text": "The goal is clear: Distinguish first-level analysis from within-subject and group analysis.",
+          "startSeconds": 7.5173308571428565,
+          "endSeconds": 13.155328999999998,
+          "startFrame": 225,
+          "endFrame": 395
+        },
+        {
+          "index": 4,
+          "text": "What first-level analysis means.",
+          "startSeconds": 14.005329,
+          "endSeconds": 15.732300142857142,
+          "startFrame": 420,
+          "endFrame": 472
+        },
+        {
+          "index": 5,
+          "text": "First-level analysis models a single run from a single participant.",
+          "startSeconds": 15.732300142857142,
+          "endSeconds": 20.049727999999998,
+          "startFrame": 471,
+          "endFrame": 602
+        },
+        {
+          "index": 6,
+          "text": "It estimates how well the predicted response for each explanatory variable accounts for the observed bold signal at every voxel.",
+          "startSeconds": 20.049727999999998,
+          "endSeconds": 28.68458371428571,
+          "startFrame": 601,
+          "endFrame": 861
+        },
+        {
+          "index": 7,
+          "text": "The output is not a group conclusion.",
+          "startSeconds": 28.68458371428571,
+          "endSeconds": 31.70678321428571,
+          "startFrame": 860,
+          "endFrame": 952
+        },
+        {
+          "index": 8,
+          "text": "It is a set of participant/run-specific parameter estimates and contrasts that can later feed Level 2 or Level 3 models.",
+          "startSeconds": 31.70678321428571,
+          "endSeconds": 40.34163892857143,
+          "startFrame": 951,
+          "endFrame": 1211
+        },
+        {
+          "index": 9,
+          "text": "Keep the unit of analysis explicit when naming outputs.",
+          "startSeconds": 40.34163892857143,
+          "endSeconds": 44.227323999999996,
+          "startFrame": 1210,
+          "endFrame": 1327
+        },
+        {
+          "index": 10,
+          "text": "Now connect the idea to an observable check.",
+          "startSeconds": 45.077324000000004,
+          "endSeconds": 48.64298054545455,
+          "startFrame": 1352,
+          "endFrame": 1460
+        },
+        {
+          "index": 11,
+          "text": "First, choose one bold run in a BIDS dataset.",
+          "startSeconds": 48.64298054545455,
+          "endSeconds": 52.65434415909091,
+          "startFrame": 1459,
+          "endFrame": 1580
+        },
+        {
+          "index": 12,
+          "text": "Next, identify its participant, task, and run entities.",
+          "startSeconds": 52.65434415909091,
+          "endSeconds": 56.220000704545456,
+          "startFrame": 1579,
+          "endFrame": 1687
+        },
+        {
+          "index": 13,
+          "text": "Then, sketch where its first-level dot feat output should live.",
+          "startSeconds": 56.22000070454546,
+          "endSeconds": 60.67707138636364,
+          "startFrame": 1686,
+          "endFrame": 1821
+        },
+        {
+          "index": 14,
+          "text": "Record what you observe so the decision remains reviewable.",
+          "startSeconds": 60.67707138636364,
+          "endSeconds": 64.68843500000001,
+          "startFrame": 1820,
+          "endFrame": 1941
+        },
+        {
+          "index": 15,
+          "text": "Quality control comes before interpretation.",
+          "startSeconds": 65.538435,
+          "endSeconds": 68.15990457446809,
+          "startFrame": 1966,
+          "endFrame": 2045
+        },
+        {
+          "index": 16,
+          "text": "Before interpreting the result, confirm that the input, operation, and output support the same scientific question.",
+          "startSeconds": 68.15990457446809,
+          "endSeconds": 76.54860721276596,
+          "startFrame": 2044,
+          "endFrame": 2297
+        },
+        {
+          "index": 17,
+          "text": "A useful self-check is this: In one or two sentences, what decision does “What first-level analysis means” support?",
+          "startSeconds": 76.54860721276596,
+          "endSeconds": 85.98589768085107,
+          "startFrame": 2296,
+          "endFrame": 2580
+        },
+        {
+          "index": 18,
+          "text": "Distinguish first-level analysis from within-subject and group analysis.",
+          "startSeconds": 85.98589768085107,
+          "endSeconds": 90.180249,
+          "startFrame": 2579,
+          "endFrame": 2706
+        },
+        {
+          "index": 19,
+          "text": "To recap: First, connect one participant's bold time series to a model of one run.",
+          "startSeconds": 91.03024900000001,
+          "endSeconds": 98.14599016279071,
+          "startFrame": 2730,
+          "endFrame": 2945
+        },
+        {
+          "index": 20,
+          "text": "Next, document the decision and inspect the corresponding input or output.",
+          "startSeconds": 98.14599016279071,
+          "endSeconds": 103.36420034883722,
+          "startFrame": 2944,
+          "endFrame": 3101
+        },
+        {
+          "index": 21,
+          "text": "Before continuing, make sure you can explain this objective: Distinguish first-level analysis from within-subject and group analysis.",
+          "startSeconds": 103.36420034883722,
+          "endSeconds": 111.428707,
+          "startFrame": 3100,
+          "endFrame": 3343
+        }
+      ]
+    },
+    {
+      "slug": "what-is-a-glm",
+      "compositionId": "LessonWhatIsAGlm",
+      "fps": 30,
+      "totalFrames": 3971,
+      "totalSeconds": 132.305737,
+      "voice": "Daniel",
+      "speechRate": 148,
+      "scenes": [
+        {
+          "id": "opening",
+          "audioPath": "video-production/what-is-a-glm/audio/opening.m4a",
+          "audioSeconds": 16.777551,
+          "durationSeconds": 17.627551,
+          "durationInFrames": 529,
+          "startSeconds": 0,
+          "startFrame": 0
+        },
+        {
+          "id": "core-idea",
+          "audioPath": "video-production/what-is-a-glm/audio/core-idea.m4a",
+          "audioSeconds": 33.902268,
+          "durationSeconds": 34.752268,
+          "durationInFrames": 1043,
+          "startSeconds": 17.627551,
+          "startFrame": 529
+        },
+        {
+          "id": "observable-check",
+          "audioPath": "video-production/what-is-a-glm/audio/observable-check.m4a",
+          "audioSeconds": 23.105714,
+          "durationSeconds": 23.955714,
+          "durationInFrames": 719,
+          "startSeconds": 52.379819,
+          "startFrame": 1572
+        },
+        {
+          "id": "quality-control",
+          "audioPath": "video-production/what-is-a-glm/audio/quality-control.m4a",
+          "audioSeconds": 29.274195,
+          "durationSeconds": 30.124195,
+          "durationInFrames": 904,
+          "startSeconds": 76.335533,
+          "startFrame": 2291
+        },
+        {
+          "id": "summary",
+          "audioPath": "video-production/what-is-a-glm/audio/summary.m4a",
+          "audioSeconds": 24.996009,
+          "durationSeconds": 25.846009000000002,
+          "durationInFrames": 776,
+          "startSeconds": 106.459728,
+          "startFrame": 3195
+        }
+      ],
+      "cues": [
+        {
+          "index": 1,
+          "text": "What is a G L M?",
+          "startSeconds": 0,
+          "endSeconds": 2.455251365853658,
+          "startFrame": 0,
+          "endFrame": 74
+        },
+        {
+          "index": 2,
+          "text": "Understand the model that relates expected task responses and confounds to the bold signal.",
+          "startSeconds": 2.455251365853658,
+          "endSeconds": 8.184171219512194,
+          "startFrame": 73,
+          "endFrame": 246
+        },
+        {
+          "index": 3,
+          "text": "The goal is clear: Explain the response, predictors, parameter estimates, and residuals in an functional M R I G L M.",
+          "startSeconds": 8.184171219512194,
+          "endSeconds": 16.777551,
+          "startFrame": 245,
+          "endFrame": 504
+        },
+        {
+          "index": 4,
+          "text": "What is a G L M?",
+          "startSeconds": 17.627551,
+          "endSeconds": 20.23541776923077,
+          "startFrame": 528,
+          "endFrame": 608
+        },
+        {
+          "index": 5,
+          "text": "The general linear model represents the measured bold time series as a weighted combination of explanatory variables plus unexplained residual error.",
+          "startSeconds": 20.23541776923077,
+          "endSeconds": 29.362951461538465,
+          "startFrame": 607,
+          "endFrame": 881
+        },
+        {
+          "index": 6,
+          "text": "FEAT fits this model separately at each voxel while accounting for temporal structure.",
+          "startSeconds": 29.36295146153846,
+          "endSeconds": 35.01332946153846,
+          "startFrame": 880,
+          "endFrame": 1051
+        },
+        {
+          "index": 7,
+          "text": "The design matrix contains one row per time point and columns for task predictors and nuisance regressors.",
+          "startSeconds": 35.01332946153846,
+          "endSeconds": 42.40228530769231,
+          "startFrame": 1050,
+          "endFrame": 1273
+        },
+        {
+          "index": 8,
+          "text": "Parameter estimates describe each column's contribution.",
+          "startSeconds": 42.40228530769231,
+          "endSeconds": 45.01015207692308,
+          "startFrame": 1272,
+          "endFrame": 1351
+        },
+        {
+          "index": 9,
+          "text": "A good-looking activation map cannot rescue a design matrix that does not represent the experiment.",
+          "startSeconds": 45.01015207692308,
+          "endSeconds": 51.529819,
+          "startFrame": 1350,
+          "endFrame": 1546
+        },
+        {
+          "index": 10,
+          "text": "Now connect the idea to an observable check.",
+          "startSeconds": 52.379819,
+          "endSeconds": 56.15218046938775,
+          "startFrame": 1571,
+          "endFrame": 1685
+        },
+        {
+          "index": 11,
+          "text": "First, write the model as Y = Xβ + ε.",
+          "startSeconds": 56.15218046938775,
+          "endSeconds": 60.867632306122445,
+          "startFrame": 1684,
+          "endFrame": 1827
+        },
+        {
+          "index": 12,
+          "text": "Next, label Y, X, β, and ε in plain language.",
+          "startSeconds": 60.867632306122445,
+          "endSeconds": 65.58308414285713,
+          "startFrame": 1826,
+          "endFrame": 1968
+        },
+        {
+          "index": 13,
+          "text": "Then, name one task predictor and one nuisance predictor for your study.",
+          "startSeconds": 65.58308414285713,
+          "endSeconds": 71.24162634693876,
+          "startFrame": 1967,
+          "endFrame": 2138
+        },
+        {
+          "index": 14,
+          "text": "Record what you observe so the decision remains reviewable.",
+          "startSeconds": 71.24162634693877,
+          "endSeconds": 75.485533,
+          "startFrame": 2137,
+          "endFrame": 2265
+        },
+        {
+          "index": 15,
+          "text": "Quality control comes before interpretation.",
+          "startSeconds": 76.335533,
+          "endSeconds": 78.69635517741935,
+          "startFrame": 2290,
+          "endFrame": 2361
+        },
+        {
+          "index": 16,
+          "text": "Y is observed bold signal, X is the design matrix, β contains parameter estimates, and ε contains residual error.",
+          "startSeconds": 78.69635517741935,
+          "endSeconds": 87.66747945161289,
+          "startFrame": 2360,
+          "endFrame": 2631
+        },
+        {
+          "index": 17,
+          "text": "A useful self-check is this: In one or two sentences, what decision does “What is a G L M?",
+          "startSeconds": 87.6674794516129,
+          "endSeconds": 96.63860372580645,
+          "startFrame": 2630,
+          "endFrame": 2900
+        },
+        {
+          "index": 18,
+          "text": "” support?",
+          "startSeconds": 96.63860372580645,
+          "endSeconds": 97.58293259677419,
+          "startFrame": 2899,
+          "endFrame": 2928
+        },
+        {
+          "index": 19,
+          "text": "Explain the response, predictors, parameter estimates, and residuals in an functional M R I G L M.",
+          "startSeconds": 97.58293259677419,
+          "endSeconds": 105.60972799999999,
+          "startFrame": 2927,
+          "endFrame": 3169
+        },
+        {
+          "index": 20,
+          "text": "To recap: First, understand the model that relates expected task responses and confounds to the bold signal.",
+          "startSeconds": 106.459728,
+          "endSeconds": 114.32884194444445,
+          "startFrame": 3193,
+          "endFrame": 3430
+        },
+        {
+          "index": 21,
+          "text": "Next, document the decision and inspect the corresponding input or output.",
+          "startSeconds": 114.32884194444445,
+          "endSeconds": 119.42062155555556,
+          "startFrame": 3429,
+          "endFrame": 3583
+        },
+        {
+          "index": 22,
+          "text": "Before continuing, make sure you can explain this objective: Explain the response, predictors, parameter estimates, and residuals in an functional M R I G L M.",
+          "startSeconds": 119.42062155555556,
+          "endSeconds": 131.455737,
+          "startFrame": 3582,
+          "endFrame": 3944
+        }
+      ]
+    },
+    {
+      "slug": "experimental-timing-files",
+      "compositionId": "LessonExperimentalTimingFiles",
+      "fps": 30,
+      "totalFrames": 3387,
+      "totalSeconds": 112.837891,
+      "voice": "Daniel",
+      "speechRate": 148,
+      "scenes": [
+        {
+          "id": "opening",
+          "audioPath": "video-production/experimental-timing-files/audio/opening.m4a",
+          "audioSeconds": 13.62068,
+          "durationSeconds": 14.47068,
+          "durationInFrames": 435,
+          "startSeconds": 0,
+          "startFrame": 0
+        },
+        {
+          "id": "core-idea",
+          "audioPath": "video-production/experimental-timing-files/audio/core-idea.m4a",
+          "audioSeconds": 28.783311,
+          "durationSeconds": 29.633311000000003,
+          "durationInFrames": 889,
+          "startSeconds": 14.47068,
+          "startFrame": 435
+        },
+        {
+          "id": "observable-check",
+          "audioPath": "video-production/experimental-timing-files/audio/observable-check.m4a",
+          "audioSeconds": 24.301542,
+          "durationSeconds": 25.151542000000003,
+          "durationInFrames": 755,
+          "startSeconds": 44.103991,
+          "startFrame": 1324
+        },
+        {
+          "id": "quality-control",
+          "audioPath": "video-production/experimental-timing-files/audio/quality-control.m4a",
+          "audioSeconds": 20.938231,
+          "durationSeconds": 21.788231,
+          "durationInFrames": 654,
+          "startSeconds": 69.255533,
+          "startFrame": 2079
+        },
+        {
+          "id": "summary",
+          "audioPath": "video-production/experimental-timing-files/audio/summary.m4a",
+          "audioSeconds": 20.944127,
+          "durationSeconds": 21.794127000000003,
+          "durationInFrames": 654,
+          "startSeconds": 91.043764,
+          "startFrame": 2733
+        }
+      ],
+      "cues": [
+        {
+          "index": 1,
+          "text": "Experimental timing files.",
+          "startSeconds": 0,
+          "endSeconds": 1.4090358620689656,
+          "startFrame": 0,
+          "endFrame": 43
+        },
+        {
+          "index": 2,
+          "text": "Translate BIDS events into F S L's onset, duration, and amplitude format.",
+          "startSeconds": 1.4090358620689656,
+          "endSeconds": 7.045179310344828,
+          "startFrame": 42,
+          "endFrame": 212
+        },
+        {
+          "index": 3,
+          "text": "The goal is clear: Create and validate a three-column F S L timing file.",
+          "startSeconds": 7.045179310344828,
+          "endSeconds": 13.62068,
+          "startFrame": 211,
+          "endFrame": 409
+        },
+        {
+          "index": 4,
+          "text": "Experimental timing files.",
+          "startSeconds": 14.47068,
+          "endSeconds": 15.799140507692307,
+          "startFrame": 434,
+          "endFrame": 474
+        },
+        {
+          "index": 5,
+          "text": "An F S L three-column timing file has one event per row: onset in seconds, duration in seconds, and amplitude.",
+          "startSeconds": 15.799140507692307,
+          "endSeconds": 24.65554389230769,
+          "startFrame": 473,
+          "endFrame": 740
+        },
+        {
+          "index": 6,
+          "text": "Each condition normally has its own file.",
+          "startSeconds": 24.65554389230769,
+          "endSeconds": 27.755285076923077,
+          "startFrame": 739,
+          "endFrame": 833
+        },
+        {
+          "index": 7,
+          "text": "Timing is relative to the start of the modeled run.",
+          "startSeconds": 27.75528507692308,
+          "endSeconds": 32.183486769230775,
+          "startFrame": 832,
+          "endFrame": 966
+        },
+        {
+          "index": 8,
+          "text": "Units, missing events, and condition labels must be checked against the BIDS events.",
+          "startSeconds": 32.18348676923077,
+          "endSeconds": 37.94014896923077,
+          "startFrame": 965,
+          "endFrame": 1139
+        },
+        {
+          "index": 9,
+          "text": "tsv file.",
+          "startSeconds": 37.94014896923077,
+          "endSeconds": 38.82578930769231,
+          "startFrame": 1138,
+          "endFrame": 1165
+        },
+        {
+          "index": 10,
+          "text": "A syntactically valid file can still encode the wrong experiment.",
+          "startSeconds": 38.82578930769231,
+          "endSeconds": 43.253991000000006,
+          "startFrame": 1164,
+          "endFrame": 1298
+        },
+        {
+          "index": 11,
+          "text": "Now connect the idea to an observable check.",
+          "startSeconds": 44.103991,
+          "endSeconds": 47.45592782758621,
+          "startFrame": 1323,
+          "endFrame": 1424
+        },
+        {
+          "index": 12,
+          "text": "First, open a matching events.",
+          "startSeconds": 47.45592782758621,
+          "endSeconds": 49.55088834482759,
+          "startFrame": 1423,
+          "endFrame": 1487
+        },
+        {
+          "index": 13,
+          "text": "tsv file.",
+          "startSeconds": 49.550888344827584,
+          "endSeconds": 50.388872551724134,
+          "startFrame": 1486,
+          "endFrame": 1512
+        },
+        {
+          "index": 14,
+          "text": "Next, choose one condition.",
+          "startSeconds": 50.38887255172414,
+          "endSeconds": 52.06484096551724,
+          "startFrame": 1511,
+          "endFrame": 1562
+        },
+        {
+          "index": 15,
+          "text": "Then, create a three-column text file.",
+          "startSeconds": 52.06484096551724,
+          "endSeconds": 54.5787935862069,
+          "startFrame": 1561,
+          "endFrame": 1638
+        },
+        {
+          "index": 16,
+          "text": "After that, check that onsets are within the run duration.",
+          "startSeconds": 54.5787935862069,
+          "endSeconds": 58.76871462068966,
+          "startFrame": 1637,
+          "endFrame": 1764
+        },
+        {
+          "index": 17,
+          "text": "The command shown on screen is an example.",
+          "startSeconds": 58.76871462068966,
+          "endSeconds": 62.120651448275865,
+          "startFrame": 1763,
+          "endFrame": 1864
+        },
+        {
+          "index": 18,
+          "text": "Adapt its path to your own working directory and verify the target before running it.",
+          "startSeconds": 62.120651448275865,
+          "endSeconds": 68.405533,
+          "startFrame": 1863,
+          "endFrame": 2053
+        },
+        {
+          "index": 19,
+          "text": "Quality control comes before interpretation.",
+          "startSeconds": 69.255533,
+          "endSeconds": 71.53142767391304,
+          "startFrame": 2077,
+          "endFrame": 2146
+        },
+        {
+          "index": 20,
+          "text": "Each row describes when an event began, how long it lasted, and its amplitude.",
+          "startSeconds": 71.53142767391304,
+          "endSeconds": 77.90393276086957,
+          "startFrame": 2145,
+          "endFrame": 2338
+        },
+        {
+          "index": 21,
+          "text": "A useful self-check is this: In one or two sentences, what decision does “Experimental timing files” support?",
+          "startSeconds": 77.90393276086957,
+          "endSeconds": 85.64197465217391,
+          "startFrame": 2337,
+          "endFrame": 2570
+        },
+        {
+          "index": 22,
+          "text": "Create and validate a three-column F S L timing file.",
+          "startSeconds": 85.64197465217391,
+          "endSeconds": 90.193764,
+          "startFrame": 2569,
+          "endFrame": 2706
+        },
+        {
+          "index": 23,
+          "text": "To recap: First, translate BIDS events into F S L's onset, duration, and amplitude format.",
+          "startSeconds": 91.043764,
+          "endSeconds": 98.02513966666666,
+          "startFrame": 2731,
+          "endFrame": 2941
+        },
+        {
+          "index": 24,
+          "text": "Next, document the decision and inspect the corresponding input or output.",
+          "startSeconds": 98.02513966666666,
+          "endSeconds": 103.14481515555555,
+          "startFrame": 2940,
+          "endFrame": 3095
+        },
+        {
+          "index": 25,
+          "text": "Before continuing, make sure you can explain this objective: Create and validate a three-column F S L timing file.",
+          "startSeconds": 103.14481515555555,
+          "endSeconds": 111.98789099999999,
+          "startFrame": 3094,
+          "endFrame": 3360
+        }
+      ]
+    },
+    {
+      "slug": "what-is-an-ev",
+      "compositionId": "LessonWhatIsAnEv",
+      "fps": 30,
+      "totalFrames": 3724,
+      "totalSeconds": 124.03943199999999,
+      "voice": "Daniel",
+      "speechRate": 148,
+      "scenes": [
+        {
+          "id": "opening",
+          "audioPath": "video-production/what-is-an-ev/audio/opening.m4a",
+          "audioSeconds": 14.002766,
+          "durationSeconds": 14.852765999999999,
+          "durationInFrames": 446,
+          "startSeconds": 0,
+          "startFrame": 0
+        },
+        {
+          "id": "core-idea",
+          "audioPath": "video-production/what-is-an-ev/audio/core-idea.m4a",
+          "audioSeconds": 36.955692,
+          "durationSeconds": 37.805692,
+          "durationInFrames": 1135,
+          "startSeconds": 14.852765999999999,
+          "startFrame": 446
+        },
+        {
+          "id": "observable-check",
+          "audioPath": "video-production/what-is-an-ev/audio/observable-check.m4a",
+          "audioSeconds": 22.525215,
+          "durationSeconds": 23.375215,
+          "durationInFrames": 702,
+          "startSeconds": 52.658457999999996,
+          "startFrame": 1581
+        },
+        {
+          "id": "quality-control",
+          "audioPath": "video-production/what-is-an-ev/audio/quality-control.m4a",
+          "audioSeconds": 24.966893,
+          "durationSeconds": 25.816893,
+          "durationInFrames": 775,
+          "startSeconds": 76.033673,
+          "startFrame": 2283
+        },
+        {
+          "id": "summary",
+          "audioPath": "video-production/what-is-an-ev/audio/summary.m4a",
+          "audioSeconds": 21.338866,
+          "durationSeconds": 22.188866,
+          "durationInFrames": 666,
+          "startSeconds": 101.85056599999999,
+          "startFrame": 3058
+        }
+      ],
+      "cues": [
+        {
+          "index": 1,
+          "text": "What is an explanatory variable?",
+          "startSeconds": 0,
+          "endSeconds": 2.1879321875,
+          "startFrame": 0,
+          "endFrame": 66
+        },
+        {
+          "index": 2,
+          "text": "Represent one hypothesized source of signal as a column in the design matrix.",
+          "startSeconds": 2.1879321875,
+          "endSeconds": 7.876555874999999,
+          "startFrame": 65,
+          "endFrame": 237
+        },
+        {
+          "index": 3,
+          "text": "The goal is clear: Distinguish original E V's from convolved predictors and nuisance regressors.",
+          "startSeconds": 7.876555874999999,
+          "endSeconds": 14.002766,
+          "startFrame": 236,
+          "endFrame": 421
+        },
+        {
+          "index": 4,
+          "text": "What is an explanatory variable?",
+          "startSeconds": 14.852765999999999,
+          "endSeconds": 17.191733848101265,
+          "startFrame": 445,
+          "endFrame": 516
+        },
+        {
+          "index": 5,
+          "text": "An explanatory variable (E V) represents a pattern expected to explain some variation in the data.",
+          "startSeconds": 17.191733848101265,
+          "endSeconds": 24.676430962025314,
+          "startFrame": 515,
+          "endFrame": 741
+        },
+        {
+          "index": 6,
+          "text": "Task events, parametric values, motion estimates, and other confounds can all become E V's, but their interpretations differ.",
+          "startSeconds": 24.676430962025314,
+          "endSeconds": 33.096715215189874,
+          "startFrame": 740,
+          "endFrame": 993
+        },
+        {
+          "index": 7,
+          "text": "FEAT begins with the event timing you specify, convolves task E V's with a hemodynamic response, and may add temporal derivatives.",
+          "startSeconds": 33.096715215189874,
+          "endSeconds": 42.92038017721519,
+          "startFrame": 992,
+          "endFrame": 1288
+        },
+        {
+          "index": 8,
+          "text": "Each resulting column consumes model degrees of freedom, so include predictors for a reason—not simply because they are available.",
+          "startSeconds": 42.920380177215186,
+          "endSeconds": 51.808457999999995,
+          "startFrame": 1287,
+          "endFrame": 1555
+        },
+        {
+          "index": 9,
+          "text": "Now connect the idea to an observable check.",
+          "startSeconds": 52.658457999999996,
+          "endSeconds": 56.058490452830185,
+          "startFrame": 1579,
+          "endFrame": 1682
+        },
+        {
+          "index": 10,
+          "text": "First, list the experimental conditions in one run.",
+          "startSeconds": 56.058490452830185,
+          "endSeconds": 59.458522905660374,
+          "startFrame": 1681,
+          "endFrame": 1784
+        },
+        {
+          "index": 11,
+          "text": "Next, decide which need separate E V's.",
+          "startSeconds": 59.458522905660374,
+          "endSeconds": 62.43355130188679,
+          "startFrame": 1783,
+          "endFrame": 1874
+        },
+        {
+          "index": 12,
+          "text": "Then, list motion or confound regressors separately.",
+          "startSeconds": 62.43355130188679,
+          "endSeconds": 65.4085796981132,
+          "startFrame": 1873,
+          "endFrame": 1963
+        },
+        {
+          "index": 13,
+          "text": "After that, state what a positive parameter estimate would mean for one E V.",
+          "startSeconds": 65.4085796981132,
+          "endSeconds": 71.35863649056603,
+          "startFrame": 1962,
+          "endFrame": 2141
+        },
+        {
+          "index": 14,
+          "text": "Record what you observe so the decision remains reviewable.",
+          "startSeconds": 71.35863649056603,
+          "endSeconds": 75.18367299999998,
+          "startFrame": 2140,
+          "endFrame": 2256
+        },
+        {
+          "index": 15,
+          "text": "Quality control comes before interpretation.",
+          "startSeconds": 76.033673,
+          "endSeconds": 78.48140760784312,
+          "startFrame": 2281,
+          "endFrame": 2355
+        },
+        {
+          "index": 16,
+          "text": "Before interpreting the result, confirm that the input, operation, and output support the same scientific question.",
+          "startSeconds": 78.48140760784312,
+          "endSeconds": 86.31415835294116,
+          "startFrame": 2354,
+          "endFrame": 2590
+        },
+        {
+          "index": 17,
+          "text": "A useful self-check is this: In one or two sentences, what decision does “What is an explanatory variable?",
+          "startSeconds": 86.31415835294118,
+          "endSeconds": 95.12600294117647,
+          "startFrame": 2589,
+          "endFrame": 2854
+        },
+        {
+          "index": 18,
+          "text": "” support?",
+          "startSeconds": 95.12600294117647,
+          "endSeconds": 96.10509678431372,
+          "startFrame": 2853,
+          "endFrame": 2884
+        },
+        {
+          "index": 19,
+          "text": "Distinguish original E V's from convolved predictors and nuisance regressors.",
+          "startSeconds": 96.10509678431373,
+          "endSeconds": 101.000566,
+          "startFrame": 2883,
+          "endFrame": 3031
+        },
+        {
+          "index": 20,
+          "text": "To recap: First, represent one hypothesized source of signal as a column in the design matrix.",
+          "startSeconds": 101.85056599999999,
+          "endSeconds": 109.27278026086955,
+          "startFrame": 3055,
+          "endFrame": 3279
+        },
+        {
+          "index": 21,
+          "text": "Next, document the decision and inspect the corresponding input or output.",
+          "startSeconds": 109.27278026086955,
+          "endSeconds": 114.37555256521738,
+          "startFrame": 3278,
+          "endFrame": 3432
+        },
+        {
+          "index": 22,
+          "text": "Before continuing, make sure you can explain this objective: Distinguish original E V's from convolved predictors and nuisance regressors.",
+          "startSeconds": 114.37555256521738,
+          "endSeconds": 123.18943199999998,
+          "startFrame": 3431,
+          "endFrame": 3696
+        }
+      ]
+    },
+    {
+      "slug": "hrf-and-convolution",
+      "compositionId": "LessonHrfAndConvolution",
+      "fps": 30,
+      "totalFrames": 3507,
+      "totalSeconds": 116.843332,
+      "voice": "Daniel",
+      "speechRate": 148,
+      "scenes": [
+        {
+          "id": "opening",
+          "audioPath": "video-production/hrf-and-convolution/audio/opening.m4a",
+          "audioSeconds": 13.138866,
+          "durationSeconds": 13.988866,
+          "durationInFrames": 420,
+          "startSeconds": 0,
+          "startFrame": 0
+        },
+        {
+          "id": "core-idea",
+          "audioPath": "video-production/hrf-and-convolution/audio/core-idea.m4a",
+          "audioSeconds": 35.081723,
+          "durationSeconds": 35.931723,
+          "durationInFrames": 1078,
+          "startSeconds": 13.988866,
+          "startFrame": 420
+        },
+        {
+          "id": "observable-check",
+          "audioPath": "video-production/hrf-and-convolution/audio/observable-check.m4a",
+          "audioSeconds": 18.426893,
+          "durationSeconds": 19.276893,
+          "durationInFrames": 579,
+          "startSeconds": 49.920589,
+          "startFrame": 1498
+        },
+        {
+          "id": "quality-control",
+          "audioPath": "video-production/hrf-and-convolution/audio/quality-control.m4a",
+          "audioSeconds": 25.245533,
+          "durationSeconds": 26.095533,
+          "durationInFrames": 783,
+          "startSeconds": 69.19748200000001,
+          "startFrame": 2077
+        },
+        {
+          "id": "summary",
+          "audioPath": "video-production/hrf-and-convolution/audio/summary.m4a",
+          "audioSeconds": 20.700317,
+          "durationSeconds": 21.550317,
+          "durationInFrames": 647,
+          "startSeconds": 95.29301500000001,
+          "startFrame": 2860
+        }
+      ],
+      "cues": [
+        {
+          "index": 1,
+          "text": "The H R F and convolution.",
+          "startSeconds": 0,
+          "endSeconds": 2.3888847272727274,
+          "startFrame": 0,
+          "endFrame": 72
+        },
+        {
+          "index": 2,
+          "text": "Turn event timing into a prediction of the delayed bold response.",
+          "startSeconds": 2.3888847272727274,
+          "endSeconds": 6.768506727272727,
+          "startFrame": 71,
+          "endFrame": 204
+        },
+        {
+          "index": 3,
+          "text": "The goal is clear: Explain why neural event timing is convolved with a hemodynamic response function.",
+          "startSeconds": 6.768506727272727,
+          "endSeconds": 13.138866,
+          "startFrame": 203,
+          "endFrame": 395
+        },
+        {
+          "index": 4,
+          "text": "The H R F and convolution.",
+          "startSeconds": 13.988866,
+          "endSeconds": 16.72250675324675,
+          "startFrame": 419,
+          "endFrame": 502
+        },
+        {
+          "index": 5,
+          "text": "The hemodynamic response function (H R F) approximates the delayed, smooth bold response that follows brief neural activity.",
+          "startSeconds": 16.72250675324675,
+          "endSeconds": 24.923429012987008,
+          "startFrame": 501,
+          "endFrame": 748
+        },
+        {
+          "index": 6,
+          "text": "Convolution combines event timing with this response shape to create a model predictor.",
+          "startSeconds": 24.92342901298701,
+          "endSeconds": 30.84631731168831,
+          "startFrame": 747,
+          "endFrame": 926
+        },
+        {
+          "index": 7,
+          "text": "The predictor should resemble the signal you expect to measure, not an instantaneous event list.",
+          "startSeconds": 30.84631731168831,
+          "endSeconds": 37.6804191948052,
+          "startFrame": 925,
+          "endFrame": 1131
+        },
+        {
+          "index": 8,
+          "text": "FEAT offers basis choices and temporal derivatives, but extra flexibility changes the model and interpretation.",
+          "startSeconds": 37.68041919480519,
+          "endSeconds": 44.51452107792207,
+          "startFrame": 1130,
+          "endFrame": 1336
+        },
+        {
+          "index": 9,
+          "text": "Use the course or study protocol rather than defaulting blindly.",
+          "startSeconds": 44.514521077922076,
+          "endSeconds": 49.070589,
+          "startFrame": 1335,
+          "endFrame": 1473
+        },
+        {
+          "index": 10,
+          "text": "Now connect the idea to an observable check.",
+          "startSeconds": 49.920589,
+          "endSeconds": 53.27093318181818,
+          "startFrame": 1497,
+          "endFrame": 1599
+        },
+        {
+          "index": 11,
+          "text": "First, draw a brief event at 10 seconds.",
+          "startSeconds": 53.27093318181818,
+          "endSeconds": 56.62127736363636,
+          "startFrame": 1598,
+          "endFrame": 1699
+        },
+        {
+          "index": 12,
+          "text": "Next, sketch a delayed response peaking several seconds later.",
+          "startSeconds": 56.621277363636366,
+          "endSeconds": 60.39041456818182,
+          "startFrame": 1698,
+          "endFrame": 1812
+        },
+        {
+          "index": 13,
+          "text": "Then, compare your sketch with FEAT's plotted E V shape.",
+          "startSeconds": 60.39041456818182,
+          "endSeconds": 64.57834479545454,
+          "startFrame": 1811,
+          "endFrame": 1938
+        },
+        {
+          "index": 14,
+          "text": "Record what you observe so the decision remains reviewable.",
+          "startSeconds": 64.57834479545454,
+          "endSeconds": 68.347482,
+          "startFrame": 1937,
+          "endFrame": 2051
+        },
+        {
+          "index": 15,
+          "text": "Quality control comes before interpretation.",
+          "startSeconds": 69.19748200000001,
+          "endSeconds": 71.57913605660379,
+          "startFrame": 2075,
+          "endFrame": 2148
+        },
+        {
+          "index": 16,
+          "text": "Before interpreting the result, confirm that the input, operation, and output support the same scientific question.",
+          "startSeconds": 71.57913605660379,
+          "endSeconds": 79.20042903773586,
+          "startFrame": 2147,
+          "endFrame": 2377
+        },
+        {
+          "index": 17,
+          "text": "A useful self-check is this: In one or two sentences, what decision does “The H R F and convolution” support?",
+          "startSeconds": 79.20042903773586,
+          "endSeconds": 88.72704526415095,
+          "startFrame": 2376,
+          "endFrame": 2662
+        },
+        {
+          "index": 18,
+          "text": "Explain why neural event timing is convolved with a hemodynamic response function.",
+          "startSeconds": 88.72704526415095,
+          "endSeconds": 94.443015,
+          "startFrame": 2661,
+          "endFrame": 2834
+        },
+        {
+          "index": 19,
+          "text": "To recap: First, turn event timing into a prediction of the delayed bold response.",
+          "startSeconds": 95.29301500000001,
+          "endSeconds": 101.59311147826088,
+          "startFrame": 2858,
+          "endFrame": 3048
+        },
+        {
+          "index": 20,
+          "text": "Next, document the decision and inspect the corresponding input or output.",
+          "startSeconds": 101.59311147826088,
+          "endSeconds": 106.5431872826087,
+          "startFrame": 3047,
+          "endFrame": 3197
+        },
+        {
+          "index": 21,
+          "text": "Before continuing, make sure you can explain this objective: Explain why neural event timing is convolved with a hemodynamic response function.",
+          "startSeconds": 106.5431872826087,
+          "endSeconds": 115.99333200000001,
+          "startFrame": 3196,
+          "endFrame": 3480
+        }
+      ]
+    },
+    {
+      "slug": "confound-regressors",
+      "compositionId": "LessonConfoundRegressors",
+      "fps": 30,
+      "totalFrames": 3561,
+      "totalSeconds": 118.62610000000002,
+      "voice": "Daniel",
+      "speechRate": 148,
+      "scenes": [
+        {
+          "id": "opening",
+          "audioPath": "video-production/confound-regressors/audio/opening.m4a",
+          "audioSeconds": 12.114603,
+          "durationSeconds": 12.964603,
+          "durationInFrames": 389,
+          "startSeconds": 0,
+          "startFrame": 0
+        },
+        {
+          "id": "core-idea",
+          "audioPath": "video-production/confound-regressors/audio/core-idea.m4a",
+          "audioSeconds": 34.997868,
+          "durationSeconds": 35.847868,
+          "durationInFrames": 1076,
+          "startSeconds": 12.964603,
+          "startFrame": 389
+        },
+        {
+          "id": "observable-check",
+          "audioPath": "video-production/confound-regressors/audio/observable-check.m4a",
+          "audioSeconds": 27.064717,
+          "durationSeconds": 27.914717000000003,
+          "durationInFrames": 838,
+          "startSeconds": 48.812471,
+          "startFrame": 1465
+        },
+        {
+          "id": "quality-control",
+          "audioPath": "video-production/confound-regressors/audio/quality-control.m4a",
+          "audioSeconds": 20.032653,
+          "durationSeconds": 20.882653,
+          "durationInFrames": 627,
+          "startSeconds": 76.72718800000001,
+          "startFrame": 2303
+        },
+        {
+          "id": "summary",
+          "audioPath": "video-production/confound-regressors/audio/summary.m4a",
+          "audioSeconds": 20.166259,
+          "durationSeconds": 21.016259,
+          "durationInFrames": 631,
+          "startSeconds": 97.60984100000002,
+          "startFrame": 2930
+        }
+      ],
+      "cues": [
+        {
+          "index": 1,
+          "text": "Confound regressors.",
+          "startSeconds": 0,
+          "endSeconds": 0.897378,
+          "startFrame": 0,
+          "endFrame": 27
+        },
+        {
+          "index": 2,
+          "text": "Model nuisance variation without treating it as the effect of interest.",
+          "startSeconds": 0.897378,
+          "endSeconds": 5.8329569999999995,
+          "startFrame": 26,
+          "endFrame": 175
+        },
+        {
+          "index": 3,
+          "text": "The goal is clear: Explain why and how nuisance regressors enter a first-level design.",
+          "startSeconds": 5.8329569999999995,
+          "endSeconds": 12.114602999999999,
+          "startFrame": 174,
+          "endFrame": 364
+        },
+        {
+          "index": 4,
+          "text": "Confound regressors.",
+          "startSeconds": 12.964603,
+          "endSeconds": 14.041460476923078,
+          "startFrame": 388,
+          "endFrame": 422
+        },
+        {
+          "index": 5,
+          "text": "Confound regressors capture structured variation—such as motion—that is not the experimental effect of interest.",
+          "startSeconds": 14.041460476923078,
+          "endSeconds": 21.579462815384616,
+          "startFrame": 421,
+          "endFrame": 648
+        },
+        {
+          "index": 6,
+          "text": "They reduce bias when specified appropriately, but they do not automatically repair poor data.",
+          "startSeconds": 21.579462815384616,
+          "endSeconds": 29.117465153846155,
+          "startFrame": 647,
+          "endFrame": 874
+        },
+        {
+          "index": 7,
+          "text": "Motion estimates, non-steady-state volumes, physiological terms, or fMRIPrep confounds may be used according to a documented strategy.",
+          "startSeconds": 29.117465153846155,
+          "endSeconds": 38.27075370769231,
+          "startFrame": 873,
+          "endFrame": 1149
+        },
+        {
+          "index": 8,
+          "text": "Check column count, missing values, and time points.",
+          "startSeconds": 38.27075370769231,
+          "endSeconds": 42.57818361538462,
+          "startFrame": 1148,
+          "endFrame": 1278
+        },
+        {
+          "index": 9,
+          "text": "A confound file must have one row per modeled volume.",
+          "startSeconds": 42.57818361538462,
+          "endSeconds": 47.962471,
+          "startFrame": 1277,
+          "endFrame": 1439
+        },
+        {
+          "index": 10,
+          "text": "Now connect the idea to an observable check.",
+          "startSeconds": 48.812471,
+          "endSeconds": 52.044079,
+          "startFrame": 1464,
+          "endFrame": 1562
+        },
+        {
+          "index": 11,
+          "text": "First, find the number of bold volumes.",
+          "startSeconds": 52.044079,
+          "endSeconds": 54.871736000000006,
+          "startFrame": 1561,
+          "endFrame": 1647
+        },
+        {
+          "index": 12,
+          "text": "Next, count rows and columns in the confound file.",
+          "startSeconds": 54.871736,
+          "endSeconds": 58.507295,
+          "startFrame": 1646,
+          "endFrame": 1756
+        },
+        {
+          "index": 13,
+          "text": "Then, confirm there are no text headers if FEAT expects numeric input.",
+          "startSeconds": 58.507295,
+          "endSeconds": 63.354707,
+          "startFrame": 1755,
+          "endFrame": 1901
+        },
+        {
+          "index": 14,
+          "text": "After that, document why each column is included.",
+          "startSeconds": 63.354707000000005,
+          "endSeconds": 66.586315,
+          "startFrame": 1900,
+          "endFrame": 1998
+        },
+        {
+          "index": 15,
+          "text": "The command shown on screen is an example.",
+          "startSeconds": 66.586315,
+          "endSeconds": 69.817923,
+          "startFrame": 1997,
+          "endFrame": 2095
+        },
+        {
+          "index": 16,
+          "text": "Adapt its path to your own working directory and verify the target before running it.",
+          "startSeconds": 69.81792300000001,
+          "endSeconds": 75.877188,
+          "startFrame": 2094,
+          "endFrame": 2277
+        },
+        {
+          "index": 17,
+          "text": "Quality control comes before interpretation.",
+          "startSeconds": 76.72718800000001,
+          "endSeconds": 79.00362584090911,
+          "startFrame": 2301,
+          "endFrame": 2371
+        },
+        {
+          "index": 18,
+          "text": "The bold series and confound file have the same number of time points.",
+          "startSeconds": 79.00362584090911,
+          "endSeconds": 84.92236422727275,
+          "startFrame": 2370,
+          "endFrame": 2548
+        },
+        {
+          "index": 19,
+          "text": "A useful self-check is this: In one or two sentences, what decision does “Confound regressors” support?",
+          "startSeconds": 84.92236422727274,
+          "endSeconds": 92.20696531818183,
+          "startFrame": 2547,
+          "endFrame": 2767
+        },
+        {
+          "index": 20,
+          "text": "Explain why and how nuisance regressors enter a first-level design.",
+          "startSeconds": 92.20696531818183,
+          "endSeconds": 96.75984100000001,
+          "startFrame": 2766,
+          "endFrame": 2903
+        },
+        {
+          "index": 21,
+          "text": "To recap: First, model nuisance variation without treating it as the effect of interest.",
+          "startSeconds": 97.60984100000002,
+          "endSeconds": 104.02637795454547,
+          "startFrame": 2928,
+          "endFrame": 3121
+        },
+        {
+          "index": 22,
+          "text": "Next, document the decision and inspect the corresponding input or output.",
+          "startSeconds": 104.02637795454547,
+          "endSeconds": 109.06794270454547,
+          "startFrame": 3120,
+          "endFrame": 3273
+        },
+        {
+          "index": 23,
+          "text": "Before continuing, make sure you can explain this objective: Explain why and how nuisance regressors enter a first-level design.",
+          "startSeconds": 109.06794270454547,
+          "endSeconds": 117.77610000000001,
+          "startFrame": 3272,
+          "endFrame": 3534
+        }
+      ]
+    },
+    {
+      "slug": "reviewing-complete-feat-report",
+      "compositionId": "LessonReviewingCompleteFeatReport",
+      "fps": 30,
+      "totalFrames": 4228,
+      "totalSeconds": 140.844468,
+      "voice": "Daniel",
+      "speechRate": 148,
+      "scenes": [
+        {
+          "id": "opening",
+          "audioPath": "video-production/reviewing-complete-feat-report/audio/opening.m4a",
+          "audioSeconds": 20.238413,
+          "durationSeconds": 21.088413000000003,
+          "durationInFrames": 633,
+          "startSeconds": 0,
+          "startFrame": 0
+        },
+        {
+          "id": "review-order",
+          "audioPath": "video-production/reviewing-complete-feat-report/audio/review-order.m4a",
+          "audioSeconds": 29.468073,
+          "durationSeconds": 30.318073000000002,
+          "durationInFrames": 910,
+          "startSeconds": 21.088413000000003,
+          "startFrame": 633
+        },
+        {
+          "id": "three-questions",
+          "audioPath": "video-production/reviewing-complete-feat-report/audio/three-questions.m4a",
+          "audioSeconds": 28.063039,
+          "durationSeconds": 28.913039,
+          "durationInFrames": 868,
+          "startSeconds": 51.406486,
+          "startFrame": 1543
+        },
+        {
+          "id": "results-last",
+          "audioPath": "video-production/reviewing-complete-feat-report/audio/results-last.m4a",
+          "audioSeconds": 32.392925,
+          "durationSeconds": 33.242925,
+          "durationInFrames": 998,
+          "startSeconds": 80.319525,
+          "startFrame": 2411
+        },
+        {
+          "id": "summary",
+          "audioPath": "video-production/reviewing-complete-feat-report/audio/summary.m4a",
+          "audioSeconds": 26.432018,
+          "durationSeconds": 27.282018,
+          "durationInFrames": 819,
+          "startSeconds": 113.56245,
+          "startFrame": 3409
+        }
+      ],
+      "cues": [
+        {
+          "index": 1,
+          "text": "A completed FEAT report is not automatically a valid analysis.",
+          "startSeconds": 0,
+          "endSeconds": 4.399655,
+          "startFrame": 0,
+          "endFrame": 132
+        },
+        {
+          "index": 2,
+          "text": "It is a structured record that lets you review preprocessing, registration, model design, and statistical output in an evidence-based order.",
+          "startSeconds": 4.399655,
+          "endSeconds": 13.198965000000001,
+          "startFrame": 131,
+          "endFrame": 396
+        },
+        {
+          "index": 3,
+          "text": "This video shows how to read that record before interpreting bright clusters or reporting a result.",
+          "startSeconds": 13.198965000000001,
+          "endSeconds": 20.238413,
+          "startFrame": 395,
+          "endFrame": 608
+        },
+        {
+          "index": 4,
+          "text": "Review the report in dependency order.",
+          "startSeconds": 21.088413000000003,
+          "endSeconds": 23.940162,
+          "startFrame": 632,
+          "endFrame": 719
+        },
+        {
+          "index": 5,
+          "text": "Begin with Pre-stats and ask whether motion, masking, and preprocessing outputs are plausible.",
+          "startSeconds": 23.940162,
+          "endSeconds": 30.1189515,
+          "startFrame": 718,
+          "endFrame": 904
+        },
+        {
+          "index": 6,
+          "text": "Continue to Registration and inspect alignment across the brain.",
+          "startSeconds": 30.1189515,
+          "endSeconds": 34.396575,
+          "startFrame": 903,
+          "endFrame": 1032
+        },
+        {
+          "index": 7,
+          "text": "Then examine the design matrix, explanatory variables, and contrasts under Stats.",
+          "startSeconds": 34.396575000000006,
+          "endSeconds": 39.624781500000005,
+          "startFrame": 1031,
+          "endFrame": 1189
+        },
+        {
+          "index": 8,
+          "text": "Only after those checks should you interpret thresholded results under Post-stats.",
+          "startSeconds": 39.624781500000005,
+          "endSeconds": 44.852988,
+          "startFrame": 1188,
+          "endFrame": 1346
+        },
+        {
+          "index": 9,
+          "text": "A failure early in this chain limits what later pages can support.",
+          "startSeconds": 44.852988,
+          "endSeconds": 50.55648600000001,
+          "startFrame": 1345,
+          "endFrame": 1517
+        },
+        {
+          "index": 10,
+          "text": "Write one defensible statement for each major dependency.",
+          "startSeconds": 51.406486,
+          "endSeconds": 55.148224533333334,
+          "startFrame": 1542,
+          "endFrame": 1655
+        },
+        {
+          "index": 11,
+          "text": "For motion, describe the plot and any abrupt displacement rather than saying it looks fine.",
+          "startSeconds": 55.148224533333334,
+          "endSeconds": 62.163984283333335,
+          "startFrame": 1654,
+          "endFrame": 1865
+        },
+        {
+          "index": 12,
+          "text": "For registration, name anatomical boundaries and multiple slices that support a pass or concern.",
+          "startSeconds": 62.163984283333335,
+          "endSeconds": 68.71202671666667,
+          "startFrame": 1864,
+          "endFrame": 2062
+        },
+        {
+          "index": 13,
+          "text": "For the design, match columns to timing files and contrast arrows to the planned hypothesis.",
+          "startSeconds": 68.71202671666667,
+          "endSeconds": 75.72778646666667,
+          "startFrame": 2061,
+          "endFrame": 2272
+        },
+        {
+          "index": 14,
+          "text": "Specific observations are auditable; vague reassurance is not.",
+          "startSeconds": 75.72778646666667,
+          "endSeconds": 79.469525,
+          "startFrame": 2271,
+          "endFrame": 2385
+        },
+        {
+          "index": 15,
+          "text": "When you reach the results, keep the output types separate.",
+          "startSeconds": 80.319525,
+          "endSeconds": 85.15428992537313,
+          "startFrame": 2409,
+          "endFrame": 2555
+        },
+        {
+          "index": 16,
+          "text": "A cope is the estimated contrast effect.",
+          "startSeconds": 85.15428992537313,
+          "endSeconds": 88.53862537313432,
+          "startFrame": 2554,
+          "endFrame": 2657
+        },
+        {
+          "index": 17,
+          "text": "A varcope describes uncertainty in that estimate.",
+          "startSeconds": 88.53862537313432,
+          "endSeconds": 91.92296082089551,
+          "startFrame": 2656,
+          "endFrame": 2758
+        },
+        {
+          "index": 18,
+          "text": "A t-statistic or z-statistic standardizes evidence relative to uncertainty.",
+          "startSeconds": 91.92296082089553,
+          "endSeconds": 96.27424925373134,
+          "startFrame": 2757,
+          "endFrame": 2889
+        },
+        {
+          "index": 19,
+          "text": "A thresholded map displays locations surviving the chosen inferential procedure.",
+          "startSeconds": 96.27424925373134,
+          "endSeconds": 101.10901417910448,
+          "startFrame": 2888,
+          "endFrame": 3034
+        },
+        {
+          "index": 20,
+          "text": "Do not describe a z-statistic map as an effect-size map, and do not let an attractive cluster override failed motion, registration, or design checks.",
+          "startSeconds": 101.10901417910448,
+          "endSeconds": 112.71245,
+          "startFrame": 3033,
+          "endFrame": 3382
+        },
+        {
+          "index": 21,
+          "text": "Finish with an explicit quality-control decision: pass, concern, or fail, followed by the evidence that supports it.",
+          "startSeconds": 113.56245,
+          "endSeconds": 120.92875009836065,
+          "startFrame": 3406,
+          "endFrame": 3628
+        },
+        {
+          "index": 22,
+          "text": "Record any limitation and explain how it affects interpretation.",
+          "startSeconds": 120.92875009836065,
+          "endSeconds": 124.82855603278688,
+          "startFrame": 3627,
+          "endFrame": 3745
+        },
+        {
+          "index": 23,
+          "text": "Preserve the report, design files, and notes together.",
+          "startSeconds": 124.82855603278688,
+          "endSeconds": 128.2950501967213,
+          "startFrame": 3744,
+          "endFrame": 3849
+        },
+        {
+          "index": 24,
+          "text": "The purpose of review is not to prove that FEAT completed.",
+          "startSeconds": 128.29505019672132,
+          "endSeconds": 133.06147967213116,
+          "startFrame": 3848,
+          "endFrame": 3992
+        },
+        {
+          "index": 25,
+          "text": "It is to decide whether this run can support the scientific claim you intend to make.",
+          "startSeconds": 133.06147967213116,
+          "endSeconds": 139.994468,
+          "startFrame": 3991,
+          "endFrame": 4200
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+1
+00:00:00,000 --> 00:00:01,725
+Getting started with Neurodesk.
+
+2
+00:00:01,725 --> 00:00:08,193
+Choose Play, EDU, or an institutional environment and verify that F S L is available.
+
+3
+00:00:08,193 --> 00:00:12,505
+The goal is clear: Choose an appropriate Neurodesk access route.
+
+4
+00:00:13,355 --> 00:00:15,234
+A reproducible software environment.
+
+5
+00:00:15,234 --> 00:00:18,521
+Neurodesk packages neuroimaging applications in consistent environments.
+
+6
+00:00:18,521 --> 00:00:30,262
+Neurodesk Play is broadly accessible; Neurodesk EDU may be provided by a course or institution; a local installation is optional and has higher hardware requirements.
+
+7
+00:00:30,262 --> 00:00:34,489
+Files saved only inside temporary browser sessions may disappear.
+
+8
+00:00:34,489 --> 00:00:38,716
+Use the persistent storage location provided by your environment.
+
+9
+00:00:38,716 --> 00:00:49,987
+The base terminal is useful for general Linux work; an F S L terminal starts with the F S L software environment already loaded.
+
+10
+00:00:50,837 --> 00:00:54,167
+Now connect the idea to an observable check.
+
+11
+00:00:54,167 --> 00:00:57,913
+First, launch Neurodesk Play, EDU, or your institution's environment.
+
+12
+00:00:57,913 --> 00:01:00,827
+Next, open the F S L application.
+
+13
+00:01:00,827 --> 00:01:07,070
+Then, open its terminal and verify F S L with which F S L info.
+
+14
+00:01:07,070 --> 00:01:11,649
+After that, identify the location where your files persist between sessions.
+
+15
+00:01:11,649 --> 00:01:14,979
+The command shown on screen is an example.
+
+16
+00:01:14,979 --> 00:01:21,222
+Adapt its path to your own working directory and verify the target before running it.
+
+17
+00:01:22,072 --> 00:01:24,072
+F S L command not found?
+
+18
+00:01:24,072 --> 00:01:29,073
+You may be in the base terminal rather than the F S L application terminal.
+
+19
+00:01:29,073 --> 00:01:35,075
+Open the F S L tile, or load the F S L module if your environment supports modules.
+
+20
+00:01:35,075 --> 00:01:41,743
+A useful self-check is this: What is the operational difference between the base terminal and an F S L terminal?
+
+21
+00:01:41,743 --> 00:01:52,411
+The F S L terminal has the F S L environment loaded; the base terminal is a general shell and may not find F S L commands until a module is loaded.
+
+22
+00:01:53,261 --> 00:01:57,628
+To recap: First, know which terminal you are using.
+
+23
+00:01:57,628 --> 00:02:00,539
+Next, save work in persistent storage.
+
+24
+00:02:00,539 --> 00:02:04,420
+Then, verify tools before starting a long analysis.
+
+25
+00:02:04,420 --> 00:02:11,698
+Before continuing, make sure you can explain this objective: Choose an appropriate Neurodesk access route.

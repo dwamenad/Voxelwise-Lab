@@ -1,0 +1,87 @@
+1
+00:00:00,000 --> 00:00:02,188
+What is an explanatory variable?
+
+2
+00:00:02,188 --> 00:00:07,877
+Represent one hypothesized source of signal as a column in the design matrix.
+
+3
+00:00:07,877 --> 00:00:14,003
+The goal is clear: Distinguish original E V's from convolved predictors and nuisance regressors.
+
+4
+00:00:14,853 --> 00:00:17,192
+What is an explanatory variable?
+
+5
+00:00:17,192 --> 00:00:24,676
+An explanatory variable (E V) represents a pattern expected to explain some variation in the data.
+
+6
+00:00:24,676 --> 00:00:33,097
+Task events, parametric values, motion estimates, and other confounds can all become E V's, but their interpretations differ.
+
+7
+00:00:33,097 --> 00:00:42,920
+FEAT begins with the event timing you specify, convolves task E V's with a hemodynamic response, and may add temporal derivatives.
+
+8
+00:00:42,920 --> 00:00:51,808
+Each resulting column consumes model degrees of freedom, so include predictors for a reason—not simply because they are available.
+
+9
+00:00:52,658 --> 00:00:56,058
+Now connect the idea to an observable check.
+
+10
+00:00:56,058 --> 00:00:59,459
+First, list the experimental conditions in one run.
+
+11
+00:00:59,459 --> 00:01:02,434
+Next, decide which need separate E V's.
+
+12
+00:01:02,434 --> 00:01:05,409
+Then, list motion or confound regressors separately.
+
+13
+00:01:05,409 --> 00:01:11,359
+After that, state what a positive parameter estimate would mean for one E V.
+
+14
+00:01:11,359 --> 00:01:15,184
+Record what you observe so the decision remains reviewable.
+
+15
+00:01:16,034 --> 00:01:18,481
+Quality control comes before interpretation.
+
+16
+00:01:18,481 --> 00:01:26,314
+Before interpreting the result, confirm that the input, operation, and output support the same scientific question.
+
+17
+00:01:26,314 --> 00:01:35,126
+A useful self-check is this: In one or two sentences, what decision does “What is an explanatory variable?
+
+18
+00:01:35,126 --> 00:01:36,105
+” support?
+
+19
+00:01:36,105 --> 00:01:41,001
+Distinguish original E V's from convolved predictors and nuisance regressors.
+
+20
+00:01:41,851 --> 00:01:49,273
+To recap: First, represent one hypothesized source of signal as a column in the design matrix.
+
+21
+00:01:49,273 --> 00:01:54,376
+Next, document the decision and inspect the corresponding input or output.
+
+22
+00:01:54,376 --> 00:02:03,189
+Before continuing, make sure you can explain this objective: Distinguish original E V's from convolved predictors and nuisance regressors.

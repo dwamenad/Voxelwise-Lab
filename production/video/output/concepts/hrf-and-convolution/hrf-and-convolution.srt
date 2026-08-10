@@ -1,0 +1,83 @@
+1
+00:00:00,000 --> 00:00:02,389
+The H R F and convolution.
+
+2
+00:00:02,389 --> 00:00:06,769
+Turn event timing into a prediction of the delayed bold response.
+
+3
+00:00:06,769 --> 00:00:13,139
+The goal is clear: Explain why neural event timing is convolved with a hemodynamic response function.
+
+4
+00:00:13,989 --> 00:00:16,723
+The H R F and convolution.
+
+5
+00:00:16,723 --> 00:00:24,923
+The hemodynamic response function (H R F) approximates the delayed, smooth bold response that follows brief neural activity.
+
+6
+00:00:24,923 --> 00:00:30,846
+Convolution combines event timing with this response shape to create a model predictor.
+
+7
+00:00:30,846 --> 00:00:37,680
+The predictor should resemble the signal you expect to measure, not an instantaneous event list.
+
+8
+00:00:37,680 --> 00:00:44,515
+FEAT offers basis choices and temporal derivatives, but extra flexibility changes the model and interpretation.
+
+9
+00:00:44,515 --> 00:00:49,071
+Use the course or study protocol rather than defaulting blindly.
+
+10
+00:00:49,921 --> 00:00:53,271
+Now connect the idea to an observable check.
+
+11
+00:00:53,271 --> 00:00:56,621
+First, draw a brief event at 10 seconds.
+
+12
+00:00:56,621 --> 00:01:00,390
+Next, sketch a delayed response peaking several seconds later.
+
+13
+00:01:00,390 --> 00:01:04,578
+Then, compare your sketch with FEAT's plotted E V shape.
+
+14
+00:01:04,578 --> 00:01:08,347
+Record what you observe so the decision remains reviewable.
+
+15
+00:01:09,197 --> 00:01:11,579
+Quality control comes before interpretation.
+
+16
+00:01:11,579 --> 00:01:19,200
+Before interpreting the result, confirm that the input, operation, and output support the same scientific question.
+
+17
+00:01:19,200 --> 00:01:28,727
+A useful self-check is this: In one or two sentences, what decision does “The H R F and convolution” support?
+
+18
+00:01:28,727 --> 00:01:34,443
+Explain why neural event timing is convolved with a hemodynamic response function.
+
+19
+00:01:35,293 --> 00:01:41,593
+To recap: First, turn event timing into a prediction of the delayed bold response.
+
+20
+00:01:41,593 --> 00:01:46,543
+Next, document the decision and inspect the corresponding input or output.
+
+21
+00:01:46,543 --> 00:01:55,993
+Before continuing, make sure you can explain this objective: Explain why neural event timing is convolved with a hemodynamic response function.

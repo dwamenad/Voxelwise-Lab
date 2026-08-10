@@ -1,0 +1,99 @@
+1
+00:00:00,000 --> 00:00:03,557
+F S L info and F S L stats.
+
+2
+00:00:03,557 --> 00:00:06,719
+Inspect image metadata and compute targeted summary statistics.
+
+3
+00:00:06,719 --> 00:00:11,067
+The goal is clear: Choose F S L info for metadata.
+
+4
+00:00:11,917 --> 00:00:15,578
+Metadata describes the container; statistics describe its values.
+
+5
+00:00:15,578 --> 00:00:21,528
+F S L info reports header fields such as dimensions and voxel sizes.
+
+6
+00:00:21,528 --> 00:00:28,393
+F S L stats computes statistics over image intensities, optionally after applying thresholds or masks.
+
+7
+00:00:28,393 --> 00:00:34,343
+A number is only interpretable when you know which voxels contributed to it.
+
+8
+00:00:34,343 --> 00:00:40,293
+For example, F S L stats image -R reports the robust intensity range.
+
+9
+00:00:40,293 --> 00:00:44,870
+-V reports the number and physical volume of nonzero voxels.
+
+10
+00:00:44,870 --> 00:00:52,193
+Nonzero voxels are not automatically the brain; background noise, skull, or artifacts may also be nonzero.
+
+11
+00:00:53,043 --> 00:00:56,167
+Now connect the idea to an observable check.
+
+12
+00:00:56,167 --> 00:01:00,071
+First, run F S L info and record image dimensions.
+
+13
+00:01:00,071 --> 00:01:04,366
+Next, use F S L stats -R for the intensity range.
+
+14
+00:01:04,366 --> 00:01:07,490
+Then, use -V and explain both returned numbers.
+
+15
+00:01:07,490 --> 00:01:11,395
+After that, open the image to verify what was counted.
+
+16
+00:01:11,395 --> 00:01:14,518
+The command shown on screen is an example.
+
+17
+00:01:14,518 --> 00:01:20,375
+Adapt its path to your own working directory and verify the target before running it.
+
+18
+00:01:21,225 --> 00:01:23,276
+Quality control comes before interpretation.
+
+19
+00:01:23,276 --> 00:01:31,481
+For -V, the first value is the count of nonzero voxels and the second is their volume in cubic millimetres.
+
+20
+00:01:31,481 --> 00:01:38,865
+A useful self-check is this: Why is F S L stats image -V not automatically a brain-volume measurement?
+
+21
+00:01:38,865 --> 00:01:46,250
+It counts all nonzero voxels, which may include non-brain signal unless the image is a validated brain mask.
+
+22
+00:01:47,100 --> 00:01:51,389
+To recap: First, match the utility to the question.
+
+23
+00:01:51,389 --> 00:01:54,725
+Next, define which voxels a statistic summarizes.
+
+24
+00:01:54,725 --> 00:01:58,062
+Then, check numerical results against the image.
+
+25
+00:01:58,062 --> 00:02:05,687
+Before continuing, make sure you can explain this objective: Choose F S L info for metadata.
