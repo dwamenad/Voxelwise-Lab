@@ -1,4 +1,5 @@
 import type { Lesson, LessonBlock, VideoType } from "@/lib/types";
+import { getVideoRelease } from "@/lib/content/video-release";
 
 interface LearningLessonInput {
   id: string;
@@ -26,15 +27,18 @@ interface LearningLessonInput {
 }
 
 export function learningLesson(input: LearningLessonInput): Lesson {
+  const videoType = input.videoType ?? "concept";
+  const release = getVideoRelease(`${videoType === "walkthrough" ? "walkthrough" : "concept"}:${input.slug}`);
   const blocks: LessonBlock[] = [
     {
       type: "video",
-      videoType: input.videoType ?? "concept",
+      videoType,
       title: input.videoTitle ?? input.title,
-      provider: "mux",
-      videoId: null,
+      provider: release.provider,
+      videoId: release.videoId,
+      url: release.url,
       durationMinutes: Math.max(5, Math.round((input.duration ?? 20) * 0.35)),
-      status: "planned",
+      status: release.status,
       captionsPath: `/production/captions/${input.slug}.vtt`,
       transcript:
         "A reviewed transcript will appear here when this video is published. The complete written lesson below covers the same learning objectives.",
@@ -71,7 +75,7 @@ export function learningLesson(input: LearningLessonInput): Lesson {
       sourceLab: input.sourceLab,
       sourceSection: input.sourceSection,
       scientificReviewStatus: "pending",
-      videoStatus: "planned",
+      videoStatus: release.status,
       narrationScriptPath: `production/narration/${input.slug}.md`,
       videoStoryboardPath: `production/storyboards/${input.slug}.md`,
     },

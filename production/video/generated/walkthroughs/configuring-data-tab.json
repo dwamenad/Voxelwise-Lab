@@ -1,0 +1,481 @@
+{
+  "version": 1,
+  "slug": "configuring-data-tab",
+  "title": "Configuring the Data tab",
+  "compositionId": "ConfiguringDataTabWalkthrough",
+  "rawCompositionId": "ConfiguringDataTabWalkthroughRaw",
+  "fps": 30,
+  "captureFps": 5,
+  "width": 1920,
+  "height": 1080,
+  "totalFrames": 5172,
+  "totalSeconds": 172.324581,
+  "rawSourceFrames": 741,
+  "rawTotalFrames": 4446,
+  "voice": "Daniel",
+  "speechRate": 148,
+  "scenes": [
+    {
+      "id": "section-1",
+      "title": "Verify the run before opening a chooser",
+      "audioPath": "video-production/walkthroughs/configuring-data-tab/audio/section-1.m4a",
+      "audioSeconds": 54.704717,
+      "durationSeconds": 55.554717000000004,
+      "durationInFrames": 1667,
+      "startSeconds": 0,
+      "startFrame": 0,
+      "visualScenes": [
+        {
+          "id": "01-verify-the-run-before-opening-a-chooser",
+          "assetRoot": "video-production/walkthroughs/configuring-data-tab/frames/01-verify-the-run-before-opening-a-chooser",
+          "frameCount": 193
+        }
+      ]
+    },
+    {
+      "id": "section-2",
+      "title": "Establish the analysis unit",
+      "audioPath": "video-production/walkthroughs/configuring-data-tab/audio/section-2.m4a",
+      "audioSeconds": 35.760907,
+      "durationSeconds": 36.610907000000005,
+      "durationInFrames": 1099,
+      "startSeconds": 55.554717000000004,
+      "startFrame": 1667,
+      "visualScenes": [
+        {
+          "id": "02-establish-the-analysis-unit",
+          "assetRoot": "video-production/walkthroughs/configuring-data-tab/frames/02-establish-the-analysis-unit",
+          "frameCount": 190
+        }
+      ]
+    },
+    {
+      "id": "section-3",
+      "title": "Enter and cross-check time-series values",
+      "audioPath": "video-production/walkthroughs/configuring-data-tab/audio/section-3.m4a",
+      "audioSeconds": 39.101769,
+      "durationSeconds": 39.951769,
+      "durationInFrames": 1199,
+      "startSeconds": 92.16562400000001,
+      "startFrame": 2766,
+      "visualScenes": [
+        {
+          "id": "03-enter-and-cross-check-time-series-values",
+          "assetRoot": "video-production/walkthroughs/configuring-data-tab/frames/03-enter-and-cross-check-time-series-values",
+          "frameCount": 165
+        }
+      ]
+    },
+    {
+      "id": "section-4",
+      "title": "Choose a new output identity",
+      "audioPath": "video-production/walkthroughs/configuring-data-tab/audio/section-4.m4a",
+      "audioSeconds": 39.357188,
+      "durationSeconds": 40.207188,
+      "durationInFrames": 1207,
+      "startSeconds": 132.117393,
+      "startFrame": 3965,
+      "visualScenes": [
+        {
+          "id": "04-choose-a-new-output-identity",
+          "assetRoot": "video-production/walkthroughs/configuring-data-tab/frames/04-choose-a-new-output-identity",
+          "frameCount": 193
+        }
+      ]
+    }
+  ],
+  "cues": [
+    {
+      "index": 1,
+      "text": "This walkthrough configures the Data tab\nfor one first-level run from OpenNeuro",
+      "startSeconds": 0,
+      "endSeconds": 5.91402345945946,
+      "startFrame": 0,
+      "endFrame": 178
+    },
+    {
+      "index": 2,
+      "text": "dataset ds005085, participant sub-10015.",
+      "startSeconds": 5.91402345945946,
+      "endSeconds": 7.885364612612613,
+      "startFrame": 177,
+      "endFrame": 237
+    },
+    {
+      "index": 3,
+      "text": "Before entering values in FEAT, use the\nterminal to inspect the exact",
+      "startSeconds": 7.885364612612613,
+      "endSeconds": 13.799388072072073,
+      "startFrame": 236,
+      "endFrame": 414
+    },
+    {
+      "index": 4,
+      "text": "four-dimensional BOLD image.",
+      "startSeconds": 13.799388072072073,
+      "endSeconds": 15.277893936936938,
+      "startFrame": 413,
+      "endFrame": 459
+    },
+    {
+      "index": 5,
+      "text": "`fslval` reports 260 volumes and a\nrepetition time of 1.",
+      "startSeconds": 15.277893936936938,
+      "endSeconds": 20.20624681981982,
+      "startFrame": 458,
+      "endFrame": 607
+    },
+    {
+      "index": 6,
+      "text": "7 seconds.",
+      "startSeconds": 20.20624681981982,
+      "endSeconds": 21.1919173963964,
+      "startFrame": 606,
+      "endFrame": 636
+    },
+    {
+      "index": 7,
+      "text": "The image dimensions are 86 by 86 by 51.",
+      "startSeconds": 21.1919173963964,
+      "endSeconds": 25.62743499099099,
+      "startFrame": 635,
+      "endFrame": 769
+    },
+    {
+      "index": 8,
+      "text": "These header values are evidence; a\nremembered value or a value left over from",
+      "startSeconds": 25.62743499099099,
+      "endSeconds": 32.52712902702703,
+      "startFrame": 768,
+      "endFrame": 976
+    },
+    {
+      "index": 9,
+      "text": "another FEAT session is not.",
+      "startSeconds": 32.52712902702703,
+      "endSeconds": 34.99130546846847,
+      "startFrame": 975,
+      "endFrame": 1050
+    },
+    {
+      "index": 10,
+      "text": "The modeled run is\n`sub-10015_task-sharedreward_acq-mb3me1_bo",
+      "startSeconds": 34.99130546846847,
+      "endSeconds": 37.455481909909906,
+      "startFrame": 1049,
+      "endFrame": 1124
+    },
+    {
+      "index": 11,
+      "text": "ld.",
+      "startSeconds": 37.455481909909906,
+      "endSeconds": 37.9483171981982,
+      "startFrame": 1123,
+      "endFrame": 1139
+    },
+    {
+      "index": 12,
+      "text": "nii.",
+      "startSeconds": 37.9483171981982,
+      "endSeconds": 38.44115248648649,
+      "startFrame": 1138,
+      "endFrame": 1154
+    },
+    {
+      "index": 13,
+      "text": "gz`.",
+      "startSeconds": 38.44115248648649,
+      "endSeconds": 38.93398777477478,
+      "startFrame": 1153,
+      "endFrame": 1169
+    },
+    {
+      "index": 14,
+      "text": "Confirm all BIDS entities in the filename.",
+      "startSeconds": 38.93398777477478,
+      "endSeconds": 42.3838347927928,
+      "startFrame": 1168,
+      "endFrame": 1272
+    },
+    {
+      "index": 15,
+      "text": "Similar runs can sit beside each other,\nand selecting the wrong echo or",
+      "startSeconds": 42.3838347927928,
+      "endSeconds": 48.790693540540545,
+      "startFrame": 1271,
+      "endFrame": 1464
+    },
+    {
+      "index": 16,
+      "text": "acquisition can still produce a\ntechnically valid analysis of the wrong",
+      "startSeconds": 48.790693540540545,
+      "endSeconds": 54.21188171171172,
+      "startFrame": 1463,
+      "endFrame": 1627
+    },
+    {
+      "index": 17,
+      "text": "data.",
+      "startSeconds": 54.21188171171172,
+      "endSeconds": 54.70471700000001,
+      "startFrame": 1626,
+      "endFrame": 1642
+    },
+    {
+      "index": 18,
+      "text": "In FEAT, select First-level analysis and\nFull analysis.",
+      "startSeconds": 55.554717000000004,
+      "endSeconds": 59.08665843209877,
+      "startFrame": 1666,
+      "endFrame": 1773
+    },
+    {
+      "index": 19,
+      "text": "Set the number of inputs to one.",
+      "startSeconds": 59.08665843209877,
+      "endSeconds": 62.17710718518519,
+      "startFrame": 1772,
+      "endFrame": 1866
+    },
+    {
+      "index": 20,
+      "text": "This model represents one run from one\nparticipant.",
+      "startSeconds": 62.17710718518519,
+      "endSeconds": 65.70904861728395,
+      "startFrame": 1865,
+      "endFrame": 1972
+    },
+    {
+      "index": 21,
+      "text": "It should not be named or interpreted as a\nsubject-level combination or a group",
+      "startSeconds": 65.70904861728395,
+      "endSeconds": 71.8899461234568,
+      "startFrame": 1971,
+      "endFrame": 2157
+    },
+    {
+      "index": 22,
+      "text": "result.",
+      "startSeconds": 71.8899461234568,
+      "endSeconds": 72.33143880246914,
+      "startFrame": 2156,
+      "endFrame": 2170
+    },
+    {
+      "index": 23,
+      "text": "Choose the verified BOLD file as the\nfour-dimensional input.",
+      "startSeconds": 72.33143880246914,
+      "endSeconds": 76.30487291358025,
+      "startFrame": 2169,
+      "endFrame": 2290
+    },
+    {
+      "index": 24,
+      "text": "Do not select the JSON sidecar, a mean\nfunctional image, or a three-dimensional",
+      "startSeconds": 76.30487291358025,
+      "endSeconds": 82.04427774074075,
+      "startFrame": 2289,
+      "endFrame": 2462
+    },
+    {
+      "index": 25,
+      "text": "example volume.",
+      "startSeconds": 82.04427774074074,
+      "endSeconds": 82.92726309876544,
+      "startFrame": 2461,
+      "endFrame": 2488
+    },
+    {
+      "index": 26,
+      "text": "Once the path appears, compare its\nparticipant, task, and acquisition",
+      "startSeconds": 82.92726309876544,
+      "endSeconds": 87.3421898888889,
+      "startFrame": 2487,
+      "endFrame": 2621
+    },
+    {
+      "index": 27,
+      "text": "entities with the run named in the\nanalysis notes.",
+      "startSeconds": 87.3421898888889,
+      "endSeconds": 91.31562400000001,
+      "startFrame": 2620,
+      "endFrame": 2740
+    },
+    {
+      "index": 28,
+      "text": "Set the TR to 1.",
+      "startSeconds": 92.16562400000001,
+      "endSeconds": 94.24550532978724,
+      "startFrame": 2764,
+      "endFrame": 2828
+    },
+    {
+      "index": 29,
+      "text": "7 seconds and the number of volumes to\n260.",
+      "startSeconds": 94.24550532978724,
+      "endSeconds": 97.98929172340425,
+      "startFrame": 2827,
+      "endFrame": 2940
+    },
+    {
+      "index": 30,
+      "text": "Together those values imply a 442-second\ntime series.",
+      "startSeconds": 97.98929172340426,
+      "endSeconds": 101.31710185106384,
+      "startFrame": 2939,
+      "endFrame": 3040
+    },
+    {
+      "index": 31,
+      "text": "That duration gives us a useful boundary\ncheck for every event onset loaded later.",
+      "startSeconds": 101.31710185106384,
+      "endSeconds": 107.1407695744681,
+      "startFrame": 3039,
+      "endFrame": 3215
+    },
+    {
+      "index": 32,
+      "text": "If a timing row falls beyond the run, stop\nand repair the timing inputs before",
+      "startSeconds": 107.1407695744681,
+      "endSeconds": 113.38041356382979,
+      "startFrame": 3214,
+      "endFrame": 3402
+    },
+    {
+      "index": 33,
+      "text": "fitting the model.",
+      "startSeconds": 113.38041356382979,
+      "endSeconds": 114.62834236170212,
+      "startFrame": 3401,
+      "endFrame": 3439
+    },
+    {
+      "index": 34,
+      "text": "Set deleted volumes to zero for this\ncourse example because the supplied run",
+      "startSeconds": 114.62834236170212,
+      "endSeconds": 120.03603381914893,
+      "startFrame": 3438,
+      "endFrame": 3602
+    },
+    {
+      "index": 35,
+      "text": "and timing files are being modeled as\nstaged.",
+      "startSeconds": 120.03603381914894,
+      "endSeconds": 123.36384394680852,
+      "startFrame": 3601,
+      "endFrame": 3701
+    },
+    {
+      "index": 36,
+      "text": "For another dataset, non-steady-state\nhandling must come from the acquisition",
+      "startSeconds": 123.36384394680852,
+      "endSeconds": 127.52360660638298,
+      "startFrame": 3700,
+      "endFrame": 3826
+    },
+    {
+      "index": 37,
+      "text": "and preprocessing record rather than\nimitation of this value.",
+      "startSeconds": 127.52360660638298,
+      "endSeconds": 131.267393,
+      "startFrame": 3825,
+      "endFrame": 3939
+    },
+    {
+      "index": 38,
+      "text": "Set the output path to\n`/home/jovyan/Voxelwise-Walkthroughs/outpu",
+      "startSeconds": 132.117393,
+      "endSeconds": 135.03274025925924,
+      "startFrame": 3963,
+      "endFrame": 4051
+    },
+    {
+      "index": 39,
+      "text": "ts/sub-10015_sharedreward_mb3me1_L1_video`\n.",
+      "startSeconds": 135.03274025925924,
+      "endSeconds": 136.00452267901233,
+      "startFrame": 4050,
+      "endFrame": 4081
+    },
+    {
+      "index": 40,
+      "text": "FEAT will append `.",
+      "startSeconds": 136.00452267901233,
+      "endSeconds": 137.9480875185185,
+      "startFrame": 4080,
+      "endFrame": 4139
+    },
+    {
+      "index": 41,
+      "text": "feat`.",
+      "startSeconds": 137.94808751851852,
+      "endSeconds": 138.43397872839506,
+      "startFrame": 4138,
+      "endFrame": 4154
+    },
+    {
+      "index": 42,
+      "text": "The name captures participant, task,\nacquisition, level, and this recorded run",
+      "startSeconds": 138.43397872839506,
+      "endSeconds": 143.77878203703705,
+      "startFrame": 4153,
+      "endFrame": 4314
+    },
+    {
+      "index": 43,
+      "text": "while remaining independent of the source\ndata directory.",
+      "startSeconds": 143.77878203703702,
+      "endSeconds": 147.66591171604935,
+      "startFrame": 4313,
+      "endFrame": 4430
+    },
+    {
+      "index": 44,
+      "text": "Before leaving the tab, read the input\npath, TR, volume count, and output path",
+      "startSeconds": 147.66591171604938,
+      "endSeconds": 154.468388654321,
+      "startFrame": 4429,
+      "endFrame": 4635
+    },
+    {
+      "index": 45,
+      "text": "aloud.",
+      "startSeconds": 154.468388654321,
+      "endSeconds": 154.95427986419753,
+      "startFrame": 4634,
+      "endFrame": 4649
+    },
+    {
+      "index": 46,
+      "text": "Confirm that the output does not already\nexist.",
+      "startSeconds": 154.95427986419753,
+      "endSeconds": 158.84140954320986,
+      "startFrame": 4648,
+      "endFrame": 4766
+    },
+    {
+      "index": 47,
+      "text": "Save the design as a checkpoint.",
+      "startSeconds": 158.84140954320986,
+      "endSeconds": 161.7567568024691,
+      "startFrame": 4765,
+      "endFrame": 4853
+    },
+    {
+      "index": 48,
+      "text": "The Data tab is complete only when those\nvalues agree with the image header and the",
+      "startSeconds": 161.75675680246914,
+      "endSeconds": 169.53101616049383,
+      "startFrame": 4852,
+      "endFrame": 5086
+    },
+    {
+      "index": 49,
+      "text": "planned unit of analysis.",
+      "startSeconds": 169.53101616049383,
+      "endSeconds": 171.474581,
+      "startFrame": 5085,
+      "endFrame": 5145
+    }
+  ]
+}

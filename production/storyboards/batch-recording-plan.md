@@ -167,6 +167,7 @@ Reusable start: fresh FEAT window plus staged ds000157 inputs and timing files.
 - `sequence-pilot-empty`: fresh FEAT first-level Full analysis.
 - `sequence-pilot-data`: verified Data tab saved.
 - `sequence-pilot-prestats`: Data and Pre-stats saved.
+- `sequence-pilot-registration`: Data, Pre-stats, and Registration saved; Stats not yet configured.
 - `sequence-pilot-evs`: registration plus Left/Right EVs saved.
 - `sequence-pilot-model`: five contrasts and design-QC pass saved.
 - `sequence-pilot-complete`: authentic completed `.feat` directory and report.

@@ -128,6 +128,13 @@ npm run video:render:opening-feat
 npm run video:render:opening-feat:raw
 ```
 
+After materializing the review master locally, validate its audio signal,
+silence, narration pace, caption limits, and caption tail with:
+
+```sh
+npm run video:validate:pilot-audio
+```
+
 Generated media is written under
 `production/video/output/walkthroughs/opening-feat/`; authenticated source
 frames and generated narration audio remain excluded from Git.
@@ -148,3 +155,80 @@ The `.fsf` files must pass `feat_model`, visual design-matrix review, a GUI tab
 review, and timing-bound checks inside FSL 6.0.7.22 before capture. The source
 course uses a 60-second high-pass cutoff; this value is recorded explicitly in
 the run specification and both validated designs.
+
+## Live walkthrough batch pipeline
+
+All 13 live walkthroughs are registered in
+`production/video/content/live-walkthroughs.mjs`. The Opening FEAT pilot keeps
+its original multi-directory capture layout. Walkthroughs 2–13 use one ordered
+capture directory per narration section. Print the exact expected layout before
+recording:
+
+```sh
+npm run video:layout:walkthrough -- configuring-data-tab
+```
+
+Generate the twelve private capture packages from the canonical narration and
+batch storyboard, then verify that their start/end states and directory layouts
+are current:
+
+```sh
+npm run video:package:walkthroughs
+npm run video:validate:walkthrough-packages
+```
+
+Prepare one walkthrough from authenticated PNG capture frames sampled at 5 fps:
+
+```sh
+npm run video:prepare:walkthrough -- \
+  configuring-data-tab \
+  /absolute/path/to/configuring-data-tab-capture
+```
+
+The prepare step normalizes frame names, generates Daniel narration, writes the
+timing manifest, SRT, and transcript, and registers the prepared composition.
+Render both review and raw outputs with:
+
+```sh
+npm run video:render:walkthrough -- configuring-data-tab
+```
+
+With no slugs, the batch renderer processes every prepared walkthrough:
+
+```sh
+npm run video:render:walkthroughs
+```
+
+Validate durable source definitions at any time, then require generated assets
+or masters as production advances:
+
+```sh
+npm run video:validate:walkthroughs
+npm run video:validate:walkthroughs:generated -- configuring-data-tab
+npm run video:validate:walkthroughs:masters -- configuring-data-tab
+```
+
+The 32-video release ledger is validated separately so editorial approval,
+scientific approval, provider selection, and publication cannot be inferred
+from successful renders:
+
+```sh
+npm run video:validate:release
+npm run video:validate:release:publishable
+npm run video:validate:release:published
+```
+
+Record an editorial or scientific decision with reviewer, date, and evidence:
+
+```sh
+npm run video:record-review -- \
+  --video=walkthrough:opening-feat \
+  --kind=editorial \
+  --decision=approved \
+  --reviewer="Reviewer name" \
+  --date=YYYY-MM-DD \
+  --evidence=production/reviews/opening-feat.md
+```
+
+The complete sequencing, ownership, review gates, publication requirements,
+and definition of done are in `docs/VIDEO_PRODUCTION_EXECUTION.md`.

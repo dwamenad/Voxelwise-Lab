@@ -2,7 +2,7 @@
 
 ## 1. Start at the top level
 
-A `.feat` directory is a structured record of one first-level analysis. Begin in `/home/jovyan/Voxelwise-Walkthroughs/outputs/sub-10015_sharedreward_mb3me1_L1.feat` and list its top-level contents. The directory holds configuration, processed data, registration evidence, statistical estimates, logs, and linked HTML reports. Not every NIfTI file is a final result.
+A `.feat` directory is a structured record of one first-level analysis. Begin in `/home/jovyan/Voxelwise-Walkthroughs/outputs/sub-10015_sharedreward_mb3me1_L1_video.feat` and list its top-level contents. The directory holds configuration, processed data, registration evidence, statistical estimates, logs, and linked HTML reports. Not every NIfTI file is a final result.
 
 Open `design.fsf` to see the saved FEAT settings. `design.mat` contains the numerical design matrix, `design.con` contains contrast weights, and `design.png` provides a visual model summary. These files let a reviewer connect the analysis plan to the model that actually ran.
 

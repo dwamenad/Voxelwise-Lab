@@ -52,9 +52,22 @@ export const toTtsText = (value) =>
 const wrapWords = (words, maxLineLength = 42) => {
   const lines = [];
   let line = "";
-  for (const word of words) {
+  for (const originalWord of words) {
+    let word = originalWord;
+    if (word.length > maxLineLength) {
+      if (line) {
+        lines.push(line);
+        line = "";
+      }
+      while (word.length > maxLineLength) {
+        lines.push(word.slice(0, maxLineLength));
+        word = word.slice(maxLineLength);
+      }
+      if (word) line = word;
+      continue;
+    }
     const candidate = line ? `${line} ${word}` : word;
-    if (candidate.length <= maxLineLength || !line) {
+    if (candidate.length <= maxLineLength) {
       line = candidate;
     } else {
       lines.push(line);
@@ -67,24 +80,16 @@ const wrapWords = (words, maxLineLength = 42) => {
 
 export const splitCaptionCues = (text, maxLineLength = 42, maxLines = 2) => {
   const sentences =
-    text.match(/[^.!?]+[.!?]+|[^.!?]+$/g)?.map((sentence) => sentence.trim()).filter(Boolean) ??
+    text.match(/.+?(?:[.!?]+(?=\s|$)|$)/gs)?.map((sentence) => sentence.trim()).filter(Boolean) ??
     [text];
   const cues = [];
 
   for (const sentence of sentences) {
     const words = sentence.split(/\s+/).filter(Boolean);
-    let chunk = [];
-    for (const word of words) {
-      const candidate = [...chunk, word];
-      const wrapped = wrapWords(candidate, maxLineLength);
-      if (wrapped.length <= maxLines || chunk.length === 0) {
-        chunk = candidate;
-      } else {
-        cues.push(wrapWords(chunk, maxLineLength).join("\n"));
-        chunk = [word];
-      }
+    const lines = wrapWords(words, maxLineLength);
+    for (let index = 0; index < lines.length; index += maxLines) {
+      cues.push(lines.slice(index, index + maxLines).join("\n"));
     }
-    if (chunk.length) cues.push(wrapWords(chunk, maxLineLength).join("\n"));
   }
 
   return cues;

@@ -56,7 +56,7 @@ walkthroughs:
     title: Opening FEAT
     target_minutes: 8
     data: ds005085/sub-10015
-    status: review
+    status: approved
     actual_seconds: 302.549
     raw_seconds: 310.059
     command_verified: Feat &
@@ -141,7 +141,7 @@ quality_control:
   pilot_gate:
     slug: opening-feat
     requirement: Approve interface legibility, cursor pace, narration, caption placement, and scientific accuracy before batch production
-    status: awaiting_approval
+    status: approved
     encoded_media:
       status: passed
       duration_seconds: 302.549
@@ -157,4 +157,11 @@ quality_control:
       captions_two_lines: passed
       unrelated_browser_content: absent
       authentication_details: absent
-  external_scientific_reviewer: pending
+  editorial_reviewer:
+    status: approved
+    name: Derrick Dwamena
+    date: 2026-08-11
+  external_scientific_reviewer:
+    status: approved
+    name: Derrick Dwamena
+    date: 2026-08-11

@@ -16,6 +16,7 @@ runs:
     bold: /home/jovyan/Voxelwise-Walkthroughs/data/ds005085/sub-10015/func/sub-10015_task-sharedreward_acq-mb3me1_bold.nii.gz
     structural_brain: /home/jovyan/Voxelwise-Walkthroughs/data/ds005085/sub-10015/anat/sub-10015_T1w_bet.nii.gz
     output_without_feat_suffix: /home/jovyan/Voxelwise-Walkthroughs/outputs/sub-10015_sharedreward_mb3me1_L1
+    recording_output_without_feat_suffix: /home/jovyan/Voxelwise-Walkthroughs/outputs/sub-10015_sharedreward_mb3me1_L1_video
     header_verified:
       dimensions: [86, 86, 51]
       volumes: 260

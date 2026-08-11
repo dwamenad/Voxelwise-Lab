@@ -1,0 +1,224 @@
+1
+00:00:00,000 --> 00:00:05,914
+This walkthrough configures the Data tab
+for one first-level run from OpenNeuro
+
+2
+00:00:05,914 --> 00:00:07,885
+dataset ds005085, participant sub-10015.
+
+3
+00:00:07,885 --> 00:00:13,799
+Before entering values in FEAT, use the
+terminal to inspect the exact
+
+4
+00:00:13,799 --> 00:00:15,278
+four-dimensional BOLD image.
+
+5
+00:00:15,278 --> 00:00:20,206
+`fslval` reports 260 volumes and a
+repetition time of 1.
+
+6
+00:00:20,206 --> 00:00:21,192
+7 seconds.
+
+7
+00:00:21,192 --> 00:00:25,627
+The image dimensions are 86 by 86 by 51.
+
+8
+00:00:25,627 --> 00:00:32,527
+These header values are evidence; a
+remembered value or a value left over from
+
+9
+00:00:32,527 --> 00:00:34,991
+another FEAT session is not.
+
+10
+00:00:34,991 --> 00:00:37,455
+The modeled run is
+`sub-10015_task-sharedreward_acq-mb3me1_bo
+
+11
+00:00:37,455 --> 00:00:37,948
+ld.
+
+12
+00:00:37,948 --> 00:00:38,441
+nii.
+
+13
+00:00:38,441 --> 00:00:38,934
+gz`.
+
+14
+00:00:38,934 --> 00:00:42,384
+Confirm all BIDS entities in the filename.
+
+15
+00:00:42,384 --> 00:00:48,791
+Similar runs can sit beside each other,
+and selecting the wrong echo or
+
+16
+00:00:48,791 --> 00:00:54,212
+acquisition can still produce a
+technically valid analysis of the wrong
+
+17
+00:00:54,212 --> 00:00:54,705
+data.
+
+18
+00:00:55,555 --> 00:00:59,087
+In FEAT, select First-level analysis and
+Full analysis.
+
+19
+00:00:59,087 --> 00:01:02,177
+Set the number of inputs to one.
+
+20
+00:01:02,177 --> 00:01:05,709
+This model represents one run from one
+participant.
+
+21
+00:01:05,709 --> 00:01:11,890
+It should not be named or interpreted as a
+subject-level combination or a group
+
+22
+00:01:11,890 --> 00:01:12,331
+result.
+
+23
+00:01:12,331 --> 00:01:16,305
+Choose the verified BOLD file as the
+four-dimensional input.
+
+24
+00:01:16,305 --> 00:01:22,044
+Do not select the JSON sidecar, a mean
+functional image, or a three-dimensional
+
+25
+00:01:22,044 --> 00:01:22,927
+example volume.
+
+26
+00:01:22,927 --> 00:01:27,342
+Once the path appears, compare its
+participant, task, and acquisition
+
+27
+00:01:27,342 --> 00:01:31,316
+entities with the run named in the
+analysis notes.
+
+28
+00:01:32,166 --> 00:01:34,246
+Set the TR to 1.
+
+29
+00:01:34,246 --> 00:01:37,989
+7 seconds and the number of volumes to
+260.
+
+30
+00:01:37,989 --> 00:01:41,317
+Together those values imply a 442-second
+time series.
+
+31
+00:01:41,317 --> 00:01:47,141
+That duration gives us a useful boundary
+check for every event onset loaded later.
+
+32
+00:01:47,141 --> 00:01:53,380
+If a timing row falls beyond the run, stop
+and repair the timing inputs before
+
+33
+00:01:53,380 --> 00:01:54,628
+fitting the model.
+
+34
+00:01:54,628 --> 00:02:00,036
+Set deleted volumes to zero for this
+course example because the supplied run
+
+35
+00:02:00,036 --> 00:02:03,364
+and timing files are being modeled as
+staged.
+
+36
+00:02:03,364 --> 00:02:07,524
+For another dataset, non-steady-state
+handling must come from the acquisition
+
+37
+00:02:07,524 --> 00:02:11,267
+and preprocessing record rather than
+imitation of this value.
+
+38
+00:02:12,117 --> 00:02:15,033
+Set the output path to
+`/home/jovyan/Voxelwise-Walkthroughs/outpu
+
+39
+00:02:15,033 --> 00:02:16,005
+ts/sub-10015_sharedreward_mb3me1_L1_video`
+.
+
+40
+00:02:16,005 --> 00:02:17,948
+FEAT will append `.
+
+41
+00:02:17,948 --> 00:02:18,434
+feat`.
+
+42
+00:02:18,434 --> 00:02:23,779
+The name captures participant, task,
+acquisition, level, and this recorded run
+
+43
+00:02:23,779 --> 00:02:27,666
+while remaining independent of the source
+data directory.
+
+44
+00:02:27,666 --> 00:02:34,468
+Before leaving the tab, read the input
+path, TR, volume count, and output path
+
+45
+00:02:34,468 --> 00:02:34,954
+aloud.
+
+46
+00:02:34,954 --> 00:02:38,841
+Confirm that the output does not already
+exist.
+
+47
+00:02:38,841 --> 00:02:41,757
+Save the design as a checkpoint.
+
+48
+00:02:41,757 --> 00:02:49,531
+The Data tab is complete only when those
+values agree with the image header and the
+
+49
+00:02:49,531 --> 00:02:51,475
+planned unit of analysis.

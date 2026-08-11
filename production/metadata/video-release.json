@@ -1,0 +1,820 @@
+{
+  "version": 1,
+  "releaseTarget": 32,
+  "selectedProvider": null,
+  "videos": [
+    {
+      "id": "concept:what-is-fsl",
+      "slug": "what-is-fsl",
+      "lessonSlug": "what-is-fsl",
+      "courseSlug": "fsl-neuroimaging-foundations",
+      "kind": "concept",
+      "state": "mastered",
+      "review": {
+        "technical": "passed",
+        "editorial": "pending",
+        "scientific": "source_checked"
+      },
+      "artifacts": {
+        "masterPath": "production/video/output/concepts/masters-v2/what-is-fsl.mp4",
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": "production/video/output/concepts/v2/what-is-fsl/what-is-fsl.srt",
+        "transcriptPath": "production/video/output/concepts/v2/what-is-fsl/what-is-fsl-transcript.md"
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "concept:how-this-course-works",
+      "slug": "how-this-course-works",
+      "lessonSlug": "how-this-course-works",
+      "courseSlug": "fsl-neuroimaging-foundations",
+      "kind": "concept",
+      "state": "mastered",
+      "review": {
+        "technical": "passed",
+        "editorial": "pending",
+        "scientific": "source_checked"
+      },
+      "artifacts": {
+        "masterPath": "production/video/output/concepts/masters-v2/how-this-course-works.mp4",
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": "production/video/output/concepts/v2/how-this-course-works/how-this-course-works.srt",
+        "transcriptPath": "production/video/output/concepts/v2/how-this-course-works/how-this-course-works-transcript.md"
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "concept:getting-started-with-neurodesk",
+      "slug": "getting-started-with-neurodesk",
+      "lessonSlug": "getting-started-with-neurodesk",
+      "courseSlug": "fsl-neuroimaging-foundations",
+      "kind": "concept",
+      "state": "mastered",
+      "review": {
+        "technical": "passed",
+        "editorial": "pending",
+        "scientific": "source_checked"
+      },
+      "artifacts": {
+        "masterPath": "production/video/output/concepts/masters-v2/getting-started-with-neurodesk.mp4",
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": "production/video/output/concepts/v2/getting-started-with-neurodesk/getting-started-with-neurodesk.srt",
+        "transcriptPath": "production/video/output/concepts/v2/getting-started-with-neurodesk/getting-started-with-neurodesk-transcript.md"
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "concept:the-terminal",
+      "slug": "the-terminal",
+      "lessonSlug": "the-terminal",
+      "courseSlug": "fsl-neuroimaging-foundations",
+      "kind": "concept",
+      "state": "mastered",
+      "review": {
+        "technical": "passed",
+        "editorial": "pending",
+        "scientific": "source_checked"
+      },
+      "artifacts": {
+        "masterPath": "production/video/output/concepts/masters-v2/the-terminal.mp4",
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": "production/video/output/concepts/v2/the-terminal/the-terminal.srt",
+        "transcriptPath": "production/video/output/concepts/v2/the-terminal/the-terminal-transcript.md"
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "concept:linux-navigation",
+      "slug": "linux-navigation",
+      "lessonSlug": "linux-navigation",
+      "courseSlug": "fsl-neuroimaging-foundations",
+      "kind": "concept",
+      "state": "mastered",
+      "review": {
+        "technical": "passed",
+        "editorial": "pending",
+        "scientific": "source_checked"
+      },
+      "artifacts": {
+        "masterPath": "production/video/output/concepts/masters-v2/linux-navigation.mp4",
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": "production/video/output/concepts/v2/linux-navigation/linux-navigation.srt",
+        "transcriptPath": "production/video/output/concepts/v2/linux-navigation/linux-navigation-transcript.md"
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "concept:what-is-a-nifti-image",
+      "slug": "what-is-a-nifti-image",
+      "lessonSlug": "what-is-a-nifti-image",
+      "courseSlug": "fsl-neuroimaging-foundations",
+      "kind": "concept",
+      "state": "mastered",
+      "review": {
+        "technical": "passed",
+        "editorial": "pending",
+        "scientific": "source_checked"
+      },
+      "artifacts": {
+        "masterPath": "production/video/output/concepts/masters-v2/what-is-a-nifti-image.mp4",
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": "production/video/output/concepts/v2/what-is-a-nifti-image/what-is-a-nifti-image.srt",
+        "transcriptPath": "production/video/output/concepts/v2/what-is-a-nifti-image/what-is-a-nifti-image-transcript.md"
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "concept:understanding-bids",
+      "slug": "understanding-bids",
+      "lessonSlug": "understanding-bids",
+      "courseSlug": "fsl-neuroimaging-foundations",
+      "kind": "concept",
+      "state": "mastered",
+      "review": {
+        "technical": "passed",
+        "editorial": "pending",
+        "scientific": "source_checked"
+      },
+      "artifacts": {
+        "masterPath": "production/video/output/concepts/masters-v2/understanding-bids.mp4",
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": "production/video/output/concepts/v2/understanding-bids/understanding-bids.srt",
+        "transcriptPath": "production/video/output/concepts/v2/understanding-bids/understanding-bids-transcript.md"
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "concept:introduction-to-fsleyes",
+      "slug": "introduction-to-fsleyes",
+      "lessonSlug": "introduction-to-fsleyes",
+      "courseSlug": "fsl-neuroimaging-foundations",
+      "kind": "concept",
+      "state": "mastered",
+      "review": {
+        "technical": "passed",
+        "editorial": "pending",
+        "scientific": "source_checked"
+      },
+      "artifacts": {
+        "masterPath": "production/video/output/concepts/masters-v2/introduction-to-fsleyes.mp4",
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": "production/video/output/concepts/v2/introduction-to-fsleyes/introduction-to-fsleyes.srt",
+        "transcriptPath": "production/video/output/concepts/v2/introduction-to-fsleyes/introduction-to-fsleyes-transcript.md"
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "concept:overlays-atlases-and-time-series",
+      "slug": "overlays-atlases-and-time-series",
+      "lessonSlug": "overlays-atlases-and-time-series",
+      "courseSlug": "fsl-neuroimaging-foundations",
+      "kind": "concept",
+      "state": "mastered",
+      "review": {
+        "technical": "passed",
+        "editorial": "pending",
+        "scientific": "source_checked"
+      },
+      "artifacts": {
+        "masterPath": "production/video/output/concepts/masters-v2/overlays-atlases-and-time-series.mp4",
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": "production/video/output/concepts/v2/overlays-atlases-and-time-series/overlays-atlases-and-time-series.srt",
+        "transcriptPath": "production/video/output/concepts/v2/overlays-atlases-and-time-series/overlays-atlases-and-time-series-transcript.md"
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "concept:fslinfo-and-fslstats",
+      "slug": "fslinfo-and-fslstats",
+      "lessonSlug": "fslinfo-and-fslstats",
+      "courseSlug": "fsl-neuroimaging-foundations",
+      "kind": "concept",
+      "state": "mastered",
+      "review": {
+        "technical": "passed",
+        "editorial": "pending",
+        "scientific": "source_checked"
+      },
+      "artifacts": {
+        "masterPath": "production/video/output/concepts/masters-v2/fslinfo-and-fslstats.mp4",
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": "production/video/output/concepts/v2/fslinfo-and-fslstats/fslinfo-and-fslstats.srt",
+        "transcriptPath": "production/video/output/concepts/v2/fslinfo-and-fslstats/fslinfo-and-fslstats-transcript.md"
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "concept:fslmaths-and-fslmeants",
+      "slug": "fslmaths-and-fslmeants",
+      "lessonSlug": "fslmaths-and-fslmeants",
+      "courseSlug": "fsl-neuroimaging-foundations",
+      "kind": "concept",
+      "state": "mastered",
+      "review": {
+        "technical": "passed",
+        "editorial": "pending",
+        "scientific": "source_checked"
+      },
+      "artifacts": {
+        "masterPath": "production/video/output/concepts/masters-v2/fslmaths-and-fslmeants.mp4",
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": "production/video/output/concepts/v2/fslmaths-and-fslmeants/fslmaths-and-fslmeants.srt",
+        "transcriptPath": "production/video/output/concepts/v2/fslmaths-and-fslmeants/fslmaths-and-fslmeants-transcript.md"
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "concept:what-first-level-means",
+      "slug": "what-first-level-means",
+      "lessonSlug": "what-first-level-means",
+      "courseSlug": "first-level-fmri-analysis-feat",
+      "kind": "concept",
+      "state": "mastered",
+      "review": {
+        "technical": "passed",
+        "editorial": "pending",
+        "scientific": "source_checked"
+      },
+      "artifacts": {
+        "masterPath": "production/video/output/concepts/masters-v2/what-first-level-means.mp4",
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": "production/video/output/concepts/v2/what-first-level-means/what-first-level-means.srt",
+        "transcriptPath": "production/video/output/concepts/v2/what-first-level-means/what-first-level-means-transcript.md"
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "concept:what-is-a-glm",
+      "slug": "what-is-a-glm",
+      "lessonSlug": "what-is-a-glm",
+      "courseSlug": "first-level-fmri-analysis-feat",
+      "kind": "concept",
+      "state": "mastered",
+      "review": {
+        "technical": "passed",
+        "editorial": "pending",
+        "scientific": "source_checked"
+      },
+      "artifacts": {
+        "masterPath": "production/video/output/concepts/masters-v2/what-is-a-glm.mp4",
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": "production/video/output/concepts/v2/what-is-a-glm/what-is-a-glm.srt",
+        "transcriptPath": "production/video/output/concepts/v2/what-is-a-glm/what-is-a-glm-transcript.md"
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "concept:experimental-timing-files",
+      "slug": "experimental-timing-files",
+      "lessonSlug": "experimental-timing-files",
+      "courseSlug": "first-level-fmri-analysis-feat",
+      "kind": "concept",
+      "state": "mastered",
+      "review": {
+        "technical": "passed",
+        "editorial": "pending",
+        "scientific": "source_checked"
+      },
+      "artifacts": {
+        "masterPath": "production/video/output/concepts/masters-v2/experimental-timing-files.mp4",
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": "production/video/output/concepts/v2/experimental-timing-files/experimental-timing-files.srt",
+        "transcriptPath": "production/video/output/concepts/v2/experimental-timing-files/experimental-timing-files-transcript.md"
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "concept:what-is-an-ev",
+      "slug": "what-is-an-ev",
+      "lessonSlug": "what-is-an-ev",
+      "courseSlug": "first-level-fmri-analysis-feat",
+      "kind": "concept",
+      "state": "mastered",
+      "review": {
+        "technical": "passed",
+        "editorial": "pending",
+        "scientific": "source_checked"
+      },
+      "artifacts": {
+        "masterPath": "production/video/output/concepts/masters-v2/what-is-an-ev.mp4",
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": "production/video/output/concepts/v2/what-is-an-ev/what-is-an-ev.srt",
+        "transcriptPath": "production/video/output/concepts/v2/what-is-an-ev/what-is-an-ev-transcript.md"
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "concept:hrf-and-convolution",
+      "slug": "hrf-and-convolution",
+      "lessonSlug": "hrf-and-convolution",
+      "courseSlug": "first-level-fmri-analysis-feat",
+      "kind": "concept",
+      "state": "mastered",
+      "review": {
+        "technical": "passed",
+        "editorial": "pending",
+        "scientific": "source_checked"
+      },
+      "artifacts": {
+        "masterPath": "production/video/output/concepts/masters-v2/hrf-and-convolution.mp4",
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": "production/video/output/concepts/v2/hrf-and-convolution/hrf-and-convolution.srt",
+        "transcriptPath": "production/video/output/concepts/v2/hrf-and-convolution/hrf-and-convolution-transcript.md"
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "concept:confound-regressors",
+      "slug": "confound-regressors",
+      "lessonSlug": "confound-regressors",
+      "courseSlug": "first-level-fmri-analysis-feat",
+      "kind": "concept",
+      "state": "mastered",
+      "review": {
+        "technical": "passed",
+        "editorial": "pending",
+        "scientific": "source_checked"
+      },
+      "artifacts": {
+        "masterPath": "production/video/output/concepts/masters-v2/confound-regressors.mp4",
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": "production/video/output/concepts/v2/confound-regressors/confound-regressors.srt",
+        "transcriptPath": "production/video/output/concepts/v2/confound-regressors/confound-regressors-transcript.md"
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "concept:reviewing-complete-feat-report",
+      "slug": "reviewing-complete-feat-report",
+      "lessonSlug": "complete-guided-analysis",
+      "courseSlug": "first-level-fmri-analysis-feat",
+      "kind": "concept",
+      "state": "mastered",
+      "review": {
+        "technical": "passed",
+        "editorial": "pending",
+        "scientific": "source_checked"
+      },
+      "artifacts": {
+        "masterPath": "production/video/output/concepts/masters-v2/reviewing-complete-feat-report.mp4",
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": "production/video/output/concepts/v2/reviewing-complete-feat-report/reviewing-complete-feat-report.srt",
+        "transcriptPath": "production/video/output/concepts/v2/reviewing-complete-feat-report/reviewing-complete-feat-report-transcript.md"
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "concept:understanding-contrasts",
+      "slug": "understanding-contrasts",
+      "lessonSlug": "understanding-contrasts",
+      "courseSlug": "first-level-fmri-analysis-feat",
+      "kind": "concept",
+      "state": "mastered",
+      "review": {
+        "technical": "passed",
+        "editorial": "pending",
+        "scientific": "source_checked"
+      },
+      "artifacts": {
+        "masterPath": "production/video/output/understanding-contrasts-v2.mp4",
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": "production/video/output/v2/understanding-contrasts/understanding-contrasts.srt",
+        "transcriptPath": "production/video/output/v2/understanding-contrasts/understanding-contrasts-transcript.md"
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "walkthrough:opening-feat",
+      "slug": "opening-feat",
+      "lessonSlug": "opening-feat",
+      "courseSlug": "first-level-fmri-analysis-feat",
+      "kind": "walkthrough",
+      "state": "approved",
+      "review": {
+        "technical": "passed",
+        "editorial": "approved",
+        "scientific": "approved"
+      },
+      "artifacts": {
+        "masterPath": "production/video/output/walkthroughs/opening-feat/opening-feat-master.mp4",
+        "reviewPath": "production/video/output/walkthroughs/opening-feat/opening-feat-review.mp4",
+        "reviewUrl": "https://drive.google.com/file/d/1cA99ksQP2__akAlp3_Wwt_54Fx5Vi1zk/view?usp=drivesdk",
+        "rawUrl": "https://drive.google.com/file/d/1RrcfcwYcZpkVQlV9_J-USMwauQFMjHgo/view?usp=drivesdk",
+        "captionsPath": "production/video/output/walkthroughs/opening-feat/opening-feat.srt",
+        "transcriptPath": "production/video/output/walkthroughs/opening-feat/opening-feat-transcript.md"
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      },
+      "reviewDecisions": {
+        "editorial": {
+          "reviewer": "Derrick Dwamena",
+          "reviewedAt": "2026-08-11",
+          "evidence": "production/reviews/opening-feat.md"
+        },
+        "scientific": {
+          "reviewer": "Derrick Dwamena",
+          "reviewedAt": "2026-08-11",
+          "evidence": "production/reviews/opening-feat.md"
+        }
+      }
+    },
+    {
+      "id": "walkthrough:configuring-data-tab",
+      "slug": "configuring-data-tab",
+      "lessonSlug": "configuring-data-tab",
+      "courseSlug": "first-level-fmri-analysis-feat",
+      "kind": "walkthrough",
+      "state": "planned",
+      "review": {
+        "technical": "pending",
+        "editorial": "pending",
+        "scientific": "pending"
+      },
+      "artifacts": {
+        "masterPath": null,
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": null,
+        "transcriptPath": null
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "walkthrough:configuring-preprocessing",
+      "slug": "configuring-preprocessing",
+      "lessonSlug": "configuring-preprocessing",
+      "courseSlug": "first-level-fmri-analysis-feat",
+      "kind": "walkthrough",
+      "state": "planned",
+      "review": {
+        "technical": "pending",
+        "editorial": "pending",
+        "scientific": "pending"
+      },
+      "artifacts": {
+        "masterPath": null,
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": null,
+        "transcriptPath": null
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "walkthrough:creating-evs",
+      "slug": "creating-evs",
+      "lessonSlug": "creating-evs",
+      "courseSlug": "first-level-fmri-analysis-feat",
+      "kind": "walkthrough",
+      "state": "planned",
+      "review": {
+        "technical": "pending",
+        "editorial": "pending",
+        "scientific": "pending"
+      },
+      "artifacts": {
+        "masterPath": null,
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": null,
+        "transcriptPath": null
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "walkthrough:creating-contrasts",
+      "slug": "creating-contrasts",
+      "lessonSlug": "creating-contrasts",
+      "courseSlug": "first-level-fmri-analysis-feat",
+      "kind": "walkthrough",
+      "state": "planned",
+      "review": {
+        "technical": "pending",
+        "editorial": "pending",
+        "scientific": "pending"
+      },
+      "artifacts": {
+        "masterPath": null,
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": null,
+        "transcriptPath": null
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "walkthrough:inspecting-design-matrix",
+      "slug": "inspecting-design-matrix",
+      "lessonSlug": "inspecting-design-matrix",
+      "courseSlug": "first-level-fmri-analysis-feat",
+      "kind": "walkthrough",
+      "state": "planned",
+      "review": {
+        "technical": "pending",
+        "editorial": "pending",
+        "scientific": "pending"
+      },
+      "artifacts": {
+        "masterPath": null,
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": null,
+        "transcriptPath": null
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "walkthrough:running-feat",
+      "slug": "running-feat",
+      "lessonSlug": "running-feat",
+      "courseSlug": "first-level-fmri-analysis-feat",
+      "kind": "walkthrough",
+      "state": "planned",
+      "review": {
+        "technical": "pending",
+        "editorial": "pending",
+        "scientific": "pending"
+      },
+      "artifacts": {
+        "masterPath": null,
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": null,
+        "transcriptPath": null
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "walkthrough:feat-directory",
+      "slug": "feat-directory",
+      "lessonSlug": "feat-directory",
+      "courseSlug": "first-level-fmri-analysis-feat",
+      "kind": "walkthrough",
+      "state": "planned",
+      "review": {
+        "technical": "pending",
+        "editorial": "pending",
+        "scientific": "pending"
+      },
+      "artifacts": {
+        "masterPath": null,
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": null,
+        "transcriptPath": null
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "walkthrough:cope-versus-z-statistic",
+      "slug": "cope-versus-z-statistic",
+      "lessonSlug": "cope-versus-z-statistic",
+      "courseSlug": "first-level-fmri-analysis-feat",
+      "kind": "walkthrough",
+      "state": "planned",
+      "review": {
+        "technical": "pending",
+        "editorial": "pending",
+        "scientific": "pending"
+      },
+      "artifacts": {
+        "masterPath": null,
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": null,
+        "transcriptPath": null
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "walkthrough:inspecting-registration",
+      "slug": "inspecting-registration",
+      "lessonSlug": "inspecting-registration",
+      "courseSlug": "first-level-fmri-analysis-feat",
+      "kind": "walkthrough",
+      "state": "planned",
+      "review": {
+        "technical": "pending",
+        "editorial": "pending",
+        "scientific": "pending"
+      },
+      "artifacts": {
+        "masterPath": null,
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": null,
+        "transcriptPath": null
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "walkthrough:interpreting-feat-report",
+      "slug": "interpreting-feat-report",
+      "lessonSlug": "interpreting-feat-report",
+      "courseSlug": "first-level-fmri-analysis-feat",
+      "kind": "walkthrough",
+      "state": "planned",
+      "review": {
+        "technical": "pending",
+        "editorial": "pending",
+        "scientific": "pending"
+      },
+      "artifacts": {
+        "masterPath": null,
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": null,
+        "transcriptPath": null
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "walkthrough:common-level-one-failures",
+      "slug": "common-level-one-failures",
+      "lessonSlug": "common-level-one-failures",
+      "courseSlug": "first-level-fmri-analysis-feat",
+      "kind": "walkthrough",
+      "state": "planned",
+      "review": {
+        "technical": "pending",
+        "editorial": "pending",
+        "scientific": "pending"
+      },
+      "artifacts": {
+        "masterPath": null,
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": null,
+        "transcriptPath": null
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    },
+    {
+      "id": "walkthrough:complete-guided-analysis",
+      "slug": "complete-guided-analysis",
+      "lessonSlug": "complete-guided-analysis",
+      "courseSlug": "first-level-fmri-analysis-feat",
+      "kind": "walkthrough",
+      "state": "planned",
+      "review": {
+        "technical": "pending",
+        "editorial": "pending",
+        "scientific": "pending"
+      },
+      "artifacts": {
+        "masterPath": null,
+        "reviewUrl": null,
+        "rawUrl": null,
+        "captionsPath": null,
+        "transcriptPath": null
+      },
+      "publication": {
+        "provider": null,
+        "assetId": null,
+        "playbackUrl": null
+      }
+    }
+  ]
+}

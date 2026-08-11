@@ -2,7 +2,7 @@
 
 ## 1. Complete the preflight check
 
-Before selecting Go, confirm the input run, 1.7-second TR, 260 volumes, preprocessing settings, registration targets, two EV timing files, and five contrasts. Set the output to the new path `/home/jovyan/Voxelwise-Walkthroughs/outputs/sub-10015_sharedreward_mb3me1_L1`. FEAT will append `.feat`.
+Before selecting Go, confirm the input run, 1.7-second TR, 260 volumes, preprocessing settings, registration targets, two EV timing files, and five contrasts. Set the output to the new path `/home/jovyan/Voxelwise-Walkthroughs/outputs/sub-10015_sharedreward_mb3me1_L1_video`. FEAT will append `.feat`.
 
 Save the configuration as an `.fsf` file. That file is the reproducible analysis recipe and should be kept with the output. Verify that no output directory with the same name already exists. Reusing an old path can mix states or prompt an overwrite decision that is difficult to reconstruct later.
 

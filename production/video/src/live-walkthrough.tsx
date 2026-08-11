@@ -22,9 +22,17 @@ interface LiveCaptionCue {
 }
 
 export interface LiveWalkthroughTiming {
+  title?: string;
   slug: string;
+  compositionId: string;
+  rawCompositionId?: string;
+  fps: number;
   captureFps: number;
+  width: number;
+  height: number;
   totalFrames: number;
+  totalSeconds: number;
+  rawTotalFrames?: number;
   scenes: LiveSceneTiming[];
   cues: LiveCaptionCue[];
 }
@@ -121,7 +129,7 @@ export const LiveWalkthrough = ({ timing }: { timing: LiveWalkthroughTiming }) =
 
 export const RawLiveWalkthrough = ({ timing }: { timing: LiveWalkthroughTiming }) => {
   const frame = useCurrentFrame();
-  const sourceFrame = Math.floor((frame * timing.captureFps) / 30);
+  const sourceFrame = Math.floor((frame * timing.captureFps) / timing.fps);
   const visualScenes = timing.scenes.flatMap((scene) => scene.visualScenes);
   let remainingFrame = sourceFrame;
   let selectedScene = visualScenes[0];

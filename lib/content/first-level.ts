@@ -1,4 +1,5 @@
 import { learningLesson } from "@/lib/content/helpers";
+import { getVideoRelease } from "@/lib/content/video-release";
 import type { Course, Lesson, LessonBlock } from "@/lib/types";
 
 interface FeatLessonConfig {
@@ -278,14 +279,16 @@ function createFeatLesson(config: FeatLessonConfig, index: number): Lesson {
   });
 
   if (config.slug === "complete-guided-analysis") {
+    const reportRelease = getVideoRelease("concept:reviewing-complete-feat-report");
     const secondVideo: LessonBlock = {
       type: "video",
       videoType: "quality-control",
       title: "Reviewing a complete FEAT report",
-      provider: "mux",
-      videoId: null,
+      provider: reportRelease.provider,
+      videoId: reportRelease.videoId,
+      url: reportRelease.url,
       durationMinutes: 11,
-      status: "planned",
+      status: reportRelease.status,
       captionsPath: "/production/captions/reviewing-feat-report.vtt",
       transcript: "A reviewed transcript will appear when the quality-control video is published.",
     };
