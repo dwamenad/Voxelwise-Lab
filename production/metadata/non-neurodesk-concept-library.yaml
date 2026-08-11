@@ -93,7 +93,8 @@ scientific_review:
 deferred:
   live_walkthroughs:
     count: 13
-    blocked_by: Neurodesk Play access pending review
+    status: pilot_in_review
+    environment: Neurodesk Play America
   outline_only_concepts:
     count: 33
     blocked_by: lesson content expansion and scientific review

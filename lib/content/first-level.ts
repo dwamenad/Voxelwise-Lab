@@ -104,7 +104,7 @@ const configs: FeatLessonConfig[] = [
     concept: "FEAT is both a model-configuration interface and a pipeline runner. Its tabs organize inputs, preprocessing, registration, statistics, and thresholded reporting.",
     explanation: "Select First-level analysis and Full analysis only when the workflow calls for both preprocessing and statistics. If using already preprocessed data, settings must reflect that choice. Never assume the GUI remembers a safe configuration from a previous session.",
     task: ["Open an FSL terminal.", "Launch FEAT.", "Select First-level analysis.", "Read each tab without changing values and note which tabs are enabled."],
-    command: "feat &",
+    command: "Feat &",
     sourceSection: "Open FEAT",
   },
   {

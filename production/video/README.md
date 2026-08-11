@@ -109,3 +109,42 @@ npm run video:validate:masters
 Live Neurodesk and FEAT walkthroughs remain separate because their visual
 evidence must be recorded in an approved environment. This v2 set contains only
 the videos that can be produced without that live approval.
+
+## Live FEAT pilot
+
+The `Opening FEAT` pilot uses authentic Neurodesk capture frames, Daniel
+narration, burned-in captions, and matching SRT and transcript files. Prepare
+its capture assets and narration with:
+
+```sh
+npm run video:prepare:opening-feat -- /absolute/path/to/opening-feat-capture
+```
+
+The capture path can also be provided as `LIVE_CAPTURE_ROOT`. Render the review
+cut and the caption-free raw source with:
+
+```sh
+npm run video:render:opening-feat
+npm run video:render:opening-feat:raw
+```
+
+Generated media is written under
+`production/video/output/walkthroughs/opening-feat/`; authenticated source
+frames and generated narration audio remain excluded from Git.
+
+## Live FEAT batch preparation
+
+Walkthroughs 2–13 are prepared behind the Opening FEAT approval gate. Their
+durable production sources are:
+
+- `production/metadata/live-walkthroughs.yaml`: batch order, review state, and delivery folders
+- `production/metadata/feat-run-specs.yaml`: verified data, preprocessing, registration, EV, contrast, and validation values
+- `production/narration/`: one narration draft per walkthrough
+- `production/storyboards/batch-recording-plan.md`: timed authentic-screen actions and reusable start states
+- `production/designs/sequence-pilot.fsf`: ds005085 model for walkthroughs 2–12
+- `production/designs/guided-capstone.fsf`: ds000157 model for walkthrough 13
+
+The `.fsf` files must pass `feat_model`, visual design-matrix review, a GUI tab
+review, and timing-bound checks inside FSL 6.0.7.22 before capture. The source
+course uses a 60-second high-pass cutoff; this value is recorded explicitly in
+the run specification and both validated designs.
