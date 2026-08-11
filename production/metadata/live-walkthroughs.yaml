@@ -1,0 +1,160 @@
+batch: neurodesk-feat-live-walkthroughs
+created: 2026-08-10
+environment:
+  provider: Neurodesk Play America
+  workspace: /home/jovyan/Voxelwise-Walkthroughs
+  resources:
+    cpu: 8
+    memory_gigabytes: 64
+  fsl_version: 6.0.7.22
+
+capture:
+  resolution: 1920x1080
+  frame_rate: 30
+  video_codec: h264
+  audio_codec: aac
+  narration_voice: Daniel
+  narration_words_per_minute: 148
+  captions:
+    burned_in: true
+    sidecar_format: srt
+    maximum_lines: 2
+    maximum_characters_per_line: 42
+  policy: Authentic Neurodesk and FEAT interface evidence only
+
+data:
+  primary:
+    openneuro_accession: ds005085
+    subject: sub-10015
+    path: /home/jovyan/Voxelwise-Walkthroughs/data/ds005085/sub-10015
+    status: staged
+    files_retrieved: 13
+  capstone:
+    openneuro_accession: ds000157
+    subject: sub-01
+    path: /home/jovyan/Voxelwise-Walkthroughs/data/ds000157/sub-01
+    status: staged_with_events_and_generated_timings
+    files_retrieved: 4
+    timing_files_generated: 3
+    validated_full_run:
+      status: passed
+      finished_at: 2026-08-11T02:01:44Z
+      output: /home/jovyan/Voxelwise-Walkthroughs/outputs/sub-01_passiveimageviewing_L1.feat
+
+delivery:
+  storage: Google Drive
+  sharing: private
+  first_level_folder: https://drive.google.com/drive/folders/1uT_MDor_fU1KLq7dEZyVH23SPHL7tZ3V
+  walkthroughs_folder: https://drive.google.com/drive/folders/1HwYssXgvxzg564yUcpiB6aEqRRKHVRWp
+  raw_folder: https://drive.google.com/drive/folders/1_updQy7FgnqUa0xsT91YBUqZLs7l5d9J
+  review_folder: https://drive.google.com/drive/folders/184EokKRWpKsLXjPF4VNOOjYc_p_WzLUF
+  masters_folder: https://drive.google.com/drive/folders/1S1wP-f-E0gdyw029hdMwNqGsFoYsCJRB
+
+walkthroughs:
+  - order: 1
+    slug: opening-feat
+    title: Opening FEAT
+    target_minutes: 8
+    data: ds005085/sub-10015
+    status: review
+    actual_seconds: 302.549
+    raw_seconds: 310.059
+    command_verified: Feat &
+    raw_drive: https://drive.google.com/file/d/1RrcfcwYcZpkVQlV9_J-USMwauQFMjHgo/view?usp=drivesdk
+    review_drive: https://drive.google.com/file/d/1cA99ksQP2__akAlp3_Wwt_54Fx5Vi1zk/view?usp=drivesdk
+    captions_drive: https://drive.google.com/file/d/1BQ2p5H6OGI7FH0Ygy9MDRqq7Ywb3gNFJ/view?usp=drivesdk
+    transcript_drive: https://drive.google.com/file/d/14khL9P3r2XVJG-52WTc6BHIy6KJWNThg/view?usp=drivesdk
+  - order: 2
+    slug: configuring-data-tab
+    title: Configuring the Data tab
+    target_minutes: 8
+    data: ds005085/sub-10015
+    status: planned
+  - order: 3
+    slug: configuring-preprocessing
+    title: Configuring preprocessing options
+    target_minutes: 8
+    data: ds005085/sub-10015
+    status: planned
+  - order: 4
+    slug: creating-evs
+    title: Creating EVs
+    target_minutes: 8
+    data: ds005085/sub-10015
+    status: planned
+  - order: 5
+    slug: creating-contrasts
+    title: Creating contrasts
+    target_minutes: 8
+    data: ds005085/sub-10015
+    status: planned
+  - order: 6
+    slug: inspecting-design-matrix
+    title: Inspecting the design matrix
+    target_minutes: 8
+    data: ds005085/sub-10015
+    status: planned
+  - order: 7
+    slug: running-feat
+    title: Running FEAT
+    target_minutes: 8
+    data: ds005085/sub-10015
+    status: planned
+  - order: 8
+    slug: feat-directory
+    title: Understanding the .feat directory
+    target_minutes: 8
+    data: ds005085/sub-10015
+    status: planned
+  - order: 9
+    slug: cope-versus-z-statistic
+    title: PE, cope, varcope, t-statistic, and z-statistic
+    target_minutes: 8
+    data: ds005085/sub-10015
+    status: planned
+  - order: 10
+    slug: inspecting-registration
+    title: Inspecting registration
+    target_minutes: 8
+    data: ds005085/sub-10015
+    status: planned
+  - order: 11
+    slug: interpreting-feat-report
+    title: Interpreting the FEAT report
+    target_minutes: 8
+    data: ds005085/sub-10015
+    status: planned
+  - order: 12
+    slug: common-level-one-failures
+    title: Common Level 1 failures
+    target_minutes: 8
+    data: ds005085/sub-10015
+    status: planned
+  - order: 13
+    slug: complete-guided-analysis
+    title: Complete guided analysis
+    target_minutes: 16
+    data: ds000157/sub-01
+    status: planned
+
+quality_control:
+  pilot_gate:
+    slug: opening-feat
+    requirement: Approve interface legibility, cursor pace, narration, caption placement, and scientific accuracy before batch production
+    status: awaiting_approval
+    encoded_media:
+      status: passed
+      duration_seconds: 302.549
+      resolution: 1920x1080
+      frame_rate: 30
+      video_codec: h264
+      audio_codec: aac
+      audio_sample_rate: 48000
+      audio_channels: 2
+    visual_review:
+      authentic_interface_only: passed
+      interface_legibility: passed
+      captions_two_lines: passed
+      unrelated_browser_content: absent
+      authentication_details: absent
+  external_scientific_reviewer: pending

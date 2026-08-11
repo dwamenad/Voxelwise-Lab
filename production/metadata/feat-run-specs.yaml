@@ -1,0 +1,216 @@
+version: 1
+verified: 2026-08-10
+environment:
+  provider: Neurodesk Play America
+  fsl_version: 6.0.7.22
+  workspace: /home/jovyan/Voxelwise-Walkthroughs
+  launch_command: Feat &
+
+runs:
+  sequence_pilot:
+    dataset: ds005085
+    subject: sub-10015
+    task: sharedreward
+    acquisition: mb3me1
+    role: videos 2 through 12
+    bold: /home/jovyan/Voxelwise-Walkthroughs/data/ds005085/sub-10015/func/sub-10015_task-sharedreward_acq-mb3me1_bold.nii.gz
+    structural_brain: /home/jovyan/Voxelwise-Walkthroughs/data/ds005085/sub-10015/anat/sub-10015_T1w_bet.nii.gz
+    output_without_feat_suffix: /home/jovyan/Voxelwise-Walkthroughs/outputs/sub-10015_sharedreward_mb3me1_L1
+    header_verified:
+      dimensions: [86, 86, 51]
+      volumes: 260
+      repetition_time_seconds: 1.7
+      run_duration_seconds: 442.0
+    analysis:
+      level: first-level
+      type: full
+    preprocessing:
+      motion_correction: MCFLIRT
+      brain_extraction: BET
+      spatial_smoothing_fwhm_mm: 5
+      intensity_normalization: false
+      highpass_filter: true
+      highpass_filter_cutoff_seconds: 60
+      lowpass_filter: false
+      slice_timing: regular_down
+    registration:
+      main_structural_image: structural_brain
+      functional_to_structural:
+        search: normal
+        method: BBR
+      structural_to_standard:
+        standard_image: $FSLDIR/data/standard/MNI152_T1_2mm_brain
+        search: normal
+        degrees_of_freedom: 12
+        nonlinear: false
+    statistics:
+      prewhitening: true
+      evs:
+        - name: Left
+          timing_file: /home/jovyan/Voxelwise-Walkthroughs/data/ds005085/sub-10015/func/_guess_allLeftButton.txt
+          format: custom_3_column
+          convolution: double_gamma
+          temporal_derivative: false
+          temporal_filtering: true
+          events: 28
+          max_event_end_seconds: 408.667
+        - name: Right
+          timing_file: /home/jovyan/Voxelwise-Walkthroughs/data/ds005085/sub-10015/func/_guess_allRightButton.txt
+          format: custom_3_column
+          convolution: double_gamma
+          temporal_derivative: false
+          temporal_filtering: true
+          events: 25
+          max_event_end_seconds: 396.366
+      contrasts:
+        - {name: Left, weights: [1, 0]}
+        - {name: Right, weights: [0, 1]}
+        - {name: Left_gt_Right, weights: [1, -1]}
+        - {name: Right_gt_Left, weights: [-1, 1]}
+        - {name: Left_plus_Right, weights: [1, 1]}
+    post_stats:
+      use_course_defaults: true
+
+  guided_capstone:
+    dataset: ds000157
+    subject: sub-01
+    task: passiveimageviewing
+    role: video 13
+    bold: /home/jovyan/Voxelwise-Walkthroughs/data/ds000157/sub-01/func/sub-01_task-passiveimageviewing_bold.nii.gz
+    events: /home/jovyan/Voxelwise-Walkthroughs/data/ds000157/sub-01/func/sub-01_task-passiveimageviewing_events.tsv
+    structural_brain: /home/jovyan/Voxelwise-Walkthroughs/data/ds000157/sub-01/anat/sub-01_T1w_bet.nii.gz
+    output_without_feat_suffix: /home/jovyan/Voxelwise-Walkthroughs/outputs/sub-01_passiveimageviewing_L1
+    header_verified:
+      dimensions: [64, 64, 30]
+      volumes: 375
+      repetition_time_seconds: 1.6
+      run_duration_seconds: 600.0
+    analysis:
+      level: first-level
+      type: full
+    preprocessing:
+      motion_correction: MCFLIRT
+      brain_extraction: BET
+      spatial_smoothing_fwhm_mm: 5
+      intensity_normalization: false
+      highpass_filter: true
+      highpass_filter_cutoff_seconds: 60
+      lowpass_filter: false
+      slice_timing: regular_down
+    registration:
+      main_structural_image: structural_brain
+      functional_to_structural:
+        search: normal
+        method: BBR
+      structural_to_standard:
+        standard_image: $FSLDIR/data/standard/MNI152_T1_2mm_brain
+        search: normal
+        degrees_of_freedom: 12
+        nonlinear: false
+    statistics:
+      prewhitening: true
+      evs:
+        - name: Break
+          timing_file: /home/jovyan/Voxelwise-Walkthroughs/data/ds000157/sub-01/func/sub-01_break.txt
+          format: custom_3_column
+          convolution: double_gamma
+          temporal_derivative: false
+          temporal_filtering: true
+          events: 1
+          max_event_end_seconds: 299.6
+        - name: Food
+          timing_file: /home/jovyan/Voxelwise-Walkthroughs/data/ds000157/sub-01/func/sub-01_food.txt
+          format: custom_3_column
+          convolution: double_gamma
+          temporal_derivative: false
+          temporal_filtering: true
+          events: 8
+          max_event_end_seconds: 538.16
+        - name: Nonfood
+          timing_file: /home/jovyan/Voxelwise-Walkthroughs/data/ds000157/sub-01/func/sub-01_nonfood.txt
+          format: custom_3_column
+          convolution: double_gamma
+          temporal_derivative: false
+          temporal_filtering: true
+          events: 8
+          max_event_end_seconds: 577.27
+      contrasts:
+        - {name: Food_gt_Nonfood, weights: [0, 1, -1]}
+        - {name: Nonfood_gt_Food, weights: [0, -1, 1]}
+    post_stats:
+      use_course_defaults: true
+
+evidence:
+  course_lab: https://github.com/tubric/2026s-fmri-class/blob/main/Lab-3_FSL_Level1.md
+  course_data_tab_screenshot: https://github.com/tubric/2026s-fmri-class/blob/main/images/lab4/media/lab4_98.png
+  course_prestats_screenshot: https://github.com/tubric/2026s-fmri-class/blob/main/images/lab4/media/lab4_121.png
+  supplement: https://github.com/tubric/2026s-fmri-class/blob/main/Lab-3_Supplement.md
+  timing_source: https://github.com/DVSneuro/2025-fMRI-class/tree/main/Utilities
+  header_check: fslval
+  skull_strip_command: bet INPUT_T1w.nii.gz OUTPUT_T1w_bet.nii.gz -R
+
+validation:
+  neurodesk_date: 2026-08-11T01:24:00Z
+  tool: feat_model from FSL 6.0.7.22
+  sequence_pilot:
+    status: passed
+    fsf_sha256: 6a77ff10000d95aacbba74e2b10306db675696e9f42fbe895387012c27a81864
+    artifacts: [sequence-pilot.mat, sequence-pilot.con, sequence-pilot.png, sequence-pilot_cov.png]
+    visual_design_check: passed
+    full_run:
+      status: passed
+      finished_at: 2026-08-11T01:46:09Z
+      output: /home/jovyan/Voxelwise-Walkthroughs/outputs/sub-10015_sharedreward_mb3me1_L1.feat
+      files: 515
+      report_error_matches: 0
+      registration_visual_check: passed
+      contrast_3_render_visual_check: passed
+      required_artifacts:
+        - report.html
+        - report_poststats.html
+        - stats/cope1.nii.gz
+        - stats/cope5.nii.gz
+        - stats/zstat5.nii.gz
+        - reg/example_func2standard.png
+        - reg/example_func2highres.png
+      contrast_3_ranges:
+        cope: [-4378.594238, 4746.607422]
+        varcope: [0.0, 7868567.5]
+        zstat: [-5.570147, 5.869382]
+  guided_capstone:
+    status: passed
+    fsf_sha256: bf88352c67dd332f774d7e78b809e9cc659aeb2e6f18d282b14bc20d7f08721e
+    artifacts: [guided-capstone.mat, guided-capstone.con, guided-capstone.png, guided-capstone_cov.png]
+    visual_design_check: passed
+    full_run:
+      status: passed
+      launched_at: 2026-08-11T01:50:40Z
+      finished_at: 2026-08-11T02:01:44Z
+      output: /home/jovyan/Voxelwise-Walkthroughs/outputs/sub-01_passiveimageviewing_L1.feat
+      active_design_sha256: bf88352c67dd332f774d7e78b809e9cc659aeb2e6f18d282b14bc20d7f08721e
+      files: 530
+      report_error_matches: 0
+      registration_visual_check: passed
+      contrast_1_render_visual_check: passed
+      required_artifacts:
+        - report.html
+        - report_poststats.html
+        - stats/cope1.nii.gz
+        - stats/cope2.nii.gz
+        - stats/zstat1.nii.gz
+        - stats/zstat2.nii.gz
+        - reg/example_func2standard.png
+        - reg/example_func2highres.png
+      contrast_ranges:
+        food_gt_nonfood:
+          cope: [-178.297729, 346.616302]
+          varcope: [0.0, 24998.486328]
+          zstat: [-4.934730, 9.126836]
+        nonfood_gt_food:
+          cope: [-346.616302, 178.297729]
+          varcope: [0.0, 24998.486328]
+          zstat: [-9.126836, 4.934730]
+  timing_bounds:
+    status: passed
+    invalid_rows: 0
+    rule: onset must be non-negative, every row must have three columns, and onset plus duration must not exceed run duration

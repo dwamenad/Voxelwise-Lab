@@ -24,7 +24,10 @@
     "video:review:v2": "node production/video/scripts/render-review-frames.mjs",
     "video:render:pilots": "npm run video:prepare:v2 && node production/video/scripts/render-concept-batch.mjs what-is-a-nifti-image what-is-a-glm introduction-to-fsleyes reviewing-complete-feat-report",
     "video:render:contrasts": "npm run video:narrate:contrasts && remotion render production/video/src/index.ts UnderstandingContrasts production/video/output/understanding-contrasts-v2.mp4 --codec=h264 --crf=18 --concurrency=4 --overwrite",
-    "video:render:v2": "npm run video:prepare:v2 && node production/video/scripts/render-concept-batch.mjs && remotion render production/video/src/index.ts UnderstandingContrasts production/video/output/understanding-contrasts-v2.mp4 --codec=h264 --crf=18 --concurrency=4 --overwrite && npm run video:validate:masters"
+    "video:render:v2": "npm run video:prepare:v2 && node production/video/scripts/render-concept-batch.mjs && remotion render production/video/src/index.ts UnderstandingContrasts production/video/output/understanding-contrasts-v2.mp4 --codec=h264 --crf=18 --concurrency=4 --overwrite && npm run video:validate:masters",
+    "video:prepare:opening-feat": "node production/video/scripts/prepare-opening-feat-pilot.mjs",
+    "video:render:opening-feat": "npm run video:prepare:opening-feat && remotion render production/video/src/index.ts OpeningFeatWalkthrough production/video/output/walkthroughs/opening-feat/opening-feat-review.mp4 --codec=h264 --crf=18 --concurrency=4 --overwrite",
+    "video:render:opening-feat:raw": "npm run video:prepare:opening-feat && remotion render production/video/src/index.ts OpeningFeatRaw production/video/output/walkthroughs/opening-feat/opening-feat-raw.mp4 --codec=h264 --crf=18 --concurrency=4 --overwrite"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.4",
