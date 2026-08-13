@@ -44,4 +44,18 @@ describe("course catalog", () => {
       ]);
     }
   });
+
+  it("publishes the 20 approved R2 masters without Mux placeholders", () => {
+    const videos = courses.flatMap(getAllLessons).flatMap((lesson) => lesson.blocks.filter((block) => block.type === "video"));
+    const publishedVideos = videos.filter((video) => video.type === "video" && video.status === "published");
+
+    expect(publishedVideos).toHaveLength(20);
+    for (const video of publishedVideos) {
+      if (video.type !== "video") continue;
+      expect(video.provider).toBe("external");
+      expect(video.url).toMatch(/^https:\/\/pub-[a-f0-9]+\.r2\.dev\/media\/.+\.mp4$/);
+      expect(video.captionsPath).toMatch(/\.vtt$/);
+      expect(video.transcriptUrl).toMatch(/-transcript\.md$/);
+    }
+  });
 });

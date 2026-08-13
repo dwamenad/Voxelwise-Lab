@@ -1,4 +1,5 @@
 import voiceRegistryJson from "@/production/video/config/voices.json";
+import publishedMediaJson from "@/production/video/config/published-media.json";
 import type { ProductionStatus, VideoProvider } from "@/lib/types";
 
 export type NarrationVoiceId = "daniel" | "samantha" | "tessa" | "karen" | "rishi";
@@ -29,6 +30,22 @@ export const DEFAULT_MEDIA_PREFERENCES: MediaPreferences = {
   voiceId: DEFAULT_VOICE_ID,
   playbackRate: 1,
   captionsEnabled: true,
+};
+
+const publishedMediaSlugs = new Set<string>(publishedMediaJson.slugs);
+
+export const MEDIA_BASE_URL = (
+  process.env.NEXT_PUBLIC_MEDIA_BASE_URL ?? publishedMediaJson.baseUrl
+).replace(/\/$/, "");
+
+export const getPublishedMedia = (slug: string) => {
+  if (!publishedMediaSlugs.has(slug)) return null;
+  return {
+    provider: "external" as VideoProvider,
+    url: `${MEDIA_BASE_URL}/${slug}.mp4`,
+    captionsPath: `${MEDIA_BASE_URL}/${slug}.vtt`,
+    transcriptUrl: `${MEDIA_BASE_URL}/${slug}-transcript.md`,
+  };
 };
 
 const voiceIds = new Set(NARRATION_VOICES.map((voice) => voice.id));
@@ -69,3 +86,25 @@ export const createPlannedVoiceVariants = (slug: string) =>
     videoId: null,
     captionsPath: `/production/captions/${slug}/${voice.id}.vtt`,
   }));
+
+export const createVideoVoiceVariants = (slug: string) => {
+  const publishedMedia = getPublishedMedia(slug);
+  return NARRATION_VOICES.map((voice) =>
+    voice.id === DEFAULT_VOICE_ID && publishedMedia
+      ? {
+          voiceId: voice.id,
+          status: "published" as ProductionStatus,
+          provider: publishedMedia.provider,
+          videoId: null,
+          url: publishedMedia.url,
+          captionsPath: publishedMedia.captionsPath,
+        }
+      : {
+          voiceId: voice.id,
+          status: "planned" as ProductionStatus,
+          provider: "local" as VideoProvider,
+          videoId: null,
+          captionsPath: `/production/captions/${slug}/${voice.id}.vtt`,
+        },
+  );
+};

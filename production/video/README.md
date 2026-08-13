@@ -2,8 +2,10 @@
 
 This directory contains the reproducible v3 production system for the 19
 Voxelwise Lab concept and quality-control videos. Rendered masters and generated
-narration audio are intentionally excluded from Git; approved masters belong in
-review storage and, later, the streaming provider.
+narration audio are intentionally excluded from Git. Approved masters are
+delivered from the `voxelwise-lab-media` Cloudflare R2 bucket;
+`config/published-media.json` is the app's source of truth for the currently
+published Daniel masters.
 
 ## Editorial and attribution policy
 
@@ -125,6 +127,15 @@ npm run video:validate:masters
 Live Neurodesk and FEAT walkthroughs remain separate because their visual
 evidence must be recorded in an approved environment. The concept set contains only
 the videos that can be produced without that live approval.
+
+## Production delivery
+
+The published set contains 20 MP4 masters, 20 WebVTT caption files, 20 source
+SRT files, and 20 reviewed Markdown transcripts. The app reads the public media
+prefix from `NEXT_PUBLIC_MEDIA_BASE_URL`, falling back to the verified R2
+managed domain in `config/published-media.json`. Byte-range playback and public
+GET/HEAD CORS are enabled for the bucket. Samantha, Tessa, Karen, and Rishi
+remain preview-only until their lesson masters are rendered and approved.
 
 ## Live FEAT pilot
 

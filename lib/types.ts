@@ -1,4 +1,4 @@
-export type VideoProvider = "youtube" | "vimeo" | "mux" | "local" | "external";
+export type VideoProvider = "youtube" | "vimeo" | "local" | "external";
 
 export type VideoType =
   | "concept"
@@ -41,6 +41,7 @@ export type LessonBlock =
       status: ProductionStatus;
       captionsPath?: string;
       transcript: string;
+      transcriptUrl?: string;
       defaultVoiceId?: NarrationVoiceId;
       voiceVariants?: VideoVoiceVariant[];
       transcriptCues?: TranscriptCue[];

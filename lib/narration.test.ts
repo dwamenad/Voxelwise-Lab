@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import {
+  createVideoVoiceVariants,
   DEFAULT_VOICE_ID,
+  getPublishedMedia,
   NARRATION_VOICES,
   parseMediaPreferences,
 } from "@/lib/narration";
@@ -31,5 +33,17 @@ describe("narration registry", () => {
       playbackRate: 1.5,
       captionsEnabled: false,
     });
+  });
+
+  it("publishes the approved Daniel master while keeping alternate voices in preview", () => {
+    expect(getPublishedMedia("what-is-fsl")).toMatchObject({
+      provider: "external",
+      url: expect.stringMatching(/\/media\/what-is-fsl\.mp4$/),
+      captionsPath: expect.stringMatching(/\/media\/what-is-fsl\.vtt$/),
+    });
+
+    const variants = createVideoVoiceVariants("what-is-fsl");
+    expect(variants[0]).toMatchObject({ voiceId: "daniel", status: "published", provider: "external" });
+    expect(variants.slice(1).every((variant) => variant.status === "planned")).toBe(true);
   });
 });

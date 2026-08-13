@@ -328,7 +328,14 @@ export function NarratedVideoPlayer({ block }: { block: VideoBlock }) {
             {visibleCues.length === 0 && <p className="transcript-empty">No transcript matches “{transcriptQuery}”.</p>}
           </div>
         ) : (
-          <p>{block.transcript}</p>
+          <div className="transcript__fallback">
+            <p>{block.transcript}</p>
+            {block.transcriptUrl && (
+              <a href={block.transcriptUrl} target="_blank" rel="noreferrer">
+                <FileText size={15} /> Open reviewed transcript
+              </a>
+            )}
+          </div>
         )}
       </details>
       <p className="media-shortcuts">Keyboard: K play/pause · J/L seek 10 seconds · C captions</p>

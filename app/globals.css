@@ -304,6 +304,9 @@ button { color: inherit; }
 .transcript summary svg:last-child { margin-left: auto; transition: transform .2s; }
 .transcript[open] summary svg:last-child { transform: rotate(180deg); }
 .transcript p { margin: 0; padding: 0 16px 17px 40px; color: #66736d; font-size: .75rem; line-height: 1.6; }
+.transcript__fallback { padding-bottom: 17px; }
+.transcript__fallback p { padding-bottom: 10px; }
+.transcript__fallback a { width: fit-content; margin-left: 40px; display: inline-flex; align-items: center; gap: 7px; color: #315e4c; font-size: .7rem; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 .transcript__body { padding: 0 14px 15px; border-top: 1px solid #edf0ed; }
 .transcript-search { height: 39px; margin: 12px 0 8px; padding: 0 10px; display: flex; align-items: center; gap: 8px; border: 1px solid #ccd5cf; color: #718078; background: #f7f8f5; }
 .transcript-search input { width: 100%; border: 0; outline: 0; color: var(--ink); background: transparent; font-size: .7rem; }
