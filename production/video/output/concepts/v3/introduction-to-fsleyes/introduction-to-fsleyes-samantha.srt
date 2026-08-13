@@ -1,0 +1,97 @@
+1
+00:00:00,000 --> 00:00:03,631
+Visual inspection is an analysis step, not
+decoration.
+
+2
+00:00:03,631 --> 00:00:08,622
+FSLEyes shows the same coordinate in
+sagittal, coronal, and axial planes.
+
+3
+00:00:08,622 --> 00:00:13,614
+It lets you inspect orientation, brain
+coverage, image intensity, and the
+
+4
+00:00:13,614 --> 00:00:17,245
+relationship between overlays before
+trusting a pipeline result.
+
+5
+00:00:22,400 --> 00:00:25,848
+The orthographic display shows three views
+of one location.
+
+6
+00:00:25,848 --> 00:00:30,828
+Crosshairs connect those planes, so a
+movement in one view updates the others.
+
+7
+00:00:30,828 --> 00:00:35,808
+The overlay list controls which images are
+visible, their order, opacity, and color
+
+8
+00:00:35,808 --> 00:00:36,191
+mapping.
+
+9
+00:00:40,300 --> 00:00:43,645
+Scroll from one end of the brain to the
+other.
+
+10
+00:00:43,645 --> 00:00:47,660
+Confirm that left and right orientation
+are understood, the expected anatomy is
+
+11
+00:00:47,660 --> 00:00:51,005
+covered, and no large region is missing or
+severely distorted.
+
+12
+00:00:51,005 --> 00:00:54,350
+A later analysis cannot recover anatomy
+that was never acquired.
+
+13
+00:00:59,200 --> 00:01:04,196
+Two images can overlap near the center and
+still be misregistered elsewhere.
+
+14
+00:01:04,196 --> 00:01:06,694
+Inspect multiple slices and anatomical
+boundaries.
+
+15
+00:01:06,694 --> 00:01:10,441
+Adjust opacity and color mapping so
+disagreement is visible.
+
+16
+00:01:10,441 --> 00:01:14,188
+A reassuring first impression is not a
+quality-control result.
+
+17
+00:01:18,567 --> 00:01:23,045
+Use FSLEyes to understand the image before
+relying on derived results.
+
+18
+00:01:23,045 --> 00:01:27,930
+Orient yourself in three planes, inspect
+coverage across the volume, and compare
+
+19
+00:01:27,930 --> 00:01:29,559
+overlays at visible boundaries.
+
+20
+00:01:29,559 --> 00:01:33,223
+Visual evidence is a required part of
+quality control.

@@ -180,9 +180,9 @@ const SceneRenderer = ({ video, scene, sceneIndex }: { video: ConceptVideo; scen
   }
 };
 
-const Captions = ({ timing }: { timing: ConceptTiming }) => {
+const Captions = ({ cues }: { cues: ConceptTiming["cues"] }) => {
   const frame = useCurrentFrame();
-  const cue = timing.cues.find((item) => frame >= item.startFrame && frame < item.endFrame);
+  const cue = cues?.find((item) => frame >= item.startFrame && frame < item.endFrame);
   if (!cue) return null;
   return (
     <div style={{ position: "absolute", zIndex: 30, left: 110, right: 110, bottom: 24, minHeight: 94, display: "grid", placeItems: "center", color: palette.white, fontFamily: sans, fontSize: 36, lineHeight: 1.24, fontWeight: 700, textAlign: "center", whiteSpace: "pre-line" }}>
@@ -191,18 +191,36 @@ const Captions = ({ timing }: { timing: ConceptTiming }) => {
   );
 };
 
-export const ConceptLesson = ({ video, timing }: { video: ConceptVideo; timing: ConceptTiming }) => (
-  <AbsoluteFill style={{ background: palette.paper }}>
-    {timing.scenes.map((sceneTiming, index) => {
-      const scene = video.scenes[index];
-      if (!scene) return null;
-      return (
-        <Sequence key={scene.id} from={sceneTiming.startFrame} durationInFrames={sceneTiming.durationInFrames} premountFor={30}>
-          <SceneRenderer video={video} scene={scene} sceneIndex={index} />
-          <Audio src={staticFile(sceneTiming.audioPath)} />
-        </Sequence>
-      );
-    })}
-    <Captions timing={timing} />
-  </AbsoluteFill>
-);
+export const ConceptLesson = ({
+  video,
+  timing,
+  voiceId,
+}: {
+  video: ConceptVideo;
+  timing: ConceptTiming;
+  voiceId?: string;
+}) => {
+  const selectedVoiceId = voiceId ?? timing.defaultVoiceId ?? video.defaultVoiceId;
+  const voiceTrack = timing.voiceTracks?.find((track) => track.voiceId === selectedVoiceId)
+    ?? timing.voiceTracks?.find((track) => track.voiceId === timing.defaultVoiceId)
+    ?? timing.voiceTracks?.[0];
+  const audioScenes = voiceTrack?.scenes ?? timing.scenes;
+  const cues = voiceTrack?.cues ?? timing.cues;
+
+  return (
+    <AbsoluteFill style={{ background: palette.paper }}>
+      {timing.scenes.map((sceneTiming, index) => {
+        const scene = video.scenes[index];
+        const audioScene = audioScenes[index];
+        if (!scene || !audioScene?.audioPath) return null;
+        return (
+          <Sequence key={scene.id} from={sceneTiming.startFrame} durationInFrames={sceneTiming.durationInFrames} premountFor={30}>
+            <SceneRenderer video={video} scene={scene} sceneIndex={index} />
+            <Audio src={staticFile(audioScene.audioPath)} />
+          </Sequence>
+        );
+      })}
+      <Captions cues={cues} />
+    </AbsoluteFill>
+  );
+};

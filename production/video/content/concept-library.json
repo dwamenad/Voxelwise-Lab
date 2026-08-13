@@ -1,10 +1,64 @@
 {
-  "version": 2,
-  "productionVoice": {
-    "voice": "Daniel",
-    "accent": "UK English",
-    "cadence": "deliberate",
-    "speechRate": 148
+  "version": 3,
+  "narration": {
+    "registryVersion": 1,
+    "defaultVoiceId": "daniel",
+    "voices": [
+      {
+        "id": "daniel",
+        "engineVoice": "Daniel",
+        "displayName": "Daniel",
+        "accent": "UK English",
+        "locale": "en-GB",
+        "speechRate": 148,
+        "description": "Measured and familiar; the default narration voice."
+      },
+      {
+        "id": "samantha",
+        "engineVoice": "Samantha",
+        "displayName": "Samantha",
+        "accent": "US English",
+        "locale": "en-US",
+        "speechRate": 158,
+        "description": "Clear and conversational for step-by-step instruction."
+      },
+      {
+        "id": "tessa",
+        "engineVoice": "Tessa",
+        "displayName": "Tessa",
+        "accent": "South African English",
+        "locale": "en-ZA",
+        "speechRate": 154,
+        "description": "Warm and deliberate with distinct technical phrasing."
+      },
+      {
+        "id": "karen",
+        "engineVoice": "Karen",
+        "displayName": "Karen",
+        "accent": "Australian English",
+        "locale": "en-AU",
+        "speechRate": 156,
+        "description": "Direct and energetic without rushing terminology."
+      },
+      {
+        "id": "rishi",
+        "engineVoice": "Rishi",
+        "displayName": "Rishi",
+        "accent": "Indian English",
+        "locale": "en-IN",
+        "speechRate": 152,
+        "description": "Steady and precise for commands and scientific terms."
+      }
+    ],
+    "audioTargets": {
+      "sampleRate": 48000,
+      "integratedLufs": -16,
+      "truePeakDb": -1.5,
+      "loudnessRange": 7,
+      "highPassHz": 70,
+      "silenceThresholdDb": -48,
+      "sceneTailSeconds": 0.85
+    }
   },
   "selection": {
     "courses": [
@@ -37,8 +91,14 @@
       "description": "See how FSL's tools divide the work of inspecting, measuring, transforming, modeling, and reporting MRI data.",
       "videoType": "concept",
       "accent": "#79e6bf",
-      "voice": "Daniel",
-      "speechRate": 148,
+      "defaultVoiceId": "daniel",
+      "voiceIds": [
+        "daniel",
+        "samantha",
+        "tessa",
+        "karen",
+        "rishi"
+      ],
       "fps": 30,
       "source": {
         "repository": "tubric/2026s-fmri-class",
@@ -292,8 +352,14 @@
       "description": "Use a repeatable study loop that connects explanation, prediction, hands-on work, evidence, and reflection.",
       "videoType": "concept",
       "accent": "#79e6bf",
-      "voice": "Daniel",
-      "speechRate": 148,
+      "defaultVoiceId": "daniel",
+      "voiceIds": [
+        "daniel",
+        "samantha",
+        "tessa",
+        "karen",
+        "rishi"
+      ],
       "fps": 30,
       "source": {
         "repository": "tubric/2026s-fmri-class",
@@ -539,8 +605,14 @@
       "description": "Choose an approved Neurodesk route, locate persistent storage, and distinguish the base shell from an FSL-enabled terminal.",
       "videoType": "concept",
       "accent": "#79e6bf",
-      "voice": "Daniel",
-      "speechRate": 148,
+      "defaultVoiceId": "daniel",
+      "voiceIds": [
+        "daniel",
+        "samantha",
+        "tessa",
+        "karen",
+        "rishi"
+      ],
       "fps": 30,
       "source": {
         "repository": "tubric/2026s-fmri-class",
@@ -719,8 +791,14 @@
       "description": "Read a shell command as a precise instruction made from a program, options, and arguments.",
       "videoType": "concept",
       "accent": "#79e6bf",
-      "voice": "Daniel",
-      "speechRate": 148,
+      "defaultVoiceId": "daniel",
+      "voiceIds": [
+        "daniel",
+        "samantha",
+        "tessa",
+        "karen",
+        "rishi"
+      ],
       "fps": 30,
       "source": {
         "repository": "tubric/2026s-fmri-class",
@@ -918,8 +996,14 @@
       "description": "Use the working directory, absolute paths, and relative paths to move through a project without losing context.",
       "videoType": "concept",
       "accent": "#79e6bf",
-      "voice": "Daniel",
-      "speechRate": 148,
+      "defaultVoiceId": "daniel",
+      "voiceIds": [
+        "daniel",
+        "samantha",
+        "tessa",
+        "karen",
+        "rishi"
+      ],
       "fps": 30,
       "source": {
         "repository": "tubric/2026s-fmri-class",
@@ -1105,8 +1189,14 @@
       "description": "Build a NIfTI image from voxels, slices, volumes, and time while keeping spatial sampling separate from anatomical certainty.",
       "videoType": "concept",
       "accent": "#79e6bf",
-      "voice": "Daniel",
-      "speechRate": 148,
+      "defaultVoiceId": "daniel",
+      "voiceIds": [
+        "daniel",
+        "samantha",
+        "tessa",
+        "karen",
+        "rishi"
+      ],
       "fps": 30,
       "source": {
         "repository": "tubric/2026s-fmri-class",
@@ -1331,8 +1421,14 @@
       "description": "Use BIDS folders and filename entities to identify participants, tasks, runs, modalities, events, and metadata without local guesswork.",
       "videoType": "concept",
       "accent": "#79e6bf",
-      "voice": "Daniel",
-      "speechRate": 148,
+      "defaultVoiceId": "daniel",
+      "voiceIds": [
+        "daniel",
+        "samantha",
+        "tessa",
+        "karen",
+        "rishi"
+      ],
       "fps": 30,
       "source": {
         "repository": "tubric/2026s-fmri-class",
@@ -1566,8 +1662,14 @@
       "description": "Use FSLEyes to inspect image orientation, coverage, intensity, and overlay order across three anatomical planes.",
       "videoType": "concept",
       "accent": "#79e6bf",
-      "voice": "Daniel",
-      "speechRate": 148,
+      "defaultVoiceId": "daniel",
+      "voiceIds": [
+        "daniel",
+        "samantha",
+        "tessa",
+        "karen",
+        "rishi"
+      ],
       "fps": 30,
       "source": {
         "repository": "tubric/2026s-fmri-class",
@@ -1803,8 +1905,14 @@
       "description": "Combine aligned overlays, voxel time series, and probabilistic atlas labels without treating any one view as ground truth.",
       "videoType": "concept",
       "accent": "#79e6bf",
-      "voice": "Daniel",
-      "speechRate": 148,
+      "defaultVoiceId": "daniel",
+      "voiceIds": [
+        "daniel",
+        "samantha",
+        "tessa",
+        "karen",
+        "rishi"
+      ],
       "fps": 30,
       "source": {
         "repository": "tubric/2026s-fmri-class",
@@ -2060,8 +2168,14 @@
       "description": "Separate image metadata from value summaries and make the contributing voxel set explicit before interpreting a number.",
       "videoType": "concept",
       "accent": "#79e6bf",
-      "voice": "Daniel",
-      "speechRate": 148,
+      "defaultVoiceId": "daniel",
+      "voiceIds": [
+        "daniel",
+        "samantha",
+        "tessa",
+        "karen",
+        "rishi"
+      ],
       "fps": 30,
       "source": {
         "repository": "tubric/2026s-fmri-class",
@@ -2323,8 +2437,14 @@
       "description": "Transform an image, inspect the resulting mask, and then extract a mean time series from spatially compatible data.",
       "videoType": "concept",
       "accent": "#79e6bf",
-      "voice": "Daniel",
-      "speechRate": 148,
+      "defaultVoiceId": "daniel",
+      "voiceIds": [
+        "daniel",
+        "samantha",
+        "tessa",
+        "karen",
+        "rishi"
+      ],
       "fps": 30,
       "source": {
         "repository": "tubric/2026s-fmri-class",
@@ -2548,8 +2668,14 @@
       "description": "Model one participant's single run at every voxel and keep that scope distinct from within-subject and population inference.",
       "videoType": "concept",
       "accent": "#ffbf69",
-      "voice": "Daniel",
-      "speechRate": 148,
+      "defaultVoiceId": "daniel",
+      "voiceIds": [
+        "daniel",
+        "samantha",
+        "tessa",
+        "karen",
+        "rishi"
+      ],
       "fps": 30,
       "source": {
         "repository": "tubric/2026s-fmri-class",
@@ -2797,8 +2923,14 @@
       "description": "Build the fMRI general linear model from observed BOLD signal, predictor columns, fitted estimates, and residual error.",
       "videoType": "concept",
       "accent": "#ffbf69",
-      "voice": "Daniel",
-      "speechRate": 148,
+      "defaultVoiceId": "daniel",
+      "voiceIds": [
+        "daniel",
+        "samantha",
+        "tessa",
+        "karen",
+        "rishi"
+      ],
       "fps": 30,
       "source": {
         "repository": "tubric/2026s-fmri-class",
@@ -3048,8 +3180,14 @@
       "description": "Translate experimental events into FSL onset-duration-amplitude rows while preserving the design's detection and estimation goals.",
       "videoType": "concept",
       "accent": "#ffbf69",
-      "voice": "Daniel",
-      "speechRate": 148,
+      "defaultVoiceId": "daniel",
+      "voiceIds": [
+        "daniel",
+        "samantha",
+        "tessa",
+        "karen",
+        "rishi"
+      ],
       "fps": 30,
       "source": {
         "repository": "tubric/2026s-fmri-class",
@@ -3323,8 +3461,14 @@
       "description": "Treat an explanatory variable as one hypothesized pattern in the design matrix and distinguish task, parametric, and nuisance meanings.",
       "videoType": "concept",
       "accent": "#ffbf69",
-      "voice": "Daniel",
-      "speechRate": 148,
+      "defaultVoiceId": "daniel",
+      "voiceIds": [
+        "daniel",
+        "samantha",
+        "tessa",
+        "karen",
+        "rishi"
+      ],
       "fps": 30,
       "source": {
         "repository": "tubric/2026s-fmri-class",
@@ -3577,8 +3721,14 @@
       "description": "Turn event timing into a delayed BOLD predictor by convolving neural-event estimates with a hemodynamic response model.",
       "videoType": "concept",
       "accent": "#ffbf69",
-      "voice": "Daniel",
-      "speechRate": 148,
+      "defaultVoiceId": "daniel",
+      "voiceIds": [
+        "daniel",
+        "samantha",
+        "tessa",
+        "karen",
+        "rishi"
+      ],
       "fps": 30,
       "source": {
         "repository": "tubric/2026s-fmri-class",
@@ -3842,8 +3992,14 @@
       "description": "Model structured nuisance variation such as motion and drift without pretending that regression can repair every data-quality problem.",
       "videoType": "concept",
       "accent": "#ffbf69",
-      "voice": "Daniel",
-      "speechRate": 148,
+      "defaultVoiceId": "daniel",
+      "voiceIds": [
+        "daniel",
+        "samantha",
+        "tessa",
+        "karen",
+        "rishi"
+      ],
       "fps": 30,
       "source": {
         "repository": "tubric/2026s-fmri-class",
@@ -4119,8 +4275,14 @@
       "description": "Review a completed FEAT report as an ordered chain of preprocessing, registration, design, and inferential evidence.",
       "videoType": "quality-control",
       "accent": "#ffbf69",
-      "voice": "Daniel",
-      "speechRate": 148,
+      "defaultVoiceId": "daniel",
+      "voiceIds": [
+        "daniel",
+        "samantha",
+        "tessa",
+        "karen",
+        "rishi"
+      ],
       "fps": 30,
       "source": {
         "repository": "tubric/2026s-fmri-class",

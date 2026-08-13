@@ -34,7 +34,14 @@ describe("course catalog", () => {
       expect(video.transcript.length).toBeGreaterThan(20);
       expect(video.durationMinutes).toBeGreaterThan(0);
       expect(video.provider).toBeTruthy();
+      expect(video.defaultVoiceId).toBe("daniel");
+      expect(video.voiceVariants?.map((variant) => variant.voiceId)).toEqual([
+        "daniel",
+        "samantha",
+        "tessa",
+        "karen",
+        "rishi",
+      ]);
     }
   });
 });
-

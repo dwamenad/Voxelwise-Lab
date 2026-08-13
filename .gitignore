@@ -27,6 +27,7 @@
 /production/video/output/concepts/review-v2/
 /public/video-production/**/audio/
 /public/video-production/**/audio-v2/
+/public/video-production/**/audio-v3/
 /public/video-production/**/frames/
 
 # misc

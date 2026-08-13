@@ -1,0 +1,109 @@
+1
+00:00:00,000 --> 00:00:02,844
+A terminal command is a precise
+instruction.
+
+2
+00:00:02,844 --> 00:00:05,688
+The first token usually names the program.
+
+3
+00:00:05,688 --> 00:00:08,125
+Later tokens provide options and
+arguments.
+
+4
+00:00:08,125 --> 00:00:12,188
+Spaces separate those pieces,
+capitalization matters, and the shell does
+
+5
+00:00:12,188 --> 00:00:14,625
+not guess which file you intended.
+
+6
+00:00:18,867 --> 00:00:21,322
+Read the command from left to right.
+
+7
+00:00:21,322 --> 00:00:26,935
+Here, ls is the program, dash l h adds
+detail and readable sizes, and data slash
+
+8
+00:00:26,935 --> 00:00:28,338
+is the target directory.
+
+9
+00:00:28,338 --> 00:00:32,898
+Changing one token can change the
+operation, the output, or the file being
+
+10
+00:00:32,898 --> 00:00:33,600
+acted on.
+
+11
+00:00:37,733 --> 00:00:42,828
+Before running a command that creates or
+changes files, ask the shell where you are
+
+12
+00:00:42,828 --> 00:00:44,187
+and what is present.
+
+13
+00:00:44,187 --> 00:00:46,564
+P w d prints the working directory.
+
+14
+00:00:46,564 --> 00:00:50,300
+L s dash l h lists its contents with
+useful details.
+
+15
+00:00:50,300 --> 00:00:53,017
+Those two observations prevent many
+avoidable path errors.
+
+16
+00:00:57,933 --> 00:01:02,528
+Do not respond to an error by changing
+several things at once.
+
+17
+00:01:02,528 --> 00:01:06,739
+Read the message, identify the failing
+token, and test one explanation.
+
+18
+00:01:06,739 --> 00:01:10,950
+Confirm the program, the current
+directory, the target path, and the
+
+19
+00:01:10,950 --> 00:01:11,333
+option.
+
+20
+00:01:11,333 --> 00:01:13,630
+Small checks make the cause observable.
+
+21
+00:01:17,833 --> 00:01:20,324
+A shell command is structured language.
+
+22
+00:01:20,324 --> 00:01:24,476
+Identify the program, options, and
+arguments; verify your location and
+
+23
+00:01:24,476 --> 00:01:28,212
+target; and use the output to test your
+understanding.
+
+24
+00:01:28,212 --> 00:01:31,949
+Precision is the habit that makes
+command-line work reproducible.

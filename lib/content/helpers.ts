@@ -1,4 +1,5 @@
 import type { Lesson, LessonBlock, VideoType } from "@/lib/types";
+import { createPlannedVoiceVariants, DEFAULT_VOICE_ID } from "@/lib/narration";
 
 interface LearningLessonInput {
   id: string;
@@ -36,6 +37,8 @@ export function learningLesson(input: LearningLessonInput): Lesson {
       durationMinutes: Math.max(5, Math.round((input.duration ?? 20) * 0.35)),
       status: "planned",
       captionsPath: `/production/captions/${input.slug}.vtt`,
+      defaultVoiceId: DEFAULT_VOICE_ID,
+      voiceVariants: createPlannedVoiceVariants(input.slug),
       transcript:
         "A reviewed transcript will appear here when this video is published. The complete written lesson below covers the same learning objectives.",
     },

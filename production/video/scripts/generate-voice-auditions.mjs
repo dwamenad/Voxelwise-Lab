@@ -2,112 +2,107 @@ import { execFile } from "node:child_process";
 import { mkdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { promisify } from "node:util";
+import {
+  encodeNarrationClip,
+  loadVoiceRegistry,
+  prepareNarrationClip,
+  removePreparedClip,
+  verifyInstalledVoices,
+} from "./audio-pipeline.mjs";
 
 const run = promisify(execFile);
 const projectRoot = process.cwd();
 const outputDirectory = path.join(
   projectRoot,
   "public",
-  "video-production",
-  "voice-auditions",
-  "audio",
+  "voice-previews",
 );
-
-const voices = [
-  { name: "Samantha", slug: "samantha", accent: "US English" },
-  { name: "Daniel", slug: "daniel", accent: "UK English" },
-  { name: "Tessa", slug: "tessa", accent: "South African English" },
-  { name: "Karen", slug: "karen", accent: "Australian English" },
-];
-
-const cadences = [
-  { name: "Deliberate", slug: "deliberate", rate: 148 },
-  { name: "Balanced", slug: "balanced", rate: 164 },
-  { name: "Energetic", slug: "energetic", rate: 178 },
-];
+const registry = await loadVoiceRegistry();
 
 const passage =
-  "At each voxel, FEAT fits the general linear model. A contrast does not refit the data; it converts a scientific question into a weighted combination of parameter estimates. For example, if the explanatory variables are Left followed by Right, one, negative one tests whether the Left response is greater than the Right response. Always verify the E V order before interpreting the result.";
-
-const parseDuration = (afinfoOutput) => {
-  const match = afinfoOutput.match(/estimated duration:\s*([\d.]+)\s*sec/i);
-  if (!match) throw new Error(`Unable to read audio duration:\n${afinfoOutput}`);
-  return Number(match[1]);
-};
+  "At each voxel, FEAT fits the general linear model. A contrast does not refit the data; it converts a scientific question into a weighted combination of parameter estimates. Open the NIfTI image in FSLEyes, verify the explanatory-variable order, inspect the BOLD time series, and document the quality-control decision before interpreting the result.";
 
 const quoteForConcat = (filePath) => `'${filePath.replaceAll("'", "'\\''")}'`;
 
+await verifyInstalledVoices(registry);
 await mkdir(outputDirectory, { recursive: true });
 
 const samples = [];
-
-for (const voice of voices) {
-  for (const cadence of cadences) {
-    const basename = `${voice.slug}-${cadence.slug}-${cadence.rate}wpm`;
-    const aiffPath = path.join(outputDirectory, `${basename}.aiff`);
-    const m4aPath = path.join(outputDirectory, `${basename}.m4a`);
-    const spokenText = `${voice.name}. ${cadence.name} cadence, ${cadence.rate} words per minute. [[slnc 500]] ${passage} [[slnc 800]]`;
-
-    await Promise.all([rm(aiffPath, { force: true }), rm(m4aPath, { force: true })]);
-    await run("say", ["-v", voice.name, "-r", String(cadence.rate), "-o", aiffPath, spokenText]);
-    await run("afconvert", [aiffPath, m4aPath, "-f", "m4af", "-d", "aac "]);
-    const { stdout } = await run("afinfo", [m4aPath]);
-
-    samples.push({
-      voice: voice.name,
-      accent: voice.accent,
-      cadence: cadence.name,
-      rate: cadence.rate,
-      durationSeconds: parseDuration(stdout),
-      file: m4aPath,
-    });
-
-    await rm(aiffPath, { force: true });
-  }
+for (const voice of registry.voices) {
+  const basename = `${voice.id}-balanced-${voice.speechRate}wpm`;
+  const outputPath = path.join(outputDirectory, `${basename}.m4a`);
+  const prepared = await prepareNarrationClip({
+    text: `${voice.displayName}. ${voice.accent}. ${passage}`,
+    voice,
+    basename,
+    workingDirectory: outputDirectory,
+    targets: registry.audioTargets,
+  });
+  const durationSeconds = prepared.cleanedDurationSeconds + 0.65;
+  const encoded = await encodeNarrationClip({
+    cleanWavPath: prepared.cleanWavPath,
+    outputPath,
+    durationSeconds,
+    targets: registry.audioTargets,
+  });
+  await removePreparedClip(prepared);
+  samples.push({
+    voiceId: voice.id,
+    voice: voice.displayName,
+    accent: voice.accent,
+    locale: voice.locale,
+    cadence: "Balanced",
+    rate: voice.speechRate,
+    durationSeconds: encoded.encodedDurationSeconds,
+    file: path.relative(projectRoot, outputPath),
+    qc: {
+      sourcePeakDbfs: prepared.sourcePeakDbfs,
+      sourceRmsDbfs: prepared.sourceRmsDbfs,
+      sourceNoiseFloorDbfs: prepared.sourceNoiseFloorDbfs,
+      dcOffsetRemoved: prepared.dcOffsetRemoved,
+      clippedSamples: prepared.clippedSamples,
+      integratedLufs: encoded.integratedLufs,
+      truePeakDb: encoded.truePeakDb,
+      loudnessRange: encoded.loudnessRange,
+      loudnessPassed: encoded.loudnessPassed,
+      clippingPassed: encoded.clippingPassed,
+    },
+  });
+  console.log(`${voice.displayName}: ${encoded.encodedDurationSeconds.toFixed(1)}s, ${encoded.integratedLufs.toFixed(1)} LUFS`);
 }
 
 const concatPath = path.join(outputDirectory, "voice-audition-concat.txt");
 const reelPath = path.join(outputDirectory, "voxelwise-lab-voice-audition-reel.m4a");
 await writeFile(
   concatPath,
-  `${samples.map((sample) => `file ${quoteForConcat(sample.file)}`).join("\n")}\n`,
+  `${samples.map((sample) => `file ${quoteForConcat(path.join(projectRoot, sample.file))}`).join("\n")}\n`,
 );
 
-const ffmpegDirectory = path.join(
-  projectRoot,
-  "node_modules",
-  "@remotion",
-  "compositor-darwin-arm64",
-);
+const ffmpegDirectory = path.join(projectRoot, "node_modules", "@remotion", "compositor-darwin-arm64");
 await run(
   path.join(ffmpegDirectory, "ffmpeg"),
-  [
-    "-y",
-    "-f",
-    "concat",
-    "-safe",
-    "0",
-    "-i",
-    concatPath,
-    "-c",
-    "copy",
-    "-f",
-    "mp4",
-    reelPath,
-  ],
+  ["-y", "-f", "concat", "-safe", "0", "-i", concatPath, "-c", "copy", "-f", "mp4", reelPath],
   { cwd: ffmpegDirectory },
 );
 await rm(concatPath, { force: true });
 
 const manifest = {
+  version: registry.version,
   generatedAt: new Date().toISOString(),
+  defaultVoiceId: registry.defaultVoiceId,
   passage,
-  voices,
-  cadences,
-  samples: samples.map((sample) => ({
-    ...sample,
-    file: path.relative(projectRoot, sample.file),
-  })),
+  terminologyChecklist: [
+    "FEAT",
+    "general linear model",
+    "NIfTI",
+    "FSLEyes",
+    "explanatory variable",
+    "BOLD",
+    "quality control",
+  ],
+  audioTargets: registry.audioTargets,
+  voices: registry.voices,
+  samples,
   reel: path.relative(projectRoot, reelPath),
 };
 
@@ -116,4 +111,4 @@ await writeFile(
   `${JSON.stringify(manifest, null, 2)}\n`,
 );
 
-console.log(`Generated ${samples.length} samples and one audition reel in ${outputDirectory}.`);
+console.log(`Generated ${samples.length} normalized voice previews and one audition reel.`);

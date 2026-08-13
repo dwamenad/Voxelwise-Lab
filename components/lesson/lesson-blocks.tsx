@@ -11,25 +11,16 @@ import {
   CircleHelp,
   Clipboard,
   Download,
-  FileText,
   Info,
   Laptop2,
   Lightbulb,
   ListChecks,
-  Play,
   ShieldCheck,
   TerminalSquare,
   Wrench,
 } from "lucide-react";
 import type { LessonBlock } from "@/lib/types";
-
-const videoLabels: Record<string, string> = {
-  concept: "Concept",
-  walkthrough: "Walkthrough",
-  "quality-control": "Quality control",
-  troubleshooting: "Troubleshooting",
-  summary: "Summary",
-};
+import { NarratedVideoPlayer } from "@/components/lesson/narrated-video-player";
 
 function CopyButton({ value }: { value: string }) {
   const [copied, setCopied] = useState(false);
@@ -39,30 +30,6 @@ function CopyButton({ value }: { value: string }) {
     window.setTimeout(() => setCopied(false), 1600);
   }
   return <button type="button" className="copy-button" onClick={copy}>{copied ? <Check size={15} /> : <Clipboard size={15} />}{copied ? "Copied" : "Copy"}</button>;
-}
-
-function VideoView({ block }: { block: Extract<LessonBlock, { type: "video" }> }) {
-  return (
-    <section className="lesson-video" aria-labelledby={`video-${block.title.replace(/\s/g, "-")}`}>
-      <div className="lesson-video__meta"><span>{videoLabels[block.videoType]}</span><span>{block.durationMinutes} min</span></div>
-      <div className="lesson-video__frame">
-        {block.status === "published" && block.url ? (
-          <iframe src={block.url} title={block.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-        ) : (
-          <div className="video-placeholder">
-            <div className="video-placeholder__grid" aria-hidden="true" />
-            <span className="video-play"><Play size={24} fill="currentColor" /></span>
-            <div><span>{videoLabels[block.videoType]}</span><h2 id={`video-${block.title.replace(/\s/g, "-")}`}>{block.title}</h2><p>Video in production · written lesson available below</p></div>
-            <span className="video-status">{block.status}</span>
-          </div>
-        )}
-      </div>
-      <details className="transcript">
-        <summary><FileText size={17} />Transcript <ChevronDown size={16} /></summary>
-        <p>{block.transcript}</p>
-      </details>
-    </section>
-  );
 }
 
 function CalloutIcon({ variant }: { variant: Extract<LessonBlock, { type: "callout" }>["variant"] }) {
@@ -83,7 +50,7 @@ export function LessonBlocks({ blocks }: { blocks: LessonBlock[] }) {
       case "heading":
         return block.level === 2 ? <h2 key={key}>{block.text}</h2> : <h3 key={key}>{block.text}</h3>;
       case "video":
-        return <VideoView key={key} block={block} />;
+        return <NarratedVideoPlayer key={key} block={block} />;
       case "image":
         return <figure className="lesson-image" key={key}><div><Image src={block.src} alt={block.alt} width={1600} height={1000} sizes="(max-width: 900px) 100vw, 760px" /></div>{block.caption && <figcaption>{block.caption}</figcaption>}</figure>;
       case "concept":

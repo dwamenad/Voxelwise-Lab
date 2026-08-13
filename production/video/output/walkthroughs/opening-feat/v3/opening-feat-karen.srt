@@ -1,0 +1,347 @@
+1
+00:00:00,000 --> 00:00:06,139
+In this walkthrough, we will open FEAT
+inside Neurodesk and build a map of its
+
+2
+00:00:06,139 --> 00:00:08,594
+interface before changing any analysis
+settings.
+
+3
+00:00:08,594 --> 00:00:12,686
+FEAT is both a model-configuration
+interface and a pipeline runner.
+
+4
+00:00:12,686 --> 00:00:16,779
+The choices made here determine the data,
+preprocessing, registration, statistical
+
+5
+00:00:16,779 --> 00:00:20,053
+model, and reporting steps that FSL will
+execute.
+
+6
+00:00:20,053 --> 00:00:22,099
+Begin on the Neurodesktop workspace.
+
+7
+00:00:22,099 --> 00:00:26,191
+Open the Applications menu, choose
+Neurodesk, then Functional Imaging, FSL,
+
+8
+00:00:26,191 --> 00:00:28,237
+and the approved FSL version.
+
+9
+00:00:28,237 --> 00:00:32,739
+This versioned launcher prepares the
+environment so the FSL commands and
+
+10
+00:00:32,739 --> 00:00:36,422
+graphical tools are available in the
+terminal it opens.
+
+11
+00:00:36,422 --> 00:00:41,333
+That is more reproducible than assuming
+that a terminal outside this environment
+
+12
+00:00:41,333 --> 00:00:43,788
+is using the intended FSL installation.
+
+13
+00:00:56,333 --> 00:01:01,169
+At the prompt, enter `Feat`, with a
+capital F, followed by an ampersand.
+
+14
+00:01:01,169 --> 00:01:05,261
+The capitalised command starts the FEAT
+graphical interface; the lower-case `feat`
+
+15
+00:01:05,261 --> 00:01:07,493
+command expects a saved design file.
+
+16
+00:01:07,493 --> 00:01:11,957
+The ampersand returns control of the
+terminal while the interface remains open.
+
+17
+00:01:11,957 --> 00:01:15,305
+If the window takes a moment to appear,
+wait.
+
+18
+00:01:15,305 --> 00:01:19,769
+Starting another copy simply because the
+launch is quiet can leave several
+
+19
+00:01:19,769 --> 00:01:21,256
+indistinguishable FEAT windows open.
+
+20
+00:01:21,256 --> 00:01:26,464
+FEAT may remember settings from an earlier
+session, so treat every value as something
+
+21
+00:01:26,464 --> 00:01:27,208
+to verify.
+
+22
+00:01:27,208 --> 00:01:31,672
+A familiar-looking interface is not
+evidence that the current design is safe.
+
+23
+00:01:40,433 --> 00:01:43,759
+At the top of FEAT, select First-level
+analysis.
+
+24
+00:01:43,759 --> 00:01:47,086
+First level means one run from one
+participant.
+
+25
+00:01:47,086 --> 00:01:52,906
+It is not a within-subject combination
+across runs, and it is not a group
+
+26
+00:01:52,906 --> 00:01:53,322
+analysis.
+
+27
+00:01:53,322 --> 00:01:57,064
+Keeping that unit explicit prevents
+participant-specific results from being
+
+28
+00:01:57,064 --> 00:01:58,727
+described as population conclusions.
+
+29
+00:01:58,727 --> 00:02:01,637
+Next, select Full analysis for this
+orientation.
+
+30
+00:02:01,637 --> 00:02:06,626
+Full analysis exposes the steps used to
+prepare and model a run.
+
+31
+00:02:06,626 --> 00:02:10,368
+This is a scope choice, not a universal
+recommendation.
+
+32
+00:02:10,368 --> 00:02:14,942
+If the input has already been
+preprocessed, the workflow must be
+
+33
+00:02:14,942 --> 00:02:19,099
+adjusted so that motion correction,
+smoothing, filtering, or registration are
+
+34
+00:02:19,099 --> 00:02:20,346
+not repeated unintentionally.
+
+35
+00:02:29,200 --> 00:02:33,063
+The Data tab establishes the identity of
+the model.
+
+36
+00:02:33,063 --> 00:02:36,927
+It contains the four-dimensional
+functional input, repetition time, number
+
+37
+00:02:36,927 --> 00:02:39,073
+of volumes, and output directory.
+
+38
+00:02:39,073 --> 00:02:42,507
+These values connect image sampling to
+experimental timing.
+
+39
+00:02:42,507 --> 00:02:48,088
+Later, we will verify them against the
+image header and BIDS metadata before
+
+40
+00:02:48,088 --> 00:02:48,946
+entering them.
+
+41
+00:02:48,946 --> 00:02:53,239
+The Pre-stats tab controls preprocessing
+operations such as motion correction,
+
+42
+00:02:53,239 --> 00:02:56,244
+brain extraction, spatial smoothing, and
+temporal filtering.
+
+43
+00:02:56,244 --> 00:02:57,961
+These are scientific decisions.
+
+44
+00:02:57,961 --> 00:03:04,400
+Applying a step twice is not neutral, and
+leaving a required step off is not
+
+45
+00:03:04,400 --> 00:03:06,976
+repaired by a plausible activation map.
+
+46
+00:03:06,976 --> 00:03:10,839
+The Registration tab controls mappings
+between functional, anatomical, and
+
+47
+00:03:10,839 --> 00:03:11,698
+standard spaces.
+
+48
+00:03:11,698 --> 00:03:15,561
+A completed transform only shows that an
+optimisation finished.
+
+49
+00:03:15,561 --> 00:03:20,283
+Registration quality must still be checked
+visually across the brain, including
+
+50
+00:03:20,283 --> 00:03:23,717
+cortical boundaries, ventricles,
+cerebellum, and areas of incomplete
+
+51
+00:03:23,717 --> 00:03:24,576
+functional coverage.
+
+52
+00:03:24,576 --> 00:03:28,010
+The Stats tab defines the general linear
+model.
+
+53
+00:03:28,010 --> 00:03:31,873
+Here, explanatory variables represent task
+conditions or nuisance structure.
+
+54
+00:03:31,873 --> 00:03:36,595
+Task timing can be convolved with a
+haemodynamic response, contrasts encode
+
+55
+00:03:36,595 --> 00:03:42,176
+planned hypotheses, and the design preview
+exposes the actual matrix FEAT will fit.
+
+56
+00:03:42,176 --> 00:03:46,469
+Before running anything, the columns,
+timing, correlations, and contrast weights
+
+57
+00:03:46,469 --> 00:03:50,332
+must tell the same experimental story as
+the protocol.
+
+58
+00:03:50,332 --> 00:03:53,766
+The Post-stats tab controls thresholding
+and result reporting.
+
+59
+00:03:53,766 --> 00:03:58,917
+It is tempting to start with bright
+clusters, but inference is only
+
+60
+00:03:58,917 --> 00:04:02,352
+interpretable after the input,
+preprocessing, registration, and design
+
+61
+00:04:02,352 --> 00:04:04,927
+have passed their own quality-control
+checks.
+
+62
+00:04:04,927 --> 00:04:08,791
+The Misc tab contains auxiliary settings
+and output options.
+
+63
+00:04:08,791 --> 00:04:15,659
+Most projects use only a subset of them,
+but they remain part of the saved design
+
+64
+00:04:15,659 --> 00:04:19,952
+and should be reviewed when reproducing or
+auditing an analysis.
+
+65
+00:04:45,533 --> 00:04:50,029
+The practical order is Data, Pre-stats,
+Registration, Stats, Post-stats, and then
+
+66
+00:04:50,029 --> 00:04:50,438
+Misc.
+
+67
+00:04:50,438 --> 00:04:55,343
+That order moves from the measured time
+series, through preparation and spatial
+
+68
+00:04:55,343 --> 00:04:58,612
+alignment, into the model and finally the
+report.
+
+69
+00:04:58,612 --> 00:05:01,065
+For now, leave the values unchanged.
+
+70
+00:05:01,065 --> 00:05:05,561
+You have opened the intended FSL
+environment, launched FEAT, selected a
+
+71
+00:05:05,561 --> 00:05:08,830
+first-level scope, and identified what
+each tab controls.
+
+72
+00:05:08,830 --> 00:05:15,370
+In the next walkthrough, we will configure
+the Data tab using a real BOLD run and
+
+73
+00:05:15,370 --> 00:05:18,231
+verify every value against the source
+files.

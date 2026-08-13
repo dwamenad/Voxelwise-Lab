@@ -9,7 +9,7 @@ interface VisualSceneTiming {
 interface LiveSceneTiming {
   id: string;
   title: string;
-  audioPath: string;
+  audioPath?: string;
   durationInFrames: number;
   startFrame: number;
   visualScenes: VisualSceneTiming[];
@@ -26,7 +26,13 @@ export interface LiveWalkthroughTiming {
   captureFps: number;
   totalFrames: number;
   scenes: LiveSceneTiming[];
-  cues: LiveCaptionCue[];
+  cues?: LiveCaptionCue[];
+  defaultVoiceId?: string;
+  voiceTracks?: Array<{
+    voiceId: string;
+    scenes: Array<{ id: string; audioPath: string }>;
+    cues: LiveCaptionCue[];
+  }>;
 }
 
 const padFrame = (frame: number) => String(frame).padStart(5, "0");
@@ -62,9 +68,9 @@ const AuthenticCapture = ({ scene }: { scene: LiveSceneTiming }) => {
   );
 };
 
-const Captions = ({ timing }: { timing: LiveWalkthroughTiming }) => {
+const Captions = ({ cues }: { cues?: LiveCaptionCue[] }) => {
   const frame = useCurrentFrame();
-  const cue = timing.cues.find((item) => frame >= item.startFrame && frame < item.endFrame);
+  const cue = cues?.find((item) => frame >= item.startFrame && frame < item.endFrame);
   if (!cue) return null;
 
   return (
@@ -102,22 +108,31 @@ const Captions = ({ timing }: { timing: LiveWalkthroughTiming }) => {
   );
 };
 
-export const LiveWalkthrough = ({ timing }: { timing: LiveWalkthroughTiming }) => (
-  <AbsoluteFill style={{ background: "#050706" }}>
-    {timing.scenes.map((scene) => (
-      <Sequence
-        key={scene.id}
-        from={scene.startFrame}
-        durationInFrames={scene.durationInFrames}
-        premountFor={30}
-      >
-        <AuthenticCapture scene={scene} />
-        <Audio src={staticFile(scene.audioPath)} />
-      </Sequence>
-    ))}
-    <Captions timing={timing} />
-  </AbsoluteFill>
-);
+export const LiveWalkthrough = ({ timing, voiceId }: { timing: LiveWalkthroughTiming; voiceId?: string }) => {
+  const selectedVoiceId = voiceId ?? timing.defaultVoiceId;
+  const voiceTrack = timing.voiceTracks?.find((track) => track.voiceId === selectedVoiceId)
+    ?? timing.voiceTracks?.find((track) => track.voiceId === timing.defaultVoiceId)
+    ?? timing.voiceTracks?.[0];
+  return (
+    <AbsoluteFill style={{ background: "#050706" }}>
+      {timing.scenes.map((scene, index) => {
+        const audioPath = voiceTrack?.scenes[index]?.audioPath ?? scene.audioPath;
+        return (
+          <Sequence
+            key={scene.id}
+            from={scene.startFrame}
+            durationInFrames={scene.durationInFrames}
+            premountFor={30}
+          >
+            <AuthenticCapture scene={scene} />
+            {audioPath && <Audio src={staticFile(audioPath)} />}
+          </Sequence>
+        );
+      })}
+      <Captions cues={voiceTrack?.cues ?? timing.cues} />
+    </AbsoluteFill>
+  );
+};
 
 export const RawLiveWalkthrough = ({ timing }: { timing: LiveWalkthroughTiming }) => {
   const frame = useCurrentFrame();

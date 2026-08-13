@@ -5,7 +5,7 @@
 - Target length: 6–8 minutes
 - Source: authenticated Neurodesk Play session, FSL 6.0.7.22
 - Frame: 1920×1080, 30 fps, H.264/AAC
-- Narration: Daniel at 148 words per minute
+- Narration: synchronized Daniel, Samantha, Tessa, Karen, and Rishi tracks; Daniel is the default
 - Evidence rule: show only authentic Neurodesk, terminal, and FEAT states
 - Safety rule: this lesson identifies the interface; it does not configure or run an analysis
 

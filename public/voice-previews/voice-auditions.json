@@ -1,0 +1,184 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-13T02:33:09.704Z",
+  "defaultVoiceId": "daniel",
+  "passage": "At each voxel, FEAT fits the general linear model. A contrast does not refit the data; it converts a scientific question into a weighted combination of parameter estimates. Open the NIfTI image in FSLEyes, verify the explanatory-variable order, inspect the BOLD time series, and document the quality-control decision before interpreting the result.",
+  "terminologyChecklist": [
+    "FEAT",
+    "general linear model",
+    "NIfTI",
+    "FSLEyes",
+    "explanatory variable",
+    "BOLD",
+    "quality control"
+  ],
+  "audioTargets": {
+    "sampleRate": 48000,
+    "integratedLufs": -16,
+    "truePeakDb": -1.5,
+    "loudnessRange": 7,
+    "highPassHz": 70,
+    "silenceThresholdDb": -48,
+    "sceneTailSeconds": 0.85
+  },
+  "voices": [
+    {
+      "id": "daniel",
+      "engineVoice": "Daniel",
+      "displayName": "Daniel",
+      "accent": "UK English",
+      "locale": "en-GB",
+      "speechRate": 148,
+      "description": "Measured and familiar; the default narration voice."
+    },
+    {
+      "id": "samantha",
+      "engineVoice": "Samantha",
+      "displayName": "Samantha",
+      "accent": "US English",
+      "locale": "en-US",
+      "speechRate": 158,
+      "description": "Clear and conversational for step-by-step instruction."
+    },
+    {
+      "id": "tessa",
+      "engineVoice": "Tessa",
+      "displayName": "Tessa",
+      "accent": "South African English",
+      "locale": "en-ZA",
+      "speechRate": 154,
+      "description": "Warm and deliberate with distinct technical phrasing."
+    },
+    {
+      "id": "karen",
+      "engineVoice": "Karen",
+      "displayName": "Karen",
+      "accent": "Australian English",
+      "locale": "en-AU",
+      "speechRate": 156,
+      "description": "Direct and energetic without rushing terminology."
+    },
+    {
+      "id": "rishi",
+      "engineVoice": "Rishi",
+      "displayName": "Rishi",
+      "accent": "Indian English",
+      "locale": "en-IN",
+      "speechRate": 152,
+      "description": "Steady and precise for commands and scientific terms."
+    }
+  ],
+  "samples": [
+    {
+      "voiceId": "daniel",
+      "voice": "Daniel",
+      "accent": "UK English",
+      "locale": "en-GB",
+      "cadence": "Balanced",
+      "rate": 148,
+      "durationSeconds": 27.370667,
+      "file": "public/voice-previews/daniel-balanced-148wpm.m4a",
+      "qc": {
+        "sourcePeakDbfs": -2.475011173367871,
+        "sourceRmsDbfs": -19.42805787586687,
+        "sourceNoiseFloorDbfs": -49.58633921191759,
+        "dcOffsetRemoved": -0.0000409744318429661,
+        "clippedSamples": 0,
+        "integratedLufs": -16.04,
+        "truePeakDb": -4.3,
+        "loudnessRange": 1.3,
+        "loudnessPassed": true,
+        "clippingPassed": true
+      }
+    },
+    {
+      "voiceId": "samantha",
+      "voice": "Samantha",
+      "accent": "US English",
+      "locale": "en-US",
+      "cadence": "Balanced",
+      "rate": 158,
+      "durationSeconds": 24.042667,
+      "file": "public/voice-previews/samantha-balanced-158wpm.m4a",
+      "qc": {
+        "sourcePeakDbfs": -1.9505662813938085,
+        "sourceRmsDbfs": -16.258703248783387,
+        "sourceNoiseFloorDbfs": -57.77607855725382,
+        "dcOffsetRemoved": -0.00021521913226753804,
+        "clippedSamples": 0,
+        "integratedLufs": -15.76,
+        "truePeakDb": -4.42,
+        "loudnessRange": 1.4,
+        "loudnessPassed": true,
+        "clippingPassed": true
+      }
+    },
+    {
+      "voiceId": "tessa",
+      "voice": "Tessa",
+      "accent": "South African English",
+      "locale": "en-ZA",
+      "cadence": "Balanced",
+      "rate": 154,
+      "durationSeconds": 29.418667,
+      "file": "public/voice-previews/tessa-balanced-154wpm.m4a",
+      "qc": {
+        "sourcePeakDbfs": -5.54115159638096,
+        "sourceRmsDbfs": -18.100619068711985,
+        "sourceNoiseFloorDbfs": -49.01748812822969,
+        "dcOffsetRemoved": -0.00008452127704987805,
+        "clippedSamples": 0,
+        "integratedLufs": -15.63,
+        "truePeakDb": -4.84,
+        "loudnessRange": 1.9,
+        "loudnessPassed": true,
+        "clippingPassed": true
+      }
+    },
+    {
+      "voiceId": "karen",
+      "voice": "Karen",
+      "accent": "Australian English",
+      "locale": "en-AU",
+      "cadence": "Balanced",
+      "rate": 156,
+      "durationSeconds": 24.32,
+      "file": "public/voice-previews/karen-balanced-156wpm.m4a",
+      "qc": {
+        "sourcePeakDbfs": -1.7326863097961507,
+        "sourceRmsDbfs": -16.565366314078304,
+        "sourceNoiseFloorDbfs": -44.489533815676864,
+        "dcOffsetRemoved": -0.0000994743126544358,
+        "clippedSamples": 0,
+        "integratedLufs": -15.83,
+        "truePeakDb": -4.48,
+        "loudnessRange": 1.4,
+        "loudnessPassed": true,
+        "clippingPassed": true
+      }
+    },
+    {
+      "voiceId": "rishi",
+      "voice": "Rishi",
+      "accent": "Indian English",
+      "locale": "en-IN",
+      "cadence": "Balanced",
+      "rate": 152,
+      "durationSeconds": 28.245333,
+      "file": "public/voice-previews/rishi-balanced-152wpm.m4a",
+      "qc": {
+        "sourcePeakDbfs": -1.1820265525680882,
+        "sourceRmsDbfs": -17.580610059531544,
+        "sourceNoiseFloorDbfs": -60.46668171144412,
+        "dcOffsetRemoved": -0.00006986392026117383,
+        "clippedSamples": 0,
+        "integratedLufs": -16.08,
+        "truePeakDb": -4.41,
+        "loudnessRange": 1.5,
+        "loudnessPassed": true,
+        "clippingPassed": true
+      }
+    }
+  ],
+  "reel": "public/voice-previews/voxelwise-lab-voice-audition-reel.m4a"
+}

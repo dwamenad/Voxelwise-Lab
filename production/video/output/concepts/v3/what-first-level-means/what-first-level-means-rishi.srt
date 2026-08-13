@@ -1,0 +1,108 @@
+1
+00:00:00,000 --> 00:00:04,040
+A first-level analysis models one run from
+one participant.
+
+2
+00:00:04,040 --> 00:00:10,325
+At every voxel, it compares the observed
+BOLD time series with predicted task and
+
+3
+00:00:10,325 --> 00:00:11,223
+nuisance patterns.
+
+4
+00:00:11,223 --> 00:00:17,508
+The resulting estimates belong to that
+run; they are not yet evidence about a
+
+5
+00:00:17,508 --> 00:00:17,957
+population.
+
+6
+00:00:19,333 --> 00:00:23,446
+The design matrix describes expected
+patterns across the run.
+
+7
+00:00:23,446 --> 00:00:29,386
+FEAT fits that same set of predictors
+separately to each voxel's measured time
+
+8
+00:00:29,386 --> 00:00:29,843
+series.
+
+9
+00:00:29,843 --> 00:00:34,869
+Beta estimates describe the fitted
+contribution of each column, and residuals
+
+10
+00:00:34,869 --> 00:00:38,068
+contain structure the model did not
+explain.
+
+11
+00:00:39,400 --> 00:00:43,686
+Before interpreting a first-level result,
+inspect the design matrix.
+
+12
+00:00:43,686 --> 00:00:49,876
+Confirm that task columns match the run's
+timing, nuisance columns have the expected
+
+13
+00:00:49,876 --> 00:00:54,162
+length, and contrasts point to the
+intended explanatory variables.
+
+14
+00:00:54,162 --> 00:00:59,876
+A design from another run can fit without
+answering the correct question.
+
+15
+00:01:01,300 --> 00:01:04,267
+First-level results describe one run.
+
+16
+00:01:04,267 --> 00:01:10,793
+Fixed-effects combinations can summarize
+multiple runs from a participant, but they
+
+17
+00:01:10,793 --> 00:01:14,353
+still do not model population variability.
+
+18
+00:01:14,353 --> 00:01:19,100
+Random-effects analysis uses variation
+across participants to support
+
+19
+00:01:19,100 --> 00:01:20,287
+population-level inference.
+
+20
+00:01:22,500 --> 00:01:27,881
+First-level analysis fits one run from one
+participant at every voxel.
+
+21
+00:01:27,881 --> 00:01:33,752
+Inspect the design and contrasts in that
+scope, then use appropriate higher-level
+
+22
+00:01:33,752 --> 00:01:37,177
+models for within-subject combinations and
+population inference.
+
+23
+00:01:37,177 --> 00:01:41,580
+Never let the image hide the level of
+analysis.

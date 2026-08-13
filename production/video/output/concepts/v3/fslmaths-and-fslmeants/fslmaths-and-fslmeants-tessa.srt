@@ -1,0 +1,105 @@
+1
+00:00:00,000 --> 00:00:06,123
+Fslmaths and fslmeants often appear
+together, but they do different jobs.
+
+2
+00:00:06,123 --> 00:00:11,690
+Fslmaths applies operations in sequence
+and writes a new image.
+
+3
+00:00:11,690 --> 00:00:17,813
+Fslmeants uses a mask to summarize a
+four-dimensional time series across
+
+4
+00:00:17,813 --> 00:00:18,926
+selected voxels.
+
+5
+00:00:19,800 --> 00:00:25,438
+Fslmaths reads an input, applies
+operations from left to right, and writes
+
+6
+00:00:25,438 --> 00:00:26,378
+an output.
+
+7
+00:00:26,378 --> 00:00:29,667
+A threshold removes values below a cutoff.
+
+8
+00:00:29,667 --> 00:00:32,956
+Binarization converts the remaining
+selection to ones.
+
+9
+00:00:32,956 --> 00:00:39,534
+The output is a new mask, not a label
+permanently attached to the original
+
+10
+00:00:39,534 --> 00:00:40,004
+image.
+
+11
+00:00:40,867 --> 00:00:46,379
+This example thresholds a statistical
+image, binarizes the result, and saves a
+
+12
+00:00:46,379 --> 00:00:46,839
+mask.
+
+13
+00:00:46,839 --> 00:00:52,811
+Fslmeants then extracts the mean BOLD
+value inside that mask for every volume.
+
+14
+00:00:52,811 --> 00:00:59,702
+The output is a time series whose meaning
+depends entirely on the mask and source
+
+15
+00:00:59,702 --> 00:01:00,161
+image.
+
+16
+00:01:01,033 --> 00:01:05,226
+Two files can share dimensions while
+representing different anatomy.
+
+17
+00:01:05,226 --> 00:01:11,747
+Check the headers, then overlay the mask
+on the exact image used for extraction.
+
+18
+00:01:11,747 --> 00:01:13,611
+Confirm coverage across slices.
+
+19
+00:01:13,611 --> 00:01:19,201
+A time series extracted from the wrong
+space is precise but meaningless.
+
+20
+00:01:20,067 --> 00:01:26,954
+Use fslmaths to create a derived image and
+fslmeants to measure a time series within
+
+21
+00:01:26,954 --> 00:01:27,872
+a mask.
+
+22
+00:01:27,872 --> 00:01:34,300
+Preserve the operation order, inspect the
+mask in the source space, and only then
+
+23
+00:01:34,300 --> 00:01:36,136
+interpret the extracted values.

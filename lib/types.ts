@@ -9,6 +9,24 @@ export type VideoType =
 
 export type ProductionStatus = "planned" | "recorded" | "published";
 
+export type NarrationVoiceId = "daniel" | "samantha" | "tessa" | "karen" | "rishi";
+
+export interface TranscriptCue {
+  startSeconds: number;
+  endSeconds: number;
+  text: string;
+}
+
+export interface VideoVoiceVariant {
+  voiceId: NarrationVoiceId;
+  status: ProductionStatus;
+  provider?: VideoProvider;
+  videoId?: string | null;
+  url?: string;
+  captionsPath?: string;
+  durationSeconds?: number;
+}
+
 export type LessonBlock =
   | { type: "text"; body: string }
   | { type: "heading"; level: 2 | 3; text: string }
@@ -23,6 +41,9 @@ export type LessonBlock =
       status: ProductionStatus;
       captionsPath?: string;
       transcript: string;
+      defaultVoiceId?: NarrationVoiceId;
+      voiceVariants?: VideoVoiceVariant[];
+      transcriptCues?: TranscriptCue[];
     }
   | { type: "image"; src: string; alt: string; caption?: string }
   | {
@@ -146,4 +167,3 @@ export interface LessonProgress {
   completedAt: string | null;
   lastViewedAt: string;
 }
-

@@ -24,16 +24,18 @@ video:
     blocked_by: Neurodesk Play access pending review
 
 narration:
-  status: generated
-  voice: Daniel
-  accent: UK English
-  cadence: deliberate
-  words_per_minute: 148
+  status: v3_pipeline_ready
+  default_voice: daniel
+  voices: [daniel, samantha, tessa, karen, rishi]
+  synchronized_scene_timeline: true
+  audio_target: -16_lufs
+  true_peak_limit_db: -1.5
+  legacy_delivered_master_voice: Daniel
 
 captions:
-  status: generated
+  status: voice_specific_v3
   burned_in: true
-  sidecar: production/video/output/understanding-contrasts.srt
+  sidecars: production/video/output/v3/understanding-contrasts/understanding-contrasts-VOICE.srt
 
 scientific_review:
   status: source-checked

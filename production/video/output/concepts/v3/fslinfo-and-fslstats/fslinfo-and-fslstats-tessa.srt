@@ -1,0 +1,108 @@
+1
+00:00:00,000 --> 00:00:03,254
+Fslinfo and fslstats answer different
+questions.
+
+2
+00:00:03,254 --> 00:00:08,678
+Fslinfo reads the NIfTI header and
+describes the image container.
+
+3
+00:00:08,678 --> 00:00:11,932
+Fslstats calculates summaries from voxel
+values.
+
+4
+00:00:11,932 --> 00:00:18,983
+A statistic is meaningful only when you
+know which image and which voxels
+
+5
+00:00:18,983 --> 00:00:20,610
+contributed to it.
+
+6
+00:00:21,467 --> 00:00:27,675
+Use fslinfo when the question is about
+structure: dimensions, voxel spacing,
+
+7
+00:00:27,675 --> 00:00:29,368
+orientation, or timing.
+
+8
+00:00:29,368 --> 00:00:34,448
+Use fslstats when the question is about
+intensity values.
+
+9
+00:00:34,448 --> 00:00:41,785
+The two outputs complement one another,
+but one cannot substitute for the other.
+
+10
+00:00:42,667 --> 00:00:49,315
+With dash V, fslstats reports the number
+of nonzero voxels followed by their
+
+11
+00:00:49,315 --> 00:00:51,872
+physical volume in cubic millimetres.
+
+12
+00:00:51,872 --> 00:00:54,941
+Those values describe the selected image.
+
+13
+00:00:54,941 --> 00:01:00,566
+They do not automatically describe the
+whole brain, because zeros, thresholds,
+
+14
+00:01:00,566 --> 00:01:04,146
+and masks determine which voxels are
+counted.
+
+15
+00:01:05,000 --> 00:01:09,414
+A numerical result can be perfectly
+computed and scientifically wrong.
+
+16
+00:01:09,414 --> 00:01:12,503
+Confirm the input image and coordinate
+space.
+
+17
+00:01:12,503 --> 00:01:17,800
+If a mask is involved, overlay it on the
+exact source data.
+
+18
+00:01:17,800 --> 00:01:23,537
+Record the option and threshold so another
+person can reproduce the voxel set.
+
+19
+00:01:24,500 --> 00:01:30,623
+Use fslinfo to understand the image
+container and fslstats to summarize
+
+20
+00:01:30,623 --> 00:01:31,179
+values.
+
+21
+00:01:31,179 --> 00:01:37,859
+Never report a number without the image,
+option, threshold, and voxel selection
+
+22
+00:01:37,859 --> 00:01:39,529
+that define it.
+
+23
+00:01:39,529 --> 00:01:42,868
+Context turns output into interpretable
+evidence.

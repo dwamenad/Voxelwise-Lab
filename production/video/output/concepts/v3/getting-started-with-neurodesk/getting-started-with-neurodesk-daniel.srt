@@ -1,0 +1,111 @@
+1
+00:00:00,000 --> 00:00:03,678
+Neurodesk provides a consistent
+environment for neuroimaging software.
+
+2
+00:00:03,678 --> 00:00:09,196
+Your access route may be Neurodesk Play,
+Neurodesk EDU, or an institutional
+
+3
+00:00:09,196 --> 00:00:09,656
+deployment.
+
+4
+00:00:09,656 --> 00:00:16,093
+The important first steps are to find
+persistent storage and open a terminal in
+
+5
+00:00:16,093 --> 00:00:18,392
+which FSL is actually available.
+
+6
+00:00:21,733 --> 00:00:25,447
+The application workspace gives you access
+to packaged tools.
+
+7
+00:00:25,447 --> 00:00:31,225
+Open the FSL tile or the approved FSL
+terminal rather than assuming the base
+
+8
+00:00:31,225 --> 00:00:33,288
+shell contains every neuroimaging command.
+
+9
+00:00:33,288 --> 00:00:39,066
+The exact arrangement can vary, so
+identify the tool by its name and purpose
+
+10
+00:00:39,066 --> 00:00:41,954
+rather than by memorizing a screen
+position.
+
+11
+00:00:45,033 --> 00:00:47,338
+Run which fslinfo in the terminal.
+
+12
+00:00:47,338 --> 00:00:51,178
+A returned path means the shell can locate
+the program.
+
+13
+00:00:51,178 --> 00:00:53,867
+If the command returns nothing, stop
+there.
+
+14
+00:00:53,867 --> 00:01:00,012
+You may be in a base terminal, or the FSL
+environment may not have loaded correctly.
+
+15
+00:01:02,900 --> 00:01:08,228
+Browser workspaces can contain temporary
+files that disappear when the session
+
+16
+00:01:08,228 --> 00:01:08,712
+ends.
+
+17
+00:01:08,712 --> 00:01:14,040
+Before downloading data or starting an
+analysis, identify the persistent storage
+
+18
+00:01:14,040 --> 00:01:16,462
+location provided by your environment.
+
+19
+00:01:16,462 --> 00:01:23,243
+Save your data, scripts, logs, and notes
+there, then verify that the files remain
+
+20
+00:01:23,243 --> 00:01:25,181
+after reopening the workspace.
+
+21
+00:01:28,000 --> 00:01:32,891
+Begin every Neurodesk session by
+confirming three things: the approved
+
+22
+00:01:32,891 --> 00:01:37,781
+access route, the persistent storage
+location, and an FSL-enabled terminal.
+
+23
+00:01:37,781 --> 00:01:42,672
+Those checks prevent lost files and
+confusing command-not-found errors later
+
+24
+00:01:42,672 --> 00:01:44,139
+in the workflow.

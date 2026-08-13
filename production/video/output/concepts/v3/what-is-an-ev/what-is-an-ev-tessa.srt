@@ -1,0 +1,109 @@
+1
+00:00:00,000 --> 00:00:06,602
+An explanatory variable, or EV, is one
+modeled pattern in the design matrix.
+
+2
+00:00:06,602 --> 00:00:10,157
+A task EV represents an experimental
+condition.
+
+3
+00:00:10,157 --> 00:00:13,712
+A parametric EV represents graded trial
+values.
+
+4
+00:00:13,712 --> 00:00:19,806
+A nuisance EV represents structured
+variation that is not the effect of
+
+5
+00:00:19,806 --> 00:00:20,314
+interest.
+
+6
+00:00:21,167 --> 00:00:27,842
+The interpretation of an EV comes from how
+it was constructed and why it belongs in
+
+7
+00:00:27,842 --> 00:00:28,676
+the model.
+
+8
+00:00:28,676 --> 00:00:32,431
+A condition column asks about an average
+task effect.
+
+9
+00:00:32,431 --> 00:00:36,603
+A parametric column asks whether response
+changes with a value.
+
+10
+00:00:36,603 --> 00:00:41,193
+A motion column controls nuisance
+variation rather than testing the task.
+
+11
+00:00:42,067 --> 00:00:45,605
+Inspect the design matrix after EV
+construction.
+
+12
+00:00:45,605 --> 00:00:50,661
+Confirm that each column has the expected
+timing and order.
+
+13
+00:00:50,661 --> 00:00:54,200
+Look for near-duplicate patterns or strong
+correlation.
+
+14
+00:00:54,200 --> 00:00:59,255
+When predictors overlap, each beta
+estimate describes a contribution after
+
+15
+00:00:59,255 --> 00:01:01,783
+accounting for the other columns.
+
+16
+00:01:02,633 --> 00:01:08,169
+A complex stimulus does not automatically
+require a column for every feature.
+
+17
+00:01:08,169 --> 00:01:12,321
+Build the model around the hypothesized
+processes and comparisons.
+
+18
+00:01:12,321 --> 00:01:18,780
+An EV is justified by the scientific
+question and design, not merely by the
+
+19
+00:01:18,780 --> 00:01:20,625
+availability of a label.
+
+20
+00:01:21,500 --> 00:01:27,431
+An EV is one hypothesized source of
+variation in the design matrix.
+
+21
+00:01:27,431 --> 00:01:32,373
+Define what it represents, distinguish
+effects of interest from nuisance
+
+22
+00:01:32,373 --> 00:01:37,810
+structure, and inspect its timing and
+relationship to other columns before
+
+23
+00:01:37,810 --> 00:01:40,281
+interpreting beta estimates or contrasts.

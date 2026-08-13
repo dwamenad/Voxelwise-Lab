@@ -17,11 +17,22 @@ video:
   transcript_format: markdown
 
 narration:
-  status: generated
-  voice: Daniel
-  accent: UK English
-  cadence: deliberate
-  words_per_minute: 148
+  status: v3_variants_generated
+  default_voice: daniel
+  voices:
+    - daniel
+    - samantha
+    - tessa
+    - karen
+    - rishi
+  synchronized_scene_timeline: true
+  audio_processing:
+    sample_rate_hz: 48000
+    integrated_lufs: -16
+    true_peak_db: -1.5
+    high_pass_hz: 70
+    qc_manifest_per_scene: true
+  legacy_delivered_master_voice: Daniel
 
 delivery:
   storage: Google Drive

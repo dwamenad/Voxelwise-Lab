@@ -1,0 +1,99 @@
+1
+00:00:00,000 --> 00:00:02,818
+This course is built around a simple loop.
+
+2
+00:00:02,818 --> 00:00:05,987
+First understand what a step is supposed
+to do.
+
+3
+00:00:05,987 --> 00:00:10,566
+Predict the result, run the step, inspect
+the evidence, and explain any difference
+
+4
+00:00:10,566 --> 00:00:12,679
+between your prediction and what happened.
+
+5
+00:00:12,679 --> 00:00:15,849
+That loop builds transferable judgment
+instead of button memory.
+
+6
+00:00:20,600 --> 00:00:25,364
+Before running a command or changing a
+FEAT setting, state what you expect.
+
+7
+00:00:25,364 --> 00:00:27,562
+A prediction makes the output diagnostic.
+
+8
+00:00:27,562 --> 00:00:32,692
+If the output differs, the gap may reveal
+a path error, a misunderstood parameter,
+
+9
+00:00:32,692 --> 00:00:35,257
+or a scientific assumption that needs
+revision.
+
+10
+00:00:39,400 --> 00:00:42,256
+Keep the explanation beside the working
+environment.
+
+11
+00:00:42,256 --> 00:00:46,745
+Read one step, make a prediction, and then
+perform it yourself.
+
+12
+00:00:46,745 --> 00:00:51,233
+Use a notes file to record commands,
+observations, and unresolved questions.
+
+13
+00:00:51,233 --> 00:00:54,498
+The notes become part of your reproducible
+reasoning.
+
+14
+00:00:59,100 --> 00:01:02,134
+An example is not an answer key to copy.
+
+15
+00:01:02,134 --> 00:01:06,518
+Look at it after you have made a
+prediction and run the step.
+
+16
+00:01:06,518 --> 00:01:10,226
+Then compare structure, not every
+character, because file paths and exact
+
+17
+00:01:10,226 --> 00:01:12,924
+values may legitimately differ across
+environments and datasets.
+
+18
+00:01:17,300 --> 00:01:21,277
+Use each lesson as a cycle of
+understanding, prediction, action,
+
+19
+00:01:21,277 --> 00:01:22,470
+inspection, and explanation.
+
+20
+00:01:22,470 --> 00:01:27,243
+That habit is more valuable than
+memorizing a menu or command sequence,
+
+21
+00:01:27,243 --> 00:01:31,618
+because it continues to work when the
+interface or dataset changes.

@@ -1,5 +1,6 @@
 import { learningLesson } from "@/lib/content/helpers";
 import type { Course, Lesson, LessonBlock } from "@/lib/types";
+import { createPlannedVoiceVariants, DEFAULT_VOICE_ID } from "@/lib/narration";
 
 interface FeatLessonConfig {
   slug: string;
@@ -287,6 +288,8 @@ function createFeatLesson(config: FeatLessonConfig, index: number): Lesson {
       durationMinutes: 11,
       status: "planned",
       captionsPath: "/production/captions/reviewing-feat-report.vtt",
+      defaultVoiceId: DEFAULT_VOICE_ID,
+      voiceVariants: createPlannedVoiceVariants("reviewing-complete-feat-report"),
       transcript: "A reviewed transcript will appear when the quality-control video is published.",
     };
     lesson.blocks.splice(3, 0, secondVideo);
