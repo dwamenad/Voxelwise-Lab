@@ -1,0 +1,109 @@
+1
+00:00:00,000 --> 00:00:04,080
+A NIfTI file stores numerical samples
+arranged in space.
+
+2
+00:00:04,080 --> 00:00:08,160
+One sample is a voxel, a tiny
+three-dimensional box.
+
+3
+00:00:08,160 --> 00:00:12,694
+Voxels form slices, slices form a
+three-dimensional volume, and repeated
+
+4
+00:00:12,694 --> 00:00:15,868
+volumes form a four-dimensional fMRI time
+series.
+
+5
+00:00:20,767 --> 00:00:24,298
+An anatomical image is often one
+three-dimensional volume.
+
+6
+00:00:24,298 --> 00:00:29,595
+A BOLD image usually contains many volumes
+sampled at successive time points.
+
+7
+00:00:29,595 --> 00:00:34,450
+The file header records dimensions, voxel
+sizes, orientation transforms, and timing
+
+8
+00:00:34,450 --> 00:00:37,540
+so software can interpret the array
+correctly.
+
+9
+00:00:42,467 --> 00:00:44,622
+Fslinfo exposes the image header.
+
+10
+00:00:44,622 --> 00:00:49,796
+Here, the first three dimensions describe
+a sixty-four by sixty-four by forty
+
+11
+00:00:49,796 --> 00:00:50,658
+spatial grid.
+
+12
+00:00:50,658 --> 00:00:56,263
+Dimension four contains two hundred forty
+time points, and pixdim four reports a
+
+13
+00:00:56,263 --> 00:00:57,557
+two-second repetition time.
+
+14
+00:00:57,557 --> 00:01:00,575
+These values describe sampling, not data
+quality.
+
+15
+00:01:06,433 --> 00:01:10,688
+Voxel dimensions define spatial sampling,
+not anatomical precision.
+
+16
+00:01:10,688 --> 00:01:16,007
+Smaller voxels can reduce signal-to-noise,
+and functional localization also depends
+
+17
+00:01:16,007 --> 00:01:19,198
+on physiology, preprocessing, and
+experimental design.
+
+18
+00:01:19,198 --> 00:01:25,048
+Never translate voxel size directly into
+certainty about a cognitive process.
+
+19
+00:01:30,167 --> 00:01:33,770
+A NIfTI image is a structured numerical
+container.
+
+20
+00:01:33,770 --> 00:01:37,823
+Understand its voxels, volumes,
+dimensions, orientation, and timing before
+
+21
+00:01:37,823 --> 00:01:39,174
+analyzing intensity values.
+
+22
+00:01:39,174 --> 00:01:45,479
+Sampling describes how data were arranged;
+it does not guarantee what the data can
+
+23
+00:01:45,479 --> 00:01:45,930
+reveal.

@@ -1,5 +1,10 @@
 import { learningLesson } from "@/lib/content/helpers";
 import type { Course, Lesson, LessonBlock } from "@/lib/types";
+import {
+  createVideoVoiceVariants,
+  DEFAULT_VOICE_ID,
+  getPublishedMedia,
+} from "@/lib/narration";
 
 interface FeatLessonConfig {
   slug: string;
@@ -278,16 +283,23 @@ function createFeatLesson(config: FeatLessonConfig, index: number): Lesson {
   });
 
   if (config.slug === "complete-guided-analysis") {
+    const reviewMedia = getPublishedMedia("reviewing-complete-feat-report");
     const secondVideo: LessonBlock = {
       type: "video",
       videoType: "quality-control",
       title: "Reviewing a complete FEAT report",
-      provider: "mux",
+      provider: reviewMedia?.provider ?? "local",
       videoId: null,
+      url: reviewMedia?.url,
       durationMinutes: 11,
-      status: "planned",
-      captionsPath: "/production/captions/reviewing-feat-report.vtt",
-      transcript: "A reviewed transcript will appear when the quality-control video is published.",
+      status: reviewMedia ? "published" : "planned",
+      captionsPath: reviewMedia?.captionsPath ?? "/production/captions/reviewing-feat-report.vtt",
+      defaultVoiceId: DEFAULT_VOICE_ID,
+      voiceVariants: createVideoVoiceVariants("reviewing-complete-feat-report"),
+      transcriptUrl: reviewMedia?.transcriptUrl,
+      transcript: reviewMedia
+        ? "Open the reviewed production transcript below while you inspect the complete FEAT report."
+        : "A reviewed transcript will appear when the quality-control video is published.",
     };
     lesson.blocks.splice(3, 0, secondVideo);
   }

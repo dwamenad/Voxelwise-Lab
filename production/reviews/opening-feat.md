@@ -10,7 +10,8 @@ Transcript: https://drive.google.com/file/d/14khL9P3r2XVJG-52WTc6BHIy6KJWNThg/vi
 
 - [ ] Neurodesktop, terminal, and FEAT controls are legible at normal playback size.
 - [ ] Cursor movement and screen-action pacing feel deliberate.
-- [ ] Daniel narration is clear, natural, and appropriately paced.
+- [ ] Daniel, Samantha, Tessa, Karen, and Rishi pronounce the terminology clearly and remain appropriately paced.
+- [ ] Switching voice variants preserves the same visual moment and caption meaning.
 - [ ] Burned-in captions are readable and do not obscure the named controls.
 - [ ] The scientific explanation and workflow order are accurate.
 - [ ] The distinction between `Feat &` and lower-case `feat saved-design.fsf` is clear.

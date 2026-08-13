@@ -1,23 +1,29 @@
 {
-  "version": 1,
+  "version": 3,
   "slug": "opening-feat",
   "compositionId": "OpeningFeatWalkthrough",
   "fps": 30,
   "captureFps": 5,
   "width": 1920,
   "height": 1080,
-  "totalFrames": 9075,
-  "totalSeconds": 302.386462,
-  "voice": "Daniel",
-  "speechRate": 148,
+  "totalFrames": 9789,
+  "totalSeconds": 326.29999999999995,
+  "defaultVoiceId": "daniel",
+  "audioTargets": {
+    "sampleRate": 48000,
+    "integratedLufs": -16,
+    "truePeakDb": -1.5,
+    "loudnessRange": 7,
+    "highPassHz": 70,
+    "silenceThresholdDb": -48,
+    "sceneTailSeconds": 0.85
+  },
   "scenes": [
     {
       "id": "section-1",
       "title": "Enter the approved environment",
-      "audioPath": "video-production/walkthroughs/opening-feat/audio/section-1.m4a",
-      "audioSeconds": 49.62322,
-      "durationSeconds": 50.473220000000005,
-      "durationInFrames": 1515,
+      "durationSeconds": 56.333333333333336,
+      "durationInFrames": 1690,
       "startSeconds": 0,
       "startFrame": 0,
       "visualScenes": [
@@ -51,12 +57,10 @@
     {
       "id": "section-2",
       "title": "Launch FEAT",
-      "audioPath": "video-production/walkthroughs/opening-feat/audio/section-2.m4a",
-      "audioSeconds": 39.928934,
-      "durationSeconds": 40.778934,
-      "durationInFrames": 1224,
-      "startSeconds": 50.473220000000005,
-      "startFrame": 1515,
+      "durationSeconds": 44.1,
+      "durationInFrames": 1323,
+      "startSeconds": 56.333333333333336,
+      "startFrame": 1690,
       "visualScenes": [
         {
           "id": "08-launch-feat-gui",
@@ -73,12 +77,10 @@
     {
       "id": "section-3",
       "title": "Choose the analysis scope",
-      "audioPath": "video-production/walkthroughs/opening-feat/audio/section-3.m4a",
-      "audioSeconds": 45.432063,
-      "durationSeconds": 46.282063,
-      "durationInFrames": 1389,
-      "startSeconds": 91.252154,
-      "startFrame": 2739,
+      "durationSeconds": 48.766666666666666,
+      "durationInFrames": 1463,
+      "startSeconds": 100.43333333333334,
+      "startFrame": 3013,
       "visualScenes": [
         {
           "id": "10-first-level-scope",
@@ -95,12 +97,10 @@
     {
       "id": "section-4",
       "title": "Read the tabs before editing",
-      "audioPath": "video-production/walkthroughs/opening-feat/audio/section-4.m4a",
-      "audioSeconds": 125.885488,
-      "durationSeconds": 126.73548799999999,
-      "durationInFrames": 3803,
-      "startSeconds": 137.534217,
-      "startFrame": 4128,
+      "durationSeconds": 136.33333333333334,
+      "durationInFrames": 4090,
+      "startSeconds": 149.2,
+      "startFrame": 4476,
       "visualScenes": [
         {
           "id": "12-data-tab",
@@ -137,12 +137,10 @@
     {
       "id": "section-5",
       "title": "Close with the workflow map",
-      "audioPath": "video-production/walkthroughs/opening-feat/audio/section-5.m4a",
-      "audioSeconds": 37.266757,
-      "durationSeconds": 38.116757,
-      "durationInFrames": 1144,
-      "startSeconds": 264.269705,
-      "startFrame": 7931,
+      "durationSeconds": 40.766666666666666,
+      "durationInFrames": 1223,
+      "startSeconds": 285.5333333333333,
+      "startFrame": 8566,
       "visualScenes": [
         {
           "id": "18-closing-overview",
@@ -152,590 +150,3391 @@
       ]
     }
   ],
-  "cues": [
-    {
-      "index": 1,
-      "text": "In this walkthrough, we will open FEAT\ninside Neurodesk and build a map of its",
-      "startSeconds": 0,
-      "endSeconds": 6.956526168224299,
-      "startFrame": 0,
-      "endFrame": 209
-    },
-    {
-      "index": 2,
-      "text": "interface before changing any analysis\nsettings.",
-      "startSeconds": 6.956526168224299,
-      "endSeconds": 9.739136635514019,
-      "startFrame": 208,
-      "endFrame": 293
-    },
-    {
-      "index": 3,
-      "text": "FEAT is both a model-configuration\ninterface and a pipeline runner.",
-      "startSeconds": 9.739136635514019,
-      "endSeconds": 14.376820747663551,
-      "startFrame": 292,
-      "endFrame": 432
-    },
-    {
-      "index": 4,
-      "text": "The choices made here determine the data,\npreprocessing, registration, statistical",
-      "startSeconds": 14.376820747663551,
-      "endSeconds": 19.014504859813083,
-      "startFrame": 431,
-      "endFrame": 571
-    },
-    {
-      "index": 5,
-      "text": "model, and reporting steps that FSL will\nexecute.",
-      "startSeconds": 19.014504859813083,
-      "endSeconds": 22.72465214953271,
-      "startFrame": 570,
-      "endFrame": 682
-    },
-    {
-      "index": 6,
-      "text": "Begin on the Neurodesktop workspace.",
-      "startSeconds": 22.72465214953271,
-      "endSeconds": 25.043494205607473,
-      "startFrame": 681,
-      "endFrame": 752
-    },
-    {
-      "index": 7,
-      "text": "Open the Applications menu, choose\nNeurodesk, then Functional Imaging, FSL,",
-      "startSeconds": 25.043494205607473,
-      "endSeconds": 29.681178317757006,
-      "startFrame": 751,
-      "endFrame": 891
-    },
-    {
-      "index": 8,
-      "text": "and the approved FSL version.",
-      "startSeconds": 29.681178317757006,
-      "endSeconds": 32.000020373831774,
-      "startFrame": 890,
-      "endFrame": 961
-    },
-    {
-      "index": 9,
-      "text": "This versioned launcher prepares the\nenvironment so the FSL commands and",
-      "startSeconds": 32.000020373831774,
-      "endSeconds": 37.10147289719626,
-      "startFrame": 960,
-      "endFrame": 1114
-    },
-    {
-      "index": 10,
-      "text": "graphical tools are available in the\nterminal it opens.",
-      "startSeconds": 37.10147289719626,
-      "endSeconds": 41.27538859813084,
-      "startFrame": 1113,
-      "endFrame": 1239
-    },
-    {
-      "index": 11,
-      "text": "That is more reproducible than assuming\nthat a terminal outside this environment",
-      "startSeconds": 41.27538859813084,
-      "endSeconds": 46.840609532710275,
-      "startFrame": 1238,
-      "endFrame": 1406
-    },
-    {
-      "index": 12,
-      "text": "is using the intended FSL installation.",
-      "startSeconds": 46.840609532710275,
-      "endSeconds": 49.623219999999996,
-      "startFrame": 1405,
-      "endFrame": 1489
-    },
-    {
-      "index": 13,
-      "text": "At the prompt, enter `Feat`, with a\ncapital F, followed by an ampersand.",
-      "startSeconds": 50.473220000000005,
-      "endSeconds": 55.93717938947369,
-      "startFrame": 1514,
-      "endFrame": 1679
-    },
-    {
-      "index": 14,
-      "text": "The capitalised command starts the FEAT\ngraphical interface; the lower-case `feat`",
-      "startSeconds": 55.93717938947369,
-      "endSeconds": 60.56052964210527,
-      "startFrame": 1678,
-      "endFrame": 1817
-    },
-    {
-      "index": 15,
-      "text": "command expects a saved design file.",
-      "startSeconds": 60.560529642105266,
-      "endSeconds": 63.08235705263158,
-      "startFrame": 1816,
-      "endFrame": 1893
-    },
-    {
-      "index": 16,
-      "text": "The ampersand returns control of the\nterminal while the interface remains open.",
-      "startSeconds": 63.082357052631586,
-      "endSeconds": 68.12601187368422,
-      "startFrame": 1892,
-      "endFrame": 2044
-    },
-    {
-      "index": 17,
-      "text": "If the window takes a moment to appear,\nwait.",
-      "startSeconds": 68.12601187368422,
-      "endSeconds": 71.9087529894737,
-      "startFrame": 2043,
-      "endFrame": 2158
-    },
-    {
-      "index": 18,
-      "text": "Starting another copy simply because the\nlaunch is quiet can leave several",
-      "startSeconds": 71.9087529894737,
-      "endSeconds": 76.95240781052632,
-      "startFrame": 2157,
-      "endFrame": 2309
-    },
-    {
-      "index": 19,
-      "text": "indistinguishable FEAT windows open.",
-      "startSeconds": 76.95240781052632,
-      "endSeconds": 78.63362608421053,
-      "startFrame": 2308,
-      "endFrame": 2360
-    },
-    {
-      "index": 20,
-      "text": "FEAT may remember settings from an earlier\nsession, so treat every value as something",
-      "startSeconds": 78.63362608421053,
-      "endSeconds": 84.51789004210526,
-      "startFrame": 2359,
-      "endFrame": 2536
-    },
-    {
-      "index": 21,
-      "text": "to verify.",
-      "startSeconds": 84.51789004210526,
-      "endSeconds": 85.35849917894737,
-      "startFrame": 2535,
-      "endFrame": 2561
-    },
-    {
-      "index": 22,
-      "text": "A familiar-looking interface is not\nevidence that the current design is safe.",
-      "startSeconds": 85.35849917894737,
-      "endSeconds": 90.402154,
-      "startFrame": 2560,
-      "endFrame": 2713
-    },
-    {
-      "index": 23,
-      "text": "At the top of FEAT, select First-level\nanalysis.",
-      "startSeconds": 91.252154,
-      "endSeconds": 95.03815925,
-      "startFrame": 2737,
-      "endFrame": 2852
-    },
-    {
-      "index": 24,
-      "text": "First level means one run from one\nparticipant.",
-      "startSeconds": 95.03815925,
-      "endSeconds": 98.82416450000001,
-      "startFrame": 2851,
-      "endFrame": 2965
-    },
-    {
-      "index": 25,
-      "text": "It is not a within-subject combination\nacross runs, and it is not a group",
-      "startSeconds": 98.82416450000001,
-      "endSeconds": 105.44967368750001,
-      "startFrame": 2964,
-      "endFrame": 3164
-    },
-    {
-      "index": 26,
-      "text": "analysis.",
-      "startSeconds": 105.44967368750001,
-      "endSeconds": 105.92292434375001,
-      "startFrame": 3163,
-      "endFrame": 3178
-    },
-    {
-      "index": 27,
-      "text": "Keeping that unit explicit prevents\nparticipant-specific results from being",
-      "startSeconds": 105.92292434375,
-      "endSeconds": 110.18218025,
-      "startFrame": 3177,
-      "endFrame": 3306
-    },
-    {
-      "index": 28,
-      "text": "described as population conclusions.",
-      "startSeconds": 110.18218025,
-      "endSeconds": 112.075182875,
-      "startFrame": 3305,
-      "endFrame": 3363
-    },
-    {
-      "index": 29,
-      "text": "Next, select Full analysis for this\norientation.",
-      "startSeconds": 112.07518287500001,
-      "endSeconds": 115.38793746875001,
-      "startFrame": 3362,
-      "endFrame": 3462
-    },
-    {
-      "index": 30,
-      "text": "Full analysis exposes the steps used to\nprepare and model a run.",
-      "startSeconds": 115.38793746875001,
-      "endSeconds": 121.06694534375,
-      "startFrame": 3461,
-      "endFrame": 3633
-    },
-    {
-      "index": 31,
-      "text": "This is a scope choice, not a universal\nrecommendation.",
-      "startSeconds": 121.06694534375,
-      "endSeconds": 125.32620125000001,
-      "startFrame": 3632,
-      "endFrame": 3760
-    },
-    {
-      "index": 32,
-      "text": "If the input has already been\npreprocessed, the workflow must be",
-      "startSeconds": 125.32620125,
-      "endSeconds": 130.53195846875,
-      "startFrame": 3759,
-      "endFrame": 3916
-    },
-    {
-      "index": 33,
-      "text": "adjusted so that motion correction,\nsmoothing, filtering, or registration are",
-      "startSeconds": 130.53195846875002,
-      "endSeconds": 135.26446503125,
-      "startFrame": 3915,
-      "endFrame": 4058
-    },
-    {
-      "index": 34,
-      "text": "not repeated unintentionally.",
-      "startSeconds": 135.26446503125,
-      "endSeconds": 136.68421700000002,
-      "startFrame": 4057,
-      "endFrame": 4101
-    },
-    {
-      "index": 35,
-      "text": "The Data tab establishes the identity of\nthe model.",
-      "startSeconds": 137.534217,
-      "endSeconds": 141.92557123255816,
-      "startFrame": 4126,
-      "endFrame": 4258
-    },
-    {
-      "index": 36,
-      "text": "It contains the four-dimensional\nfunctional input, repetition time, number",
-      "startSeconds": 141.92557123255816,
-      "endSeconds": 146.3169254651163,
-      "startFrame": 4257,
-      "endFrame": 4390
-    },
-    {
-      "index": 37,
-      "text": "of volumes, and output directory.",
-      "startSeconds": 146.3169254651163,
-      "endSeconds": 148.75656670542637,
-      "startFrame": 4389,
-      "endFrame": 4463
-    },
-    {
-      "index": 38,
-      "text": "These values connect image sampling to\nexperimental timing.",
-      "startSeconds": 148.75656670542637,
-      "endSeconds": 152.6599926899225,
-      "startFrame": 4462,
-      "endFrame": 4580
-    },
-    {
-      "index": 39,
-      "text": "Later, we will verify them against the\nimage header and BIDS metadata before",
-      "startSeconds": 152.6599926899225,
-      "endSeconds": 159.00305991472868,
-      "startFrame": 4579,
-      "endFrame": 4771
-    },
-    {
-      "index": 40,
-      "text": "entering them.",
-      "startSeconds": 159.00305991472868,
-      "endSeconds": 159.97891641085272,
-      "startFrame": 4770,
-      "endFrame": 4800
-    },
-    {
-      "index": 41,
-      "text": "The Pre-stats tab controls preprocessing\noperations such as motion correction,",
-      "startSeconds": 159.97891641085272,
-      "endSeconds": 164.85819889147288,
-      "startFrame": 4799,
-      "endFrame": 4946
-    },
-    {
-      "index": 42,
-      "text": "brain extraction, spatial smoothing, and\ntemporal filtering.",
-      "startSeconds": 164.85819889147288,
-      "endSeconds": 168.273696627907,
-      "startFrame": 4945,
-      "endFrame": 5049
-    },
-    {
-      "index": 43,
-      "text": "These are scientific decisions.",
-      "startSeconds": 168.273696627907,
-      "endSeconds": 170.22540962015503,
-      "startFrame": 5048,
-      "endFrame": 5107
-    },
-    {
-      "index": 44,
-      "text": "Applying a step twice is not neutral, and\nleaving a required step off is not",
-      "startSeconds": 170.22540962015506,
-      "endSeconds": 177.5443333410853,
-      "startFrame": 5106,
-      "endFrame": 5327
-    },
-    {
-      "index": 45,
-      "text": "repaired by a plausible activation map.",
-      "startSeconds": 177.5443333410853,
-      "endSeconds": 180.47190282945738,
-      "startFrame": 5326,
-      "endFrame": 5415
-    },
-    {
-      "index": 46,
-      "text": "The Registration tab controls mappings\nbetween functional, anatomical, and",
-      "startSeconds": 180.47190282945738,
-      "endSeconds": 184.86325706201552,
-      "startFrame": 5414,
-      "endFrame": 5546
-    },
-    {
-      "index": 47,
-      "text": "standard spaces.",
-      "startSeconds": 184.86325706201552,
-      "endSeconds": 185.83911355813956,
-      "startFrame": 5545,
-      "endFrame": 5576
-    },
-    {
-      "index": 48,
-      "text": "A completed transform only shows that an\noptimisation finished.",
-      "startSeconds": 185.83911355813953,
-      "endSeconds": 190.23046779069767,
-      "startFrame": 5575,
-      "endFrame": 5707
-    },
-    {
-      "index": 49,
-      "text": "Registration quality must still be checked\nvisually across the brain, including",
-      "startSeconds": 190.23046779069767,
-      "endSeconds": 195.59767851937985,
-      "startFrame": 5706,
-      "endFrame": 5868
-    },
-    {
-      "index": 50,
-      "text": "cortical boundaries, ventricles,\ncerebellum, and areas of incomplete",
-      "startSeconds": 195.59767851937983,
-      "endSeconds": 199.50110450387595,
-      "startFrame": 5867,
-      "endFrame": 5986
-    },
-    {
-      "index": 51,
-      "text": "functional coverage.",
-      "startSeconds": 199.50110450387598,
-      "endSeconds": 200.47696100000002,
-      "startFrame": 5985,
-      "endFrame": 6015
-    },
-    {
-      "index": 52,
-      "text": "The Stats tab defines the general linear\nmodel.",
-      "startSeconds": 200.476961,
-      "endSeconds": 204.3803869844961,
-      "startFrame": 6014,
-      "endFrame": 6132
-    },
-    {
-      "index": 53,
-      "text": "Here, explanatory variables represent task\nconditions or nuisance structure.",
-      "startSeconds": 204.3803869844961,
-      "endSeconds": 208.77174121705426,
-      "startFrame": 6131,
-      "endFrame": 6264
-    },
-    {
-      "index": 54,
-      "text": "Task timing can be convolved with a\nhaemodynamic response, contrasts encode",
-      "startSeconds": 208.77174121705426,
-      "endSeconds": 214.13895194573644,
-      "startFrame": 6263,
-      "endFrame": 6425
-    },
-    {
-      "index": 55,
-      "text": "planned hypotheses, and the design preview\nexposes the actual matrix FEAT will fit.",
-      "startSeconds": 214.13895194573644,
-      "endSeconds": 220.48201917054263,
-      "startFrame": 6424,
-      "endFrame": 6615
-    },
-    {
-      "index": 56,
-      "text": "Before running anything, the columns,\ntiming, correlations, and contrast weights",
-      "startSeconds": 220.48201917054263,
-      "endSeconds": 225.3613016511628,
-      "startFrame": 6614,
-      "endFrame": 6761
-    },
-    {
-      "index": 57,
-      "text": "must tell the same experimental story as\nthe protocol.",
-      "startSeconds": 225.3613016511628,
-      "endSeconds": 229.75265588372093,
-      "startFrame": 6760,
-      "endFrame": 6893
-    },
-    {
-      "index": 58,
-      "text": "The Post-stats tab controls thresholding\nand result reporting.",
-      "startSeconds": 229.75265588372093,
-      "endSeconds": 233.65608186821706,
-      "startFrame": 6892,
-      "endFrame": 7010
-    },
-    {
-      "index": 59,
-      "text": "It is tempting to start with bright\nclusters, but inference is only",
-      "startSeconds": 233.65608186821706,
-      "endSeconds": 239.51122084496126,
-      "startFrame": 7009,
-      "endFrame": 7186
-    },
-    {
-      "index": 60,
-      "text": "interpretable after the input,\npreprocessing, registration, and design",
-      "startSeconds": 239.51122084496126,
-      "endSeconds": 243.41464682945738,
-      "startFrame": 7185,
-      "endFrame": 7303
-    },
-    {
-      "index": 61,
-      "text": "have passed their own quality-control\nchecks.",
-      "startSeconds": 243.41464682945735,
-      "endSeconds": 246.34221631782944,
-      "startFrame": 7302,
-      "endFrame": 7391
-    },
-    {
-      "index": 62,
-      "text": "The Misc tab contains auxiliary settings\nand output options.",
-      "startSeconds": 246.34221631782947,
-      "endSeconds": 250.7335705503876,
-      "startFrame": 7390,
-      "endFrame": 7523
-    },
-    {
-      "index": 63,
-      "text": "Most projects use only a subset of them,\nbut they remain part of the saved design",
-      "startSeconds": 250.7335705503876,
-      "endSeconds": 258.54042251937983,
-      "startFrame": 7522,
-      "endFrame": 7757
-    },
-    {
-      "index": 64,
-      "text": "and should be reviewed when reproducing or\nauditing an analysis.",
-      "startSeconds": 258.54042251937983,
-      "endSeconds": 263.41970499999996,
-      "startFrame": 7756,
-      "endFrame": 7903
-    },
-    {
-      "index": 65,
-      "text": "The practical order is Data, Pre-stats,\nRegistration, Stats, Post-stats, and then",
-      "startSeconds": 264.269705,
-      "endSeconds": 269.3938840875,
-      "startFrame": 7928,
-      "endFrame": 8082
-    },
-    {
-      "index": 66,
-      "text": "Misc.",
-      "startSeconds": 269.3938840875,
-      "endSeconds": 269.85971855,
-      "startFrame": 8081,
-      "endFrame": 8096
-    },
-    {
-      "index": 67,
-      "text": "That order moves from the measured time\nseries, through preparation and spatial",
-      "startSeconds": 269.85971854999997,
-      "endSeconds": 275.44973209999995,
-      "startFrame": 8095,
-      "endFrame": 8264
-    },
-    {
-      "index": 68,
-      "text": "alignment, into the model and finally the\nreport.",
-      "startSeconds": 275.4497321,
-      "endSeconds": 279.1764078,
-      "startFrame": 8263,
-      "endFrame": 8376
-    },
-    {
-      "index": 69,
-      "text": "For now, leave the values unchanged.",
-      "startSeconds": 279.1764078,
-      "endSeconds": 281.971414575,
-      "startFrame": 8375,
-      "endFrame": 8460
-    },
-    {
-      "index": 70,
-      "text": "You have opened the intended FSL\nenvironment, launched FEAT, selected a",
-      "startSeconds": 281.971414575,
-      "endSeconds": 287.0955936625,
-      "startFrame": 8459,
-      "endFrame": 8613
-    },
-    {
-      "index": 71,
-      "text": "first-level scope, and identified what\neach tab controls.",
-      "startSeconds": 287.0955936625,
-      "endSeconds": 290.8222693625,
-      "startFrame": 8612,
-      "endFrame": 8725
-    },
-    {
-      "index": 72,
-      "text": "In the next walkthrough, we will configure\nthe Data tab using a real BOLD run and",
-      "startSeconds": 290.8222693625,
-      "endSeconds": 298.27562076249995,
-      "startFrame": 8724,
-      "endFrame": 8949
-    },
-    {
-      "index": 73,
-      "text": "verify every value against the source\nfiles.",
-      "startSeconds": 298.2756207625,
-      "endSeconds": 301.53646200000003,
-      "startFrame": 8948,
-      "endFrame": 9047
+  "voiceTracks": [
+    {
+      "voiceId": "daniel",
+      "displayName": "Daniel",
+      "accent": "UK English",
+      "locale": "en-GB",
+      "speechRate": 148,
+      "scenes": [
+        {
+          "id": "section-1",
+          "audioPath": "video-production/walkthroughs/opening-feat/audio-v3/daniel/section-1.m4a",
+          "audioSeconds": 49.42583333333334
+        },
+        {
+          "id": "section-2",
+          "audioPath": "video-production/walkthroughs/opening-feat/audio-v3/daniel/section-2.m4a",
+          "audioSeconds": 39.4413125
+        },
+        {
+          "id": "section-3",
+          "audioPath": "video-production/walkthroughs/opening-feat/audio-v3/daniel/section-3.m4a",
+          "audioSeconds": 45.4785
+        },
+        {
+          "id": "section-4",
+          "audioPath": "video-production/walkthroughs/opening-feat/audio-v3/daniel/section-4.m4a",
+          "audioSeconds": 124.97989583333333
+        },
+        {
+          "id": "section-5",
+          "audioPath": "video-production/walkthroughs/opening-feat/audio-v3/daniel/section-5.m4a",
+          "audioSeconds": 37.26675
+        }
+      ],
+      "cues": [
+        {
+          "index": 1,
+          "text": "In this walkthrough, we will open FEAT\ninside Neurodesk and build a map of its",
+          "startSeconds": 0,
+          "endSeconds": 6.928855140186916,
+          "startFrame": 0,
+          "endFrame": 208
+        },
+        {
+          "index": 2,
+          "text": "interface before changing any analysis\nsettings.",
+          "startSeconds": 6.928855140186916,
+          "endSeconds": 9.700397196261683,
+          "startFrame": 207,
+          "endFrame": 292
+        },
+        {
+          "index": 3,
+          "text": "FEAT is both a model-configuration\ninterface and a pipeline runner.",
+          "startSeconds": 9.700397196261683,
+          "endSeconds": 14.319633956386294,
+          "startFrame": 291,
+          "endFrame": 430
+        },
+        {
+          "index": 4,
+          "text": "The choices made here determine the data,\npreprocessing, registration, statistical",
+          "startSeconds": 14.319633956386294,
+          "endSeconds": 18.938870716510905,
+          "startFrame": 429,
+          "endFrame": 569
+        },
+        {
+          "index": 5,
+          "text": "model, and reporting steps that FSL will\nexecute.",
+          "startSeconds": 18.938870716510905,
+          "endSeconds": 22.634260124610595,
+          "startFrame": 568,
+          "endFrame": 680
+        },
+        {
+          "index": 6,
+          "text": "Begin on the Neurodesktop workspace.",
+          "startSeconds": 22.634260124610595,
+          "endSeconds": 24.943878504672902,
+          "startFrame": 679,
+          "endFrame": 749
+        },
+        {
+          "index": 7,
+          "text": "Open the Applications menu, choose\nNeurodesk, then Functional Imaging, FSL,",
+          "startSeconds": 24.943878504672902,
+          "endSeconds": 29.563115264797514,
+          "startFrame": 748,
+          "endFrame": 887
+        },
+        {
+          "index": 8,
+          "text": "and the approved FSL version.",
+          "startSeconds": 29.563115264797514,
+          "endSeconds": 31.87273364485982,
+          "startFrame": 886,
+          "endFrame": 957
+        },
+        {
+          "index": 9,
+          "text": "This versioned launcher prepares the\nenvironment so the FSL commands and",
+          "startSeconds": 31.87273364485982,
+          "endSeconds": 36.95389408099689,
+          "startFrame": 956,
+          "endFrame": 1109
+        },
+        {
+          "index": 10,
+          "text": "graphical tools are available in the\nterminal it opens.",
+          "startSeconds": 36.95389408099689,
+          "endSeconds": 41.111207165109036,
+          "startFrame": 1108,
+          "endFrame": 1234
+        },
+        {
+          "index": 11,
+          "text": "That is more reproducible than assuming\nthat a terminal outside this environment",
+          "startSeconds": 41.111207165109036,
+          "endSeconds": 46.654291277258565,
+          "startFrame": 1233,
+          "endFrame": 1400
+        },
+        {
+          "index": 12,
+          "text": "is using the intended FSL installation.",
+          "startSeconds": 46.654291277258565,
+          "endSeconds": 49.42583333333333,
+          "startFrame": 1399,
+          "endFrame": 1483
+        },
+        {
+          "index": 13,
+          "text": "At the prompt, enter `Feat`, with a\ncapital F, followed by an ampersand.",
+          "startSeconds": 56.333333333333336,
+          "endSeconds": 61.73056557017544,
+          "startFrame": 1690,
+          "endFrame": 1852
+        },
+        {
+          "index": 14,
+          "text": "The capitalised command starts the FEAT\ngraphical interface; the lower-case `feat`",
+          "startSeconds": 61.73056557017544,
+          "endSeconds": 66.29745438596491,
+          "startFrame": 1851,
+          "endFrame": 1989
+        },
+        {
+          "index": 15,
+          "text": "command expects a saved design file.",
+          "startSeconds": 66.29745438596491,
+          "endSeconds": 68.78848464912281,
+          "startFrame": 1988,
+          "endFrame": 2064
+        },
+        {
+          "index": 16,
+          "text": "The ampersand returns control of the\nterminal while the interface remains open.",
+          "startSeconds": 68.78848464912281,
+          "endSeconds": 73.7705451754386,
+          "startFrame": 2063,
+          "endFrame": 2214
+        },
+        {
+          "index": 17,
+          "text": "If the window takes a moment to appear,\nwait.",
+          "startSeconds": 73.7705451754386,
+          "endSeconds": 77.50709057017544,
+          "startFrame": 2213,
+          "endFrame": 2326
+        },
+        {
+          "index": 18,
+          "text": "Starting another copy simply because the\nlaunch is quiet can leave several",
+          "startSeconds": 77.50709057017545,
+          "endSeconds": 82.48915109649124,
+          "startFrame": 2325,
+          "endFrame": 2475
+        },
+        {
+          "index": 19,
+          "text": "indistinguishable FEAT windows open.",
+          "startSeconds": 82.48915109649124,
+          "endSeconds": 84.1498379385965,
+          "startFrame": 2474,
+          "endFrame": 2525
+        },
+        {
+          "index": 20,
+          "text": "FEAT may remember settings from an earlier\nsession, so treat every value as something",
+          "startSeconds": 84.1498379385965,
+          "endSeconds": 89.96224188596493,
+          "startFrame": 2524,
+          "endFrame": 2699
+        },
+        {
+          "index": 21,
+          "text": "to verify.",
+          "startSeconds": 89.96224188596491,
+          "endSeconds": 90.79258530701755,
+          "startFrame": 2698,
+          "endFrame": 2724
+        },
+        {
+          "index": 22,
+          "text": "A familiar-looking interface is not\nevidence that the current design is safe.",
+          "startSeconds": 90.79258530701756,
+          "endSeconds": 95.77464583333335,
+          "startFrame": 2723,
+          "endFrame": 2874
+        },
+        {
+          "index": 23,
+          "text": "At the top of FEAT, select First-level\nanalysis.",
+          "startSeconds": 100.43333333333334,
+          "endSeconds": 104.22320833333333,
+          "startFrame": 3013,
+          "endFrame": 3127
+        },
+        {
+          "index": 24,
+          "text": "First level means one run from one\nparticipant.",
+          "startSeconds": 104.22320833333333,
+          "endSeconds": 108.01308333333333,
+          "startFrame": 3126,
+          "endFrame": 3241
+        },
+        {
+          "index": 25,
+          "text": "It is not a within-subject combination\nacross runs, and it is not a group",
+          "startSeconds": 108.01308333333334,
+          "endSeconds": 114.64536458333335,
+          "startFrame": 3240,
+          "endFrame": 3440
+        },
+        {
+          "index": 26,
+          "text": "analysis.",
+          "startSeconds": 114.64536458333333,
+          "endSeconds": 115.11909895833334,
+          "startFrame": 3439,
+          "endFrame": 3454
+        },
+        {
+          "index": 27,
+          "text": "Keeping that unit explicit prevents\nparticipant-specific results from being",
+          "startSeconds": 115.11909895833334,
+          "endSeconds": 119.38270833333334,
+          "startFrame": 3453,
+          "endFrame": 3582
+        },
+        {
+          "index": 28,
+          "text": "described as population conclusions.",
+          "startSeconds": 119.38270833333334,
+          "endSeconds": 121.27764583333334,
+          "startFrame": 3581,
+          "endFrame": 3639
+        },
+        {
+          "index": 29,
+          "text": "Next, select Full analysis for this\norientation.",
+          "startSeconds": 121.27764583333334,
+          "endSeconds": 124.59378645833334,
+          "startFrame": 3638,
+          "endFrame": 3738
+        },
+        {
+          "index": 30,
+          "text": "Full analysis exposes the steps used to\nprepare and model a run.",
+          "startSeconds": 124.59378645833334,
+          "endSeconds": 130.27859895833333,
+          "startFrame": 3737,
+          "endFrame": 3909
+        },
+        {
+          "index": 31,
+          "text": "This is a scope choice, not a universal\nrecommendation.",
+          "startSeconds": 130.27859895833333,
+          "endSeconds": 134.54220833333332,
+          "startFrame": 3908,
+          "endFrame": 4037
+        },
+        {
+          "index": 32,
+          "text": "If the input has already been\npreprocessed, the workflow must be",
+          "startSeconds": 134.54220833333335,
+          "endSeconds": 139.75328645833335,
+          "startFrame": 4036,
+          "endFrame": 4193
+        },
+        {
+          "index": 33,
+          "text": "adjusted so that motion correction,\nsmoothing, filtering, or registration are",
+          "startSeconds": 139.75328645833332,
+          "endSeconds": 144.49063020833333,
+          "startFrame": 4192,
+          "endFrame": 4335
+        },
+        {
+          "index": 34,
+          "text": "not repeated unintentionally.",
+          "startSeconds": 144.49063020833333,
+          "endSeconds": 145.91183333333333,
+          "startFrame": 4334,
+          "endFrame": 4378
+        },
+        {
+          "index": 35,
+          "text": "The Data tab establishes the identity of\nthe model.",
+          "startSeconds": 149.2,
+          "endSeconds": 153.55976380813954,
+          "startFrame": 4476,
+          "endFrame": 4607
+        },
+        {
+          "index": 36,
+          "text": "It contains the four-dimensional\nfunctional input, repetition time, number",
+          "startSeconds": 153.55976380813954,
+          "endSeconds": 157.91952761627908,
+          "startFrame": 4606,
+          "endFrame": 4738
+        },
+        {
+          "index": 37,
+          "text": "of volumes, and output directory.",
+          "startSeconds": 157.91952761627905,
+          "endSeconds": 160.34161862080103,
+          "startFrame": 4737,
+          "endFrame": 4811
+        },
+        {
+          "index": 38,
+          "text": "These values connect image sampling to\nexperimental timing.",
+          "startSeconds": 160.34161862080103,
+          "endSeconds": 164.21696422803618,
+          "startFrame": 4810,
+          "endFrame": 4927
+        },
+        {
+          "index": 39,
+          "text": "Later, we will verify them against the\nimage header and BIDS metadata before",
+          "startSeconds": 164.21696422803618,
+          "endSeconds": 170.51440083979327,
+          "startFrame": 4926,
+          "endFrame": 5116
+        },
+        {
+          "index": 40,
+          "text": "entering them.",
+          "startSeconds": 170.51440083979327,
+          "endSeconds": 171.48323724160204,
+          "startFrame": 5115,
+          "endFrame": 5145
+        },
+        {
+          "index": 41,
+          "text": "The Pre-stats tab controls preprocessing\noperations such as motion correction,",
+          "startSeconds": 171.48323724160207,
+          "endSeconds": 176.327419250646,
+          "startFrame": 5144,
+          "endFrame": 5290
+        },
+        {
+          "index": 42,
+          "text": "brain extraction, spatial smoothing, and\ntemporal filtering.",
+          "startSeconds": 176.327419250646,
+          "endSeconds": 179.71834665697673,
+          "startFrame": 5289,
+          "endFrame": 5392
+        },
+        {
+          "index": 43,
+          "text": "These are scientific decisions.",
+          "startSeconds": 179.71834665697673,
+          "endSeconds": 181.6560194605943,
+          "startFrame": 5391,
+          "endFrame": 5450
+        },
+        {
+          "index": 44,
+          "text": "Applying a step twice is not neutral, and\nleaving a required step off is not",
+          "startSeconds": 181.6560194605943,
+          "endSeconds": 188.9222924741602,
+          "startFrame": 5449,
+          "endFrame": 5668
+        },
+        {
+          "index": 45,
+          "text": "repaired by a plausible activation map.",
+          "startSeconds": 188.9222924741602,
+          "endSeconds": 191.82880167958655,
+          "startFrame": 5667,
+          "endFrame": 5755
+        },
+        {
+          "index": 46,
+          "text": "The Registration tab controls mappings\nbetween functional, anatomical, and",
+          "startSeconds": 191.82880167958655,
+          "endSeconds": 196.1885654877261,
+          "startFrame": 5754,
+          "endFrame": 5886
+        },
+        {
+          "index": 47,
+          "text": "standard spaces.",
+          "startSeconds": 196.18856548772607,
+          "endSeconds": 197.15740188953484,
+          "startFrame": 5885,
+          "endFrame": 5915
+        },
+        {
+          "index": 48,
+          "text": "A completed transform only shows that an\noptimisation finished.",
+          "startSeconds": 197.15740188953487,
+          "endSeconds": 201.51716569767441,
+          "startFrame": 5914,
+          "endFrame": 6046
+        },
+        {
+          "index": 49,
+          "text": "Registration quality must still be checked\nvisually across the brain, including",
+          "startSeconds": 201.5171656976744,
+          "endSeconds": 206.8457659076227,
+          "startFrame": 6045,
+          "endFrame": 6206
+        },
+        {
+          "index": 50,
+          "text": "cortical boundaries, ventricles,\ncerebellum, and areas of incomplete",
+          "startSeconds": 206.8457659076227,
+          "endSeconds": 210.72111151485785,
+          "startFrame": 6205,
+          "endFrame": 6322
+        },
+        {
+          "index": 51,
+          "text": "functional coverage.",
+          "startSeconds": 210.72111151485785,
+          "endSeconds": 211.68994791666663,
+          "startFrame": 6321,
+          "endFrame": 6351
+        },
+        {
+          "index": 52,
+          "text": "The Stats tab defines the general linear\nmodel.",
+          "startSeconds": 211.68994791666665,
+          "endSeconds": 215.5652935239018,
+          "startFrame": 6350,
+          "endFrame": 6467
+        },
+        {
+          "index": 53,
+          "text": "Here, explanatory variables represent task\nconditions or nuisance structure.",
+          "startSeconds": 215.5652935239018,
+          "endSeconds": 219.92505733204135,
+          "startFrame": 6466,
+          "endFrame": 6598
+        },
+        {
+          "index": 54,
+          "text": "Task timing can be convolved with a\nhaemodynamic response, contrasts encode",
+          "startSeconds": 219.92505733204132,
+          "endSeconds": 225.25365754198964,
+          "startFrame": 6597,
+          "endFrame": 6758
+        },
+        {
+          "index": 55,
+          "text": "planned hypotheses, and the design preview\nexposes the actual matrix FEAT will fit.",
+          "startSeconds": 225.25365754198964,
+          "endSeconds": 231.55109415374673,
+          "startFrame": 6757,
+          "endFrame": 6947
+        },
+        {
+          "index": 56,
+          "text": "Before running anything, the columns,\ntiming, correlations, and contrast weights",
+          "startSeconds": 231.55109415374676,
+          "endSeconds": 236.39527616279068,
+          "startFrame": 6946,
+          "endFrame": 7092
+        },
+        {
+          "index": 57,
+          "text": "must tell the same experimental story as\nthe protocol.",
+          "startSeconds": 236.39527616279068,
+          "endSeconds": 240.75503997093023,
+          "startFrame": 7091,
+          "endFrame": 7223
+        },
+        {
+          "index": 58,
+          "text": "The Post-stats tab controls thresholding\nand result reporting.",
+          "startSeconds": 240.75503997093023,
+          "endSeconds": 244.63038557816537,
+          "startFrame": 7222,
+          "endFrame": 7339
+        },
+        {
+          "index": 59,
+          "text": "It is tempting to start with bright\nclusters, but inference is only",
+          "startSeconds": 244.63038557816537,
+          "endSeconds": 250.4434039890181,
+          "startFrame": 7338,
+          "endFrame": 7514
+        },
+        {
+          "index": 60,
+          "text": "interpretable after the input,\npreprocessing, registration, and design",
+          "startSeconds": 250.44340398901807,
+          "endSeconds": 254.3187495962532,
+          "startFrame": 7513,
+          "endFrame": 7630
+        },
+        {
+          "index": 61,
+          "text": "have passed their own quality-control\nchecks.",
+          "startSeconds": 254.3187495962532,
+          "endSeconds": 257.22525880167956,
+          "startFrame": 7629,
+          "endFrame": 7717
+        },
+        {
+          "index": 62,
+          "text": "The Misc tab contains auxiliary settings\nand output options.",
+          "startSeconds": 257.22525880167956,
+          "endSeconds": 261.5850226098191,
+          "startFrame": 7716,
+          "endFrame": 7848
+        },
+        {
+          "index": 63,
+          "text": "Most projects use only a subset of them,\nbut they remain part of the saved design",
+          "startSeconds": 261.58502260981913,
+          "endSeconds": 269.3357138242894,
+          "startFrame": 7847,
+          "endFrame": 8081
+        },
+        {
+          "index": 64,
+          "text": "and should be reviewed when reproducing or\nauditing an analysis.",
+          "startSeconds": 269.33571382428937,
+          "endSeconds": 274.1798958333333,
+          "startFrame": 8080,
+          "endFrame": 8226
+        },
+        {
+          "index": 65,
+          "text": "The practical order is Data, Pre-stats,\nRegistration, Stats, Post-stats, and then",
+          "startSeconds": 285.5333333333333,
+          "endSeconds": 290.6575114583333,
+          "startFrame": 8566,
+          "endFrame": 8720
+        },
+        {
+          "index": 66,
+          "text": "Misc.",
+          "startSeconds": 290.6575114583333,
+          "endSeconds": 291.1233458333333,
+          "startFrame": 8719,
+          "endFrame": 8734
+        },
+        {
+          "index": 67,
+          "text": "That order moves from the measured time\nseries, through preparation and spatial",
+          "startSeconds": 291.1233458333333,
+          "endSeconds": 296.7133583333333,
+          "startFrame": 8733,
+          "endFrame": 8902
+        },
+        {
+          "index": 68,
+          "text": "alignment, into the model and finally the\nreport.",
+          "startSeconds": 296.7133583333333,
+          "endSeconds": 300.4400333333333,
+          "startFrame": 8901,
+          "endFrame": 9014
+        },
+        {
+          "index": 69,
+          "text": "For now, leave the values unchanged.",
+          "startSeconds": 300.4400333333333,
+          "endSeconds": 303.23503958333333,
+          "startFrame": 9013,
+          "endFrame": 9098
+        },
+        {
+          "index": 70,
+          "text": "You have opened the intended FSL\nenvironment, launched FEAT, selected a",
+          "startSeconds": 303.23503958333333,
+          "endSeconds": 308.35921770833335,
+          "startFrame": 9097,
+          "endFrame": 9251
+        },
+        {
+          "index": 71,
+          "text": "first-level scope, and identified what\neach tab controls.",
+          "startSeconds": 308.3592177083333,
+          "endSeconds": 312.0858927083333,
+          "startFrame": 9250,
+          "endFrame": 9363
+        },
+        {
+          "index": 72,
+          "text": "In the next walkthrough, we will configure\nthe Data tab using a real BOLD run and",
+          "startSeconds": 312.0858927083333,
+          "endSeconds": 319.5392427083333,
+          "startFrame": 9362,
+          "endFrame": 9587
+        },
+        {
+          "index": 73,
+          "text": "verify every value against the source\nfiles.",
+          "startSeconds": 319.5392427083333,
+          "endSeconds": 322.8000833333333,
+          "startFrame": 9586,
+          "endFrame": 9685
+        }
+      ],
+      "qc": [
+        {
+          "sceneId": "section-1",
+          "sourcePeakDbfs": -0.7590590734570419,
+          "sourceNoiseFloorDbfs": -44.334367031879154,
+          "clippedSamples": 0,
+          "integratedLufs": -16.29,
+          "truePeakDb": -4.2,
+          "loudnessRange": 2.6,
+          "clippingPassed": true,
+          "loudnessPassed": true
+        },
+        {
+          "sceneId": "section-2",
+          "sourcePeakDbfs": -1.2603487142673209,
+          "sourceNoiseFloorDbfs": -46.884362712115966,
+          "clippedSamples": 0,
+          "integratedLufs": -16.11,
+          "truePeakDb": -4.33,
+          "loudnessRange": 2.4,
+          "clippingPassed": true,
+          "loudnessPassed": true
+        },
+        {
+          "sceneId": "section-3",
+          "sourcePeakDbfs": -1.9300499753485418,
+          "sourceNoiseFloorDbfs": -51.228455136098916,
+          "clippedSamples": 0,
+          "integratedLufs": -16.3,
+          "truePeakDb": -4.27,
+          "loudnessRange": 2,
+          "clippingPassed": true,
+          "loudnessPassed": true
+        },
+        {
+          "sceneId": "section-4",
+          "sourcePeakDbfs": -1.1883162970800145,
+          "sourceNoiseFloorDbfs": -52.818060703010765,
+          "clippedSamples": 0,
+          "integratedLufs": -16.46,
+          "truePeakDb": -4.22,
+          "loudnessRange": 2.6,
+          "clippingPassed": true,
+          "loudnessPassed": true
+        },
+        {
+          "sceneId": "section-5",
+          "sourcePeakDbfs": -1.9542655165387273,
+          "sourceNoiseFloorDbfs": -62.12027558039706,
+          "clippedSamples": 0,
+          "integratedLufs": -16.21,
+          "truePeakDb": -4.27,
+          "loudnessRange": 3.3,
+          "clippingPassed": true,
+          "loudnessPassed": true
+        }
+      ]
+    },
+    {
+      "voiceId": "samantha",
+      "displayName": "Samantha",
+      "accent": "US English",
+      "locale": "en-US",
+      "speechRate": 158,
+      "scenes": [
+        {
+          "id": "section-1",
+          "audioPath": "video-production/walkthroughs/opening-feat/audio-v3/samantha/section-1.m4a",
+          "audioSeconds": 43.09283333333333
+        },
+        {
+          "id": "section-2",
+          "audioPath": "video-production/walkthroughs/opening-feat/audio-v3/samantha/section-2.m4a",
+          "audioSeconds": 34.68725
+        },
+        {
+          "id": "section-3",
+          "audioPath": "video-production/walkthroughs/opening-feat/audio-v3/samantha/section-3.m4a",
+          "audioSeconds": 39.05260416666667
+        },
+        {
+          "id": "section-4",
+          "audioPath": "video-production/walkthroughs/opening-feat/audio-v3/samantha/section-4.m4a",
+          "audioSeconds": 108.69304166666667
+        },
+        {
+          "id": "section-5",
+          "audioPath": "video-production/walkthroughs/opening-feat/audio-v3/samantha/section-5.m4a",
+          "audioSeconds": 31.742125
+        }
+      ],
+      "cues": [
+        {
+          "index": 1,
+          "text": "In this walkthrough, we will open FEAT\ninside Neurodesk and build a map of its",
+          "startSeconds": 0,
+          "endSeconds": 6.041051401869158,
+          "startFrame": 0,
+          "endFrame": 182
+        },
+        {
+          "index": 2,
+          "text": "interface before changing any analysis\nsettings.",
+          "startSeconds": 6.041051401869158,
+          "endSeconds": 8.457471962616822,
+          "startFrame": 181,
+          "endFrame": 254
+        },
+        {
+          "index": 3,
+          "text": "FEAT is both a model-configuration\ninterface and a pipeline runner.",
+          "startSeconds": 8.457471962616822,
+          "endSeconds": 12.484839563862927,
+          "startFrame": 253,
+          "endFrame": 375
+        },
+        {
+          "index": 4,
+          "text": "The choices made here determine the data,\npreprocessing, registration, statistical",
+          "startSeconds": 12.484839563862927,
+          "endSeconds": 16.512207165109032,
+          "startFrame": 374,
+          "endFrame": 496
+        },
+        {
+          "index": 5,
+          "text": "model, and reporting steps that FSL will\nexecute.",
+          "startSeconds": 16.512207165109032,
+          "endSeconds": 19.734101246105915,
+          "startFrame": 495,
+          "endFrame": 593
+        },
+        {
+          "index": 6,
+          "text": "Begin on the Neurodesktop workspace.",
+          "startSeconds": 19.734101246105915,
+          "endSeconds": 21.747785046728968,
+          "startFrame": 592,
+          "endFrame": 653
+        },
+        {
+          "index": 7,
+          "text": "Open the Applications menu, choose\nNeurodesk, then Functional Imaging, FSL,",
+          "startSeconds": 21.747785046728968,
+          "endSeconds": 25.775152647975073,
+          "startFrame": 652,
+          "endFrame": 774
+        },
+        {
+          "index": 8,
+          "text": "and the approved FSL version.",
+          "startSeconds": 25.775152647975073,
+          "endSeconds": 27.788836448598126,
+          "startFrame": 773,
+          "endFrame": 834
+        },
+        {
+          "index": 9,
+          "text": "This versioned launcher prepares the\nenvironment so the FSL commands and",
+          "startSeconds": 27.788836448598126,
+          "endSeconds": 32.21894080996884,
+          "startFrame": 833,
+          "endFrame": 967
+        },
+        {
+          "index": 10,
+          "text": "graphical tools are available in the\nterminal it opens.",
+          "startSeconds": 32.21894080996884,
+          "endSeconds": 35.843571651090336,
+          "startFrame": 966,
+          "endFrame": 1076
+        },
+        {
+          "index": 11,
+          "text": "That is more reproducible than assuming\nthat a terminal outside this environment",
+          "startSeconds": 35.843571651090336,
+          "endSeconds": 40.676412772585664,
+          "startFrame": 1075,
+          "endFrame": 1221
+        },
+        {
+          "index": 12,
+          "text": "is using the intended FSL installation.",
+          "startSeconds": 40.676412772585664,
+          "endSeconds": 43.092833333333324,
+          "startFrame": 1220,
+          "endFrame": 1293
+        },
+        {
+          "index": 13,
+          "text": "At the prompt, enter `Feat`, with a\ncapital F, followed by an ampersand.",
+          "startSeconds": 56.333333333333336,
+          "endSeconds": 61.08000964912281,
+          "startFrame": 1690,
+          "endFrame": 1833
+        },
+        {
+          "index": 14,
+          "text": "The capitalised command starts the FEAT\ngraphical interface; the lower-case `feat`",
+          "startSeconds": 61.08000964912281,
+          "endSeconds": 65.09642807017543,
+          "startFrame": 1832,
+          "endFrame": 1953
+        },
+        {
+          "index": 15,
+          "text": "command expects a saved design file.",
+          "startSeconds": 65.09642807017545,
+          "endSeconds": 67.28720175438598,
+          "startFrame": 1952,
+          "endFrame": 2019
+        },
+        {
+          "index": 16,
+          "text": "The ampersand returns control of the\nterminal while the interface remains open.",
+          "startSeconds": 67.28720175438596,
+          "endSeconds": 71.66874912280701,
+          "startFrame": 2018,
+          "endFrame": 2151
+        },
+        {
+          "index": 17,
+          "text": "If the window takes a moment to appear,\nwait.",
+          "startSeconds": 71.66874912280701,
+          "endSeconds": 74.9549096491228,
+          "startFrame": 2150,
+          "endFrame": 2249
+        },
+        {
+          "index": 18,
+          "text": "Starting another copy simply because the\nlaunch is quiet can leave several",
+          "startSeconds": 74.95490964912281,
+          "endSeconds": 79.33645701754386,
+          "startFrame": 2248,
+          "endFrame": 2381
+        },
+        {
+          "index": 19,
+          "text": "indistinguishable FEAT windows open.",
+          "startSeconds": 79.33645701754386,
+          "endSeconds": 80.79697280701755,
+          "startFrame": 2380,
+          "endFrame": 2424
+        },
+        {
+          "index": 20,
+          "text": "FEAT may remember settings from an earlier\nsession, so treat every value as something",
+          "startSeconds": 80.79697280701755,
+          "endSeconds": 85.90877807017544,
+          "startFrame": 2423,
+          "endFrame": 2578
+        },
+        {
+          "index": 21,
+          "text": "to verify.",
+          "startSeconds": 85.90877807017544,
+          "endSeconds": 86.63903596491228,
+          "startFrame": 2577,
+          "endFrame": 2600
+        },
+        {
+          "index": 22,
+          "text": "A familiar-looking interface is not\nevidence that the current design is safe.",
+          "startSeconds": 86.63903596491228,
+          "endSeconds": 91.02058333333333,
+          "startFrame": 2599,
+          "endFrame": 2731
+        },
+        {
+          "index": 23,
+          "text": "At the top of FEAT, select First-level\nanalysis.",
+          "startSeconds": 100.43333333333334,
+          "endSeconds": 103.68771701388889,
+          "startFrame": 3013,
+          "endFrame": 3111
+        },
+        {
+          "index": 24,
+          "text": "First level means one run from one\nparticipant.",
+          "startSeconds": 103.68771701388889,
+          "endSeconds": 106.94210069444443,
+          "startFrame": 3110,
+          "endFrame": 3209
+        },
+        {
+          "index": 25,
+          "text": "It is not a within-subject combination\nacross runs, and it is not a group",
+          "startSeconds": 106.94210069444445,
+          "endSeconds": 112.63727213541667,
+          "startFrame": 3208,
+          "endFrame": 3380
+        },
+        {
+          "index": 26,
+          "text": "analysis.",
+          "startSeconds": 112.63727213541667,
+          "endSeconds": 113.0440700954861,
+          "startFrame": 3379,
+          "endFrame": 3392
+        },
+        {
+          "index": 27,
+          "text": "Keeping that unit explicit prevents\nparticipant-specific results from being",
+          "startSeconds": 113.04407009548612,
+          "endSeconds": 116.70525173611112,
+          "startFrame": 3391,
+          "endFrame": 3502
+        },
+        {
+          "index": 28,
+          "text": "described as population conclusions.",
+          "startSeconds": 116.70525173611111,
+          "endSeconds": 118.33244357638888,
+          "startFrame": 3501,
+          "endFrame": 3550
+        },
+        {
+          "index": 29,
+          "text": "Next, select Full analysis for this\norientation.",
+          "startSeconds": 118.3324435763889,
+          "endSeconds": 121.180029296875,
+          "startFrame": 3549,
+          "endFrame": 3636
+        },
+        {
+          "index": 30,
+          "text": "Full analysis exposes the steps used to\nprepare and model a run.",
+          "startSeconds": 121.180029296875,
+          "endSeconds": 126.06160481770834,
+          "startFrame": 3635,
+          "endFrame": 3782
+        },
+        {
+          "index": 31,
+          "text": "This is a scope choice, not a universal\nrecommendation.",
+          "startSeconds": 126.06160481770834,
+          "endSeconds": 129.72278645833333,
+          "startFrame": 3781,
+          "endFrame": 3892
+        },
+        {
+          "index": 32,
+          "text": "If the input has already been\npreprocessed, the workflow must be",
+          "startSeconds": 129.72278645833333,
+          "endSeconds": 134.19756401909723,
+          "startFrame": 3891,
+          "endFrame": 4026
+        },
+        {
+          "index": 33,
+          "text": "adjusted so that motion correction,\nsmoothing, filtering, or registration are",
+          "startSeconds": 134.19756401909723,
+          "endSeconds": 138.26554361979169,
+          "startFrame": 4025,
+          "endFrame": 4148
+        },
+        {
+          "index": 34,
+          "text": "not repeated unintentionally.",
+          "startSeconds": 138.26554361979169,
+          "endSeconds": 139.4859375,
+          "startFrame": 4147,
+          "endFrame": 4185
+        },
+        {
+          "index": 35,
+          "text": "The Data tab establishes the identity of\nthe model.",
+          "startSeconds": 149.2,
+          "endSeconds": 152.99161773255813,
+          "startFrame": 4476,
+          "endFrame": 4590
+        },
+        {
+          "index": 36,
+          "text": "It contains the four-dimensional\nfunctional input, repetition time, number",
+          "startSeconds": 152.99161773255813,
+          "endSeconds": 156.78323546511626,
+          "startFrame": 4589,
+          "endFrame": 4704
+        },
+        {
+          "index": 37,
+          "text": "of volumes, and output directory.",
+          "startSeconds": 156.78323546511626,
+          "endSeconds": 158.8896897609819,
+          "startFrame": 4703,
+          "endFrame": 4767
+        },
+        {
+          "index": 38,
+          "text": "These values connect image sampling to\nexperimental timing.",
+          "startSeconds": 158.8896897609819,
+          "endSeconds": 162.2600166343669,
+          "startFrame": 4766,
+          "endFrame": 4868
+        },
+        {
+          "index": 39,
+          "text": "Later, we will verify them against the\nimage header and BIDS metadata before",
+          "startSeconds": 162.2600166343669,
+          "endSeconds": 167.73679780361755,
+          "startFrame": 4867,
+          "endFrame": 5033
+        },
+        {
+          "index": 40,
+          "text": "entering them.",
+          "startSeconds": 167.73679780361755,
+          "endSeconds": 168.5793795219638,
+          "startFrame": 5032,
+          "endFrame": 5058
+        },
+        {
+          "index": 41,
+          "text": "The Pre-stats tab controls preprocessing\noperations such as motion correction,",
+          "startSeconds": 168.5793795219638,
+          "endSeconds": 172.79228811369507,
+          "startFrame": 5057,
+          "endFrame": 5184
+        },
+        {
+          "index": 42,
+          "text": "brain extraction, spatial smoothing, and\ntemporal filtering.",
+          "startSeconds": 172.79228811369507,
+          "endSeconds": 175.74132412790695,
+          "startFrame": 5183,
+          "endFrame": 5273
+        },
+        {
+          "index": 43,
+          "text": "These are scientific decisions.",
+          "startSeconds": 175.74132412790698,
+          "endSeconds": 177.42648756459948,
+          "startFrame": 5272,
+          "endFrame": 5323
+        },
+        {
+          "index": 44,
+          "text": "Applying a step twice is not neutral, and\nleaving a required step off is not",
+          "startSeconds": 177.42648756459948,
+          "endSeconds": 183.74585045219638,
+          "startFrame": 5322,
+          "endFrame": 5513
+        },
+        {
+          "index": 45,
+          "text": "repaired by a plausible activation map.",
+          "startSeconds": 183.74585045219638,
+          "endSeconds": 186.27359560723514,
+          "startFrame": 5512,
+          "endFrame": 5589
+        },
+        {
+          "index": 46,
+          "text": "The Registration tab controls mappings\nbetween functional, anatomical, and",
+          "startSeconds": 186.27359560723514,
+          "endSeconds": 190.06521333979327,
+          "startFrame": 5588,
+          "endFrame": 5702
+        },
+        {
+          "index": 47,
+          "text": "standard spaces.",
+          "startSeconds": 190.06521333979327,
+          "endSeconds": 190.90779505813953,
+          "startFrame": 5701,
+          "endFrame": 5728
+        },
+        {
+          "index": 48,
+          "text": "A completed transform only shows that an\noptimisation finished.",
+          "startSeconds": 190.90779505813953,
+          "endSeconds": 194.69941279069766,
+          "startFrame": 5727,
+          "endFrame": 5841
+        },
+        {
+          "index": 49,
+          "text": "Registration quality must still be checked\nvisually across the brain, including",
+          "startSeconds": 194.69941279069766,
+          "endSeconds": 199.33361224160205,
+          "startFrame": 5840,
+          "endFrame": 5981
+        },
+        {
+          "index": 50,
+          "text": "cortical boundaries, ventricles,\ncerebellum, and areas of incomplete",
+          "startSeconds": 199.33361224160205,
+          "endSeconds": 202.70393911498707,
+          "startFrame": 5980,
+          "endFrame": 6082
+        },
+        {
+          "index": 51,
+          "text": "functional coverage.",
+          "startSeconds": 202.70393911498707,
+          "endSeconds": 203.54652083333332,
+          "startFrame": 6081,
+          "endFrame": 6107
+        },
+        {
+          "index": 52,
+          "text": "The Stats tab defines the general linear\nmodel.",
+          "startSeconds": 203.54652083333332,
+          "endSeconds": 206.91684770671833,
+          "startFrame": 6106,
+          "endFrame": 6208
+        },
+        {
+          "index": 53,
+          "text": "Here, explanatory variables represent task\nconditions or nuisance structure.",
+          "startSeconds": 206.91684770671833,
+          "endSeconds": 210.70846543927647,
+          "startFrame": 6207,
+          "endFrame": 6322
+        },
+        {
+          "index": 54,
+          "text": "Task timing can be convolved with a\nhaemodynamic response, contrasts encode",
+          "startSeconds": 210.70846543927647,
+          "endSeconds": 215.34266489018086,
+          "startFrame": 6321,
+          "endFrame": 6461
+        },
+        {
+          "index": 55,
+          "text": "planned hypotheses, and the design preview\nexposes the actual matrix FEAT will fit.",
+          "startSeconds": 215.34266489018086,
+          "endSeconds": 220.8194460594315,
+          "startFrame": 6460,
+          "endFrame": 6625
+        },
+        {
+          "index": 56,
+          "text": "Before running anything, the columns,\ntiming, correlations, and contrast weights",
+          "startSeconds": 220.8194460594315,
+          "endSeconds": 225.03235465116276,
+          "startFrame": 6624,
+          "endFrame": 6751
+        },
+        {
+          "index": 57,
+          "text": "must tell the same experimental story as\nthe protocol.",
+          "startSeconds": 225.03235465116276,
+          "endSeconds": 228.8239723837209,
+          "startFrame": 6750,
+          "endFrame": 6865
+        },
+        {
+          "index": 58,
+          "text": "The Post-stats tab controls thresholding\nand result reporting.",
+          "startSeconds": 228.8239723837209,
+          "endSeconds": 232.1942992571059,
+          "startFrame": 6864,
+          "endFrame": 6966
+        },
+        {
+          "index": 59,
+          "text": "It is tempting to start with bright\nclusters, but inference is only",
+          "startSeconds": 232.1942992571059,
+          "endSeconds": 237.24978956718343,
+          "startFrame": 6965,
+          "endFrame": 7118
+        },
+        {
+          "index": 60,
+          "text": "interpretable after the input,\npreprocessing, registration, and design",
+          "startSeconds": 237.24978956718343,
+          "endSeconds": 240.62011644056844,
+          "startFrame": 7117,
+          "endFrame": 7219
+        },
+        {
+          "index": 61,
+          "text": "have passed their own quality-control\nchecks.",
+          "startSeconds": 240.62011644056844,
+          "endSeconds": 243.1478615956072,
+          "startFrame": 7218,
+          "endFrame": 7295
+        },
+        {
+          "index": 62,
+          "text": "The Misc tab contains auxiliary settings\nand output options.",
+          "startSeconds": 243.1478615956072,
+          "endSeconds": 246.93947932816533,
+          "startFrame": 7294,
+          "endFrame": 7409
+        },
+        {
+          "index": 63,
+          "text": "Most projects use only a subset of them,\nbut they remain part of the saved design",
+          "startSeconds": 246.93947932816533,
+          "endSeconds": 253.68013307493536,
+          "startFrame": 7408,
+          "endFrame": 7611
+        },
+        {
+          "index": 64,
+          "text": "and should be reviewed when reproducing or\nauditing an analysis.",
+          "startSeconds": 253.68013307493536,
+          "endSeconds": 257.89304166666665,
+          "startFrame": 7610,
+          "endFrame": 7737
+        },
+        {
+          "index": 65,
+          "text": "The practical order is Data, Pre-stats,\nRegistration, Stats, Post-stats, and then",
+          "startSeconds": 285.5333333333333,
+          "endSeconds": 289.8978755208333,
+          "startFrame": 8566,
+          "endFrame": 8697
+        },
+        {
+          "index": 66,
+          "text": "Misc.",
+          "startSeconds": 289.8978755208333,
+          "endSeconds": 290.2946520833333,
+          "startFrame": 8696,
+          "endFrame": 8709
+        },
+        {
+          "index": 67,
+          "text": "That order moves from the measured time\nseries, through preparation and spatial",
+          "startSeconds": 290.2946520833333,
+          "endSeconds": 295.0559708333333,
+          "startFrame": 8708,
+          "endFrame": 8852
+        },
+        {
+          "index": 68,
+          "text": "alignment, into the model and finally the\nreport.",
+          "startSeconds": 295.0559708333333,
+          "endSeconds": 298.2301833333333,
+          "startFrame": 8851,
+          "endFrame": 8947
+        },
+        {
+          "index": 69,
+          "text": "For now, leave the values unchanged.",
+          "startSeconds": 298.2301833333333,
+          "endSeconds": 300.6108427083333,
+          "startFrame": 8946,
+          "endFrame": 9019
+        },
+        {
+          "index": 70,
+          "text": "You have opened the intended FSL\nenvironment, launched FEAT, selected a",
+          "startSeconds": 300.6108427083333,
+          "endSeconds": 304.97538489583326,
+          "startFrame": 9018,
+          "endFrame": 9150
+        },
+        {
+          "index": 71,
+          "text": "first-level scope, and identified what\neach tab controls.",
+          "startSeconds": 304.9753848958333,
+          "endSeconds": 308.1495973958333,
+          "startFrame": 9149,
+          "endFrame": 9245
+        },
+        {
+          "index": 72,
+          "text": "In the next walkthrough, we will configure\nthe Data tab using a real BOLD run and",
+          "startSeconds": 308.1495973958333,
+          "endSeconds": 314.49802239583335,
+          "startFrame": 9244,
+          "endFrame": 9435
+        },
+        {
+          "index": 73,
+          "text": "verify every value against the source\nfiles.",
+          "startSeconds": 314.4980223958333,
+          "endSeconds": 317.2754583333333,
+          "startFrame": 9434,
+          "endFrame": 9519
+        }
+      ],
+      "qc": [
+        {
+          "sceneId": "section-1",
+          "sourcePeakDbfs": -0.8571712134672651,
+          "sourceNoiseFloorDbfs": -45.25078581027854,
+          "clippedSamples": 0,
+          "integratedLufs": -15.99,
+          "truePeakDb": -4.48,
+          "loudnessRange": 1.9,
+          "clippingPassed": true,
+          "loudnessPassed": true
+        },
+        {
+          "sceneId": "section-2",
+          "sourcePeakDbfs": -1.7194064187464153,
+          "sourceNoiseFloorDbfs": -50.29970430882397,
+          "clippedSamples": 0,
+          "integratedLufs": -15.64,
+          "truePeakDb": -4.32,
+          "loudnessRange": 1.5,
+          "clippingPassed": true,
+          "loudnessPassed": true
+        },
+        {
+          "sceneId": "section-3",
+          "sourcePeakDbfs": -1.5567216156737311,
+          "sourceNoiseFloorDbfs": -56.718124677540885,
+          "clippedSamples": 0,
+          "integratedLufs": -16,
+          "truePeakDb": -4.39,
+          "loudnessRange": 1.3,
+          "clippingPassed": true,
+          "loudnessPassed": true
+        },
+        {
+          "sceneId": "section-4",
+          "sourcePeakDbfs": -1.4179933751213687,
+          "sourceNoiseFloorDbfs": -59.16799879617003,
+          "clippedSamples": 0,
+          "integratedLufs": -16.07,
+          "truePeakDb": -4.4,
+          "loudnessRange": 1.5,
+          "clippingPassed": true,
+          "loudnessPassed": true
+        },
+        {
+          "sceneId": "section-5",
+          "sourcePeakDbfs": -0.7427464566567923,
+          "sourceNoiseFloorDbfs": -73.44402557734634,
+          "clippedSamples": 0,
+          "integratedLufs": -15.77,
+          "truePeakDb": -4.35,
+          "loudnessRange": 2.3,
+          "clippingPassed": true,
+          "loudnessPassed": true
+        }
+      ]
+    },
+    {
+      "voiceId": "tessa",
+      "displayName": "Tessa",
+      "accent": "South African English",
+      "locale": "en-ZA",
+      "speechRate": 154,
+      "scenes": [
+        {
+          "id": "section-1",
+          "audioPath": "video-production/walkthroughs/opening-feat/audio-v3/tessa/section-1.m4a",
+          "audioSeconds": 55.45141666666667
+        },
+        {
+          "id": "section-2",
+          "audioPath": "video-production/walkthroughs/opening-feat/audio-v3/tessa/section-2.m4a",
+          "audioSeconds": 43.230958333333334
+        },
+        {
+          "id": "section-3",
+          "audioPath": "video-production/walkthroughs/opening-feat/audio-v3/tessa/section-3.m4a",
+          "audioSeconds": 47.90979166666666
+        },
+        {
+          "id": "section-4",
+          "audioPath": "video-production/walkthroughs/opening-feat/audio-v3/tessa/section-4.m4a",
+          "audioSeconds": 135.48197916666666
+        },
+        {
+          "id": "section-5",
+          "audioPath": "video-production/walkthroughs/opening-feat/audio-v3/tessa/section-5.m4a",
+          "audioSeconds": 39.90864583333333
+        }
+      ],
+      "cues": [
+        {
+          "index": 1,
+          "text": "In this walkthrough, we will open FEAT\ninside Neurodesk and build a map of its",
+          "startSeconds": 0,
+          "endSeconds": 7.773563084112149,
+          "startFrame": 0,
+          "endFrame": 234
+        },
+        {
+          "index": 2,
+          "text": "interface before changing any analysis\nsettings.",
+          "startSeconds": 7.773563084112149,
+          "endSeconds": 10.882988317757007,
+          "startFrame": 233,
+          "endFrame": 327
+        },
+        {
+          "index": 3,
+          "text": "FEAT is both a model-configuration\ninterface and a pipeline runner.",
+          "startSeconds": 10.882988317757007,
+          "endSeconds": 16.06536370716511,
+          "startFrame": 326,
+          "endFrame": 482
+        },
+        {
+          "index": 4,
+          "text": "The choices made here determine the data,\npreprocessing, registration, statistical",
+          "startSeconds": 16.06536370716511,
+          "endSeconds": 21.24773909657321,
+          "startFrame": 481,
+          "endFrame": 638
+        },
+        {
+          "index": 5,
+          "text": "model, and reporting steps that FSL will\nexecute.",
+          "startSeconds": 21.24773909657321,
+          "endSeconds": 25.393639408099688,
+          "startFrame": 637,
+          "endFrame": 762
+        },
+        {
+          "index": 6,
+          "text": "Begin on the Neurodesktop workspace.",
+          "startSeconds": 25.393639408099688,
+          "endSeconds": 27.984827102803738,
+          "startFrame": 761,
+          "endFrame": 840
+        },
+        {
+          "index": 7,
+          "text": "Open the Applications menu, choose\nNeurodesk, then Functional Imaging, FSL,",
+          "startSeconds": 27.984827102803738,
+          "endSeconds": 33.167202492211835,
+          "startFrame": 839,
+          "endFrame": 996
+        },
+        {
+          "index": 8,
+          "text": "and the approved FSL version.",
+          "startSeconds": 33.167202492211835,
+          "endSeconds": 35.75839018691588,
+          "startFrame": 995,
+          "endFrame": 1073
+        },
+        {
+          "index": 9,
+          "text": "This versioned launcher prepares the\nenvironment so the FSL commands and",
+          "startSeconds": 35.75839018691588,
+          "endSeconds": 41.45900311526479,
+          "startFrame": 1072,
+          "endFrame": 1244
+        },
+        {
+          "index": 10,
+          "text": "graphical tools are available in the\nterminal it opens.",
+          "startSeconds": 41.45900311526479,
+          "endSeconds": 46.123140965732084,
+          "startFrame": 1243,
+          "endFrame": 1384
+        },
+        {
+          "index": 11,
+          "text": "That is more reproducible than assuming\nthat a terminal outside this environment",
+          "startSeconds": 46.123140965732084,
+          "endSeconds": 52.3419914330218,
+          "startFrame": 1383,
+          "endFrame": 1571
+        },
+        {
+          "index": 12,
+          "text": "is using the intended FSL installation.",
+          "startSeconds": 52.3419914330218,
+          "endSeconds": 55.45141666666666,
+          "startFrame": 1570,
+          "endFrame": 1664
+        },
+        {
+          "index": 13,
+          "text": "At the prompt, enter `Feat`, with a\ncapital F, followed by an ampersand.",
+          "startSeconds": 56.333333333333336,
+          "endSeconds": 62.24914868421053,
+          "startFrame": 1690,
+          "endFrame": 1868
+        },
+        {
+          "index": 14,
+          "text": "The capitalised command starts the FEAT\ngraphical interface; the lower-case `feat`",
+          "startSeconds": 62.24914868421053,
+          "endSeconds": 67.25483859649124,
+          "startFrame": 1867,
+          "endFrame": 2018
+        },
+        {
+          "index": 15,
+          "text": "command expects a saved design file.",
+          "startSeconds": 67.25483859649123,
+          "endSeconds": 69.9852149122807,
+          "startFrame": 2017,
+          "endFrame": 2100
+        },
+        {
+          "index": 16,
+          "text": "The ampersand returns control of the\nterminal while the interface remains open.",
+          "startSeconds": 69.98521491228071,
+          "endSeconds": 75.44596754385965,
+          "startFrame": 2099,
+          "endFrame": 2264
+        },
+        {
+          "index": 17,
+          "text": "If the window takes a moment to appear,\nwait.",
+          "startSeconds": 75.44596754385965,
+          "endSeconds": 79.54153201754386,
+          "startFrame": 2263,
+          "endFrame": 2387
+        },
+        {
+          "index": 18,
+          "text": "Starting another copy simply because the\nlaunch is quiet can leave several",
+          "startSeconds": 79.54153201754386,
+          "endSeconds": 85.0022846491228,
+          "startFrame": 2386,
+          "endFrame": 2551
+        },
+        {
+          "index": 19,
+          "text": "indistinguishable FEAT windows open.",
+          "startSeconds": 85.00228464912281,
+          "endSeconds": 86.82253552631579,
+          "startFrame": 2550,
+          "endFrame": 2605
+        },
+        {
+          "index": 20,
+          "text": "FEAT may remember settings from an earlier\nsession, so treat every value as something",
+          "startSeconds": 86.82253552631579,
+          "endSeconds": 93.19341359649123,
+          "startFrame": 2604,
+          "endFrame": 2796
+        },
+        {
+          "index": 21,
+          "text": "to verify.",
+          "startSeconds": 93.19341359649124,
+          "endSeconds": 94.10353903508773,
+          "startFrame": 2795,
+          "endFrame": 2824
+        },
+        {
+          "index": 22,
+          "text": "A familiar-looking interface is not\nevidence that the current design is safe.",
+          "startSeconds": 94.10353903508772,
+          "endSeconds": 99.56429166666666,
+          "startFrame": 2823,
+          "endFrame": 2987
+        },
+        {
+          "index": 23,
+          "text": "At the top of FEAT, select First-level\nanalysis.",
+          "startSeconds": 100.43333333333334,
+          "endSeconds": 104.42581597222222,
+          "startFrame": 3013,
+          "endFrame": 3133
+        },
+        {
+          "index": 24,
+          "text": "First level means one run from one\nparticipant.",
+          "startSeconds": 104.42581597222222,
+          "endSeconds": 108.41829861111111,
+          "startFrame": 3132,
+          "endFrame": 3253
+        },
+        {
+          "index": 25,
+          "text": "It is not a within-subject combination\nacross runs, and it is not a group",
+          "startSeconds": 108.41829861111111,
+          "endSeconds": 115.40514322916667,
+          "startFrame": 3252,
+          "endFrame": 3463
+        },
+        {
+          "index": 26,
+          "text": "analysis.",
+          "startSeconds": 115.40514322916667,
+          "endSeconds": 115.90420355902778,
+          "startFrame": 3462,
+          "endFrame": 3478
+        },
+        {
+          "index": 27,
+          "text": "Keeping that unit explicit prevents\nparticipant-specific results from being",
+          "startSeconds": 115.90420355902778,
+          "endSeconds": 120.39574652777777,
+          "startFrame": 3477,
+          "endFrame": 3612
+        },
+        {
+          "index": 28,
+          "text": "described as population conclusions.",
+          "startSeconds": 120.39574652777779,
+          "endSeconds": 122.39198784722224,
+          "startFrame": 3611,
+          "endFrame": 3672
+        },
+        {
+          "index": 29,
+          "text": "Next, select Full analysis for this\norientation.",
+          "startSeconds": 122.39198784722223,
+          "endSeconds": 125.88541015625,
+          "startFrame": 3671,
+          "endFrame": 3777
+        },
+        {
+          "index": 30,
+          "text": "Full analysis exposes the steps used to\nprepare and model a run.",
+          "startSeconds": 125.88541015625,
+          "endSeconds": 131.87413411458334,
+          "startFrame": 3776,
+          "endFrame": 3957
+        },
+        {
+          "index": 31,
+          "text": "This is a scope choice, not a universal\nrecommendation.",
+          "startSeconds": 131.87413411458334,
+          "endSeconds": 136.36567708333334,
+          "startFrame": 3956,
+          "endFrame": 4091
+        },
+        {
+          "index": 32,
+          "text": "If the input has already been\npreprocessed, the workflow must be",
+          "startSeconds": 136.36567708333334,
+          "endSeconds": 141.85534071180555,
+          "startFrame": 4090,
+          "endFrame": 4256
+        },
+        {
+          "index": 33,
+          "text": "adjusted so that motion correction,\nsmoothing, filtering, or registration are",
+          "startSeconds": 141.85534071180555,
+          "endSeconds": 146.84594401041667,
+          "startFrame": 4255,
+          "endFrame": 4406
+        },
+        {
+          "index": 34,
+          "text": "not repeated unintentionally.",
+          "startSeconds": 146.84594401041667,
+          "endSeconds": 148.34312500000001,
+          "startFrame": 4405,
+          "endFrame": 4451
+        },
+        {
+          "index": 35,
+          "text": "The Data tab establishes the identity of\nthe model.",
+          "startSeconds": 149.2,
+          "endSeconds": 153.92611555232557,
+          "startFrame": 4476,
+          "endFrame": 4618
+        },
+        {
+          "index": 36,
+          "text": "It contains the four-dimensional\nfunctional input, repetition time, number",
+          "startSeconds": 153.92611555232557,
+          "endSeconds": 158.65223110465115,
+          "startFrame": 4617,
+          "endFrame": 4760
+        },
+        {
+          "index": 37,
+          "text": "of volumes, and output directory.",
+          "startSeconds": 158.65223110465115,
+          "endSeconds": 161.27785085594314,
+          "startFrame": 4759,
+          "endFrame": 4839
+        },
+        {
+          "index": 38,
+          "text": "These values connect image sampling to\nexperimental timing.",
+          "startSeconds": 161.27785085594314,
+          "endSeconds": 165.47884245801032,
+          "startFrame": 4838,
+          "endFrame": 4965
+        },
+        {
+          "index": 39,
+          "text": "Later, we will verify them against the\nimage header and BIDS metadata before",
+          "startSeconds": 165.47884245801032,
+          "endSeconds": 172.3054538113695,
+          "startFrame": 4964,
+          "endFrame": 5170
+        },
+        {
+          "index": 40,
+          "text": "entering them.",
+          "startSeconds": 172.3054538113695,
+          "endSeconds": 173.3557017118863,
+          "startFrame": 5169,
+          "endFrame": 5201
+        },
+        {
+          "index": 41,
+          "text": "The Pre-stats tab controls preprocessing\noperations such as motion correction,",
+          "startSeconds": 173.3557017118863,
+          "endSeconds": 178.60694121447028,
+          "startFrame": 5200,
+          "endFrame": 5359
+        },
+        {
+          "index": 42,
+          "text": "brain extraction, spatial smoothing, and\ntemporal filtering.",
+          "startSeconds": 178.60694121447028,
+          "endSeconds": 182.28280886627905,
+          "startFrame": 5358,
+          "endFrame": 5469
+        },
+        {
+          "index": 43,
+          "text": "These are scientific decisions.",
+          "startSeconds": 182.28280886627905,
+          "endSeconds": 184.38330466731264,
+          "startFrame": 5468,
+          "endFrame": 5532
+        },
+        {
+          "index": 44,
+          "text": "Applying a step twice is not neutral, and\nleaving a required step off is not",
+          "startSeconds": 184.38330466731264,
+          "endSeconds": 192.26016392118862,
+          "startFrame": 5531,
+          "endFrame": 5768
+        },
+        {
+          "index": 45,
+          "text": "repaired by a plausible activation map.",
+          "startSeconds": 192.26016392118862,
+          "endSeconds": 195.41090762273902,
+          "startFrame": 5767,
+          "endFrame": 5863
+        },
+        {
+          "index": 46,
+          "text": "The Registration tab controls mappings\nbetween functional, anatomical, and",
+          "startSeconds": 195.410907622739,
+          "endSeconds": 200.13702317506457,
+          "startFrame": 5862,
+          "endFrame": 6005
+        },
+        {
+          "index": 47,
+          "text": "standard spaces.",
+          "startSeconds": 200.1370231750646,
+          "endSeconds": 201.1872710755814,
+          "startFrame": 6004,
+          "endFrame": 6036
+        },
+        {
+          "index": 48,
+          "text": "A completed transform only shows that an\noptimisation finished.",
+          "startSeconds": 201.18727107558138,
+          "endSeconds": 205.91338662790696,
+          "startFrame": 6035,
+          "endFrame": 6178
+        },
+        {
+          "index": 49,
+          "text": "Registration quality must still be checked\nvisually across the brain, including",
+          "startSeconds": 205.91338662790696,
+          "endSeconds": 211.68975008074935,
+          "startFrame": 6177,
+          "endFrame": 6351
+        },
+        {
+          "index": 50,
+          "text": "cortical boundaries, ventricles,\ncerebellum, and areas of incomplete",
+          "startSeconds": 211.68975008074932,
+          "endSeconds": 215.8907416828165,
+          "startFrame": 6350,
+          "endFrame": 6477
+        },
+        {
+          "index": 51,
+          "text": "functional coverage.",
+          "startSeconds": 215.8907416828165,
+          "endSeconds": 216.9409895833333,
+          "startFrame": 6476,
+          "endFrame": 6509
+        },
+        {
+          "index": 52,
+          "text": "The Stats tab defines the general linear\nmodel.",
+          "startSeconds": 216.9409895833333,
+          "endSeconds": 221.14198118540048,
+          "startFrame": 6508,
+          "endFrame": 6635
+        },
+        {
+          "index": 53,
+          "text": "Here, explanatory variables represent task\nconditions or nuisance structure.",
+          "startSeconds": 221.14198118540048,
+          "endSeconds": 225.86809673772606,
+          "startFrame": 6634,
+          "endFrame": 6777
+        },
+        {
+          "index": 54,
+          "text": "Task timing can be convolved with a\nhaemodynamic response, contrasts encode",
+          "startSeconds": 225.86809673772606,
+          "endSeconds": 231.64446019056845,
+          "startFrame": 6776,
+          "endFrame": 6950
+        },
+        {
+          "index": 55,
+          "text": "planned hypotheses, and the design preview\nexposes the actual matrix FEAT will fit.",
+          "startSeconds": 231.64446019056845,
+          "endSeconds": 238.47107154392762,
+          "startFrame": 6949,
+          "endFrame": 7155
+        },
+        {
+          "index": 56,
+          "text": "Before running anything, the columns,\ntiming, correlations, and contrast weights",
+          "startSeconds": 238.47107154392762,
+          "endSeconds": 243.7223110465116,
+          "startFrame": 7154,
+          "endFrame": 7312
+        },
+        {
+          "index": 57,
+          "text": "must tell the same experimental story as\nthe protocol.",
+          "startSeconds": 243.7223110465116,
+          "endSeconds": 248.4484265988372,
+          "startFrame": 7311,
+          "endFrame": 7454
+        },
+        {
+          "index": 58,
+          "text": "The Post-stats tab controls thresholding\nand result reporting.",
+          "startSeconds": 248.44842659883716,
+          "endSeconds": 252.64941820090434,
+          "startFrame": 7453,
+          "endFrame": 7580
+        },
+        {
+          "index": 59,
+          "text": "It is tempting to start with bright\nclusters, but inference is only",
+          "startSeconds": 252.64941820090434,
+          "endSeconds": 258.95090560400513,
+          "startFrame": 7579,
+          "endFrame": 7769
+        },
+        {
+          "index": 60,
+          "text": "interpretable after the input,\npreprocessing, registration, and design",
+          "startSeconds": 258.95090560400513,
+          "endSeconds": 263.1518972060723,
+          "startFrame": 7768,
+          "endFrame": 7895
+        },
+        {
+          "index": 61,
+          "text": "have passed their own quality-control\nchecks.",
+          "startSeconds": 263.1518972060723,
+          "endSeconds": 266.3026409076227,
+          "startFrame": 7894,
+          "endFrame": 7990
+        },
+        {
+          "index": 62,
+          "text": "The Misc tab contains auxiliary settings\nand output options.",
+          "startSeconds": 266.3026409076227,
+          "endSeconds": 271.0287564599482,
+          "startFrame": 7989,
+          "endFrame": 8131
+        },
+        {
+          "index": 63,
+          "text": "Most projects use only a subset of them,\nbut they remain part of the saved design",
+          "startSeconds": 271.0287564599483,
+          "endSeconds": 279.43073966408264,
+          "startFrame": 8130,
+          "endFrame": 8383
+        },
+        {
+          "index": 64,
+          "text": "and should be reviewed when reproducing or\nauditing an analysis.",
+          "startSeconds": 279.43073966408264,
+          "endSeconds": 284.6819791666666,
+          "startFrame": 8382,
+          "endFrame": 8541
+        },
+        {
+          "index": 65,
+          "text": "The practical order is Data, Pre-stats,\nRegistration, Stats, Post-stats, and then",
+          "startSeconds": 285.5333333333333,
+          "endSeconds": 291.0207721354166,
+          "startFrame": 8566,
+          "endFrame": 8731
+        },
+        {
+          "index": 66,
+          "text": "Misc.",
+          "startSeconds": 291.0207721354166,
+          "endSeconds": 291.5196302083333,
+          "startFrame": 8730,
+          "endFrame": 8746
+        },
+        {
+          "index": 67,
+          "text": "That order moves from the measured time\nseries, through preparation and spatial",
+          "startSeconds": 291.5196302083333,
+          "endSeconds": 297.5059270833333,
+          "startFrame": 8745,
+          "endFrame": 8926
+        },
+        {
+          "index": 68,
+          "text": "alignment, into the model and finally the\nreport.",
+          "startSeconds": 297.5059270833333,
+          "endSeconds": 301.49679166666664,
+          "startFrame": 8925,
+          "endFrame": 9045
+        },
+        {
+          "index": 69,
+          "text": "For now, leave the values unchanged.",
+          "startSeconds": 301.49679166666664,
+          "endSeconds": 304.48994010416664,
+          "startFrame": 9044,
+          "endFrame": 9135
+        },
+        {
+          "index": 70,
+          "text": "You have opened the intended FSL\nenvironment, launched FEAT, selected a",
+          "startSeconds": 304.48994010416664,
+          "endSeconds": 309.97737890624995,
+          "startFrame": 9134,
+          "endFrame": 9300
+        },
+        {
+          "index": 71,
+          "text": "first-level scope, and identified what\neach tab controls.",
+          "startSeconds": 309.97737890624995,
+          "endSeconds": 313.9682434895833,
+          "startFrame": 9299,
+          "endFrame": 9420
+        },
+        {
+          "index": 72,
+          "text": "In the next walkthrough, we will configure\nthe Data tab using a real BOLD run and",
+          "startSeconds": 313.9682434895833,
+          "endSeconds": 321.94997265624994,
+          "startFrame": 9419,
+          "endFrame": 9659
+        },
+        {
+          "index": 73,
+          "text": "verify every value against the source\nfiles.",
+          "startSeconds": 321.94997265625,
+          "endSeconds": 325.44197916666667,
+          "startFrame": 9658,
+          "endFrame": 9764
+        }
+      ],
+      "qc": [
+        {
+          "sceneId": "section-1",
+          "sourcePeakDbfs": -5.115902508967994,
+          "sourceNoiseFloorDbfs": -43.36136367114071,
+          "clippedSamples": 0,
+          "integratedLufs": -16.01,
+          "truePeakDb": -5.98,
+          "loudnessRange": 2,
+          "clippingPassed": true,
+          "loudnessPassed": true
+        },
+        {
+          "sceneId": "section-2",
+          "sourcePeakDbfs": -5.404036217020839,
+          "sourceNoiseFloorDbfs": -46.78445951635064,
+          "clippedSamples": 0,
+          "integratedLufs": -15.52,
+          "truePeakDb": -4.5,
+          "loudnessRange": 2,
+          "clippingPassed": true,
+          "loudnessPassed": true
+        },
+        {
+          "sceneId": "section-3",
+          "sourcePeakDbfs": -4.823929544105482,
+          "sourceNoiseFloorDbfs": -47.97407177921933,
+          "clippedSamples": 0,
+          "integratedLufs": -16.01,
+          "truePeakDb": -5.27,
+          "loudnessRange": 1.1,
+          "clippingPassed": true,
+          "loudnessPassed": true
+        },
+        {
+          "sceneId": "section-4",
+          "sourcePeakDbfs": -4.901178643477131,
+          "sourceNoiseFloorDbfs": -53.457239738528955,
+          "clippedSamples": 0,
+          "integratedLufs": -16.05,
+          "truePeakDb": -5.28,
+          "loudnessRange": 1.6,
+          "clippingPassed": true,
+          "loudnessPassed": true
+        },
+        {
+          "sceneId": "section-5",
+          "sourcePeakDbfs": -5.582013359175946,
+          "sourceNoiseFloorDbfs": -62.544486652826535,
+          "clippedSamples": 0,
+          "integratedLufs": -15.82,
+          "truePeakDb": -5.23,
+          "loudnessRange": 2.2,
+          "clippingPassed": true,
+          "loudnessPassed": true
+        }
+      ]
+    },
+    {
+      "voiceId": "karen",
+      "displayName": "Karen",
+      "accent": "Australian English",
+      "locale": "en-AU",
+      "speechRate": 156,
+      "scenes": [
+        {
+          "id": "section-1",
+          "audioPath": "video-production/walkthroughs/opening-feat/audio-v3/karen/section-1.m4a",
+          "audioSeconds": 43.788291666666666
+        },
+        {
+          "id": "section-2",
+          "audioPath": "video-production/walkthroughs/opening-feat/audio-v3/karen/section-2.m4a",
+          "audioSeconds": 35.3388125
+        },
+        {
+          "id": "section-3",
+          "audioPath": "video-production/walkthroughs/opening-feat/audio-v3/karen/section-3.m4a",
+          "audioSeconds": 39.91314583333333
+        },
+        {
+          "id": "section-4",
+          "audioPath": "video-production/walkthroughs/opening-feat/audio-v3/karen/section-4.m4a",
+          "audioSeconds": 110.75160416666667
+        },
+        {
+          "id": "section-5",
+          "audioPath": "video-production/walkthroughs/opening-feat/audio-v3/karen/section-5.m4a",
+          "audioSeconds": 32.69772916666667
+        }
+      ],
+      "cues": [
+        {
+          "index": 1,
+          "text": "In this walkthrough, we will open FEAT\ninside Neurodesk and build a map of its",
+          "startSeconds": 0,
+          "endSeconds": 6.138545560747663,
+          "startFrame": 0,
+          "endFrame": 185
+        },
+        {
+          "index": 2,
+          "text": "interface before changing any analysis\nsettings.",
+          "startSeconds": 6.138545560747663,
+          "endSeconds": 8.593963785046729,
+          "startFrame": 184,
+          "endFrame": 258
+        },
+        {
+          "index": 3,
+          "text": "FEAT is both a model-configuration\ninterface and a pipeline runner.",
+          "startSeconds": 8.593963785046729,
+          "endSeconds": 12.686327492211838,
+          "startFrame": 257,
+          "endFrame": 381
+        },
+        {
+          "index": 4,
+          "text": "The choices made here determine the data,\npreprocessing, registration, statistical",
+          "startSeconds": 12.686327492211838,
+          "endSeconds": 16.778691199376947,
+          "startFrame": 380,
+          "endFrame": 504
+        },
+        {
+          "index": 5,
+          "text": "model, and reporting steps that FSL will\nexecute.",
+          "startSeconds": 16.778691199376947,
+          "endSeconds": 20.052582165109033,
+          "startFrame": 503,
+          "endFrame": 602
+        },
+        {
+          "index": 6,
+          "text": "Begin on the Neurodesktop workspace.",
+          "startSeconds": 20.052582165109033,
+          "endSeconds": 22.098764018691586,
+          "startFrame": 601,
+          "endFrame": 663
+        },
+        {
+          "index": 7,
+          "text": "Open the Applications menu, choose\nNeurodesk, then Functional Imaging, FSL,",
+          "startSeconds": 22.098764018691586,
+          "endSeconds": 26.191127725856695,
+          "startFrame": 662,
+          "endFrame": 786
+        },
+        {
+          "index": 8,
+          "text": "and the approved FSL version.",
+          "startSeconds": 26.191127725856695,
+          "endSeconds": 28.23730957943925,
+          "startFrame": 785,
+          "endFrame": 848
+        },
+        {
+          "index": 9,
+          "text": "This versioned launcher prepares the\nenvironment so the FSL commands and",
+          "startSeconds": 28.23730957943925,
+          "endSeconds": 32.73890965732087,
+          "startFrame": 847,
+          "endFrame": 983
+        },
+        {
+          "index": 10,
+          "text": "graphical tools are available in the\nterminal it opens.",
+          "startSeconds": 32.73890965732087,
+          "endSeconds": 36.42203699376947,
+          "startFrame": 982,
+          "endFrame": 1093
+        },
+        {
+          "index": 11,
+          "text": "That is more reproducible than assuming\nthat a terminal outside this environment",
+          "startSeconds": 36.42203699376947,
+          "endSeconds": 41.3328734423676,
+          "startFrame": 1092,
+          "endFrame": 1240
+        },
+        {
+          "index": 12,
+          "text": "is using the intended FSL installation.",
+          "startSeconds": 41.3328734423676,
+          "endSeconds": 43.788291666666666,
+          "startFrame": 1239,
+          "endFrame": 1314
+        },
+        {
+          "index": 13,
+          "text": "At the prompt, enter `Feat`, with a\ncapital F, followed by an ampersand.",
+          "startSeconds": 56.333333333333336,
+          "endSeconds": 61.16917083333334,
+          "startFrame": 1690,
+          "endFrame": 1836
+        },
+        {
+          "index": 14,
+          "text": "The capitalised command starts the FEAT\ngraphical interface; the lower-case `feat`",
+          "startSeconds": 61.16917083333334,
+          "endSeconds": 65.26103333333334,
+          "startFrame": 1835,
+          "endFrame": 1958
+        },
+        {
+          "index": 15,
+          "text": "command expects a saved design file.",
+          "startSeconds": 65.26103333333333,
+          "endSeconds": 67.49295833333333,
+          "startFrame": 1957,
+          "endFrame": 2025
+        },
+        {
+          "index": 16,
+          "text": "The ampersand returns control of the\nterminal while the interface remains open.",
+          "startSeconds": 67.49295833333333,
+          "endSeconds": 71.95680833333333,
+          "startFrame": 2024,
+          "endFrame": 2159
+        },
+        {
+          "index": 17,
+          "text": "If the window takes a moment to appear,\nwait.",
+          "startSeconds": 71.95680833333334,
+          "endSeconds": 75.30469583333334,
+          "startFrame": 2158,
+          "endFrame": 2260
+        },
+        {
+          "index": 18,
+          "text": "Starting another copy simply because the\nlaunch is quiet can leave several",
+          "startSeconds": 75.30469583333334,
+          "endSeconds": 79.76854583333335,
+          "startFrame": 2259,
+          "endFrame": 2394
+        },
+        {
+          "index": 19,
+          "text": "indistinguishable FEAT windows open.",
+          "startSeconds": 79.76854583333335,
+          "endSeconds": 81.25649583333335,
+          "startFrame": 2393,
+          "endFrame": 2438
+        },
+        {
+          "index": 20,
+          "text": "FEAT may remember settings from an earlier\nsession, so treat every value as something",
+          "startSeconds": 81.25649583333335,
+          "endSeconds": 86.46432083333335,
+          "startFrame": 2437,
+          "endFrame": 2594
+        },
+        {
+          "index": 21,
+          "text": "to verify.",
+          "startSeconds": 86.46432083333335,
+          "endSeconds": 87.20829583333335,
+          "startFrame": 2593,
+          "endFrame": 2617
+        },
+        {
+          "index": 22,
+          "text": "A familiar-looking interface is not\nevidence that the current design is safe.",
+          "startSeconds": 87.20829583333334,
+          "endSeconds": 91.67214583333333,
+          "startFrame": 2616,
+          "endFrame": 2751
+        },
+        {
+          "index": 23,
+          "text": "At the top of FEAT, select First-level\nanalysis.",
+          "startSeconds": 100.43333333333334,
+          "endSeconds": 103.75942881944445,
+          "startFrame": 3013,
+          "endFrame": 3113
+        },
+        {
+          "index": 24,
+          "text": "First level means one run from one\nparticipant.",
+          "startSeconds": 103.75942881944445,
+          "endSeconds": 107.08552430555557,
+          "startFrame": 3112,
+          "endFrame": 3213
+        },
+        {
+          "index": 25,
+          "text": "It is not a within-subject combination\nacross runs, and it is not a group",
+          "startSeconds": 107.08552430555557,
+          "endSeconds": 112.90619140625002,
+          "startFrame": 3212,
+          "endFrame": 3388
+        },
+        {
+          "index": 26,
+          "text": "analysis.",
+          "startSeconds": 112.90619140625,
+          "endSeconds": 113.32195334201388,
+          "startFrame": 3387,
+          "endFrame": 3400
+        },
+        {
+          "index": 27,
+          "text": "Keeping that unit explicit prevents\nparticipant-specific results from being",
+          "startSeconds": 113.3219533420139,
+          "endSeconds": 117.0638107638889,
+          "startFrame": 3399,
+          "endFrame": 3512
+        },
+        {
+          "index": 28,
+          "text": "described as population conclusions.",
+          "startSeconds": 117.0638107638889,
+          "endSeconds": 118.72685850694445,
+          "startFrame": 3511,
+          "endFrame": 3562
+        },
+        {
+          "index": 29,
+          "text": "Next, select Full analysis for this\norientation.",
+          "startSeconds": 118.72685850694444,
+          "endSeconds": 121.63719205729166,
+          "startFrame": 3561,
+          "endFrame": 3650
+        },
+        {
+          "index": 30,
+          "text": "Full analysis exposes the steps used to\nprepare and model a run.",
+          "startSeconds": 121.63719205729167,
+          "endSeconds": 126.62633528645834,
+          "startFrame": 3649,
+          "endFrame": 3799
+        },
+        {
+          "index": 31,
+          "text": "This is a scope choice, not a universal\nrecommendation.",
+          "startSeconds": 126.62633528645833,
+          "endSeconds": 130.36819270833334,
+          "startFrame": 3798,
+          "endFrame": 3912
+        },
+        {
+          "index": 32,
+          "text": "If the input has already been\npreprocessed, the workflow must be",
+          "startSeconds": 130.36819270833334,
+          "endSeconds": 134.94157400173611,
+          "startFrame": 3911,
+          "endFrame": 4049
+        },
+        {
+          "index": 33,
+          "text": "adjusted so that motion correction,\nsmoothing, filtering, or registration are",
+          "startSeconds": 134.94157400173611,
+          "endSeconds": 139.099193359375,
+          "startFrame": 4048,
+          "endFrame": 4173
+        },
+        {
+          "index": 34,
+          "text": "not repeated unintentionally.",
+          "startSeconds": 139.099193359375,
+          "endSeconds": 140.34647916666665,
+          "startFrame": 4172,
+          "endFrame": 4211
+        },
+        {
+          "index": 35,
+          "text": "The Data tab establishes the identity of\nthe model.",
+          "startSeconds": 149.2,
+          "endSeconds": 153.06342805232558,
+          "startFrame": 4476,
+          "endFrame": 4592
+        },
+        {
+          "index": 36,
+          "text": "It contains the four-dimensional\nfunctional input, repetition time, number",
+          "startSeconds": 153.06342805232558,
+          "endSeconds": 156.92685610465116,
+          "startFrame": 4591,
+          "endFrame": 4708
+        },
+        {
+          "index": 37,
+          "text": "of volumes, and output directory.",
+          "startSeconds": 156.92685610465116,
+          "endSeconds": 159.0732050226098,
+          "startFrame": 4707,
+          "endFrame": 4773
+        },
+        {
+          "index": 38,
+          "text": "These values connect image sampling to\nexperimental timing.",
+          "startSeconds": 159.0732050226098,
+          "endSeconds": 162.50736329134367,
+          "startFrame": 4772,
+          "endFrame": 4876
+        },
+        {
+          "index": 39,
+          "text": "Later, we will verify them against the\nimage header and BIDS metadata before",
+          "startSeconds": 162.50736329134367,
+          "endSeconds": 168.08787047803617,
+          "startFrame": 4875,
+          "endFrame": 5043
+        },
+        {
+          "index": 40,
+          "text": "entering them.",
+          "startSeconds": 168.08787047803617,
+          "endSeconds": 168.94641004521964,
+          "startFrame": 5042,
+          "endFrame": 5069
+        },
+        {
+          "index": 41,
+          "text": "The Pre-stats tab controls preprocessing\noperations such as motion correction,",
+          "startSeconds": 168.94641004521964,
+          "endSeconds": 173.23910788113696,
+          "startFrame": 5068,
+          "endFrame": 5198
+        },
+        {
+          "index": 42,
+          "text": "brain extraction, spatial smoothing, and\ntemporal filtering.",
+          "startSeconds": 173.23910788113693,
+          "endSeconds": 176.24399636627905,
+          "startFrame": 5197,
+          "endFrame": 5288
+        },
+        {
+          "index": 43,
+          "text": "These are scientific decisions.",
+          "startSeconds": 176.24399636627905,
+          "endSeconds": 177.96107550064596,
+          "startFrame": 5287,
+          "endFrame": 5339
+        },
+        {
+          "index": 44,
+          "text": "Applying a step twice is not neutral, and\nleaving a required step off is not",
+          "startSeconds": 177.961075500646,
+          "endSeconds": 184.40012225452196,
+          "startFrame": 5338,
+          "endFrame": 5533
+        },
+        {
+          "index": 45,
+          "text": "repaired by a plausible activation map.",
+          "startSeconds": 184.40012225452196,
+          "endSeconds": 186.97574095607234,
+          "startFrame": 5532,
+          "endFrame": 5610
+        },
+        {
+          "index": 46,
+          "text": "The Registration tab controls mappings\nbetween functional, anatomical, and",
+          "startSeconds": 186.97574095607234,
+          "endSeconds": 190.83916900839793,
+          "startFrame": 5609,
+          "endFrame": 5726
+        },
+        {
+          "index": 47,
+          "text": "standard spaces.",
+          "startSeconds": 190.83916900839793,
+          "endSeconds": 191.6977085755814,
+          "startFrame": 5725,
+          "endFrame": 5751
+        },
+        {
+          "index": 48,
+          "text": "A completed transform only shows that an\noptimisation finished.",
+          "startSeconds": 191.69770857558137,
+          "endSeconds": 195.56113662790696,
+          "startFrame": 5750,
+          "endFrame": 5867
+        },
+        {
+          "index": 49,
+          "text": "Registration quality must still be checked\nvisually across the brain, including",
+          "startSeconds": 195.56113662790696,
+          "endSeconds": 200.283104247416,
+          "startFrame": 5866,
+          "endFrame": 6009
+        },
+        {
+          "index": 50,
+          "text": "cortical boundaries, ventricles,\ncerebellum, and areas of incomplete",
+          "startSeconds": 200.28310424741602,
+          "endSeconds": 203.71726251614987,
+          "startFrame": 6008,
+          "endFrame": 6112
+        },
+        {
+          "index": 51,
+          "text": "functional coverage.",
+          "startSeconds": 203.71726251614987,
+          "endSeconds": 204.57580208333334,
+          "startFrame": 6111,
+          "endFrame": 6138
+        },
+        {
+          "index": 52,
+          "text": "The Stats tab defines the general linear\nmodel.",
+          "startSeconds": 204.57580208333331,
+          "endSeconds": 208.00996035206717,
+          "startFrame": 6137,
+          "endFrame": 6241
+        },
+        {
+          "index": 53,
+          "text": "Here, explanatory variables represent task\nconditions or nuisance structure.",
+          "startSeconds": 208.0099603520672,
+          "endSeconds": 211.87338840439278,
+          "startFrame": 6240,
+          "endFrame": 6357
+        },
+        {
+          "index": 54,
+          "text": "Task timing can be convolved with a\nhaemodynamic response, contrasts encode",
+          "startSeconds": 211.87338840439276,
+          "endSeconds": 216.5953560239018,
+          "startFrame": 6356,
+          "endFrame": 6498
+        },
+        {
+          "index": 55,
+          "text": "planned hypotheses, and the design preview\nexposes the actual matrix FEAT will fit.",
+          "startSeconds": 216.5953560239018,
+          "endSeconds": 222.1758632105943,
+          "startFrame": 6497,
+          "endFrame": 6666
+        },
+        {
+          "index": 56,
+          "text": "Before running anything, the columns,\ntiming, correlations, and contrast weights",
+          "startSeconds": 222.1758632105943,
+          "endSeconds": 226.4685610465116,
+          "startFrame": 6665,
+          "endFrame": 6795
+        },
+        {
+          "index": 57,
+          "text": "must tell the same experimental story as\nthe protocol.",
+          "startSeconds": 226.4685610465116,
+          "endSeconds": 230.3319890988372,
+          "startFrame": 6794,
+          "endFrame": 6910
+        },
+        {
+          "index": 58,
+          "text": "The Post-stats tab controls thresholding\nand result reporting.",
+          "startSeconds": 230.3319890988372,
+          "endSeconds": 233.76614736757105,
+          "startFrame": 6909,
+          "endFrame": 7013
+        },
+        {
+          "index": 59,
+          "text": "It is tempting to start with bright\nclusters, but inference is only",
+          "startSeconds": 233.76614736757105,
+          "endSeconds": 238.91738477067182,
+          "startFrame": 7012,
+          "endFrame": 7168
+        },
+        {
+          "index": 60,
+          "text": "interpretable after the input,\npreprocessing, registration, and design",
+          "startSeconds": 238.91738477067184,
+          "endSeconds": 242.3515430394057,
+          "startFrame": 7167,
+          "endFrame": 7271
+        },
+        {
+          "index": 61,
+          "text": "have passed their own quality-control\nchecks.",
+          "startSeconds": 242.35154303940567,
+          "endSeconds": 244.92716174095605,
+          "startFrame": 7270,
+          "endFrame": 7348
+        },
+        {
+          "index": 62,
+          "text": "The Misc tab contains auxiliary settings\nand output options.",
+          "startSeconds": 244.92716174095608,
+          "endSeconds": 248.79058979328167,
+          "startFrame": 7347,
+          "endFrame": 7464
+        },
+        {
+          "index": 63,
+          "text": "Most projects use only a subset of them,\nbut they remain part of the saved design",
+          "startSeconds": 248.79058979328164,
+          "endSeconds": 255.65890633074935,
+          "startFrame": 7463,
+          "endFrame": 7670
+        },
+        {
+          "index": 64,
+          "text": "and should be reviewed when reproducing or\nauditing an analysis.",
+          "startSeconds": 255.65890633074935,
+          "endSeconds": 259.95160416666664,
+          "startFrame": 7669,
+          "endFrame": 7799
+        },
+        {
+          "index": 65,
+          "text": "The practical order is Data, Pre-stats,\nRegistration, Stats, Post-stats, and then",
+          "startSeconds": 285.5333333333333,
+          "endSeconds": 290.02927109374997,
+          "startFrame": 8566,
+          "endFrame": 8701
+        },
+        {
+          "index": 66,
+          "text": "Misc.",
+          "startSeconds": 290.02927109374997,
+          "endSeconds": 290.4379927083333,
+          "startFrame": 8700,
+          "endFrame": 8714
+        },
+        {
+          "index": 67,
+          "text": "That order moves from the measured time\nseries, through preparation and spatial",
+          "startSeconds": 290.4379927083333,
+          "endSeconds": 295.3426520833333,
+          "startFrame": 8713,
+          "endFrame": 8861
+        },
+        {
+          "index": 68,
+          "text": "alignment, into the model and finally the\nreport.",
+          "startSeconds": 295.3426520833333,
+          "endSeconds": 298.612425,
+          "startFrame": 8860,
+          "endFrame": 8959
+        },
+        {
+          "index": 69,
+          "text": "For now, leave the values unchanged.",
+          "startSeconds": 298.612425,
+          "endSeconds": 301.0647546875,
+          "startFrame": 8958,
+          "endFrame": 9032
+        },
+        {
+          "index": 70,
+          "text": "You have opened the intended FSL\nenvironment, launched FEAT, selected a",
+          "startSeconds": 301.0647546875,
+          "endSeconds": 305.56069244791667,
+          "startFrame": 9031,
+          "endFrame": 9167
+        },
+        {
+          "index": 71,
+          "text": "first-level scope, and identified what\neach tab controls.",
+          "startSeconds": 305.56069244791667,
+          "endSeconds": 308.83046536458335,
+          "startFrame": 9166,
+          "endFrame": 9265
+        },
+        {
+          "index": 72,
+          "text": "In the next walkthrough, we will configure\nthe Data tab using a real BOLD run and",
+          "startSeconds": 308.8304653645833,
+          "endSeconds": 315.3700111979166,
+          "startFrame": 9264,
+          "endFrame": 9462
+        },
+        {
+          "index": 73,
+          "text": "verify every value against the source\nfiles.",
+          "startSeconds": 315.37001119791665,
+          "endSeconds": 318.2310625,
+          "startFrame": 9461,
+          "endFrame": 9547
+        }
+      ],
+      "qc": [
+        {
+          "sceneId": "section-1",
+          "sourcePeakDbfs": -2.5629503736097026,
+          "sourceNoiseFloorDbfs": -39.63008145310682,
+          "clippedSamples": 0,
+          "integratedLufs": -15.95,
+          "truePeakDb": -4.61,
+          "loudnessRange": 1.4,
+          "clippingPassed": true,
+          "loudnessPassed": true
+        },
+        {
+          "sceneId": "section-2",
+          "sourcePeakDbfs": -1.5814469488468366,
+          "sourceNoiseFloorDbfs": -41.32567576032709,
+          "clippedSamples": 0,
+          "integratedLufs": -15.63,
+          "truePeakDb": -4.37,
+          "loudnessRange": 1.1,
+          "clippingPassed": true,
+          "loudnessPassed": true
+        },
+        {
+          "sceneId": "section-3",
+          "sourcePeakDbfs": -2.4434668218571027,
+          "sourceNoiseFloorDbfs": -46.5298705000271,
+          "clippedSamples": 0,
+          "integratedLufs": -15.92,
+          "truePeakDb": -4.55,
+          "loudnessRange": 1,
+          "clippingPassed": true,
+          "loudnessPassed": true
+        },
+        {
+          "sceneId": "section-4",
+          "sourcePeakDbfs": -2.024047937011349,
+          "sourceNoiseFloorDbfs": -46.08459479998195,
+          "clippedSamples": 0,
+          "integratedLufs": -16.1,
+          "truePeakDb": -4.5,
+          "loudnessRange": 1.3,
+          "clippingPassed": true,
+          "loudnessPassed": true
+        },
+        {
+          "sceneId": "section-5",
+          "sourcePeakDbfs": -2.561002867024335,
+          "sourceNoiseFloorDbfs": -59.30357422355176,
+          "clippedSamples": 0,
+          "integratedLufs": -15.85,
+          "truePeakDb": -4.5,
+          "loudnessRange": 1.7,
+          "clippingPassed": true,
+          "loudnessPassed": true
+        }
+      ]
+    },
+    {
+      "voiceId": "rishi",
+      "displayName": "Rishi",
+      "accent": "Indian English",
+      "locale": "en-IN",
+      "speechRate": 152,
+      "scenes": [
+        {
+          "id": "section-1",
+          "audioPath": "video-production/walkthroughs/opening-feat/audio-v3/rishi/section-1.m4a",
+          "audioSeconds": 53.541125
+        },
+        {
+          "id": "section-2",
+          "audioPath": "video-production/walkthroughs/opening-feat/audio-v3/rishi/section-2.m4a",
+          "audioSeconds": 42.086979166666666
+        },
+        {
+          "id": "section-3",
+          "audioPath": "video-production/walkthroughs/opening-feat/audio-v3/rishi/section-3.m4a",
+          "audioSeconds": 47.450833333333335
+        },
+        {
+          "id": "section-4",
+          "audioPath": "video-production/walkthroughs/opening-feat/audio-v3/rishi/section-4.m4a",
+          "audioSeconds": 132.52379166666665
+        },
+        {
+          "id": "section-5",
+          "audioPath": "video-production/walkthroughs/opening-feat/audio-v3/rishi/section-5.m4a",
+          "audioSeconds": 38.94770833333333
+        }
+      ],
+      "cues": [
+        {
+          "index": 1,
+          "text": "In this walkthrough, we will open FEAT\ninside Neurodesk and build a map of its",
+          "startSeconds": 0,
+          "endSeconds": 7.5057651869158875,
+          "startFrame": 0,
+          "endFrame": 226
+        },
+        {
+          "index": 2,
+          "text": "interface before changing any analysis\nsettings.",
+          "startSeconds": 7.5057651869158875,
+          "endSeconds": 10.508071261682243,
+          "startFrame": 225,
+          "endFrame": 316
+        },
+        {
+          "index": 3,
+          "text": "FEAT is both a model-configuration\ninterface and a pipeline runner.",
+          "startSeconds": 10.508071261682243,
+          "endSeconds": 15.51191471962617,
+          "startFrame": 315,
+          "endFrame": 466
+        },
+        {
+          "index": 4,
+          "text": "The choices made here determine the data,\npreprocessing, registration, statistical",
+          "startSeconds": 15.51191471962617,
+          "endSeconds": 20.515758177570095,
+          "startFrame": 465,
+          "endFrame": 616
+        },
+        {
+          "index": 5,
+          "text": "model, and reporting steps that FSL will\nexecute.",
+          "startSeconds": 20.515758177570095,
+          "endSeconds": 24.518832943925236,
+          "startFrame": 615,
+          "endFrame": 736
+        },
+        {
+          "index": 6,
+          "text": "Begin on the Neurodesktop workspace.",
+          "startSeconds": 24.518832943925236,
+          "endSeconds": 27.020754672897198,
+          "startFrame": 735,
+          "endFrame": 811
+        },
+        {
+          "index": 7,
+          "text": "Open the Applications menu, choose\nNeurodesk, then Functional Imaging, FSL,",
+          "startSeconds": 27.020754672897198,
+          "endSeconds": 32.02459813084112,
+          "startFrame": 810,
+          "endFrame": 961
+        },
+        {
+          "index": 8,
+          "text": "and the approved FSL version.",
+          "startSeconds": 32.02459813084112,
+          "endSeconds": 34.526519859813085,
+          "startFrame": 960,
+          "endFrame": 1036
+        },
+        {
+          "index": 9,
+          "text": "This versioned launcher prepares the\nenvironment so the FSL commands and",
+          "startSeconds": 34.526519859813085,
+          "endSeconds": 40.0307476635514,
+          "startFrame": 1035,
+          "endFrame": 1201
+        },
+        {
+          "index": 10,
+          "text": "graphical tools are available in the\nterminal it opens.",
+          "startSeconds": 40.0307476635514,
+          "endSeconds": 44.53420677570094,
+          "startFrame": 1200,
+          "endFrame": 1337
+        },
+        {
+          "index": 11,
+          "text": "That is more reproducible than assuming\nthat a terminal outside this environment",
+          "startSeconds": 44.53420677570094,
+          "endSeconds": 50.53881892523365,
+          "startFrame": 1336,
+          "endFrame": 1517
+        },
+        {
+          "index": 12,
+          "text": "is using the intended FSL installation.",
+          "startSeconds": 50.53881892523365,
+          "endSeconds": 53.541125,
+          "startFrame": 1516,
+          "endFrame": 1607
+        },
+        {
+          "index": 13,
+          "text": "At the prompt, enter `Feat`, with a\ncapital F, followed by an ampersand.",
+          "startSeconds": 56.333333333333336,
+          "endSeconds": 62.09260416666667,
+          "startFrame": 1690,
+          "endFrame": 1863
+        },
+        {
+          "index": 14,
+          "text": "The capitalised command starts the FEAT\ngraphical interface; the lower-case `feat`",
+          "startSeconds": 62.09260416666667,
+          "endSeconds": 66.96583333333334,
+          "startFrame": 1862,
+          "endFrame": 2009
+        },
+        {
+          "index": 15,
+          "text": "command expects a saved design file.",
+          "startSeconds": 66.96583333333334,
+          "endSeconds": 69.62395833333333,
+          "startFrame": 2008,
+          "endFrame": 2089
+        },
+        {
+          "index": 16,
+          "text": "The ampersand returns control of the\nterminal while the interface remains open.",
+          "startSeconds": 69.62395833333333,
+          "endSeconds": 74.94020833333333,
+          "startFrame": 2088,
+          "endFrame": 2249
+        },
+        {
+          "index": 17,
+          "text": "If the window takes a moment to appear,\nwait.",
+          "startSeconds": 74.94020833333335,
+          "endSeconds": 78.92739583333335,
+          "startFrame": 2248,
+          "endFrame": 2368
+        },
+        {
+          "index": 18,
+          "text": "Starting another copy simply because the\nlaunch is quiet can leave several",
+          "startSeconds": 78.92739583333334,
+          "endSeconds": 84.24364583333333,
+          "startFrame": 2367,
+          "endFrame": 2528
+        },
+        {
+          "index": 19,
+          "text": "indistinguishable FEAT windows open.",
+          "startSeconds": 84.24364583333335,
+          "endSeconds": 86.01572916666667,
+          "startFrame": 2527,
+          "endFrame": 2581
+        },
+        {
+          "index": 20,
+          "text": "FEAT may remember settings from an earlier\nsession, so treat every value as something",
+          "startSeconds": 86.01572916666667,
+          "endSeconds": 92.21802083333334,
+          "startFrame": 2580,
+          "endFrame": 2767
+        },
+        {
+          "index": 21,
+          "text": "to verify.",
+          "startSeconds": 92.21802083333334,
+          "endSeconds": 93.10406250000001,
+          "startFrame": 2766,
+          "endFrame": 2794
+        },
+        {
+          "index": 22,
+          "text": "A familiar-looking interface is not\nevidence that the current design is safe.",
+          "startSeconds": 93.1040625,
+          "endSeconds": 98.4203125,
+          "startFrame": 2793,
+          "endFrame": 2953
+        },
+        {
+          "index": 23,
+          "text": "At the top of FEAT, select First-level\nanalysis.",
+          "startSeconds": 100.43333333333334,
+          "endSeconds": 104.38756944444445,
+          "startFrame": 3013,
+          "endFrame": 3132
+        },
+        {
+          "index": 24,
+          "text": "First level means one run from one\nparticipant.",
+          "startSeconds": 104.38756944444445,
+          "endSeconds": 108.34180555555557,
+          "startFrame": 3131,
+          "endFrame": 3251
+        },
+        {
+          "index": 25,
+          "text": "It is not a within-subject combination\nacross runs, and it is not a group",
+          "startSeconds": 108.34180555555557,
+          "endSeconds": 115.26171875000001,
+          "startFrame": 3250,
+          "endFrame": 3458
+        },
+        {
+          "index": 26,
+          "text": "analysis.",
+          "startSeconds": 115.26171875,
+          "endSeconds": 115.75599826388888,
+          "startFrame": 3457,
+          "endFrame": 3473
+        },
+        {
+          "index": 27,
+          "text": "Keeping that unit explicit prevents\nparticipant-specific results from being",
+          "startSeconds": 115.7559982638889,
+          "endSeconds": 120.2045138888889,
+          "startFrame": 3472,
+          "endFrame": 3607
+        },
+        {
+          "index": 28,
+          "text": "described as population conclusions.",
+          "startSeconds": 120.2045138888889,
+          "endSeconds": 122.18163194444445,
+          "startFrame": 3606,
+          "endFrame": 3666
+        },
+        {
+          "index": 29,
+          "text": "Next, select Full analysis for this\norientation.",
+          "startSeconds": 122.18163194444445,
+          "endSeconds": 125.64158854166666,
+          "startFrame": 3665,
+          "endFrame": 3770
+        },
+        {
+          "index": 30,
+          "text": "Full analysis exposes the steps used to\nprepare and model a run.",
+          "startSeconds": 125.64158854166666,
+          "endSeconds": 131.57294270833333,
+          "startFrame": 3769,
+          "endFrame": 3948
+        },
+        {
+          "index": 31,
+          "text": "This is a scope choice, not a universal\nrecommendation.",
+          "startSeconds": 131.57294270833333,
+          "endSeconds": 136.02145833333333,
+          "startFrame": 3947,
+          "endFrame": 4081
+        },
+        {
+          "index": 32,
+          "text": "If the input has already been\npreprocessed, the workflow must be",
+          "startSeconds": 136.02145833333333,
+          "endSeconds": 141.4585329861111,
+          "startFrame": 4080,
+          "endFrame": 4244
+        },
+        {
+          "index": 33,
+          "text": "adjusted so that motion correction,\nsmoothing, filtering, or registration are",
+          "startSeconds": 141.4585329861111,
+          "endSeconds": 146.401328125,
+          "startFrame": 4243,
+          "endFrame": 4393
+        },
+        {
+          "index": 34,
+          "text": "not repeated unintentionally.",
+          "startSeconds": 146.401328125,
+          "endSeconds": 147.88416666666666,
+          "startFrame": 4392,
+          "endFrame": 4437
+        },
+        {
+          "index": 35,
+          "text": "The Data tab establishes the identity of\nthe model.",
+          "startSeconds": 149.2,
+          "endSeconds": 153.82292296511628,
+          "startFrame": 4476,
+          "endFrame": 4615
+        },
+        {
+          "index": 36,
+          "text": "It contains the four-dimensional\nfunctional input, repetition time, number",
+          "startSeconds": 153.82292296511628,
+          "endSeconds": 158.44584593023257,
+          "startFrame": 4614,
+          "endFrame": 4754
+        },
+        {
+          "index": 37,
+          "text": "of volumes, and output directory.",
+          "startSeconds": 158.44584593023254,
+          "endSeconds": 161.01413646640825,
+          "startFrame": 4753,
+          "endFrame": 4831
+        },
+        {
+          "index": 38,
+          "text": "These values connect image sampling to\nexperimental timing.",
+          "startSeconds": 161.01413646640825,
+          "endSeconds": 165.12340132428938,
+          "startFrame": 4830,
+          "endFrame": 4954
+        },
+        {
+          "index": 39,
+          "text": "Later, we will verify them against the\nimage header and BIDS metadata before",
+          "startSeconds": 165.1234013242894,
+          "endSeconds": 171.80095671834624,
+          "startFrame": 4953,
+          "endFrame": 5155
+        },
+        {
+          "index": 40,
+          "text": "entering them.",
+          "startSeconds": 171.80095671834624,
+          "endSeconds": 172.82827293281653,
+          "startFrame": 5154,
+          "endFrame": 5185
+        },
+        {
+          "index": 41,
+          "text": "The Pre-stats tab controls preprocessing\noperations such as motion correction,",
+          "startSeconds": 172.82827293281653,
+          "endSeconds": 177.96485400516795,
+          "startFrame": 5184,
+          "endFrame": 5339
+        },
+        {
+          "index": 42,
+          "text": "brain extraction, spatial smoothing, and\ntemporal filtering.",
+          "startSeconds": 177.96485400516795,
+          "endSeconds": 181.56046075581395,
+          "startFrame": 5338,
+          "endFrame": 5447
+        },
+        {
+          "index": 43,
+          "text": "These are scientific decisions.",
+          "startSeconds": 181.56046075581395,
+          "endSeconds": 183.61509318475453,
+          "startFrame": 5446,
+          "endFrame": 5509
+        },
+        {
+          "index": 44,
+          "text": "Applying a step twice is not neutral, and\nleaving a required step off is not",
+          "startSeconds": 183.6150931847545,
+          "endSeconds": 191.31996479328163,
+          "startFrame": 5508,
+          "endFrame": 5740
+        },
+        {
+          "index": 45,
+          "text": "repaired by a plausible activation map.",
+          "startSeconds": 191.31996479328163,
+          "endSeconds": 194.40191343669247,
+          "startFrame": 5739,
+          "endFrame": 5833
+        },
+        {
+          "index": 46,
+          "text": "The Registration tab controls mappings\nbetween functional, anatomical, and",
+          "startSeconds": 194.4019134366925,
+          "endSeconds": 199.02483640180878,
+          "startFrame": 5832,
+          "endFrame": 5971
+        },
+        {
+          "index": 47,
+          "text": "standard spaces.",
+          "startSeconds": 199.02483640180876,
+          "endSeconds": 200.05215261627905,
+          "startFrame": 5970,
+          "endFrame": 6002
+        },
+        {
+          "index": 48,
+          "text": "A completed transform only shows that an\noptimisation finished.",
+          "startSeconds": 200.05215261627905,
+          "endSeconds": 204.67507558139533,
+          "startFrame": 6001,
+          "endFrame": 6141
+        },
+        {
+          "index": 49,
+          "text": "Registration quality must still be checked\nvisually across the brain, including",
+          "startSeconds": 204.67507558139533,
+          "endSeconds": 210.32531476098188,
+          "startFrame": 6140,
+          "endFrame": 6310
+        },
+        {
+          "index": 50,
+          "text": "cortical boundaries, ventricles,\ncerebellum, and areas of incomplete",
+          "startSeconds": 210.32531476098188,
+          "endSeconds": 214.434579618863,
+          "startFrame": 6309,
+          "endFrame": 6434
+        },
+        {
+          "index": 51,
+          "text": "functional coverage.",
+          "startSeconds": 214.43457961886304,
+          "endSeconds": 215.46189583333333,
+          "startFrame": 6433,
+          "endFrame": 6464
+        },
+        {
+          "index": 52,
+          "text": "The Stats tab defines the general linear\nmodel.",
+          "startSeconds": 215.4618958333333,
+          "endSeconds": 219.57116069121443,
+          "startFrame": 6463,
+          "endFrame": 6588
+        },
+        {
+          "index": 53,
+          "text": "Here, explanatory variables represent task\nconditions or nuisance structure.",
+          "startSeconds": 219.57116069121446,
+          "endSeconds": 224.19408365633075,
+          "startFrame": 6587,
+          "endFrame": 6726
+        },
+        {
+          "index": 54,
+          "text": "Task timing can be convolved with a\nhaemodynamic response, contrasts encode",
+          "startSeconds": 224.19408365633075,
+          "endSeconds": 229.8443228359173,
+          "startFrame": 6725,
+          "endFrame": 6896
+        },
+        {
+          "index": 55,
+          "text": "planned hypotheses, and the design preview\nexposes the actual matrix FEAT will fit.",
+          "startSeconds": 229.8443228359173,
+          "endSeconds": 236.52187822997413,
+          "startFrame": 6895,
+          "endFrame": 7096
+        },
+        {
+          "index": 56,
+          "text": "Before running anything, the columns,\ntiming, correlations, and contrast weights",
+          "startSeconds": 236.52187822997416,
+          "endSeconds": 241.65845930232558,
+          "startFrame": 7095,
+          "endFrame": 7250
+        },
+        {
+          "index": 57,
+          "text": "must tell the same experimental story as\nthe protocol.",
+          "startSeconds": 241.65845930232558,
+          "endSeconds": 246.28138226744187,
+          "startFrame": 7249,
+          "endFrame": 7389
+        },
+        {
+          "index": 58,
+          "text": "The Post-stats tab controls thresholding\nand result reporting.",
+          "startSeconds": 246.28138226744184,
+          "endSeconds": 250.39064712532297,
+          "startFrame": 7388,
+          "endFrame": 7512
+        },
+        {
+          "index": 59,
+          "text": "It is tempting to start with bright\nclusters, but inference is only",
+          "startSeconds": 250.39064712532297,
+          "endSeconds": 256.55454441214465,
+          "startFrame": 7511,
+          "endFrame": 7697
+        },
+        {
+          "index": 60,
+          "text": "interpretable after the input,\npreprocessing, registration, and design",
+          "startSeconds": 256.55454441214465,
+          "endSeconds": 260.6638092700258,
+          "startFrame": 7696,
+          "endFrame": 7820
+        },
+        {
+          "index": 61,
+          "text": "have passed their own quality-control\nchecks.",
+          "startSeconds": 260.6638092700258,
+          "endSeconds": 263.74575791343665,
+          "startFrame": 7819,
+          "endFrame": 7913
+        },
+        {
+          "index": 62,
+          "text": "The Misc tab contains auxiliary settings\nand output options.",
+          "startSeconds": 263.74575791343665,
+          "endSeconds": 268.36868087855294,
+          "startFrame": 7912,
+          "endFrame": 8052
+        },
+        {
+          "index": 63,
+          "text": "Most projects use only a subset of them,\nbut they remain part of the saved design",
+          "startSeconds": 268.36868087855294,
+          "endSeconds": 276.5872105943152,
+          "startFrame": 8051,
+          "endFrame": 8298
+        },
+        {
+          "index": 64,
+          "text": "and should be reviewed when reproducing or\nauditing an analysis.",
+          "startSeconds": 276.5872105943152,
+          "endSeconds": 281.7237916666666,
+          "startFrame": 8297,
+          "endFrame": 8452
+        },
+        {
+          "index": 65,
+          "text": "The practical order is Data, Pre-stats,\nRegistration, Stats, Post-stats, and then",
+          "startSeconds": 285.5333333333333,
+          "endSeconds": 290.88864322916663,
+          "startFrame": 8566,
+          "endFrame": 8727
+        },
+        {
+          "index": 66,
+          "text": "Misc.",
+          "startSeconds": 290.88864322916663,
+          "endSeconds": 291.3754895833333,
+          "startFrame": 8726,
+          "endFrame": 8742
+        },
+        {
+          "index": 67,
+          "text": "That order moves from the measured time\nseries, through preparation and spatial",
+          "startSeconds": 291.3754895833333,
+          "endSeconds": 297.21764583333334,
+          "startFrame": 8741,
+          "endFrame": 8917
+        },
+        {
+          "index": 68,
+          "text": "alignment, into the model and finally the\nreport.",
+          "startSeconds": 297.2176458333333,
+          "endSeconds": 301.1124166666666,
+          "startFrame": 8916,
+          "endFrame": 9034
+        },
+        {
+          "index": 69,
+          "text": "For now, leave the values unchanged.",
+          "startSeconds": 301.11241666666666,
+          "endSeconds": 304.03349479166667,
+          "startFrame": 9033,
+          "endFrame": 9122
+        },
+        {
+          "index": 70,
+          "text": "You have opened the intended FSL\nenvironment, launched FEAT, selected a",
+          "startSeconds": 304.0334947916666,
+          "endSeconds": 309.38880468749994,
+          "startFrame": 9121,
+          "endFrame": 9282
+        },
+        {
+          "index": 71,
+          "text": "first-level scope, and identified what\neach tab controls.",
+          "startSeconds": 309.38880468749994,
+          "endSeconds": 313.28357552083327,
+          "startFrame": 9281,
+          "endFrame": 9399
+        },
+        {
+          "index": 72,
+          "text": "In the next walkthrough, we will configure\nthe Data tab using a real BOLD run and",
+          "startSeconds": 313.2835755208333,
+          "endSeconds": 321.0731171875,
+          "startFrame": 9398,
+          "endFrame": 9633
+        },
+        {
+          "index": 73,
+          "text": "verify every value against the source\nfiles.",
+          "startSeconds": 321.0731171875,
+          "endSeconds": 324.4810416666666,
+          "startFrame": 9632,
+          "endFrame": 9735
+        }
+      ],
+      "qc": [
+        {
+          "sceneId": "section-1",
+          "sourcePeakDbfs": -1.6087807477000253,
+          "sourceNoiseFloorDbfs": -46.73945504503418,
+          "clippedSamples": 0,
+          "integratedLufs": -16.24,
+          "truePeakDb": -4.33,
+          "loudnessRange": 1.7,
+          "clippingPassed": true,
+          "loudnessPassed": true
+        },
+        {
+          "sceneId": "section-2",
+          "sourcePeakDbfs": -1.2904558739804253,
+          "sourceNoiseFloorDbfs": -54.22288540381182,
+          "clippedSamples": 0,
+          "integratedLufs": -16.26,
+          "truePeakDb": -4.28,
+          "loudnessRange": 2.9,
+          "clippingPassed": true,
+          "loudnessPassed": true
+        },
+        {
+          "sceneId": "section-3",
+          "sourcePeakDbfs": -1.5695488376057534,
+          "sourceNoiseFloorDbfs": -60.84860984905284,
+          "clippedSamples": 0,
+          "integratedLufs": -16.43,
+          "truePeakDb": -4.34,
+          "loudnessRange": 1.3,
+          "clippingPassed": true,
+          "loudnessPassed": true
+        },
+        {
+          "sceneId": "section-4",
+          "sourcePeakDbfs": -1.4011090236956505,
+          "sourceNoiseFloorDbfs": -63.74442977286665,
+          "clippedSamples": 0,
+          "integratedLufs": -16.42,
+          "truePeakDb": -4.19,
+          "loudnessRange": 1.5,
+          "clippingPassed": true,
+          "loudnessPassed": true
+        },
+        {
+          "sceneId": "section-5",
+          "sourcePeakDbfs": -1.6324835706452636,
+          "sourceNoiseFloorDbfs": -75.13774970788012,
+          "clippedSamples": 0,
+          "integratedLufs": -16.24,
+          "truePeakDb": -4.12,
+          "loudnessRange": 2.6,
+          "clippingPassed": true,
+          "loudnessPassed": true
+        }
+      ]
     }
   ]
 }

@@ -13,8 +13,11 @@ capture:
   frame_rate: 30
   video_codec: h264
   audio_codec: aac
-  narration_voice: Daniel
-  narration_words_per_minute: 148
+  narration_default_voice: daniel
+  narration_voices: [daniel, samantha, tessa, karen, rishi]
+  narration_synchronized_scene_timeline: true
+  narration_audio_target_lufs: -16
+  narration_true_peak_limit_db: -1.5
   captions:
     burned_in: true
     sidecar_format: srt

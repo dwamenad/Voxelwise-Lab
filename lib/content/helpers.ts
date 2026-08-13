@@ -1,4 +1,9 @@
 import type { Lesson, LessonBlock, VideoType } from "@/lib/types";
+import {
+  createVideoVoiceVariants,
+  DEFAULT_VOICE_ID,
+  getPublishedMedia,
+} from "@/lib/narration";
 
 interface LearningLessonInput {
   id: string;
@@ -26,18 +31,25 @@ interface LearningLessonInput {
 }
 
 export function learningLesson(input: LearningLessonInput): Lesson {
+  const publishedMedia = getPublishedMedia(input.slug);
+  const videoStatus = publishedMedia ? "published" : "planned";
   const blocks: LessonBlock[] = [
     {
       type: "video",
       videoType: input.videoType ?? "concept",
       title: input.videoTitle ?? input.title,
-      provider: "mux",
+      provider: publishedMedia?.provider ?? "local",
       videoId: null,
+      url: publishedMedia?.url,
       durationMinutes: Math.max(5, Math.round((input.duration ?? 20) * 0.35)),
-      status: "planned",
-      captionsPath: `/production/captions/${input.slug}.vtt`,
-      transcript:
-        "A reviewed transcript will appear here when this video is published. The complete written lesson below covers the same learning objectives.",
+      status: videoStatus,
+      captionsPath: publishedMedia?.captionsPath ?? `/production/captions/${input.slug}.vtt`,
+      defaultVoiceId: DEFAULT_VOICE_ID,
+      voiceVariants: createVideoVoiceVariants(input.slug),
+      transcriptUrl: publishedMedia?.transcriptUrl,
+      transcript: publishedMedia
+        ? "The reviewed production transcript is available below. The complete written lesson covers the same learning objectives."
+        : "A reviewed transcript will appear here when this video is published. The complete written lesson below covers the same learning objectives.",
     },
     { type: "concept", title: input.conceptTitle, body: input.concept },
     { type: "text", body: input.explanation },
@@ -71,7 +83,7 @@ export function learningLesson(input: LearningLessonInput): Lesson {
       sourceLab: input.sourceLab,
       sourceSection: input.sourceSection,
       scientificReviewStatus: "pending",
-      videoStatus: "planned",
+      videoStatus,
       narrationScriptPath: `production/narration/${input.slug}.md`,
       videoStoryboardPath: `production/storyboards/${input.slug}.md`,
     },

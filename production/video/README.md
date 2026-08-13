@@ -1,9 +1,11 @@
 # Lesson video production
 
-This directory contains the reproducible v2 production system for the 19
+This directory contains the reproducible v3 production system for the 19
 Voxelwise Lab concept and quality-control videos. Rendered masters and generated
-narration audio are intentionally excluded from Git; approved masters belong in
-review storage and, later, the streaming provider.
+narration audio are intentionally excluded from Git. Approved masters are
+delivered from the `voxelwise-lab-media` Cloudflare R2 bucket;
+`config/published-media.json` is the app's source of truth for the currently
+published Daniel masters.
 
 ## Editorial and attribution policy
 
@@ -20,15 +22,18 @@ approved.
 
 - 1920×1080 at 30 fps
 - H.264 video with AAC audio
-- Daniel voice at 148 words per minute
+- Daniel as the default voice, with Samantha, Tessa, Karen, and Rishi variants
+- synchronized scene boundaries across every voice so learners can switch at the same timestamp
+- 48 kHz audio with DC removal, a 70 Hz high-pass filter, silence trimming,
+  short fades, −16 LUFS normalization, and per-scene clipping/loudness QC
 - readable sentence captions, limited to two 42-character lines per cue
 - normal acronyms in captions and transcripts; pronunciation expansion only in
   the hidden TTS input
 
-The original v1 concept masters remain under
-`production/video/output/concepts/masters/`. V2 renders are written separately
-to `production/video/output/concepts/masters-v2/`, with the contrasts master at
-`production/video/output/understanding-contrasts-v2.mp4`.
+The original v1 and v2 concept masters remain untouched. V3 voice variants are
+written to `production/video/output/concepts/masters-v3/<lesson>/<voice>.mp4`,
+with contrasts variants under
+`production/video/output/understanding-contrasts-v3/<voice>.mp4`.
 
 ## Prepare and validate
 
@@ -36,8 +41,12 @@ Generate the 18-video concept library, all narration clips, timing manifests,
 captions, and transcripts, then prepare the contrasts lesson:
 
 ```sh
-npm run video:prepare:v2
+npm run video:prepare:v3
 ```
+
+The committed browser previews are regenerated with `npm run video:voices` and
+written to `public/voice-previews/`. Full lesson narration remains excluded
+from Git because it is a reproducible build artifact.
 
 Validate source copy and internal-reference policy:
 
@@ -70,16 +79,22 @@ are ignored by Git.
 
 ## Render
 
-Render every v2 master and run the encoded-media validation:
+Render every v3 voice variant and run the encoded-media validation:
 
 ```sh
-npm run video:render:v2
+npm run video:render:v3
 ```
 
 Render one or more prepared concept lessons without regenerating narration:
 
 ```sh
 npm run video:render:concepts:prepared -- what-is-fsl what-is-a-glm
+```
+
+Limit a prepared concept render to selected voices when reviewing a pilot:
+
+```sh
+npm run video:render:concepts:prepared -- --voices=daniel,tessa what-is-fsl
 ```
 
 Render only the contrasts lesson:
@@ -103,17 +118,29 @@ npm run video:validate:masters
 - contrasts source: `production/video/content/understanding-contrasts.json`
 - shared renderer: `production/video/src/concept-lesson.tsx`
 - scientific visuals: `production/video/src/components/visuals.tsx`
+- voice registry: `production/video/config/voices.json`
+- audio cleanup and QC: `production/video/scripts/audio-pipeline.mjs`
+- synchronized narration builder: `production/video/scripts/build-multivoice-narration.mjs`
 - narration utilities: `production/video/scripts/narration-utils.mjs`
 - implementation prompt: `production/video/prompts/implement-smith-grounded-video-v2.md`
 
 Live Neurodesk and FEAT walkthroughs remain separate because their visual
-evidence must be recorded in an approved environment. This v2 set contains only
+evidence must be recorded in an approved environment. The concept set contains only
 the videos that can be produced without that live approval.
+
+## Production delivery
+
+The published set contains 20 MP4 masters, 20 WebVTT caption files, 20 source
+SRT files, and 20 reviewed Markdown transcripts. The app reads the public media
+prefix from `NEXT_PUBLIC_MEDIA_BASE_URL`, falling back to the verified R2
+managed domain in `config/published-media.json`. Byte-range playback and public
+GET/HEAD CORS are enabled for the bucket. Samantha, Tessa, Karen, and Rishi
+remain preview-only until their lesson masters are rendered and approved.
 
 ## Live FEAT pilot
 
-The `Opening FEAT` pilot uses authentic Neurodesk capture frames, Daniel
-narration, burned-in captions, and matching SRT and transcript files. Prepare
+The `Opening FEAT` pilot uses authentic Neurodesk capture frames, five
+synchronized narration variants, voice-specific captions, and a shared transcript. Prepare
 its capture assets and narration with:
 
 ```sh

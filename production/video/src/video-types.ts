@@ -96,8 +96,8 @@ export interface ConceptVideo {
   description: string;
   videoType: string;
   accent: string;
-  voice: string;
-  speechRate: number;
+  defaultVoiceId: string;
+  voiceIds: string[];
   fps: number;
   source: {
     repository: string;
@@ -113,6 +113,8 @@ export interface CaptionCue {
   text: string;
   startFrame: number;
   endFrame: number;
+  startSeconds?: number;
+  endSeconds?: number;
 }
 
 export interface ConceptTiming {
@@ -121,9 +123,21 @@ export interface ConceptTiming {
   totalSeconds: number;
   scenes: Array<{
     id: string;
-    audioPath: string;
     durationInFrames: number;
     startFrame: number;
+    audioPath?: string;
   }>;
-  cues: CaptionCue[];
+  cues?: CaptionCue[];
+  defaultVoiceId?: string;
+  voiceTracks?: Array<{
+    voiceId: string;
+    displayName: string;
+    scenes: Array<{
+      id: string;
+      audioPath: string;
+      durationInFrames: number;
+      startFrame: number;
+    }>;
+    cues: CaptionCue[];
+  }>;
 }

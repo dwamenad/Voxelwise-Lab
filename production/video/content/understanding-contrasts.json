@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "slug": "understanding-contrasts",
   "compositionId": "UnderstandingContrasts",
   "courseSlug": "first-level-fmri-analysis-feat",
@@ -12,8 +12,8 @@
   "description": "Translate a scientific comparison into contrast weights, then distinguish effect, uncertainty, and standardized evidence.",
   "videoType": "concept",
   "accent": "#ffbf69",
-  "voice": "Daniel",
-  "speechRate": 148,
+  "defaultVoiceId": "daniel",
+  "voiceIds": ["daniel", "samantha", "tessa", "karen", "rishi"],
   "fps": 30,
   "source": {
     "repository": "tubric/2026s-fmri-class",

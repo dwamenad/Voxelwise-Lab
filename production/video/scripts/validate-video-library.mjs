@@ -11,6 +11,7 @@ const errors = [];
 const readJson = async (relativePath) =>
   JSON.parse(await readFile(path.join(projectRoot, relativePath), "utf8"));
 
+const voiceRegistry = await readJson("production/video/config/voices.json");
 const conceptLibrary = await readJson("production/video/content/concept-library.json");
 const contrast = await readJson("production/video/content/understanding-contrasts.json");
 const videos = [...conceptLibrary.videos, contrast];
@@ -50,8 +51,12 @@ const validVisuals = new Set([
   "code",
 ]);
 
-if (conceptLibrary.version !== 2) errors.push("Concept library must be version 2.");
-if (contrast.version !== 2) errors.push("Understanding contrasts must be version 2.");
+if (conceptLibrary.version !== 3) errors.push("Concept library must be version 3.");
+if (contrast.version !== 3) errors.push("Understanding contrasts must be version 3.");
+if (voiceRegistry.voices?.length !== 5) errors.push("The narration registry must contain five voices.");
+if (voiceRegistry.defaultVoiceId !== "daniel") errors.push("Daniel must remain the default narration voice.");
+const approvedVoiceIds = new Set(voiceRegistry.voices.map((voice) => voice.id));
+const expectedVoiceIds = [...approvedVoiceIds].sort();
 if (conceptLibrary.editorialPolicy?.learnerCreditsEnabled !== false) {
   errors.push("Concept-library learner credits must remain disabled.");
 }
@@ -72,8 +77,12 @@ for (const video of videos) {
   slugs.add(video.slug);
   compositions.add(video.compositionId);
 
-  if (video.voice !== "Daniel" || video.speechRate !== 148) {
-    errors.push(`${prefix}: production voice must be Daniel at 148 words per minute.`);
+  if (video.defaultVoiceId !== voiceRegistry.defaultVoiceId) {
+    errors.push(`${prefix}: default voice must be ${voiceRegistry.defaultVoiceId}.`);
+  }
+  const videoVoiceIds = [...(video.voiceIds ?? [])].sort();
+  if (JSON.stringify(videoVoiceIds) !== JSON.stringify(expectedVoiceIds)) {
+    errors.push(`${prefix}: voice IDs must match the approved registry.`);
   }
   if (video.fps !== 30) errors.push(`${prefix}: frame rate must be 30 fps.`);
   if (video.source?.visibility !== "internal") {
@@ -133,53 +142,73 @@ const validateGeneratedVideo = async ({ video, timing, outputDirectory }) => {
     errors.push(`${prefix}: generated timing is missing.`);
     return;
   }
-  if (timing.voice !== "Daniel" || timing.speechRate !== 148) {
-    errors.push(`${prefix}: generated voice metadata is incorrect.`);
+  if (timing.version !== 3) errors.push(`${prefix}: generated timing must be version 3.`);
+  if (timing.defaultVoiceId !== voiceRegistry.defaultVoiceId) {
+    errors.push(`${prefix}: generated default voice metadata is incorrect.`);
   }
   if (timing.scenes?.length !== video.scenes.length) {
     errors.push(`${prefix}: generated scene count does not match content.`);
   }
-  for (const scene of timing.scenes ?? []) {
-    const audioPath = path.join(projectRoot, "public", scene.audioPath);
-    try {
-      const file = await stat(audioPath);
-      if (file.size === 0) errors.push(`${prefix}/${scene.id}: audio file is empty.`);
-    } catch {
-      errors.push(`${prefix}/${scene.id}: audio file is missing.`);
-    }
+  const trackVoiceIds = (timing.voiceTracks ?? []).map((track) => track.voiceId).sort();
+  if (JSON.stringify(trackVoiceIds) !== JSON.stringify(expectedVoiceIds)) {
+    errors.push(`${prefix}: generated voice tracks must match the approved registry.`);
   }
-  for (const cue of timing.cues ?? []) {
-    const lines = cue.text.split("\n");
-    if (lines.length > 2) errors.push(`${prefix}: caption cue exceeds 2 lines: ${cue.text}`);
-    if (lines.some((line) => line.length > 42)) {
-      errors.push(`${prefix}: caption line exceeds 42 characters: ${cue.text}`);
+  for (const track of timing.voiceTracks ?? []) {
+    if (track.scenes?.length !== video.scenes.length) {
+      errors.push(`${prefix}/${track.voiceId}: generated scene count does not match content.`);
     }
-    if (pronunciationLeak.test(cue.text)) {
-      errors.push(`${prefix}: TTS pronunciation spelling leaked into captions.`);
+    for (const scene of track.scenes ?? []) {
+      const audioPath = path.join(projectRoot, "public", scene.audioPath);
+      try {
+        const file = await stat(audioPath);
+        if (file.size === 0) errors.push(`${prefix}/${track.voiceId}/${scene.id}: audio file is empty.`);
+      } catch {
+        errors.push(`${prefix}/${track.voiceId}/${scene.id}: audio file is missing.`);
+      }
     }
-    const banned = cue.text.match(learnerFacingBan)?.[0];
-    if (banned) errors.push(`${prefix}: learner-facing internal language found in captions: ${banned}`);
+    for (const item of track.qc ?? []) {
+      if (!item.loudnessPassed) errors.push(`${prefix}/${track.voiceId}/${item.sceneId}: loudness QC failed.`);
+      if (!item.clippingPassed || item.clippedSamples > 0) {
+        errors.push(`${prefix}/${track.voiceId}/${item.sceneId}: clipping QC failed.`);
+      }
+    }
+    for (const cue of track.cues ?? []) {
+      const lines = cue.text.split("\n");
+      if (lines.length > 2) errors.push(`${prefix}/${track.voiceId}: caption cue exceeds 2 lines: ${cue.text}`);
+      if (lines.some((line) => line.length > 42)) {
+        errors.push(`${prefix}/${track.voiceId}: caption line exceeds 42 characters: ${cue.text}`);
+      }
+      if (pronunciationLeak.test(cue.text)) {
+        errors.push(`${prefix}/${track.voiceId}: TTS pronunciation spelling leaked into captions.`);
+      }
+      const banned = cue.text.match(learnerFacingBan)?.[0];
+      if (banned) errors.push(`${prefix}/${track.voiceId}: learner-facing internal language found in captions: ${banned}`);
+    }
   }
 
-  for (const suffix of [".srt", "-transcript.md"]) {
-    const filePath = path.join(outputDirectory, `${prefix}${suffix}`);
+  const generatedFiles = [
+    ...expectedVoiceIds.map((voiceId) => `${prefix}-${voiceId}.srt`),
+    `${prefix}-transcript.md`,
+  ];
+  for (const filename of generatedFiles) {
+    const filePath = path.join(outputDirectory, filename);
     try {
       const fileText = await readFile(filePath, "utf8");
       if (pronunciationLeak.test(fileText)) {
-        errors.push(`${prefix}: TTS pronunciation spelling leaked into ${suffix}.`);
+        errors.push(`${prefix}: TTS pronunciation spelling leaked into ${filename}.`);
       }
       const banned = fileText.match(learnerFacingBan)?.[0];
-      if (banned) errors.push(`${prefix}: learner-facing internal language found in ${suffix}: ${banned}`);
-      if (/^Source:/m.test(fileText)) errors.push(`${prefix}: learner-facing source footer found in ${suffix}.`);
+      if (banned) errors.push(`${prefix}: learner-facing internal language found in ${filename}: ${banned}`);
+      if (/^Source:/m.test(fileText)) errors.push(`${prefix}: learner-facing source footer found in ${filename}.`);
     } catch {
-      errors.push(`${prefix}: missing generated ${suffix}.`);
+      errors.push(`${prefix}: missing generated ${filename}.`);
     }
   }
 };
 
 if (requireConceptGenerated) {
   const generated = await readJson("production/video/generated/concept-library.json");
-  if (generated.version !== 2) errors.push("Generated concept timing must be version 2.");
+  if (generated.version !== 3) errors.push("Generated concept timing must be version 3.");
   for (const video of conceptLibrary.videos) {
     await validateGeneratedVideo({
       video,
@@ -190,7 +219,7 @@ if (requireConceptGenerated) {
         "video",
         "output",
         "concepts",
-        "v2",
+        "v3",
         video.slug,
       ),
     });
@@ -207,7 +236,7 @@ if (requireContrastGenerated) {
       "production",
       "video",
       "output",
-      "v2",
+      "v3",
       contrast.slug,
     ),
   });
@@ -216,62 +245,44 @@ if (requireContrastGenerated) {
 if (requireMasters) {
   const conceptGenerated = await readJson("production/video/generated/concept-library.json");
   const contrastGenerated = await readJson("production/video/generated/understanding-contrasts.json");
-  const validateMaster = async ({ slug, masterPath, expectedSeconds }) => {
+  const validateMaster = async ({ slug, voiceId, masterPath, expectedSeconds }) => {
     try {
       const file = await stat(masterPath);
       if (file.size === 0) {
-        errors.push(`${slug}: v2 master is empty.`);
+        errors.push(`${slug}/${voiceId}: v3 master is empty.`);
         return;
       }
       const metadata = await getVideoMetadata(masterPath);
       if (metadata.width !== 1920 || metadata.height !== 1080) {
-        errors.push(`${slug}: master must be 1920x1080.`);
+        errors.push(`${slug}/${voiceId}: master must be 1920x1080.`);
       }
-      if (metadata.fps !== 30) errors.push(`${slug}: master must be 30 fps.`);
-      if (metadata.codec !== "h264") errors.push(`${slug}: master video codec must be H.264.`);
-      if (metadata.audioCodec !== "aac") errors.push(`${slug}: master audio codec must be AAC.`);
+      if (metadata.fps !== 30) errors.push(`${slug}/${voiceId}: master must be 30 fps.`);
+      if (metadata.codec !== "h264") errors.push(`${slug}/${voiceId}: master video codec must be H.264.`);
+      if (metadata.audioCodec !== "aac") errors.push(`${slug}/${voiceId}: master audio codec must be AAC.`);
       if (!metadata.canPlayInVideoTag || !metadata.supportsSeeking) {
-        errors.push(`${slug}: master is not seekable browser-compatible media.`);
+        errors.push(`${slug}/${voiceId}: master is not seekable browser-compatible media.`);
       }
       if (Math.abs(metadata.durationInSeconds - expectedSeconds) > 0.5) {
         errors.push(
-          `${slug}: encoded duration ${metadata.durationInSeconds.toFixed(2)} does not match generated duration ${expectedSeconds.toFixed(2)}.`,
+          `${slug}/${voiceId}: encoded duration ${metadata.durationInSeconds.toFixed(2)} does not match generated duration ${expectedSeconds.toFixed(2)}.`,
         );
       }
     } catch (error) {
-      errors.push(`${slug}: v2 master is missing or unreadable (${error.message}).`);
+      errors.push(`${slug}/${voiceId}: v3 master is missing or unreadable (${error.message}).`);
     }
   };
 
   for (const video of conceptLibrary.videos) {
-    const masterPath = path.join(
-      projectRoot,
-      "production",
-      "video",
-      "output",
-      "concepts",
-      "masters-v2",
-      `${video.slug}.mp4`,
-    );
     const timing = conceptGenerated.videos.find((item) => item.slug === video.slug);
-    await validateMaster({
-      slug: video.slug,
-      masterPath,
-      expectedSeconds: timing.totalSeconds,
-    });
+    for (const voiceId of expectedVoiceIds) {
+      const masterPath = path.join(projectRoot, "production", "video", "output", "concepts", "masters-v3", video.slug, `${voiceId}.mp4`);
+      await validateMaster({ slug: video.slug, voiceId, masterPath, expectedSeconds: timing.totalSeconds });
+    }
   }
-  const contrastMaster = path.join(
-    projectRoot,
-    "production",
-    "video",
-    "output",
-    "understanding-contrasts-v2.mp4",
-  );
-  await validateMaster({
-    slug: contrast.slug,
-    masterPath: contrastMaster,
-    expectedSeconds: contrastGenerated.totalSeconds,
-  });
+  for (const voiceId of expectedVoiceIds) {
+    const contrastMaster = path.join(projectRoot, "production", "video", "output", "understanding-contrasts-v3", `${voiceId}.mp4`);
+    await validateMaster({ slug: contrast.slug, voiceId, masterPath: contrastMaster, expectedSeconds: contrastGenerated.totalSeconds });
+  }
 }
 
 if (errors.length) {
@@ -281,5 +292,5 @@ if (errors.length) {
 }
 
 console.log(
-  `Validated ${videos.length} v2 videos${requireMasters ? ", including masters" : ""}.`,
+  `Validated ${videos.length} five-voice videos${requireMasters ? ", including masters" : ""}.`,
 );

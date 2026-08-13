@@ -1,0 +1,30 @@
+{
+  "provider": "cloudflare-r2",
+  "bucket": "voxelwise-lab-media",
+  "baseUrl": "https://pub-8e427c599c5b455db3f709b5b0869245.r2.dev/media",
+  "publishedAt": "2026-08-13T03:23:03Z",
+  "objectCount": 80,
+  "totalBytes": 161347234,
+  "slugs": [
+    "what-is-fsl",
+    "how-this-course-works",
+    "getting-started-with-neurodesk",
+    "the-terminal",
+    "linux-navigation",
+    "what-is-a-nifti-image",
+    "understanding-bids",
+    "introduction-to-fsleyes",
+    "overlays-atlases-and-time-series",
+    "fslinfo-and-fslstats",
+    "fslmaths-and-fslmeants",
+    "what-first-level-means",
+    "what-is-a-glm",
+    "experimental-timing-files",
+    "what-is-an-ev",
+    "hrf-and-convolution",
+    "confound-regressors",
+    "understanding-contrasts",
+    "opening-feat",
+    "reviewing-complete-feat-report"
+  ]
+}

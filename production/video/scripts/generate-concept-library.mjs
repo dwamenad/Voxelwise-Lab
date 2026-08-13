@@ -1,9 +1,12 @@
 import { build } from "esbuild";
-import { writeFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { editorialV2 } from "../content/editorial-v2.mjs";
 
 const projectRoot = process.cwd();
+const voiceRegistry = JSON.parse(
+  await readFile(path.join(projectRoot, "production", "video", "config", "voices.json"), "utf8"),
+);
 
 const result = await build({
   absWorkingDir: projectRoot,
@@ -18,7 +21,9 @@ const result = await build({
       name: "project-alias",
       setup(builder) {
         builder.onResolve({ filter: /^@\// }, (args) => ({
-          path: `${path.join(projectRoot, args.path.slice(2))}.ts`,
+          path: path.extname(args.path) === ".json"
+            ? path.join(projectRoot, args.path.slice(2))
+            : `${path.join(projectRoot, args.path.slice(2))}.ts`,
         }));
       },
     },
@@ -89,8 +94,8 @@ for (const course of courses.filter((item) => eligibleCourses.has(item.slug))) {
           description: editorial.description,
           videoType: videoBlock.videoType,
           accent: accentColors[course.accent] ?? "#79e6bf",
-          voice: "Daniel",
-          speechRate: 148,
+          defaultVoiceId: voiceRegistry.defaultVoiceId,
+          voiceIds: voiceRegistry.voices.map((voice) => voice.id),
           fps: 30,
           source: {
             repository: "tubric/2026s-fmri-class",
@@ -117,12 +122,12 @@ if (unusedEditorialSlugs.length) {
 }
 
 const library = {
-  version: 2,
-  productionVoice: {
-    voice: "Daniel",
-    accent: "UK English",
-    cadence: "deliberate",
-    speechRate: 148,
+  version: 3,
+  narration: {
+    registryVersion: voiceRegistry.version,
+    defaultVoiceId: voiceRegistry.defaultVoiceId,
+    voices: voiceRegistry.voices,
+    audioTargets: voiceRegistry.audioTargets,
   },
   selection: {
     courses: [...eligibleCourses],
@@ -143,4 +148,4 @@ await writeFile(
   `${JSON.stringify(library, null, 2)}\n`,
 );
 
-console.log(`Prepared ${videos.length} v2 videos with internal-only source references.`);
+console.log(`Prepared ${videos.length} five-voice videos with internal-only source references.`);

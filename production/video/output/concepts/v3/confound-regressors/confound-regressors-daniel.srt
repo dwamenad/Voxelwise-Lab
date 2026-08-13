@@ -1,0 +1,121 @@
+1
+00:00:00,000 --> 00:00:04,104
+Measured BOLD contains task-related
+variation and many other patterns.
+
+2
+00:00:04,104 --> 00:00:09,120
+Confound regressors represent structured
+nuisance variation, such as head motion or
+
+3
+00:00:09,120 --> 00:00:15,504
+slow drift, so the GLM does not attribute
+all shared change to the task.
+
+4
+00:00:15,504 --> 00:00:20,064
+They reduce some bias; they do not repair
+every artifact.
+
+5
+00:00:22,200 --> 00:00:28,278
+Task and nuisance regressors enter the
+same design matrix but support different
+
+6
+00:00:28,278 --> 00:00:28,784
+interpretations.
+
+7
+00:00:28,784 --> 00:00:32,330
+The task columns estimate effects of
+interest.
+
+8
+00:00:32,330 --> 00:00:35,368
+The nuisance columns absorb specified
+variation.
+
+9
+00:00:35,368 --> 00:00:40,433
+Because the estimates are conditional,
+strong dependence between columns can
+
+10
+00:00:40,433 --> 00:00:42,965
+change both precision and interpretation.
+
+11
+00:00:45,033 --> 00:00:49,406
+Motion parameters describe translation and
+rotation across the run.
+
+12
+00:00:49,406 --> 00:00:55,723
+Inspect the plots for abrupt jumps, slow
+drift, and patterns synchronized with the
+
+13
+00:00:55,723 --> 00:00:56,208
+task.
+
+14
+00:00:56,208 --> 00:01:01,067
+A motion regressor can reduce linear
+shared variance, but task-correlated
+
+15
+00:01:01,067 --> 00:01:03,982
+motion is especially difficult to
+separate.
+
+16
+00:01:06,400 --> 00:01:11,925
+Confound regression does not reconstruct
+missing anatomy or undo every motion
+
+17
+00:01:11,925 --> 00:01:12,427
+artifact.
+
+18
+00:01:12,427 --> 00:01:18,453
+Distortion can depend on position in the
+magnetic field, and spin-history effects
+
+19
+00:01:18,453 --> 00:01:20,462
+can persist after realignment.
+
+20
+00:01:20,462 --> 00:01:25,485
+Severe problems may require censoring,
+exclusion, or a revised acquisition—not
+
+21
+00:01:25,485 --> 00:01:26,489
+another regressor.
+
+22
+00:01:29,633 --> 00:01:33,981
+Confound regressors help separate
+specified nuisance variation from task
+
+23
+00:01:33,981 --> 00:01:34,464
+effects.
+
+24
+00:01:34,464 --> 00:01:39,778
+Inspect the nuisance patterns, their
+relationship to the task, and the
+
+25
+00:01:39,778 --> 00:01:40,744
+underlying images.
+
+26
+00:01:40,744 --> 00:01:46,541
+A cleaner model does not automatically
+mean the original data became valid.

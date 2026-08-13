@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "defaultVoiceId": "daniel",
+  "audioTargets": {
+    "sampleRate": 48000,
+    "integratedLufs": -16,
+    "truePeakDb": -1.5,
+    "loudnessRange": 7,
+    "highPassHz": 70,
+    "silenceThresholdDb": -48,
+    "sceneTailSeconds": 0.85
+  },
+  "voices": [
+    {
+      "id": "daniel",
+      "engineVoice": "Daniel",
+      "displayName": "Daniel",
+      "accent": "UK English",
+      "locale": "en-GB",
+      "speechRate": 148,
+      "description": "Measured and familiar; the default narration voice."
+    },
+    {
+      "id": "samantha",
+      "engineVoice": "Samantha",
+      "displayName": "Samantha",
+      "accent": "US English",
+      "locale": "en-US",
+      "speechRate": 158,
+      "description": "Clear and conversational for step-by-step instruction."
+    },
+    {
+      "id": "tessa",
+      "engineVoice": "Tessa",
+      "displayName": "Tessa",
+      "accent": "South African English",
+      "locale": "en-ZA",
+      "speechRate": 154,
+      "description": "Warm and deliberate with distinct technical phrasing."
+    },
+    {
+      "id": "karen",
+      "engineVoice": "Karen",
+      "displayName": "Karen",
+      "accent": "Australian English",
+      "locale": "en-AU",
+      "speechRate": 156,
+      "description": "Direct and energetic without rushing terminology."
+    },
+    {
+      "id": "rishi",
+      "engineVoice": "Rishi",
+      "displayName": "Rishi",
+      "accent": "Indian English",
+      "locale": "en-IN",
+      "speechRate": 152,
+      "description": "Steady and precise for commands and scientific terms."
+    }
+  ]
+}

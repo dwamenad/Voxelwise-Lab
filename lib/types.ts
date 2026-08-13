@@ -1,4 +1,4 @@
-export type VideoProvider = "youtube" | "vimeo" | "mux" | "local" | "external";
+export type VideoProvider = "youtube" | "vimeo" | "local" | "external";
 
 export type VideoType =
   | "concept"
@@ -8,6 +8,24 @@ export type VideoType =
   | "summary";
 
 export type ProductionStatus = "planned" | "recorded" | "published";
+
+export type NarrationVoiceId = "daniel" | "samantha" | "tessa" | "karen" | "rishi";
+
+export interface TranscriptCue {
+  startSeconds: number;
+  endSeconds: number;
+  text: string;
+}
+
+export interface VideoVoiceVariant {
+  voiceId: NarrationVoiceId;
+  status: ProductionStatus;
+  provider?: VideoProvider;
+  videoId?: string | null;
+  url?: string;
+  captionsPath?: string;
+  durationSeconds?: number;
+}
 
 export type LessonBlock =
   | { type: "text"; body: string }
@@ -23,6 +41,10 @@ export type LessonBlock =
       status: ProductionStatus;
       captionsPath?: string;
       transcript: string;
+      transcriptUrl?: string;
+      defaultVoiceId?: NarrationVoiceId;
+      voiceVariants?: VideoVoiceVariant[];
+      transcriptCues?: TranscriptCue[];
     }
   | { type: "image"; src: string; alt: string; caption?: string }
   | {
@@ -146,4 +168,3 @@ export interface LessonProgress {
   completedAt: string | null;
   lastViewedAt: string;
 }
-
