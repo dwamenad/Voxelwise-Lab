@@ -26,9 +26,9 @@ export function CourseActions({ course }: { course: Course }) {
           {firstIncomplete && <Link className="button button--acid" href={`/courses/${course.slug}/lessons/${firstIncomplete.slug}`}><Play size={17} fill="currentColor" />{progress > 0 ? "Continue course" : "Start course"}</Link>}
         </>
       ) : (
-        <button className="button button--acid" type="button" onClick={() => enroll(course.slug)}><Check size={18} />Enroll free</button>
+        <button className="button button--acid" type="button" onClick={() => enroll(course.slug)}><Check size={18} />Add to my progress</button>
       )}
-      <p>No payment or certificate. Learn at your own pace.</p>
+      <p>Saved privately in this browser. No account or payment required.</p>
     </div>
   );
 }

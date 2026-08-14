@@ -6,10 +6,9 @@ import { courses, getLesson } from "@/lib/content/catalog";
 import { calculateCourseProgress } from "@/lib/progress/store";
 import { useProgress } from "@/components/progress-provider";
 import { ProgressBar } from "@/components/progress-bar";
-import { demoStudent } from "@/lib/config";
 
 export function DashboardContent() {
-  const { state, resetDemo } = useProgress();
+  const { state, resetProgress } = useProgress();
   const enrolledCourses = courses.filter((course) => state.enrolledCourseSlugs.includes(course.slug));
   const lastViewed = state.lastViewed ? getLesson(state.lastViewed.courseSlug, state.lastViewed.lessonSlug) : undefined;
   const continueCourse = lastViewed?.course ?? enrolledCourses[0];
@@ -17,12 +16,12 @@ export function DashboardContent() {
   const suggested = courses.find((course) => !state.enrolledCourseSlugs.includes(course.slug));
 
   return <main className="dashboard page-shell">
-    <header className="dashboard__header"><div><span className="eyebrow">Student workspace</span><h1>Good to see you, {demoStudent.displayName.split(" ")[0]}.</h1><p>Pick up where you left off or review the work you have completed.</p></div><button className="reset-demo" type="button" onClick={resetDemo}><RotateCcw size={15} />Reset demo progress</button></header>
+    <header className="dashboard__header"><div><span className="eyebrow">Private learning shelf</span><h1>Keep your progress close.</h1><p>Progress is saved only in this browser. No account or email is required.</p></div><button className="reset-progress" type="button" onClick={resetProgress}><RotateCcw size={15} />Reset local progress</button></header>
     {continueCourse && continueLesson ? <section className="continue-panel" data-accent={continueCourse.accent}>
       <div><span>Continue learning</span><h2>{continueCourse.title}</h2><p>Next: {continueLesson.title}</p></div>
       <div className="continue-panel__progress"><div><strong>{calculateCourseProgress(continueCourse, state.completedLessonIds)}%</strong><span>complete</span></div><ProgressBar value={calculateCourseProgress(continueCourse, state.completedLessonIds)} /></div>
       <Link className="button button--acid" href={`/courses/${continueCourse.slug}/lessons/${continueLesson.slug}`}>Continue <ArrowRight size={17} /></Link>
-    </section> : <section className="empty-state"><BookOpen /><h2>Your course shelf is empty</h2><p>Enroll in a course to keep progress and resume the last lesson.</p><Link className="button button--dark" href="/courses">Browse courses</Link></section>}
+    </section> : <section className="empty-state"><BookOpen /><h2>Your course shelf is empty</h2><p>Add a course to keep progress and resume the last lesson on this device.</p><Link className="button button--dark" href="/courses">Browse courses</Link></section>}
 
     <section className="dashboard-section"><div className="section-heading section-heading--row"><div><span className="eyebrow">My courses</span><h2>Enrolled courses</h2></div><Link className="text-link" href="/courses">Find another course <ArrowRight size={15} /></Link></div>
       <div className="my-courses">{enrolledCourses.map((course) => {
