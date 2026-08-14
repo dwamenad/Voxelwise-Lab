@@ -1,11 +1,11 @@
 "use client";
 
 import { createContext, useCallback, useContext, useMemo, useSyncExternalStore } from "react";
-import { DEMO_PROGRESS, enrollInCourse, toggleLessonCompletion, type LocalProgressState } from "@/lib/progress/store";
+import { DEFAULT_PROGRESS, enrollInCourse, toggleLessonCompletion, type LocalProgressState } from "@/lib/progress/store";
 
-const STORAGE_KEY = "fsl-academy-demo-progress-v1";
+const STORAGE_KEY = "fsl-academy-local-progress-v2";
 const listeners = new Set<() => void>();
-let memoryState: LocalProgressState = DEMO_PROGRESS;
+let memoryState: LocalProgressState = DEFAULT_PROGRESS;
 let storageLoaded = false;
 
 function loadStorage(): LocalProgressState {
@@ -15,7 +15,7 @@ function loadStorage(): LocalProgressState {
     const saved = window.localStorage.getItem(STORAGE_KEY);
     if (saved) memoryState = JSON.parse(saved) as LocalProgressState;
   } catch {
-    // Demo mode still works with the in-memory default when storage is blocked.
+    // Progress still works with the in-memory default when storage is blocked.
   }
   return memoryState;
 }
@@ -25,7 +25,7 @@ function getSnapshot() {
 }
 
 function getServerSnapshot() {
-  return DEMO_PROGRESS;
+  return DEFAULT_PROGRESS;
 }
 
 function subscribe(listener: () => void) {
@@ -62,7 +62,7 @@ interface ProgressContextValue {
   enroll: (courseSlug: string) => void;
   markComplete: (lessonId: string, completed?: boolean) => void;
   recordView: (courseSlug: string, lessonSlug: string) => void;
-  resetDemo: () => void;
+  resetProgress: () => void;
 }
 
 const ProgressContext = createContext<ProgressContextValue | null>(null);
@@ -72,8 +72,8 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
   const enroll = useCallback((courseSlug: string) => updateProgress((current) => enrollInCourse(current, courseSlug)), []);
   const markComplete = useCallback((lessonId: string, completed = true) => updateProgress((current) => toggleLessonCompletion(current, lessonId, completed)), []);
   const recordView = useCallback((courseSlug: string, lessonSlug: string) => updateProgress((current) => ({ ...current, lastViewed: { courseSlug, lessonSlug, viewedAt: new Date().toISOString() } })), []);
-  const resetDemo = useCallback(() => updateProgress(() => DEMO_PROGRESS), []);
-  const value = useMemo(() => ({ state, hydrated: true, enroll, markComplete, recordView, resetDemo }), [state, enroll, markComplete, recordView, resetDemo]);
+  const resetProgress = useCallback(() => updateProgress(() => DEFAULT_PROGRESS), []);
+  const value = useMemo(() => ({ state, hydrated: true, enroll, markComplete, recordView, resetProgress }), [state, enroll, markComplete, recordView, resetProgress]);
   return <ProgressContext.Provider value={value}>{children}</ProgressContext.Provider>;
 }
 

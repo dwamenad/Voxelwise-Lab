@@ -6,26 +6,9 @@ export interface LocalProgressState {
   lastViewed?: { courseSlug: string; lessonSlug: string; viewedAt: string };
 }
 
-export const DEMO_PROGRESS: LocalProgressState = {
-  enrolledCourseSlugs: ["fsl-neuroimaging-foundations", "first-level-fmri-analysis-feat"],
-  completedLessonIds: [
-    "foundations-what-is-fsl",
-    "foundations-course-workflow",
-    "foundations-neurodesk",
-    "first-level-what-first-level-means",
-    "first-level-what-is-a-glm",
-    "first-level-experimental-timing-files",
-    "first-level-what-is-an-ev",
-    "first-level-hrf-and-convolution",
-    "first-level-confound-regressors",
-    "first-level-understanding-contrasts",
-    "first-level-opening-feat",
-  ],
-  lastViewed: {
-    courseSlug: "first-level-fmri-analysis-feat",
-    lessonSlug: "configuring-data-tab",
-    viewedAt: "2026-08-08T19:30:00.000Z",
-  },
+export const DEFAULT_PROGRESS: LocalProgressState = {
+  enrolledCourseSlugs: [],
+  completedLessonIds: [],
 };
 
 export function calculateCourseProgress(course: Course, completedLessonIds: string[]): number {
@@ -47,4 +30,3 @@ export function enrollInCourse(state: LocalProgressState, courseSlug: string): L
     ? state
     : { ...state, enrolledCourseSlugs: [...state.enrolledCourseSlugs, courseSlug] };
 }
-

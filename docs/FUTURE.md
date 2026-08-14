@@ -12,7 +12,7 @@ The typed file-backed content API is the boundary for a future instructor CMS. A
 
 ## Connected progress and analytics
 
-The progress context currently persists demo state locally. A Supabase repository implementation can expose the same enroll, mark-complete, and record-view operations. Course analytics should aggregate privacy-preserving events on the server and must never weaken RLS.
+The progress context currently persists anonymous, local-only state in the visitor's browser. If accounts are added later, a Supabase repository implementation can expose the same enroll, mark-complete, and record-view operations. Course analytics should aggregate privacy-preserving events on the server and must never weaken RLS.
 
 ## Quizzes and certificates
 
@@ -33,4 +33,3 @@ Automated validation would require an authorized execution environment and an ex
 ## Student notes and instructor workflows
 
 Notes can reference stable lesson IDs and optional block anchors. Production manifests under `production/metadata/` provide the starting point for narration, storyboards, captions, scientific review, and publication automation.
-
