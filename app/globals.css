@@ -49,7 +49,6 @@ button { color: inherit; }
 .header-search input { width: 120px; border: 0; outline: 0; background: transparent; color: var(--ink); font-size: .82rem; }
 .header-search input::placeholder { color: #7b8882; }
 .header-dashboard { font-size: .84rem; font-weight: 620; }
-.privacy-badge { padding: 5px 8px; border: 1px solid #b9c4bd; border-radius: 3px; color: #53635b; font: 700 .61rem/1 var(--sans); letter-spacing: .09em; text-transform: uppercase; white-space: nowrap; }
 .mobile-menu { display: none; position: relative; }
 .mobile-menu summary { list-style: none; cursor: pointer; font-weight: 650; font-size: .85rem; }
 .mobile-menu summary::-webkit-details-marker { display: none; }
@@ -436,7 +435,7 @@ button { color: inherit; }
 
 @media (max-width: 640px) {
   :root { --header-h: 60px; }
-  .site-header__inner { padding: 0 16px; gap: 12px; }.brand-link { font-size: .89rem; }.brand-link svg { width: 27px; height: 27px; }.privacy-badge { display: none; }
+  .site-header__inner { padding: 0 16px; gap: 12px; }.brand-link { font-size: .89rem; }.brand-link svg { width: 27px; height: 27px; }
   .home-hero { min-height: 740px; }.home-hero__content { min-height: 620px; padding: 60px 20px 210px; }.home-hero h1 { font-size: clamp(3rem, 14vw, 4.7rem); }.home-hero__content > p { margin: 22px 0 26px; font-size: .94rem; }.hero-actions { flex-direction: column; align-items: stretch; }.home-hero__image { top: 45%; }
   .section-pad { padding: 72px 20px; }.section-heading { margin-bottom: 38px; }.section-heading h2 { font-size: 2.9rem; }.section-heading--row { display: block; }.section-heading--row .text-link { margin-top: 16px; }.method-steps li { grid-template-columns: 38px 1fr; padding: 20px 0; }.method-steps h3 { font-size: 1.35rem; }
   .course-row { min-height: 0; padding: 28px 0; grid-template-columns: 42px minmax(0,1fr) 34px; gap: 8px; }.course-row:hover { padding-left: 0; padding-right: 0; }.course-row h3 { font-size: 1.75rem; }.course-row__body > p { font-size: .8rem; }.course-row__meta { gap: 10px 17px; }.course-row__arrow { width: 32px; height: 32px; }.course-row__arrow svg { width: 17px; }.neurodesk-section__visual { min-height: 350px; }.neurodesk-section__copy { padding: 70px 20px; }.neurodesk-section__copy h2 { font-size: 3rem; }.topic-index { grid-template-columns: 1fr; }.topic-index > div { min-height: 105px; }.final-cta { min-height: 440px; padding: 70px 20px; }.final-cta h2 { font-size: 3.5rem; }
