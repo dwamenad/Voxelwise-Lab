@@ -19,7 +19,7 @@ export function SiteFooter() {
       </div>
       <div className="site-footer__bottom">
         <p>Educational content only. Follow your institutional and project-specific analysis protocols.</p>
-        <p>No account required. Progress stays in this browser. Curriculum adapted from TUBRIC’s 2026s-fmri-class under MIT license.</p>
+        <p>Progress stays in this browser. Curriculum adapted from TUBRIC’s 2026s-fmri-class under MIT license.</p>
       </div>
     </footer>
   );

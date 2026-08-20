@@ -21,7 +21,6 @@ export function SiteHeader() {
           {navigation.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
         </nav>
         <div className="header-actions">
-          <span className="privacy-badge">No account needed</span>
           <form action="/search" className="header-search" role="search">
             <Search size={16} aria-hidden="true" />
             <input name="q" aria-label="Search courses, lessons, and help" placeholder="Search" />
