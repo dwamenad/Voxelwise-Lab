@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>FSL Academy</title>
+  <rect width="64" height="64" rx="16" fill="#10241e"/>
+  <g stroke="#10241e" stroke-width="0.8" stroke-linejoin="round">
+    <g transform="translate(0 0)">
+      <path d="M11 18 17 14l6 4-6 4z" fill="#efffb4"/>
+      <path d="M11 18h6v11l-6-4z" fill="#dcff7d"/>
+      <path d="m17 22 6-4v11l-6 4z" fill="#a6c44d"/>
+    </g>
+    <g transform="translate(20 0)">
+      <path d="M11 18 17 14l6 4-6 4z" fill="#efffb4"/>
+      <path d="M11 18h6v11l-6-4z" fill="#dcff7d"/>
+      <path d="m17 22 6-4v11l-6 4z" fill="#a6c44d"/>
+    </g>
+    <g transform="translate(0 18)">
+      <path d="M11 18 17 14l6 4-6 4z" fill="#efffb4"/>
+      <path d="M11 18h6v11l-6-4z" fill="#dcff7d"/>
+      <path d="m17 22 6-4v11l-6 4z" fill="#a6c44d"/>
+    </g>
+    <g transform="translate(20 18)">
+      <path d="M11 18 17 14l6 4-6 4z" fill="#efffb4"/>
+      <path d="M11 18h6v11l-6-4z" fill="#dcff7d"/>
+      <path d="m17 22 6-4v11l-6 4z" fill="#a6c44d"/>
+    </g>
+  </g>
+</svg>
