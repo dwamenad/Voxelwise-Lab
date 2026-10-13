@@ -1,58 +1,66 @@
 1
-00:00:00,000 --> 00:00:04,858
+00:00:00,000 --> 00:00:04,690
 Circularity, commonly known as double
 dipping, occurs when data selection
 
 2
-00:00:04,858 --> 00:00:09,231
+00:00:04,690 --> 00:00:08,912
 criteria are not independent of the
 subsequent statistical test.
 
 3
-00:00:09,231 --> 00:00:16,032
+00:00:08,912 --> 00:00:15,478
 If you search the whole brain for voxels
 showing greater activation for task over
 
 4
-00:00:16,032 --> 00:00:22,348
+00:00:15,478 --> 00:00:21,575
 baseline, and then extract and report the
 mean activation from those exact voxels,
 
 5
-00:00:22,348 --> 00:00:26,720
-your effect sizes and p-values will be
-artificially inflated.
+00:00:21,575 --> 00:00:27,204
+the extracted effect estimate can be
+biased upward and an uncorrected follow-up
 
 6
-00:00:27,600 --> 00:00:34,750
-You can prevent circularity through four
-standard strategies: define regions using
+00:00:27,204 --> 00:00:29,080
+test can be invalid.
 
 7
-00:00:34,750 --> 00:00:41,250
-anatomical atlases; run an independent
-localizer scan; use orthogonal contrasts
+00:00:29,933 --> 00:00:36,336
+Use a prespecified anatomical mask, an
+independent localizer, or held-out data
 
 8
-00:00:41,250 --> 00:00:47,100
-where selection and testing are
-mathematically uncorrelated; or apply
+00:00:36,336 --> 00:00:38,664
+for selection and testing.
 
 9
-00:00:47,100 --> 00:00:48,400
-leave-one-subject-out cross-validation.
+00:00:38,664 --> 00:00:43,903
+Orthogonal contrast vectors alone do not
+guarantee statistical independence.
 
 10
-00:00:49,267 --> 00:00:55,145
+00:00:43,903 --> 00:00:49,141
+Cross-validation must keep selection
+separate from the held-out observations
+
+11
+00:00:49,141 --> 00:00:52,633
+and account for dependence between folds.
+
+12
+00:00:53,500 --> 00:00:59,378
 Never perform hypothesis tests on voxels
 selected with that same test.
 
-11
-00:00:55,145 --> 00:00:59,955
+13
+00:00:59,378 --> 00:01:04,188
 Always derive region boundaries
 independently to ensure your reported
 
-12
-00:00:59,955 --> 00:01:02,627
+14
+00:01:04,188 --> 00:01:06,860
 effect sizes are scientifically
 defensible.

@@ -2,7 +2,7 @@
 
 ## Stripping non-brain tissue
 
-Before registering a high-resolution anatomical scan to a standard template, you must remove non-brain tissue. Scalp fat, muscle, eyes, and skull exhibit intense MRI contrast that confuses registration cost functions. FSL's Brain Extraction Tool, or BET, strips these structures.
+Before registering a high-resolution anatomical scan to a standard template, brain extraction is commonly used for linear registration. Scalp fat, muscle, eyes, and skull exhibit intense MRI contrast that confuses registration cost functions. FSL's Brain Extraction Tool, or BET, strips these structures.
 
 ## Tuning fractional intensity (-f)
 
@@ -10,7 +10,7 @@ BET inflates a tessellated deformable sphere outward from the brain center until
 
 ## Inspect sagittal and coronal limits
 
-Always review skull-stripped outputs in FSLEyes before accepting them. Check the sagittal plane to verify that the cerebellum and brainstem are intact, and check the axial slices for orbital fat. Clipping genuine cortical gray matter will permanently erase your experimental activations.
+Always review skull-stripped outputs in FSLEyes before accepting them. Check the sagittal plane to verify that the cerebellum and brainstem are intact, and check the axial slices for orbital fat. An overly tight mask excludes valid tissue and can impair registration or later analysis. Keep the original image and rerun extraction if needed.
 
 ## BET best practices
 

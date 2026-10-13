@@ -22,72 +22,67 @@ low-frequency trends so they do not
 contaminate experimental regressors.
 
 6
-00:00:21,567 --> 00:00:25,053
-Setting the high-pass filter cutoff
-requires balancing drift removal against
+00:00:21,567 --> 00:00:24,674
+Choose the high-pass cutoff from your
+experimental design.
 
 7
-00:00:25,053 --> 00:00:26,099
-preserving task signal.
+00:00:24,674 --> 00:00:30,501
+For simple block designs, the full task
+and rest cycle is a useful starting point.
 
 8
-00:00:26,099 --> 00:00:31,328
-The golden rule is: cutoff must be at
-least twice the duration of the longest
+00:00:30,501 --> 00:00:32,443
+Event-related designs need closer
+evaluation.
 
 9
-00:00:31,328 --> 00:00:32,025
-experimental cycle.
+00:00:32,443 --> 00:00:37,493
+Use FEAT high-pass estimation and inspect
+the filtered design to assess how much
 
 10
-00:00:32,025 --> 00:00:37,603
-For a block design with thirty seconds on
-and thirty seconds off, the cycle is sixty
+00:00:37,493 --> 00:00:39,047
+expected task signal remains.
 
 11
-00:00:37,603 --> 00:00:41,787
-seconds, requiring a cutoff of at least
-one hundred and twenty seconds.
+00:00:44,933 --> 00:00:49,483
+A short cutoff can remove task-related
+variation along with drift; a long cutoff
 
 12
-00:00:47,933 --> 00:00:52,367
-If you set your cutoff too short, the
-filter cannot distinguish scanner drift
+00:00:49,483 --> 00:00:51,233
+may leave more low-frequency noise.
 
 13
-00:00:52,367 --> 00:00:54,754
-from the hemodynamic response of your
-task.
+00:00:51,233 --> 00:00:55,083
+FEAT applies the same temporal filtering
+to the model and data.
 
 14
-00:00:54,754 --> 00:00:57,482
-It will filter out your experimental
-effect entirely.
+00:00:55,083 --> 00:00:59,283
+Check signal retention and residuals
+instead of relying on a universal cutoff
 
 15
-00:00:57,482 --> 00:01:02,938
-When in doubt, err on the side of a longer
-cutoff; residual drift can still be
+00:00:59,283 --> 00:00:59,633
+rule.
 
 16
-00:01:02,938 --> 00:01:04,643
-captured by linear trend regressors.
-
-17
-00:01:09,300 --> 00:01:12,515
+00:01:04,733 --> 00:01:08,083
 High-pass temporal filtering removes
 scanner drift while preserving
 
-18
-00:01:12,515 --> 00:01:13,721
+17
+00:01:08,083 --> 00:01:09,339
 experimental BOLD signal.
 
-19
-00:01:13,721 --> 00:01:18,945
-Always calculate your cutoff from the
-longest task cycle, and verify that the
+18
+00:01:09,339 --> 00:01:14,782
+Choose the cutoff using the design, apply
+consistent filtering to data and model,
 
-20
-00:01:18,945 --> 00:01:22,160
-design matrix in FEAT shows no filter
-attenuation.
+19
+00:01:14,782 --> 00:01:17,713
+and review expected signal retention in
+FEAT.

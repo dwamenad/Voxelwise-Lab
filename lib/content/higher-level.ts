@@ -102,13 +102,13 @@ export const higherLevelCourse: Course = {
           concept:
             "Fixed-effects analysis assumes zero between-subject variance; conclusions apply strictly to the specific participants scanned. Mixed-effects analysis models both within-subject estimation uncertainty and true between-subject biological variation, allowing generalization to the population.",
           explanation:
-            "In FSL FEAT, higher-level mode lets you choose between 'Fixed Effects', 'Simple OLS', and 'FLAME 1 / FLAME 1+2'. For human cognitive neuroscience generalizing to healthy adults or clinical cohorts, mixed-effects (FLAME) is mandatory.",
+            "In FSL FEAT, higher-level mode lets you choose between 'Fixed Effects', 'Simple OLS', and 'FLAME 1 / FLAME 1+2'. Population inference must account for between-participant variation. FLAME carries lower-level variances into mixed-effects estimation; OLS is another option when its assumptions are appropriate. Choose the method for your design and data.",
           task: [
             "Open the FEAT GUI and switch the top-left dropdown to Higher-level analysis.",
             "Inspect the stats tab options: Fixed Effects, OLS, FLAME 1.",
           ],
           summary: [
-            "Fixed effects only generalises to the scanned cohort.",
+            "Fixed-effects conclusions are limited to the specific observations analyzed.",
             "Mixed effects (FLAME) models biological between-subject variance to generalize to the population.",
           ],
           sourceLab: "Lab-4_FSL_Level2_Level3.md",

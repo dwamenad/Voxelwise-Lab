@@ -39,7 +39,7 @@ export const ppiIcaCourse: Course = {
       id: "ppi-module-1",
       number: 1,
       title: "Connectivity Concepts",
-      description: "Understand how task demands modulate inter-regional functional communication.",
+      description: "Understand how task demands modulate statistical coupling between regions.",
       lessons: [
         learningLesson({
           id: "ppi-activation-vs-connectivity",
@@ -56,7 +56,7 @@ export const ppiIcaCourse: Course = {
           concept:
             "Standard GLM analysis asks: 'Does region X activate more during condition A than condition B?' Connectivity asks: 'Does the coupling between region X and region Y change as a function of psychological context?'",
           explanation:
-            "Task-based functional connectivity tests whether the slope of the regression line relating region X to region Y changes across task conditions. This is modeled statistically as an interaction effect in the GLM.",
+            "Task-based functional connectivity tests whether the slope of the regression line relating region X to region Y changes across task conditions. This is modeled as an interaction effect in the GLM. Coupling can increase or decrease; an association alone does not establish causal communication.",
           task: [
             "Review the PPI conceptual diagram in FSLEyes or lab slides.",
             "Identify candidate seed regions (e.g. Amygdala, Fusiform, DLPFC) for your scientific question.",
@@ -317,7 +317,7 @@ export const ppiIcaCourse: Course = {
           concept:
             "Unlike GLM which requires a predefined task hypothesis, Independent Component Analysis (ICA) is a data-driven method that decomposes 4D fMRI data into spatially independent component maps and associated time courses: X = S * A.",
           explanation:
-            "FSL's MELODIC (Multivariate Exploratory Linear Optimized Decomposition into Independent Components) uses spatial ICA. It assumes the brain is composed of non-Gaussian spatial networks that fluctuate over time.",
+            "FSL's MELODIC (Multivariate Exploratory Linear Optimized Decomposition into Independent Components) uses spatial ICA to estimate statistically independent spatial components and their time courses. Maps may overlap. Inspect spatial patterns, time courses, and spectra to distinguish likely signal from artifacts.",
           task: [
             "Launch the MELODIC GUI or run melodic from the command line.",
             "Run single-session ICA on filtered_func_data.nii.gz.",

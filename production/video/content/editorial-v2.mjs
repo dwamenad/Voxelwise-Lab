@@ -1545,7 +1545,7 @@ export const editorialV2 = {
             { label: "Rotations", value: "pitch, roll, yaw", detail: "3 axes of angular tilt", tone: "accent" },
           ],
         },
-        narrationText: "MCFLIRT uses a rigid-body transformation with six degrees of freedom: three spatial translations along the x, y, and z axes, and three rotations: pitch, roll, and yaw. Because the brain does not stretch or shear within a scan, higher degrees of freedom would be unphysical.",
+        narrationText: "MCFLIRT uses a rigid-body transformation with six degrees of freedom: three spatial translations along the x, y, and z axes, and three rotations: pitch, roll, and yaw. This models head movement, but cannot correct every susceptibility or spin-history artifact.",
         sourceRefs: [repositoryAsset("/curriculum/mcflirt.png", "Rigid body motion parameters")],
       }),
       scene({
@@ -1559,10 +1559,10 @@ export const editorialV2 = {
           type: "comparison",
           items: [
             { label: "Absolute displacement", value: "Total drift", detail: "Distance from the reference volume", tone: "blue" },
-            { label: "Relative displacement", value: "Framewise jump", detail: "Volume-to-volume movement (FD)", tone: "coral" },
+            { label: "Relative displacement", value: "Framewise jump", detail: "Volume-to-volume RMS movement", tone: "coral" },
           ],
         },
-        narrationText: "MCFLIRT outputs two critical displacement plots. Absolute displacement measures total drift from the reference volume across the entire run. Relative displacement, or framewise displacement, measures abrupt volume-to-volume jerks. Sudden spikes above half a voxel indicate potential spin-history artifacts requiring volume censoring.",
+        narrationText: "MCFLIRT reports absolute and relative root mean square displacement. Absolute displacement compares each volume with the reference; relative displacement compares neighboring volumes. These summaries differ from Power framewise displacement. Inspect spikes alongside image quality, and choose outlier regressors or exclusion criteria appropriate to your study.",
         sourceRefs: [repositoryAsset("/curriculum/feat-report.png", "Motion plots in FEAT report")],
       }),
       scene({
@@ -1594,7 +1594,7 @@ export const editorialV2 = {
             { label: "Remove", value: "Non-brain", detail: "Skull, scalp fat, eyeballs, dura", tone: "muted" },
           ],
         },
-        narrationText: "Before registering a high-resolution anatomical scan to a standard template, you must remove non-brain tissue. Scalp fat, muscle, eyes, and skull exhibit intense MRI contrast that confuses registration cost functions. FSL's Brain Extraction Tool, or BET, strips these structures.",
+        narrationText: "Before registering a high-resolution anatomical scan to a standard template, brain extraction is commonly used for linear registration. Scalp fat, muscle, eyes, and skull exhibit intense MRI contrast that confuses registration cost functions. FSL's Brain Extraction Tool, or BET, strips these structures.",
         sourceRefs: [repositoryAsset("/curriculum/fsleyes-timeseries.png", "Brain extraction")],
       }),
       scene({
@@ -1608,7 +1608,7 @@ export const editorialV2 = {
           type: "comparison",
           items: [
             { label: "-f 0.3", value: "Preserve more", detail: "Retains tissue at boundaries", tone: "blue" },
-            { label: "-f 0.5", value: "Default", detail: "Standard balance for healthy adults", tone: "accent" },
+            { label: "-f 0.5", value: "Default", detail: "Starting point; inspect the result", tone: "accent" },
             { label: "-f 0.7", value: "Strip deeper", detail: "Removes stubborn dura or fat", tone: "coral" },
           ],
         },
@@ -1626,10 +1626,10 @@ export const editorialV2 = {
           type: "comparison",
           items: [
             { label: "Under-stripping", value: "Skull residue", detail: "Biases affine scaling to MNI template", tone: "coral" },
-            { label: "Over-stripping", value: "Clipped cortex", detail: "Irreversibly erases cortical activations", tone: "coral" },
+            { label: "Over-stripping", value: "Clipped cortex", detail: "Excludes valid tissue from the output", tone: "coral" },
           ],
         },
-        narrationText: "Always review skull-stripped outputs in FSLEyes before accepting them. Check the sagittal plane to verify that the cerebellum and brainstem are intact, and check the axial slices for orbital fat. Clipping genuine cortical gray matter will permanently erase your experimental activations.",
+        narrationText: "Always review skull-stripped outputs in FSLEyes before accepting them. Check the sagittal plane to verify that the cerebellum and brainstem are intact, and check the axial slices for orbital fat. An overly tight mask excludes valid tissue and can impair registration or later analysis. Keep the original image and rerun extraction if needed.",
         sourceRefs: [repositoryAsset("/curriculum/fsleyes-timeseries.png", "Visual inspection in FSLEyes")],
       }),
       scene({
@@ -1674,11 +1674,11 @@ export const editorialV2 = {
         visual: {
           type: "comparison",
           items: [
-            { label: "White matter boundary", value: "Surface mesh", detail: "Segmented from high-res T1", tone: "accent" },
+            { label: "White matter boundary", value: "Tissue edge", detail: "Segmented from high-res T1", tone: "accent" },
             { label: "EPI intensity gradient", value: "Contrast change", detail: "Evaluated across the projected boundary", tone: "blue" },
           ],
         },
-        narrationText: "Rather than matching raw voxel intensities, FSL uses Boundary-Based Registration, or BBR. BBR segments the white matter boundary on the T1 scan and evaluates the intensity gradient across that boundary in the functional image. This makes it remarkably resilient to EPI susceptibility distortions.",
+        narrationText: "Rather than matching raw voxel intensities, FSL uses Boundary-Based Registration, or BBR. BBR segments the white matter boundary on the T1 scan and evaluates the intensity gradient across that boundary in the functional image. BBR improves cross-modal alignment, but susceptibility distortion may still require separate correction.",
         sourceRefs: [repositoryAsset("/curriculum/feat-registration.png", "BBR mechanism")],
       }),
       scene({
@@ -1704,8 +1704,8 @@ export const editorialV2 = {
         layout: "summary",
         eyebrow: "Carry forward",
         title: "Registration rules",
-        bullets: ["Always use 6 DOF within-subject", "BBR is the standard cost function", "Verify ventricular boundary alignment"],
-        narrationText: "Within-subject functional-to-structural alignment must always use 6 degrees of freedom. Choose BBR as your cost function, and verify the red outline across multiple slices before accepting statistical results.",
+        bullets: ["Usually start with 6 DOF", "BBR is the standard cost function", "Verify ventricular boundary alignment"],
+        narrationText: "Six degrees of freedom is a common starting point for within-subject alignment. Partial field-of-view data may require fewer degrees of freedom. BBR is recommended for EPI-to-structural registration; inspect alignment across multiple slices and assess remaining distortion before accepting results.",
         sourceRefs: [repositoryAsset("/curriculum/feat-registration.png", "Registration summary")],
       }),
     ],
@@ -1735,16 +1735,16 @@ export const editorialV2 = {
         kind: "explanation",
         layout: "editorial",
         eyebrow: "Calculate the cutoff",
-        title: "The 2× cycle length rule",
-        body: "Cutoff must be at least twice the longest duration between task repetitions.",
+        title: "Choose a design-aware cutoff",
+        body: "Balance drift removal against preservation of modeled task effects.",
         visual: {
           type: "comparison",
           items: [
             { label: "T_cycle", value: "Task duration", detail: "Active condition + rest period", tone: "blue" },
-            { label: "Cutoff formula", value: "2 × T_cycle", detail: "Guarantees task frequencies are not attenuated", tone: "accent" },
+            { label: "Cutoff choice", value: "Inspect the design", detail: "Use FEAT estimation and review signal retention", tone: "accent" },
           ],
         },
-        narrationText: "Setting the high-pass filter cutoff requires balancing drift removal against preserving task signal. The golden rule is: cutoff must be at least twice the duration of the longest experimental cycle. For a block design with thirty seconds on and thirty seconds off, the cycle is sixty seconds, requiring a cutoff of at least one hundred and twenty seconds.",
+        narrationText: "Choose the high-pass cutoff from your experimental design. For simple block designs, the full task and rest cycle is a useful starting point. Event-related designs need closer evaluation. Use FEAT high-pass estimation and inspect the filtered design to assess how much expected task signal remains.",
         sourceRefs: [repositoryAsset("/curriculum/feat-design.png", "Filter cutoff formula")],
       }),
       scene({
@@ -1753,15 +1753,15 @@ export const editorialV2 = {
         layout: "evidence",
         eyebrow: "Quality control",
         title: "The danger of aggressive filtering",
-        body: "A filter cutoff that is too short directly erases neural activation.",
+        body: "An overly short cutoff can attenuate slow task effects.",
         visual: {
           type: "comparison",
           items: [
             { label: "Cutoff too long", value: "Residual drift", detail: "Leaves slight baseline trend, but preserves signal", tone: "muted" },
-            { label: "Cutoff too short", value: "Signal loss", detail: "Treats task activation as noise and erases it", tone: "coral" },
+            { label: "Cutoff too short", value: "Signal loss", detail: "Can attenuate slow task-related signal", tone: "coral" },
           ],
         },
-        narrationText: "If you set your cutoff too short, the filter cannot distinguish scanner drift from the hemodynamic response of your task. It will filter out your experimental effect entirely. When in doubt, err on the side of a longer cutoff; residual drift can still be captured by linear trend regressors.",
+        narrationText: "A short cutoff can remove task-related variation along with drift; a long cutoff may leave more low-frequency noise. FEAT applies the same temporal filtering to the model and data. Check signal retention and residuals instead of relying on a universal cutoff rule.",
         sourceRefs: [repositoryAsset("/curriculum/feat-design.png", "Aggressive filtering risk")],
       }),
       scene({
@@ -1770,8 +1770,8 @@ export const editorialV2 = {
         layout: "summary",
         eyebrow: "Carry forward",
         title: "Temporal filtering rules",
-        bullets: ["Use high-pass filtering", "Calculate cutoff from longest cycle", "Avoid aggressive low-pass filtering in task fMRI"],
-        narrationText: "High-pass temporal filtering removes scanner drift while preserving experimental BOLD signal. Always calculate your cutoff from the longest task cycle, and verify that the design matrix in FEAT shows no filter attenuation.",
+        bullets: ["Use high-pass filtering", "Review cutoff against the design", "Avoid aggressive low-pass filtering in task fMRI"],
+        narrationText: "High-pass temporal filtering removes scanner drift while preserving experimental BOLD signal. Choose the cutoff using the design, apply consistent filtering to data and model, and review expected signal retention in FEAT.",
         sourceRefs: [repositoryAsset("/curriculum/feat-design.png", "Filtering summary")],
       }),
     ],
@@ -1804,7 +1804,7 @@ export const editorialV2 = {
         layout: "editorial",
         eyebrow: "Statistical validity",
         title: "The unit of analysis fallacy",
-        body: "Degrees of freedom at the group level must equal independent participants.",
+        body: "Group inference depends on independent participants and model complexity.",
         visual: {
           type: "comparison",
           items: [
@@ -1853,7 +1853,7 @@ export const editorialV2 = {
         layout: "editorial",
         eyebrow: "Mixed-effects estimation",
         title: "Why FLAME models two variance sources",
-        body: "Carrying estimation uncertainty (varcope) prevents noisy subjects from biasing the group mean.",
+        body: "FLAME combines within-subject uncertainty with between-subject variation.",
         visual: {
           type: "comparison",
           items: [
@@ -1870,8 +1870,8 @@ export const editorialV2 = {
         layout: "summary",
         eyebrow: "Carry forward",
         title: "Model selection rules",
-        bullets: ["Use fixed effects only for Level 2 within-subject", "Use FLAME 1 for all group-level studies", "Never report fixed effects as population claims"],
-        narrationText: "Use fixed-effects modeling when combining runs within the same participant at level two, but always use FLAME mixed effects for group-level inference. This ensures your scientific claims accurately represent the general population.",
+        bullets: ["Combine within-subject runs with fixed effects", "Match group inference to the study design", "Never report fixed effects as population claims"],
+        narrationText: "Fixed effects is commonly used to combine runs within a participant. Population inference needs a model that accounts for between-participant variation, such as FLAME mixed effects. Choose the method for your design and assumptions; fixed-effects results alone do not support population generalization.",
         sourceRefs: [repositoryAsset("/curriculum/feat-report.png", "Model selection summary")],
       }),
     ],
@@ -1907,7 +1907,7 @@ export const editorialV2 = {
           type: "comparison",
           items: [
             { label: "Atlas advantages", value: "Objective & standard", detail: "Completely independent of participant task data", tone: "accent" },
-            { label: "Localizer advantages", value: "Functional specificity", detail: "Pinpoints exact functional borders in each brain", tone: "blue" },
+            { label: "Localizer advantages", value: "Functional specificity", detail: "Maps individual task-selective responses", tone: "blue" },
           ],
         },
         narrationText: "Anatomical masks from the Harvard-Oxford atlas are objective, reproducible, and completely independent of experimental task activation. However, anatomical boundaries do not always align with functional boundaries. Functional localizers capture individual functional topography, but require dedicated scanning time and separate localizer tasks.",
@@ -1934,15 +1934,15 @@ export const editorialV2 = {
         layout: "opening",
         eyebrow: "Statistical integrity",
         title: "The double dipping trap",
-        body: "Selecting voxels using the same contrast you test guarantees inflated effect sizes.",
+        body: "Selecting voxels using the same contrast you test can bias effect estimates and inference.",
         visual: {
           type: "comparison",
           items: [
             { label: "Circular analysis", value: "Double dipping", detail: "Select on Contrast A, test on Contrast A", tone: "coral" },
-            { label: "Orthogonal analysis", value: "Independent test", detail: "Select on anatomy or localizer, test on task", tone: "accent" },
+            { label: "Independent selection", value: "Independent test", detail: "Select on anatomy or localizer, test on task", tone: "accent" },
           ],
         },
-        narrationText: "Circularity, commonly known as double dipping, occurs when data selection criteria are not independent of the subsequent statistical test. If you search the whole brain for voxels showing greater activation for task over baseline, and then extract and report the mean activation from those exact voxels, your effect sizes and p-values will be artificially inflated.",
+        narrationText: "Circularity, commonly known as double dipping, occurs when data selection criteria are not independent of the subsequent statistical test. If you search the whole brain for voxels showing greater activation for task over baseline, and then extract and report the mean activation from those exact voxels, the extracted effect estimate can be biased upward and an uncorrected follow-up test can be invalid.",
         sourceRefs: [repositoryAsset("/curriculum/fsleyes-timeseries.png", "Circularity")],
       }),
       scene({
@@ -1950,8 +1950,8 @@ export const editorialV2 = {
         kind: "explanation",
         layout: "editorial",
         eyebrow: "Principled solutions",
-        title: "Four ways to preserve independence",
-        body: "Use anatomical masks, independent localizers, orthogonal contrasts, or cross-validation.",
+        title: "Preserve selection independence",
+        body: "Use prespecified anatomy, independent localizers, or held-out data.",
         visual: {
           type: "comparison",
           items: [
@@ -1959,7 +1959,7 @@ export const editorialV2 = {
             { label: "2. Split-half validation", value: "Cross validation", detail: "Define on half the runs, test on remainder", tone: "accent" },
           ],
         },
-        narrationText: "You can prevent circularity through four standard strategies: define regions using anatomical atlases; run an independent localizer scan; use orthogonal contrasts where selection and testing are mathematically uncorrelated; or apply leave-one-subject-out cross-validation.",
+        narrationText: "Use a prespecified anatomical mask, an independent localizer, or held-out data for selection and testing. Orthogonal contrast vectors alone do not guarantee statistical independence. Cross-validation must keep selection separate from the held-out observations and account for dependence between folds.",
         sourceRefs: [repositoryAsset("/curriculum/fsleyes-timeseries.png", "Independent methods")],
       }),
       scene({
@@ -1983,7 +1983,7 @@ export const editorialV2 = {
         layout: "opening",
         eyebrow: "Functional connectivity",
         title: "Segregation versus integration",
-        body: "Standard GLM measures regional response; connectivity measures network communication.",
+        body: "Standard GLM measures regional response; connectivity measures statistical coupling.",
         visual: {
           type: "comparison",
           items: [
@@ -1991,7 +1991,7 @@ export const editorialV2 = {
             { label: "Connectivity (PPI)", value: "Slope change", detail: "Does coupling between X and Y change with context?", tone: "accent" },
           ],
         },
-        narrationText: "Standard fMRI analyses focus on functional segregation: asking which individual brain regions activate during an experimental task. Functional connectivity investigates functional integration: asking how regions communicate as coordinated networks. Two areas can show dramatic changes in functional coupling even when their mean activation levels remain unchanged.",
+        narrationText: "Standard fMRI analyses focus on functional segregation: asking which individual brain regions activate during an experimental task. Functional connectivity investigates functional integration: asking how signals in different regions vary together. Two areas can show dramatic changes in functional coupling even when their mean activation levels remain unchanged.",
         sourceRefs: [repositoryAsset("/curriculum/feat-design.png", "Activation vs connectivity")],
       }),
       scene({
@@ -2005,10 +2005,10 @@ export const editorialV2 = {
           type: "comparison",
           items: [
             { label: "Rest condition", value: "Baseline slope", detail: "Standard background correlation between regions", tone: "muted" },
-            { label: "Task condition", value: "Steeper slope", detail: "Enhanced information exchange during cognitive demand", tone: "accent" },
+            { label: "Task condition", value: "Changed slope", detail: "Coupling may increase or decrease with context", tone: "accent" },
           ],
         },
-        narrationText: "Psychophysiological interaction, or PPI, models functional connectivity within the general linear model as a statistical interaction. It tests whether the regression slope relating activity in a seed region to the rest of the brain significantly increases during a specific psychological condition.",
+        narrationText: "Psychophysiological interaction, or PPI, models functional connectivity within the general linear model as a statistical interaction. It tests whether the regression slope relating activity in a seed region to the rest of the brain changes with psychological context after modeling the main effects. A PPI association does not by itself establish causal communication.",
         sourceRefs: [repositoryAsset("/curriculum/feat-design.png", "PPI interaction")],
       }),
       scene({
@@ -2018,7 +2018,7 @@ export const editorialV2 = {
         eyebrow: "Carry forward",
         title: "Connectivity concepts",
         bullets: ["Activation is amplitude; connectivity is covariance", "PPI models context-dependent slope changes", "Regions can couple without changing mean signal"],
-        narrationText: "Separate activation magnitude from inter-regional coupling. PPI provides a statistical framework to test how psychological demands modulate communication across distributed neural networks.",
+        narrationText: "Separate activation magnitude from inter-regional coupling. PPI tests context-dependent changes in statistical coupling. Changes can be positive or negative and do not establish causal influence.",
         sourceRefs: [repositoryAsset("/curriculum/feat-design.png", "Connectivity summary")],
       }),
     ],
@@ -2057,7 +2057,7 @@ export const editorialV2 = {
             { label: "Time course (A)", value: "When it fluctuates", detail: "Temporal trajectory and spectral power", tone: "blue" },
           ],
         },
-        narrationText: "Spatial ICA assumes that the brain signal is a mixture of distinct, non-overlapping spatial sources that fluctuate over time. MELODIC estimates components whose spatial patterns are as statistically independent as possible. This separates canonical functional networks from structured physiological artifacts like head motion and cerebrospinal fluid pulsations.",
+        narrationText: "Spatial ICA assumes that the brain signal is a mixture of spatial sources that fluctuate over time. Statistical independence does not require their maps to be spatially non-overlapping. MELODIC estimates components whose spatial patterns are as statistically independent as possible. Components may reflect neural activity, motion, or physiological artifacts. Inspect their spatial maps, time courses, and spectra before classifying them.",
         sourceRefs: [repositoryAsset("/curriculum/fsleyes-timeseries.png", "Spatial maps and time courses")],
       }),
       scene({
@@ -2066,7 +2066,7 @@ export const editorialV2 = {
         layout: "summary",
         eyebrow: "Carry forward",
         title: "ICA principles",
-        bullets: ["Requires no prior timing hypothesis", "Separates spatial maps and time series", "Isolates networks from scanner artifacts"],
+        bullets: ["Requires no prior timing hypothesis", "Separates spatial maps and time series", "Inspect components before identifying artifacts"],
         narrationText: "MELODIC spatial ICA provides a powerful, hypothesis-free method to explore brain networks and isolate structured noise. It is the foundation of resting-state fMRI and automated artifact cleaning.",
         sourceRefs: [repositoryAsset("/curriculum/fsleyes-timeseries.png", "ICA summary")],
       }),

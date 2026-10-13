@@ -10,4 +10,4 @@ FSL's FLAME mixed-effects engine separates within-subject measurement noise from
 
 ## Model selection rules
 
-Use fixed-effects modeling when combining runs within the same participant at level two, but always use FLAME mixed effects for group-level inference. This ensures your scientific claims accurately represent the general population.
+Fixed effects is commonly used to combine runs within a participant. Population inference needs a model that accounts for between-participant variation, such as FLAME mixed effects. Choose the method for your design and assumptions; fixed-effects results alone do not support population generalization.

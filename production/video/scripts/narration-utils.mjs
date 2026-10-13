@@ -67,7 +67,7 @@ const wrapWords = (words, maxLineLength = 42) => {
 
 export const splitCaptionCues = (text, maxLineLength = 42, maxLines = 2) => {
   const sentences =
-    text.match(/[^.!?]+[.!?]+|[^.!?]+$/g)?.map((sentence) => sentence.trim()).filter(Boolean) ??
+    text.split(/(?<=[.!?])\s+/).map((sentence) => sentence.trim()).filter(Boolean) ??
     [text];
   const cues = [];
 

@@ -292,17 +292,17 @@ export const preprocessingCourse: Course = {
           description: "Remove low-frequency scanner drift without attenuating task frequencies.",
           duration: 20,
           objectives: [
-            "Calculate the high-pass filter cutoff using the maximum task cycle duration",
+            "Choose the high-pass cutoff using the experimental design and expected signal retention",
             "Explain why low-pass filtering is generally avoided in event-related fMRI",
           ],
           conceptTitle: "High-Pass Filtering",
           concept:
             "MRI scanners exhibit slow thermal and physical drifts that manifest as massive low-frequency power in the power spectrum. High-pass temporal filtering removes these trends.",
           explanation:
-            "Rule of thumb for high-pass cutoff: Cutoff >= 2 * (duration of longest condition block + rest period). If your task cycle is 50 seconds, set highpass cutoff to at least 100 seconds. Setting the cutoff too aggressively will erase your experimental BOLD signal.",
+            "Choose the cutoff using your design. A full task/rest cycle is a starting point for simple block designs; event-related designs require closer inspection. FEAT can estimate a cutoff from expected signal retention. An overly short cutoff can attenuate task effects. Apply the same temporal filtering to the model and data.",
           task: [
             "Inspect the task timing design in seconds.",
-            "Verify the Highpass Filter Cutoff parameter in the FEAT Pre-stats GUI tab.",
+            "Verify High pass filter cutoff in the FEAT Data tab and use Estimate High Pass Filter in Misc.",
           ],
           commandBuilder: {
             id: "bptf-builder",
@@ -311,10 +311,10 @@ export const preprocessingCourse: Course = {
             targetTokens: ["fslmaths", "bold_mcf", "-bptf", "25", "-1", "bold_filtered"],
             scrambledTokens: ["-bptf", "bold_mcf", "25", "-1", "fslmaths", "bold_filtered", "-Tmean", "50"],
             hint: "-bptf takes <highpass_sigma> <lowpass_sigma> where -1 disables filtering.",
-            explanation: "fslmaths in -bptf hp_sigma -1 out applies a temporal high-pass Butterworth/Gaussian filter.",
+            explanation: "fslmaths -bptf hp_sigma -1 applies Gaussian-weighted local linear high-pass filtering. Sigma is in volumes; -1 disables the low-pass filter.",
           },
           summary: [
-            "Set highpass cutoff to at least twice the longest cycle length of your experimental conditions.",
+            "Choose the cutoff from the design and review expected signal retention.",
             "Never filter out task-relevant frequencies.",
           ],
           sourceLab: "Lab-2_Preprocessing.md",
@@ -341,9 +341,9 @@ export const preprocessingCourse: Course = {
           ],
           conceptTitle: "Boundary-Based Registration (BBR)",
           concept:
-            "EPI functional images have low spatial resolution (2-3mm) and distorted contrast. Aligning functional directly to an MNI template fails. Instead, FSL uses a two-step registration: Functional -> Participant T1 (6 DOF rigid-body BBR), then Participant T1 -> MNI152 (12 DOF affine + non-linear FNIRT).",
+            "EPI functional images often have lower spatial resolution than T1 scans and may show susceptibility distortion. A typical FEAT workflow aligns functional images to the participant T1 with BBR, then aligns T1 to MNI152 with affine and optional nonlinear registration. Six DOF is a common within-subject starting point; partial-FOV data may require fewer DOF.",
           explanation:
-            "BBR projects the white matter boundary segmented from the T1 image onto the functional image and evaluates the intensity gradient across the boundary. It is significantly more robust to geometric distortions than traditional correlation ratio metrics.",
+            "BBR projects the white matter boundary segmented from the T1 image onto the functional image and evaluates the intensity gradient across the boundary. It improves cross-modal alignment, but remaining susceptibility distortion may need separate correction.",
           task: [
             "Open the FEAT report registration page (report_reg.html).",
             "Inspect the red boundary lines overlaid on the functional image.",
@@ -352,13 +352,13 @@ export const preprocessingCourse: Course = {
           command: "epi_reg --epi=example_func.nii.gz --t1=highres.nii.gz --t1brain=highres_brain.nii.gz --out=example_func2highres",
           quiz: {
             id: "bbr-quiz",
-            question: "Why does functional-to-anatomical registration use 6 degrees of freedom (DOF) instead of 12 DOF?",
+            question: "Why is 6 degrees of freedom (DOF) a common starting point for whole-brain within-subject registration?",
             options: [
               {
                 id: "opt-1",
-                text: "The brain belongs to the same individual; head shape and brain size do not change between scans, so only rigid rotation and translation are valid.",
+                text: "The images show the same anatomy, so rigid rotation and translation are a useful initial model of alignment.",
                 isCorrect: true,
-                explanation: "Spot on! 6 DOF represents rigid-body transformations. Scaling or shearing the brain within the same scanning session is non-physical.",
+                explanation: "Six DOF represents three translations and three rotations. It does not correct all EPI distortion.",
               },
               {
                 id: "opt-2",
@@ -367,7 +367,7 @@ export const preprocessingCourse: Course = {
                 explanation: "While faster, the scientific constraint is that brain anatomy does not morph within the same subject.",
               },
             ],
-            explanation: "Within-subject registration must always use 6 DOF rigid-body transformations.",
+            explanation: "Six DOF is common for whole-brain within-subject alignment. Partial-FOV data may need fewer DOF; inspect the result and remaining distortion.",
           },
           summary: [
             "Two-step registration: functional -> anatomical (6 DOF BBR) -> MNI standard (12 DOF + FNIRT).",

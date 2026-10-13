@@ -1,6 +1,6 @@
 # Lesson video production
 
-This directory contains the reproducible v3 production system for the 19
+This directory contains the reproducible v3 production system for the 29
 Voxelwise Lab concept and quality-control videos. Rendered masters and generated
 narration audio are intentionally excluded from Git. Approved masters are
 delivered from the `voxelwise-lab-media` Cloudflare R2 bucket;
@@ -37,7 +37,7 @@ with contrasts variants under
 
 ## Prepare and validate
 
-Generate the 18-video concept library, all narration clips, timing manifests,
+Generate the 28-video concept library, all narration clips, timing manifests,
 captions, and transcripts, then prepare the contrasts lesson:
 
 ```sh
@@ -103,7 +103,7 @@ Render only the contrasts lesson:
 npm run video:render:contrasts
 ```
 
-The master validator checks all 19 files for dimensions, frame rate, codecs,
+The master validator checks all 145 voice masters for dimensions, frame rate, codecs,
 browser playback, seeking support, and duration agreement with the generated
 timelines:
 

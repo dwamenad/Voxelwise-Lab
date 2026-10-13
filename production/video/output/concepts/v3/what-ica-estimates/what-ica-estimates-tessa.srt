@@ -19,43 +19,52 @@ spatially independent component maps, each
 paired with its own time course.
 
 5
-00:00:24,233 --> 00:00:31,516
+00:00:24,233 --> 00:00:31,926
 Spatial ICA assumes that the brain signal
-is a mixture of distinct, non-overlapping
+is a mixture of spatial sources that
 
 6
-00:00:31,516 --> 00:00:34,877
-spatial sources that fluctuate over time.
+00:00:31,926 --> 00:00:33,575
+fluctuate over time.
 
 7
-00:00:34,877 --> 00:00:40,480
+00:00:33,575 --> 00:00:39,070
+Statistical independence does not require
+their maps to be spatially
+
+8
+00:00:39,070 --> 00:00:39,619
+non-overlapping.
+
+9
+00:00:39,619 --> 00:00:45,114
 MELODIC estimates components whose spatial
 patterns are as statistically independent
 
-8
-00:00:40,480 --> 00:00:41,600
+10
+00:00:45,114 --> 00:00:46,213
 as possible.
 
-9
-00:00:41,600 --> 00:00:46,082
-This separates canonical functional
-networks from structured physiological
-
-10
-00:00:46,082 --> 00:00:50,563
-artifacts like head motion and
-cerebrospinal fluid pulsations.
-
 11
-00:00:51,433 --> 00:00:57,773
+00:00:46,213 --> 00:00:51,159
+Components may reflect neural activity,
+motion, or physiological artifacts.
+
+12
+00:00:51,159 --> 00:00:57,203
+Inspect their spatial maps, time courses,
+and spectra before classifying them.
+
+13
+00:00:58,067 --> 00:01:04,406
 MELODIC spatial ICA provides a powerful,
 hypothesis-free method to explore brain
 
-12
-00:00:57,773 --> 00:01:00,654
+14
+00:01:04,406 --> 00:01:07,287
 networks and isolate structured noise.
 
-13
-00:01:00,654 --> 00:01:06,993
+15
+00:01:07,287 --> 00:01:13,627
 It is the foundation of resting-state fMRI
 and automated artifact cleaning.

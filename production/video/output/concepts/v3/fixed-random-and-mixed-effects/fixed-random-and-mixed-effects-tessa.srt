@@ -52,20 +52,24 @@ Subjects with clean data and small varcope
 carry more influence than noisy outliers.
 
 12
-00:00:52,033 --> 00:00:58,150
-Use fixed-effects modeling when combining
-runs within the same participant at level
+00:00:52,033 --> 00:00:57,751
+Fixed effects is commonly used to combine
+runs within a participant.
 
 13
-00:00:58,150 --> 00:01:03,246
-two, but always use FLAME mixed effects
-for group-level inference.
+00:00:57,751 --> 00:01:02,429
+Population inference needs a model that
+accounts for between-participant
 
 14
-00:01:03,246 --> 00:01:07,834
-This ensures your scientific claims
-accurately represent the general
+00:01:02,429 --> 00:01:05,547
+variation, such as FLAME mixed effects.
 
 15
-00:01:07,834 --> 00:01:08,343
-population.
+00:01:05,547 --> 00:01:11,265
+Choose the method for your design and
+assumptions; fixed-effects results alone
+
+16
+00:01:11,265 --> 00:01:13,863
+do not support population generalization.
