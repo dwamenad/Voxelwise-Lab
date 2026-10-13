@@ -2,16 +2,7 @@ import voiceRegistryJson from "@/production/video/config/voices.json";
 import publishedMediaJson from "@/production/video/config/published-media.json";
 import type { ProductionStatus, VideoProvider } from "@/lib/types";
 
-export type NarrationVoiceId =
-  | "daniel"
-  | "ava"
-  | "oliver"
-  | "samantha"
-  | "zoe"
-  | "evan"
-  | "tessa"
-  | "karen"
-  | "rishi";
+export type NarrationVoiceId = "daniel" | "samantha" | "tessa" | "karen" | "rishi";
 
 export interface NarrationVoice {
   id: NarrationVoiceId;

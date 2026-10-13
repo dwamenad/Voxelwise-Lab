@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "defaultVoiceId": "daniel",
+  "audioTargets": {
+    "sampleRate": 48000,
+    "integratedLufs": -16,
+    "truePeakDb": -1.5,
+    "loudnessRange": 7,
+    "highPassHz": 70,
+    "silenceThresholdDb": -48,
+    "sceneTailSeconds": 0.85
+  },
+  "voices": [
+    {
+      "id": "daniel",
+      "engineVoice": "Daniel",
+      "displayName": "Daniel",
+      "accent": "UK English",
+      "locale": "en-GB",
+      "speechRate": 148,
+      "description": "Measured and familiar; standard narration voice."
+    },
+    {
+      "id": "ava",
+      "engineVoice": "Ava",
+      "displayName": "Ava (Neural)",
+      "accent": "US English",
+      "locale": "en-US",
+      "speechRate": 160,
+      "description": "Natural, modern American neural voice with fluid human cadence."
+    },
+    {
+      "id": "oliver",
+      "engineVoice": "Oliver",
+      "displayName": "Oliver (Neural)",
+      "accent": "UK English",
+      "locale": "en-GB",
+      "speechRate": 152,
+      "description": "Articulate British neural voice with warm, precise academic inflection."
+    },
+    {
+      "id": "samantha",
+      "engineVoice": "Samantha",
+      "displayName": "Samantha",
+      "accent": "US English",
+      "locale": "en-US",
+      "speechRate": 158,
+      "description": "Clear and conversational for step-by-step instruction."
+    },
+    {
+      "id": "zoe",
+      "engineVoice": "Zoe",
+      "displayName": "Zoe (Neural)",
+      "accent": "US English",
+      "locale": "en-US",
+      "speechRate": 156,
+      "description": "Expressive American neural voice for engaging conceptual teaching."
+    },
+    {
+      "id": "evan",
+      "engineVoice": "Evan",
+      "displayName": "Evan (Neural)",
+      "accent": "US English",
+      "locale": "en-US",
+      "speechRate": 154,
+      "description": "Calm, grounded American neural male voice."
+    },
+    {
+      "id": "tessa",
+      "engineVoice": "Tessa",
+      "displayName": "Tessa",
+      "accent": "South African English",
+      "locale": "en-ZA",
+      "speechRate": 154,
+      "description": "Warm and deliberate with distinct technical phrasing."
+    },
+    {
+      "id": "karen",
+      "engineVoice": "Karen",
+      "displayName": "Karen",
+      "accent": "Australian English",
+      "locale": "en-AU",
+      "speechRate": 156,
+      "description": "Direct and energetic without rushing terminology."
+    },
+    {
+      "id": "rishi",
+      "engineVoice": "Rishi",
+      "displayName": "Rishi",
+      "accent": "Indian English",
+      "locale": "en-IN",
+      "speechRate": 152,
+      "description": "Steady and precise for commands and scientific terms."
+    }
+  ]
+}

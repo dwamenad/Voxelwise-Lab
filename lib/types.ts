@@ -9,16 +9,7 @@ export type VideoType =
 
 export type ProductionStatus = "planned" | "recorded" | "published";
 
-export type NarrationVoiceId =
-  | "daniel"
-  | "ava"
-  | "oliver"
-  | "samantha"
-  | "zoe"
-  | "evan"
-  | "tessa"
-  | "karen"
-  | "rishi";
+export type NarrationVoiceId = "daniel" | "samantha" | "tessa" | "karen" | "rishi";
 
 export interface TranscriptCue {
   startSeconds: number;
