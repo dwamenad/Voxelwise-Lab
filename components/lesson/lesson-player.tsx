@@ -123,8 +123,8 @@ export function LessonPlayer({ course, module, lesson, previous, next }: LessonP
           </div>
         </main>
         {/* Right Pane: Option 1 Dual-Pane Research Workbench */}
-        <div className="workbench-pane-wrapper hidden xl:block w-[420px] 2xl:w-[480px] shrink-0 border-l border-[var(--border)]">
-          <WorkbenchPanel lesson={lesson} />
+        <div className="workbench-pane-wrapper hidden xl:block border-l border-[var(--border)]">
+          <WorkbenchPanel key={lesson.id} lesson={lesson} />
         </div>
       </div>
       <div className="mobile-lesson-nav">
