@@ -1,109 +1,109 @@
 1
-00:00:00,000 --> 00:00:03,406
+00:00:00,000 --> 00:00:03,420
 A terminal command is a precise
 instruction.
 
 2
-00:00:03,406 --> 00:00:06,812
+00:00:03,420 --> 00:00:06,841
 The first token usually names the program.
 
 3
-00:00:06,812 --> 00:00:09,731
+00:00:06,841 --> 00:00:09,772
 Later tokens provide options and
 arguments.
 
 4
-00:00:09,731 --> 00:00:14,597
+00:00:09,772 --> 00:00:14,658
 Spaces separate those pieces,
 capitalization matters, and the shell does
 
 5
-00:00:14,597 --> 00:00:17,516
+00:00:14,658 --> 00:00:17,590
 not guess which file you intended.
 
 6
-00:00:18,867 --> 00:00:21,794
+00:00:18,933 --> 00:00:21,875
 Read the command from left to right.
 
 7
-00:00:21,794 --> 00:00:28,484
+00:00:21,875 --> 00:00:28,599
 Here, ls is the program, dash l h adds
 detail and readable sizes, and data slash
 
 8
-00:00:28,484 --> 00:00:30,156
+00:00:28,599 --> 00:00:30,280
 is the target directory.
 
 9
-00:00:30,156 --> 00:00:35,592
+00:00:30,280 --> 00:00:35,743
 Changing one token can change the
 operation, the output, or the file being
 
 10
-00:00:35,592 --> 00:00:36,428
+00:00:35,743 --> 00:00:36,583
 acted on.
 
 11
-00:00:37,733 --> 00:00:43,839
+00:00:37,900 --> 00:00:44,023
 Before running a command that creates or
 changes files, ask the shell where you are
 
 12
-00:00:43,839 --> 00:00:45,467
+00:00:44,023 --> 00:00:45,656
 and what is present.
 
 13
-00:00:45,467 --> 00:00:48,316
+00:00:45,656 --> 00:00:48,514
 P w d prints the working directory.
 
 14
-00:00:48,316 --> 00:00:52,793
+00:00:48,514 --> 00:00:53,004
 L s dash l h lists its contents with
 useful details.
 
 15
-00:00:52,793 --> 00:00:56,050
+00:00:53,004 --> 00:00:56,270
 Those two observations prevent many
 avoidable path errors.
 
 16
-00:00:57,933 --> 00:01:03,359
+00:00:58,133 --> 00:01:03,580
 Do not respond to an error by changing
 several things at once.
 
 17
-00:01:03,359 --> 00:01:08,332
+00:01:03,580 --> 00:01:08,573
 Read the message, identify the failing
 token, and test one explanation.
 
 18
-00:01:08,332 --> 00:01:13,305
+00:01:08,573 --> 00:01:13,566
 Confirm the program, the current
 directory, the target path, and the
 
 19
-00:01:13,305 --> 00:01:13,758
+00:01:13,566 --> 00:01:14,020
 option.
 
 20
-00:01:13,758 --> 00:01:16,470
+00:01:14,020 --> 00:01:16,743
 Small checks make the cause observable.
 
 21
-00:01:17,833 --> 00:01:20,867
+00:01:18,100 --> 00:01:21,149
 A shell command is structured language.
 
 22
-00:01:20,867 --> 00:01:25,923
+00:01:21,149 --> 00:01:26,232
 Identify the program, options, and
 arguments; verify your location and
 
 23
-00:01:25,923 --> 00:01:30,474
+00:01:26,232 --> 00:01:30,806
 target; and use the output to test your
 understanding.
 
 24
-00:01:30,474 --> 00:01:35,024
+00:01:30,806 --> 00:01:35,380
 Precision is the habit that makes
 command-line work reproducible.

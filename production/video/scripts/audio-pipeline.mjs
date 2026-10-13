@@ -181,7 +181,13 @@ export const verifyInstalledVoices = async (registry) => {
   );
   const missing = registry.voices.filter((voice) => !installed.has(voice.engineVoice));
   if (missing.length) {
-    throw new Error(`Missing system voice(s): ${missing.map((voice) => voice.engineVoice).join(", ")}`);
+    throw new Error(
+      `Missing system voice(s): ${missing.map((voice) => voice.engineVoice).join(", ")}.\n` +
+      `To install free Enhanced/Premium neural voices on macOS:\n` +
+      `1. Open System Settings -> Accessibility -> Spoken Content.\n` +
+      `2. Click 'System Voice' -> 'Manage Voices...'.\n` +
+      `3. Download the Enhanced/Premium versions of ${missing.map((v) => v.engineVoice).join(", ")}.`
+    );
   }
 };
 

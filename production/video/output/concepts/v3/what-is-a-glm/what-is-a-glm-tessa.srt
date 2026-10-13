@@ -1,111 +1,111 @@
 1
-00:00:00,000 --> 00:00:05,955
+00:00:00,000 --> 00:00:05,987
 The general linear model represents a
 measured BOLD time series as a weighted
 
 2
-00:00:05,955 --> 00:00:08,704
+00:00:05,987 --> 00:00:08,751
 combination of predictors plus residual
 error.
 
 3
-00:00:08,704 --> 00:00:12,827
+00:00:08,751 --> 00:00:12,896
 In compact form, Y equals X beta plus
 epsilon.
 
 4
-00:00:12,827 --> 00:00:16,491
+00:00:12,896 --> 00:00:16,580
 FEAT fits this relationship separately at
 every voxel.
 
 5
-00:00:17,367 --> 00:00:20,722
+00:00:17,433 --> 00:00:20,795
 Y is the observed BOLD time series.
 
 6
-00:00:20,722 --> 00:00:25,514
+00:00:20,795 --> 00:00:25,597
 X is the design matrix containing task and
 nuisance predictors.
 
 7
-00:00:25,514 --> 00:00:29,349
+00:00:25,597 --> 00:00:29,439
 Beta contains the fitted contribution of
 each column.
 
 8
-00:00:29,349 --> 00:00:31,745
+00:00:29,439 --> 00:00:31,840
 Epsilon contains the remaining structure.
 
 9
-00:00:31,745 --> 00:00:37,496
+00:00:31,840 --> 00:00:37,603
 Residuals are unexplained by the model;
 they are not automatically random or
 
 10
-00:00:37,496 --> 00:00:37,976
+00:00:37,603 --> 00:00:38,083
 harmless.
 
 11
-00:00:38,833 --> 00:00:42,569
+00:00:38,933 --> 00:00:42,681
 The design matrix is not a decorative
 preview.
 
 12
-00:00:42,569 --> 00:00:44,903
+00:00:42,681 --> 00:00:45,023
 Its columns encode the model.
 
 13
-00:00:44,903 --> 00:00:50,506
+00:00:45,023 --> 00:00:50,645
 Confirm the timing, identify task and
 nuisance regressors, and look for strong
 
 14
-00:00:50,506 --> 00:00:51,907
+00:00:50,645 --> 00:00:52,050
 dependence between columns.
 
 15
-00:00:51,907 --> 00:00:57,043
+00:00:52,050 --> 00:00:57,203
 Beta estimates are conditional on all the
 other predictors in X.
 
 16
-00:00:57,900 --> 00:01:03,664
+00:00:58,067 --> 00:01:03,844
 A GLM can fit successfully and still
 answer the wrong scientific question.
 
 17
-00:01:03,664 --> 00:01:08,948
+00:01:03,844 --> 00:01:09,140
 The model should follow the hypothesis
 about underlying processes, not merely
 
 18
-00:01:08,948 --> 00:01:10,389
+00:01:09,140 --> 00:01:10,584
 every stimulus label.
 
 19
-00:01:10,389 --> 00:01:15,672
+00:01:10,584 --> 00:01:15,880
 Nuisance structure must be addressed, and
 residual patterns should be inspected
 
 20
-00:01:15,672 --> 00:01:18,074
+00:01:15,880 --> 00:01:18,287
 rather than dismissed as noise.
 
 21
-00:01:18,933 --> 00:01:25,025
+00:01:19,167 --> 00:01:25,280
 The fMRI GLM separates measured data,
 modeled predictors, fitted estimates, and
 
 22
-00:01:25,025 --> 00:01:25,579
+00:01:25,280 --> 00:01:25,835
 residuals.
 
 23
-00:01:25,579 --> 00:01:32,224
+00:01:25,835 --> 00:01:32,504
 Read those parts distinctly, inspect the
 design before the results, and remember
 
 24
-00:01:32,224 --> 00:01:38,316
+00:01:32,504 --> 00:01:38,617
 that a successful fit only supports claims
 represented by the model.

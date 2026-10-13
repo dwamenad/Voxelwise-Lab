@@ -1,97 +1,97 @@
 1
-00:00:00,000 --> 00:00:03,726
+00:00:00,000 --> 00:00:03,737
 Visual inspection is an analysis step, not
 decoration.
 
 2
-00:00:03,726 --> 00:00:08,848
+00:00:03,737 --> 00:00:08,875
 FSLEyes shows the same coordinate in
 sagittal, coronal, and axial planes.
 
 3
-00:00:08,848 --> 00:00:13,971
+00:00:08,875 --> 00:00:14,013
 It lets you inspect orientation, brain
 coverage, image intensity, and the
 
 4
-00:00:13,971 --> 00:00:17,697
+00:00:14,013 --> 00:00:17,750
 relationship between overlays before
 trusting a pipeline result.
 
 5
-00:00:22,400 --> 00:00:25,832
+00:00:22,433 --> 00:00:25,891
 The orthographic display shows three views
 of one location.
 
 6
-00:00:25,832 --> 00:00:30,788
+00:00:25,891 --> 00:00:30,885
 Crosshairs connect those planes, so a
 movement in one view updates the others.
 
 7
-00:00:30,788 --> 00:00:35,745
+00:00:30,885 --> 00:00:35,879
 The overlay list controls which images are
 visible, their order, opacity, and color
 
 8
-00:00:35,745 --> 00:00:36,127
+00:00:35,879 --> 00:00:36,263
 mapping.
 
 9
-00:00:40,300 --> 00:00:43,637
+00:00:40,433 --> 00:00:43,788
 Scroll from one end of the brain to the
 other.
 
 10
-00:00:43,637 --> 00:00:47,642
+00:00:43,788 --> 00:00:47,814
 Confirm that left and right orientation
 are understood, the expected anatomy is
 
 11
-00:00:47,642 --> 00:00:50,980
+00:00:47,814 --> 00:00:51,169
 covered, and no large region is missing or
 severely distorted.
 
 12
-00:00:50,980 --> 00:00:54,317
+00:00:51,169 --> 00:00:54,523
 A later analysis cannot recover anatomy
 that was never acquired.
 
 13
-00:00:59,200 --> 00:01:04,226
+00:00:59,367 --> 00:01:04,413
 Two images can overlap near the center and
 still be misregistered elsewhere.
 
 14
-00:01:04,226 --> 00:01:06,739
+00:01:04,413 --> 00:01:06,937
 Inspect multiple slices and anatomical
 boundaries.
 
 15
-00:01:06,739 --> 00:01:10,509
+00:01:06,937 --> 00:01:10,722
 Adjust opacity and color mapping so
 disagreement is visible.
 
 16
-00:01:10,509 --> 00:01:14,278
+00:01:10,722 --> 00:01:14,507
 A reassuring first impression is not a
 quality-control result.
 
 17
-00:01:18,567 --> 00:01:23,037
+00:01:18,800 --> 00:01:23,301
 Use FSLEyes to understand the image before
 relying on derived results.
 
 18
-00:01:23,037 --> 00:01:27,914
+00:01:23,301 --> 00:01:28,211
 Orient yourself in three planes, inspect
 coverage across the volume, and compare
 
 19
-00:01:27,914 --> 00:01:29,540
+00:01:28,211 --> 00:01:29,848
 overlays at visible boundaries.
 
 20
-00:01:29,540 --> 00:01:33,198
+00:01:29,848 --> 00:01:33,530
 Visual evidence is a required part of
 quality control.

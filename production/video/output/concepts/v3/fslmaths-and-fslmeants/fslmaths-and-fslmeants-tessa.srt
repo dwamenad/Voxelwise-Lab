@@ -1,105 +1,105 @@
 1
-00:00:00,000 --> 00:00:06,123
+00:00:00,000 --> 00:00:06,141
 Fslmaths and fslmeants often appear
 together, but they do different jobs.
 
 2
-00:00:06,123 --> 00:00:11,690
+00:00:06,141 --> 00:00:11,723
 Fslmaths applies operations in sequence
 and writes a new image.
 
 3
-00:00:11,690 --> 00:00:17,813
+00:00:11,723 --> 00:00:17,864
 Fslmeants uses a mask to summarize a
 four-dimensional time series across
 
 4
-00:00:17,813 --> 00:00:18,926
+00:00:17,864 --> 00:00:18,980
 selected voxels.
 
 5
-00:00:19,800 --> 00:00:25,438
+00:00:19,833 --> 00:00:25,479
 Fslmaths reads an input, applies
 operations from left to right, and writes
 
 6
-00:00:25,438 --> 00:00:26,378
+00:00:25,479 --> 00:00:26,420
 an output.
 
 7
-00:00:26,378 --> 00:00:29,667
+00:00:26,420 --> 00:00:29,713
 A threshold removes values below a cutoff.
 
 8
-00:00:29,667 --> 00:00:32,956
+00:00:29,713 --> 00:00:33,006
 Binarization converts the remaining
 selection to ones.
 
 9
-00:00:32,956 --> 00:00:39,534
+00:00:33,006 --> 00:00:39,593
 The output is a new mask, not a label
 permanently attached to the original
 
 10
-00:00:39,534 --> 00:00:40,004
+00:00:39,593 --> 00:00:40,063
 image.
 
 11
-00:00:40,867 --> 00:00:46,379
+00:00:40,933 --> 00:00:46,453
 This example thresholds a statistical
 image, binarizes the result, and saves a
 
 12
-00:00:46,379 --> 00:00:46,839
+00:00:46,453 --> 00:00:46,913
 mask.
 
 13
-00:00:46,839 --> 00:00:52,811
+00:00:46,913 --> 00:00:52,893
 Fslmeants then extracts the mean BOLD
 value inside that mask for every volume.
 
 14
-00:00:52,811 --> 00:00:59,702
+00:00:52,893 --> 00:00:59,793
 The output is a time series whose meaning
 depends entirely on the mask and source
 
 15
-00:00:59,702 --> 00:01:00,161
+00:00:59,793 --> 00:01:00,253
 image.
 
 16
-00:01:01,033 --> 00:01:05,226
+00:01:01,133 --> 00:01:05,336
 Two files can share dimensions while
 representing different anatomy.
 
 17
-00:01:05,226 --> 00:01:11,747
+00:01:05,336 --> 00:01:11,873
 Check the headers, then overlay the mask
 on the exact image used for extraction.
 
 18
-00:01:11,747 --> 00:01:13,611
+00:01:11,873 --> 00:01:13,740
 Confirm coverage across slices.
 
 19
-00:01:13,611 --> 00:01:19,201
+00:01:13,740 --> 00:01:19,343
 A time series extracted from the wrong
 space is precise but meaningless.
 
 20
-00:01:20,067 --> 00:01:26,954
+00:01:20,200 --> 00:01:27,117
 Use fslmaths to create a derived image and
 fslmeants to measure a time series within
 
 21
-00:01:26,954 --> 00:01:27,872
+00:01:27,117 --> 00:01:28,039
 a mask.
 
 22
-00:01:27,872 --> 00:01:34,300
+00:01:28,039 --> 00:01:34,495
 Preserve the operation order, inspect the
 mask in the source space, and only then
 
 23
-00:01:34,300 --> 00:01:36,136
+00:01:34,495 --> 00:01:36,340
 interpret the extracted values.

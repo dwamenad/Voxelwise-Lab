@@ -1,108 +1,108 @@
 1
-00:00:00,000 --> 00:00:03,179
+00:00:00,000 --> 00:00:03,191
 FSL is a collection of focused
 neuroimaging tools.
 
 2
-00:00:03,179 --> 00:00:08,743
+00:00:03,191 --> 00:00:08,776
 Instead of forcing every task into one
 program, it gives you different tools for
 
 3
-00:00:08,743 --> 00:00:12,320
+00:00:08,776 --> 00:00:12,366
 viewing images, checking metadata,
 transforming data, fitting models, and
 
 4
-00:00:12,320 --> 00:00:13,115
+00:00:12,366 --> 00:00:13,164
 reviewing results.
 
 5
-00:00:13,115 --> 00:00:18,281
+00:00:13,164 --> 00:00:18,350
 Learning FSL means knowing which tool
 answers the question in front of you.
 
 6
-00:00:23,600 --> 00:00:26,086
+00:00:23,667 --> 00:00:26,161
 Start with the scientific job.
 
 7
-00:00:26,086 --> 00:00:28,571
+00:00:26,161 --> 00:00:28,656
 FSLEyes is for visual inspection.
 
 8
-00:00:28,571 --> 00:00:31,554
+00:00:28,656 --> 00:00:31,649
 FEAT configures and evaluates fMRI models.
 
 9
-00:00:31,554 --> 00:00:35,531
+00:00:31,649 --> 00:00:35,641
 Command-line utilities expose precise
 metadata, statistics, and image
 
 10
-00:00:35,531 --> 00:00:36,028
+00:00:35,641 --> 00:00:36,140
 operations.
 
 11
-00:00:36,028 --> 00:00:41,994
+00:00:36,140 --> 00:00:42,127
 These tools share a workflow, but they do
 not provide interchangeable evidence.
 
 12
-00:00:47,300 --> 00:00:51,118
+00:00:47,400 --> 00:00:51,234
 This FEAT report is one example of FSL's
 division of labor.
 
 13
-00:00:51,118 --> 00:00:55,977
+00:00:51,234 --> 00:00:56,114
 FEAT organizes the model and its outputs,
 while visual checks often continue in the
 
 14
-00:00:55,977 --> 00:00:57,365
+00:00:56,114 --> 00:00:57,508
 report and in FSLEyes.
 
 15
-00:00:57,365 --> 00:01:02,571
+00:00:57,508 --> 00:01:02,736
 A completed report proves that software
 ran; it does not by itself prove that the
 
 16
-00:01:02,571 --> 00:01:03,960
+00:01:02,736 --> 00:01:04,130
 analysis is scientifically valid.
 
 17
-00:01:09,333 --> 00:01:11,938
+00:01:09,433 --> 00:01:12,057
 A command can succeed on the wrong file.
 
 18
-00:01:11,938 --> 00:01:14,543
+00:01:12,057 --> 00:01:14,681
 A model can finish with a poor design.
 
 19
-00:01:14,543 --> 00:01:18,124
+00:01:14,681 --> 00:01:18,289
 An overlay can look plausible in one slice
 and fail elsewhere.
 
 20
-00:01:18,124 --> 00:01:22,357
+00:01:18,289 --> 00:01:22,553
 Treat every FSL output as evidence to
 inspect, not as an automatic conclusion.
 
 21
-00:01:27,100 --> 00:01:30,113
+00:01:27,267 --> 00:01:30,301
 FSL is a suite of related tools.
 
 22
-00:01:30,113 --> 00:01:36,140
+00:01:30,301 --> 00:01:36,371
 Choose the tool by the job, preserve the
 connection between steps, and inspect what
 
 23
-00:01:36,140 --> 00:01:37,861
+00:01:36,371 --> 00:01:38,105
 each output actually demonstrates.
 
 24
-00:01:37,861 --> 00:01:41,735
+00:01:38,105 --> 00:01:42,007
 Successful computation never replaces
 visual and scientific quality control.

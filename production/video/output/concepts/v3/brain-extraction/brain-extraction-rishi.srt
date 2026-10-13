@@ -1,0 +1,102 @@
+1
+00:00:00,000 --> 00:00:05,531
+Before registering a high-resolution
+anatomical scan to a standard template,
+
+2
+00:00:05,531 --> 00:00:08,296
+you must remove non-brain tissue.
+
+3
+00:00:08,296 --> 00:00:14,933
+Scalp fat, muscle, eyes, and skull exhibit
+intense MRI contrast that confuses
+
+4
+00:00:14,933 --> 00:00:16,592
+registration cost functions.
+
+5
+00:00:16,592 --> 00:00:21,570
+FSL's Brain Extraction Tool, or BET,
+strips these structures.
+
+6
+00:00:23,200 --> 00:00:28,706
+BET inflates a tessellated deformable
+sphere outward from the brain center until
+
+7
+00:00:28,706 --> 00:00:31,000
+it reaches brain edge gradients.
+
+8
+00:00:31,000 --> 00:00:35,130
+The primary control parameter is
+fractional intensity threshold, specified
+
+9
+00:00:35,130 --> 00:00:36,507
+with dash f.
+
+10
+00:00:36,507 --> 00:00:38,342
+The default is 0.
+
+11
+00:00:38,342 --> 00:00:38,801
+5.
+
+12
+00:00:38,801 --> 00:00:40,636
+Smaller values like 0.
+
+13
+00:00:40,636 --> 00:00:44,307
+3 keep more tissue; larger values like 0.
+
+14
+00:00:44,307 --> 00:00:47,060
+7 peel deeper into the brain.
+
+15
+00:00:49,800 --> 00:00:54,120
+Always review skull-stripped outputs in
+FSLEyes before accepting them.
+
+16
+00:00:54,120 --> 00:01:00,360
+Check the sagittal plane to verify that
+the cerebellum and brainstem are intact,
+
+17
+00:01:00,360 --> 00:01:04,200
+and check the axial slices for orbital
+fat.
+
+18
+00:01:04,200 --> 00:01:09,000
+Clipping genuine cortical gray matter will
+permanently erase your experimental
+
+19
+00:01:09,000 --> 00:01:09,480
+activations.
+
+20
+00:01:11,367 --> 00:01:13,943
+Start with fractional intensity 0.
+
+21
+00:01:13,943 --> 00:01:21,158
+5, inspect the frontal pole and cerebellum
+in FSLEyes, and adjust dash f when
+
+22
+00:01:21,158 --> 00:01:21,673
+necessary.
+
+23
+00:01:21,673 --> 00:01:26,827
+Clean brain extraction is the foundation
+of accurate spatial normalization.

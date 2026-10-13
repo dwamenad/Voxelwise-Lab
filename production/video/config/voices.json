@@ -18,7 +18,25 @@
       "accent": "UK English",
       "locale": "en-GB",
       "speechRate": 148,
-      "description": "Measured and familiar; the default narration voice."
+      "description": "Measured and familiar; standard narration voice."
+    },
+    {
+      "id": "ava",
+      "engineVoice": "Ava",
+      "displayName": "Ava (Neural)",
+      "accent": "US English",
+      "locale": "en-US",
+      "speechRate": 160,
+      "description": "Natural, modern American neural voice with fluid human cadence."
+    },
+    {
+      "id": "oliver",
+      "engineVoice": "Oliver",
+      "displayName": "Oliver (Neural)",
+      "accent": "UK English",
+      "locale": "en-GB",
+      "speechRate": 152,
+      "description": "Articulate British neural voice with warm, precise academic inflection."
     },
     {
       "id": "samantha",
@@ -28,6 +46,24 @@
       "locale": "en-US",
       "speechRate": 158,
       "description": "Clear and conversational for step-by-step instruction."
+    },
+    {
+      "id": "zoe",
+      "engineVoice": "Zoe",
+      "displayName": "Zoe (Neural)",
+      "accent": "US English",
+      "locale": "en-US",
+      "speechRate": 156,
+      "description": "Expressive American neural voice for engaging conceptual teaching."
+    },
+    {
+      "id": "evan",
+      "engineVoice": "Evan",
+      "displayName": "Evan (Neural)",
+      "accent": "US English",
+      "locale": "en-US",
+      "speechRate": 154,
+      "description": "Calm, grounded American neural male voice."
     },
     {
       "id": "tessa",
