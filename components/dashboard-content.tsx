@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   ArrowRight,
   BookOpen,
@@ -17,22 +17,15 @@ import { calculateCourseProgress } from "@/lib/progress/store";
 import { useProgress } from "@/components/progress-provider";
 import { ProgressBar } from "@/components/progress-bar";
 import {
-  getAllNotes,
-  getBookmarks,
   deleteNote,
   exportNotesAsMarkdown,
 } from "@/lib/notes/store";
-import type { UserNote, UserBookmark } from "@/lib/types";
+import { useNotebook } from "@/lib/notes/use-notebook";
 
 export function DashboardContent() {
   const { state, resetProgress } = useProgress();
-  const [bookmarks, setBookmarks] = useState<UserBookmark[]>([]);
-  const [notes, setNotes] = useState<UserNote[]>([]);
-
-  useEffect(() => {
-    setBookmarks(getBookmarks());
-    setNotes(getAllNotes());
-  }, []);
+  const { bookmarks, notes } = useNotebook();
+  const [storageError, setStorageError] = useState("");
 
   const enrolledCourses = courses.filter((course) =>
     state.enrolledCourseSlugs.includes(course.slug)
@@ -47,8 +40,12 @@ export function DashboardContent() {
   );
 
   function handleDeleteNote(id: string) {
-    deleteNote(id);
-    setNotes(notes.filter((n) => n.id !== id));
+    try {
+      deleteNote(id);
+      setStorageError("");
+    } catch {
+      setStorageError("Could not delete this note from browser storage. It has been kept; please retry.");
+    }
   }
 
   function handleExportNotes() {
@@ -74,6 +71,7 @@ export function DashboardContent() {
           <RotateCcw size={15} /> Reset local progress
         </button>
       </header>
+      {storageError && <p role="alert" className="text-sm text-[var(--danger)]">{storageError}</p>}
 
       {continueCourse && continueLesson ? (
         <section className="continue-panel" data-accent={continueCourse.accent}>
@@ -159,7 +157,7 @@ export function DashboardContent() {
               >
                 <div>
                   <span className="text-xs text-[var(--muted)] flex items-center gap-1 mb-1">
-                    <Bookmark size={13} className="text-amber-500 fill-amber-500" />
+                    <Bookmark size={13} className="text-[var(--warning)] fill-amber-500" />
                     {bm.courseTitle}
                   </span>
                   <h4 className="font-semibold text-sm text-[var(--ink)] group-hover:text-[var(--accent)]">
@@ -219,7 +217,7 @@ export function DashboardContent() {
                   <button
                     type="button"
                     onClick={() => handleDeleteNote(note.id)}
-                    className="text-[var(--muted)] hover:text-rose-500"
+                    className="text-[var(--muted)] hover:text-[var(--danger)]"
                     title="Delete note"
                   >
                     <Trash2 size={14} />

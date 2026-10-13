@@ -163,6 +163,7 @@ const parseLoudnorm = (stderr) => {
     truePeakDb: Number(parsed.input_tp),
     loudnessRange: Number(parsed.input_lra),
     thresholdLufs: Number(parsed.input_thresh),
+    targetOffset: Number(parsed.target_offset),
   };
 };
 
@@ -183,10 +184,8 @@ export const verifyInstalledVoices = async (registry) => {
   if (missing.length) {
     throw new Error(
       `Missing system voice(s): ${missing.map((voice) => voice.engineVoice).join(", ")}.\n` +
-      `To install free Enhanced/Premium neural voices on macOS:\n` +
-      `1. Open System Settings -> Accessibility -> Spoken Content.\n` +
-      `2. Click 'System Voice' -> 'Manage Voices...'.\n` +
-      `3. Download the Enhanced/Premium versions of ${missing.map((v) => v.engineVoice).join(", ")}.`
+      `Install the configured voices in System Settings -> Accessibility -> Read & Speak (Spoken Content on older macOS versions) -> System Voice -> Manage Voices.\n` +
+      `The pipeline selects each voice by name; it does not verify Enhanced/Premium model quality.`
     );
   }
 };
@@ -221,11 +220,21 @@ export const prepareNarrationClip = async ({ text, voice, basename, workingDirec
 export const encodeNarrationClip = async ({ cleanWavPath, outputPath, durationSeconds, targets }) => {
   await mkdir(path.dirname(outputPath), { recursive: true });
   await rm(outputPath, { force: true });
-  const filter = [
+  const paddingFilter = [
     "apad",
     `atrim=0:${durationSeconds.toFixed(6)}`,
-    `loudnorm=I=${targets.integratedLufs}:TP=${targets.truePeakDb}:LRA=${targets.loudnessRange}`,
   ].join(",");
+  const normalization = `loudnorm=I=${targets.integratedLufs}:TP=${targets.truePeakDb}:LRA=${targets.loudnessRange}`;
+  // Measure the complete padded scene, then apply the measured correction.
+  // A single dynamic pass can miss the loudness target on short narration.
+  const measurement = await run(ffmpegPath, [
+    "-i", cleanWavPath, "-af", `${paddingFilter},${normalization}:print_format=json`, "-f", "null", "-",
+  ], { cwd: ffmpegDirectory, maxBuffer: 10 * 1024 * 1024 });
+  const measured = parseLoudnorm(measurement.stderr);
+  if (![measured.integratedLufs, measured.truePeakDb, measured.loudnessRange, measured.thresholdLufs, measured.targetOffset].every(Number.isFinite)) {
+    throw new Error(`Cannot normalize silent or invalid narration: ${cleanWavPath}`);
+  }
+  const filter = `${paddingFilter},${normalization}:measured_I=${measured.integratedLufs}:measured_TP=${measured.truePeakDb}:measured_LRA=${measured.loudnessRange}:measured_thresh=${measured.thresholdLufs}:offset=${measured.targetOffset}:linear=true`;
   await run(
     ffmpegPath,
     [

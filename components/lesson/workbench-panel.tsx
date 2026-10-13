@@ -4,13 +4,10 @@ import { useState } from "react";
 import {
   Terminal as TerminalIcon,
   Layers,
-  ChevronRight,
   Maximize2,
   Minimize2,
   X,
   Play,
-  RotateCcw,
-  Sparkles,
 } from "lucide-react";
 import type { Lesson } from "@/lib/types";
 
@@ -27,8 +24,8 @@ export function WorkbenchPanel({ lesson }: WorkbenchPanelProps) {
   const [history, setHistory] = useState<
     { type: "cmd" | "out" | "err"; text: string }[]
   >([
-    { type: "out", text: "Neurodesk 2026.1 (Ubuntu 22.04 LTS x86_64) - FSL 6.0.7.1" },
-    { type: "out", text: "Environment configured. Type commands below or click suggestions." },
+    { type: "out", text: "FSL practice simulator — example responses only" },
+    { type: "out", text: "Commands are simulated in your browser. No files are processed. Use Neurodesk for real analysis." },
   ]);
   const [inputVal, setInputVal] = useState("");
 
@@ -46,32 +43,32 @@ export function WorkbenchPanel({ lesson }: WorkbenchPanelProps) {
       { type: "cmd", text: `$ ${trimmed}` },
     ];
 
-    if (trimmed.startsWith("fslinfo")) {
+    if (trimmed.split(/\s+/)[0] === "fslinfo") {
       newLogs.push({
         type: "out",
         text: "data_type      INT16\ndim1           64\ndim2           64\ndim3           36\ndim4           180\npixdim1        3.000000\npixdim2        3.000000\npixdim3        3.000000\npixdim4        2.000000",
       });
-    } else if (trimmed.startsWith("mcflirt")) {
+    } else if (trimmed.split(/\s+/)[0] === "mcflirt") {
       newLogs.push({
         type: "out",
         text: "MCFLIRT v2.0 - motion correction\nRegistering 180 volumes to volume 90...\nCalculating 6 DOF rigid body matrices...\nWriting output: bold_mcf.nii.gz\nWriting plots: bold_mcf.par\nDone.",
       });
-    } else if (trimmed.startsWith("bet")) {
+    } else if (trimmed.split(/\s+/)[0] === "bet") {
       newLogs.push({
         type: "out",
         text: "Brain Extraction Tool v2.1\nEstimating tessellated sphere mesh...\nThresholding with -f 0.4...\nGenerated highres_brain.nii.gz and highres_brain_mask.nii.gz.",
       });
-    } else if (trimmed.startsWith("fslmaths")) {
+    } else if (trimmed.split(/\s+/)[0] === "fslmaths") {
       newLogs.push({
         type: "out",
         text: "fslmaths: processing pipeline complete. Saved output volume.",
       });
-    } else if (trimmed.startsWith("fslstats")) {
+    } else if (trimmed.split(/\s+/)[0] === "fslstats") {
       newLogs.push({
         type: "out",
         text: "28.4529 14820",
       });
-    } else if (trimmed.startsWith("feat")) {
+    } else if (trimmed.split(/\s+/)[0] === "feat") {
       newLogs.push({
         type: "out",
         text: "FEAT 6.00\nParsing design.fsf...\nPre-stats: MCFLIRT, BET, temporal highpass (100s).\nStats: GLM estimation via FILM prewhitening.\nPost-stats: Cluster thresholding (Z > 3.1, p < 0.05).\nReport written to .feat/report.html.",
@@ -82,8 +79,8 @@ export function WorkbenchPanel({ lesson }: WorkbenchPanelProps) {
       return;
     } else {
       newLogs.push({
-        type: "out",
-        text: `[Neurodesk] Command executed successfully: ${trimmed}`,
+        type: "err",
+        text: `Unsupported command in this simulator: ${trimmed}. No sample response is available.`,
       });
     }
 
@@ -101,7 +98,7 @@ export function WorkbenchPanel({ lesson }: WorkbenchPanelProps) {
     return (
       <button
         type="button"
-        className="fixed bottom-4 right-4 z-40 bg-[var(--surface)] text-[var(--acid)] border border-[var(--border)] rounded-full px-4 py-2 text-xs font-bold shadow-xl flex items-center gap-2 hover:border-[var(--acid)] transition-all"
+        className="fixed bottom-4 right-4 z-40 bg-[var(--surface)] text-[var(--accent)] border border-[var(--border)] rounded-full px-4 py-2 text-xs font-bold shadow-xl flex items-center gap-2 hover:border-[var(--accent)] transition-all"
         onClick={() => setIsClosed(false)}
       >
         <TerminalIcon size={14} /> Open Research Workbench
@@ -123,7 +120,7 @@ export function WorkbenchPanel({ lesson }: WorkbenchPanelProps) {
             type="button"
             className={`px-3 py-1 rounded-md text-xs font-semibold flex items-center gap-1.5 transition-colors ${
               activeTab === "terminal"
-                ? "bg-[var(--surface-sunken)] text-[var(--acid)] border border-[var(--border)]"
+                ? "bg-[var(--surface-sunken)] text-[var(--accent)] border border-[var(--border)]"
                 : "text-[var(--muted)] hover:text-[var(--ink)]"
             }`}
             onClick={() => setActiveTab("terminal")}
@@ -135,7 +132,7 @@ export function WorkbenchPanel({ lesson }: WorkbenchPanelProps) {
             type="button"
             className={`px-3 py-1 rounded-md text-xs font-semibold flex items-center gap-1.5 transition-colors ${
               activeTab === "matrix"
-                ? "bg-[var(--surface-sunken)] text-[var(--acid)] border border-[var(--border)]"
+                ? "bg-[var(--surface-sunken)] text-[var(--accent)] border border-[var(--border)]"
                 : "text-[var(--muted)] hover:text-[var(--ink)]"
             }`}
             onClick={() => setActiveTab("matrix")}
@@ -167,14 +164,14 @@ export function WorkbenchPanel({ lesson }: WorkbenchPanelProps) {
 
       {/* Tab 1: Terminal View */}
       {activeTab === "terminal" && (
-        <div className="flex-1 flex flex-col overflow-hidden bg-[#0a0c10] text-[#f3f4f6] font-mono text-xs">
+        <div className="workbench-terminal flex-1 flex flex-col overflow-hidden bg-[#0a0c10] text-[#f3f4f6] font-mono text-xs">
           {/* Terminal Window Controls */}
           <div className="px-3 py-1.5 bg-[#0e1117] border-b border-zinc-800/80 flex items-center justify-between text-[11px] text-zinc-400 select-none">
             <div className="flex items-center gap-1.5">
               <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block" />
               <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block" />
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block" />
-              <span className="ml-2 text-zinc-400 text-[10px]">bash · neurodesk-fsl</span>
+              <span className="ml-2 text-zinc-400 text-[10px]">FSL practice · simulated</span>
             </div>
             <button
               type="button"
@@ -192,13 +189,13 @@ export function WorkbenchPanel({ lesson }: WorkbenchPanelProps) {
                 key={idx}
                 className={
                   line.type === "cmd"
-                    ? "text-[var(--acid)] font-bold"
+                    ? "text-[var(--accent)] font-bold"
                     : line.type === "err"
                     ? "text-rose-400"
                     : "text-zinc-300"
                 }
               >
-                {line.text}
+                <span className="whitespace-pre-wrap">{line.text}</span>
               </div>
             ))}
           </div>
@@ -225,7 +222,7 @@ export function WorkbenchPanel({ lesson }: WorkbenchPanelProps) {
 
           {/* Interactive Command Input Line */}
           <div className="p-2.5 bg-[#07080b] border-t border-zinc-800 flex items-center gap-2">
-            <span className="text-[var(--acid)] font-bold text-sm">$</span>
+            <span className="text-[var(--accent)] font-bold text-sm">$</span>
             <input
               type="text"
               value={inputVal}
@@ -233,12 +230,13 @@ export function WorkbenchPanel({ lesson }: WorkbenchPanelProps) {
               onKeyDown={handleKeyDown}
               placeholder="Type FSL command or 'clear'..."
               className="flex-1 bg-transparent text-white font-mono text-xs outline-none placeholder:text-zinc-600"
-              autoFocus
+              aria-label="FSL practice command"
             />
             <button
               type="button"
-              className="p-1 rounded text-zinc-400 hover:text-[var(--acid)]"
+              className="p-1 rounded text-zinc-400 hover:text-[var(--accent)]"
               onClick={() => runCommand(inputVal)}
+              aria-label="Run simulated command"
             >
               <Play size={12} />
             </button>
@@ -250,9 +248,13 @@ export function WorkbenchPanel({ lesson }: WorkbenchPanelProps) {
       {activeTab === "matrix" && (
         <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-[var(--surface-sunken)]">
           <div className="flex items-center justify-between text-xs">
-            <span className="font-bold text-[var(--ink)]">GLM Design Matrix (X)</span>
+            <span className="font-bold text-[var(--ink)]">Example GLM Design Matrix (X)</span>
             <span className="text-[10px] font-mono text-[var(--muted)]">N=60 TRs × P=3 EVs</span>
           </div>
+
+          <p className="text-xs text-[var(--ink-secondary)]">
+            This panel shows a fixed example. <a href="/tools" className="text-[var(--accent)] underline">Open the interactive design matrix simulator</a> to adjust timing and contrasts.
+          </p>
 
           {/* Matrix Heatmap */}
           <div className="p-3 bg-black rounded-lg border border-zinc-800 flex justify-center gap-2">
@@ -290,7 +292,7 @@ export function WorkbenchPanel({ lesson }: WorkbenchPanelProps) {
               <div className="p-1 bg-zinc-800/40 rounded text-zinc-300">1.00</div>
             </div>
             <p className="text-[10px] text-[var(--muted)]">
-              Low cross-correlation confirms high statistical design efficiency.
+              Illustrative values only. Assess design efficiency using the full model and your contrasts.
             </p>
           </div>
         </div>

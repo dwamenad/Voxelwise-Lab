@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   Bookmark,
   BookmarkCheck,
@@ -8,16 +8,13 @@ import {
   Plus,
   Trash2,
   X,
-  Clock,
   Download,
   Check,
 } from "lucide-react";
-import type { UserNote } from "@/lib/types";
+import { useNotebook } from "@/lib/notes/use-notebook";
 import {
-  getNotesForLesson,
   saveNote,
   deleteNote,
-  isLessonBookmarked,
   toggleBookmark,
   exportNotesAsMarkdown,
 } from "@/lib/notes/store";
@@ -38,49 +35,57 @@ export function LessonNotesDrawer({
   courseTitle,
 }: LessonNotesDrawerProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [bookmarked, setBookmarked] = useState(false);
-  const [notes, setNotes] = useState<UserNote[]>([]);
+  const notebook = useNotebook();
+  const bookmarked = notebook.bookmarks.some((bookmark) => bookmark.lessonId === lessonId);
+  const notes = notebook.notes.filter((note) => note.lessonId === lessonId);
+  const [storageError, setStorageError] = useState("");
   const [newContent, setNewContent] = useState("");
   const [timestampSec, setTimestampSec] = useState<number | undefined>(undefined);
   const [copiedExport, setCopiedExport] = useState(false);
 
-  useEffect(() => {
-    setBookmarked(isLessonBookmarked(lessonId));
-    setNotes(getNotesForLesson(lessonId));
-  }, [lessonId]);
-
   function handleBookmarkToggle() {
-    const isNow = toggleBookmark({
-      lessonId,
-      courseSlug,
-      lessonSlug,
-      lessonTitle,
-      courseTitle,
-    });
-    setBookmarked(isNow);
+    try {
+      toggleBookmark({
+        lessonId,
+        courseSlug,
+        lessonSlug,
+        lessonTitle,
+        courseTitle,
+      });
+      setStorageError("");
+    } catch (error) {
+      setStorageError(error instanceof Error ? error.message : "Could not save your bookmark. Please retry.");
+    }
   }
 
   function handleAddNote(e: React.FormEvent) {
     e.preventDefault();
     if (!newContent.trim()) return;
 
-    const created = saveNote({
-      lessonId,
-      courseSlug,
-      lessonSlug,
-      lessonTitle,
-      content: newContent.trim(),
-      timestampSeconds: timestampSec,
-    });
-
-    setNotes([created, ...notes]);
-    setNewContent("");
-    setTimestampSec(undefined);
+    try {
+      saveNote({
+        lessonId,
+        courseSlug,
+        lessonSlug,
+        lessonTitle,
+        content: newContent.trim(),
+        timestampSeconds: timestampSec,
+      });
+      setStorageError("");
+      setNewContent("");
+      setTimestampSec(undefined);
+    } catch (error) {
+      setStorageError(`${error instanceof Error ? error.message : "Could not save your note."} Your draft has been kept.`);
+    }
   }
 
   function handleDeleteNote(noteId: string) {
-    deleteNote(noteId);
-    setNotes(notes.filter((n) => n.id !== noteId));
+    try {
+      deleteNote(noteId);
+      setStorageError("");
+    } catch {
+      setStorageError("Could not delete this note from browser storage. It has been kept; please retry.");
+    }
   }
 
   function handleExport() {
@@ -102,23 +107,25 @@ export function LessonNotesDrawer({
         {/* Bookmark button */}
         <button
           type="button"
-          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-semibold transition-colors ${
+          className={`notebook-bookmark-button flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-semibold transition-colors ${
             bookmarked
               ? "bg-[var(--accent)]/15 border-[var(--accent)] text-[var(--ink)]"
               : "bg-[var(--surface-sunken)] border-[var(--border)] text-[var(--ink-secondary)] hover:text-[var(--ink)]"
           }`}
           onClick={handleBookmarkToggle}
+          aria-label={bookmarked ? "Bookmarked" : "Bookmark"}
+          aria-pressed={bookmarked}
           title={bookmarked ? "Bookmarked" : "Bookmark this lesson"}
         >
           {bookmarked ? (
             <>
-              <BookmarkCheck size={14} className="text-amber-500 fill-amber-500" />
-              <span>Bookmarked</span>
+              <BookmarkCheck size={14} className="text-[var(--warning)] fill-amber-500" />
+              <span className="notebook-bookmark-label">Bookmarked</span>
             </>
           ) : (
             <>
               <Bookmark size={14} />
-              <span>Bookmark</span>
+              <span className="notebook-bookmark-label">Bookmark</span>
             </>
           )}
         </button>
@@ -132,12 +139,14 @@ export function LessonNotesDrawer({
           <FileText size={14} />
           <span>Notes</span>
           {notes.length > 0 && (
-            <span className="w-4 h-4 rounded-full bg-[var(--accent)] text-[var(--ink)] font-mono text-[10px] flex items-center justify-center font-bold">
+            <span className="w-4 h-4 rounded-full bg-[var(--acid)] text-[var(--on-accent)] font-mono text-[10px] flex items-center justify-center font-bold">
               {notes.length}
             </span>
           )}
         </button>
       </div>
+
+      {storageError && !isOpen && <p role="alert" className="text-xs text-[var(--danger)]">{storageError}</p>}
 
       {/* Drawer overlay */}
       {isOpen && (
@@ -169,11 +178,13 @@ export function LessonNotesDrawer({
             {/* Note Creation Form */}
             <form onSubmit={handleAddNote} className="p-4 border-b border-[var(--border)] space-y-3 bg-[var(--surface-sunken)]">
               <textarea
+                aria-label="New study note"
                 value={newContent}
                 onChange={(e) => setNewContent(e.target.value)}
                 placeholder="Record personal notes, command parameters to remember, or questions..."
                 className="w-full h-24 p-3 bg-[var(--surface)] border border-[var(--border)] rounded-lg text-sm text-[var(--ink)] placeholder:text-[var(--muted)] outline-none focus:border-[var(--accent)] resize-none"
               />
+              {storageError && <p role="alert" className="text-xs text-[var(--danger)]">{storageError}</p>}
               <div className="flex items-center justify-between">
                 <span className="text-xs text-[var(--muted)]">
                   Stored privately on your device.
@@ -206,7 +217,7 @@ export function LessonNotesDrawer({
                       <span>{new Date(note.createdAt).toLocaleDateString()}</span>
                       <button
                         type="button"
-                        className="text-[var(--muted)] hover:text-rose-500 opacity-60 hover:opacity-100 transition-opacity"
+                        className="text-[var(--muted)] hover:text-[var(--danger)] opacity-60 hover:opacity-100 transition-opacity"
                         onClick={() => handleDeleteNote(note.id)}
                         title="Delete note"
                       >
@@ -226,7 +237,7 @@ export function LessonNotesDrawer({
                 className="text-xs text-[var(--ink-secondary)] hover:text-[var(--ink)] flex items-center gap-1.5 font-medium"
                 onClick={handleExport}
               >
-                {copiedExport ? <Check size={14} className="text-emerald-500" /> : <Download size={14} />}
+                {copiedExport ? <Check size={14} className="text-[var(--success)]" /> : <Download size={14} />}
                 <span>{copiedExport ? "Exported!" : "Export All Notes (.md)"}</span>
               </button>
               <button

@@ -5,12 +5,11 @@ import {
   Layers,
   CheckCircle2,
   AlertTriangle,
-  Info,
   Sliders,
   Plus,
   Trash2,
-  HelpCircle,
 } from "lucide-react";
+import { analyzeDesign, clampAcquisition, isContrastEstimable } from "@/lib/tools/design-matrix";
 
 interface EVConfig {
   id: string;
@@ -33,7 +32,7 @@ export function DesignMatrixVisualizer() {
   const [trSeconds, setTrSeconds] = useState<number>(2.0);
   const [applyHRF, setApplyHRF] = useState<boolean>(true);
 
-  const [evs, setEvs] = useState<EVConfig[]>([
+  const [evs] = useState<EVConfig[]>([
     { id: "ev-1", name: "Faces", type: "block", onset: 10, duration: 16, amplitude: 1 },
     { id: "ev-2", name: "Shapes", type: "block", onset: 36, duration: 16, amplitude: 1 },
     { id: "ev-3", name: "Linear Drift", type: "linear-trend", onset: 0, duration: 120, amplitude: 0.5 },
@@ -100,16 +99,12 @@ export function DesignMatrixVisualizer() {
     });
 
     // Compute Pearson correlation matrix between EVs
-    const corrMatrix: number[][] = [];
+    const corrMatrix: (number | null)[][] = [];
     for (let i = 0; i < evs.length; i++) {
       corrMatrix[i] = [];
       const s1 = convolvedSignals[i];
       const m1 = s1.reduce((a, b) => a + b, 0) / numTRs;
       for (let j = 0; j < evs.length; j++) {
-        if (i === j) {
-          corrMatrix[i][j] = 1.0;
-          continue;
-        }
         const s2 = convolvedSignals[j];
         const m2 = s2.reduce((a, b) => a + b, 0) / numTRs;
         let num = 0;
@@ -122,13 +117,14 @@ export function DesignMatrixVisualizer() {
           den1 += d1 * d1;
           den2 += d2 * d2;
         }
-        const r = den1 * den2 > 0 ? num / Math.sqrt(den1 * den2) : 0;
-        corrMatrix[i][j] = Number(r.toFixed(3));
+        const r = den1 * den2 > 0 ? num / Math.sqrt(den1 * den2) : null;
+        corrMatrix[i][j] = r === null ? null : Number(r.toFixed(3));
       }
     }
 
     return { matrix: convolvedSignals, evNames: names, correlations: corrMatrix };
   }, [numTRs, trSeconds, applyHRF, evs]);
+  const design = useMemo(() => analyzeDesign(matrix), [matrix]);
 
   // Adjust contrast weight length when EVs change
   function updateContrastWeight(contrastIdx: number, evIdx: number, val: number) {
@@ -190,7 +186,8 @@ export function DesignMatrixVisualizer() {
             min={20}
             max={300}
             value={numTRs}
-            onChange={(e) => setNumTRs(Math.max(20, parseInt(e.target.value) || 20))}
+            aria-label="Total TR Volumes"
+            onChange={(e) => setNumTRs(clampAcquisition(Math.trunc(e.target.valueAsNumber), 20, 300, 20))}
             className="w-full bg-[var(--surface)] border border-[var(--border)] rounded px-2.5 py-1 text-sm font-mono"
           />
         </div>
@@ -202,7 +199,8 @@ export function DesignMatrixVisualizer() {
             min={0.5}
             max={5.0}
             value={trSeconds}
-            onChange={(e) => setTrSeconds(Math.max(0.5, parseFloat(e.target.value) || 2.0))}
+            aria-label="Repetition Time (TR sec)"
+            onChange={(e) => setTrSeconds(clampAcquisition(e.target.valueAsNumber, 0.5, 5, 2))}
             className="w-full bg-[var(--surface)] border border-[var(--border)] rounded px-2.5 py-1 text-sm font-mono"
           />
         </div>
@@ -267,6 +265,12 @@ export function DesignMatrixVisualizer() {
             </h3>
             <p className="text-xs text-[var(--ink-secondary)] mb-3">
               Values close to |1.0| indicate high multicollinearity, which inflates parameter variance and reduces statistical efficiency.
+              {" "}A dash means correlation is undefined for a constant EV.
+            </p>
+            <p className="text-xs text-[var(--ink-secondary)] mb-3" role="status">
+              Design rank: {design.rank} of {evs.length}.
+              {design.zeroColumns.length > 0 && ` No signal in: ${design.zeroColumns.map((index) => evNames[index]).join(", ")}. Extend the run to include the task events.`}
+              {design.rank < evs.length && " Some EV effects cannot be estimated separately."}
             </p>
 
             <div className="overflow-x-auto">
@@ -288,18 +292,18 @@ export function DesignMatrixVisualizer() {
                         EV{rIdx + 1} ({evNames[rIdx]})
                       </td>
                       {row.map((val, cIdx) => {
-                        const absVal = Math.abs(val);
+                        const absVal = Math.abs(val ?? 0);
                         const isSevere = absVal > 0.8 && rIdx !== cIdx;
                         const isModerate = absVal > 0.5 && absVal <= 0.8 && rIdx !== cIdx;
                         const colorClass = isSevere
-                          ? "bg-rose-500/20 text-rose-600 font-bold"
+                          ? "bg-rose-500/20 text-[var(--danger)] font-bold"
                           : isModerate
-                          ? "bg-amber-500/20 text-amber-600"
+                          ? "bg-amber-500/20 text-[var(--warning)]"
                           : "text-[var(--ink-secondary)]";
 
                         return (
                           <td key={cIdx} className={`p-2 text-center rounded ${colorClass}`}>
-                            {val.toFixed(2)}
+                            {val === null ? "—" : val.toFixed(2)}
                           </td>
                         );
                       })}
@@ -339,6 +343,7 @@ export function DesignMatrixVisualizer() {
             const isZeroVector = weights.every((w) => w === 0);
             const isDifferential = Math.abs(sumWeights) < 0.001 && !isZeroVector;
             const isSubtractive = weights.some((w) => w > 0) && weights.some((w) => w < 0);
+            const estimable = isContrastEstimable(weights, design);
 
             return (
               <div
@@ -364,7 +369,7 @@ export function DesignMatrixVisualizer() {
                   {contrasts.length > 1 && (
                     <button
                       type="button"
-                      className="text-[var(--muted)] hover:text-rose-500 self-end sm:self-auto"
+                      className="text-[var(--muted)] hover:text-[var(--danger)] self-end sm:self-auto"
                       onClick={() => removeContrast(contrast.id)}
                       title="Delete contrast"
                     >
@@ -398,21 +403,25 @@ export function DesignMatrixVisualizer() {
                 {/* Validation Status */}
                 <div className="text-xs pt-1 flex flex-wrap items-center gap-3">
                   {isZeroVector ? (
-                    <span className="text-rose-600 flex items-center gap-1 font-medium">
+                    <span className="text-[var(--danger)] flex items-center gap-1 font-medium">
                       <AlertTriangle size={14} /> Invalid: All weights are zero.
+                    </span>
+                  ) : !estimable ? (
+                    <span className="text-[var(--danger)] flex items-center gap-1 font-medium">
+                      <AlertTriangle size={14} /> Not estimable from this design. Check missing or dependent EVs.
                     </span>
                   ) : (
                     <>
-                      <span className="text-emerald-600 flex items-center gap-1 font-medium">
-                        <CheckCircle2 size={14} /> Valid contrast vector.
+                      <span className="text-[var(--success)] flex items-center gap-1 font-medium">
+                        <CheckCircle2 size={14} /> Estimable contrast for this simulated design.
                       </span>
                       {isDifferential && (
-                        <span className="bg-emerald-500/10 text-emerald-700 px-2 py-0.5 rounded font-mono">
+                        <span className="bg-emerald-500/10 text-[var(--success)] px-2 py-0.5 rounded font-mono">
                           Zero-sum balanced contrast (∑w = 0)
                         </span>
                       )}
                       {!isDifferential && (
-                        <span className="bg-amber-500/10 text-amber-700 px-2 py-0.5 rounded font-mono">
+                        <span className="bg-amber-500/10 text-[var(--warning)] px-2 py-0.5 rounded font-mono">
                           Non-zero sum (∑w = {sumWeights.toFixed(2)}) — estimates activation vs baseline
                         </span>
                       )}

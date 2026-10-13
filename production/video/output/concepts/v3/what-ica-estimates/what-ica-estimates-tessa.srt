@@ -1,0 +1,61 @@
+1
+00:00:00,000 --> 00:00:06,680
+While the general linear model requires a
+predefined model of experimental timing,
+
+2
+00:00:06,680 --> 00:00:11,133
+Independent Component Analysis, or ICA, is
+entirely data-driven.
+
+3
+00:00:11,133 --> 00:00:17,257
+FSL's MELODIC tool separates
+four-dimensional fMRI data into a set of
+
+4
+00:00:17,257 --> 00:00:23,380
+spatially independent component maps, each
+paired with its own time course.
+
+5
+00:00:24,233 --> 00:00:31,516
+Spatial ICA assumes that the brain signal
+is a mixture of distinct, non-overlapping
+
+6
+00:00:31,516 --> 00:00:34,877
+spatial sources that fluctuate over time.
+
+7
+00:00:34,877 --> 00:00:40,480
+MELODIC estimates components whose spatial
+patterns are as statistically independent
+
+8
+00:00:40,480 --> 00:00:41,600
+as possible.
+
+9
+00:00:41,600 --> 00:00:46,082
+This separates canonical functional
+networks from structured physiological
+
+10
+00:00:46,082 --> 00:00:50,563
+artifacts like head motion and
+cerebrospinal fluid pulsations.
+
+11
+00:00:51,433 --> 00:00:57,773
+MELODIC spatial ICA provides a powerful,
+hypothesis-free method to explore brain
+
+12
+00:00:57,773 --> 00:01:00,654
+networks and isolate structured noise.
+
+13
+00:01:00,654 --> 00:01:06,993
+It is the foundation of resting-state fMRI
+and automated artifact cleaning.

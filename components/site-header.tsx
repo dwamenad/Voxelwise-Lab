@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Search } from "lucide-react";
 import { BrandMark } from "@/components/ui/brand-mark";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const navigation = [
   { href: "/courses", label: "Courses" },
@@ -27,6 +28,7 @@ export function SiteHeader() {
             <input name="q" aria-label="Search courses, lessons, and help" placeholder="Search" />
           </form>
           <Link href="/dashboard" className="text-link header-dashboard">My progress</Link>
+          <ThemeToggle />
           <details className="mobile-menu">
             <summary aria-label="Open navigation">Menu</summary>
             <div className="mobile-menu__panel">

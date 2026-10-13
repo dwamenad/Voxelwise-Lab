@@ -260,6 +260,7 @@ export function NarratedVideoPlayer({ block }: { block: VideoBlock }) {
             key={`${playableVariant?.voiceId}-${playableUrl}`}
             ref={videoRef}
             src={playableUrl}
+            crossOrigin="anonymous"
             controls
             preload="metadata"
             playsInline

@@ -2,6 +2,24 @@ import type { UserNote, UserBookmark } from "@/lib/types";
 
 const NOTES_KEY = "voxelwise_notes";
 const BOOKMARKS_KEY = "voxelwise_bookmarks";
+const CHANGE_EVENT = "voxelwise-notebook-change";
+export const EMPTY_NOTEBOOK_SNAPSHOT = '{"notes":[],"bookmarks":[]}';
+
+export function subscribeNotebook(listener: () => void) {
+  const onStorage = (event: StorageEvent) => {
+    if (event.key === null || event.key === NOTES_KEY || event.key === BOOKMARKS_KEY) listener();
+  };
+  window.addEventListener(CHANGE_EVENT, listener);
+  window.addEventListener("storage", onStorage);
+  return () => {
+    window.removeEventListener(CHANGE_EVENT, listener);
+    window.removeEventListener("storage", onStorage);
+  };
+}
+
+export function getNotebookSnapshot(): string {
+  return JSON.stringify({ notes: getAllNotes(), bookmarks: getBookmarks() });
+}
 
 function getStorage<T>(key: string, defaultValue: T): T {
   if (typeof window === "undefined") return defaultValue;
@@ -14,12 +32,13 @@ function getStorage<T>(key: string, defaultValue: T): T {
 }
 
 function setStorage<T>(key: string, value: T): void {
-  if (typeof window === "undefined") return;
+  if (typeof window === "undefined") throw new Error("Notebook storage is only available in your browser.");
   try {
     window.localStorage.setItem(key, JSON.stringify(value));
-  } catch (err) {
-    console.error("Failed to save to localStorage:", err);
+  } catch {
+    throw new Error("Your notebook could not be saved. Browser storage may be full or blocked. Free some space or enable storage, then retry.");
   }
+  window.dispatchEvent(new Event(CHANGE_EVENT));
 }
 
 export function getAllNotes(): UserNote[] {
@@ -49,8 +68,10 @@ export function saveNote(
           }
         : n
     );
+    const note = updated.find((n) => n.id === noteInput.id);
+    if (!note) throw new Error("This note no longer exists. Save it as a new note.");
     setStorage(NOTES_KEY, updated);
-    return updated.find((n) => n.id === noteInput.id)!;
+    return note;
   } else {
     // Create new note
     const newNote: UserNote = {

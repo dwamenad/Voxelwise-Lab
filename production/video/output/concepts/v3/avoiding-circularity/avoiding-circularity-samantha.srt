@@ -1,0 +1,58 @@
+1
+00:00:00,000 --> 00:00:03,849
+Circularity, commonly known as double
+dipping, occurs when data selection
+
+2
+00:00:03,849 --> 00:00:07,313
+criteria are not independent of the
+subsequent statistical test.
+
+3
+00:00:07,313 --> 00:00:12,702
+If you search the whole brain for voxels
+showing greater activation for task over
+
+4
+00:00:12,702 --> 00:00:17,706
+baseline, and then extract and report the
+mean activation from those exact voxels,
+
+5
+00:00:17,706 --> 00:00:21,170
+your effect sizes and p-values will be
+artificially inflated.
+
+6
+00:00:27,600 --> 00:00:33,227
+You can prevent circularity through four
+standard strategies: define regions using
+
+7
+00:00:33,227 --> 00:00:38,343
+anatomical atlases; run an independent
+localizer scan; use orthogonal contrasts
+
+8
+00:00:38,343 --> 00:00:42,947
+where selection and testing are
+mathematically uncorrelated; or apply
+
+9
+00:00:42,947 --> 00:00:43,970
+leave-one-subject-out cross-validation.
+
+10
+00:00:49,267 --> 00:00:54,036
+Never perform hypothesis tests on voxels
+selected with that same test.
+
+11
+00:00:54,036 --> 00:00:57,939
+Always derive region boundaries
+independently to ensure your reported
+
+12
+00:00:57,939 --> 00:01:00,107
+effect sizes are scientifically
+defensible.

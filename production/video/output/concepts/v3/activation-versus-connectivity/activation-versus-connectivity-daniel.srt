@@ -1,0 +1,62 @@
+1
+00:00:00,000 --> 00:00:06,177
+Standard fMRI analyses focus on functional
+segregation: asking which individual brain
+
+2
+00:00:06,177 --> 00:00:09,546
+regions activate during an experimental
+task.
+
+3
+00:00:09,546 --> 00:00:14,038
+Functional connectivity investigates
+functional integration: asking how regions
+
+4
+00:00:14,038 --> 00:00:16,284
+communicate as coordinated networks.
+
+5
+00:00:16,284 --> 00:00:23,584
+Two areas can show dramatic changes in
+functional coupling even when their mean
+
+6
+00:00:23,584 --> 00:00:25,830
+activation levels remain unchanged.
+
+7
+00:00:29,200 --> 00:00:33,505
+Psychophysiological interaction, or PPI,
+models functional connectivity within the
+
+8
+00:00:33,505 --> 00:00:36,853
+general linear model as a statistical
+interaction.
+
+9
+00:00:36,853 --> 00:00:43,549
+It tests whether the regression slope
+relating activity in a seed region to the
+
+10
+00:00:43,549 --> 00:00:48,810
+rest of the brain significantly increases
+during a specific psychological condition.
+
+11
+00:00:51,100 --> 00:00:54,733
+Separate activation magnitude from
+inter-regional coupling.
+
+12
+00:00:54,733 --> 00:01:01,393
+PPI provides a statistical framework to
+test how psychological demands modulate
+
+13
+00:01:01,393 --> 00:01:04,420
+communication across distributed neural
+networks.
