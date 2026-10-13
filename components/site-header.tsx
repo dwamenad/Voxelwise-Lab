@@ -4,6 +4,7 @@ import { BrandMark } from "@/components/ui/brand-mark";
 
 const navigation = [
   { href: "/courses", label: "Courses" },
+  { href: "/tools", label: "Lab Tools" },
   { href: "/resources", label: "Resources" },
   { href: "/glossary", label: "Glossary" },
   { href: "/troubleshooting", label: "Help" },

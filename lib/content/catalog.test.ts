@@ -6,7 +6,11 @@ describe("course catalog", () => {
     expect(courses).toHaveLength(6);
     expect(courses.filter((course) => course.status === "available").map((course) => course.slug)).toEqual([
       "fsl-neuroimaging-foundations",
+      "fmri-preprocessing-fsl",
       "first-level-fmri-analysis-feat",
+      "higher-level-fmri-analysis",
+      "roi-analysis-fsl",
+      "ppi-and-ica",
     ]);
   });
 

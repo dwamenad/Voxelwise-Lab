@@ -1,4 +1,10 @@
-import type { Lesson, LessonBlock, VideoType } from "@/lib/types";
+import type {
+  Lesson,
+  LessonBlock,
+  VideoType,
+  QuizOption,
+  ErrorSpottingOption,
+} from "@/lib/types";
 import {
   createVideoVoiceVariants,
   DEFAULT_VOICE_ID,
@@ -19,7 +25,31 @@ interface LearningLessonInput {
   task: string[];
   command?: string;
   expected?: { output: string; explanation: string };
-  selfCheck: { question: string; answer: string };
+  selfCheck?: { question: string; answer: string };
+  quiz?: {
+    id: string;
+    question: string;
+    options: QuizOption[];
+    hint?: string;
+    explanation?: string;
+  };
+  commandBuilder?: {
+    id: string;
+    title: string;
+    prompt: string;
+    targetTokens: string[];
+    scrambledTokens: string[];
+    hint?: string;
+    explanation: string;
+  };
+  errorSpotting?: {
+    id: string;
+    title: string;
+    scenario: string;
+    codeOrReport?: string;
+    options: ErrorSpottingOption[];
+    summary: string;
+  };
   summary: string[];
   sourceLab: string;
   sourceSection: string;
@@ -68,7 +98,44 @@ export function learningLesson(input: LearningLessonInput): Lesson {
   }
   if (input.expected) blocks.push({ type: "expected-output", title: "What you should see", ...input.expected });
   if (input.troubleshooting) blocks.push({ type: "troubleshooting", ...input.troubleshooting });
-  blocks.push({ type: "self-check", ...input.selfCheck }, { type: "summary", points: input.summary });
+
+  // Interactive Assessment blocks
+  if (input.quiz) {
+    blocks.push({
+      type: "quiz",
+      id: input.quiz.id,
+      question: input.quiz.question,
+      options: input.quiz.options,
+      hint: input.quiz.hint,
+      explanation: input.quiz.explanation,
+    });
+  }
+  if (input.commandBuilder) {
+    blocks.push({
+      type: "command-builder",
+      id: input.commandBuilder.id,
+      title: input.commandBuilder.title,
+      prompt: input.commandBuilder.prompt,
+      targetTokens: input.commandBuilder.targetTokens,
+      scrambledTokens: input.commandBuilder.scrambledTokens,
+      hint: input.commandBuilder.hint,
+      explanation: input.commandBuilder.explanation,
+    });
+  }
+  if (input.errorSpotting) {
+    blocks.push({
+      type: "error-spotting",
+      id: input.errorSpotting.id,
+      title: input.errorSpotting.title,
+      scenario: input.errorSpotting.scenario,
+      codeOrReport: input.errorSpotting.codeOrReport,
+      options: input.errorSpotting.options,
+      summary: input.errorSpotting.summary,
+    });
+  }
+
+  if (input.selfCheck) blocks.push({ type: "self-check", ...input.selfCheck });
+  blocks.push({ type: "summary", points: input.summary });
 
   return {
     id: input.id,
