@@ -9,6 +9,7 @@ import { LessonBlocks } from "@/components/lesson/lesson-blocks";
 import { ProgressBar } from "@/components/progress-bar";
 import { useProgress } from "@/components/progress-provider";
 import { calculateCourseProgress } from "@/lib/progress/store";
+import { LessonNotesDrawer } from "@/components/lesson/lesson-notes-drawer";
 
 interface LessonPlayerProps {
   course: Course;
@@ -37,7 +38,7 @@ export function LessonPlayer({ course, module, lesson, previous, next }: LessonP
 
   useEffect(() => {
     if (!window.matchMedia("(min-width: 901px)").matches) return;
-    const activeLesson = document.querySelector<HTMLElement>(".desktop-sidebar-wrap a[aria-current='page']");
+    const activeLesson = document.querySelector<HTMLElement>("aside.lesson-sidebar a[aria-current='page']");
     window.requestAnimationFrame(() => activeLesson?.scrollIntoView({ block: "center" }));
   }, [lesson.id]);
 
@@ -74,7 +75,16 @@ export function LessonPlayer({ course, module, lesson, previous, next }: LessonP
           <Link href={`/courses/${course.slug}`}>{course.shortTitle}</Link>
         </div>
         <div className="lesson-topbar__progress"><span>{completedCount} of {lessonCount} lessons</span><ProgressBar value={progress} /><strong>{progress}%</strong></div>
-        <button className="mobile-outline-button" type="button" onClick={() => setMobileOutlineOpen(true)}><Menu size={18} />Outline</button>
+        <div className="flex items-center gap-2">
+          <LessonNotesDrawer
+            lessonId={lesson.id}
+            courseSlug={course.slug}
+            lessonSlug={lesson.slug}
+            lessonTitle={lesson.title}
+            courseTitle={course.title}
+          />
+          <button className="mobile-outline-button" type="button" onClick={() => setMobileOutlineOpen(true)}><Menu size={18} />Outline</button>
+        </div>
       </header>
       <div className="lesson-workspace">
         <div className="desktop-sidebar-wrap">{sidebar}</div>
@@ -82,7 +92,18 @@ export function LessonPlayer({ course, module, lesson, previous, next }: LessonP
         {mobileOutlineOpen && <div className="mobile-outline"><button type="button" className="mobile-outline__scrim" aria-label="Close course outline" onClick={() => setMobileOutlineOpen(false)} />{sidebar}</div>}
         <main className="lesson-main">
           <div className="lesson-main__inner">
-            <nav className="lesson-breadcrumb" aria-label="Lesson breadcrumb"><Link href={`/courses/${course.slug}`}>Course</Link><ChevronRight size={14} /><span>Module {module.number}</span></nav>
+            <div className="flex items-center justify-between mb-2">
+              <nav className="lesson-breadcrumb" aria-label="Lesson breadcrumb"><Link href={`/courses/${course.slug}`}>Course</Link><ChevronRight size={14} /><span>Module {module.number}</span></nav>
+              <div className="hidden sm:block">
+                <LessonNotesDrawer
+                  lessonId={lesson.id}
+                  courseSlug={course.slug}
+                  lessonSlug={lesson.slug}
+                  lessonTitle={lesson.title}
+                  courseTitle={course.title}
+                />
+              </div>
+            </div>
             <header className="lesson-heading" id="lesson-content">
               <div className="eyebrow-row"><span>{lesson.number}</span><span>{lesson.durationMinutes} min</span></div>
               <h1>{lesson.title}</h1>

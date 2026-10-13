@@ -27,6 +27,20 @@ export interface VideoVoiceVariant {
   durationSeconds?: number;
 }
 
+export interface QuizOption {
+  id: string;
+  text: string;
+  isCorrect: boolean;
+  explanation: string;
+}
+
+export interface ErrorSpottingOption {
+  id: string;
+  description: string;
+  isFlaw: boolean;
+  explanation: string;
+}
+
 export type LessonBlock =
   | { type: "text"; body: string }
   | { type: "heading"; level: 2 | 3; text: string }
@@ -74,6 +88,33 @@ export type LessonBlock =
       available: boolean;
     }
   | { type: "self-check"; question: string; answer: string }
+  | {
+      type: "quiz";
+      id: string;
+      question: string;
+      options: QuizOption[];
+      hint?: string;
+      explanation?: string;
+    }
+  | {
+      type: "command-builder";
+      id: string;
+      title: string;
+      prompt: string;
+      targetTokens: string[];
+      scrambledTokens: string[];
+      hint?: string;
+      explanation: string;
+    }
+  | {
+      type: "error-spotting";
+      id: string;
+      title: string;
+      scenario: string;
+      codeOrReport?: string;
+      options: ErrorSpottingOption[];
+      summary: string;
+    }
   | { type: "summary"; points: string[] };
 
 export interface LessonProductionMetadata {
@@ -167,4 +208,27 @@ export interface LessonProgress {
   completed: boolean;
   completedAt: string | null;
   lastViewedAt: string;
+}
+
+export interface UserNote {
+  id: string;
+  lessonId: string;
+  courseSlug: string;
+  lessonSlug: string;
+  lessonTitle: string;
+  timestampSeconds?: number;
+  anchorBlockId?: string;
+  content: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface UserBookmark {
+  id: string;
+  lessonId: string;
+  courseSlug: string;
+  lessonSlug: string;
+  lessonTitle: string;
+  courseTitle: string;
+  createdAt: string;
 }

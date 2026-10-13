@@ -12,5 +12,16 @@ describe("reference search", () => {
     expect(results.some((result) => result.type === "Glossary")).toBe(true);
     expect(results.some((result) => result.type === "Lesson")).toBe(true);
   });
+
+  it("handles fuzzy search and typos like mcflirtt and registrtion", () => {
+    const results = searchContent("registrtion");
+    expect(results.length).toBeGreaterThan(0);
+    expect(results.some((r) => r.title.toLowerCase().includes("registration"))).toBe(true);
+  });
+
+  it("filters search results by category", () => {
+    const commandsOnly = searchContent("fslmaths", "Commands");
+    expect(commandsOnly.every((r) => r.type === "Command")).toBe(true);
+  });
 });
 
