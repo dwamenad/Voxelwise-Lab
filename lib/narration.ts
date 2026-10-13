@@ -33,6 +33,7 @@ export const DEFAULT_MEDIA_PREFERENCES: MediaPreferences = {
 };
 
 const publishedMediaSlugs = new Set<string>(publishedMediaJson.slugs);
+const publishedMediaDurations: Record<string, number> = publishedMediaJson.durationSeconds;
 
 export const MEDIA_BASE_URL = (
   process.env.NEXT_PUBLIC_MEDIA_BASE_URL ?? publishedMediaJson.baseUrl
@@ -45,6 +46,9 @@ export const getPublishedMedia = (slug: string) => {
     url: `${MEDIA_BASE_URL}/${slug}.mp4`,
     captionsPath: `${MEDIA_BASE_URL}/${slug}.vtt`,
     transcriptUrl: `${MEDIA_BASE_URL}/${slug}-transcript.md`,
+    durationMinutes: publishedMediaDurations[slug]
+      ? Math.ceil(publishedMediaDurations[slug] / 60)
+      : undefined,
   };
 };
 

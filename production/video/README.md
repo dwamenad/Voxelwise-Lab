@@ -130,12 +130,18 @@ the videos that can be produced without that live approval.
 
 ## Production delivery
 
-The published set contains 20 MP4 masters, 20 WebVTT caption files, 20 source
-SRT files, and 20 reviewed Markdown transcripts. The app reads the public media
+The published set contains 30 MP4 masters, 30 WebVTT caption files, 30 source
+SRT files, and 30 reviewed Markdown transcripts. The app reads the public media
 prefix from `NEXT_PUBLIC_MEDIA_BASE_URL`, falling back to the verified R2
 managed domain in `config/published-media.json`. Byte-range playback and public
 GET/HEAD CORS are enabled for the bucket. Samantha, Tessa, Karen, and Rishi
 remain preview-only until their lesson masters are rendered and approved.
+
+The October release adds ten Daniel concept masters across Preprocessing,
+Higher-Level, ROI Analysis, and PPI/ICA. Their durations are recorded in the
+published manifest; public file checksums are recorded in
+`config/published-media.sha256`. Editorial corrections and primary references
+are documented in `content/release-review-2026-10.md`.
 
 ## Live FEAT pilot
 

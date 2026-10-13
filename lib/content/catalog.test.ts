@@ -49,11 +49,13 @@ describe("course catalog", () => {
     }
   });
 
-  it("publishes the 20 approved R2 masters without Mux placeholders", () => {
+  it("publishes the 30 approved R2 masters with release durations", () => {
     const videos = courses.flatMap(getAllLessons).flatMap((lesson) => lesson.blocks.filter((block) => block.type === "video"));
     const publishedVideos = videos.filter((video) => video.type === "video" && video.status === "published");
 
-    expect(publishedVideos).toHaveLength(20);
+    expect(publishedVideos).toHaveLength(30);
+    const brainExtraction = getLesson("fmri-preprocessing-fsl", "brain-extraction")?.lesson.blocks.find((block) => block.type === "video");
+    expect(brainExtraction).toMatchObject({ status: "published", durationMinutes: 2 });
     for (const video of publishedVideos) {
       if (video.type !== "video") continue;
       expect(video.provider).toBe("external");
