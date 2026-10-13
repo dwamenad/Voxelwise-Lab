@@ -10,6 +10,7 @@ import { ProgressBar } from "@/components/progress-bar";
 import { useProgress } from "@/components/progress-provider";
 import { calculateCourseProgress } from "@/lib/progress/store";
 import { LessonNotesDrawer } from "@/components/lesson/lesson-notes-drawer";
+import { WorkbenchPanel } from "@/components/lesson/workbench-panel";
 
 interface LessonPlayerProps {
   course: Course;
@@ -121,10 +122,10 @@ export function LessonPlayer({ course, module, lesson, previous, next }: LessonP
             </nav>
           </div>
         </main>
-        <aside className="lesson-context">
-          <div><span>In this lesson</span><a href="#lesson-content">Overview</a><a href="#practice">Practice</a><a href="#summary">Summary</a></div>
-          <div className="neurodesk-presence"><span><span className="presence-dot" />Neurodesk</span><p>Keep your FSL terminal open beside this lesson.</p></div>
-        </aside>
+        {/* Right Pane: Option 1 Dual-Pane Research Workbench */}
+        <div className="workbench-pane-wrapper hidden xl:block w-[420px] 2xl:w-[480px] shrink-0 border-l border-[var(--border)]">
+          <WorkbenchPanel lesson={lesson} />
+        </div>
       </div>
       <div className="mobile-lesson-nav">
         {previous ? <Link href={`/courses/${course.slug}/lessons/${previous.slug}`} aria-label="Previous lesson"><ArrowLeft /></Link> : <span />}
