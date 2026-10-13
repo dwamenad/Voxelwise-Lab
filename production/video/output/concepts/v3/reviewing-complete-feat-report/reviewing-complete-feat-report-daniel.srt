@@ -1,118 +1,118 @@
 1
-00:00:00,000 --> 00:00:04,553
+00:00:00,000 --> 00:00:04,574
 A completed FEAT report is not
 automatically a valid analysis.
 
 2
-00:00:04,553 --> 00:00:07,285
+00:00:04,574 --> 00:00:07,318
 It is a chain of evidence.
 
 3
-00:00:07,285 --> 00:00:11,839
+00:00:07,318 --> 00:00:11,892
 Review motion and preprocessing first,
 registration second, the design and
 
 4
-00:00:11,839 --> 00:00:14,571
+00:00:11,892 --> 00:00:14,636
 contrasts third, and statistical inference
 last.
 
 5
-00:00:14,571 --> 00:00:19,124
+00:00:14,636 --> 00:00:19,210
 A failure early in the chain limits every
 later conclusion.
 
 6
-00:00:21,300 --> 00:00:27,303
+00:00:21,333 --> 00:00:27,357
 Begin with pre-stats and ask whether
 motion, masking, and preprocessing outputs
 
 7
-00:00:27,303 --> 00:00:28,394
+00:00:27,357 --> 00:00:28,453
 are plausible.
 
 8
-00:00:28,394 --> 00:00:32,214
+00:00:28,453 --> 00:00:32,286
 Continue to registration and inspect
 anatomical correspondence.
 
 9
-00:00:32,214 --> 00:00:36,580
+00:00:32,286 --> 00:00:36,667
 Then examine the design matrix, EVs, and
 contrasts.
 
 10
-00:00:36,580 --> 00:00:42,037
+00:00:36,667 --> 00:00:42,143
 Only after those dependencies pass should
 you interpret thresholded results.
 
 11
-00:00:44,500 --> 00:00:48,942
+00:00:44,567 --> 00:00:49,024
 For motion, describe the pattern and any
 abrupt displacement.
 
 12
-00:00:48,942 --> 00:00:53,877
+00:00:49,024 --> 00:00:53,976
 For registration, name boundaries and
 locations that agree or fail.
 
 13
-00:00:53,877 --> 00:01:00,292
+00:00:53,976 --> 00:01:00,415
 For design, match columns to timing files
 and contrast weights to the hypothesis.
 
 14
-00:01:00,292 --> 00:01:04,240
+00:01:00,415 --> 00:01:04,377
 Specific observations can be reviewed;
 vague reassurance cannot.
 
 15
-00:01:06,333 --> 00:01:09,560
+00:01:06,433 --> 00:01:09,661
 A cope is the estimated contrast effect.
 
 16
-00:01:09,560 --> 00:01:12,788
+00:01:09,661 --> 00:01:12,889
 A varcope describes uncertainty in that
 estimate.
 
 17
-00:01:12,788 --> 00:01:17,398
+00:01:12,889 --> 00:01:17,501
 A t or z statistic standardizes evidence
 relative to uncertainty.
 
 18
-00:01:17,398 --> 00:01:21,547
+00:01:17,501 --> 00:01:21,651
 A thresholded map shows locations
 surviving the chosen inferential
 
 19
-00:01:21,547 --> 00:01:22,008
+00:01:21,651 --> 00:01:22,112
 procedure.
 
 20
-00:01:22,008 --> 00:01:26,618
+00:01:22,112 --> 00:01:26,723
 Do not describe a z-statistic map as an
 effect-size map.
 
 21
-00:01:29,667 --> 00:01:34,519
+00:01:29,733 --> 00:01:34,601
 Finish with an explicit quality-control
 judgment: pass, concern, or fail, followed
 
 22
-00:01:34,519 --> 00:01:37,165
+00:01:34,601 --> 00:01:37,256
 by the observations that support it.
 
 23
-00:01:37,165 --> 00:01:40,694
+00:01:37,256 --> 00:01:40,796
 Record limitations and their likely effect
 on interpretation.
 
 24
-00:01:40,694 --> 00:01:47,751
+00:01:40,796 --> 00:01:47,876
 The goal is not to prove that FEAT
 finished; it is to decide what this run
 
 25
-00:01:47,751 --> 00:01:49,075
+00:01:47,876 --> 00:01:49,203
 can defensibly support.

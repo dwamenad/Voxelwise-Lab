@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight, Search, Terminal, BookOpen, Wrench, Layers } from "lucide-react";
+import { ArrowUpRight, Search } from "lucide-react";
 import { searchContent, type SearchCategory } from "@/lib/content/search";
 
 export const metadata: Metadata = { title: "Search FSL Academy" };
@@ -21,9 +21,7 @@ export default async function SearchPage({
 }) {
   const params = await searchParams;
   const query = typeof params.q === "string" ? params.q : "";
-  const activeCategory = (typeof params.cat === "string" && categories.includes(params.cat as any)
-    ? params.cat
-    : "All") as SearchCategory;
+  const activeCategory = categories.find((category) => category === params.cat) ?? "All";
 
   const results = searchContent(query, activeCategory);
 
@@ -112,7 +110,7 @@ export default async function SearchPage({
           <Search size={36} className="mx-auto text-[var(--muted)]" />
           <h2 className="text-lg font-bold text-[var(--ink)]">Nothing matched yet</h2>
           <p className="text-sm text-[var(--ink-secondary)] max-w-md mx-auto">
-            Try searching for specific terms like <code>mcflirt</code>, <code>bbr</code>, <code>feat</code>, <code>varcope</code>, or select the "All" category.
+            Try searching for specific terms like <code>mcflirt</code>, <code>bbr</code>, <code>feat</code>, <code>varcope</code>, or select the &quot;All&quot; category.
           </p>
         </div>
       )}

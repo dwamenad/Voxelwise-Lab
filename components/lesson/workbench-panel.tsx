@@ -80,7 +80,7 @@ export function WorkbenchPanel({ lesson }: WorkbenchPanelProps) {
     } else {
       newLogs.push({
         type: "err",
-        text: `No sample response is available for: ${trimmed}`,
+        text: `Unsupported command in this simulator: ${trimmed}. No sample response is available.`,
       });
     }
 
@@ -98,7 +98,7 @@ export function WorkbenchPanel({ lesson }: WorkbenchPanelProps) {
     return (
       <button
         type="button"
-        className="fixed bottom-4 right-4 z-40 bg-[var(--surface)] text-[var(--acid)] border border-[var(--border)] rounded-full px-4 py-2 text-xs font-bold shadow-xl flex items-center gap-2 hover:border-[var(--acid)] transition-all"
+        className="fixed bottom-4 right-4 z-40 bg-[var(--surface)] text-[var(--accent)] border border-[var(--border)] rounded-full px-4 py-2 text-xs font-bold shadow-xl flex items-center gap-2 hover:border-[var(--accent)] transition-all"
         onClick={() => setIsClosed(false)}
       >
         <TerminalIcon size={14} /> Open Research Workbench
@@ -120,7 +120,7 @@ export function WorkbenchPanel({ lesson }: WorkbenchPanelProps) {
             type="button"
             className={`px-3 py-1 rounded-md text-xs font-semibold flex items-center gap-1.5 transition-colors ${
               activeTab === "terminal"
-                ? "bg-[var(--surface-sunken)] text-[var(--acid)] border border-[var(--border)]"
+                ? "bg-[var(--surface-sunken)] text-[var(--accent)] border border-[var(--border)]"
                 : "text-[var(--muted)] hover:text-[var(--ink)]"
             }`}
             onClick={() => setActiveTab("terminal")}
@@ -132,7 +132,7 @@ export function WorkbenchPanel({ lesson }: WorkbenchPanelProps) {
             type="button"
             className={`px-3 py-1 rounded-md text-xs font-semibold flex items-center gap-1.5 transition-colors ${
               activeTab === "matrix"
-                ? "bg-[var(--surface-sunken)] text-[var(--acid)] border border-[var(--border)]"
+                ? "bg-[var(--surface-sunken)] text-[var(--accent)] border border-[var(--border)]"
                 : "text-[var(--muted)] hover:text-[var(--ink)]"
             }`}
             onClick={() => setActiveTab("matrix")}
@@ -164,7 +164,7 @@ export function WorkbenchPanel({ lesson }: WorkbenchPanelProps) {
 
       {/* Tab 1: Terminal View */}
       {activeTab === "terminal" && (
-        <div className="flex-1 flex flex-col overflow-hidden bg-[#0a0c10] text-[#f3f4f6] font-mono text-xs">
+        <div className="workbench-terminal flex-1 flex flex-col overflow-hidden bg-[#0a0c10] text-[#f3f4f6] font-mono text-xs">
           {/* Terminal Window Controls */}
           <div className="px-3 py-1.5 bg-[#0e1117] border-b border-zinc-800/80 flex items-center justify-between text-[11px] text-zinc-400 select-none">
             <div className="flex items-center gap-1.5">
@@ -189,7 +189,7 @@ export function WorkbenchPanel({ lesson }: WorkbenchPanelProps) {
                 key={idx}
                 className={
                   line.type === "cmd"
-                    ? "text-[var(--acid)] font-bold"
+                    ? "text-[var(--accent)] font-bold"
                     : line.type === "err"
                     ? "text-rose-400"
                     : "text-zinc-300"
@@ -222,7 +222,7 @@ export function WorkbenchPanel({ lesson }: WorkbenchPanelProps) {
 
           {/* Interactive Command Input Line */}
           <div className="p-2.5 bg-[#07080b] border-t border-zinc-800 flex items-center gap-2">
-            <span className="text-[var(--acid)] font-bold text-sm">$</span>
+            <span className="text-[var(--accent)] font-bold text-sm">$</span>
             <input
               type="text"
               value={inputVal}
@@ -234,7 +234,7 @@ export function WorkbenchPanel({ lesson }: WorkbenchPanelProps) {
             />
             <button
               type="button"
-              className="p-1 rounded text-zinc-400 hover:text-[var(--acid)]"
+              className="p-1 rounded text-zinc-400 hover:text-[var(--accent)]"
               onClick={() => runCommand(inputVal)}
               aria-label="Run simulated command"
             >
@@ -253,7 +253,7 @@ export function WorkbenchPanel({ lesson }: WorkbenchPanelProps) {
           </div>
 
           <p className="text-xs text-[var(--ink-secondary)]">
-            This panel shows a fixed example. <a href="/tools" className="text-[var(--acid)] underline">Open the interactive design matrix simulator</a> to adjust timing and contrasts.
+            This panel shows a fixed example. <a href="/tools" className="text-[var(--accent)] underline">Open the interactive design matrix simulator</a> to adjust timing and contrasts.
           </p>
 
           {/* Matrix Heatmap */}

@@ -1,112 +1,112 @@
 1
-00:00:00,000 --> 00:00:02,997
+00:00:00,000 --> 00:00:03,005
 A single coordinate can support several
 observations.
 
 2
-00:00:02,997 --> 00:00:04,709
+00:00:03,005 --> 00:00:04,722
 Overlays compare spatial relationships.
 
 3
-00:00:04,709 --> 00:00:08,562
+00:00:04,722 --> 00:00:08,585
 A time-series plot shows how signal
 changes across volumes.
 
 4
-00:00:08,562 --> 00:00:11,558
+00:00:08,585 --> 00:00:11,590
 An atlas lookup supplies a reference
 label.
 
 5
-00:00:11,558 --> 00:00:16,696
+00:00:11,590 --> 00:00:16,741
 These sources complement one another, but
 none should be treated as unquestionable
 
 6
-00:00:16,696 --> 00:00:17,552
+00:00:16,741 --> 00:00:17,600
 ground truth.
 
 7
-00:00:22,800 --> 00:00:26,101
+00:00:22,800 --> 00:00:26,121
 The upper overlay can hide the image
 beneath it.
 
 8
-00:00:26,101 --> 00:00:30,501
+00:00:26,121 --> 00:00:30,548
 Use opacity, color maps, and display
 ranges to expose boundaries in both
 
 9
-00:00:30,501 --> 00:00:30,868
+00:00:30,548 --> 00:00:30,917
 images.
 
 10
-00:00:30,868 --> 00:00:35,635
+00:00:30,917 --> 00:00:35,713
 A good display does not make alignment
 true; it makes agreement and disagreement
 
 11
-00:00:35,635 --> 00:00:36,736
+00:00:35,713 --> 00:00:36,820
 easier to inspect.
 
 12
-00:00:40,567 --> 00:00:45,364
+00:00:40,600 --> 00:00:45,428
 In a four-dimensional BOLD image, each
 voxel contains a sequence of values.
 
 13
-00:00:45,364 --> 00:00:48,563
+00:00:45,428 --> 00:00:48,647
 The plot shows that sequence across the
 run.
 
 14
-00:00:48,563 --> 00:00:52,961
+00:00:48,647 --> 00:00:53,073
 Spikes, slow drift, and task-related
 structure are different patterns; seeing a
 
 15
-00:00:52,961 --> 00:00:55,759
+00:00:53,073 --> 00:00:55,890
 change does not yet identify its cause.
 
 16
-00:00:59,633 --> 00:01:04,533
+00:00:59,733 --> 00:01:04,653
 An atlas label is a reference derived from
 a template or population.
 
 17
-00:01:04,533 --> 00:01:07,799
+00:01:04,653 --> 00:01:07,933
 It may be probabilistic, and individual
 anatomy varies.
 
 18
-00:01:07,799 --> 00:01:11,882
+00:01:07,933 --> 00:01:12,033
 Confirm the coordinate space, inspect the
 participant's anatomy, and report
 
 19
-00:01:11,882 --> 00:01:15,965
+00:01:12,033 --> 00:01:16,133
 uncertainty rather than presenting an
 atlas boundary as exact truth.
 
 20
-00:01:20,400 --> 00:01:24,101
+00:01:20,467 --> 00:01:24,197
 Use overlays, time series, and atlas
 labels together.
 
 21
-00:01:24,101 --> 00:01:28,265
+00:01:24,197 --> 00:01:28,393
 Confirm spatial alignment, inspect
 temporal behavior, and keep atlas
 
 22
-00:01:28,265 --> 00:01:29,191
+00:01:28,393 --> 00:01:29,325
 uncertainty visible.
 
 23
-00:01:29,191 --> 00:01:34,743
+00:01:29,325 --> 00:01:34,920
 A defensible interpretation states what
 each view contributes and what it cannot
 
 24
-00:01:34,743 --> 00:01:35,205
+00:01:34,920 --> 00:01:35,387
 establish.

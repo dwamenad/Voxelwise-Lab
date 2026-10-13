@@ -1,0 +1,71 @@
+1
+00:00:00,000 --> 00:00:05,020
+Region of interest analysis allows you to
+test specific neuroanatomical hypotheses
+
+2
+00:00:05,020 --> 00:00:06,846
+with higher statistical power.
+
+3
+00:00:06,846 --> 00:00:11,410
+Regions can be defined anatomically using
+standardized probabilistic atlases, or
+
+4
+00:00:11,410 --> 00:00:14,148
+functionally using an independent
+localizer scan.
+
+5
+00:00:14,148 --> 00:00:19,168
+The choice depends on whether your
+hypothesis targets an anatomical structure
+
+6
+00:00:19,168 --> 00:00:21,450
+or a functionally selective area.
+
+7
+00:00:26,933 --> 00:00:32,209
+Anatomical masks from the Harvard-Oxford
+atlas are objective, reproducible, and
+
+8
+00:00:32,209 --> 00:00:35,374
+completely independent of experimental
+task activation.
+
+9
+00:00:35,374 --> 00:00:40,650
+However, anatomical boundaries do not
+always align with functional boundaries.
+
+10
+00:00:40,650 --> 00:00:44,870
+Functional localizers capture individual
+functional topography, but require
+
+11
+00:00:44,870 --> 00:00:48,563
+dedicated scanning time and separate
+localizer tasks.
+
+12
+00:00:54,367 --> 00:00:59,022
+Decide on your region of interest
+definition before inspecting the
+
+13
+00:00:59,022 --> 00:01:01,349
+statistical maps of your experiment.
+
+14
+00:01:01,349 --> 00:01:06,005
+Use standardized atlases for structural
+targets, and independent localizers when
+
+15
+00:01:06,005 --> 00:01:07,867
+investigating specialized functional
+areas.

@@ -11,6 +11,7 @@ import { useProgress } from "@/components/progress-provider";
 import { calculateCourseProgress } from "@/lib/progress/store";
 import { LessonNotesDrawer } from "@/components/lesson/lesson-notes-drawer";
 import { WorkbenchPanel } from "@/components/lesson/workbench-panel";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 interface LessonPlayerProps {
   course: Course;
@@ -76,7 +77,8 @@ export function LessonPlayer({ course, module, lesson, previous, next }: LessonP
           <Link href={`/courses/${course.slug}`}>{course.shortTitle}</Link>
         </div>
         <div className="lesson-topbar__progress"><span>{completedCount} of {lessonCount} lessons</span><ProgressBar value={progress} /><strong>{progress}%</strong></div>
-        <div className="flex items-center gap-2">
+        <div className="lesson-topbar__actions">
+          <ThemeToggle />
           <LessonNotesDrawer
             lessonId={lesson.id}
             courseSlug={course.slug}

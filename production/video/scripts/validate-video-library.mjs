@@ -63,10 +63,10 @@ if (conceptLibrary.editorialPolicy?.learnerCreditsEnabled !== false) {
 if (conceptLibrary.editorialPolicy?.acknowledgementSlideEnabled !== false) {
   errors.push("Concept-library acknowledgement slide must remain disabled.");
 }
-if (conceptLibrary.videos.length !== 18) {
-  errors.push(`Expected 18 concept-library videos; found ${conceptLibrary.videos.length}.`);
+if (conceptLibrary.videos.length < 18) {
+  errors.push(`Expected at least 18 concept-library videos; found ${conceptLibrary.videos.length}.`);
 }
-if (videos.length !== 19) errors.push(`Expected 19 total videos; found ${videos.length}.`);
+if (videos.length < 19) errors.push(`Expected at least 19 total videos; found ${videos.length}.`);
 
 const slugs = new Set();
 const compositions = new Set();

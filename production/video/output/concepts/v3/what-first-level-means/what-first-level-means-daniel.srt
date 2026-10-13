@@ -1,108 +1,108 @@
 1
-00:00:00,000 --> 00:00:03,825
+00:00:00,000 --> 00:00:03,848
 A first-level analysis models one run from
 one participant.
 
 2
-00:00:03,825 --> 00:00:09,775
+00:00:03,848 --> 00:00:09,833
 At every voxel, it compares the observed
 BOLD time series with predicted task and
 
 3
-00:00:09,775 --> 00:00:10,625
+00:00:09,833 --> 00:00:10,688
 nuisance patterns.
 
 4
-00:00:10,625 --> 00:00:16,574
+00:00:10,688 --> 00:00:16,673
 The resulting estimates belong to that
 run; they are not yet evidence about a
 
 5
-00:00:16,574 --> 00:00:16,999
+00:00:16,673 --> 00:00:17,100
 population.
 
 6
-00:00:19,333 --> 00:00:23,334
+00:00:19,400 --> 00:00:23,419
 The design matrix describes expected
 patterns across the run.
 
 7
-00:00:23,334 --> 00:00:29,113
+00:00:23,419 --> 00:00:29,225
 FEAT fits that same set of predictors
 separately to each voxel's measured time
 
 8
-00:00:29,113 --> 00:00:29,558
+00:00:29,225 --> 00:00:29,671
 series.
 
 9
-00:00:29,558 --> 00:00:34,448
+00:00:29,671 --> 00:00:34,584
 Beta estimates describe the fitted
 contribution of each column, and residuals
 
 10
-00:00:34,448 --> 00:00:37,559
+00:00:34,584 --> 00:00:37,710
 contain structure the model did not
 explain.
 
 11
-00:00:39,400 --> 00:00:43,629
+00:00:39,500 --> 00:00:43,745
 Before interpreting a first-level result,
 inspect the design matrix.
 
 12
-00:00:43,629 --> 00:00:49,736
+00:00:43,745 --> 00:00:49,876
 Confirm that task columns match the run's
 timing, nuisance columns have the expected
 
 13
-00:00:49,736 --> 00:00:53,965
+00:00:49,876 --> 00:00:54,120
 length, and contrasts point to the
 intended explanatory variables.
 
 14
-00:00:53,965 --> 00:00:59,603
+00:00:54,120 --> 00:00:59,780
 A design from another run can fit without
 answering the correct question.
 
 15
-00:01:01,300 --> 00:01:04,207
+00:01:01,433 --> 00:01:04,351
 First-level results describe one run.
 
 16
-00:01:04,207 --> 00:01:10,603
+00:01:04,351 --> 00:01:10,768
 Fixed-effects combinations can summarize
 multiple runs from a participant, but they
 
 17
-00:01:10,603 --> 00:01:14,092
+00:01:10,768 --> 00:01:14,269
 still do not model population variability.
 
 18
-00:01:14,092 --> 00:01:18,744
+00:01:14,269 --> 00:01:18,936
 Random-effects analysis uses variation
 across participants to support
 
 19
-00:01:18,744 --> 00:01:19,907
+00:01:18,936 --> 00:01:20,103
 population-level inference.
 
 20
-00:01:22,500 --> 00:01:27,404
+00:01:22,667 --> 00:01:27,591
 First-level analysis fits one run from one
 participant at every voxel.
 
 21
-00:01:27,404 --> 00:01:32,754
+00:01:27,591 --> 00:01:32,964
 Inspect the design and contrasts in that
 scope, then use appropriate higher-level
 
 22
-00:01:32,754 --> 00:01:35,875
+00:01:32,964 --> 00:01:36,097
 models for within-subject combinations and
 population inference.
 
 23
-00:01:35,875 --> 00:01:39,888
+00:01:36,097 --> 00:01:40,127
 Never let the image hide the level of
 analysis.

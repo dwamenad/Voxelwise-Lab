@@ -87,21 +87,20 @@ export function ErrorSpottingBlock({
           }
 
           return (
-            <div
+            <label
               key={option.id}
-              className={`error-spotting-item ${itemClass}`}
-              onClick={() => toggleOption(option.id)}
+              className={`error-spotting-item block ${itemClass}`}
             >
               <div className="error-spotting-checkbox">
                 {submitted ? (
                   option.isFlaw ? (
                     isSelected ? (
-                      <CheckCircle2 size={17} className="text-emerald-500" />
+                      <CheckCircle2 size={17} className="text-[var(--success)]" />
                     ) : (
-                      <XCircle size={17} className="text-amber-500" />
+                      <XCircle size={17} className="text-[var(--warning)]" />
                     )
                   ) : isSelected ? (
-                    <XCircle size={17} className="text-rose-500" />
+                    <XCircle size={17} className="text-[var(--danger)]" />
                   ) : (
                     <CheckCircle2 size={17} className="text-zinc-400" />
                   )
@@ -109,6 +108,7 @@ export function ErrorSpottingBlock({
                   <input
                     type="checkbox"
                     checked={isSelected}
+                    aria-label={option.description}
                     onChange={() => toggleOption(option.id)}
                   />
                 )}
@@ -118,15 +118,15 @@ export function ErrorSpottingBlock({
                 {submitted && (
                   <p className="error-spotting-feedback">
                     {option.isFlaw ? (
-                      <span className="text-amber-600 font-semibold">[Fatal Flaw] </span>
+                      <span className="text-[var(--warning)] font-semibold">[Fatal Flaw] </span>
                     ) : (
-                      <span className="text-emerald-600 font-semibold">[Valid Practice] </span>
+                      <span className="text-[var(--success)] font-semibold">[Valid Practice] </span>
                     )}
                     {option.explanation}
                   </p>
                 )}
               </div>
-            </div>
+            </label>
           );
         })}
       </div>

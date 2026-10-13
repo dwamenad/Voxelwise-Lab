@@ -1,116 +1,116 @@
 1
-00:00:00,000 --> 00:00:04,141
+00:00:00,000 --> 00:00:04,163
 Experimental timing files translate the
 task into model input.
 
 2
-00:00:04,141 --> 00:00:10,582
+00:00:04,163 --> 00:00:10,639
 Each row states an onset in seconds, a
 duration in seconds, and an amplitude.
 
 3
-00:00:10,582 --> 00:00:17,024
+00:00:10,639 --> 00:00:17,115
 Each condition usually receives its own
 file so the design can form a separate
 
 4
-00:00:17,024 --> 00:00:17,944
+00:00:17,115 --> 00:00:18,040
 explanatory variable.
 
 5
-00:00:19,333 --> 00:00:24,646
+00:00:19,433 --> 00:00:24,755
 The first column is onset measured from
 the start of the run.
 
 6
-00:00:24,646 --> 00:00:26,417
+00:00:24,755 --> 00:00:26,529
 The second is duration.
 
 7
-00:00:26,417 --> 00:00:32,172
+00:00:26,529 --> 00:00:32,294
 The third is amplitude, often one for a
 simple condition but variable for
 
 8
-00:00:32,172 --> 00:00:33,057
+00:00:32,294 --> 00:00:33,181
 parametric designs.
 
 9
-00:00:33,057 --> 00:00:37,484
+00:00:33,181 --> 00:00:37,616
 These values describe the neural-event
 model before convolution with the
 
 10
-00:00:37,484 --> 00:00:38,370
+00:00:37,616 --> 00:00:38,503
 hemodynamic response.
 
 11
-00:00:39,300 --> 00:00:42,456
+00:00:39,433 --> 00:00:42,601
 Read each row against the event table.
 
 12
-00:00:42,456 --> 00:00:45,611
+00:00:42,601 --> 00:00:45,769
 Confirm the units are seconds, not
 volumes.
 
 13
-00:00:45,611 --> 00:00:50,570
+00:00:45,769 --> 00:00:50,747
 Check that onsets are nonnegative,
 durations are plausible, and no event
 
 14
-00:00:50,570 --> 00:00:52,373
+00:00:50,747 --> 00:00:52,558
 extends beyond the run.
 
 15
-00:00:52,373 --> 00:00:58,684
+00:00:52,558 --> 00:00:58,893
 Then plot or preview the resulting model
 rather than trusting the text file alone.
 
 16
-00:00:59,567 --> 00:01:04,464
+00:00:59,767 --> 00:01:04,673
 Timing is part of experimental design, not
 file formatting.
 
 17
-00:01:04,464 --> 00:01:08,272
+00:01:04,673 --> 00:01:08,489
 Blocked designs often provide strong
 detection power.
 
 18
-00:01:08,272 --> 00:01:13,169
+00:01:08,489 --> 00:01:13,395
 Jittered event-related designs improve
 separation and estimation of individual
 
 19
-00:01:13,169 --> 00:01:13,713
+00:01:13,395 --> 00:01:13,940
 events.
 
 20
-00:01:13,713 --> 00:01:18,066
+00:01:13,940 --> 00:01:18,301
 Mixed designs can model sustained and
 transient effects.
 
 21
-00:01:18,066 --> 00:01:22,963
+00:01:18,301 --> 00:01:23,207
 The best choice depends on the hypothesis
 and constraints.
 
 22
-00:01:24,200 --> 00:01:28,866
+00:01:24,433 --> 00:01:29,113
 A three-column file is a compact model of
 the experiment.
 
 23
-00:01:28,866 --> 00:01:33,999
+00:01:29,113 --> 00:01:34,261
 Encode onset, duration, and amplitude
 accurately; validate the rows against the
 
 24
-00:01:33,999 --> 00:01:40,065
+00:01:34,261 --> 00:01:40,345
 run; and remember that timing determines
 which effects the design can detect and
 
 25
-00:01:40,065 --> 00:01:40,532
+00:01:40,345 --> 00:01:40,813
 estimate.

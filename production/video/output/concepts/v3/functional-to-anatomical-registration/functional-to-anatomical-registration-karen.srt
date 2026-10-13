@@ -1,0 +1,89 @@
+1
+00:00:00,000 --> 00:00:05,673
+Functional fMRI data has high temporal
+resolution but low spatial resolution and
+
+2
+00:00:05,673 --> 00:00:07,092
+significant geometric distortion.
+
+3
+00:00:07,092 --> 00:00:12,292
+To localize activations onto gyral
+anatomy, we must accurately align the
+
+4
+00:00:12,292 --> 00:00:17,020
+functional images to the participant's own
+high-resolution T1 structural scan.
+
+5
+00:00:22,033 --> 00:00:25,933
+Rather than matching raw voxel
+intensities, FSL uses Boundary-Based
+
+6
+00:00:25,933 --> 00:00:27,232
+Registration, or BBR.
+
+7
+00:00:27,232 --> 00:00:33,298
+BBR segments the white matter boundary on
+the T1 scan and evaluates the intensity
+
+8
+00:00:33,298 --> 00:00:36,764
+gradient across that boundary in the
+functional image.
+
+9
+00:00:36,764 --> 00:00:40,663
+This makes it remarkably resilient to EPI
+susceptibility distortions.
+
+10
+00:00:45,833 --> 00:00:50,002
+In the FEAT registration report, examine
+the red outline representing the
+
+11
+00:00:50,002 --> 00:00:53,413
+structural white matter boundary overlaid
+on the functional image.
+
+12
+00:00:53,413 --> 00:00:57,960
+Look closely at the lateral ventricles,
+the corpus callosum, and the Sylvian
+
+13
+00:00:57,960 --> 00:00:58,339
+fissure.
+
+14
+00:00:58,339 --> 00:01:02,886
+If the red lines sit outside cortical
+boundaries, registration has failed and
+
+15
+00:01:02,886 --> 00:01:04,023
+must be rerun.
+
+16
+00:01:09,567 --> 00:01:13,803
+Within-subject functional-to-structural
+alignment must always use 6 degrees of
+
+17
+00:01:13,803 --> 00:01:14,274
+freedom.
+
+18
+00:01:14,274 --> 00:01:20,393
+Choose BBR as your cost function, and
+verify the red outline across multiple
+
+19
+00:01:20,393 --> 00:01:22,747
+slices before accepting statistical
+results.

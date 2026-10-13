@@ -21,6 +21,15 @@ const block: Extract<LessonBlock, { type: "video" }> = {
 describe("NarratedVideoPlayer", () => {
   beforeEach(() => window.localStorage.clear());
 
+  it("enables CORS for published remote captions", () => {
+    render(<NarratedVideoPlayer block={{ ...block, status: "published", voiceVariants: [{
+      voiceId: "daniel", status: "published", provider: "external",
+      url: "https://media.example.org/lesson.mp4", captionsPath: "https://media.example.org/lesson.vtt",
+    }] }} />);
+    expect(document.querySelector("video")).toHaveAttribute("crossorigin", "anonymous");
+    expect(document.querySelector("track")).toHaveAttribute("src", "https://media.example.org/lesson.vtt");
+  });
+
   it("offers five narrators and remembers a learner's selection", async () => {
     render(<NarratedVideoPlayer block={block} />);
     const narrator = screen.getAllByRole("combobox")[0];

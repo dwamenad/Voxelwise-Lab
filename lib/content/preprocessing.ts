@@ -349,7 +349,7 @@ export const preprocessingCourse: Course = {
             "Inspect the red boundary lines overlaid on the functional image.",
             "Check that ventricles, corpus callosum, and insular boundaries match precisely.",
           ],
-          command: "flirt -in example_func.nii.gz -ref highres.nii.gz -dof 6 -cost bbr -omat example_func2highres.mat",
+          command: "epi_reg --epi=example_func.nii.gz --t1=highres.nii.gz --t1brain=highres_brain.nii.gz --out=example_func2highres",
           quiz: {
             id: "bbr-quiz",
             question: "Why does functional-to-anatomical registration use 6 degrees of freedom (DOF) instead of 12 DOF?",

@@ -1,0 +1,68 @@
+1
+00:00:00,000 --> 00:00:03,552
+In functional neuroimaging, observations
+exist in a strict hierarchy.
+
+2
+00:00:03,552 --> 00:00:07,498
+Volumes within a run share scanner noise
+and physiological rhythms.
+
+3
+00:00:07,498 --> 00:00:11,049
+Runs within a subject share anatomy and
+personal traits.
+
+4
+00:00:11,049 --> 00:00:15,390
+Participants within a study represent
+random draws from the broader population.
+
+5
+00:00:15,390 --> 00:00:20,520
+You must never treat multiple runs from
+the same person as independent subjects.
+
+6
+00:00:26,333 --> 00:00:30,793
+If you enter forty runs from ten
+participants directly into a group
+
+7
+00:00:30,793 --> 00:00:33,767
+analysis, the model assumes forty
+independent human brains.
+
+8
+00:00:33,767 --> 00:00:37,855
+This drastically inflates your degrees of
+freedom and creates severe false-positive
+
+9
+00:00:37,855 --> 00:00:38,227
+rates.
+
+10
+00:00:38,227 --> 00:00:42,687
+The correct approach is a two-stage
+summary: combine runs within each subject
+
+11
+00:00:42,687 --> 00:00:46,403
+at level two, then test across subjects at
+level three.
+
+12
+00:00:52,667 --> 00:00:56,065
+Always preserve the hierarchical structure
+of your dataset.
+
+13
+00:00:56,065 --> 00:01:00,738
+Combine runs within participants before
+running group tests to ensure your
+
+14
+00:01:00,738 --> 00:01:04,137
+statistical degrees of freedom reflect
+independent biological samples.

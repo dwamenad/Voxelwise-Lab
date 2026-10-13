@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Terminal, Copy, Check, Info, Sparkles, BookOpen } from "lucide-react";
+import { Terminal, Copy, Check } from "lucide-react";
 
 type FSLTool = "fslmaths" | "fslstats" | "flirt" | "feat";
 
@@ -17,8 +17,7 @@ export function FSLCommandGenerator() {
 
   // fslstats state
   const [statsInput, setStatsInput] = useState("filtered_func_data.nii.gz");
-  const [statsFlag, setStatsFlag] = useState<"-M" | "-m" | "-V" | "-R" | "-P" | "-s">("-M");
-  const [statsPercentile, setStatsPercentile] = useState("95");
+  const [statsFlag, setStatsFlag] = useState<"-M" | "-m" | "-V" | "-r" | "-R" | "-P" | "-s">("-M");
   const [statsMask, setStatsMask] = useState("mask.nii.gz");
   const [statsUseMask, setStatsUseMask] = useState(true);
 
@@ -26,10 +25,11 @@ export function FSLCommandGenerator() {
   const [flirtIn, setFlirtIn] = useState("example_func.nii.gz");
   const [flirtRef, setFlirtRef] = useState("highres.nii.gz");
   const [flirtDof, setFlirtDof] = useState("6");
-  const [flirtCost, setFlirtCost] = useState("bbr");
-  const [flirtOmat, setFlirtOmat] = useState("example_func2highres.mat");
-  const [flirtOut, setFlirtOut] = useState("example_func2highres.nii.gz");
-  const [flirtSaveOut, setFlirtSaveOut] = useState(true);
+  const [flirtCost, setFlirtCost] = useState("corratio");
+  const [flirtWmseg, setFlirtWmseg] = useState("highres_wmseg.nii.gz");
+  const [flirtInit, setFlirtInit] = useState("example_func2highres_init.mat");
+  const flirtOmat = "example_func2highres.mat";
+  const flirtOut = "example_func2highres.nii.gz";
 
   // feat state
   const [featDesign, setFeatDesign] = useState("design.fsf");
@@ -68,7 +68,7 @@ export function FSLCommandGenerator() {
     ];
   } else if (activeTool === "fslstats") {
     const maskPart = statsUseMask ? `-k ${statsMask} ` : "";
-    const flagPart = statsFlag === "-P" ? `-P ${statsPercentile}` : statsFlag;
+    const flagPart = statsFlag === "-P" ? "-P 95" : statsFlag;
     generatedCommand = `fslstats ${statsInput} ${maskPart}${flagPart}`;
 
     flagExplanation = [
@@ -79,20 +79,27 @@ export function FSLCommandGenerator() {
       {
         flag: flagPart,
         description:
-          statsFlag === "-M"
+          statsFlag === "-P"
+            ? "Outputs the requested percentile of the selected voxels."
+            : statsFlag === "-M"
             ? "Outputs the mean of all non-zero voxels."
             : statsFlag === "-m"
             ? "Outputs the mean of all voxels including zero-valued background."
             : statsFlag === "-V"
             ? "Outputs voxel count and total volume in cubic millimeters (mm³)."
+            : statsFlag === "-r"
+            ? "Outputs the robust intensity range, reducing the influence of extreme values."
             : statsFlag === "-R"
-            ? "Outputs robust minimum and maximum non-zero intensities."
+            ? "Outputs the absolute minimum and maximum intensities."
             : "Outputs standard deviation of masked intensities.",
       },
     ];
   } else if (activeTool === "flirt") {
-    const outPart = flirtSaveOut ? ` -out ${flirtOut}` : "";
-    generatedCommand = `flirt -in ${flirtIn} -ref ${flirtRef} -dof ${flirtDof} -cost ${flirtCost} -omat ${flirtOmat}${outPart}`;
+    const outPart = ` -out ${flirtOut}`;
+    const bbrPart = flirtCost === "bbr"
+      ? ` -wmseg ${flirtWmseg} -init ${flirtInit} -schedule "$FSLDIR/etc/flirtsch/bbr.sch"`
+      : "";
+    generatedCommand = `flirt -in ${flirtIn} -ref ${flirtRef} -dof ${flirtCost === "bbr" ? "6" : flirtDof} -cost ${flirtCost}${bbrPart} -omat ${flirtOmat}${outPart}`;
 
     flagExplanation = [
       { flag: `-in ${flirtIn}`, description: "Input image to be transformed." },
@@ -111,6 +118,11 @@ export function FSLCommandGenerator() {
             ? "Boundary-Based Registration: aligns functional cortical ribbon with WM/GM boundary from T1."
             : "Correlation Ratio cost function: standard cross-contrast alignment metric.",
       },
+      ...(flirtCost === "bbr" ? [
+        { flag: `-wmseg ${flirtWmseg}`, description: "White-matter segmentation in the reference T1 space. Create it from the structural image before running BBR." },
+        { flag: `-init ${flirtInit}`, description: "Initial functional-to-structural alignment matrix, produced by an initial 6 DOF registration." },
+        { flag: "-schedule $FSLDIR/etc/flirtsch/bbr.sch", description: "FSL's BBR optimization schedule. For a complete automated workflow, use epi_reg with the full and brain-extracted T1 images." },
+      ] : []),
       { flag: `-omat ${flirtOmat}`, description: "4×4 affine transformation matrix file (.mat)." },
     ];
   } else if (activeTool === "feat") {
@@ -175,7 +187,8 @@ export function FSLCommandGenerator() {
               <label className="text-xs text-[var(--muted)] block mb-1">Mathematical Operation</label>
               <select
                 value={mathsOp}
-                onChange={(e) => setMathsOp(e.target.value as any)}
+                aria-label="Mathematical Operation"
+                onChange={(e) => setMathsOp(e.target.value as typeof mathsOp)}
                 className="w-full bg-[var(--surface)] border border-[var(--border)] rounded px-3 py-1.5 text-xs font-mono"
               >
                 <option value="-Tmean">-Tmean (Temporal Mean)</option>
@@ -195,6 +208,11 @@ export function FSLCommandGenerator() {
                 className="w-full bg-[var(--surface)] border border-[var(--border)] rounded px-3 py-1.5 font-mono text-xs"
               />
             </div>
+            {["-thr", "-s", "-mas"].includes(mathsOp) && (
+              <label className="text-xs text-[var(--muted)] block">{mathsOp === "-mas" ? "Mask image" : mathsOp === "-s" ? "Smoothing sigma (mm)" : "Intensity threshold"}
+                <input type="text" value={mathsArg} onChange={(e) => setMathsArg(e.target.value)} placeholder={mathsOp === "-mas" ? "mask.nii.gz" : mathsOp === "-s" ? "2.5" : "100"} className="w-full bg-[var(--surface)] border border-[var(--border)] rounded px-3 py-1.5 font-mono mt-1" />
+              </label>
+            )}
           </div>
         )}
 
@@ -213,13 +231,15 @@ export function FSLCommandGenerator() {
               <label className="text-xs text-[var(--muted)] block mb-1">Metric Flag</label>
               <select
                 value={statsFlag}
-                onChange={(e) => setStatsFlag(e.target.value as any)}
+                aria-label="Metric Flag"
+                onChange={(e) => setStatsFlag(e.target.value as typeof statsFlag)}
                 className="w-full bg-[var(--surface)] border border-[var(--border)] rounded px-3 py-1.5 text-xs font-mono"
               >
                 <option value="-M">-M (Mean of Non-Zero Voxels)</option>
                 <option value="-m">-m (Mean of All Voxels)</option>
                 <option value="-V">-V (Voxel Count & Volume mm³)</option>
-                <option value="-R">-R (Robust Range Min/Max)</option>
+                <option value="-r">-r (Robust Range)</option>
+                <option value="-R">-R (Absolute Min/Max)</option>
                 <option value="-s">-s (Standard Deviation)</option>
               </select>
             </div>
@@ -268,6 +288,7 @@ export function FSLCommandGenerator() {
               <label className="text-xs text-[var(--muted)] block mb-1">Degrees of Freedom (-dof)</label>
               <select
                 value={flirtDof}
+                disabled={flirtCost === "bbr"}
                 onChange={(e) => setFlirtDof(e.target.value)}
                 className="w-full bg-[var(--surface)] border border-[var(--border)] rounded px-2.5 py-1.5 text-xs font-mono"
               >
@@ -279,7 +300,8 @@ export function FSLCommandGenerator() {
               <label className="text-xs text-[var(--muted)] block mb-1">Cost Function (-cost)</label>
               <select
                 value={flirtCost}
-                onChange={(e) => setFlirtCost(e.target.value)}
+                aria-label="Cost Function"
+                onChange={(e) => { setFlirtCost(e.target.value); if (e.target.value === "bbr") setFlirtDof("6"); }}
                 className="w-full bg-[var(--surface)] border border-[var(--border)] rounded px-2.5 py-1.5 text-xs font-mono"
               >
                 <option value="bbr">bbr (Boundary-Based Registration)</option>
@@ -287,6 +309,14 @@ export function FSLCommandGenerator() {
                 <option value="mutualinfo">mutualinfo (Mutual Information)</option>
               </select>
             </div>
+            {flirtCost === "bbr" && <>
+              <label className="text-xs text-[var(--muted)] block">White-matter segmentation (-wmseg)
+                <input type="text" value={flirtWmseg} onChange={(e) => setFlirtWmseg(e.target.value)} className="w-full bg-[var(--surface)] border border-[var(--border)] rounded px-2.5 py-1.5 font-mono mt-1" />
+              </label>
+              <label className="text-xs text-[var(--muted)] block">Initial alignment matrix (-init)
+                <input type="text" value={flirtInit} onChange={(e) => setFlirtInit(e.target.value)} className="w-full bg-[var(--surface)] border border-[var(--border)] rounded px-2.5 py-1.5 font-mono mt-1" />
+              </label>
+            </>}
           </div>
         )}
 
@@ -312,7 +342,7 @@ export function FSLCommandGenerator() {
             className="flex items-center gap-1.5 text-xs font-medium text-[var(--ink)] hover:text-[var(--accent)] transition-colors"
             onClick={handleCopy}
           >
-            {copied ? <Check size={14} className="text-emerald-500" /> : <Copy size={14} />}
+            {copied ? <Check size={14} className="text-[var(--success)]" /> : <Copy size={14} />}
             {copied ? "Copied to clipboard" : "Copy command"}
           </button>
         </div>

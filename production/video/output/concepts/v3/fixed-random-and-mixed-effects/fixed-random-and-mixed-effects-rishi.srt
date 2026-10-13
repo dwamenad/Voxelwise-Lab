@@ -1,0 +1,71 @@
+1
+00:00:00,000 --> 00:00:06,230
+When combining data across participants,
+the choice between fixed and mixed effects
+
+2
+00:00:06,230 --> 00:00:09,865
+determines the scope of your scientific
+claims.
+
+3
+00:00:09,865 --> 00:00:15,057
+Fixed effects assumes that between-subject
+variance is zero, meaning conclusions
+
+4
+00:00:15,057 --> 00:00:18,691
+apply strictly to the specific individuals
+scanned.
+
+5
+00:00:18,691 --> 00:00:24,922
+Mixed effects models biological diversity,
+allowing you to generalize to the broader
+
+6
+00:00:24,922 --> 00:00:25,960
+human population.
+
+7
+00:00:27,600 --> 00:00:32,800
+FSL's FLAME mixed-effects engine separates
+within-subject measurement noise from true
+
+8
+00:00:32,800 --> 00:00:33,840
+between-subject variation.
+
+9
+00:00:33,840 --> 00:00:39,560
+Rather than treating all subjects as
+equally reliable, FLAME weights each
+
+10
+00:00:39,560 --> 00:00:43,720
+participant by the precision of their
+individual estimate.
+
+11
+00:00:43,720 --> 00:00:50,480
+Subjects with clean data and small varcope
+carry more influence than noisy outliers.
+
+12
+00:00:52,033 --> 00:00:58,056
+Use fixed-effects modeling when combining
+runs within the same participant at level
+
+13
+00:00:58,056 --> 00:01:03,075
+two, but always use FLAME mixed effects
+for group-level inference.
+
+14
+00:01:03,075 --> 00:01:07,591
+This ensures your scientific claims
+accurately represent the general
+
+15
+00:01:07,591 --> 00:01:08,093
+population.

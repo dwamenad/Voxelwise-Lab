@@ -1,0 +1,93 @@
+1
+00:00:00,000 --> 00:00:06,127
+Over the course of an fMRI run, heating in
+the magnet gradients and subtle
+
+2
+00:00:06,127 --> 00:00:10,066
+participant physiological shifts cause
+slow, monotonic changes in baseline
+
+3
+00:00:10,066 --> 00:00:10,503
+signal.
+
+4
+00:00:10,503 --> 00:00:15,317
+High-pass temporal filtering removes these
+low-frequency trends so they do not
+
+5
+00:00:15,317 --> 00:00:16,630
+contaminate experimental regressors.
+
+6
+00:00:21,567 --> 00:00:25,053
+Setting the high-pass filter cutoff
+requires balancing drift removal against
+
+7
+00:00:25,053 --> 00:00:26,099
+preserving task signal.
+
+8
+00:00:26,099 --> 00:00:31,328
+The golden rule is: cutoff must be at
+least twice the duration of the longest
+
+9
+00:00:31,328 --> 00:00:32,025
+experimental cycle.
+
+10
+00:00:32,025 --> 00:00:37,603
+For a block design with thirty seconds on
+and thirty seconds off, the cycle is sixty
+
+11
+00:00:37,603 --> 00:00:41,787
+seconds, requiring a cutoff of at least
+one hundred and twenty seconds.
+
+12
+00:00:47,933 --> 00:00:52,367
+If you set your cutoff too short, the
+filter cannot distinguish scanner drift
+
+13
+00:00:52,367 --> 00:00:54,754
+from the hemodynamic response of your
+task.
+
+14
+00:00:54,754 --> 00:00:57,482
+It will filter out your experimental
+effect entirely.
+
+15
+00:00:57,482 --> 00:01:02,938
+When in doubt, err on the side of a longer
+cutoff; residual drift can still be
+
+16
+00:01:02,938 --> 00:01:04,643
+captured by linear trend regressors.
+
+17
+00:01:09,300 --> 00:01:12,515
+High-pass temporal filtering removes
+scanner drift while preserving
+
+18
+00:01:12,515 --> 00:01:13,721
+experimental BOLD signal.
+
+19
+00:01:13,721 --> 00:01:18,945
+Always calculate your cutoff from the
+longest task cycle, and verify that the
+
+20
+00:01:18,945 --> 00:01:22,160
+design matrix in FEAT shows no filter
+attenuation.

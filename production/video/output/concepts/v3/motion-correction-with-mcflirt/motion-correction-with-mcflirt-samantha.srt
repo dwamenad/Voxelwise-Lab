@@ -1,0 +1,88 @@
+1
+00:00:00,000 --> 00:00:02,998
+Participants inevitably move during an
+fMRI session.
+
+2
+00:00:02,998 --> 00:00:08,994
+Because voxels are small, a shift of just
+one millimeter moves brain tissue across
+
+3
+00:00:08,994 --> 00:00:11,564
+voxel boundaries, introducing massive
+non-neural variance.
+
+4
+00:00:11,564 --> 00:00:17,132
+Motion correction with MCFLIRT aligns each
+acquired volume back to a common reference
+
+5
+00:00:17,132 --> 00:00:17,560
+position.
+
+6
+00:00:22,267 --> 00:00:26,861
+MCFLIRT uses a rigid-body transformation
+with six degrees of freedom: three spatial
+
+7
+00:00:26,861 --> 00:00:32,605
+translations along the x, y, and z axes,
+and three rotations: pitch, roll, and yaw.
+
+8
+00:00:32,605 --> 00:00:37,965
+Because the brain does not stretch or
+shear within a scan, higher degrees of
+
+9
+00:00:37,965 --> 00:00:39,497
+freedom would be unphysical.
+
+10
+00:00:44,400 --> 00:00:47,349
+MCFLIRT outputs two critical displacement
+plots.
+
+11
+00:00:47,349 --> 00:00:52,755
+Absolute displacement measures total drift
+from the reference volume across the
+
+12
+00:00:52,755 --> 00:00:53,738
+entire run.
+
+13
+00:00:53,738 --> 00:00:57,178
+Relative displacement, or framewise
+displacement, measures abrupt
+
+14
+00:00:57,178 --> 00:00:58,161
+volume-to-volume jerks.
+
+15
+00:00:58,161 --> 00:01:03,567
+Sudden spikes above half a voxel indicate
+potential spin-history artifacts requiring
+
+16
+00:01:03,567 --> 00:01:04,550
+volume censoring.
+
+17
+00:01:09,800 --> 00:01:14,466
+Always inspect both absolute and relative
+motion plots before statistical modeling.
+
+18
+00:01:14,466 --> 00:01:19,979
+Realign to the middle volume, flag sudden
+jumps, and never apply spatial smoothing
+
+19
+00:01:19,979 --> 00:01:22,100
+before motion estimation is complete.

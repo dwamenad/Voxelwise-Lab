@@ -79,9 +79,9 @@ export function QuizBlock({ id, question, options, hint, explanation }: QuizBloc
             >
               <div className="quiz-option-indicator">
                 {submitted && option.isCorrect ? (
-                  <CheckCircle2 size={18} className="text-emerald-500" />
+                  <CheckCircle2 size={18} className="text-[var(--success)]" />
                 ) : submitted && isSelected && !option.isCorrect ? (
-                  <XCircle size={18} className="text-rose-500" />
+                  <XCircle size={18} className="text-[var(--danger)]" />
                 ) : (
                   <span className={`quiz-radio-circle ${isSelected ? "checked" : ""}`} />
                 )}

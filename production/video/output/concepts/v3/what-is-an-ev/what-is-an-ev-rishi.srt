@@ -1,109 +1,109 @@
 1
-00:00:00,000 --> 00:00:06,396
+00:00:00,000 --> 00:00:06,406
 An explanatory variable, or EV, is one
 modeled pattern in the design matrix.
 
 2
-00:00:06,396 --> 00:00:09,840
+00:00:06,406 --> 00:00:09,855
 A task EV represents an experimental
 condition.
 
 3
-00:00:09,840 --> 00:00:13,284
+00:00:09,855 --> 00:00:13,304
 A parametric EV represents graded trial
 values.
 
 4
-00:00:13,284 --> 00:00:19,188
+00:00:13,304 --> 00:00:19,217
 A nuisance EV represents structured
 variation that is not the effect of
 
 5
-00:00:19,188 --> 00:00:19,680
+00:00:19,217 --> 00:00:19,710
 interest.
 
 6
-00:00:21,167 --> 00:00:27,771
+00:00:21,200 --> 00:00:27,817
 The interpretation of an EV comes from how
 it was constructed and why it belongs in
 
 7
-00:00:27,771 --> 00:00:28,597
+00:00:27,817 --> 00:00:28,644
 the model.
 
 8
-00:00:28,597 --> 00:00:32,312
+00:00:28,644 --> 00:00:32,366
 A condition column asks about an average
 task effect.
 
 9
-00:00:32,312 --> 00:00:36,440
+00:00:32,366 --> 00:00:36,501
 A parametric column asks whether response
 changes with a value.
 
 10
-00:00:36,440 --> 00:00:40,981
+00:00:36,501 --> 00:00:41,050
 A motion column controls nuisance
 variation rather than testing the task.
 
 11
-00:00:42,067 --> 00:00:45,525
+00:00:42,133 --> 00:00:45,601
 Inspect the design matrix after EV
 construction.
 
 12
-00:00:45,525 --> 00:00:50,465
+00:00:45,601 --> 00:00:50,555
 Confirm that each column has the expected
 timing and order.
 
 13
-00:00:50,465 --> 00:00:53,924
+00:00:50,555 --> 00:00:54,023
 Look for near-duplicate patterns or strong
 correlation.
 
 14
-00:00:53,924 --> 00:00:58,864
+00:00:54,023 --> 00:00:58,976
 When predictors overlap, each beta
 estimate describes a contribution after
 
 15
-00:00:58,864 --> 00:01:01,334
+00:00:58,976 --> 00:01:01,453
 accounting for the other columns.
 
 16
-00:01:02,633 --> 00:01:08,134
+00:01:02,767 --> 00:01:08,296
 A complex stimulus does not automatically
 require a column for every feature.
 
 17
-00:01:08,134 --> 00:01:12,259
+00:01:08,296 --> 00:01:12,443
 Build the model around the hypothesized
 processes and comparisons.
 
 18
-00:01:12,259 --> 00:01:18,676
+00:01:12,443 --> 00:01:18,894
 An EV is justified by the scientific
 question and design, not merely by the
 
 19
-00:01:18,676 --> 00:01:20,509
+00:01:18,894 --> 00:01:20,737
 availability of a label.
 
 20
-00:01:21,500 --> 00:01:27,487
+00:01:21,700 --> 00:01:27,703
 An EV is one hypothesized source of
 variation in the design matrix.
 
 21
-00:01:27,487 --> 00:01:32,477
+00:01:27,703 --> 00:01:32,706
 Define what it represents, distinguish
 effects of interest from nuisance
 
 22
-00:01:32,477 --> 00:01:37,965
+00:01:32,706 --> 00:01:38,209
 structure, and inspect its timing and
 relationship to other columns before
 
 23
-00:01:37,965 --> 00:01:40,459
+00:01:38,209 --> 00:01:40,710
 interpreting beta estimates or contrasts.

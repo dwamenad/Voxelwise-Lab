@@ -1,4 +1,4 @@
-import { copyFile, mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import {
   encodeNarrationClip,
@@ -8,6 +8,7 @@ import {
   verifyInstalledVoices,
 } from "./audio-pipeline.mjs";
 import { formatTimestamp, splitCaptionCues, wordCount } from "./narration-utils.mjs";
+import { replaceCaptureFrames } from "./capture-frames.mjs";
 
 const projectRoot = process.cwd();
 const slug = "opening-feat";
@@ -54,23 +55,12 @@ await Promise.all([
   mkdir(outputRoot, { recursive: true }),
   mkdir(path.dirname(generatedPath), { recursive: true }),
 ]);
-await rm(frameRoot, { recursive: true, force: true });
-await mkdir(frameRoot, { recursive: true });
-
-const visualSceneMetadata = new Map();
-for (const sceneName of visualGroups.flat()) {
-  const sourceDirectory = path.join(captureRoot, sceneName);
-  const frameFiles = (await readdir(sourceDirectory)).filter((file) => file.endsWith(".png")).sort();
-  if (!frameFiles.length) throw new Error(`No PNG frames found in ${sourceDirectory}`);
-  const targetDirectory = path.join(frameRoot, sceneName);
-  await mkdir(targetDirectory, { recursive: true });
-  await Promise.all(frameFiles.map((file) => copyFile(path.join(sourceDirectory, file), path.join(targetDirectory, file))));
-  visualSceneMetadata.set(sceneName, {
-    id: sceneName,
-    assetRoot: `video-production/walkthroughs/${slug}/frames/${sceneName}`,
-    frameCount: frameFiles.length,
-  });
-}
+const visualSceneMetadata = await replaceCaptureFrames({
+  captureRoot,
+  frameRoot,
+  sceneNames: visualGroups.flat(),
+  assetBase: `video-production/walkthroughs/${slug}/frames`,
+});
 
 const tracks = new Map(
   registry.voices.map((voice) => [voice.id, { voiceId: voice.id, displayName: voice.displayName, accent: voice.accent, locale: voice.locale, speechRate: voice.speechRate, scenes: [], cues: [], qc: [] }]),

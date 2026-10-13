@@ -1,108 +1,108 @@
 1
-00:00:00,000 --> 00:00:02,608
+00:00:00,000 --> 00:00:02,621
 Fslinfo and fslstats answer different
 questions.
 
 2
-00:00:02,608 --> 00:00:06,954
+00:00:02,621 --> 00:00:06,989
 Fslinfo reads the NIfTI header and
 describes the image container.
 
 3
-00:00:06,954 --> 00:00:09,562
+00:00:06,989 --> 00:00:09,611
 Fslstats calculates summaries from voxel
 values.
 
 4
-00:00:09,562 --> 00:00:15,212
+00:00:09,611 --> 00:00:15,289
 A statistic is meaningful only when you
 know which image and which voxels
 
 5
-00:00:15,212 --> 00:00:16,516
+00:00:15,289 --> 00:00:16,600
 contributed to it.
 
 6
-00:00:21,467 --> 00:00:26,324
+00:00:21,500 --> 00:00:26,386
 Use fslinfo when the question is about
 structure: dimensions, voxel spacing,
 
 7
-00:00:26,324 --> 00:00:27,649
+00:00:26,386 --> 00:00:27,718
 orientation, or timing.
 
 8
-00:00:27,649 --> 00:00:31,623
+00:00:27,718 --> 00:00:31,716
 Use fslstats when the question is about
 intensity values.
 
 9
-00:00:31,623 --> 00:00:37,363
+00:00:31,716 --> 00:00:37,490
 The two outputs complement one another,
 but one cannot substitute for the other.
 
 10
-00:00:42,667 --> 00:00:48,070
+00:00:42,767 --> 00:00:48,190
 With dash V, fslstats reports the number
 of nonzero voxels followed by their
 
 11
-00:00:48,070 --> 00:00:50,148
+00:00:48,190 --> 00:00:50,275
 physical volume in cubic millimetres.
 
 12
-00:00:50,148 --> 00:00:52,642
+00:00:50,275 --> 00:00:52,778
 Those values describe the selected image.
 
 13
-00:00:52,642 --> 00:00:57,214
+00:00:52,778 --> 00:00:57,367
 They do not automatically describe the
 whole brain, because zeros, thresholds,
 
 14
-00:00:57,214 --> 00:01:00,124
+00:00:57,367 --> 00:01:00,287
 and masks determine which voxels are
 counted.
 
 15
-00:01:05,000 --> 00:01:08,679
+00:01:05,100 --> 00:01:08,795
 A numerical result can be perfectly
 computed and scientifically wrong.
 
 16
-00:01:08,679 --> 00:01:11,254
+00:01:08,795 --> 00:01:11,382
 Confirm the input image and coordinate
 space.
 
 17
-00:01:11,254 --> 00:01:15,668
+00:01:11,382 --> 00:01:15,816
 If a mask is involved, overlay it on the
 exact source data.
 
 18
-00:01:15,668 --> 00:01:20,450
+00:01:15,816 --> 00:01:20,620
 Record the option and threshold so another
 person can reproduce the voxel set.
 
 19
-00:01:24,500 --> 00:01:29,481
+00:01:24,600 --> 00:01:29,613
 Use fslinfo to understand the image
 container and fslstats to summarize
 
 20
-00:01:29,481 --> 00:01:29,934
+00:01:29,613 --> 00:01:30,069
 values.
 
 21
-00:01:29,934 --> 00:01:35,369
+00:01:30,069 --> 00:01:35,538
 Never report a number without the image,
 option, threshold, and voxel selection
 
 22
-00:01:35,369 --> 00:01:36,727
+00:01:35,538 --> 00:01:36,905
 that define it.
 
 23
-00:01:36,727 --> 00:01:39,444
+00:01:36,905 --> 00:01:39,640
 Context turns output into interpretable
 evidence.

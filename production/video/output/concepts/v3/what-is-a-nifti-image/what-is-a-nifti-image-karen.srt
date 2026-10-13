@@ -1,109 +1,109 @@
 1
-00:00:00,000 --> 00:00:04,149
+00:00:00,000 --> 00:00:04,173
 A NIfTI file stores numerical samples
 arranged in space.
 
 2
-00:00:04,149 --> 00:00:08,298
+00:00:04,173 --> 00:00:08,347
 One sample is a voxel, a tiny
 three-dimensional box.
 
 3
-00:00:08,298 --> 00:00:12,908
+00:00:08,347 --> 00:00:12,984
 Voxels form slices, slices form a
 three-dimensional volume, and repeated
 
 4
-00:00:12,908 --> 00:00:16,135
+00:00:12,984 --> 00:00:16,230
 volumes form a four-dimensional fMRI time
 series.
 
 5
-00:00:20,767 --> 00:00:24,281
+00:00:20,833 --> 00:00:24,360
 An anatomical image is often one
 three-dimensional volume.
 
 6
-00:00:24,281 --> 00:00:29,552
+00:00:24,360 --> 00:00:29,649
 A BOLD image usually contains many volumes
 sampled at successive time points.
 
 7
-00:00:29,552 --> 00:00:34,383
+00:00:29,649 --> 00:00:34,498
 The file header records dimensions, voxel
 sizes, orientation transforms, and timing
 
 8
-00:00:34,383 --> 00:00:37,458
+00:00:34,498 --> 00:00:37,583
 so software can interpret the array
 correctly.
 
 9
-00:00:42,467 --> 00:00:44,713
+00:00:42,567 --> 00:00:44,820
 Fslinfo exposes the image header.
 
 10
-00:00:44,713 --> 00:00:50,106
+00:00:44,820 --> 00:00:50,229
 Here, the first three dimensions describe
 a sixty-four by sixty-four by forty
 
 11
-00:00:50,106 --> 00:00:51,005
+00:00:50,229 --> 00:00:51,130
 spatial grid.
 
 12
-00:00:51,005 --> 00:00:56,846
+00:00:51,130 --> 00:00:56,990
 Dimension four contains two hundred forty
 time points, and pixdim four reports a
 
 13
-00:00:56,846 --> 00:00:58,194
+00:00:56,990 --> 00:00:58,342
 two-second repetition time.
 
 14
-00:00:58,194 --> 00:01:01,340
+00:00:58,342 --> 00:01:01,497
 These values describe sampling, not data
 quality.
 
 15
-00:01:06,433 --> 00:01:10,754
+00:01:06,567 --> 00:01:10,905
 Voxel dimensions define spatial sampling,
 not anatomical precision.
 
 16
-00:01:10,754 --> 00:01:16,155
+00:01:10,905 --> 00:01:16,328
 Smaller voxels can reduce signal-to-noise,
 and functional localization also depends
 
 17
-00:01:16,155 --> 00:01:19,396
+00:01:16,328 --> 00:01:19,582
 on physiology, preprocessing, and
 experimental design.
 
 18
-00:01:19,396 --> 00:01:25,338
+00:01:19,582 --> 00:01:25,547
 Never translate voxel size directly into
 certainty about a cognitive process.
 
 19
-00:01:30,167 --> 00:01:33,812
+00:01:30,367 --> 00:01:34,033
 A NIfTI image is a structured numerical
 container.
 
 20
-00:01:33,812 --> 00:01:37,914
+00:01:34,033 --> 00:01:38,158
 Understand its voxels, volumes,
 dimensions, orientation, and timing before
 
 21
-00:01:37,914 --> 00:01:39,281
+00:01:38,158 --> 00:01:39,532
 analyzing intensity values.
 
 22
-00:01:39,281 --> 00:01:45,660
+00:01:39,532 --> 00:01:45,948
 Sampling describes how data were arranged;
 it does not guarantee what the data can
 
 23
-00:01:45,660 --> 00:01:46,116
+00:01:45,948 --> 00:01:46,407
 reveal.
