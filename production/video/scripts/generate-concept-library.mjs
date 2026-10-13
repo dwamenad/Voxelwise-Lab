@@ -37,12 +37,17 @@ const eligibleCourses = new Set([
   "fsl-neuroimaging-foundations",
   "first-level-fmri-analysis-feat",
   "fmri-preprocessing-fsl",
+  "higher-level-fmri-analysis",
+  "roi-analysis-fsl",
+  "ppi-and-ica",
 ]);
 
 const accentColors = {
   mint: "#79e6bf",
   amber: "#ffbf69",
   blue: "#9bbbd1",
+  rose: "#d9a6a6",
+  teal: "#91c9c0",
 };
 
 const compositionId = (slug) =>
