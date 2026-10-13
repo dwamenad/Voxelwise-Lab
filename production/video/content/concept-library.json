@@ -63,7 +63,8 @@
   "selection": {
     "courses": [
       "fsl-neuroimaging-foundations",
-      "first-level-fmri-analysis-feat"
+      "first-level-fmri-analysis-feat",
+      "fmri-preprocessing-fsl"
     ],
     "includedTypes": [
       "concept",
@@ -2648,6 +2649,776 @@
               "type": "course-lab",
               "file": "Lab-1_FSLeyes.md",
               "section": "Measuring the brain and atlas masks",
+              "note": "Curriculum implementation reference",
+              "visibility": "internal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "motion-correction-with-mcflirt",
+      "compositionId": "LessonMotionCorrectionWithMcflirt",
+      "courseSlug": "fmri-preprocessing-fsl",
+      "courseTitle": "fMRI Preprocessing with FSL",
+      "courseLabel": "fMRI Preprocessing",
+      "catalogNumber": "FSL 201",
+      "moduleTitle": "Within-Run Corrections",
+      "lessonNumber": "2.1",
+      "title": "Motion Correction with MCFLIRT",
+      "description": "Understand 6 degrees of freedom rigid-body realignment, reference volume selection, and displacement parameter plots.",
+      "videoType": "concept",
+      "accent": "#9bbbd1",
+      "defaultVoiceId": "daniel",
+      "voiceIds": [
+        "daniel",
+        "samantha",
+        "tessa",
+        "karen",
+        "rishi"
+      ],
+      "fps": 30,
+      "source": {
+        "repository": "tubric/2026s-fmri-class",
+        "file": "Lab-2_Preprocessing.md",
+        "section": "3. MCFLIRT",
+        "license": "MIT",
+        "visibility": "internal"
+      },
+      "scenes": [
+        {
+          "id": "opening",
+          "kind": "opening",
+          "layout": "opening",
+          "display": {
+            "eyebrow": "fMRI preprocessing",
+            "title": "Head motion is signal's enemy",
+            "body": "Even sub-millimeter head movement corrupts BOLD voxel time series."
+          },
+          "visual": {
+            "type": "comparison",
+            "items": [
+              {
+                "label": "3 Translations",
+                "value": "x, y, z",
+                "detail": "Displacement in millimeters",
+                "tone": "blue"
+              },
+              {
+                "label": "3 Rotations",
+                "value": "pitch, roll, yaw",
+                "detail": "Angular displacement in radians",
+                "tone": "accent"
+              }
+            ]
+          },
+          "narrationText": "Participants inevitably move during an fMRI session. Because voxels are small, a shift of just one millimeter moves brain tissue across voxel boundaries, introducing massive non-neural variance. Motion correction with MCFLIRT aligns each acquired volume back to a common reference position.",
+          "sourceRefs": [
+            {
+              "type": "repository-asset",
+              "asset": "/curriculum/mcflirt.png",
+              "note": "MCFLIRT realignment",
+              "visibility": "internal"
+            },
+            {
+              "type": "course-lab",
+              "file": "Lab-2_Preprocessing.md",
+              "section": "3. MCFLIRT",
+              "note": "Curriculum implementation reference",
+              "visibility": "internal"
+            }
+          ]
+        },
+        {
+          "id": "six-dof",
+          "kind": "explanation",
+          "layout": "editorial",
+          "display": {
+            "eyebrow": "Rigid-body mechanics",
+            "title": "Six degrees of freedom",
+            "body": "The brain maintains constant shape within a run; only translation and rotation are modeled."
+          },
+          "visual": {
+            "type": "comparison",
+            "items": [
+              {
+                "label": "Translations",
+                "value": "x, y, z",
+                "detail": "3 directions of physical shift",
+                "tone": "blue"
+              },
+              {
+                "label": "Rotations",
+                "value": "pitch, roll, yaw",
+                "detail": "3 axes of angular tilt",
+                "tone": "accent"
+              }
+            ]
+          },
+          "narrationText": "MCFLIRT uses a rigid-body transformation with six degrees of freedom: three spatial translations along the x, y, and z axes, and three rotations: pitch, roll, and yaw. Because the brain does not stretch or shear within a scan, higher degrees of freedom would be unphysical.",
+          "sourceRefs": [
+            {
+              "type": "repository-asset",
+              "asset": "/curriculum/mcflirt.png",
+              "note": "Rigid body motion parameters",
+              "visibility": "internal"
+            },
+            {
+              "type": "course-lab",
+              "file": "Lab-2_Preprocessing.md",
+              "section": "3. MCFLIRT",
+              "note": "Curriculum implementation reference",
+              "visibility": "internal"
+            }
+          ]
+        },
+        {
+          "id": "displacement-plots",
+          "kind": "evidence",
+          "layout": "evidence",
+          "display": {
+            "eyebrow": "Read the evidence",
+            "title": "Absolute versus relative motion",
+            "body": "Compare total drift from baseline against sudden volume-to-volume jumps."
+          },
+          "visual": {
+            "type": "comparison",
+            "items": [
+              {
+                "label": "Absolute displacement",
+                "value": "Total drift",
+                "detail": "Distance from the reference volume",
+                "tone": "blue"
+              },
+              {
+                "label": "Relative displacement",
+                "value": "Framewise jump",
+                "detail": "Volume-to-volume movement (FD)",
+                "tone": "coral"
+              }
+            ]
+          },
+          "narrationText": "MCFLIRT outputs two critical displacement plots. Absolute displacement measures total drift from the reference volume across the entire run. Relative displacement, or framewise displacement, measures abrupt volume-to-volume jerks. Sudden spikes above half a voxel indicate potential spin-history artifacts requiring volume censoring.",
+          "sourceRefs": [
+            {
+              "type": "repository-asset",
+              "asset": "/curriculum/feat-report.png",
+              "note": "Motion plots in FEAT report",
+              "visibility": "internal"
+            },
+            {
+              "type": "course-lab",
+              "file": "Lab-2_Preprocessing.md",
+              "section": "3. MCFLIRT",
+              "note": "Curriculum implementation reference",
+              "visibility": "internal"
+            }
+          ]
+        },
+        {
+          "id": "summary",
+          "kind": "summary",
+          "layout": "summary",
+          "display": {
+            "eyebrow": "Carry forward",
+            "title": "Motion correction rules",
+            "bullets": [
+              "Realign to the middle volume",
+              "Inspect relative displacement spikes",
+              "Never smooth before MCFLIRT"
+            ]
+          },
+          "narrationText": "Always inspect both absolute and relative motion plots before statistical modeling. Realign to the middle volume, flag sudden jumps, and never apply spatial smoothing before motion estimation is complete.",
+          "sourceRefs": [
+            {
+              "type": "repository-asset",
+              "asset": "/curriculum/mcflirt.png",
+              "note": "MCFLIRT rules",
+              "visibility": "internal"
+            },
+            {
+              "type": "course-lab",
+              "file": "Lab-2_Preprocessing.md",
+              "section": "3. MCFLIRT",
+              "note": "Curriculum implementation reference",
+              "visibility": "internal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "brain-extraction",
+      "compositionId": "LessonBrainExtraction",
+      "courseSlug": "fmri-preprocessing-fsl",
+      "courseTitle": "fMRI Preprocessing with FSL",
+      "courseLabel": "fMRI Preprocessing",
+      "catalogNumber": "FSL 201",
+      "moduleTitle": "Within-Run Corrections",
+      "lessonNumber": "2.2",
+      "title": "Brain Extraction with BET",
+      "description": "Isolate brain tissue from skull and neck fat using BET fractional intensity thresholding.",
+      "videoType": "concept",
+      "accent": "#9bbbd1",
+      "defaultVoiceId": "daniel",
+      "voiceIds": [
+        "daniel",
+        "samantha",
+        "tessa",
+        "karen",
+        "rishi"
+      ],
+      "fps": 30,
+      "source": {
+        "repository": "tubric/2026s-fmri-class",
+        "file": "Lab-2_Preprocessing.md",
+        "section": "4. Brain Extraction",
+        "license": "MIT",
+        "visibility": "internal"
+      },
+      "scenes": [
+        {
+          "id": "opening",
+          "kind": "opening",
+          "layout": "opening",
+          "display": {
+            "eyebrow": "Structural preprocessing",
+            "title": "Stripping non-brain tissue",
+            "body": "Skull, eyes, and dura disrupt registration and distort template normalization."
+          },
+          "visual": {
+            "type": "comparison",
+            "items": [
+              {
+                "label": "Retain",
+                "value": "Brain",
+                "detail": "Cortex, white matter, cerebellum, brainstem",
+                "tone": "accent"
+              },
+              {
+                "label": "Remove",
+                "value": "Non-brain",
+                "detail": "Skull, scalp fat, eyeballs, dura",
+                "tone": "muted"
+              }
+            ]
+          },
+          "narrationText": "Before registering a high-resolution anatomical scan to a standard template, you must remove non-brain tissue. Scalp fat, muscle, eyes, and skull exhibit intense MRI contrast that confuses registration cost functions. FSL's Brain Extraction Tool, or BET, strips these structures.",
+          "sourceRefs": [
+            {
+              "type": "repository-asset",
+              "asset": "/curriculum/fsleyes-timeseries.png",
+              "note": "Brain extraction",
+              "visibility": "internal"
+            },
+            {
+              "type": "course-lab",
+              "file": "Lab-2_Preprocessing.md",
+              "section": "4. Brain Extraction",
+              "note": "Curriculum implementation reference",
+              "visibility": "internal"
+            }
+          ]
+        },
+        {
+          "id": "tuning-fractional-intensity",
+          "kind": "explanation",
+          "layout": "editorial",
+          "display": {
+            "eyebrow": "The key parameter",
+            "title": "Tuning fractional intensity (-f)",
+            "body": "Default threshold 0.5 balances over-stripping against skull residue."
+          },
+          "visual": {
+            "type": "comparison",
+            "items": [
+              {
+                "label": "-f 0.3",
+                "value": "Preserve more",
+                "detail": "Retains tissue at boundaries",
+                "tone": "blue"
+              },
+              {
+                "label": "-f 0.5",
+                "value": "Default",
+                "detail": "Standard balance for healthy adults",
+                "tone": "accent"
+              },
+              {
+                "label": "-f 0.7",
+                "value": "Strip deeper",
+                "detail": "Removes stubborn dura or fat",
+                "tone": "coral"
+              }
+            ]
+          },
+          "narrationText": "BET inflates a tessellated deformable sphere outward from the brain center until it reaches brain edge gradients. The primary control parameter is fractional intensity threshold, specified with dash f. The default is 0.5. Smaller values like 0.3 keep more tissue; larger values like 0.7 peel deeper into the brain.",
+          "sourceRefs": [
+            {
+              "type": "repository-asset",
+              "asset": "/curriculum/fsleyes-timeseries.png",
+              "note": "BET parameter tuning",
+              "visibility": "internal"
+            },
+            {
+              "type": "course-lab",
+              "file": "Lab-2_Preprocessing.md",
+              "section": "4. Brain Extraction",
+              "note": "Curriculum implementation reference",
+              "visibility": "internal"
+            }
+          ]
+        },
+        {
+          "id": "qc-inspection",
+          "kind": "evidence",
+          "layout": "evidence",
+          "display": {
+            "eyebrow": "Quality control",
+            "title": "Inspect sagittal and coronal limits",
+            "body": "Check the frontal pole, superior sagittal sinus, and inferior cerebellum."
+          },
+          "visual": {
+            "type": "comparison",
+            "items": [
+              {
+                "label": "Under-stripping",
+                "value": "Skull residue",
+                "detail": "Biases affine scaling to MNI template",
+                "tone": "coral"
+              },
+              {
+                "label": "Over-stripping",
+                "value": "Clipped cortex",
+                "detail": "Irreversibly erases cortical activations",
+                "tone": "coral"
+              }
+            ]
+          },
+          "narrationText": "Always review skull-stripped outputs in FSLEyes before accepting them. Check the sagittal plane to verify that the cerebellum and brainstem are intact, and check the axial slices for orbital fat. Clipping genuine cortical gray matter will permanently erase your experimental activations.",
+          "sourceRefs": [
+            {
+              "type": "repository-asset",
+              "asset": "/curriculum/fsleyes-timeseries.png",
+              "note": "Visual inspection in FSLEyes",
+              "visibility": "internal"
+            },
+            {
+              "type": "course-lab",
+              "file": "Lab-2_Preprocessing.md",
+              "section": "4. Brain Extraction",
+              "note": "Curriculum implementation reference",
+              "visibility": "internal"
+            }
+          ]
+        },
+        {
+          "id": "summary",
+          "kind": "summary",
+          "layout": "summary",
+          "display": {
+            "eyebrow": "Carry forward",
+            "title": "BET best practices",
+            "bullets": [
+              "Start with -f 0.5",
+              "Examine sagittal slices in FSLEyes",
+              "Ensure clean boundaries before registration"
+            ]
+          },
+          "narrationText": "Start with fractional intensity 0.5, inspect the frontal pole and cerebellum in FSLEyes, and adjust dash f when necessary. Clean brain extraction is the foundation of accurate spatial normalization.",
+          "sourceRefs": [
+            {
+              "type": "repository-asset",
+              "asset": "/curriculum/fsleyes-timeseries.png",
+              "note": "Summary of BET",
+              "visibility": "internal"
+            },
+            {
+              "type": "course-lab",
+              "file": "Lab-2_Preprocessing.md",
+              "section": "4. Brain Extraction",
+              "note": "Curriculum implementation reference",
+              "visibility": "internal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "temporal-filtering",
+      "compositionId": "LessonTemporalFiltering",
+      "courseSlug": "fmri-preprocessing-fsl",
+      "courseTitle": "fMRI Preprocessing with FSL",
+      "courseLabel": "fMRI Preprocessing",
+      "catalogNumber": "FSL 201",
+      "moduleTitle": "Within-Run Corrections",
+      "lessonNumber": "2.4",
+      "title": "Temporal Filtering",
+      "description": "Remove scanner drift and slow physiological noise without attenuating experimental task frequencies.",
+      "videoType": "concept",
+      "accent": "#9bbbd1",
+      "defaultVoiceId": "daniel",
+      "voiceIds": [
+        "daniel",
+        "samantha",
+        "tessa",
+        "karen",
+        "rishi"
+      ],
+      "fps": 30,
+      "source": {
+        "repository": "tubric/2026s-fmri-class",
+        "file": "Lab-2_Preprocessing.md",
+        "section": "6. Temporal Filtering",
+        "license": "MIT",
+        "visibility": "internal"
+      },
+      "scenes": [
+        {
+          "id": "opening",
+          "kind": "opening",
+          "layout": "opening",
+          "display": {
+            "eyebrow": "Time series conditioning",
+            "title": "Removing slow scanner drift",
+            "body": "Thermal and physical scanner variations produce massive low-frequency power."
+          },
+          "visual": {
+            "type": "comparison",
+            "items": [
+              {
+                "label": "Noise",
+                "value": "Thermal drift",
+                "detail": "Frequencies below 0.01 Hz",
+                "tone": "coral"
+              },
+              {
+                "label": "Signal",
+                "value": "Task BOLD",
+                "detail": "Frequencies matched to trial cycles",
+                "tone": "accent"
+              }
+            ]
+          },
+          "narrationText": "Over the course of an fMRI run, heating in the magnet gradients and subtle participant physiological shifts cause slow, monotonic changes in baseline signal. High-pass temporal filtering removes these low-frequency trends so they do not contaminate experimental regressors.",
+          "sourceRefs": [
+            {
+              "type": "repository-asset",
+              "asset": "/curriculum/feat-design.png",
+              "note": "Temporal filtering",
+              "visibility": "internal"
+            },
+            {
+              "type": "course-lab",
+              "file": "Lab-2_Preprocessing.md",
+              "section": "6. Temporal Filtering",
+              "note": "Curriculum implementation reference",
+              "visibility": "internal"
+            }
+          ]
+        },
+        {
+          "id": "cutoff-formula",
+          "kind": "explanation",
+          "layout": "editorial",
+          "display": {
+            "eyebrow": "Calculate the cutoff",
+            "title": "The 2× cycle length rule",
+            "body": "Cutoff must be at least twice the longest duration between task repetitions."
+          },
+          "visual": {
+            "type": "comparison",
+            "items": [
+              {
+                "label": "T_cycle",
+                "value": "Task duration",
+                "detail": "Active condition + rest period",
+                "tone": "blue"
+              },
+              {
+                "label": "Cutoff formula",
+                "value": "2 × T_cycle",
+                "detail": "Guarantees task frequencies are not attenuated",
+                "tone": "accent"
+              }
+            ]
+          },
+          "narrationText": "Setting the high-pass filter cutoff requires balancing drift removal against preserving task signal. The golden rule is: cutoff must be at least twice the duration of the longest experimental cycle. For a block design with thirty seconds on and thirty seconds off, the cycle is sixty seconds, requiring a cutoff of at least one hundred and twenty seconds.",
+          "sourceRefs": [
+            {
+              "type": "repository-asset",
+              "asset": "/curriculum/feat-design.png",
+              "note": "Filter cutoff formula",
+              "visibility": "internal"
+            },
+            {
+              "type": "course-lab",
+              "file": "Lab-2_Preprocessing.md",
+              "section": "6. Temporal Filtering",
+              "note": "Curriculum implementation reference",
+              "visibility": "internal"
+            }
+          ]
+        },
+        {
+          "id": "over-filtering-trap",
+          "kind": "evidence",
+          "layout": "evidence",
+          "display": {
+            "eyebrow": "Quality control",
+            "title": "The danger of aggressive filtering",
+            "body": "A filter cutoff that is too short directly erases neural activation."
+          },
+          "visual": {
+            "type": "comparison",
+            "items": [
+              {
+                "label": "Cutoff too long",
+                "value": "Residual drift",
+                "detail": "Leaves slight baseline trend, but preserves signal",
+                "tone": "muted"
+              },
+              {
+                "label": "Cutoff too short",
+                "value": "Signal loss",
+                "detail": "Treats task activation as noise and erases it",
+                "tone": "coral"
+              }
+            ]
+          },
+          "narrationText": "If you set your cutoff too short, the filter cannot distinguish scanner drift from the hemodynamic response of your task. It will filter out your experimental effect entirely. When in doubt, err on the side of a longer cutoff; residual drift can still be captured by linear trend regressors.",
+          "sourceRefs": [
+            {
+              "type": "repository-asset",
+              "asset": "/curriculum/feat-design.png",
+              "note": "Aggressive filtering risk",
+              "visibility": "internal"
+            },
+            {
+              "type": "course-lab",
+              "file": "Lab-2_Preprocessing.md",
+              "section": "6. Temporal Filtering",
+              "note": "Curriculum implementation reference",
+              "visibility": "internal"
+            }
+          ]
+        },
+        {
+          "id": "summary",
+          "kind": "summary",
+          "layout": "summary",
+          "display": {
+            "eyebrow": "Carry forward",
+            "title": "Temporal filtering rules",
+            "bullets": [
+              "Use high-pass filtering",
+              "Calculate cutoff from longest cycle",
+              "Avoid aggressive low-pass filtering in task fMRI"
+            ]
+          },
+          "narrationText": "High-pass temporal filtering removes scanner drift while preserving experimental BOLD signal. Always calculate your cutoff from the longest task cycle, and verify that the design matrix in FEAT shows no filter attenuation.",
+          "sourceRefs": [
+            {
+              "type": "repository-asset",
+              "asset": "/curriculum/feat-design.png",
+              "note": "Filtering summary",
+              "visibility": "internal"
+            },
+            {
+              "type": "course-lab",
+              "file": "Lab-2_Preprocessing.md",
+              "section": "6. Temporal Filtering",
+              "note": "Curriculum implementation reference",
+              "visibility": "internal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "functional-to-anatomical-registration",
+      "compositionId": "LessonFunctionalToAnatomicalRegistration",
+      "courseSlug": "fmri-preprocessing-fsl",
+      "courseTitle": "fMRI Preprocessing with FSL",
+      "courseLabel": "fMRI Preprocessing",
+      "catalogNumber": "FSL 201",
+      "moduleTitle": "Registration and Quality Control",
+      "lessonNumber": "3.1",
+      "title": "Functional to Anatomical Registration",
+      "description": "Align lower-resolution functional data to high-resolution structural anatomy using Boundary-Based Registration.",
+      "videoType": "concept",
+      "accent": "#9bbbd1",
+      "defaultVoiceId": "daniel",
+      "voiceIds": [
+        "daniel",
+        "samantha",
+        "tessa",
+        "karen",
+        "rishi"
+      ],
+      "fps": 30,
+      "source": {
+        "repository": "tubric/2026s-fmri-class",
+        "file": "Lab-2_Preprocessing.md",
+        "section": "7. Registration",
+        "license": "MIT",
+        "visibility": "internal"
+      },
+      "scenes": [
+        {
+          "id": "opening",
+          "kind": "opening",
+          "layout": "opening",
+          "display": {
+            "eyebrow": "Cross-modal alignment",
+            "title": "Bridging function and anatomy",
+            "body": "Connect 3mm low-contrast BOLD data to high-resolution 1mm T1 structural scans."
+          },
+          "visual": {
+            "type": "comparison",
+            "items": [
+              {
+                "label": "Functional BOLD",
+                "value": "Low resolution",
+                "detail": "3mm voxels with EPI distortion",
+                "tone": "blue"
+              },
+              {
+                "label": "Structural T1",
+                "value": "High resolution",
+                "detail": "1mm voxels with clear tissue contrast",
+                "tone": "accent"
+              }
+            ]
+          },
+          "narrationText": "Functional fMRI data has high temporal resolution but low spatial resolution and significant geometric distortion. To localize activations onto gyral anatomy, we must accurately align the functional images to the participant's own high-resolution T1 structural scan.",
+          "sourceRefs": [
+            {
+              "type": "repository-asset",
+              "asset": "/curriculum/feat-registration.png",
+              "note": "Registration",
+              "visibility": "internal"
+            },
+            {
+              "type": "course-lab",
+              "file": "Lab-2_Preprocessing.md",
+              "section": "7. Registration",
+              "note": "Curriculum implementation reference",
+              "visibility": "internal"
+            }
+          ]
+        },
+        {
+          "id": "bbr-concept",
+          "kind": "explanation",
+          "layout": "editorial",
+          "display": {
+            "eyebrow": "Boundary-based registration",
+            "title": "Aligning the cortical ribbon",
+            "body": "BBR uses white matter surface segmentation to find the optimal registration."
+          },
+          "visual": {
+            "type": "comparison",
+            "items": [
+              {
+                "label": "White matter boundary",
+                "value": "Surface mesh",
+                "detail": "Segmented from high-res T1",
+                "tone": "accent"
+              },
+              {
+                "label": "EPI intensity gradient",
+                "value": "Contrast change",
+                "detail": "Evaluated across the projected boundary",
+                "tone": "blue"
+              }
+            ]
+          },
+          "narrationText": "Rather than matching raw voxel intensities, FSL uses Boundary-Based Registration, or BBR. BBR segments the white matter boundary on the T1 scan and evaluates the intensity gradient across that boundary in the functional image. This makes it remarkably resilient to EPI susceptibility distortions.",
+          "sourceRefs": [
+            {
+              "type": "repository-asset",
+              "asset": "/curriculum/feat-registration.png",
+              "note": "BBR mechanism",
+              "visibility": "internal"
+            },
+            {
+              "type": "course-lab",
+              "file": "Lab-2_Preprocessing.md",
+              "section": "7. Registration",
+              "note": "Curriculum implementation reference",
+              "visibility": "internal"
+            }
+          ]
+        },
+        {
+          "id": "evaluating-reg",
+          "kind": "evidence",
+          "layout": "evidence",
+          "display": {
+            "eyebrow": "FEAT report evidence",
+            "title": "Inspect the red outline overlay",
+            "body": "Look for precise correspondence along the ventricles and Sylvian fissure."
+          },
+          "visual": {
+            "type": "comparison",
+            "items": [
+              {
+                "label": "Ventricles",
+                "value": "CSF edge",
+                "detail": "Red boundary must trace ventricular walls",
+                "tone": "blue"
+              },
+              {
+                "label": "Insula & Sylvian",
+                "value": "Deep sulci",
+                "detail": "Confirms proper scaling and rotation",
+                "tone": "accent"
+              }
+            ]
+          },
+          "narrationText": "In the FEAT registration report, examine the red outline representing the structural white matter boundary overlaid on the functional image. Look closely at the lateral ventricles, the corpus callosum, and the Sylvian fissure. If the red lines sit outside cortical boundaries, registration has failed and must be rerun.",
+          "sourceRefs": [
+            {
+              "type": "repository-asset",
+              "asset": "/curriculum/feat-registration.png",
+              "note": "Red line overlay check",
+              "visibility": "internal"
+            },
+            {
+              "type": "course-lab",
+              "file": "Lab-2_Preprocessing.md",
+              "section": "7. Registration",
+              "note": "Curriculum implementation reference",
+              "visibility": "internal"
+            }
+          ]
+        },
+        {
+          "id": "summary",
+          "kind": "summary",
+          "layout": "summary",
+          "display": {
+            "eyebrow": "Carry forward",
+            "title": "Registration rules",
+            "bullets": [
+              "Always use 6 DOF within-subject",
+              "BBR is the standard cost function",
+              "Verify ventricular boundary alignment"
+            ]
+          },
+          "narrationText": "Within-subject functional-to-structural alignment must always use 6 degrees of freedom. Choose BBR as your cost function, and verify the red outline across multiple slices before accepting statistical results.",
+          "sourceRefs": [
+            {
+              "type": "repository-asset",
+              "asset": "/curriculum/feat-registration.png",
+              "note": "Registration summary",
+              "visibility": "internal"
+            },
+            {
+              "type": "course-lab",
+              "file": "Lab-2_Preprocessing.md",
+              "section": "7. Registration",
               "note": "Curriculum implementation reference",
               "visibility": "internal"
             }

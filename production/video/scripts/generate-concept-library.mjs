@@ -36,11 +36,13 @@ const { courses } = await import(`data:text/javascript;base64,${bundle}`);
 const eligibleCourses = new Set([
   "fsl-neuroimaging-foundations",
   "first-level-fmri-analysis-feat",
+  "fmri-preprocessing-fsl",
 ]);
 
 const accentColors = {
   mint: "#79e6bf",
   amber: "#ffbf69",
+  blue: "#9bbbd1",
 };
 
 const compositionId = (slug) =>
@@ -67,7 +69,7 @@ for (const course of courses.filter((item) => eligibleCourses.has(item.slug))) {
             : lesson.slug;
         const editorial = editorialV2[editorialSlug];
         if (!editorial) {
-          throw new Error(`Missing v2 editorial content for ${editorialSlug}`);
+          continue;
         }
         usedEditorialSlugs.add(editorialSlug);
 
