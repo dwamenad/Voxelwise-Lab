@@ -6,7 +6,7 @@ Functional fMRI data has high temporal resolution but low spatial resolution and
 
 ## Aligning the cortical ribbon
 
-Rather than matching raw voxel intensities, FSL uses Boundary-Based Registration, or BBR. BBR segments the white matter boundary on the T1 scan and evaluates the intensity gradient across that boundary in the functional image. This makes it remarkably resilient to EPI susceptibility distortions.
+Rather than matching raw voxel intensities, FSL uses Boundary-Based Registration, or BBR. BBR segments the white matter boundary on the T1 scan and evaluates the intensity gradient across that boundary in the functional image. BBR improves cross-modal alignment, but susceptibility distortion may still require separate correction.
 
 ## Inspect the red outline overlay
 
@@ -14,4 +14,4 @@ In the FEAT registration report, examine the red outline representing the struct
 
 ## Registration rules
 
-Within-subject functional-to-structural alignment must always use 6 degrees of freedom. Choose BBR as your cost function, and verify the red outline across multiple slices before accepting statistical results.
+Six degrees of freedom is a common starting point for within-subject alignment. Partial field-of-view data may require fewer degrees of freedom. BBR is recommended for EPI-to-structural registration; inspect alignment across multiple slices and assess remaining distortion before accepting results.

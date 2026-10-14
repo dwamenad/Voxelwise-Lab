@@ -1,62 +1,71 @@
 1
-00:00:00,000 --> 00:00:06,442
+00:00:00,000 --> 00:00:06,202
 Standard fMRI analyses focus on functional
 segregation: asking which individual brain
 
 2
-00:00:06,442 --> 00:00:09,956
+00:00:06,202 --> 00:00:09,585
 regions activate during an experimental
 task.
 
 3
-00:00:09,956 --> 00:00:14,641
+00:00:09,585 --> 00:00:14,096
 Functional connectivity investigates
-functional integration: asking how regions
+functional integration: asking how signals
 
 4
-00:00:14,641 --> 00:00:16,984
-communicate as coordinated networks.
+00:00:14,096 --> 00:00:16,915
+in different regions vary together.
 
 5
-00:00:16,984 --> 00:00:24,597
+00:00:16,915 --> 00:00:24,245
 Two areas can show dramatic changes in
 functional coupling even when their mean
 
 6
-00:00:24,597 --> 00:00:26,940
+00:00:24,245 --> 00:00:26,500
 activation levels remain unchanged.
 
 7
-00:00:29,200 --> 00:00:33,588
+00:00:28,567 --> 00:00:32,832
 Psychophysiological interaction, or PPI,
 models functional connectivity within the
 
 8
-00:00:33,588 --> 00:00:37,001
+00:00:32,832 --> 00:00:36,150
 general linear model as a statistical
 interaction.
 
 9
-00:00:37,001 --> 00:00:43,827
+00:00:36,150 --> 00:00:42,786
 It tests whether the regression slope
 relating activity in a seed region to the
 
 10
-00:00:43,827 --> 00:00:49,190
-rest of the brain significantly increases
-during a specific psychological condition.
+00:00:42,786 --> 00:00:47,999
+rest of the brain changes with
+psychological context after modeling the
 
 11
-00:00:51,100 --> 00:00:54,763
+00:00:47,999 --> 00:00:48,947
+main effects.
+
+12
+00:00:48,947 --> 00:00:53,687
+A PPI association does not by itself
+establish causal communication.
+
+13
+00:00:56,167 --> 00:00:59,498
 Separate activation magnitude from
 inter-regional coupling.
 
-12
-00:00:54,763 --> 00:01:01,478
-PPI provides a statistical framework to
-test how psychological demands modulate
+14
+00:00:59,498 --> 00:01:03,384
+PPI tests context-dependent changes in
+statistical coupling.
 
-13
-00:01:01,478 --> 00:01:04,530
-communication across distributed neural
-networks.
+15
+00:01:03,384 --> 00:01:10,047
+Changes can be positive or negative and do
+not establish causal influence.

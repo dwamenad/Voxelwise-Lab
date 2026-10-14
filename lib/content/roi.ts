@@ -78,16 +78,16 @@ export const roiCourse: Course = {
           duration: 22,
           objectives: [
             "Recognize circular analysis (Kriegeskorte et al., 2009; Vul et al., 2009)",
-            "Structure independent ROI pipelines using leave-one-subject-out or orthogonal contrasts",
+            "Structure ROI pipelines with independent selection and held-out testing",
           ],
           conceptTitle: "The Double Dipping Fallacy",
           concept:
             "Selecting voxels that pass a statistical threshold for Contrast A (e.g., Task > Rest) and then extracting and running a t-test on those exact same voxels for Contrast A creates circular, non-independent bias. Effect sizes and p-values become severely distorted.",
           explanation:
-            "To report unbiased effect sizes: 1. Use an anatomical atlas; 2. Define ROIs from an independent localizer run; 3. Use an orthogonal contrast (e.g., defining ROI based on [A + B] to test [A - B]); 4. Implement leave-one-subject-out (LOSO) cross-validation.",
+            "Define ROIs using prespecified anatomy, an independent localizer, or held-out data. Orthogonal contrast vectors alone do not guarantee statistical independence. Cross-validation must keep selection separate from held-out observations and account for dependence between folds.",
           task: [
             "Review your candidate ROI selection criteria.",
-            "Verify that the contrast used to select voxels is orthogonal to the test contrast.",
+            "Verify statistical independence of selection and testing; orthogonal contrast vectors alone are insufficient.",
             "Document whether selection was based on an anatomical atlas or independent localizer.",
           ],
           quiz: {

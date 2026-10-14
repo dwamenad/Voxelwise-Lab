@@ -1,6 +1,6 @@
 # Lesson video production
 
-This directory contains the reproducible v3 production system for the 19
+This directory contains the reproducible v3 production system for the 29
 Voxelwise Lab concept and quality-control videos. Rendered masters and generated
 narration audio are intentionally excluded from Git. Approved masters are
 delivered from the `voxelwise-lab-media` Cloudflare R2 bucket;
@@ -27,6 +27,9 @@ approved.
 - 48 kHz audio with DC removal, a 70 Hz high-pass filter, silence trimming,
   short fades, −16 LUFS normalization, and per-scene clipping/loudness QC
 - readable sentence captions, limited to two 42-character lines per cue
+- web concept masters use external WebVTT captions so the player can toggle
+  them without duplicating text; add `--burn-in-captions` to a prepared concept
+  render only when producing an offline copy
 - normal acronyms in captions and transcripts; pronunciation expansion only in
   the hidden TTS input
 
@@ -37,7 +40,7 @@ with contrasts variants under
 
 ## Prepare and validate
 
-Generate the 18-video concept library, all narration clips, timing manifests,
+Generate the 28-video concept library, all narration clips, timing manifests,
 captions, and transcripts, then prepare the contrasts lesson:
 
 ```sh
@@ -103,7 +106,7 @@ Render only the contrasts lesson:
 npm run video:render:contrasts
 ```
 
-The master validator checks all 19 files for dimensions, frame rate, codecs,
+The master validator checks all 145 voice masters for dimensions, frame rate, codecs,
 browser playback, seeking support, and duration agreement with the generated
 timelines:
 
@@ -130,12 +133,18 @@ the videos that can be produced without that live approval.
 
 ## Production delivery
 
-The published set contains 20 MP4 masters, 20 WebVTT caption files, 20 source
-SRT files, and 20 reviewed Markdown transcripts. The app reads the public media
+The published set contains 30 MP4 masters, 30 WebVTT caption files, 30 source
+SRT files, and 30 reviewed Markdown transcripts. The app reads the public media
 prefix from `NEXT_PUBLIC_MEDIA_BASE_URL`, falling back to the verified R2
 managed domain in `config/published-media.json`. Byte-range playback and public
 GET/HEAD CORS are enabled for the bucket. Samantha, Tessa, Karen, and Rishi
 remain preview-only until their lesson masters are rendered and approved.
+
+The October release adds ten Daniel concept masters across Preprocessing,
+Higher-Level, ROI Analysis, and PPI/ICA. Their durations are recorded in the
+published manifest; public file checksums are recorded in
+`config/published-media.sha256`. Editorial corrections and primary references
+are documented in `content/release-review-2026-10.md`.
 
 ## Live FEAT pilot
 

@@ -18,72 +18,81 @@ functional images to the participant's own
 high-resolution T1 structural scan.
 
 5
-00:00:22,033 --> 00:00:26,726
+00:00:22,033 --> 00:00:26,938
 Rather than matching raw voxel
 intensities, FSL uses Boundary-Based
 
 6
-00:00:26,726 --> 00:00:28,290
+00:00:26,938 --> 00:00:28,573
 Registration, or BBR.
 
 7
-00:00:28,290 --> 00:00:35,590
+00:00:28,573 --> 00:00:36,203
 BBR segments the white matter boundary on
 the T1 scan and evaluates the intensity
 
 8
-00:00:35,590 --> 00:00:39,761
+00:00:36,203 --> 00:00:40,563
 gradient across that boundary in the
 functional image.
 
 9
-00:00:39,761 --> 00:00:44,453
-This makes it remarkably resilient to EPI
-susceptibility distortions.
+00:00:40,563 --> 00:00:45,468
+BBR improves cross-modal alignment, but
+susceptibility distortion may still
 
 10
-00:00:45,833 --> 00:00:50,932
+00:00:45,468 --> 00:00:47,103
+require separate correction.
+
+11
+00:00:48,933 --> 00:00:54,032
 In the FEAT registration report, examine
 the red outline representing the
 
-11
-00:00:50,932 --> 00:00:55,104
+12
+00:00:54,032 --> 00:00:58,204
 structural white matter boundary overlaid
 on the functional image.
 
-12
-00:00:55,104 --> 00:01:00,667
+13
+00:00:58,204 --> 00:01:03,767
 Look closely at the lateral ventricles,
 the corpus callosum, and the Sylvian
 
-13
-00:01:00,667 --> 00:01:01,130
+14
+00:01:03,767 --> 00:01:04,230
 fissure.
 
-14
-00:01:01,130 --> 00:01:06,693
+15
+00:01:04,230 --> 00:01:09,793
 If the red lines sit outside cortical
 boundaries, registration has failed and
 
-15
-00:01:06,693 --> 00:01:08,083
+16
+00:01:09,793 --> 00:01:11,183
 must be rerun.
 
-16
-00:01:09,567 --> 00:01:14,456
-Within-subject functional-to-structural
-alignment must always use 6 degrees of
-
 17
-00:01:14,456 --> 00:01:14,999
-freedom.
+00:01:12,667 --> 00:01:18,683
+Six degrees of freedom is a common
+starting point for within-subject
 
 18
-00:01:14,999 --> 00:01:22,061
-Choose BBR as your cost function, and
-verify the red outline across multiple
+00:01:18,683 --> 00:01:19,230
+alignment.
 
 19
-00:01:22,061 --> 00:01:24,777
-slices before accepting statistical
-results.
+00:01:19,230 --> 00:01:24,152
+Partial field-of-view data may require
+fewer degrees of freedom.
+
+20
+00:01:24,152 --> 00:01:29,074
+BBR is recommended for EPI-to-structural
+registration; inspect alignment across
+
+21
+00:01:29,074 --> 00:01:33,997
+multiple slices and assess remaining
+distortion before accepting results.

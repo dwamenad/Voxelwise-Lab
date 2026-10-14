@@ -2,9 +2,9 @@
   "provider": "cloudflare-r2",
   "bucket": "voxelwise-lab-media",
   "baseUrl": "https://pub-8e427c599c5b455db3f709b5b0869245.r2.dev/media",
-  "publishedAt": "2026-08-13T03:23:03Z",
-  "objectCount": 80,
-  "totalBytes": 161347234,
+  "publishedAt": "2026-10-14T05:12:11Z",
+  "objectCount": 120,
+  "totalBytes": 211120181,
   "slugs": [
     "what-is-fsl",
     "how-this-course-works",
@@ -25,6 +25,28 @@
     "confound-regressors",
     "understanding-contrasts",
     "opening-feat",
-    "reviewing-complete-feat-report"
-  ]
+    "reviewing-complete-feat-report",
+    "motion-correction-with-mcflirt",
+    "brain-extraction",
+    "temporal-filtering",
+    "functional-to-anatomical-registration",
+    "runs-versus-participants",
+    "fixed-random-and-mixed-effects",
+    "anatomical-and-functional-rois",
+    "avoiding-circularity",
+    "activation-versus-connectivity",
+    "what-ica-estimates"
+  ],
+  "durationSeconds": {
+    "motion-correction-with-mcflirt": 87.189,
+    "brain-extraction": 94.357,
+    "temporal-filtering": 81.877,
+    "functional-to-anatomical-registration": 95.659,
+    "runs-versus-participants": 67.925,
+    "fixed-random-and-mixed-effects": 74.795,
+    "anatomical-and-functional-rois": 71.9,
+    "avoiding-circularity": 67.755,
+    "activation-versus-connectivity": 72.213,
+    "what-ica-estimates": 74.5
+  }
 }

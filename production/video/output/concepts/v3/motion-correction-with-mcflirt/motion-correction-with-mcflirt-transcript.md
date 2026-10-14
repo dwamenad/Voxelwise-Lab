@@ -6,11 +6,11 @@ Participants inevitably move during an fMRI session. Because voxels are small, a
 
 ## Six degrees of freedom
 
-MCFLIRT uses a rigid-body transformation with six degrees of freedom: three spatial translations along the x, y, and z axes, and three rotations: pitch, roll, and yaw. Because the brain does not stretch or shear within a scan, higher degrees of freedom would be unphysical.
+MCFLIRT uses a rigid-body transformation with six degrees of freedom: three spatial translations along the x, y, and z axes, and three rotations: pitch, roll, and yaw. This models head movement, but cannot correct every susceptibility or spin-history artifact.
 
 ## Absolute versus relative motion
 
-MCFLIRT outputs two critical displacement plots. Absolute displacement measures total drift from the reference volume across the entire run. Relative displacement, or framewise displacement, measures abrupt volume-to-volume jerks. Sudden spikes above half a voxel indicate potential spin-history artifacts requiring volume censoring.
+MCFLIRT reports absolute and relative root mean square displacement. Absolute displacement compares each volume with the reference; relative displacement compares neighboring volumes. These summaries differ from Power framewise displacement. Inspect spikes alongside image quality, and choose outlier regressors or exclusion criteria appropriate to your study.
 
 ## Motion correction rules
 

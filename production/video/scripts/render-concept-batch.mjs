@@ -13,10 +13,11 @@ const voiceRegistry = JSON.parse(
   await readFile(path.join(projectRoot, "production", "video", "config", "voices.json"), "utf8"),
 );
 const voiceArgument = process.argv.find((argument) => argument.startsWith("--voices="));
+const burnInCaptions = process.argv.includes("--burn-in-captions");
 const requestedVoiceIds = voiceArgument
   ? voiceArgument.slice("--voices=".length).split(",").filter(Boolean)
   : voiceRegistry.voices.map((voice) => voice.id);
-const requestedSlugs = new Set(process.argv.slice(2).filter((argument) => !argument.startsWith("--voices=")));
+const requestedSlugs = new Set(process.argv.slice(2).filter((argument) => !argument.startsWith("--voices=") && argument !== "--burn-in-captions"));
 const videos = library.videos.filter((video) => requestedSlugs.size === 0 || requestedSlugs.has(video.slug));
 
 const knownVoiceIds = new Set(voiceRegistry.voices.map((voice) => voice.id));
@@ -46,6 +47,7 @@ const render = (video, voiceId, outputPath) =>
         "--crf=18",
         "--concurrency=8",
         "--overwrite",
+        `--props=${JSON.stringify({ burnInCaptions })}`,
         "--quiet",
         "--log=error",
       ],

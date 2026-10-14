@@ -71,7 +71,7 @@ export function learningLesson(input: LearningLessonInput): Lesson {
       provider: publishedMedia?.provider ?? "local",
       videoId: null,
       url: publishedMedia?.url,
-      durationMinutes: Math.max(5, Math.round((input.duration ?? 20) * 0.35)),
+      durationMinutes: publishedMedia?.durationMinutes ?? Math.max(5, Math.round((input.duration ?? 20) * 0.35)),
       status: videoStatus,
       captionsPath: publishedMedia?.captionsPath ?? `/production/captions/${input.slug}.vtt`,
       defaultVoiceId: DEFAULT_VOICE_ID,

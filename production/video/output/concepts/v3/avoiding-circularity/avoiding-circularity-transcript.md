@@ -2,11 +2,11 @@
 
 ## The double dipping trap
 
-Circularity, commonly known as double dipping, occurs when data selection criteria are not independent of the subsequent statistical test. If you search the whole brain for voxels showing greater activation for task over baseline, and then extract and report the mean activation from those exact voxels, your effect sizes and p-values will be artificially inflated.
+Circularity, commonly known as double dipping, occurs when data selection criteria are not independent of the subsequent statistical test. If you search the whole brain for voxels showing greater activation for task over baseline, and then extract and report the mean activation from those exact voxels, the extracted effect estimate can be biased upward and an uncorrected follow-up test can be invalid.
 
-## Four ways to preserve independence
+## Preserve selection independence
 
-You can prevent circularity through four standard strategies: define regions using anatomical atlases; run an independent localizer scan; use orthogonal contrasts where selection and testing are mathematically uncorrelated; or apply leave-one-subject-out cross-validation.
+Use a prespecified anatomical mask, an independent localizer, or held-out data for selection and testing. Orthogonal contrast vectors alone do not guarantee statistical independence. Cross-validation must keep selection separate from the held-out observations and account for dependence between folds.
 
 ## Independence rules
 

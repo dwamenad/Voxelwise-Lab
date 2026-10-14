@@ -195,10 +195,12 @@ export const ConceptLesson = ({
   video,
   timing,
   voiceId,
+  burnInCaptions = true,
 }: {
   video: ConceptVideo;
   timing: ConceptTiming;
   voiceId?: string;
+  burnInCaptions?: boolean;
 }) => {
   const selectedVoiceId = voiceId ?? timing.defaultVoiceId ?? video.defaultVoiceId;
   const voiceTrack = timing.voiceTracks?.find((track) => track.voiceId === selectedVoiceId)
@@ -220,7 +222,7 @@ export const ConceptLesson = ({
           </Sequence>
         );
       })}
-      <Captions cues={cues} />
+      {burnInCaptions && <Captions cues={cues} />}
     </AbsoluteFill>
   );
 };

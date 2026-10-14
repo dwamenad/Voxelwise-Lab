@@ -23,66 +23,62 @@ acquired volume back to a common reference
 position.
 
 6
-00:00:22,267 --> 00:00:26,861
+00:00:22,267 --> 00:00:27,504
 MCFLIRT uses a rigid-body transformation
 with six degrees of freedom: three spatial
 
 7
-00:00:26,861 --> 00:00:32,605
+00:00:27,504 --> 00:00:34,050
 translations along the x, y, and z axes,
 and three rotations: pitch, roll, and yaw.
 
 8
-00:00:32,605 --> 00:00:37,965
-Because the brain does not stretch or
-shear within a scan, higher degrees of
+00:00:34,050 --> 00:00:38,414
+This models head movement, but cannot
+correct every susceptibility or
 
 9
-00:00:37,965 --> 00:00:39,497
-freedom would be unphysical.
+00:00:38,414 --> 00:00:39,287
+spin-history artifact.
 
 10
-00:00:44,400 --> 00:00:47,349
-MCFLIRT outputs two critical displacement
-plots.
+00:00:44,400 --> 00:00:48,578
+MCFLIRT reports absolute and relative root
+mean square displacement.
 
 11
-00:00:47,349 --> 00:00:52,755
-Absolute displacement measures total drift
-from the reference volume across the
+00:00:48,578 --> 00:00:53,220
+Absolute displacement compares each volume
+with the reference; relative displacement
 
 12
-00:00:52,755 --> 00:00:53,738
-entire run.
+00:00:53,220 --> 00:00:54,613
+compares neighboring volumes.
 
 13
-00:00:53,738 --> 00:00:57,178
-Relative displacement, or framewise
-displacement, measures abrupt
+00:00:54,613 --> 00:00:57,862
+These summaries differ from Power
+framewise displacement.
 
 14
-00:00:57,178 --> 00:00:58,161
-volume-to-volume jerks.
+00:00:57,862 --> 00:01:02,969
+Inspect spikes alongside image quality,
+and choose outlier regressors or exclusion
 
 15
-00:00:58,161 --> 00:01:03,567
-Sudden spikes above half a voxel indicate
-potential spin-history artifacts requiring
+00:01:02,969 --> 00:01:05,290
+criteria appropriate to your study.
 
 16
-00:01:03,567 --> 00:01:04,550
-volume censoring.
-
-17
-00:01:09,800 --> 00:01:14,466
+00:01:11,133 --> 00:01:15,799
 Always inspect both absolute and relative
 motion plots before statistical modeling.
 
-18
-00:01:14,466 --> 00:01:19,979
+17
+00:01:15,799 --> 00:01:21,313
 Realign to the middle volume, flag sudden
 jumps, and never apply spatial smoothing
 
-19
-00:01:19,979 --> 00:01:22,100
+18
+00:01:21,313 --> 00:01:23,433
 before motion estimation is complete.
