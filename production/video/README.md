@@ -27,6 +27,9 @@ approved.
 - 48 kHz audio with DC removal, a 70 Hz high-pass filter, silence trimming,
   short fades, −16 LUFS normalization, and per-scene clipping/loudness QC
 - readable sentence captions, limited to two 42-character lines per cue
+- web concept masters use external WebVTT captions so the player can toggle
+  them without duplicating text; add `--burn-in-captions` to a prepared concept
+  render only when producing an offline copy
 - normal acronyms in captions and transcripts; pronunciation expansion only in
   the hidden TTS input
 

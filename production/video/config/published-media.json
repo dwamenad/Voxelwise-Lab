@@ -2,9 +2,9 @@
   "provider": "cloudflare-r2",
   "bucket": "voxelwise-lab-media",
   "baseUrl": "https://pub-8e427c599c5b455db3f709b5b0869245.r2.dev/media",
-  "publishedAt": "2026-10-13T23:12:06Z",
+  "publishedAt": "2026-10-14T05:12:11Z",
   "objectCount": 120,
-  "totalBytes": 214822454,
+  "totalBytes": 211120181,
   "slugs": [
     "what-is-fsl",
     "how-this-course-works",
